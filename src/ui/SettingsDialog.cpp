@@ -35,7 +35,8 @@ SettingsDialog::SettingsDialog(QWidget *parent, TerminalSettings *settings, Term
     setWindowTitle(i18nc("@title:window", "Configure Kwi Terminal"));
     setAttribute(Qt::WA_DeleteOnClose);
     setFaceType(KPageDialog::List);
-    setStandardButtons(QDialogButtonBox::Close);
+    setStandardButtons(QDialogButtonBox::NoButton);
+    buttonBox()->hide();
     resize(900, 650);
 
     watchLifetime(settings);

@@ -34,6 +34,12 @@ Join [#kwi:kde.org](https://matrix.to/#/#kwi:kde.org) on Matrix for user and dev
 - libghostty-vt 1.4.0+ (either CMake or PkgConfig)
 
 
+# Nightly Packages
+
+* [Install Kwi Nightly](https://cdn.kde.org/flatpak/kwi-nightly/org.kde.kwi.flatpakref)
+* [Add Kwi Nightly repository](https://cdn.kde.org/flatpak/kwi-nightly/kwi-nightly.flatpakrepo)
+
+
 ## Licenses
 
 Kwi's libraries are licensed under LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL.

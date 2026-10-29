@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
+  SPDX-License-Identifier: CC0-1.0
+-->
+<component type="desktop-application">
+  <id>@KWI_APP_ID@</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>@KWI_PROJECT_LICENSE@</project_license>
+  <name>@KWI_DISPLAY_NAME@</name>
+  <developer id="@KWI_APP_ID@">
+    <name>Kwi contributors</name>
+    <name xml:lang="de">Kwi-Mitwirkende</name>
+    <name xml:lang="ko">Kwi 기여자</name>
+  </developer>
+  <summary>A modern and fast terminal</summary>
+  <summary xml:lang="de">Ein modernes und schnelles Terminal</summary>
+  <summary xml:lang="ko">현대적이고 빠른 터미널</summary>
+  <description>
+    <p>Kwi is a modern and fast terminal that integrates well with KDE Plasma and other free desktops.</p>
+    <p xml:lang="de">Kwi ist ein modernes und schnelles Terminal, das sich gut in KDE Plasma und andere freie Desktop-Umgebungen integriert.</p>
+    <p xml:lang="ko">Kwi는 KDE Plasma와 다른 자유 데스크톱 환경에 잘 통합되는 현대적이고 빠른 터미널입니다.</p>
+  </description>
+  <url type="homepage">https://invent.kde.org/utilities/kwi</url>
+  <url type="vcs-browser">https://invent.kde.org/utilities/kwi</url>
+  <launchable type="desktop-id">@KWI_APP_ID@.desktop</launchable>
+  <provides><binary>@KWI_EXECUTABLE@</binary></provides>
+  <translation type="gettext">@KWI_EXECUTABLE@</translation>
+  <content_rating type="oars-1.1"/>
+</component>

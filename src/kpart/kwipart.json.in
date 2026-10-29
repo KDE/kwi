@@ -1,0 +1,17 @@
+{
+    "KPlugin": {
+        "Name": "@KWI_DISPLAY_NAME@ Terminal",
+        "Name[de]": "@KWI_DISPLAY_NAME@-Terminal",
+        "Name[ko]": "@KWI_DISPLAY_NAME@ 터미널",
+        "Description": "An embeddable terminal for KDE applications",
+        "Description[de]": "Ein einbettbares Terminal für KDE-Anwendungen",
+        "Description[ko]": "KDE 앱에 내장할 수 있는 터미널",
+        "Icon": "@KWI_APP_ID@",
+        "License": "@KWI_PROJECT_LICENSE@",
+        "Version": "@PROJECT_VERSION@"
+    },
+    "KParts": {
+        "Capabilities": ["ReadOnly"]
+    },
+    "X-KDE-AuthorizeAction": "shell_access"
+}

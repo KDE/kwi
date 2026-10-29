@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
+# SPDX-License-Identifier: CC0-1.0
+
+[Desktop Entry]
+Type=Application
+Name=@KWI_DISPLAY_NAME@
+GenericName=Terminal
+GenericName[de]=Terminal
+GenericName[ko]=터미널
+Comment=A modern and fast terminal
+Comment[de]=Ein modernes und schnelles Terminal
+Comment[ko]=현대적이고 빠른 터미널
+Exec=@KWI_EXECUTABLE@
+TryExec=@KWI_EXECUTABLE@
+Icon=@KWI_APP_ID@
+Terminal=false
+Categories=Qt;KDE;System;TerminalEmulator;
+Keywords=terminal;shell;console;command;
+Keywords[de]=Terminal;Shell;Konsole;Befehl;Befehlszeile;
+Keywords[ko]=터미널;셸;콘솔;명령;명령행;
+StartupNotify=true
+StartupWMClass=@KWI_EXECUTABLE@
+X-KDE-AuthorizeAction=shell_access
+Actions=NewWindow;NewTab;
+
+[Desktop Action NewWindow]
+Name=New Window
+Name[de]=Neues Fenster
+Name[ko]=새 창
+Icon=window-new
+Exec=@KWI_EXECUTABLE@
+
+[Desktop Action NewTab]
+Name=New Tab
+Name[de]=Neues Unterfenster
+Name[ko]=새 탭
+Icon=tab-new
+Exec=@KWI_EXECUTABLE@ --new-tab

@@ -1,0 +1,47 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "release",
+            "displayName": "Release build",
+            "inherits": "dev",
+            "binaryDir": "$env{HOME}/devel/build/${sourceDirName}-release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "dev",
+            "displayName": "Development build",
+            "generator": "Ninja",
+            "binaryDir": "$env{HOME}/devel/build/${sourceDirName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true
+            }
+        },
+        {
+            "name": "asan",
+            "displayName": "Address and undefined behavior sanitizers",
+            "inherits": "dev",
+            "binaryDir": "$env{HOME}/devel/build/${sourceDirName}-asan",
+            "cacheVariables": {
+                "ECM_ENABLE_SANITIZERS": "address;undefined"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "release",
+            "configurePreset": "release"
+        },
+        {
+            "name": "dev",
+            "configurePreset": "dev"
+        },
+        {
+            "name": "asan",
+            "configurePreset": "asan"
+        }
+    ]
+}

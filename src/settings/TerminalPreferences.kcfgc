@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+
+File=TerminalPreferences.kcfg
+ClassName=TerminalPreferences
+NameSpace=Kwi
+Inherits=KCoreConfigSkeleton
+IncludeFiles=KCoreConfigSkeleton,TitleFormat_p.h,settings/SettingsConstraints_p.h
+Mutators=true
+GenerateProperties=true
+DefaultValueGetters=true
+Notifiers=true
+ParentInConstructor=true
+QmlRegistration=true
+QmlUncreatable=true

@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
+# SPDX-License-Identifier: CC0-1.0
+
+[Global]
+IconName=org.kde.kwi
+DesktopEntry=org.kde.kwi
+Name=Kwi
+Comment=Terminal notifications
+Comment[de]=Terminalbenachrichtigungen
+Comment[ko]=터미널 알림
+
+[Event/bell]
+Name=Terminal bell
+Name[de]=Terminal-Signalton
+Name[ko]=터미널 벨
+Comment=A terminal that is not currently focused requests attention
+Comment[de]=Ein Terminal ohne Eingabefokus erfordert Aufmerksamkeit
+Comment[ko]=현재 초점이 없는 터미널에서 주의를 요청함
+Sound=bell-window-system
+Action=Popup
+
+[Event/notification]
+Name=Program notification
+Name[de]=Programmbenachrichtigung
+Name[ko]=프로그램 알림
+Comment=A program in a terminal that is not currently focused requests a notification
+Comment[de]=Ein Programm in einem Terminal ohne Eingabefokus fordert eine Benachrichtigung an
+Comment[ko]=현재 초점이 없는 터미널의 프로그램에서 알림을 요청함
+Action=Popup
+
+[Event/activity]
+Name=Activity in a monitored terminal
+Name[de]=Aktivität in einem überwachten Terminal
+Name[ko]=지켜보는 터미널에서 활동 발생
+Comment=New output arrived in a terminal with activity monitoring enabled
+Comment[de]=Neue Ausgabe in einem Terminal, dessen Aktivität überwacht wird
+Comment[ko]=활동 상태를 지켜보는 터미널에 새 출력이 있음
+Action=Popup
+
+[Event/silence]
+Name=Silence in a monitored terminal
+Name[de]=Inaktivität in einem überwachten Terminal
+Name[ko]=지켜보는 터미널에서 응답 없음
+Comment=Output stopped for the configured interval in a monitored terminal
+Comment[de]=Keine Ausgabe während des eingestellten Intervalls in einem überwachten Terminal
+Comment[ko]=지켜보는 터미널에서 설정한 시간 동안 출력이 없음
+Action=Popup

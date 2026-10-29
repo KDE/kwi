@@ -1,0 +1,6 @@
+/build*/
+/*.md
+!/README.md
+/.clang-format
+*.user
+*.kate-swp

@@ -36,8 +36,8 @@ Join [#kwi:kde.org](https://matrix.to/#/#kwi:kde.org) on Matrix for user and dev
 
 # Nightly Packages
 
-* [Install Kwi Nightly](https://cdn.kde.org/flatpak/kwi-nightly/org.kde.kwi.flatpakref)
-* [Add Kwi Nightly repository](https://cdn.kde.org/flatpak/kwi-nightly/kwi-nightly.flatpakrepo)
+* [Install Kwi Nightly](https://cdn.kde.org/flatpak/kwi-nightly/org.kde.kwi.flatpakref) (Flatpak package)
+* [Add Kwi Nightly repository](https://cdn.kde.org/flatpak/kwi-nightly/kwi-nightly.flatpakrepo) (Flatpak repository)
 
 
 ## Licenses

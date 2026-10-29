@@ -34,7 +34,7 @@ Join [#kwi:kde.org](https://matrix.to/#/#kwi:kde.org) on Matrix for user and dev
 - libghostty-vt 1.4.0+ (either CMake or PkgConfig)
 
 
-# Nightly Packages
+## Nightly Packages
 
 * [Install Kwi Nightly](https://cdn.kde.org/flatpak/kwi-nightly/org.kde.kwi.flatpakref) (Flatpak package)
 * [Add Kwi Nightly repository](https://cdn.kde.org/flatpak/kwi-nightly/kwi-nightly.flatpakrepo) (Flatpak repository)

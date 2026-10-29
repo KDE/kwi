@@ -2,7 +2,7 @@
 SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
 SPDX-License-Identifier: CC0-1.0
 -->
-# <img src="logo.png" width="24"/> Kwi
+# <img src="logo.png" width="32"/> Kwi
 
 Kwi is a modern and fast terminal for KDE Plasma and other desktops.
 

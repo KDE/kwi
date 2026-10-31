@@ -630,7 +630,13 @@ public:
         }
     }
 
-    void decorate(QVector<ColorQuad> &quads, GlyphGeometry &sprites, const Cell &cell, int column, int rowCursorColumn, const QVector<Cell> &cells)
+    void decorate(QVector<ColorQuad> &quads,
+                  QVector<ColorQuad> &strikes,
+                  GlyphGeometry &sprites,
+                  const Cell &cell,
+                  int column,
+                  int rowCursorColumn,
+                  const QVector<Cell> &cells)
     {
         if ((cell.flags & Invisible) || ((cell.flags & Blink) && !options.textBlinkVisible) || !cell.width
             || (!(cell.flags & (Strike | Overline | Underline)) && !cell.underline)) {
@@ -644,7 +650,7 @@ public:
         const QColor fg{foreground(cell, column, rowCursorColumn, cells, false)};
 
         if (cell.flags & Strike) {
-            quads += {QRectF(x, metrics.strikePosition, width, stroke), fg};
+            strikes += {QRectF(x, metrics.strikePosition, width, stroke), fg};
         }
 
         if (cell.flags & Overline) {
@@ -733,6 +739,7 @@ public:
         QVector<ColorQuad> backgrounds;
         QVector<ColorQuad> defaults;
         QVector<ColorQuad> decorations;
+        QVector<ColorQuad> strikes;
         GlyphGeometry decorationSprites{glyphBuffers};
         GlyphGeometry glyphs{glyphBuffers};
         const qreal cw{metrics.cellSize.width()};
@@ -770,7 +777,7 @@ public:
                 }
             }
 
-            decorate(decorations, decorationSprites, cell, column, rowCursorColumn, cells);
+            decorate(decorations, strikes, decorationSprites, cell, column, rowCursorColumn, cells);
         }
 
         colorGeometry(row.background, backgrounds, statistics ? &*statistics : nullptr);
@@ -841,9 +848,11 @@ public:
             begin = end;
         }
 
-        glyphs.finish(row.foreground, statistics ? &*statistics : nullptr);
+        // Underlines z-sort below, strikethrough sorts above.
         colorGeometry(row.foreground, decorations, statistics ? &*statistics : nullptr);
         decorationSprites.finish(row.foreground, statistics ? &*statistics : nullptr);
+        glyphs.finish(row.foreground, statistics ? &*statistics : nullptr);
+        colorGeometry(row.foreground, strikes, statistics ? &*statistics : nullptr);
         row.cells = sourceCells;
         row.cursorColumn = rowCursorColumn;
 

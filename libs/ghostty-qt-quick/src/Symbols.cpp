@@ -401,8 +401,8 @@ void legacy(QPainter &p, char32_t cp, QSize size, int thin)
 
 bool isProceduralSymbol(char32_t cp)
 {
-    return (cp >= 0x2500 && cp <= 0x259f) || (cp >= 0x2800 && cp <= 0x28ff) || (cp >= 0xe0b0 && cp <= 0xe0bf) || (cp >= 0xf5d0 && cp <= 0xf60d)
-        || (cp >= 0x1fb00 && cp <= 0x1fb9f && cp != 0x1fb93);
+    return (cp >= 0x2500 && cp <= 0x259f) || (cp >= 0x2800 && cp <= 0x28ff) || (cp >= 0xe0b0 && cp <= 0xe0bf) || (cp >= 0xf5d0 && cp <= 0xf60d) || cp == 0xe0d2
+        || cp == 0xe0d4 || (cp >= 0x1fb00 && cp <= 0x1fb9f && cp != 0x1fb93);
 }
 
 QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
@@ -489,6 +489,25 @@ QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
         legacy(p, cp, size, thin);
     } else if (cp >= 0xf5d0 && cp <= 0xf60d) {
         branch(p, cp, size, thin);
+    } else if (cp == 0xe0d2 || cp == 0xe0d4) {
+        p.setRenderHint(QPainter::Antialiasing);
+
+        if (cp == 0xe0d4) {
+            p.translate(w, 0);
+            p.scale(-1, 1);
+        }
+
+        const qreal edge{(h - qMin(thin, h)) / 2.0};
+        QPainterPath path;
+        path.moveTo(0, 0);
+        path.lineTo(w, 0);
+        path.lineTo(w / 2.0, edge);
+        path.lineTo(0, edge);
+        path.closeSubpath();
+        p.fillPath(path, Qt::white);
+        p.translate(0, h);
+        p.scale(1, -1);
+        p.fillPath(path, Qt::white);
     } else {
         p.setRenderHint(QPainter::Antialiasing);
         const bool left{(cp & 2) != 0};

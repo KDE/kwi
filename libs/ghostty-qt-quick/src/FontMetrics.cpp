@@ -24,6 +24,7 @@ FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio, qreal logical
     result.baseline = (cellHeight - qRound(baselineFromBottom)) / dpr;
     result.strokeWidth = qMax(qreal(1), std::round(fm.lineWidth())) / dpr;
     result.underlinePosition = qMin(result.cellSize.height() - result.strokeWidth, result.baseline + fm.underlinePos() / dpr);
+    result.strikePosition = std::round(result.baseline * dpr - fm.strikeOutPos()) / dpr;
 
     return result;
 }

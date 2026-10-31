@@ -12,6 +12,7 @@ struct FontMetrics {
     QSizeF cellSize;
     qreal baseline{0};
     qreal underlinePosition{0};
+    qreal strikePosition{0};
     qreal strokeWidth{0};
     QFont pixelFont;
 };

@@ -644,7 +644,7 @@ public:
         const QColor fg{foreground(cell, column, rowCursorColumn, cells, false)};
 
         if (cell.flags & Strike) {
-            quads += {QRectF(x, std::round(metrics.baseline * 0.65 * dpr) / dpr, width, stroke), fg};
+            quads += {QRectF(x, metrics.strikePosition, width, stroke), fg};
         }
 
         if (cell.flags & Overline) {

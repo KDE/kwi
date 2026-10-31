@@ -7,6 +7,7 @@
 #include <QLinearGradient>
 #include <QPainter>
 #include <QPainterPath>
+#include <QPainterPathStroker>
 #include <QPen>
 #include <QPolygonF>
 #include <array>
@@ -401,8 +402,9 @@ void legacy(QPainter &p, char32_t cp, QSize size, int thin)
 
 bool isProceduralSymbol(char32_t cp)
 {
-    return (cp >= 0x2500 && cp <= 0x259f) || (cp >= 0x2800 && cp <= 0x28ff) || (cp >= 0xe0b0 && cp <= 0xe0bf) || (cp >= 0xf5d0 && cp <= 0xf60d) || cp == 0xe0d2
-        || cp == 0xe0d4 || (cp >= 0x1fb00 && cp <= 0x1fb9f && cp != 0x1fb93);
+    return (cp >= 0x2500 && cp <= 0x259f) || (cp >= 0x25e2 && cp <= 0x25e5) || (cp >= 0x25f8 && cp <= 0x25fa) || cp == 0x25ff || (cp >= 0x2800 && cp <= 0x28ff)
+        || (cp >= 0xe0b0 && cp <= 0xe0bf) || (cp >= 0xf5d0 && cp <= 0xf60d) || cp == 0xe0d2 || cp == 0xe0d4
+        || (cp >= 0x1fb00 && cp <= 0x1fb9f && cp != 0x1fb93);
 }
 
 QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
@@ -452,6 +454,25 @@ QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
                 }
             }
         }
+    } else if (cp <= 0x25ff) {
+        p.setRenderHint(QPainter::Antialiasing);
+        const bool right{cp == 0x25e2 || cp == 0x25e5 || cp == 0x25f9 || cp == 0x25ff};
+        const bool bottom{cp == 0x25e2 || cp == 0x25e3 || cp == 0x25fa || cp == 0x25ff};
+        p.translate(right ? w : 0, bottom ? h : 0);
+        p.scale(right ? -1 : 1, bottom ? -1 : 1);
+        QPainterPath path;
+        path.lineTo(w, 0);
+        path.lineTo(0, h);
+        path.closeSubpath();
+
+        if (cp >= 0x25f8) {
+            QPainterPathStroker stroker;
+            stroker.setWidth(2 * thin);
+            stroker.setJoinStyle(Qt::MiterJoin);
+            path = path.intersected(stroker.createStroke(path));
+        }
+
+        p.fillPath(path, Qt::white);
     } else if (cp >= 0x2800 && cp <= 0x28ff) {
         p.setRenderHint(QPainter::Antialiasing);
         p.setPen(Qt::NoPen);

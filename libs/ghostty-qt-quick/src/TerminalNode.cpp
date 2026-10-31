@@ -27,7 +27,6 @@
 #include <cstring>
 #include <functional>
 #include <iterator>
-#include <numbers>
 #include <optional>
 #include <tuple>
 #include <utility>
@@ -630,7 +629,7 @@ public:
         }
     }
 
-    void decorate(QVector<ColorQuad> &quads, const Cell &cell, int column, int rowCursorColumn, const QVector<Cell> &cells)
+    void decorate(QVector<ColorQuad> &quads, GlyphGeometry &sprites, const Cell &cell, int column, int rowCursorColumn, const QVector<Cell> &cells)
     {
         if ((cell.flags & Invisible) || ((cell.flags & Blink) && !options.textBlinkVisible) || !cell.width
             || (!(cell.flags & (Strike | Overline | Underline)) && !cell.underline)) {
@@ -670,20 +669,18 @@ public:
             if (style == 2) {
                 quads += {QRectF(x, qMax(qreal(0), y - 2 * stroke), width, stroke), color};
             }
-        } else if (style == 3) {
-            // Use absolute columns for the phase so underlines join across cells.
-            const int first{qRound(x * dpr)};
-            const int end{qRound((x + width) * dpr)};
-            const qreal amplitude{qMax(qreal(1), stroke * dpr)};
-            const qreal period{qMax(qreal(4), amplitude * 6)};
+        } else if (style == 3 || style == 4) {
+            const QSize size{qRound(metrics.cellSize.width() * dpr), qRound(metrics.cellSize.height() * dpr)};
+            const auto image = atlas->underline(style, size, qRound(stroke * dpr));
+            const QSizeF logicalSize{QSizeF(image.pixels.size()) / dpr};
+            const qreal top{qMax(qreal(0), std::round((y + stroke) * dpr) - image.pixels.height()) / dpr};
 
-            for (int pixel{first}; pixel < end; ++pixel) {
-                const qreal wave{std::sin(pixel * 2 * std::numbers::pi / period)};
-                quads += {QRectF(pixel / dpr, y - amplitude * (1 + wave) / dpr, 1 / dpr, stroke), color};
+            for (int offset{0}; offset < cell.width; ++offset) {
+                sprites.append(image, QRectF(QPointF(x + offset * metrics.cellSize.width(), top), logicalSize), QRectF(QPointF(), image.pixels.size()), color);
             }
         } else {
             const int dots{style == DashDotUnderline ? 1 : style == DashDotDotUnderline ? 2 : 0};
-            const qreal on{style == 4 ? stroke : 3 * stroke};
+            const qreal on{3 * stroke};
             const qreal period{on + 2 * stroke + dots * 3 * stroke};
             qreal start{std::floor(x / period) * period};
 
@@ -728,6 +725,7 @@ public:
         QVector<ColorQuad> backgrounds;
         QVector<ColorQuad> defaults;
         QVector<ColorQuad> decorations;
+        GlyphGeometry decorationSprites{glyphBuffers};
         GlyphGeometry glyphs{glyphBuffers};
         const qreal cw{metrics.cellSize.width()};
         const qreal ch{metrics.cellSize.height()};
@@ -764,7 +762,7 @@ public:
                 }
             }
 
-            decorate(decorations, cell, column, rowCursorColumn, cells);
+            decorate(decorations, decorationSprites, cell, column, rowCursorColumn, cells);
         }
 
         colorGeometry(row.background, backgrounds, statistics ? &*statistics : nullptr);
@@ -837,6 +835,7 @@ public:
 
         glyphs.finish(row.foreground, statistics ? &*statistics : nullptr);
         colorGeometry(row.foreground, decorations, statistics ? &*statistics : nullptr);
+        decorationSprites.finish(row.foreground, statistics ? &*statistics : nullptr);
         row.cells = sourceCells;
         row.cursorColumn = rowCursorColumn;
 

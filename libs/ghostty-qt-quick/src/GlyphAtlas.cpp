@@ -5,9 +5,12 @@
 #include "Symbols_p.h"
 
 #include <QPainter>
+#include <QPainterPath>
+#include <QPen>
 #include <QQuickWindow>
 #include <QtGui/private/qrawfont_p.h>
 #include <cmath>
+#include <numbers>
 #include <numeric>
 #include <utility>
 
@@ -109,7 +112,7 @@ GlyphImage GlyphAtlas::glyph(const QRawFont &font, quint32 index, bool allowSubp
     // Request LCD rendering only when enabled by the platform's font policy.
     auto *engine = QRawFontPrivate::get(font)->fontEngine;
     const bool subpixel{allowSubpixel && engine->glyphFormat == QFontEngine::Format_A32};
-    const Key key{font, index, false, subpixel};
+    const Key key{font, index, Kind::Font, subpixel};
 
     if (auto found = find(key); found.page) {
         return found;
@@ -155,13 +158,56 @@ GlyphImage GlyphAtlas::glyph(const QRawFont &font, quint32 index, bool allowSubp
 
 GlyphImage GlyphAtlas::symbol(char32_t cp, QSize cellSize, int strokeWidth)
 {
-    const Key key{{}, quint32(cp), true};
+    const Key key{{}, quint32(cp), Kind::Symbol};
 
     if (auto found = find(key); found.page) {
         return found;
     }
 
     return insert(key, symbolImage(cp, cellSize, strokeWidth), {}, GlyphImage::Format::Grayscale);
+}
+
+GlyphImage GlyphAtlas::underline(int style, QSize cellSize, int strokeWidth)
+{
+    const Key key{{}, quint32(style), Kind::Underline};
+
+    if (auto found = find(key); found.page) {
+        return found;
+    }
+
+    const int width{cellSize.width()};
+    const qreal radius{strokeWidth / std::numbers::sqrt2};
+    const int height{qMin(cellSize.height(), qCeil(style == 3 ? width / std::numbers::pi + strokeWidth : 2 * radius))};
+    constexpr int scale{4};
+    QImage image(width * scale, height * scale, QImage::Format_ARGB32_Premultiplied);
+    image.fill(Qt::transparent);
+    QPainter painter{&image};
+    painter.scale(scale, scale);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    if (style == 3) {
+        const qreal top{strokeWidth / 2.0};
+        const qreal bottom{height - top};
+        QPainterPath wave;
+        wave.moveTo(0, bottom);
+        wave.cubicTo(width / 6.0, bottom, width / 3.0, top, width / 2.0, top);
+        wave.cubicTo(2 * width / 3.0, top, 5 * width / 6.0, bottom, width, bottom);
+        painter.setPen(QPen(Qt::white, strokeWidth, Qt::SolidLine, Qt::FlatCap));
+        painter.drawPath(wave);
+    } else {
+        const int count{qMax(1, int(width / (2 * radius + 1)))};
+        const qreal spacing{qreal(width) / count};
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(Qt::white);
+
+        for (int dot{0}; dot < count; ++dot) {
+            painter.drawEllipse(QPointF((dot + 0.5) * spacing, height / 2.0), radius, radius);
+        }
+    }
+
+    painter.end();
+
+    return insert(key, image.scaled(width, height, Qt::IgnoreAspectRatio, Qt::SmoothTransformation), {}, GlyphImage::Format::Grayscale);
 }
 
 void GlyphAtlas::beginFrame()

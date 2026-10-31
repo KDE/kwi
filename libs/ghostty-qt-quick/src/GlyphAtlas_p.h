@@ -50,6 +50,7 @@ public:
 
     [[nodiscard]] GlyphImage glyph(const QRawFont &font, quint32 glyphIndex, bool allowSubpixel = false);
     [[nodiscard]] GlyphImage symbol(char32_t codepoint, QSize cellSize, int strokeWidth);
+    [[nodiscard]] GlyphImage underline(int style, QSize cellSize, int strokeWidth);
 
     void beginFrame();
     void flush(quint64 *uploadedBytes = nullptr);
@@ -59,17 +60,23 @@ public:
     [[nodiscard]] qsizetype byteSize() const;
 
 private:
+    enum class Kind {
+        Font,
+        Symbol,
+        Underline,
+    };
+
     struct Key {
         QRawFont font;
         quint32 index{0};
-        bool symbol{false};
+        Kind kind{Kind::Font};
         bool subpixel{false};
 
         bool operator==(const Key &) const = default;
 
         friend std::size_t qHash(const Key &key, std::size_t seed) noexcept
         {
-            return qHashMulti(seed, key.font, key.index, key.symbol, key.subpixel);
+            return qHashMulti(seed, key.font, key.index, key.kind, key.subpixel);
         }
     };
 

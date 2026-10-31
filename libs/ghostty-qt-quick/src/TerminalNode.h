@@ -33,6 +33,7 @@ public:
         bool cursorBlinkVisible{true};
         bool textBlinkVisible{true};
         QRegion searchMatches; // Viewport cell coordinates.
+        QRegion hoveredLink; // Viewport cell coordinates.
         QColor searchForeground;
         QColor searchBackground;
         QString preedit;

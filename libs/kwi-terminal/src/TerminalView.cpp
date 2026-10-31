@@ -349,7 +349,7 @@ void TerminalView::changeSession(Session *newSession)
     m_selectionRectangle = false;
     m_keyboardSelectionMode = false;
     m_selectionScrollTimer.stop();
-    setHoveredLink({}, Qt::NoModifier);
+    updateHoveredLink({}, Qt::NoModifier);
     m_dragPending = false;
     m_wheelAngleRemainder = 0;
     m_wheelPixelRemainder = 0;
@@ -616,8 +616,6 @@ void TerminalView::refresh()
 
 void TerminalView::updatePolish()
 {
-    setHoveredLink(m_hoveredLink, QGuiApplication::keyboardModifiers());
-
     const auto previousOffset = m_frame.scrollOffset;
     const auto previousCursor = m_frame.cursor;
     const QColor previousForeground{m_frame.foreground};
@@ -670,6 +668,8 @@ void TerminalView::updatePolish()
         updateAccessibility();
         update();
     }
+
+    updateHoveredLink(m_hoverPosition, QGuiApplication::keyboardModifiers());
 }
 
 void TerminalView::updateMetrics()
@@ -808,6 +808,7 @@ QSGNode *TerminalView::updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *)
     options.preedit = m_preedit;
     options.preeditAttributes = m_preeditAttributes;
     options.searchMatches = m_searchMatches;
+    options.hoveredLink = m_highlightedLink;
     const QPalette palette{QGuiApplication::palette()};
     options.searchForeground = palette.color(QPalette::Active, QPalette::Text);
     options.searchBackground = KColorUtils::mix(palette.color(QPalette::Active, QPalette::Base), palette.color(QPalette::Active, QPalette::Highlight), 0.35);
@@ -844,20 +845,47 @@ QUrl TerminalView::hoveredLink() const
     return m_hoveredLink;
 }
 
-QUrl TerminalView::linkAtPosition(QPointF position) const
+QUrl TerminalView::linkAtPosition(QPointF position, QRegion *cells) const
 {
     if (!m_session || !m_session->terminal() || position.x() < m_padding || position.y() < m_padding
         || position.x() >= m_padding + m_frame.columns * m_cellWidth || position.y() >= m_padding + m_frame.rows.size() * m_cellHeight) {
         return {};
     }
 
-    const QPoint cell{cellAt(position)};
+    const QPoint cell{glyphStart(cellAt(position))};
     const QString uri{m_session->terminal()->linkAt(cell)};
 
     if (!uri.isEmpty()) {
         const QUrl link{uri, QUrl::StrictMode};
 
-        return link.isValid() && !link.scheme().isEmpty() ? link : QUrl();
+        if (!link.isValid() || link.scheme().isEmpty()) {
+            return {};
+        }
+
+        if (cells) {
+            const int columns{m_frame.columns};
+            int first{cell.y() * columns + cell.x()};
+            int last{first};
+            const auto uriAt = [&](int index) {
+                return m_session->terminal()->linkAt(glyphStart({index % columns, index / columns}));
+            };
+
+            while (first > 0 && uriAt(first - 1) == uri) {
+                --first;
+            }
+
+            while (last + 1 < columns * m_frame.rows.size() && uriAt(last + 1) == uri) {
+                ++last;
+            }
+
+            for (int row{first / columns}; row <= last / columns; ++row) {
+                const int left{row == first / columns ? first % columns : 0};
+                const int right{row == last / columns ? last % columns : columns - 1};
+                *cells += QRect(left, row, right - left + 1, 1);
+            }
+        }
+
+        return link;
     }
 
     if (cell.y() >= m_frame.rows.size()) {
@@ -893,15 +921,34 @@ QUrl TerminalView::linkAtPosition(QPointF position) const
 
     const auto matches = textLinks(line, m_session->workingDirectory(), m_frame.rowWrapped.value(lastRow), offset);
 
-    for (const auto &match : matches) {
-        // Return the URL directly without find_if's end check and dereference.
-        // cppcheck-suppress useStlAlgorithm
-        if (offset >= match.start && offset < match.start + match.length) {
-            return match.url;
+    const auto match = std::ranges::find_if(matches, [offset](const auto &candidate) {
+        return offset >= candidate.start && offset < candidate.start + candidate.length;
+    });
+
+    if (match == matches.end()) {
+        return {};
+    }
+
+    if (cells) {
+        qsizetype start{0};
+
+        for (int y{firstRow}; y <= lastRow; ++y) {
+            const auto &row = m_frame.rows[y];
+
+            for (int x{0}; x < row.size(); ++x) {
+                const auto &entry = row[x];
+                const qsizetype length{entry.width ? qMax(qsizetype(1), entry.text.size()) : 0};
+
+                if (length && start < match->start + match->length && start + length > match->start) {
+                    *cells += QRect(x, y, entry.width, 1);
+                }
+
+                start += length;
+            }
         }
     }
 
-    return {};
+    return match->url;
 }
 
 QVariantList TerminalView::links() const
@@ -977,17 +1024,27 @@ QVariantList TerminalView::links() const
     return links;
 }
 
-void TerminalView::setHoveredLink(const QUrl &link, Qt::KeyboardModifiers modifiers)
+void TerminalView::updateHoveredLink(std::optional<QPointF> position, Qt::KeyboardModifiers modifiers)
 {
+    m_hoverPosition = position;
+    QRegion cells;
+    const bool allowed{linkActivationAllowed(modifiers)};
+    const QUrl link{position ? linkAtPosition(*position, allowed ? &cells : nullptr) : QUrl()};
+
+    if (m_highlightedLink != cells) {
+        m_highlightedLink = cells;
+        update();
+    }
+
     if (m_hoveredLink != link) {
         m_hoveredLink = link;
 
         Q_EMIT hoveredLinkChanged();
     }
 
-    const auto shape = !link.isEmpty() && linkActivationAllowed(modifiers) ? Qt::PointingHandCursor
-        : m_session && m_session->terminal()                               ? m_session->terminal()->mouseCursorShape()
-                                                                           : Qt::IBeamCursor;
+    const auto shape = !link.isEmpty() && allowed ? Qt::PointingHandCursor
+        : m_session && m_session->terminal()      ? m_session->terminal()->mouseCursorShape()
+                                                  : Qt::IBeamCursor;
 
     if (cursor().shape() != shape) {
         setCursor(shape);
@@ -1006,7 +1063,7 @@ void TerminalView::setRequireCtrlForLinks(bool required)
     }
 
     m_requireCtrlForLinks = required;
-    setHoveredLink(m_hoveredLink, QGuiApplication::keyboardModifiers());
+    updateHoveredLink(m_hoverPosition, QGuiApplication::keyboardModifiers());
 
     Q_EMIT requireCtrlForLinksChanged();
 }
@@ -1360,7 +1417,7 @@ void TerminalView::showContextMenu()
 {
     const QRectF cursor{m_keyboardSelectionMode ? selectionCursorRectangle() : inputMethodQuery(Qt::ImCursorRectangle).toRectF()};
     const QPointF position{cursor.center()};
-    setHoveredLink(linkAtPosition(position), QGuiApplication::keyboardModifiers());
+    updateHoveredLink(position, QGuiApplication::keyboardModifiers());
 
     Q_EMIT contextMenuRequested(position);
 }
@@ -1379,7 +1436,7 @@ void TerminalView::keyPressEvent(QKeyEvent *event)
     }
 
     if (event->key() == Qt::Key_Control || event->key() == Qt::Key_Shift || event->key() == Qt::Key_Alt) {
-        setHoveredLink(m_hoveredLink, event->modifiers());
+        updateHoveredLink(m_hoverPosition, event->modifiers());
     }
 
     if (m_session && m_session->terminal() && event->modifiers() == Qt::ShiftModifier && (event->key() == Qt::Key_PageUp || event->key() == Qt::Key_PageDown)) {
@@ -1400,7 +1457,7 @@ void TerminalView::keyPressEvent(QKeyEvent *event)
 void TerminalView::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Control || event->key() == Qt::Key_Shift || event->key() == Qt::Key_Alt) {
-        setHoveredLink(m_hoveredLink, event->modifiers());
+        updateHoveredLink(m_hoverPosition, event->modifiers());
     }
 
     // Application shortcuts can consume a press before it reaches this item.
@@ -1634,7 +1691,7 @@ void TerminalView::mousePressEvent(QMouseEvent *event)
     }
 
     m_dragPending = false;
-    setHoveredLink(linkAtPosition(event->position()), event->modifiers());
+    updateHoveredLink(event->position(), event->modifiers());
     const QPoint pressedCell{cellAt(event->position())};
 
     if (event->button() == Qt::LeftButton && event->modifiers().testFlag(Qt::AltModifier) && !m_selectionRectangle && !m_hoveredLink.isEmpty()) {
@@ -1820,7 +1877,7 @@ void TerminalView::mouseUngrabEvent()
 
 void TerminalView::hoverMoveEvent(QHoverEvent *event)
 {
-    setHoveredLink(linkAtPosition(event->position()), event->modifiers());
+    updateHoveredLink(event->position(), event->modifiers());
 
     if (m_session && m_session->terminal() && !m_session->isReadOnly() && !event->modifiers().testFlag(Qt::ShiftModifier)
         && m_session->terminal()->mouseTracking()) {
@@ -1833,7 +1890,7 @@ void TerminalView::hoverMoveEvent(QHoverEvent *event)
 
 void TerminalView::hoverLeaveEvent(QHoverEvent *event)
 {
-    setHoveredLink({}, Qt::NoModifier);
+    updateHoveredLink({}, Qt::NoModifier);
     event->accept();
 }
 

@@ -511,6 +511,7 @@ public:
         QSGTransformNode *foreground{nullptr};
         QVector<Cell> cells;
         QRegion searchMatches;
+        QRegion hoveredLink;
         std::array<quint64, 2> identity{};
         quint64 version{0};
         int cursorColumn{-1};
@@ -703,6 +704,13 @@ public:
     void rebuildRow(Row &row, const QVector<Cell> &sourceCells, int rowCursorColumn)
     {
         auto highlightedCells = sourceCells;
+
+        for (const QRect &link : row.hoveredLink) {
+            for (int column{link.left()}; column <= link.right(); ++column) {
+                auto &cell = highlightedCells[column];
+                cell.underline = cell.underline == 1 || (!cell.underline && (cell.flags & Underline)) ? 2 : 1;
+            }
+        }
 
         for (const QRect &match : row.searchMatches) {
             for (int column{match.left()}; column <= match.right(); ++column) {
@@ -1194,10 +1202,12 @@ void TerminalNode::prepare(const Frame &frame, const Options &options)
         const int cursorColumn{d->cursorColumn(y)};
         const bool cursorRowChanged{row.cursorColumn != cursorColumn || (cursorChanged && cursorColumn >= 0)};
         const QRegion matches{options.searchMatches.intersected(QRect(0, y, int(frame.rows[y].size()), 1)).translated(0, -y)};
+        const QRegion link{options.hoveredLink.intersected(QRect(0, y, int(frame.rows[y].size()), 1)).translated(0, -y)};
 
-        if (appearanceChanged || cursorRowChanged || (blinkChanged && row.blink) || row.searchMatches != matches
+        if (appearanceChanged || cursorRowChanged || (blinkChanged && row.blink) || row.searchMatches != matches || row.hoveredLink != link
             || ((version != row.version || row.cells.isEmpty()) && row.cells != frame.rows[y])) {
             row.searchMatches = matches;
+            row.hoveredLink = link;
             d->rebuildRow(row, frame.rows[y], cursorColumn);
             cursorContentChanged |= y == frame.cursor.y();
         }

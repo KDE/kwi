@@ -22,6 +22,7 @@
 #include <QUrl>
 #include <QVariant>
 #include <QtQmlIntegration/qqmlintegration.h>
+#include <optional>
 
 class QScreen;
 class KDirWatch;
@@ -197,11 +198,11 @@ private:
     bool handleSelectionKey(QKeyEvent *event);
     [[nodiscard]] QPoint glyphStart(QPoint cell) const;
     [[nodiscard]] QPoint cellAt(QPointF position) const;
-    [[nodiscard]] QUrl linkAtPosition(QPointF position) const;
+    [[nodiscard]] QUrl linkAtPosition(QPointF position, QRegion *cells = nullptr) const;
     bool reportMouse(QMouseEvent *event, bool release, bool motion);
     void sendMouse(GhosttyQt::MouseEvent event);
     void updateSelection(GhosttyQt::SelectionEvent::Type type, QPointF position, quint64 timestamp = 0);
-    void setHoveredLink(const QUrl &link, Qt::KeyboardModifiers modifiers);
+    void updateHoveredLink(std::optional<QPointF> position, Qt::KeyboardModifiers modifiers);
     [[nodiscard]] bool linkActivationAllowed(Qt::KeyboardModifiers modifiers) const;
     void openLink();
     void scrollSelection();
@@ -232,6 +233,8 @@ private:
     QMetaObject::Connection m_dpiConnection;
 
     QUrl m_hoveredLink;
+    QRegion m_highlightedLink;
+    std::optional<QPointF> m_hoverPosition;
 
     qreal m_cellWidth{10};
     qreal m_cellHeight{20};

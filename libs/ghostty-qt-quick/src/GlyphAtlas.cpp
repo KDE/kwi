@@ -177,7 +177,9 @@ GlyphImage GlyphAtlas::underline(int style, QSize cellSize, int strokeWidth)
 
     const int width{cellSize.width()};
     const qreal radius{strokeWidth / std::numbers::sqrt2};
-    const int height{qMin(cellSize.height(), qCeil(style == 3 ? width / std::numbers::pi + strokeWidth : 2 * radius))};
+    const int above{qCeil(style == 3 ? strokeWidth / 2.0 : radius - strokeWidth / 2.0)};
+    const qreal extent{style == 3 ? width / std::numbers::pi + strokeWidth / 2.0 : radius + strokeWidth / 2.0};
+    const int height{qMin(cellSize.height(), qCeil(above + extent))};
     constexpr int scale{4};
     QImage image(width * scale, height * scale, QImage::Format_ARGB32_Premultiplied);
     image.fill(Qt::transparent);
@@ -186,8 +188,8 @@ GlyphImage GlyphAtlas::underline(int style, QSize cellSize, int strokeWidth)
     painter.setRenderHint(QPainter::Antialiasing);
 
     if (style == 3) {
-        const qreal top{strokeWidth / 2.0};
-        const qreal bottom{height - top};
+        const qreal top{qreal(above)};
+        const qreal bottom{qMin(top + width / std::numbers::pi, height - strokeWidth / 2.0)};
         QPainterPath wave;
         wave.moveTo(0, bottom);
         wave.cubicTo(width / 6.0, bottom, width / 3.0, top, width / 2.0, top);
@@ -201,13 +203,13 @@ GlyphImage GlyphAtlas::underline(int style, QSize cellSize, int strokeWidth)
         painter.setBrush(Qt::white);
 
         for (int dot{0}; dot < count; ++dot) {
-            painter.drawEllipse(QPointF((dot + 0.5) * spacing, height / 2.0), radius, radius);
+            painter.drawEllipse(QPointF((dot + 0.5) * spacing, above + strokeWidth / 2.0), radius, radius);
         }
     }
 
     painter.end();
 
-    return insert(key, image.scaled(width, height, Qt::IgnoreAspectRatio, Qt::SmoothTransformation), {}, GlyphImage::Format::Grayscale);
+    return insert(key, image.scaled(width, height, Qt::IgnoreAspectRatio, Qt::SmoothTransformation), QPointF(0, -above), GlyphImage::Format::Grayscale);
 }
 
 void GlyphAtlas::beginFrame()

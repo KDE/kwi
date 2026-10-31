@@ -668,19 +668,21 @@ public:
         }
 
         const qreal y{metrics.underlinePosition};
+        // Allow decorations a quarter-cell overhang below the row.
+        const qreal bottom{metrics.cellSize.height() + std::floor(metrics.cellSize.height() * dpr / 4) / dpr};
         const int style{cell.underline ? cell.underline : 1};
 
-        if (style == 1 || style == 2) {
+        if (style == 1) {
             quads += {QRectF(x, y, width, stroke), color};
-
-            if (style == 2) {
-                quads += {QRectF(x, qMax(qreal(0), y - 2 * stroke), width, stroke), color};
-            }
+        } else if (style == 2) {
+            const qreal center{qMax(qreal(0), qMin(y, bottom - 2 * stroke))};
+            quads += {QRectF(x, qMax(qreal(0), center - stroke), width, stroke), color};
+            quads += {QRectF(x, center + stroke, width, stroke), color};
         } else if (style == 3 || style == 4) {
             const QSize size{qRound(metrics.cellSize.width() * dpr), qRound(metrics.cellSize.height() * dpr)};
             const auto image = atlas->underline(style, size, qRound(stroke * dpr));
             const QSizeF logicalSize{QSizeF(image.pixels.size()) / dpr};
-            const qreal top{qMax(qreal(0), std::round((y + stroke) * dpr) - image.pixels.height()) / dpr};
+            const qreal top{qBound(qreal(0), y + image.bearing.y() / dpr, bottom - logicalSize.height())};
 
             for (int offset{0}; offset < cell.width; ++offset) {
                 sprites.append(image, QRectF(QPointF(x + offset * metrics.cellSize.width(), top), logicalSize), QRectF(QPointF(), image.pixels.size()), color);

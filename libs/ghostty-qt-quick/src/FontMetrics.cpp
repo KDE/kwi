@@ -21,6 +21,8 @@ FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio, qreal logical
     const int cellHeight{qMax(1, qRound(lineHeight))};
     const qreal baselineFromBottom{fm.descent() + fm.leading() / 2 - (cellHeight - lineHeight) / 2};
     result.cellSize = QSizeF(qMax(1, qRound(fm.horizontalAdvance(QLatin1Char('M')))), cellHeight) / dpr;
+    // Nerd Font single-cell icons balance cap height with the full font height.
+    result.iconHeight = qMin(qreal(cellHeight), (2 * fm.capHeight() + lineHeight) / 3) / dpr;
     result.baseline = (cellHeight - qRound(baselineFromBottom)) / dpr;
     result.strokeWidth = qMax(qreal(1), std::round(fm.lineWidth())) / dpr;
     result.underlinePosition = qMin(result.cellSize.height() - result.strokeWidth, result.baseline + fm.underlinePos() / dpr);

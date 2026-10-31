@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
 #include "GridShaper_p.h"
+#include "Symbols_p.h"
 
 #include <QGlyphRun>
 #include <QHash>
@@ -14,6 +15,17 @@
 
 namespace GhosttyQt::Quick
 {
+bool isFontIcon(const QString &text)
+{
+    if (text.isEmpty()) {
+        return false;
+    }
+
+    const char32_t cp{text.size() > 1 && text[0].isHighSurrogate() && text[1].isLowSurrogate() ? QChar::surrogateToUcs4(text[0], text[1]) : text[0].unicode()};
+
+    return QChar::category(cp) == QChar::Other_PrivateUse && !(cp >= 0xe0b0 && cp <= 0xe0d7) && !isProceduralSymbol(cp);
+}
+
 void GridShaper::setMetrics(const FontMetrics &metrics, qreal devicePixelRatio)
 {
     m_metrics = metrics;
@@ -28,10 +40,21 @@ int GridShaper::cacheSize() const
 
 QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin, int end, bool *cacheMiss)
 {
+    int iconColumns{isFontIcon(cells[begin].text) ? int(cells[begin].width) : 0};
+
+    if (iconColumns == 1 && end < cells.size() && (begin == 0 || !isFontIcon(cells[begin - 1].text))) {
+        const Cell &next = cells[end];
+
+        if (next.width == 1 && !(next.flags & ImagePlaceholder) && (next.text.isEmpty() || next.text == QLatin1String(" ") || next.text == QChar(0x2002))) {
+            iconColumns = 2;
+        }
+    }
+
     // LRO keeps Qt from reordering cells in Arabic/Hebrew runs while still shaping them.
     QString text(QChar(0x202d));
     QVector<int> columns{0};
     QString key;
+    key += QChar(ushort(iconColumns));
     key += QChar(cells[begin].flags & (Bold | Italic));
 
     for (int column{begin}; column < end; ++column) {
@@ -118,11 +141,11 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
     const qreal cellHeight{m_metrics.cellSize.height() * m_dpr};
     const qreal baseline{m_metrics.baseline * m_dpr};
     const QRawFont primary{QRawFont::fromFont(font)};
-    struct FallbackCluster {
+    struct FittedCluster {
         QRectF bounds;
         int columns{1};
     };
-    QHash<int, FallbackCluster> fallbackClusters;
+    QHash<int, FittedCluster> fittedClusters;
 
     for (const auto &run : runs) {
         const auto indexes = run.glyphIndexes();
@@ -143,8 +166,8 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
             const int span{qMax(1, columns[next] - firstColumn)};
             const qreal origin{line.cursorToX(source)};
 
-            if (fallback) {
-                fallbackClusters.tryEmplace(firstColumn);
+            if (fallback || iconColumns) {
+                fittedClusters.tryEmplace(firstColumn);
             }
 
             shaped.append(PositionedGlyph{raw,
@@ -156,12 +179,12 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
         }
     }
 
-    if (!fallbackClusters.isEmpty()) {
+    if (!fittedClusters.isEmpty()) {
         // Include attached marks from other font runs in the cluster's ink bounds.
         for (const auto &glyph : std::as_const(shaped)) {
-            const auto cluster = fallbackClusters.find(glyph.firstColumn);
+            const auto cluster = fittedClusters.find(glyph.firstColumn);
 
-            if (cluster == fallbackClusters.end()) {
+            if (cluster == fittedClusters.end()) {
                 continue;
             }
 
@@ -175,19 +198,29 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
         }
 
         for (auto &glyph : shaped) {
-            const auto cluster = fallbackClusters.constFind(glyph.firstColumn);
+            const auto cluster = fittedClusters.constFind(glyph.firstColumn);
 
-            if (cluster == fallbackClusters.cend() || cluster->bounds.isEmpty()) {
+            if (cluster == fittedClusters.cend() || cluster->bounds.isEmpty()) {
                 continue;
             }
 
             const qreal width{cluster->columns * cellWidth};
-            const qreal scale{std::min({qreal(1), width / cluster->bounds.width(), cellHeight / cluster->bounds.height()})};
+            qreal scale{std::min({qreal(1), width / cluster->bounds.width(), cellHeight / cluster->bounds.height()})};
+
+            if (iconColumns) {
+                const qreal singleHeight{m_metrics.iconHeight * m_dpr};
+                const qreal singleScale{qMin(cellWidth / cluster->bounds.width(), singleHeight / cluster->bounds.height())};
+                const qreal availableHeight{iconColumns > 1 ? cellHeight : singleHeight};
+                // Fit available space, but only enlarge small icons enough to fill one cell.
+                scale = qMin(qMax(qreal(1), singleScale), qMin(iconColumns * cellWidth / cluster->bounds.width(), availableHeight / cluster->bounds.height()));
+            }
+
             const QRectF ink{QPointF(cluster->bounds.left() * scale, baseline + (cluster->bounds.top() - baseline) * scale), cluster->bounds.size() * scale};
             const qreal horizontalSpace{qMax(qreal(0), width - ink.width())};
             const qreal verticalSpace{qMax(qreal(0), cellHeight - ink.height())};
-            const qreal left{cluster->columns > 1 ? horizontalSpace / 2 : qBound(qreal(0), ink.left(), horizontalSpace)};
-            const qreal top{qBound(qreal(0), ink.top(), verticalSpace)};
+            const qreal left{iconColumns ? qMax(qreal(0), (cellWidth - ink.width()) / 2)
+                                         : (cluster->columns > 1 ? horizontalSpace / 2 : qBound(qreal(0), ink.left(), horizontalSpace))};
+            const qreal top{iconColumns ? verticalSpace / 2 : qBound(qreal(0), ink.top(), verticalSpace)};
             const QPointF anchor{glyph.firstColumn * cellWidth, baseline};
 
             glyph.baseline = anchor + (glyph.baseline - anchor) * scale + QPointF(left - ink.left(), top - ink.top());

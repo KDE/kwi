@@ -15,6 +15,8 @@
 
 namespace GhosttyQt::Quick
 {
+[[nodiscard]] bool isFontIcon(const QString &text);
+
 struct PositionedGlyph {
     QRawFont font;
     quint32 index{0};

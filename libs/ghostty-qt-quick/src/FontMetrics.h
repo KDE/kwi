@@ -14,6 +14,7 @@ struct FontMetrics {
     qreal underlinePosition{0};
     qreal strikePosition{0};
     qreal strokeWidth{0};
+    qreal iconHeight{0};
     QFont pixelFont;
 };
 

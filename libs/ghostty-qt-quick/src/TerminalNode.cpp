@@ -806,11 +806,14 @@ public:
 
             int end{begin + cell.width};
 
-            while (end < cells.size()) {
+            const bool icon{isFontIcon(cell.text)};
+
+            while (!icon && end < cells.size()) {
                 const Cell &next = cells[end];
 
+                // Fit icons independently of text ligatures and neighboring icons.
                 if (!next.width || next.text.isEmpty() || (next.flags & ImagePlaceholder) || (next.flags & (Bold | Italic)) != (cell.flags & (Bold | Italic))
-                    || isProceduralSymbol(singleCodepoint(next.text))) {
+                    || isFontIcon(next.text) || isProceduralSymbol(singleCodepoint(next.text))) {
                     break;
                 }
 

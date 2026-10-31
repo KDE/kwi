@@ -36,15 +36,27 @@ void box(QPainter &p, char32_t cp, QSize size, int thin)
 
     if (cp >= 0x256d && cp <= 0x2570) {
         p.setRenderHint(QPainter::Antialiasing);
-        p.setPen(QPen(Qt::white, thin, Qt::SolidLine, Qt::FlatCap));
         const qreal x{cx + thin / 2.0};
         const qreal y{cy + thin / 2.0};
         const bool right{(bits & 0xc0) != 0};
         const bool down{(bits & 0x0c) != 0};
+        const qreal horizontal{right ? w - x : x};
+        const qreal vertical{down ? h - y : y};
+        const qreal radius{qMin(horizontal, vertical)};
+        p.translate(x, y);
+        p.scale(right ? 1 : -1, down ? 1 : -1);
+        const qreal halfStroke{thin / 2.0};
         QPainterPath path;
-        path.moveTo(right ? w : 0, y);
-        path.quadTo(x, y, x, down ? h : 0);
-        p.drawPath(path);
+        path.moveTo(horizontal, -halfStroke);
+        path.lineTo(radius, -halfStroke);
+        path.arcTo(QRectF(-halfStroke, -halfStroke, 2 * radius + thin, 2 * radius + thin), 90, 90);
+        path.lineTo(-halfStroke, vertical);
+        path.lineTo(halfStroke, vertical);
+        path.lineTo(halfStroke, radius);
+        path.arcTo(QRectF(halfStroke, halfStroke, 2 * radius - thin, 2 * radius - thin), 180, -90);
+        path.lineTo(horizontal, halfStroke);
+        path.closeSubpath();
+        p.fillPath(path, Qt::white);
 
         return;
     }
@@ -308,78 +320,80 @@ void legacy(QPainter &p, char32_t cp, QSize size, int thin)
             const int x{qRound((8 - portion) * w / 8)};
             p.fillRect(x, 0, w - x, h, Qt::white);
         }
-    } else {
-        p.setPen(Qt::NoPen);
+    } else if (cp <= 0x1fb94) {
+        const int mx{qRound(w / 2)};
+        const int my{qRound(h / 2)};
+        const std::array<QRectF, 4> halves{QRectF(0, 0, mx, h), QRectF(mx, 0, w - mx, h), QRectF(0, 0, w, my), QRectF(0, my, w, h - my)};
 
-        for (int y{0}; y < h; ++y) {
-            for (int x{0}; x < w; ++x) {
-                bool fill{false};
-                const bool shade{((x + y) & 1) == 0};
+        if (cp <= 0x1fb8f) {
+            p.fillRect(halves[cp - 0x1fb8c], QColor(255, 255, 255, 128));
+        } else {
+            p.fillRect(QRectF(0, 0, w, h), QColor(255, 255, 255, 127));
 
-                switch (cp) {
-                case 0x1fb8c:
-                    fill = x < w / 2 && shade;
-                    break;
-                case 0x1fb8d:
-                    fill = x >= w / 2 && shade;
-                    break;
-                case 0x1fb8e:
-                    fill = y < h / 2 && shade;
-                    break;
-                case 0x1fb8f:
-                    fill = y >= h / 2 && shade;
-                    break;
-                case 0x1fb90:
-                    fill = !shade;
-                    break;
-                case 0x1fb91:
-                    fill = y < h / 2 || !shade;
-                    break;
-                case 0x1fb92:
-                    fill = y >= h / 2 || !shade;
-                    break;
-                case 0x1fb94:
-                    fill = x >= w / 2 || !shade;
-                    break;
-                case 0x1fb95:
-                    fill = ((x / (2 * thin) + y / (2 * thin)) & 1) == 0;
-                    break;
-                case 0x1fb96:
-                    fill = ((x / (2 * thin) + y / (2 * thin)) & 1) != 0;
-                    break;
-                case 0x1fb97:
-                    fill = (y / thin) % 4 < 2;
-                    break;
-                case 0x1fb98:
-                    fill = ((x - y + size.height()) / thin) % 4 == 0;
-                    break;
-                case 0x1fb99:
-                    fill = ((x + y) / thin) % 4 == 0;
-                    break;
-                case 0x1fb9a:
-                    fill = std::abs((x + 0.5) / w - 0.5) < std::abs((y + 0.5) / h - 0.5);
-                    break;
-                case 0x1fb9b:
-                    fill = std::abs((x + 0.5) / w - 0.5) >= std::abs((y + 0.5) / h - 0.5);
-                    break;
-                case 0x1fb9c:
-                    fill = (x + 0.5) / w + (y + 0.5) / h < 1 && shade;
-                    break;
-                case 0x1fb9d:
-                    fill = (x + 0.5) / w > (y + 0.5) / h && shade;
-                    break;
-                case 0x1fb9e:
-                    fill = (x + 0.5) / w + (y + 0.5) / h >= 1 && shade;
-                    break;
-                case 0x1fb9f:
-                    fill = (x + 0.5) / w <= (y + 0.5) / h && shade;
-                    break;
-                }
+            if (cp != 0x1fb90) {
+                const int half{cp == 0x1fb91 ? 2 : cp == 0x1fb92 ? 3 : 1};
+                p.fillRect(halves[half], Qt::white);
+            }
+        }
+    } else if (cp <= 0x1fb96) {
+        const int pitch{2 * thin};
 
-                if (fill) {
-                    p.fillRect(x, y, 1, 1, Qt::white);
+        for (int y{0}; y < h; y += pitch) {
+            for (int x{0}; x < w; x += pitch) {
+                if (((x / pitch + y / pitch) & 1) == (cp == 0x1fb96)) {
+                    p.fillRect(x, y, pitch, pitch, Qt::white);
                 }
             }
+        }
+    } else if (cp == 0x1fb97) {
+        for (int y{0}; y < h; y += 4 * thin) {
+            p.fillRect(0, y, w, 2 * thin, Qt::white);
+        }
+    } else if (cp <= 0x1fb99) {
+        p.setRenderHint(QPainter::Antialiasing);
+
+        if (cp == 0x1fb99) {
+            p.translate(w, 0);
+            p.scale(-1, 1);
+        }
+
+        const int repeats{qMax(1, size.width() / (2 * thin))};
+        const qreal spacing{w / repeats};
+        const qreal halfWidth{thin * std::hypot(1.0, w / h) / 2};
+        QPainterPath path;
+        path.setFillRule(Qt::WindingFill);
+
+        for (int i{-repeats}; i <= repeats; ++i) {
+            const qreal x{(i + 0.5) * spacing};
+            path.moveTo(x - w - halfWidth, -h);
+            path.lineTo(x - w + halfWidth, -h);
+            path.lineTo(x + 2 * w + halfWidth, 2 * h);
+            path.lineTo(x + 2 * w - halfWidth, 2 * h);
+            path.closeSubpath();
+        }
+
+        p.fillPath(path, Qt::white);
+    } else {
+        p.setRenderHint(QPainter::Antialiasing);
+        const std::array<QPointF, 4> corners{QPointF(0, 0), QPointF(w, 0), QPointF(w, h), QPointF(0, h)};
+        QPainterPath path;
+
+        if (cp <= 0x1fb9b) {
+            for (int edge{cp == 0x1fb9a ? 0 : 1}; edge < 4; edge += 2) {
+                path.moveTo(w / 2, h / 2);
+                path.lineTo(corners[edge]);
+                path.lineTo(corners[(edge + 1) % 4]);
+                path.closeSubpath();
+            }
+
+            p.fillPath(path, Qt::white);
+        } else {
+            const auto corner = cp - 0x1fb9c;
+            path.moveTo(corners[corner]);
+            path.lineTo(corners[(corner + 1) % 4]);
+            path.lineTo(corners[(corner + 3) % 4]);
+            path.closeSubpath();
+            p.fillPath(path, QColor(255, 255, 255, 128));
         }
     }
 }
@@ -393,9 +407,12 @@ bool isProceduralSymbol(char32_t cp)
 
 QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
 {
-    QImage image(size, QImage::Format_ARGB32_Premultiplied);
+    // Supersample the four rounded corners for accurate coverage at small sizes.
+    const int scale{cp >= 0x256d && cp <= 0x2570 ? 4 : 1};
+    QImage image(size * scale, QImage::Format_ARGB32_Premultiplied);
     image.fill(Qt::transparent);
     QPainter p{&image};
+    p.scale(scale, scale);
     const int w{size.width()};
     const int h{size.height()};
     const int thin{qMax(1, strokeWidth)};
@@ -505,6 +522,12 @@ QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
         p.setPen(outline ? QPen(Qt::white, thin, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin) : QPen(Qt::NoPen));
         p.setBrush(outline ? Qt::NoBrush : QBrush(Qt::white));
         p.drawPath(path);
+    }
+
+    if (scale > 1) {
+        p.end();
+
+        return image.scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     }
 
     return image;

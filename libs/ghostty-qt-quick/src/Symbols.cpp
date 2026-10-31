@@ -72,45 +72,27 @@ void box(QPainter &p, char32_t cp, QSize size, int thin)
         }
 
         const int thickness{weight == 2 ? thin * 2 : thin};
-        const int x{(w - thickness) / 2};
-        const int y{(h - thickness) / 2};
+        const bool vertical{direction < 2};
+        const bool negative{(direction & 1) == 0};
+        const int extent{vertical ? h : w};
+        const int center{vertical ? cy : cx};
+        const int opposite{(bits >> ((direction ^ 1) * 2)) & 3};
+        const int perpendicular{vertical ? bits >> 4 : bits & 15};
+        const std::array<int, 2> neighbors{perpendicular & 3, (perpendicular >> 2) & 3};
+        const int joinWidth{qMax(1, qMax(neighbors[0], neighbors[1])) * thin};
+        const int farJoin{(extent - joinWidth) / 2 + (negative ? joinWidth : 0)};
 
-        if (weight != 3) {
-            switch (direction) {
-            case 0:
-                p.fillRect(x, 0, thickness, cy + thin, Qt::white);
-                break;
-            case 1:
-                p.fillRect(x, cy, thickness, h - cy, Qt::white);
-                break;
-            case 2:
-                p.fillRect(0, y, cx + thin, thickness, Qt::white);
-                break;
-            case 3:
-                p.fillRect(cx, y, w - cx, thickness, Qt::white);
-                break;
-            }
-        } else {
-            // Extend double arms to meet perpendicular tracks without filling the center.
-            const int perpendicular{direction < 2 ? ((bits >> 4) & 15) : (bits & 15)};
-            const int reach{perpendicular ? thin : 0};
+        for (int track{0}; track < (weight == 3 ? 2 : 1); ++track) {
+            int end{opposite ? center + (negative ? thin : 0) : farJoin};
 
-            for (const int delta : {-thin, thin}) {
-                switch (direction) {
-                case 0:
-                    p.fillRect(cx + delta, 0, thin, cy + thin + reach, Qt::white);
-                    break;
-                case 1:
-                    p.fillRect(cx + delta, cy - reach, thin, h - cy + reach, Qt::white);
-                    break;
-                case 2:
-                    p.fillRect(0, cy + delta, cx + thin + reach, thin, Qt::white);
-                    break;
-                case 3:
-                    p.fillRect(cx - reach, cy + delta, w - cx + reach, thin, Qt::white);
-                    break;
-                }
+            if ((weight == 3 && neighbors[track] == 3) || (weight != 3 && !opposite && neighbors[0] == 3 && neighbors[1] == 3)) {
+                end = center + (negative ? 0 : thin);
             }
+
+            const int across{((vertical ? w : h) - thickness) / 2 + (weight == 3 ? (track * 2 - 1) * thin : 0)};
+            const int start{negative ? 0 : end};
+            const int length{negative ? end : extent - end};
+            p.fillRect(vertical ? QRect(across, start, thickness, length) : QRect(start, across, length, thickness), Qt::white);
         }
     }
 
@@ -293,20 +275,22 @@ void legacy(QPainter &p, char32_t cp, QSize size, int thin)
     } else if (cp <= 0x1fb81) {
         constexpr std::array<quint8, 6> edges{6, 5, 9, 10, 3, 0};
         const int mask{edges[cp - 0x1fb7c]};
-        const int sw{qMax(1, qRound(w / 8))};
-        const int sh{qMax(1, qRound(h / 8))};
+        const int sw{qRound(w / 8)};
+        const int sh{qRound(h / 8)};
+        const int right{qRound(7 * w / 8)};
+        const int bottom{qRound(7 * h / 8)};
 
         if (mask & 1)
             p.fillRect(0, 0, w, sh, Qt::white);
 
         if (mask & 2)
-            p.fillRect(0, h - sh, w, sh, Qt::white);
+            p.fillRect(0, bottom, w, h - bottom, Qt::white);
 
         if (mask & 4)
             p.fillRect(0, 0, sw, h, Qt::white);
 
         if (mask & 8)
-            p.fillRect(w - sw, 0, sw, h, Qt::white);
+            p.fillRect(right, 0, w - right, h, Qt::white);
 
         if (cp == 0x1fb81) {
             for (const int stripe : {0, 2, 4, 7}) {
@@ -427,24 +411,27 @@ QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
         } else if (cp <= 0x258f) {
             p.fillRect(0, 0, qRound(w * (0x2590 - cp) / 8.0), h, Qt::white);
         } else if (cp == 0x2590) {
-            p.fillRect(w / 2, 0, w - w / 2, h, Qt::white);
+            const int x{qRound(w / 2.0)};
+            p.fillRect(x, 0, w - x, h, Qt::white);
         } else if (cp <= 0x2593) {
             // Avoid some moire when transformed.
             p.fillRect(image.rect(), QColor(255, 255, 255, 64 * (cp - 0x2590)));
         } else if (cp == 0x2594) {
-            p.fillRect(0, 0, w, qMax(1, qRound(h / 8.0)), Qt::white);
+            p.fillRect(0, 0, w, qRound(h / 8.0), Qt::white);
         } else if (cp == 0x2595) {
-            const int width{qMax(1, qRound(w / 8.0))};
-            p.fillRect(w - width, 0, width, h, Qt::white);
+            const int x{qRound(7 * w / 8.0)};
+            p.fillRect(x, 0, w - x, h, Qt::white);
         } else {
             constexpr std::array<int, 10> quadrants{4, 8, 1, 13, 9, 7, 11, 2, 6, 14};
             const int mask{quadrants[cp - 0x2596]};
+            const int mx{qRound(w / 2.0)};
+            const int my{qRound(h / 2.0)};
 
             for (int q{0}; q < 4; ++q) {
                 if (mask & (1 << q)) {
-                    const int x0{(q & 1) ? w / 2 : 0};
-                    const int y0{(q & 2) ? h / 2 : 0};
-                    p.fillRect(x0, y0, (q & 1) ? w - x0 : w / 2, (q & 2) ? h - y0 : h / 2, Qt::white);
+                    const int x0{(q & 1) ? mx : 0};
+                    const int y0{(q & 2) ? my : 0};
+                    p.fillRect(x0, y0, (q & 1) ? w - x0 : mx, (q & 2) ? h - y0 : my, Qt::white);
                 }
             }
         }
@@ -474,10 +461,10 @@ QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
 
         for (int bit{0}; bit < 6; ++bit) {
             if (mask & (1 << bit)) {
-                const int x0{(bit % 2) * w / 2};
-                const int x1{(bit % 2 + 1) * w / 2};
-                const int y0{(bit / 2) * h / 3};
-                const int y1{(bit / 2 + 1) * h / 3};
+                const int x0{qRound((bit % 2) * w / 2.0)};
+                const int x1{qRound((bit % 2 + 1) * w / 2.0)};
+                const int y0{qRound((bit / 2) * h / 3.0)};
+                const int y1{qRound((bit / 2 + 1) * h / 3.0)};
                 p.fillRect(x0, y0, x1 - x0, y1 - y0, Qt::white);
             }
         }
@@ -495,11 +482,16 @@ QImage symbolImage(char32_t cp, QSize size, int strokeWidth)
             const QRectF ellipse(left ? 0 : -w, 0, 2 * w, h);
             path.addEllipse(ellipse);
         } else if (cp >= 0xe0b8) {
-            // Sloped Powerline separators.
-            path.moveTo(left ? w : 0, 0);
-            path.lineTo(left ? 0 : w, (cp & 4) ? 0 : h);
-            path.lineTo(left ? w : 0, h);
-            path.closeSubpath();
+            if (outline) {
+                const bool rising{left != ((cp & 4) != 0)};
+                path.moveTo(rising ? w : 0, 0);
+                path.lineTo(rising ? 0 : w, h);
+            } else {
+                path.moveTo(left ? w : 0, 0);
+                path.lineTo(left ? 0 : w, (cp & 4) ? 0 : h);
+                path.lineTo(left ? w : 0, h);
+                path.closeSubpath();
+            }
         } else {
             path.moveTo(left ? w : 0, 0);
             path.lineTo(left ? 0 : w, h / 2.0);

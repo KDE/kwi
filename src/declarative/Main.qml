@@ -812,8 +812,6 @@ Kirigami.ApplicationWindow {
                             // Terminal Alt keys are reserved for explicitly configured shortcuts.
                             Kirigami.MnemonicData.enabled: false
                             display: Controls.AbstractButton.IconOnly
-                            icon.width: Kirigami.Units.iconSizes.small
-                            icon.height: Kirigami.Units.iconSizes.small
                             Controls.ToolTip.text: newTabAction.text + (newTabAction.shortcut ? " (" + newTabAction.shortcut + ")" : "")
                             Controls.ToolTip.visible: hovered
                             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -828,8 +826,6 @@ Kirigami.ApplicationWindow {
                             enabled: root.terminalActionsEnabled
                             text: KI18n.i18nc("@action:button", "New Tab with Preset")
                             icon.name: "arrow-down"
-                            icon.width: Kirigami.Units.iconSizes.small
-                            icon.height: Kirigami.Units.iconSizes.small
                             display: Controls.AbstractButton.IconOnly
                             Kirigami.MnemonicData.enabled: false
 
@@ -884,8 +880,6 @@ Kirigami.ApplicationWindow {
                             icon.name: "application-menu"
                             text: KI18n.i18nc("@action:button", "Application Menu")
                             display: Controls.AbstractButton.IconOnly
-                            icon.width: Kirigami.Units.iconSizes.small
-                            icon.height: Kirigami.Units.iconSizes.small
 
                             down: pressed || applicationMenu.visible
                             onClicked: applicationMenu.open()

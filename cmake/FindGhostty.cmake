@@ -46,6 +46,17 @@ block(SCOPE_FOR VARIABLES PROPAGATE Ghostty_FOUND Ghostty_VERSION)
             find_package(PkgConfig QUIET)
 
             if(PkgConfig_FOUND)
+                if(NOT CMAKE_CROSSCOMPILING AND NOT CMAKE_SYSROOT AND "$ENV{PKG_CONFIG_SYSROOT_DIR}" STREQUAL "")
+                    pkg_get_variable(_Ghostty_prefix libghostty-vt prefix)
+
+                    if(_Ghostty_prefix AND NOT IS_DIRECTORY "${_Ghostty_prefix}")
+                        # HACK: Ghostty 1.4 includes DESTDIR in its pkg-config prefix.
+                        # Relocate an absent native prefix until this is fixed upstream.
+                        # Keep caller arguments last so explicit overrides still win.
+                        list(PREPEND PKG_CONFIG_ARGN --define-prefix)
+                    endif()
+                endif()
+
                 pkg_check_modules(PC_Ghostty QUIET IMPORTED_TARGET libghostty-vt)
             endif()
 

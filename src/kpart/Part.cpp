@@ -774,7 +774,7 @@ void Part::setupActions()
         }
     });
 
-    add("clear-history-and-reset", i18nd("kwi", "Reset and Clear Terminal"), "edit-clear-history", {}, [this] {
+    add("clear-history-and-reset", i18nd("kwi", "Reset and Clear Terminal"), "edit-clear-history", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_K), [this] {
         if (activeSession()) {
             activeSession()->resetTerminal();
         }

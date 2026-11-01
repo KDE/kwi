@@ -43,7 +43,7 @@ QtObject {
         AC.ActionData { name: "selection_mode"; text: KI18n.i18nc("@action", "Keyboard Selection Mode"); icon.name: "edit-select"; defaultShortcut: "Ctrl+Shift+D" }
         AC.ActionData { name: "save_output"; text: KI18n.i18nc("@action", "Save Output As…"); icon.name: "document-save-as"; defaultShortcut: "Ctrl+Shift+S" }
         AC.ActionData { name: "clear_history"; text: KI18n.i18nc("@action", "Clear Scrollback"); icon.name: "edit-clear-history" }
-        AC.ActionData { name: "reset_terminal"; text: KI18n.i18nc("@action", "Reset Terminal"); icon.name: "view-refresh" }
+        AC.ActionData { name: "reset_terminal"; text: KI18n.i18nc("@action", "Reset Terminal"); icon.name: "view-refresh"; defaultShortcut: "Ctrl+Shift+K"}
         AC.ActionData { name: "find"; text: KI18n.i18nc("@action", "Find…"); icon.name: "edit-find"; defaultShortcut: "Ctrl+Shift+F" }
         AC.StandardActionData { standardAction: AC.StandardActionData.FindNext }
         AC.StandardActionData { standardAction: AC.StandardActionData.FindPrev }

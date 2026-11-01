@@ -833,14 +833,18 @@ Kirigami.ApplicationWindow {
                             display: Controls.AbstractButton.IconOnly
                             Kirigami.MnemonicData.enabled: false
 
+                            down: pressed || presetMenu.visible
                             onClicked: presetMenu.open()
 
                             Controls.ToolTip.text: text
-                            Controls.ToolTip.visible: hovered
+                            Controls.ToolTip.visible: (hovered || activeFocus) && !presetMenu.visible
                             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 
                             NewTabPresetMenu {
                                 id: presetMenu
+
+                                modal: true
+                                dim: false
 
                                 objectName: "newTabPresetMenu"
                                 y: root.appSettings.tabBarAtBottom ? -height : presetMenuButton.height

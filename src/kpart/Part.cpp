@@ -726,9 +726,9 @@ void Part::setupActions()
         }
     });
 
-    KActionCollection::setDefaultShortcut(paste, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_V));
+    KActionCollection::setDefaultShortcuts(paste, {QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_V), QKeySequence(Qt::SHIFT | Qt::Key_Insert)});
 
-    add("paste-selection", i18nd("kwi", "Paste Selection"), "edit-paste", QKeySequence(Qt::SHIFT | Qt::Key_Insert), [this] {
+    add("paste-selection", i18nd("kwi", "Paste Selection"), "edit-paste", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Insert), [this] {
         if (activeWidget()) {
             activeWidget()->terminalView()->pasteSelection();
         }

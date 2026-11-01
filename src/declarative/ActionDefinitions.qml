@@ -37,8 +37,8 @@ QtObject {
         text: KI18n.i18nc("@title:group", "Text and Output")
 
         AC.ActionData { name: "copy"; text: KI18n.i18nc("@action", "Copy"); icon.name: "edit-copy"; defaultShortcut: "Ctrl+Shift+C" }
-        AC.ActionData { name: "paste"; text: KI18n.i18nc("@action", "Paste"); icon.name: "edit-paste"; defaultShortcut: "Ctrl+Shift+V" }
-        AC.ActionData { name: "paste_selection"; text: KI18n.i18nc("@action", "Paste Selection"); icon.name: "edit-paste"; defaultShortcut: "Shift+Ins" }
+        AC.ActionData { name: "paste"; text: KI18n.i18nc("@action", "Paste"); icon.name: "edit-paste"; defaultShortcut: "Ctrl+Shift+V"; defaultAlternateShortcut: "Shift+Ins" }
+        AC.ActionData { name: "paste_selection"; text: KI18n.i18nc("@action", "Paste Selection"); icon.name: "edit-paste"; defaultShortcut: "Ctrl+Shift+Ins" }
         AC.ActionData { name: "select_all"; text: KI18n.i18nc("@action", "Select All"); icon.name: "edit-select-all" }
         AC.ActionData { name: "selection_mode"; text: KI18n.i18nc("@action", "Keyboard Selection Mode"); icon.name: "edit-select"; defaultShortcut: "Ctrl+Shift+D" }
         AC.ActionData { name: "save_output"; text: KI18n.i18nc("@action", "Save Output As…"); icon.name: "document-save-as"; defaultShortcut: "Ctrl+Shift+S" }

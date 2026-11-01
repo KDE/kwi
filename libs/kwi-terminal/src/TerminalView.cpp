@@ -675,6 +675,7 @@ void TerminalView::updatePolish()
 void TerminalView::updateMetrics()
 {
     m_font = m_fontFamily.isEmpty() ? QFontDatabase::systemFont(QFontDatabase::FixedFont) : QFont(m_fontFamily);
+    m_font.setStyleHint(QFont::Monospace, m_font.styleStrategy());
     m_font.setPointSizeF(qBound(6.0, fontPointSize() + m_zoom, 72.0));
     const qreal dpr{window() ? window()->effectiveDevicePixelRatio() : 1};
     const qreal dpi{window() && window()->screen() ? window()->screen()->logicalDotsPerInch() : 96};

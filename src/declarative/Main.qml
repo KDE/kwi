@@ -887,10 +887,11 @@ Kirigami.ApplicationWindow {
                             icon.width: Kirigami.Units.iconSizes.small
                             icon.height: Kirigami.Units.iconSizes.small
 
+                            down: pressed || applicationMenu.visible
                             onClicked: applicationMenu.open()
 
                             Controls.ToolTip.text: menuAction.text + (menuAction.shortcut ? " (" + menuAction.shortcut + ")" : "")
-                            Controls.ToolTip.visible: hovered
+                            Controls.ToolTip.visible: (hovered || activeFocus) && !applicationMenu.visible
                             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 
                             Controls.Menu {
@@ -898,6 +899,9 @@ Kirigami.ApplicationWindow {
 
                                 objectName: "applicationMenu"
                                 y: root.appSettings.tabBarAtBottom ? -height : menuButton.height
+
+                                modal: true
+                                dim: false
 
                                 Controls.MenuItem {
                                     action: newWindowAction

@@ -58,15 +58,17 @@ void SessionModel::setCurrentIndex(int index)
         return;
     }
 
-    m_lastUsed = currentSession();
     m_currentIndex = index;
+    auto *session = currentSession();
+    m_activationHistory.removeOne(session);
+    m_activationHistory.prepend(session);
 
     Q_EMIT currentIndexChanged();
 }
 
 TerminalSession *SessionModel::currentSession() const
 {
-    return m_currentIndex >= 0 && m_currentIndex < count() ? m_sessions[m_currentIndex] : nullptr;
+    return m_sessions.value(m_currentIndex);
 }
 
 int SessionModel::indexOf(TerminalSession *session) const
@@ -200,7 +202,7 @@ void SessionModel::moveSession(int from, int to)
 
 void SessionModel::activateLastUsed()
 {
-    setCurrentIndex(m_sessions.indexOf(m_lastUsed));
+    setCurrentIndex(m_sessions.indexOf(m_activationHistory.value(1)));
 }
 
 void SessionModel::confirmClose(quint64 requestId, bool doNotAskAgain)
@@ -344,17 +346,12 @@ void SessionModel::eraseSession(TerminalSession *session)
     const auto *current = currentSession();
     beginRemoveRows({}, row, row);
     m_sessions.removeAt(row);
+    m_activationHistory.removeOne(session);
+    m_currentIndex = m_sessions.indexOf(current == session ? m_activationHistory.value(0) : current);
     endRemoveRows();
     disconnect(session, &TerminalSession::exited, this, nullptr);
 
     Q_EMIT sessionRemoved(session);
-
-    m_currentIndex = current == session ? qMin(row, count() - 1) : m_sessions.indexOf(current);
-
-    if (m_lastUsed == session) {
-        m_lastUsed.clear();
-    }
-
     Q_EMIT countChanged();
     Q_EMIT currentIndexChanged();
 }

@@ -101,9 +101,9 @@ private:
     TerminalSettings *m_settings;
     TerminalPresets *m_presets;
     QList<TerminalSession *> m_sessions{};
+    QList<TerminalSession *> m_activationHistory{};
     QList<QPointer<TerminalSession>> m_closing{};
     std::optional<CloseRequest> m_pendingClose;
-    QPointer<TerminalSession> m_lastUsed{};
     quint64 m_closeRequestSerial{0};
     int m_currentIndex{-1};
 };

@@ -165,8 +165,6 @@ Kirigami.ApplicationWindow {
                 pasteDialog.reject();
             }
 
-            root.terminal.clearSearch();
-
             if (root.findVisible && findBar.text.length > 0) {
                 root.search(true);
             }

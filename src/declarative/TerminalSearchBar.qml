@@ -97,15 +97,6 @@ Controls.ToolBar {
                 LayoutMirroring.enabled: root.mirrored
                 LayoutMirroring.childrenInherit: true
 
-                Controls.BusyIndicator {
-                    running: root.terminal.searchBusy
-                    visible: running
-                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                    implicitHeight: implicitWidth
-                    Accessible.name: KI18n.i18nc("@info:accessibility", "Searching terminal output")
-                    Accessible.ignored: !running
-                }
-
                 Controls.Label {
                     id: feedbackLabel
 
@@ -127,6 +118,15 @@ Controls.ToolBar {
                         visible: feedbackLabel.truncated && (statusHover.hovered || findField.activeFocus)
                         delay: Kirigami.Units.toolTipDelay
                     }
+                }
+
+                Controls.BusyIndicator {
+                    objectName: "searchProgress"
+                    running: root.terminal.searchBusy
+                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                    implicitHeight: implicitWidth
+                    Accessible.name: KI18n.i18nc("@info:accessibility", "Searching terminal output")
+                    Accessible.ignored: !running
                 }
             }
 

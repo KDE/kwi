@@ -11,12 +11,22 @@ import org.kde.kwi.terminal
 Controls.ToolBar {
     id: root
 
+    objectName: "terminalSearchBar"
+
     required property TerminalView terminal
+    property bool tabBarAtTop: false
     property alias text: findField.text
 
     signal closeRequested()
 
     Keys.onEscapePressed: root.closeRequested()
+
+    Binding {
+        when: root.tabBarAtTop
+        target: root.Kirigami.Theme
+        property: "colorSet"
+        value: Kirigami.Theme.Window
+    }
 
     function focusSearch(): void {
         findField.forceActiveFocus();

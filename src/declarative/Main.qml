@@ -1108,6 +1108,17 @@ Kirigami.ApplicationWindow {
                 Layout.fillHeight: true
                 spacing: 0
 
+                TerminalSearchBar {
+                    id: findBar
+
+                    visible: root.findVisible
+                    Layout.fillWidth: true
+                    terminal: root.terminal
+                    tabBarAtTop: !root.appSettings.tabBarAtBottom
+
+                    onCloseRequested: root.hideFind()
+                }
+
                 Kirigami.InlineMessage {
                     objectName: "sessionErrorMessage"
                     Layout.fillWidth: true
@@ -1235,16 +1246,6 @@ Kirigami.ApplicationWindow {
                             action: openDirectoryAction
                         }
                     }
-                }
-
-                TerminalSearchBar {
-                    id: findBar
-
-                    visible: root.findVisible
-                    Layout.fillWidth: true
-                    terminal: root.terminal
-
-                    onCloseRequested: root.hideFind()
                 }
             }
         }

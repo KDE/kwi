@@ -747,355 +747,349 @@ Kirigami.ApplicationWindow {
             rowSpacing: 0
             columnSpacing: 0
 
-            Item {
+            Controls.ToolBar {
+                id: terminalToolBar
+
+                objectName: "terminalToolBar"
                 Layout.row: root.appSettings.tabBarAtBottom ? 1 : 0
                 Layout.fillWidth: true
-                implicitHeight: terminalToolBar.height
+                position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
+                padding: Kirigami.Units.smallSpacing
+                topPadding: position === Controls.ToolBar.Footer ? 0 : padding
+                bottomPadding: position === Controls.ToolBar.Header ? 0 : padding
+                Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
+                Kirigami.Theme.inherit: false
 
-                Controls.ToolBar {
-                    id: terminalToolBar
+                background: Rectangle {
+                    // Match qqc2-desktop-style's DefaultToolBarBackground minimum.
+                    implicitHeight: 40
+                    color: Kirigami.Theme.backgroundColor
+                }
 
-                    objectName: "terminalToolBar"
-                    width: parent.width
-                    position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
-                    padding: Kirigami.Units.smallSpacing
-                    topPadding: position === Controls.ToolBar.Footer ? 0 : padding
-                    bottomPadding: position === Controls.ToolBar.Header ? 0 : padding
-                    Kirigami.AlignedSize.height: implicitHeight
-                    Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
-                    Kirigami.Theme.inherit: false
+                Item {
+                    id: tabFrame
 
-                    background: Rectangle {
-                        // Match qqc2-desktop-style's DefaultToolBarBackground minimum.
-                        implicitHeight: 40
-                        color: Kirigami.Theme.backgroundColor
+                    objectName: "terminalTabFrame"
+                    parent: terminalToolBar
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    y: terminalToolBar.position === Controls.ToolBar.Footer ? 0 : terminalToolBar.height - height
+                    Kirigami.AlignedSize.height: 1
+                    z: 1
+
+                    readonly property real dpr: typeof root.devicePixelRatio === "number" ? root.devicePixelRatio : Screen.devicePixelRatio
+                    readonly property real tabOrigin: terminalToolBar.contentItem.x + sessionTabs.x
+                    readonly property real gapStart: Math.max(0, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabLeft) * dpr) / dpr))
+                    readonly property real gapEnd: Math.max(gapStart, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabRight) * dpr) / dpr))
+
+                    Kirigami.Separator {
+                        width: tabFrame.gapStart
+                        height: tabFrame.height
                     }
 
-                    Item {
-                        id: tabFrame
+                    Kirigami.Separator {
+                        x: tabFrame.gapEnd
+                        width: tabFrame.width - x
+                        height: tabFrame.height
+                    }
+                }
 
-                        objectName: "terminalTabFrame"
-                        parent: terminalToolBar
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        y: terminalToolBar.position === Controls.ToolBar.Footer ? 0 : terminalToolBar.height - height
-                        Kirigami.AlignedSize.height: 1
-                        z: 1
+                contentItem: RowLayout {
+                    objectName: "terminalToolBarContents"
+                    spacing: Kirigami.Units.smallSpacing
 
-                        readonly property real dpr: typeof root.devicePixelRatio === "number" ? root.devicePixelRatio : Screen.devicePixelRatio
-                        readonly property real tabOrigin: terminalToolBar.contentItem.x + sessionTabs.x
-                        readonly property real gapStart: Math.max(0, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabLeft) * dpr) / dpr))
-                        readonly property real gapEnd: Math.max(gapStart, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabRight) * dpr) / dpr))
+                    Controls.ToolButton {
+                        action: newTabAction
+                        objectName: "newTabButton"
 
-                        Kirigami.Separator {
-                            width: tabFrame.gapStart
-                            height: tabFrame.height
-                        }
+                        // Terminal Alt keys are reserved for explicitly configured shortcuts.
+                        Kirigami.MnemonicData.enabled: false
+                        display: Controls.AbstractButton.IconOnly
+                        icon.width: Kirigami.Units.iconSizes.small
+                        icon.height: Kirigami.Units.iconSizes.small
+                        Controls.ToolTip.text: newTabAction.text + (newTabAction.shortcut ? " (" + newTabAction.shortcut + ")" : "")
+                        Controls.ToolTip.visible: hovered
+                        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    }
 
-                        Kirigami.Separator {
-                            x: tabFrame.gapEnd
-                            width: tabFrame.width - x
-                            height: tabFrame.height
+                    Controls.ToolButton {
+                        id: presetMenuButton
+
+                        objectName: "newTabPresetButton"
+                        focusPolicy: Qt.TabFocus
+                        visible: root.terminalPresets.names.length > 1
+                        enabled: root.terminalActionsEnabled
+                        text: KI18n.i18nc("@action:button", "New Tab with Preset")
+                        icon.name: "arrow-down"
+                        icon.width: Kirigami.Units.iconSizes.small
+                        icon.height: Kirigami.Units.iconSizes.small
+                        display: Controls.AbstractButton.IconOnly
+                        Kirigami.MnemonicData.enabled: false
+
+                        down: pressed || presetMenu.visible
+                        onClicked: presetMenu.open()
+
+                        Controls.ToolTip.text: text
+                        Controls.ToolTip.visible: (hovered || activeFocus) && !presetMenu.visible
+                        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                        NewTabPresetMenu {
+                            id: presetMenu
+
+                            modal: true
+                            dim: false
+
+                            objectName: "newTabPresetMenu"
+                            y: root.appSettings.tabBarAtBottom ? -height : presetMenuButton.height
                         }
                     }
 
-                    contentItem: RowLayout {
-                        objectName: "terminalToolBarContents"
-                        spacing: Kirigami.Units.smallSpacing
+                    TerminalTabs {
+                        id: sessionTabs
 
-                        Controls.ToolButton {
-                            action: newTabAction
-                            objectName: "newTabButton"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        enabled: root.terminalActionsEnabled
+                        sessions: root.sessionModel
+                        dragController: root.tabDragController
+                        position: root.appSettings.tabBarAtBottom ? Controls.TabBar.Footer : Controls.TabBar.Header
+                        showStatusIcons: root.appSettings.showTabStatusIcons
 
-                            // Terminal Alt keys are reserved for explicitly configured shortcuts.
-                            Kirigami.MnemonicData.enabled: false
-                            display: Controls.AbstractButton.IconOnly
-                            icon.width: Kirigami.Units.iconSizes.small
-                            icon.height: Kirigami.Units.iconSizes.small
-                            Controls.ToolTip.text: newTabAction.text + (newTabAction.shortcut ? " (" + newTabAction.shortcut + ")" : "")
-                            Controls.ToolTip.visible: hovered
-                            Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        onNewTabRequested: newTabAction.trigger()
+                        onActivated: index => {
+                            root.sessionModel.currentIndex = index;
+                            root.focusTerminal();
                         }
 
-                        Controls.ToolButton {
-                            id: presetMenuButton
-
-                            objectName: "newTabPresetButton"
-                            focusPolicy: Qt.TabFocus
-                            visible: root.terminalPresets.names.length > 1
-                            enabled: root.terminalActionsEnabled
-                            text: KI18n.i18nc("@action:button", "New Tab with Preset")
-                            icon.name: "arrow-down"
-                            icon.width: Kirigami.Units.iconSizes.small
-                            icon.height: Kirigami.Units.iconSizes.small
-                            display: Controls.AbstractButton.IconOnly
-                            Kirigami.MnemonicData.enabled: false
-
-                            down: pressed || presetMenu.visible
-                            onClicked: presetMenu.open()
-
-                            Controls.ToolTip.text: text
-                            Controls.ToolTip.visible: (hovered || activeFocus) && !presetMenu.visible
-                            Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
-
-                            NewTabPresetMenu {
-                                id: presetMenu
-
-                                modal: true
-                                dim: false
-
-                                objectName: "newTabPresetMenu"
-                                y: root.appSettings.tabBarAtBottom ? -height : presetMenuButton.height
-                            }
+                        onContextRequested: session => {
+                            tabMenu.targetSession = session;
+                            tabMenu.popup();
                         }
 
-                        TerminalTabs {
-                            id: sessionTabs
-
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            enabled: root.terminalActionsEnabled
-                            sessions: root.sessionModel
-                            dragController: root.tabDragController
-                            position: root.appSettings.tabBarAtBottom ? Controls.TabBar.Footer : Controls.TabBar.Header
-                            showStatusIcons: root.appSettings.showTabStatusIcons
-
-                            onNewTabRequested: newTabAction.trigger()
-                            onActivated: index => {
-                                root.sessionModel.currentIndex = index;
-                                root.focusTerminal();
-                            }
-
-                            onContextRequested: session => {
-                                tabMenu.targetSession = session;
-                                tabMenu.popup();
-                            }
-
-                            onRenameRequested: index => {
-                                root.sessionModel.currentIndex = index;
-                                root.showRename(root.currentSession);
-                            }
+                        onRenameRequested: index => {
+                            root.sessionModel.currentIndex = index;
+                            root.showRename(root.currentSession);
                         }
+                    }
 
-                        Controls.ToolButton {
-                            id: menuButton
+                    Controls.ToolButton {
+                        id: menuButton
 
-                            objectName: "applicationMenuButton"
-                            focusPolicy: Qt.TabFocus
-                            Kirigami.MnemonicData.enabled: false
-                            icon.name: "application-menu"
-                            text: KI18n.i18nc("@action:button", "Application Menu")
-                            display: Controls.AbstractButton.IconOnly
-                            icon.width: Kirigami.Units.iconSizes.small
-                            icon.height: Kirigami.Units.iconSizes.small
+                        objectName: "applicationMenuButton"
+                        focusPolicy: Qt.TabFocus
+                        Kirigami.MnemonicData.enabled: false
+                        icon.name: "application-menu"
+                        text: KI18n.i18nc("@action:button", "Application Menu")
+                        display: Controls.AbstractButton.IconOnly
+                        icon.width: Kirigami.Units.iconSizes.small
+                        icon.height: Kirigami.Units.iconSizes.small
 
-                            down: pressed || applicationMenu.visible
-                            onClicked: applicationMenu.open()
+                        down: pressed || applicationMenu.visible
+                        onClicked: applicationMenu.open()
 
-                            Controls.ToolTip.text: menuAction.text + (menuAction.shortcut ? " (" + menuAction.shortcut + ")" : "")
-                            Controls.ToolTip.visible: (hovered || activeFocus) && !applicationMenu.visible
-                            Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        Controls.ToolTip.text: menuAction.text + (menuAction.shortcut ? " (" + menuAction.shortcut + ")" : "")
+                        Controls.ToolTip.visible: (hovered || activeFocus) && !applicationMenu.visible
+                        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                        Controls.Menu {
+                            id: applicationMenu
+
+                            objectName: "applicationMenu"
+                            y: root.appSettings.tabBarAtBottom ? -height : menuButton.height
+
+                            modal: true
+                            dim: false
+
+                            Controls.MenuItem {
+                                action: newWindowAction
+                            }
+
+                            Controls.MenuItem {
+                                action: newTabAction
+                            }
+
+                            NewTabPresetMenu {}
 
                             Controls.Menu {
-                                id: applicationMenu
-
-                                objectName: "applicationMenu"
-                                y: root.appSettings.tabBarAtBottom ? -height : menuButton.height
-
-                                modal: true
-                                dim: false
+                                title: KI18n.i18nc("@title:menu", "Tabs")
 
                                 Controls.MenuItem {
-                                    action: newWindowAction
+                                    action: renameTabAction
                                 }
 
                                 Controls.MenuItem {
-                                    action: newTabAction
+                                    action: nextTabAction
                                 }
 
-                                NewTabPresetMenu {}
-
-                                Controls.Menu {
-                                    title: KI18n.i18nc("@title:menu", "Tabs")
-
-                                    Controls.MenuItem {
-                                        action: renameTabAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: nextTabAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: previousTabAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: lastUsedTabAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: searchTabsAction
-                                    }
-
-                                    Controls.MenuSeparator {}
-
-                                    Controls.MenuItem {
-                                        action: moveTabLeftAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: moveTabRightAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: detachTabAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: closeTabAction
-                                    }
+                                Controls.MenuItem {
+                                    action: previousTabAction
                                 }
 
-                                Controls.Menu {
-                                    title: KI18n.i18nc("@title:menu", "Edit")
-
-                                    Controls.MenuItem {
-                                        action: copyAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: pasteAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: pasteSelectionAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: selectAllAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: selectionModeAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: readOnlyAction
-                                    }
-
-                                    Controls.MenuSeparator {}
-
-                                    Controls.MenuItem {
-                                        action: findAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: findNextAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: findPreviousAction
-                                    }
+                                Controls.MenuItem {
+                                    action: lastUsedTabAction
                                 }
 
-                                Controls.Menu {
-                                    title: KI18n.i18nc("@title:menu", "Output")
-
-                                    Controls.MenuItem {
-                                        action: saveOutputAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: clearHistoryAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: resetTerminalAction
-                                    }
-
-                                    Controls.MenuSeparator {}
-
-                                    Controls.MenuItem {
-                                        action: previousPromptAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: nextPromptAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: copyCommandOutputAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: openDirectoryAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: openLinkChooserAction
-                                    }
-
-                                    Controls.MenuSeparator {}
-
-                                    Controls.MenuItem {
-                                        action: monitorActivityAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: monitorSilenceAction
-                                    }
-                                }
-
-                                Controls.Menu {
-                                    title: KI18n.i18nc("@title:menu", "View")
-
-                                    Controls.MenuItem {
-                                        action: zoomInAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: zoomOutAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: resetZoomAction
-                                    }
-
-                                    Controls.MenuItem {
-                                        action: fullscreenAction
-                                    }
+                                Controls.MenuItem {
+                                    action: searchTabsAction
                                 }
 
                                 Controls.MenuSeparator {}
 
                                 Controls.MenuItem {
-                                    action: settingsAction
+                                    action: moveTabLeftAction
                                 }
 
                                 Controls.MenuItem {
-                                    action: notificationsAction
+                                    action: moveTabRightAction
                                 }
 
                                 Controls.MenuItem {
-                                    text: KI18n.i18nc("@action", "About Kwi")
-                                    icon.name: "help-about"
-
-                                    onTriggered: aboutDialog.open()
+                                    action: detachTabAction
                                 }
 
                                 Controls.MenuItem {
-                                    text: KI18n.i18nc("@action", "About KDE")
-                                    icon.name: "kde"
+                                    action: closeTabAction
+                                }
+                            }
 
-                                    onTriggered: aboutKdeDialog.open()
+                            Controls.Menu {
+                                title: KI18n.i18nc("@title:menu", "Edit")
+
+                                Controls.MenuItem {
+                                    action: copyAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: pasteAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: pasteSelectionAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: selectAllAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: selectionModeAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: readOnlyAction
                                 }
 
                                 Controls.MenuSeparator {}
 
                                 Controls.MenuItem {
-                                    action: quitAction
+                                    action: findAction
                                 }
+
+                                Controls.MenuItem {
+                                    action: findNextAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: findPreviousAction
+                                }
+                            }
+
+                            Controls.Menu {
+                                title: KI18n.i18nc("@title:menu", "Output")
+
+                                Controls.MenuItem {
+                                    action: saveOutputAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: clearHistoryAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: resetTerminalAction
+                                }
+
+                                Controls.MenuSeparator {}
+
+                                Controls.MenuItem {
+                                    action: previousPromptAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: nextPromptAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: copyCommandOutputAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: openDirectoryAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: openLinkChooserAction
+                                }
+
+                                Controls.MenuSeparator {}
+
+                                Controls.MenuItem {
+                                    action: monitorActivityAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: monitorSilenceAction
+                                }
+                            }
+
+                            Controls.Menu {
+                                title: KI18n.i18nc("@title:menu", "View")
+
+                                Controls.MenuItem {
+                                    action: zoomInAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: zoomOutAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: resetZoomAction
+                                }
+
+                                Controls.MenuItem {
+                                    action: fullscreenAction
+                                }
+                            }
+
+                            Controls.MenuSeparator {}
+
+                            Controls.MenuItem {
+                                action: settingsAction
+                            }
+
+                            Controls.MenuItem {
+                                action: notificationsAction
+                            }
+
+                            Controls.MenuItem {
+                                text: KI18n.i18nc("@action", "About Kwi")
+                                icon.name: "help-about"
+
+                                onTriggered: aboutDialog.open()
+                            }
+
+                            Controls.MenuItem {
+                                text: KI18n.i18nc("@action", "About KDE")
+                                icon.name: "kde"
+
+                                onTriggered: aboutKdeDialog.open()
+                            }
+
+                            Controls.MenuSeparator {}
+
+                            Controls.MenuItem {
+                                action: quitAction
                             }
                         }
                     }

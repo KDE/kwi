@@ -1164,6 +1164,8 @@ Kirigami.ApplicationWindow {
                         id: terminalMenu
 
                         objectName: "terminalContextMenu"
+                        modal: true
+                        dim: false
                         property url linkUrl
 
                         WebShortcutModel {

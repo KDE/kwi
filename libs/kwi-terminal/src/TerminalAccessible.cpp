@@ -627,7 +627,7 @@ void TerminalView::updateAccessibility()
     }
 
     // Do not emit accessibility updates while the QML scene is being torn down.
-    if (!qmlContext(this)->isValid()) {
+    if (const auto *context = qmlContext(this); context && !context->isValid()) {
         return;
     }
 

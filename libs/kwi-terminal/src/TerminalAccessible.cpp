@@ -9,6 +9,7 @@
 #include <QAccessibleObject>
 #include <QKeySequence>
 #include <QPair>
+#include <QQmlContext>
 #include <QQmlEngine>
 #include <QQmlProperty>
 #include <QQuickRenderControl>
@@ -622,6 +623,11 @@ void TerminalView::installAccessibility()
 void TerminalView::updateAccessibility()
 {
     if (!QAccessible::isActive()) {
+        return;
+    }
+
+    // Do not emit accessibility updates while the QML scene is being torn down.
+    if (!qmlContext(this)->isValid()) {
         return;
     }
 

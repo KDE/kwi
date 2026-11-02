@@ -43,12 +43,18 @@ Controls.ToolBar {
     }
 
     RowLayout {
+        id: searchControls
+
         anchors.fill: parent
         anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
 
         Controls.TextField {
             id: findField
+
+            readonly property bool hasResults: text.length > 0 && !findTimer.running && !root.terminal.searchBusy && root.terminal.searchMatchCount >= 0
 
             objectName: "findField"
             // The status padding depends on width, so exclude it from implicitWidth.
@@ -58,6 +64,10 @@ Controls.ToolBar {
             Accessible.name: KI18n.i18nc("@label:textbox", "Find in terminal")
             Accessible.description: root.terminal.searchStatus
             Accessible.searchEdit: true
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
+            Kirigami.Theme.backgroundColor: !hasResults ? searchControls.Kirigami.Theme.backgroundColor : root.terminal.searchMatchCount > 0 ? searchControls.Kirigami.Theme.positiveBackgroundColor : searchControls.Kirigami.Theme.negativeBackgroundColor
+            palette.base: Kirigami.Theme.backgroundColor
 
             // Reserve status space so updates don't move the text or buttons.
             leftPadding: root.mirrored ? feedback.width + padding + Kirigami.Units.smallSpacing : padding

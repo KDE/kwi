@@ -596,6 +596,11 @@ bool TerminalView::isSearchBusy() const
     return m_search->isBusy();
 }
 
+qsizetype TerminalView::searchMatchCount() const
+{
+    return m_search->matchCount();
+}
+
 qreal TerminalView::scrollPosition() const
 {
     return m_frame.scrollTotal ? qreal(m_frame.scrollOffset) / m_frame.scrollTotal : 0;

@@ -87,6 +87,11 @@ bool TerminalSearch::isBusy() const
     return m_busy;
 }
 
+qsizetype TerminalSearch::matchCount() const
+{
+    return m_matchCount;
+}
+
 QRegion TerminalSearch::viewportMatches(bool viewportChanged)
 {
     if (!m_search)
@@ -114,14 +119,15 @@ QRegion TerminalSearch::viewportMatches(bool viewportChanged)
     return *matches;
 }
 
-void TerminalSearch::setStatus(const QString &statusText, bool busy)
+void TerminalSearch::setStatus(const QString &statusText, bool busy, qsizetype matches)
 {
-    if (m_status == statusText && m_busy == busy) {
+    if (m_status == statusText && m_busy == busy && m_matchCount == matches) {
         return;
     }
 
     m_status = statusText;
     m_busy = busy;
+    m_matchCount = matches;
 
     Q_EMIT statusChanged();
 }
@@ -209,7 +215,7 @@ void TerminalSearch::advance()
         m_stepTimer.start();
     }
 
-    setStatus(text, busy);
+    setStatus(text, busy, results.totalMatches);
 
     if (applied) {
         Q_EMIT matchApplied();

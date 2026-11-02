@@ -45,7 +45,9 @@ Controls.TabButton {
     signal closeRequested
     signal contextRequested
     signal renameRequested
-    signal dragRequested(point hotSpot)
+    signal dragRequested(point hotSpot, point scenePosition)
+    signal dragMoved(point scenePosition)
+    signal dragReleased(bool accepted)
     signal navigationRequested(int key)
 
     objectName: "terminalTab" + index
@@ -182,8 +184,20 @@ Controls.TabButton {
 
         onActiveChanged: {
             if (active && !closeButton.contains(closeButton.mapFromItem(control, centroid.pressPosition)))
-                control.dragRequested(centroid.pressPosition);
+                control.dragRequested(centroid.pressPosition, centroid.scenePosition);
         }
+
+        onCentroidChanged: {
+            if (active)
+                control.dragMoved(centroid.scenePosition);
+        }
+
+        onGrabChanged: transition => {
+            if (transition === PointerDevice.UngrabExclusive)
+                control.dragReleased(true);
+        }
+
+        onCanceled: control.dragReleased(false)
     }
 
     TapHandler {

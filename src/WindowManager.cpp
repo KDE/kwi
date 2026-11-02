@@ -166,7 +166,7 @@ void WindowManager::finishTabDrag(const QString &token, int action)
 
     m_dragFinishing = true;
 
-    // Defer teardown until Qt Quick returns from onDragFinished.
+    // Defer teardown until Qt Quick finishes handling the drag event.
     QTimer::singleShot(0, this, [this, token, action] {
         if (token != m_dragToken) {
             return;

@@ -281,8 +281,23 @@ RowLayout {
             acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
 
             onWheel: event => {
-                const delta = event.pixelDelta.x || event.pixelDelta.y || event.angleDelta.x / 2 || event.angleDelta.y / 2;
-                root.scrollTabs(-delta);
+                if ((event.device.capabilities & InputDevice.PixelScroll) || event.pixelDelta.x || event.pixelDelta.y || event.angleDelta.x) {
+                    rotation = 0;
+                    const delta = event.pixelDelta.x || event.pixelDelta.y || event.angleDelta.x / 2 || event.angleDelta.y / 2;
+                    root.scrollTabs(-delta);
+                    return;
+                }
+
+                // A wheel notch is 15 degrees; accumulate smaller wheel movements.
+                const direction = rotation >= 15 ? -1 : rotation <= -15 ? 1 : 0;
+
+                if (direction !== 0) {
+                    rotation = 0;
+                    const index = Math.max(0, Math.min(root.count - 1, root.currentIndex + direction));
+
+                    if (index !== root.currentIndex)
+                        root.activated(index);
+                }
             }
         }
 

@@ -53,13 +53,12 @@ void TerminalSearch::find(const QString &query, bool forward)
     }
 
     m_navigation = forward;
-    const auto results = m_search->results();
 
     if (!m_stepTimer.isActive()) {
         m_stepTimer.start();
     }
 
-    setStatus(results.totalMatches == 0 ? i18n("Searching…") : m_status, true);
+    setStatus(m_status, true, m_matchCount);
 }
 
 void TerminalSearch::clear()
@@ -201,10 +200,13 @@ void TerminalSearch::advance()
     }
 
     const bool busy{searchStatus != Status::Complete};
+    const bool awaitingResults{busy && results.totalMatches == 0};
     QString text;
 
-    if (results.totalMatches == 0) {
-        text = busy ? i18n("Searching…") : i18n("No matches");
+    if (awaitingResults) {
+        text = m_status;
+    } else if (results.totalMatches == 0) {
+        text = i18n("No matches");
     } else if (results.selectedIndex) {
         text = i18n("%1 of %2", *results.selectedIndex + 1, results.totalMatches);
     } else {
@@ -215,7 +217,7 @@ void TerminalSearch::advance()
         m_stepTimer.start();
     }
 
-    setStatus(text, busy, results.totalMatches);
+    setStatus(text, busy, awaitingResults ? m_matchCount : results.totalMatches);
 
     if (applied) {
         Q_EMIT matchApplied();

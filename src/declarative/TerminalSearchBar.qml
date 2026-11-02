@@ -54,7 +54,7 @@ Controls.ToolBar {
         Controls.TextField {
             id: findField
 
-            readonly property bool hasResults: text.length > 0 && !findTimer.running && !root.terminal.searchBusy && root.terminal.searchMatchCount >= 0
+            readonly property bool hasResults: text.length > 0 && root.terminal.searchMatchCount >= 0
 
             objectName: "findField"
             // The status padding depends on width, so exclude it from implicitWidth.

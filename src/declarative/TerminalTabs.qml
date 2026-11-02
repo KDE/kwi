@@ -277,22 +277,21 @@ RowLayout {
             }
         }
 
-        WheelHandler {
-            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+        MouseArea {
+            parent: root.view
+            anchors.fill: parent
+            z: 1
+            acceptedButtons: Qt.NoButton
+
+            property point accumulatedAngleDelta
 
             onWheel: event => {
-                if ((event.device.capabilities & InputDevice.PixelScroll) || event.pixelDelta.x || event.pixelDelta.y || event.angleDelta.x) {
-                    rotation = 0;
-                    const delta = event.pixelDelta.x || event.pixelDelta.y || event.angleDelta.x / 2 || event.angleDelta.y / 2;
-                    root.scrollTabs(-delta);
-                    return;
-                }
-
-                // A wheel notch is 15 degrees; accumulate smaller wheel movements.
-                const direction = rotation >= 15 ? -1 : rotation <= -15 ? 1 : 0;
+                accumulatedAngleDelta = Qt.point(accumulatedAngleDelta.x + event.angleDelta.x, accumulatedAngleDelta.y + event.angleDelta.y);
+                const direction = accumulatedAngleDelta.x >= 120 || accumulatedAngleDelta.y >= 120 ? -1
+                    : accumulatedAngleDelta.x <= -120 || accumulatedAngleDelta.y <= -120 ? 1 : 0;
 
                 if (direction !== 0) {
-                    rotation = 0;
+                    accumulatedAngleDelta = Qt.point(0, 0);
                     const index = Math.max(0, Math.min(root.count - 1, root.currentIndex + direction));
 
                     if (index !== root.currentIndex)

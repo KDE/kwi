@@ -285,7 +285,7 @@ void Part::addSessionWidget(TerminalSession *session)
     page->setSession(session);
     m_pages.insert(session, container);
     m_syncingTabs = true;
-    m_tabs->addTab(container, session->title());
+    m_tabs->insertTab(m_sessions->indexOf(session), container, session->title());
     m_syncingTabs = false;
 
     connect(

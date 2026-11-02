@@ -210,8 +210,7 @@ void WindowManager::completeTabDrop(const QString &token)
 
         source->moveSession(from, to);
     } else {
-        destination->adoptSession(source->takeSession(from));
-        destination->moveSession(destination->count() - 1, to);
+        destination->adoptSession(source->takeSession(from), to);
     }
 
     destination->setCurrentIndex(destination->indexOf(session));

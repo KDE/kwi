@@ -119,16 +119,18 @@ bool SessionModel::launchSession(const LaunchRequest &request, const QString &pr
     return true;
 }
 
-void SessionModel::adoptSession(TerminalSession *session)
+void SessionModel::adoptSession(TerminalSession *session, int index)
 {
     if (!session || m_sessions.contains(session)) {
         return;
     }
 
     session->setParent(this);
-    const int row{count()};
+    const auto *current = currentSession();
+    const int row{index < 0 ? m_currentIndex + 1 : qMin(index, count())};
     beginInsertRows({}, row, row);
-    m_sessions.append(session);
+    m_sessions.insert(row, session);
+    m_currentIndex = m_sessions.indexOf(current);
     endInsertRows();
 
     connect(session, &TerminalSession::exited, this, [this, session] {

@@ -58,7 +58,7 @@ public:
     [[nodiscard]] QList<QPointer<TerminalSession>> sessionSnapshot() const;
 
     bool launchSession(const LaunchRequest &request, const QString &presetName = {}, bool hold = false, const QString &title = {});
-    void adoptSession(TerminalSession *session);
+    void adoptSession(TerminalSession *session, int index = -1);
     [[nodiscard]] TerminalSession *takeSession(int index);
 
     Q_INVOKABLE void newSession();

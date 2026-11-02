@@ -45,7 +45,6 @@ Kirigami.ApplicationWindow {
 
     title: root.currentSession ? (root.appSettings.windowTitleFromApplication ? root.currentSession.applicationTitle : root.currentSession.title) : ""
 
-    property bool closingAllowed: false
     property WindowManager tabDragController: null
     property bool findVisible: false
     readonly property var terminal: terminalPane.terminal
@@ -151,14 +150,19 @@ Kirigami.ApplicationWindow {
     }
 
     onClosing: event => {
-        if (!closingAllowed) {
-            event.accepted = false;
-            root.sessionModel.closeAll();
-        }
+        event.accepted = false;
+        root.sessionModel.closeAll();
     }
 
     Connections {
         target: root.sessionModel
+
+        function onRowsAboutToBeRemoved(parent: var, first: int, last: int): void {
+            if (last - first + 1 === root.sessionModel.count) {
+                // Hide before removing the terminal's content from the scene.
+                root.hide();
+            }
+        }
 
         function onCurrentIndexChanged(): void {
             if (pasteDialog.visible && pasteDialog.targetSession !== root.sessionModel.currentSession) {
@@ -168,11 +172,6 @@ Kirigami.ApplicationWindow {
             if (root.findVisible && findBar.text.length > 0) {
                 root.search(true);
             }
-        }
-
-        function onAllClosed(): void {
-            root.closingAllowed = true;
-            Qt.callLater(root.close);
         }
 
         function onCloseConfirmationRequested(requestId: double, scope: int, title: string): void {

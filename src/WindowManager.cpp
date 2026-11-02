@@ -69,6 +69,8 @@ public:
     DesktopIntegration *desktop;
     QQmlApplicationEngine *engine;
     QPointer<QQuickWindow> window{};
+    // Keep asynchronous process cleanup alive after the window disappears.
+    QEventLoopLocker quitLock{};
     bool disposeAfterDrag{false};
 };
 
@@ -126,9 +128,6 @@ QString WindowManager::beginTabDrag(SessionModel *source, TerminalSession *sessi
     m_dragToken = QUuid::createUuid().toString(QUuid::WithoutBraces);
     m_dragSource = source;
     m_draggedSession = session;
-
-    // Keep the drag helper alive if the last process exits during the drag.
-    m_dragQuitLock = std::make_unique<QEventLoopLocker>();
 
     Q_EMIT draggedSessionChanged();
 
@@ -238,8 +237,6 @@ void WindowManager::clearTabDrag()
     if (sourceContext && sourceContext->disposeAfterDrag) {
         disposeWindow(sourceContext);
     }
-
-    m_dragQuitLock.reset();
 }
 
 void WindowManager::disposeWindow(WindowContext *context)
@@ -321,10 +318,8 @@ WindowManager::WindowContext *WindowManager::createWindow()
         }
     });
 
-    connect(context->window, &QWindow::visibleChanged, context, [this, context](bool visible) {
-        if (!visible && context->sessions->count() == 0) {
-            disposeWindow(context);
-        }
+    connect(context->sessions, &SessionModel::allClosed, context, [this, context] {
+        disposeWindow(context);
     });
 
     connect(context->sessions, &SessionModel::currentIndexChanged, this, &WindowManager::updateProgress);

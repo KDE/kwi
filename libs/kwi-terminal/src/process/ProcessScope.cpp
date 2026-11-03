@@ -191,6 +191,7 @@ private:
             {QStringLiteral("Description"), QDBusVariant{QGuiApplication::applicationDisplayName()}},
             {QStringLiteral("Slice"), QDBusVariant{QStringLiteral("app.slice")}},
             {QStringLiteral("CollectMode"), QDBusVariant{QStringLiteral("inactive-or-failed")}},
+            {QStringLiteral("ManagedOOMMemoryPressure"), QDBusVariant{QStringLiteral("kill")}},
             {QStringLiteral("JobTimeoutUSec"), QDBusVariant{quint64{scopeTimeoutMs} * 1000}},
             // Cancellation may reap the child while this request is pending.
             {QStringLiteral("PIDFDs"), QDBusVariant{QVariant::fromValue(QList<QDBusUnixFileDescriptor>{identity})}},
@@ -299,6 +300,7 @@ QStringList hostCommand(const QString &launcher, const QStringList &arguments)
                        QStringLiteral("--scope"),
                        QStringLiteral("--quiet"),
                        QStringLiteral("--collect"),
+                       QStringLiteral("--property=ManagedOOMMemoryPressure=kill"),
                        QStringLiteral("--expand-environment=no"),
                        QStringLiteral("--slice=app.slice"),
                        QStringLiteral("--description=%1").arg(QGuiApplication::applicationDisplayName()),

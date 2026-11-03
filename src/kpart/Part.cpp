@@ -741,6 +741,7 @@ void Part::setupActions()
         saveOutput();
     });
 
+    saveAs->setText(i18ndc("kwi", "@action", "Save Output As…"));
     KActionCollection::setDefaultShortcut(saveAs, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
 
     add("clear-history", i18nd("kwi", "Clear Scrollback"), "edit-clear-history", {}, [this] {
@@ -749,7 +750,7 @@ void Part::setupActions()
         }
     });
 
-    add("clear-history-and-reset", i18nd("kwi", "Reset and Clear Terminal"), "edit-clear-history", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_K), [this] {
+    add("clear-history-and-reset", i18ndc("kwi", "@action", "Reset Terminal"), "edit-clear-history", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_K), [this] {
         if (activeSession()) {
             activeSession()->resetTerminal();
         }

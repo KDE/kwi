@@ -244,7 +244,6 @@ Kirigami.ApplicationWindow {
         id: renameTabAction
 
         objectName: "renameTabAction"
-        text: KI18n.i18nc("@action", "Rename Tab…")
         AC.ActionCollection.collection: root.appShortcuts.collectionFor("rename_tab")
         AC.ActionCollection.action: "rename_tab"
         enabled: root.terminalActionsEnabled && root.currentSession
@@ -325,7 +324,6 @@ Kirigami.ApplicationWindow {
         id: searchTabsAction
 
         objectName: "searchTabsAction"
-        text: KI18n.i18nc("@action", "Search Tabs…")
         AC.ActionCollection.collection: root.appShortcuts.collectionFor("search_tabs")
         AC.ActionCollection.action: "search_tabs"
         enabled: root.terminalActionsEnabled

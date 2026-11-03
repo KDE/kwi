@@ -13,14 +13,14 @@ QtObject {
         AC.ActionData { name: "new_window"; text: KI18n.i18nc("@action", "New Window"); icon.name: "window-new"; defaultShortcut: "Ctrl+Shift+N" }
         AC.ActionData { name: "new_tab"; text: KI18n.i18nc("@action", "New Tab"); icon.name: "tab-new"; defaultShortcut: "Ctrl+Shift+T" }
         AC.ActionData { name: "close_tab"; text: KI18n.i18nc("@action", "Close Tab"); icon.name: "tab-close"; defaultShortcut: "Ctrl+Shift+W" }
-        AC.ActionData { name: "rename_tab"; text: KI18n.i18nc("@action", "Rename Tab"); icon.name: "edit-rename"; defaultShortcut: "Ctrl+Alt+S" }
+        AC.ActionData { name: "rename_tab"; text: KI18n.i18nc("@action", "Rename Tab…"); icon.name: "edit-rename"; defaultShortcut: "Ctrl+Alt+S" }
         AC.ActionData { name: "next_tab"; text: KI18n.i18nc("@action", "Next Tab"); icon.name: "go-next"; defaultShortcut: "Ctrl+PgDown" }
         AC.ActionData { name: "previous_tab"; text: KI18n.i18nc("@action", "Previous Tab"); icon.name: "go-previous"; defaultShortcut: "Ctrl+PgUp" }
         AC.ActionData { name: "last_used_tab"; text: KI18n.i18nc("@action", "Last Used Tab"); icon.name: "tab-duplicate"; defaultShortcut: "Ctrl+Tab" }
         AC.ActionData { name: "move_tab_left"; text: KI18n.i18nc("@action", "Move Tab Left"); icon.name: "go-previous"; defaultShortcut: "Ctrl+Alt+Left" }
         AC.ActionData { name: "move_tab_right"; text: KI18n.i18nc("@action", "Move Tab Right"); icon.name: "go-next"; defaultShortcut: "Ctrl+Alt+Right" }
         AC.ActionData { name: "detach_tab"; text: KI18n.i18nc("@action", "Detach Tab"); icon.name: "window-new" }
-        AC.ActionData { name: "search_tabs"; text: KI18n.i18nc("@action", "Search Tabs"); icon.name: "tab-search"; defaultShortcut: "Ctrl+Shift+O" }
+        AC.ActionData { name: "search_tabs"; text: KI18n.i18nc("@action", "Search Tabs…"); icon.name: "tab-search"; defaultShortcut: "Ctrl+Shift+O" }
         AC.ActionData { name: "tab_1"; text: KI18n.i18nc("@action", "Switch to Tab %1", 1); icon.name: "tab"; defaultShortcut: "Alt+1" }
         AC.ActionData { name: "tab_2"; text: KI18n.i18nc("@action", "Switch to Tab %1", 2); icon.name: "tab"; defaultShortcut: "Alt+2" }
         AC.ActionData { name: "tab_3"; text: KI18n.i18nc("@action", "Switch to Tab %1", 3); icon.name: "tab"; defaultShortcut: "Alt+3" }

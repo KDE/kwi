@@ -43,6 +43,9 @@ Kirigami.ApplicationWindow {
 
     background: Item {}
 
+    // Kwi provides its own configurable Quit action.
+    quitAction.enabled: false
+
     title: root.currentSession ? (root.appSettings.windowTitleFromApplication ? root.currentSession.applicationTitle : root.currentSession.title) : ""
 
     property WindowManager tabDragController: null
@@ -637,7 +640,7 @@ Kirigami.ApplicationWindow {
     }
 
     Kirigami.Action {
-        id: quitAction
+        id: applicationQuitAction
 
         objectName: "quitAction"
         AC.ActionCollection.collection: root.appShortcuts.collectionFor("quit")
@@ -1090,7 +1093,7 @@ Kirigami.ApplicationWindow {
                             Controls.MenuSeparator {}
 
                             Controls.MenuItem {
-                                action: quitAction
+                                action: applicationQuitAction
                             }
                         }
                     }

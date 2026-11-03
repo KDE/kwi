@@ -401,6 +401,7 @@ void HostProcess::finish(int exitCode)
     }
 
     m_phase = Phase::Finished;
+    m_earlyExits.clear();
     cancelQueries();
     m_info.foregroundPid = -1;
     m_info.foregroundName.clear();
@@ -416,7 +417,7 @@ void HostProcess::finish(int exitCode)
 
 void HostProcess::hostExited(uint pid, uint status)
 {
-    if (!m_pid && m_spawn) {
+    if (!m_pid && m_spawn && isRunning()) {
         m_earlyExits.insert(pid, status);
     } else if (pid == m_pid && isRunning()) {
         finish(WIFEXITED(status) ? WEXITSTATUS(status) : 128 + (WIFSIGNALED(status) ? WTERMSIG(status) : 0));

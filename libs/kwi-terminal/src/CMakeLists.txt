@@ -27,6 +27,7 @@ ecm_add_qml_module(kwi-terminal
         TerminalColors.h TerminalColors.cpp
         process/ProcessInfo_p.h process/ProcessQueryLimits_p.h
         process/ProcessController.cpp process/ProcessController_p.h
+        process/ProcessScope.cpp process/ProcessScope_p.h
         process/NativeProcess.cpp process/NativeProcess_p.h
         process/AttachedProcess.cpp process/AttachedProcess_p.h
         process/NativeProcessInfo.cpp process/NativeProcessInfo_p.h

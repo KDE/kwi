@@ -4,6 +4,7 @@
 #include "NativeProcessInfo_p.h"
 #include "NativeProcess_p.h"
 #include "ProcessLaunch.h"
+#include "ProcessScope_p.h"
 
 #include <KLocalizedString>
 #include <KPtyDevice>
@@ -149,21 +150,16 @@ bool NativeProcess::start(const TerminalLaunch &launch)
     m_process->setPtyChannels(KPtyProcess::AllChannels);
     m_process->setInputChannelMode(QProcess::ForwardedInputChannel);
     m_process->setUseUtmp(false);
+    m_process->setProcessEnvironment(environment);
     m_process->setProgram(executable, launch.arguments);
     m_process->setWorkingDirectory(m_info.directory);
     m_process->setUnixProcessParameters(QProcess::UnixProcessFlag::ResetSignalHandlers | QProcess::UnixProcessFlag::CloseFileDescriptors);
-    m_process->setProcessEnvironment(environment);
 
     connect(m_process.get(), &QProcess::started, this, [this] {
         m_pid = m_process->processId();
         device()->closeSlave();
-        const QPointer<NativeProcess> guard{this};
 
-        if (m_closing) {
-            beginClose();
-        }
-
-        if (guard != nullptr) {
+        if (!m_closing) {
             Q_EMIT started();
         }
     });
@@ -184,11 +180,14 @@ bool NativeProcess::start(const TerminalLaunch &launch)
             return;
         }
 
+        const QString message{m_closing ? QString{} : i18n("Could not run the terminal command: %1", m_process->errorString())};
         const QPointer<NativeProcess> guard{this};
 
-        // QPointer construction cannot invalidate this context-bound callback's receiver.
-        // NOLINTNEXTLINE(clang-analyzer-core.CallAndMessage)
-        Q_EMIT errorOccurred(i18n("Could not run the terminal command: %1", m_process->errorString()));
+        if (!message.isEmpty()) {
+            // QPointer construction cannot invalidate this context-bound callback's receiver.
+            // NOLINTNEXTLINE(clang-analyzer-core.CallAndMessage)
+            Q_EMIT errorOccurred(message);
+        }
 
         if (guard != nullptr && error == QProcess::FailedToStart) {
             closeTransport();
@@ -203,7 +202,7 @@ bool NativeProcess::start(const TerminalLaunch &launch)
     });
 
     const QPointer<NativeProcess> guard{this};
-    m_process->start();
+    ProcessScope::startNative(*m_process);
 
     if (guard != nullptr) {
         m_pid = m_process->processId();
@@ -310,9 +309,14 @@ void NativeProcess::close()
         return;
     }
 
-    if (!m_process || m_process->state() != QProcess::Starting) {
-        beginClose();
+    if (m_process && m_process->state() == QProcess::Starting) {
+        m_process->kill();
+        closeTransport();
+
+        return;
     }
+
+    beginClose();
 }
 
 }

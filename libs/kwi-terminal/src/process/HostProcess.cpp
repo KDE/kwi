@@ -5,6 +5,7 @@
 #include "HostProcess_p.h"
 #include "ProcessLaunch.h"
 #include "ProcessQueryLimits_p.h"
+#include "ProcessScope_p.h"
 
 #include <KLocalizedString>
 #include <KPtyDevice>
@@ -17,6 +18,7 @@
 #include <QProcessEnvironment>
 #include <QStringList>
 #include <QtConcurrentRun>
+#include <chrono>
 #include <csignal>
 #include <optional>
 #include <sys/wait.h>
@@ -139,6 +141,8 @@ HostProcess::HostProcess(QObject *parent)
                   QStringLiteral("HostCommandExited"),
                   this,
                   SLOT(hostExited(uint, uint)));
+    m_startupTimer.setSingleShot(true);
+    connect(&m_startupTimer, &QTimer::timeout, this, &HostProcess::probe);
 }
 
 HostProcess::~HostProcess()
@@ -174,9 +178,56 @@ bool HostProcess::start(const TerminalLaunch &launch)
     m_phase = Phase::Resolving;
     m_info.directory = launch.directory;
     m_info.busy = true;
-    resolve(launch);
+
+    if (launch.environmentChanges.contains(QStringLiteral("DBUS_SESSION_BUS_ADDRESS"))
+        || launch.environmentChanges.contains(QStringLiteral("XDG_RUNTIME_DIR"))) {
+        resolve(launch);
+
+        return true;
+    }
+
+    auto *query = new HostCommandQuery(m_bus, this);
+    m_launchQuery = query;
+
+    connect(query, &HostCommandQuery::finished, this, [this, query, launch](HostCommandQuery::Result result, const QByteArray &) {
+        m_launchQuery.clear();
+        query->deleteLater();
+
+        if (result == HostCommandQuery::Result::Success) {
+            checkScopeManager(launch);
+        } else {
+            resolve(launch);
+        }
+    });
+
+    // Check the launcher itself, without executing a command or parsing version strings.
+    query->start({QStringLiteral("/usr/bin/systemd-run"), QStringLiteral("--expand-environment=no"), QStringLiteral("--version")});
 
     return true;
+}
+
+void HostProcess::checkScopeManager(const TerminalLaunch &launch)
+{
+    auto *query = new HostCommandQuery(m_bus, this);
+    m_launchQuery = query;
+
+    connect(query, &HostCommandQuery::finished, this, [this, query, launch](HostCommandQuery::Result result, const QByteArray &) {
+        m_launchQuery.clear();
+        query->deleteLater();
+        m_useScopes = result == HostCommandQuery::Result::Success;
+        resolve(launch);
+    });
+
+    query->start({QStringLiteral("/usr/bin/systemctl"),
+                  QStringLiteral("--user"),
+                  QStringLiteral("show"),
+                  QStringLiteral("--property=Version"),
+                  QStringLiteral("--value")});
+}
+
+bool HostProcess::waitingForLauncher() const
+{
+    return !m_startupCommands.isEmpty() && !m_startupDeadline.hasExpired();
 }
 
 bool HostProcess::isRunning() const
@@ -204,7 +255,7 @@ ProcessInfo HostProcess::processInfo() const
         info.ssh = {};
         info.busy = false;
     } else {
-        info.busy = info.busy || m_dirty || m_probePending || m_phase != Phase::Running;
+        info.busy = info.busy || m_probePending || m_phase != Phase::Running;
 
         if (!info.busy) {
             info.foregroundPid = -1;
@@ -219,7 +270,10 @@ ProcessInfo HostProcess::processInfo() const
 void HostProcess::cancelQueries()
 {
     delete m_probeQuery.data();
-    delete m_resolverQuery.data();
+    delete m_launchQuery.data();
+    m_startupTimer.stop();
+    m_startupCommands.clear();
+    m_probePending = false;
 }
 
 void HostProcess::resolve(const TerminalLaunch &launch)
@@ -232,11 +286,11 @@ void HostProcess::resolve(const TerminalLaunch &launch)
     const auto environment = hostEnvironment(changes);
 
     auto *query = new HostCommandQuery(m_bus, this);
-    m_resolverQuery = query;
+    m_launchQuery = query;
 
     connect(query, &HostCommandQuery::finished, this, [this, query, launch](HostCommandQuery::Result result, const QByteArray &output) {
         const auto resolved = Protocol::decodeCommand(output);
-        m_resolverQuery.clear();
+        m_launchQuery.clear();
         query->deleteLater();
 
         if (result == HostCommandQuery::Result::FailedToStart) {
@@ -273,7 +327,15 @@ void HostProcess::resolve(const TerminalLaunch &launch)
 void HostProcess::spawn(const TerminalLaunch &launch)
 {
     const auto environment = hostEnvironment(launch.resolvedEnvironmentChanges());
-    const QStringList arguments{environment.commandPrefix + QStringList{m_program} + launch.arguments};
+    QStringList arguments{environment.commandPrefix + QStringList{m_program} + launch.arguments};
+
+    if (m_useScopes) {
+        const auto scopedCommand = ProcessScope::hostCommand(QStringLiteral("/usr/bin/systemd-run"), arguments);
+        m_startupCommands = {scopedCommand, arguments};
+        m_startupDeadline = QDeadlineTimer{std::chrono::seconds{5}};
+        arguments = scopedCommand;
+    }
+
     m_phase = Phase::Starting;
     m_spawn = m_bus.asyncCall(Protocol::command(launch.directory, arguments, environment.values, m_device->slaveFd(), Protocol::CommandFlags::WatchBus),
                               Protocol::CallTimeoutMs);
@@ -345,7 +407,7 @@ void HostProcess::finish(int exitCode)
     m_info.ssh = {};
     m_info.busy = false;
     const QPointer<HostProcess> guard{this};
-    completeRefresh(false);
+    completeRefresh();
 
     if (guard != nullptr) {
         Q_EMIT finished(exitCode);
@@ -363,8 +425,6 @@ void HostProcess::hostExited(uint pid, uint status)
 
 void HostProcess::invalidateProcessInfo(bool input)
 {
-    m_dirty = true;
-
     if (input) {
         ++m_inputGeneration;
         m_info.busy = true;
@@ -381,7 +441,8 @@ void HostProcess::refreshProcessInfo(std::function<void()> completed)
 void HostProcess::probe()
 {
     if (!isRunning() || m_phase == Phase::Stopping) {
-        completeRefresh(false);
+        m_info.busy = isRunning();
+        completeRefresh();
 
         return;
     }
@@ -391,7 +452,6 @@ void HostProcess::probe()
     }
 
     m_probePending = true;
-    m_dirty = false;
     const quint64 inputGeneration{m_inputGeneration};
     auto *query = new HostCommandQuery(m_bus, this);
     m_probeQuery = query;
@@ -402,7 +462,7 @@ void HostProcess::probe()
         query->deleteLater();
 
         if (m_phase != Phase::Running || result != HostCommandQuery::Result::Success || !observation) {
-            completeRefresh(false);
+            finishProbe({}, inputGeneration);
 
             return;
         }
@@ -413,33 +473,7 @@ void HostProcess::probe()
         connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher, observation, inputGeneration] {
             const QDBusPendingReply<> reply{*watcher};
             watcher->deleteLater();
-
-            if (m_phase != Phase::Running || reply.isError()) {
-                completeRefresh(false);
-
-                return;
-            }
-
-            ProcessInfo info;
-            info.directory = observation->directory.isEmpty() ? m_info.directory : observation->directory;
-            info.foregroundPid = observation->foreground;
-            info.foregroundName = QFileInfo(observation->foregroundExecutable).fileName();
-
-            if (observation->ssh.pid) {
-                info.ssh = {observation->ssh.pid, observation->ssh.startTime, observation->foregroundExecutable, info.directory, observation->arguments};
-
-                if (m_info.ssh.pid == info.ssh.pid && m_info.ssh.startTime == info.ssh.startTime && m_info.ssh.executable == info.ssh.executable) {
-                    info.ssh.arguments = m_info.ssh.arguments;
-                }
-            }
-
-            info.busy = observation->arguments.isEmpty() || observation->foreground != m_pid || !m_interactiveShell
-                || observation->foregroundExecutable != m_initialExecutable || !interactiveShellArguments(observation->arguments.sliced(1))
-                || inputGeneration != m_inputGeneration;
-            const bool changed{info != m_info};
-            m_identity = observation->leader;
-            m_info = std::move(info);
-            completeRefresh(true, changed);
+            finishProbe(reply.isError() ? std::nullopt : observation, inputGeneration);
         });
     });
 
@@ -450,21 +484,67 @@ void HostProcess::probe()
                   QString::number(ProcessQueryLimits::MaximumCommandLineBytes + 1),
                   QString::number(m_pid),
                   m_identity.startTime ? QString::number(m_identity.startTime) : QString(),
-                  m_interactiveShell ? QStringLiteral("shell") : QStringLiteral("command"),
+                  waitingForLauncher()     ? QStringLiteral("startup")
+                      : m_interactiveShell ? QStringLiteral("shell")
+                                           : QStringLiteral("command"),
                   QString::number(m_info.ssh.pid),
                   QString::number(m_info.ssh.startTime),
                   m_info.ssh.executable});
 }
 
-void HostProcess::completeRefresh(bool success, bool changed)
+void HostProcess::finishProbe(const std::optional<Protocol::Observation> &observation, quint64 inputGeneration)
 {
     m_probePending = false;
+    const bool observingStartup{m_phase == Phase::Running && !m_startupCommands.isEmpty()};
+    ProcessInfo info;
 
-    if (!success) {
-        m_info.busy = isRunning();
+    if (m_phase == Phase::Running && observation) {
+        // systemd-run and env execute in place without a readiness notification.
+        const bool keepObservingLauncher{waitingForLauncher() && (observation->arguments.isEmpty() || m_startupCommands.contains(observation->arguments))};
+
+        if (!keepObservingLauncher) {
+            m_startupCommands.clear();
+        }
+
+        info.directory = observation->directory.isEmpty() ? m_info.directory : observation->directory;
+        info.foregroundPid = observation->foreground;
+        info.foregroundName = QFileInfo(observation->foregroundExecutable).fileName();
+
+        if (observation->ssh.pid) {
+            info.ssh = {observation->ssh.pid, observation->ssh.startTime, observation->foregroundExecutable, info.directory, observation->arguments};
+
+            if (m_info.ssh.pid == info.ssh.pid && m_info.ssh.startTime == info.ssh.startTime && m_info.ssh.executable == info.ssh.executable) {
+                info.ssh.arguments = m_info.ssh.arguments;
+            }
+        }
+
+        const bool idleShell{!observation->arguments.isEmpty() && observation->foreground == m_pid && m_interactiveShell
+                             && observation->foregroundExecutable == m_initialExecutable && interactiveShellArguments(observation->arguments.sliced(1))};
+        info.busy = !idleShell || inputGeneration != m_inputGeneration;
+        m_identity = observation->leader;
+    } else {
+        info = m_info;
+        info.busy = isRunning();
     }
 
-    const auto completed = std::exchange(m_refreshCompletion, {});
+    const bool changed{info != m_info};
+    m_info = std::move(info);
+
+    if (observingStartup) {
+        if (!waitingForLauncher()) {
+            m_startupCommands.clear();
+        }
+
+        // Read once more after observing exec: argv and executable are separate proc reads.
+        m_startupTimer.start(m_startupCommands.isEmpty() ? std::chrono::milliseconds{0} : std::chrono::milliseconds{100});
+    }
+
+    completeRefresh(changed);
+}
+
+void HostProcess::completeRefresh(bool changed)
+{
+    const auto completed = m_startupTimer.isActive() ? std::function<void()>{} : std::exchange(m_refreshCompletion, {});
     const QPointer<HostProcess> guard{this};
 
     if (changed) {
@@ -508,6 +588,11 @@ void HostProcess::close()
 
     beginCleanup();
     cancelQueries();
+    const QPointer<HostProcess> guard{this};
     closeTransport();
+
+    if (guard != nullptr) {
+        completeRefresh();
+    }
 }
 }

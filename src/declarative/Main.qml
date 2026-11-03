@@ -712,11 +712,13 @@ Kirigami.ApplicationWindow {
     }
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.None
+    pageStack.layers.Accessible.ignored: true
 
     pageStack.initialPage: Kirigami.Page {
         id: terminalPage
 
         padding: 0
+        Accessible.ignored: true
 
         // Append tab drops not handled by a child drop area.
         background: DropArea {

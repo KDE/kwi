@@ -439,12 +439,7 @@ void HostProcess::probe()
             const bool changed{info != m_info};
             m_identity = observation->leader;
             m_info = std::move(info);
-            const QPointer<HostProcess> guard{this};
-            completeRefresh(true);
-
-            if (guard != nullptr && changed) {
-                Q_EMIT processInfoChanged();
-            }
+            completeRefresh(true, changed);
         });
     });
 
@@ -461,7 +456,7 @@ void HostProcess::probe()
                   m_info.ssh.executable});
 }
 
-void HostProcess::completeRefresh(bool success)
+void HostProcess::completeRefresh(bool success, bool changed)
 {
     m_probePending = false;
 
@@ -469,7 +464,14 @@ void HostProcess::completeRefresh(bool success)
         m_info.busy = isRunning();
     }
 
-    if (const auto completed{std::exchange(m_refreshCompletion, {})}) {
+    const auto completed = std::exchange(m_refreshCompletion, {});
+    const QPointer<HostProcess> guard{this};
+
+    if (changed) {
+        Q_EMIT processInfoChanged();
+    }
+
+    if (guard != nullptr && completed) {
         completed();
     }
 }

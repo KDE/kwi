@@ -56,7 +56,7 @@ private:
     void resolve(const TerminalLaunch &launch);
     void spawn(const TerminalLaunch &launch, const QString &resolvedProgram);
     void probe();
-    void completeRefresh(bool success);
+    void completeRefresh(bool success, bool changed = false);
     void beginCleanup();
     void finish(int exitCode);
     void fail(const QString &message);

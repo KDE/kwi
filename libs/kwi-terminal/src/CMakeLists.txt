@@ -28,6 +28,7 @@ ecm_add_qml_module(kwi-terminal
         process/ProcessInfo_p.h process/ProcessQueryLimits_p.h
         process/ProcessController.cpp process/ProcessController_p.h
         process/NativeProcess.cpp process/NativeProcess_p.h
+        process/AttachedProcess.cpp process/AttachedProcess_p.h
         process/NativeProcessInfo.cpp process/NativeProcessInfo_p.h
         process/HostProcessProtocol.cpp process/HostProcessProtocol_p.h
         process/HostProcess.cpp process/HostProcess_p.h

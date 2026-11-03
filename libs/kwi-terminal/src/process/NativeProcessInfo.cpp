@@ -2,7 +2,18 @@
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
 #include "NativeProcessInfo_p.h"
+#include "ProcessLaunch.h"
 #include "ProcessQueryLimits_p.h"
+
+#include <QFileInfo>
+#include <QList>
+#include <QStringList>
+#include <algorithm>
+#include <cerrno>
+#include <csignal>
+#include <iterator>
+#include <termios.h>
+#include <unistd.h>
 
 #ifdef Q_OS_FREEBSD
 #include <cstddef>
@@ -14,13 +25,116 @@
 #else
 #include <QDirListing>
 #include <QFile>
-#include <QFileInfo>
-#include <QList>
-#include <unistd.h>
 #endif
 
 namespace Kwi::NativeProcessInfo
 {
+namespace
+{
+QStringList processArguments(pid_t pid)
+{
+    const QByteArray bytes{commandLine(pid)};
+
+    if (bytes.size() > ProcessQueryLimits::MaximumCommandLineBytes || !bytes.endsWith('\0') || bytes.startsWith('\0')) {
+        return {};
+    }
+
+    const auto fields = bytes.chopped(1).split('\0');
+    QStringList arguments;
+    arguments.reserve(fields.size());
+
+    std::ranges::transform(fields, std::back_inserter(arguments), [](const QByteArray &field) {
+        return QString::fromLocal8Bit(field);
+    });
+
+    return arguments;
+}
+}
+
+pid_t processInGroup(pid_t group, pid_t session)
+{
+    const pid_t leaderSession{getsid(group)};
+
+    if (leaderSession >= 0) {
+        return leaderSession == session ? group : -1;
+    }
+
+    if (kill(-group, 0) < 0 && errno == ESRCH) {
+        return -1;
+    }
+
+    // The group can outlive its leader, both during observation and cleanup.
+    return groupMember(group, session);
+}
+
+ProcessInfo observe(int masterFd, qint64 leader, const QString &initialExecutable, bool interactiveShell, const ProcessInfo &previous)
+{
+    ProcessInfo info;
+    info.directory = previous.directory;
+
+    if (masterFd < 0) {
+        return info;
+    }
+
+    const qint64 foreground{tcgetpgrp(masterFd)};
+    qint64 target{-1};
+
+    if (foreground > 0) {
+        const pid_t session{leader > 0 ? pid_t(leader) : tcgetsid(masterFd)};
+        target = processInGroup(pid_t(foreground), session);
+    }
+
+    for (const qint64 pid : {target, leader}) {
+        if (pid <= 0) {
+            continue;
+        }
+
+        const QString currentDirectory{NativeProcessInfo::directory(pid_t(pid))};
+
+        if (!currentDirectory.isEmpty()) {
+            info.directory = currentDirectory;
+            break;
+        }
+    }
+
+    info.busy = foreground > 0 && (leader <= 0 || foreground != leader);
+
+    if (leader > 0 && !info.busy) {
+        const QString currentExecutable{NativeProcessInfo::executable(pid_t(leader))};
+        QStringList arguments{processArguments(pid_t(leader))};
+        const bool validArguments{!arguments.isEmpty()};
+
+        if (validArguments) {
+            arguments.removeFirst();
+        }
+
+        info.busy = !interactiveShell || currentExecutable.isEmpty() || currentExecutable != initialExecutable || !validArguments
+            || !interactiveShellArguments(arguments);
+    }
+
+    if (info.busy && foreground > 0) {
+        info.foregroundPid = foreground;
+        const QString currentExecutable{target > 0 ? NativeProcessInfo::executable(pid_t(target)) : QString{}};
+        info.foregroundName = QFileInfo(currentExecutable).fileName();
+
+        if (info.foregroundName == QLatin1String("ssh")) {
+            const quint64 processStart{NativeProcessInfo::startTime(pid_t(target))};
+
+            if (processStart) {
+                info.ssh = {target, processStart, currentExecutable, info.directory, {}};
+
+                if (previous.ssh.pid == target && previous.ssh.startTime == processStart && previous.ssh.executable == currentExecutable) {
+                    info.ssh.arguments = previous.ssh.arguments;
+                } else {
+                    info.ssh.arguments = processArguments(pid_t(target));
+                }
+            }
+        }
+    }
+
+    return info;
+}
+
 #ifdef Q_OS_FREEBSD
 namespace
 {

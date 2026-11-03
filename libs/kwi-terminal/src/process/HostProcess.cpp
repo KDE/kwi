@@ -12,11 +12,13 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 #include <QFileInfo>
+#include <QMap>
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QStringList>
 #include <QtConcurrentRun>
 #include <csignal>
+#include <optional>
 #include <sys/wait.h>
 #include <utility>
 
@@ -25,6 +27,28 @@ namespace Kwi
 namespace
 {
 namespace Protocol = HostProcessProtocol;
+
+struct HostEnvironment {
+    QProcessEnvironment values;
+    QStringList commandPrefix{QStringLiteral("/usr/bin/env")};
+};
+
+HostEnvironment hostEnvironment(const QMap<QString, std::optional<QString>> &changes)
+{
+    HostEnvironment environment;
+
+    for (auto change = changes.cbegin(); change != changes.cend(); ++change) {
+        if (change.value()) {
+            environment.values.insert(change.key(), *change.value());
+        } else {
+            environment.commandPrefix.append({QStringLiteral("-u"), change.key()});
+        }
+    }
+
+    environment.commandPrefix.append(QStringLiteral("--"));
+
+    return environment;
+}
 
 std::optional<Protocol::Observation> inspect(Protocol::ProcessIdentity identity)
 {
@@ -202,22 +226,10 @@ void HostProcess::resolve(const TerminalLaunch &launch)
 {
     const auto path = launch.environmentChanges.constFind(QStringLiteral("PATH"));
     const bool removePath{path != launch.environmentChanges.cend() && !path.value()};
-    QStringList removals;
-    QStringList assignments;
-    const auto changes{launch.resolvedEnvironmentChanges()};
-
-    for (auto change = changes.cbegin(); change != changes.cend(); ++change) {
-        // A preset's SHELL variable must not change which default shell is launched.
-        if (change.key() == QLatin1String("SHELL")) {
-            continue;
-        }
-
-        if (change.value()) {
-            assignments.append(change.key() + QLatin1Char('=') + *change.value());
-        } else {
-            removals.append({QStringLiteral("-u"), change.key()});
-        }
-    }
+    auto changes = launch.resolvedEnvironmentChanges();
+    // A preset's SHELL variable must not change which default shell is launched.
+    changes.remove(QStringLiteral("SHELL"));
+    const auto environment = hostEnvironment(changes);
 
     auto *query = new HostCommandQuery(m_bus, this);
     m_resolverQuery = query;
@@ -243,10 +255,10 @@ void HostProcess::resolve(const TerminalLaunch &launch)
         m_initialExecutable = resolved->executable;
         m_program = resolved->program;
         m_interactiveShell = resolved->shell && interactiveShellArguments(launch.arguments);
-        spawn(launch, m_program);
+        spawn(launch);
     });
 
-    query->start(QStringList{QStringLiteral("/usr/bin/env")} + removals + QStringList{QStringLiteral("--")} + assignments
+    query->start(environment.commandPrefix
                      + QStringList{QStringLiteral("/bin/sh"),
                                    QStringLiteral("-c"),
                                    Protocol::resolveCommandScript(),
@@ -254,28 +266,16 @@ void HostProcess::resolve(const TerminalLaunch &launch)
                                    launch.program,
                                    launch.program.isEmpty() ? QStringLiteral("1") : QStringLiteral("0"),
                                    removePath ? QStringLiteral("1") : QStringLiteral("0")},
-                 launch.directory);
+                 launch.directory,
+                 environment.values);
 }
 
-void HostProcess::spawn(const TerminalLaunch &launch, const QString &resolvedProgram)
+void HostProcess::spawn(const TerminalLaunch &launch)
 {
-    QStringList arguments{QStringLiteral("/usr/bin/env")};
-    QProcessEnvironment environment;
-    const auto changes{launch.resolvedEnvironmentChanges()};
-
-    for (auto change = changes.cbegin(); change != changes.cend(); ++change) {
-        if (change.value()) {
-            environment.insert(change.key(), *change.value());
-        } else {
-            arguments.append({QStringLiteral("-u"), change.key()});
-        }
-    }
-
-    arguments.append(QStringLiteral("--"));
-    arguments.append(resolvedProgram);
-    arguments.append(launch.arguments);
+    const auto environment = hostEnvironment(launch.resolvedEnvironmentChanges());
+    const QStringList arguments{environment.commandPrefix + QStringList{m_program} + launch.arguments};
     m_phase = Phase::Starting;
-    m_spawn = m_bus.asyncCall(Protocol::command(launch.directory, arguments, environment, m_device->slaveFd(), Protocol::CommandFlags::WatchBus),
+    m_spawn = m_bus.asyncCall(Protocol::command(launch.directory, arguments, environment.values, m_device->slaveFd(), Protocol::CommandFlags::WatchBus),
                               Protocol::CallTimeoutMs);
     auto *watcher = new QDBusPendingCallWatcher(*m_spawn, this);
 

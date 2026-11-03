@@ -54,7 +54,7 @@ private:
 
     void cancelQueries();
     void resolve(const TerminalLaunch &launch);
-    void spawn(const TerminalLaunch &launch, const QString &resolvedProgram);
+    void spawn(const TerminalLaunch &launch);
     void probe();
     void completeRefresh(bool success, bool changed = false);
     void beginCleanup();

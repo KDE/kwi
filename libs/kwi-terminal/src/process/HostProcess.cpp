@@ -430,6 +430,10 @@ void HostProcess::invalidateProcessInfo(bool input)
         ++m_inputGeneration;
         m_info.busy = true;
     }
+
+    if (m_startupTimer.isActive()) {
+        m_startupTimer.start(std::chrono::milliseconds{0});
+    }
 }
 
 void HostProcess::refreshProcessInfo(std::function<void()> completed)

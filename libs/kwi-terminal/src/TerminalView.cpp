@@ -399,7 +399,6 @@ void TerminalView::changeSession(Session *newSession)
 
         reloadColors();
         updateMetrics();
-        refresh();
     } else {
         update();
     }
@@ -630,6 +629,9 @@ void TerminalView::updatePolish()
     const bool cursorWasVisible{m_frame.cursorVisible};
     const QRectF previousSelectionCursor{m_keyboardSelectionMode ? selectionCursorRectangle() : QRectF()};
 
+    // Change width and height together, even if Qt updates them one by one.
+    resizeTerminal();
+
     if (m_session && m_session->snapshot(m_frame)) {
         m_searchMatches = m_search->viewportMatches(previousOffset != m_frame.scrollOffset);
         ++m_frameRevision;
@@ -692,7 +694,9 @@ void TerminalView::updateMetrics()
     const auto metrics = GhosttyQt::Quick::fontMetrics(m_font, dpr, dpi);
     m_cellWidth = metrics.cellSize.width();
     m_cellHeight = metrics.cellSize.height();
-    resizeTerminal();
+
+    refresh();
+    update();
 }
 
 void TerminalView::resizeTerminal()
@@ -704,9 +708,6 @@ void TerminalView::resizeTerminal()
                           int((height() - 2 * m_padding) / m_cellHeight),
                           QSize(qRound(m_cellWidth * dpr), qRound(m_cellHeight * dpr)));
     }
-
-    refresh();
-    update();
 }
 
 void TerminalView::geometryChange(const QRectF &next, const QRectF &previous)
@@ -714,7 +715,7 @@ void TerminalView::geometryChange(const QRectF &next, const QRectF &previous)
     QQuickItem::geometryChange(next, previous);
 
     if (next.size() != previous.size()) {
-        updateMetrics();
+        refresh();
     }
 }
 

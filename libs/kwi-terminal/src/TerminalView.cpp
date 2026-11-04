@@ -1890,9 +1890,10 @@ void TerminalView::hoverMoveEvent(QHoverEvent *event)
 
     if (m_session && m_session->terminal() && !m_session->isReadOnly() && !event->modifiers().testFlag(Qt::ShiftModifier)
         && m_session->terminal()->mouseTracking()) {
-        // Sending them would not be wrong per-se, but other terminals tend not to do
-        // this, and it confuses some clients who can't handle complex mixed mouse and
-        // motion input.
+        // Don't send mouse motion updates on frame changes when the pointer pos didn't
+        // change. Sending updates would not be wrong per-se, but other terminals tend
+        // to not do this, and it confuses some clients who can't handle complex mixed
+        // keyboard and motion input.
         const auto &point = event->point(0);
 
         if (point.globalPosition() != point.globalLastPosition()) {

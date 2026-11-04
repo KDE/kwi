@@ -177,10 +177,10 @@ GhosttyKey keyForEvent(const QKeyEvent &event)
     // as physical writing-system keys.
     if (event.key() <= Qt::Key_Space || event.key() > 0x10ffff) {
         // X11/XKB protocol keysyms carried by QKeyEvent::nativeVirtualKey().
-	// We need these to distinguish modifier sides even when the keys are
-	// remapped. Including these is a bit unorthodox, but it saves us a
-	// dependency on libxkbcommon and they're virtually guaranteed to
-	// never change.
+        // We need these to distinguish modifier sides even when the keys are
+        // remapped. Including these is a bit unorthodox, but it saves us a
+        // dependency on libxkbcommon and they're virtually guaranteed to
+        // never change.
         constexpr auto xkbShiftRight{0xffe2u};
         constexpr auto xkbControlRight{0xffe4u};
         constexpr auto xkbMetaRight{0xffe8u};

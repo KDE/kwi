@@ -759,7 +759,7 @@ Kirigami.ApplicationWindow {
                 padding: Kirigami.Units.smallSpacing
                 topPadding: position === Controls.ToolBar.Footer ? 0 : padding
                 bottomPadding: position === Controls.ToolBar.Header ? 0 : padding
-                Kirigami.Theme.colorSet: Kirigami.Theme.Window
+                Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
                 background: Rectangle {

@@ -52,3 +52,5 @@ target_compile_definitions(kwi-terminal PRIVATE TRANSLATION_DOMAIN="kwi-terminal
 
 install(TARGETS kwi-terminal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 ecm_finalize_qml_module(kwi-terminal DESTINATION ${KDE_INSTALL_QMLDIR})
+
+ecm_generate_qdoc(kwi-terminal kwi-terminal.qdocconf)

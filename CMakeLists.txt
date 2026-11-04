@@ -24,6 +24,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMFindQmlModule)
 include(ECMSetupVersion)
 include(ECMQmlModule)
+include(ECMGenerateQDoc)
 include(GenerateExportHeader)
 include(FeatureSummary)
 

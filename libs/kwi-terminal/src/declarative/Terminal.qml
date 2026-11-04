@@ -7,14 +7,62 @@ import org.kde.kirigami as Kirigami
 import org.kde.ki18n
 import org.kde.kwi.terminal
 
+/*!
+    \qmltype Terminal
+    \inqmlmodule org.kde.kwi.terminal
+    \inherits FocusScope
+    \brief A terminal view with a scrollbar and visual feedback.
+
+    Set \l session to a \l Session to display its contents. The session must be
+    started explicitly. Configure fonts, colors and input behavior through \l view.
+
+    Terminal provides an always-visible scrollbar, a visual bell and a keyboard
+    selection cursor. It forwards context menu, link activation and paste
+    confirmation requests to the embedding application.
+*/
 FocusScope {
     id: root
 
+    /*!
+        \qmlproperty Session Terminal::session
+        The session displayed by \l view. The default is null. Terminal does not own,
+        start or close the session. A session can be attached to only one view at a time.
+
+        \sa TerminalView::session
+    */
     property alias session: terminal.session
+    /*!
+        \qmlproperty TerminalView Terminal::view
+        \readonly
+        The contained terminal view. Use it to configure appearance and input
+        behavior, and to invoke terminal actions such as \l {TerminalView::copy()}{copy},
+        \l {TerminalView::paste()}{paste} and \l {TerminalView::find()}{search}.
+    */
     readonly property alias view: terminal
 
+    /*!
+        \qmlsignal Terminal::multilinePasteRequested(Session origin, string text)
+        Emitted when pasting \a text into \a origin needs confirmation. Forwarded
+        from \l view without changing the session or text.
+
+        \sa TerminalView::multilinePasteRequested()
+    */
     signal multilinePasteRequested(Session origin, string text)
+    /*!
+        \qmlsignal Terminal::contextMenuRequested(point position)
+        Emitted when a context menu is requested at \a position in \l view coordinates.
+        The embedding application creates and opens the menu.
+
+        \sa TerminalView::contextMenuRequested()
+    */
     signal contextMenuRequested(point position)
+    /*!
+        \qmlsignal Terminal::linkActivated(url url)
+        Emitted when the user activates a link with target \a url. The embedding
+        application decides how to open it.
+
+        \sa TerminalView::linkActivated()
+    */
     signal linkActivated(url url)
 
     KI18nContext {

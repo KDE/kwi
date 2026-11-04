@@ -24,6 +24,10 @@ Dependencies:
       'libraries/kirigami-app-components': '@latest-kf6'
 
 Options:
+  json-validate-include:
+    - src/kpart/kwipart.json.in
+  xml-validate-include:
+    - data/org.kde.kwi.metainfo.xml.in
   clang-format-versions: [19]
   commit-checks: ['bug-links']
   cppcheck-arguments:

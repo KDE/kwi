@@ -5,6 +5,9 @@ include:
   - project: sysadmin/ci-utilities
     file:
       - /gitlab-templates/reuse-lint.yml
+      - /gitlab-templates/json-validation.yml
+      - /gitlab-templates/xml-lint.yml
+      - /gitlab-templates/yaml-lint.yml
       - /gitlab-templates/clang-format.yml
       - /gitlab-templates/commit-checks.yml
       - /gitlab-templates/cppcheck.yml
@@ -81,7 +84,10 @@ freebsd150_qt611:
 
               print(f"Fetching {source['url']}", flush=True)
               download = work / "download"
-              subprocess.run(["curl", "--fail", "--location", "--silent", "--show-error", "--output", str(download), source["url"]], check=True)
+              subprocess.run(
+                  ["curl", "--fail", "--location", "--silent", "--show-error",
+                   "--output", str(download), source["url"]],
+                  check=True)
 
               with download.open("rb") as downloaded:
                   if hashlib.file_digest(downloaded, "sha256").hexdigest() != source["sha256"]:
@@ -91,7 +97,8 @@ freebsd150_qt611:
               destination.mkdir(parents=True, exist_ok=True)
 
               if source["type"] == "archive":
-                  subprocess.run(["tar", "-xf", str(download), "--strip-components=1", "-C", str(destination)], check=True)
+                  subprocess.run(
+                      ["tar", "-xf", str(download), "--strip-components=1", "-C", str(destination)], check=True)
               else:
                   shutil.copyfile(download, destination / Path(urllib.parse.urlparse(source["url"]).path).name)
 

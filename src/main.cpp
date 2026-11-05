@@ -17,8 +17,8 @@
 #include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
-#include <QDebug>
 #include <QDir>
+#include <QLatin1Char>
 #include <QQuickWindow>
 #include <QString>
 #include <QStringList>
@@ -115,9 +115,7 @@ int main(int argc, char **argv)
     const QString error{commandLineError(parser)};
 
     if (!error.isEmpty()) {
-        qCritical().noquote() << error;
-
-        return 2;
+        QCommandLineParser::showMessageAndExit(QCommandLineParser::MessageType::Error, error + QLatin1Char{'\n'}, 2);
     }
 
     const auto initialOptions = launchOptions(parser, QDir::currentPath());

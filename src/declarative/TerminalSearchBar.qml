@@ -42,6 +42,14 @@ Controls.ToolBar {
             terminal.find(findField.text, forward);
     }
 
+    Connections {
+        target: root.terminal
+
+        function onSessionChanged(): void {
+            root.cancelPendingSearch();
+        }
+    }
+
     RowLayout {
         id: searchControls
 

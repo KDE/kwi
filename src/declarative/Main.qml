@@ -171,10 +171,6 @@ Kirigami.ApplicationWindow {
             if (pasteDialog.visible && pasteDialog.targetSession !== root.sessionModel.currentSession) {
                 pasteDialog.reject();
             }
-
-            if (root.findVisible && findBar.text.length > 0) {
-                root.search(true);
-            }
         }
 
         function onCloseConfirmationRequested(requestId: double, scope: int, title: string): void {

@@ -41,6 +41,7 @@
 #include <QTest>
 #include <QUrl>
 #include <QWheelEvent>
+#include <QtQuickTest/quicktest.h>
 
 using namespace Kwi;
 
@@ -63,7 +64,7 @@ public:
 
     bool start()
     {
-        if (!directory.isValid()) {
+        if (!directory.isValid() || !QTest::qWaitForWindowExposed(&window) || !QQuickTest::qWaitForPolish(&view)) {
             return false;
         }
 

@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "SessionModel.h"
+#include "Session.h"
 #include "TerminalSession.h"
 #include "settings/LaunchSettings.h"
 #include "settings/TerminalPresets.h"
@@ -157,8 +158,8 @@ void SessionModelTest::confirmsForegroundWork()
     QSignalSpy closed{&model, &SessionModel::allClosed};
     model.launchSession({.command = QStringList{QStringLiteral("/bin/sh"), QStringLiteral("-i")}, .directory = QDir::tempPath()}, {}, false);
     auto *session = model.currentSession();
-    QTRY_VERIFY_WITH_TIMEOUT(session->isActive(), 5000);
-    session->send("sleep 30\n");
+    QTRY_COMPARE_WITH_TIMEOUT(session->state(), Session::State::Running, 5000);
+    QVERIFY(session->send("sleep 30\n"));
     QTRY_VERIFY_WITH_TIMEOUT(session->foregroundCommandName() == QLatin1String("sleep"), 5000);
     model.closeSession(0);
     QTRY_COMPARE(confirmation.size(), 1);
@@ -193,8 +194,8 @@ void SessionModelTest::confirmsDirectCommandAndClosesIdleShell()
 
     model.newSession();
     auto *shell = model.currentSession();
-    QTRY_VERIFY_WITH_TIMEOUT(shell->isActive(), 5000);
-    shell->send("printf 'READY%s\\n' '-idle'\n");
+    QTRY_COMPARE_WITH_TIMEOUT(shell->state(), Session::State::Running, 5000);
+    QVERIFY(shell->send("printf 'READY%s\\n' '-idle'\n"));
     QTRY_VERIFY_WITH_TIMEOUT(shell->historyText().contains(QStringLiteral("READY-idle")), 5000);
     QTRY_VERIFY(!shell->isBusy());
     model.closeSession(0);
@@ -252,13 +253,13 @@ void SessionModelTest::inheritsWorkingDirectory()
 
     model.launchSession({.command = QStringList{QStringLiteral("/bin/sh"), QStringLiteral("-i")}, .directory = QDir::tempPath()}, {}, false);
     auto *first = model.currentSession();
-    QTRY_VERIFY_WITH_TIMEOUT(first->isActive(), 5000);
-    first->send(QStringLiteral("cd %1\n").arg(KShell::quoteArg(directory.path())).toUtf8());
+    QTRY_COMPARE_WITH_TIMEOUT(first->state(), Session::State::Running, 5000);
+    QVERIFY(first->send(QStringLiteral("cd %1\n").arg(KShell::quoteArg(directory.path())).toUtf8()));
     QTRY_COMPARE_WITH_TIMEOUT(first->workingDirectory(), directory.path(), 5000);
     model.newSession();
     auto *second = model.currentSession();
     QVERIFY(second != first);
-    QTRY_VERIFY_WITH_TIMEOUT(second->isActive(), 5000);
+    QTRY_COMPARE_WITH_TIMEOUT(second->state(), Session::State::Running, 5000);
     QTRY_COMPARE_WITH_TIMEOUT(second->workingDirectory(), directory.path(), 5000);
     QSignalSpy closed{&model, &SessionModel::allClosed};
     model.closeAll(true);

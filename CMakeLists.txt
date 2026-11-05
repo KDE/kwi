@@ -31,7 +31,7 @@ include(FeatureSummary)
 option(BUILD_KPART "Build the Kwi terminal KPart" ON)
 
 if(BUILD_TESTING)
-    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test QuickTest)
     include(ECMAddTests)
     set(KWI_TEST_DATA_DIR "${PROJECT_BINARY_DIR}/autotest-data")
 endif()

@@ -20,6 +20,7 @@
 #include <QStringLiteral>
 #include <QTemporaryDir>
 #include <QTest>
+#include <QtQuickTest/quicktest.h>
 
 namespace
 {
@@ -63,12 +64,7 @@ public:
                            && session.historyText().contains(QStringLiteral("READY:%1").arg(session.processId()));
                    },
                    5000)
-            && QTest::qWaitForWindowActive(&window)
-            && QTest::qWaitFor(
-                   [this] {
-                       return caret().x() >= 5 * caret().width();
-                   },
-                   5000);
+            && QTest::qWaitForWindowActive(&window) && QQuickTest::qWaitForPolish(&view);
     }
 
     QByteArray captured() const

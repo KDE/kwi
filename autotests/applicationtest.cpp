@@ -13,6 +13,7 @@
 #include "ui/AppShortcuts.h"
 
 #include <KLocalizedString>
+#include <KirigamiAppDefaults>
 #include <QApplication>
 #include <QByteArrayView>
 #include <QDir>
@@ -199,6 +200,7 @@ int main(int argc, char **argv)
     qputenv("SHELL", "/bin/sh");
     QQuickWindow::setDefaultAlphaBuffer(true);
     QApplication application{argc, argv};
+    KirigamiAppDefaults::apply(&application);
     application.setQuitOnLastWindowClosed(false);
     KLocalizedString::setApplicationDomain("kwi");
     DesktopIntegration::initializeApplicationIcon();

@@ -656,7 +656,7 @@ Kirigami.ApplicationWindow {
 
             AC.ActionCollection.collection: root.appShortcuts.collectionFor("tab_" + (index + 1))
             AC.ActionCollection.action: "tab_" + (index + 1)
-            enabled: root.terminalActionsEnabled && index < root.sessionModel.count
+            enabled: root.terminalActionsEnabled && root.sessionModel.count > 1 && index < root.sessionModel.count
 
             onTriggered: {
                 root.sessionModel.currentIndex = index;

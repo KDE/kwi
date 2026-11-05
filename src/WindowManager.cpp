@@ -347,6 +347,10 @@ WindowManager::WindowContext *WindowManager::createWindow()
         requestQuit(context, force);
     });
 
+    connect(context->sessions, &SessionModel::closeConfirmationRequested, context->window, [this, context] {
+        activate(context);
+    });
+
     connect(context->sessions, &SessionModel::closeRequestCancelled, this, [this, context] {
         cancelQuit(context->sessions);
     });

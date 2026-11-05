@@ -250,6 +250,10 @@ TerminalView::TerminalView(QQuickItem *parent)
 
 TerminalView::~TerminalView()
 {
+    // QQuickItem can emit these signals after our members are destroyed.
+    disconnect(this, &QQuickItem::visibleChanged, this, &TerminalView::resetCursorBlink);
+    disconnect(this, &QQuickItem::activeFocusChanged, this, &TerminalView::updateAccessibility);
+
     if (m_session) {
         if (m_session->terminal())
             m_session->terminal()->cancelSelectionGesture();

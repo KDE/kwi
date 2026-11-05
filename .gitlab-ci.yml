@@ -20,8 +20,8 @@ include:
 .suse_tumbleweed_qt6stable:
   before_script:
     - !reference [.ci_linux_base, before_script]
-
     - !reference [.kwi_ghostty, before_script]
+    - !reference [.kwi_wayland, before_script]
 
 .suse_tumbleweed_qt6next:
   before_script: !reference [.suse_tumbleweed_qt6stable, before_script]
@@ -30,13 +30,36 @@ freebsd150_qt611:
   before_script:
     - git clone https://invent.kde.org/sysadmin/ci-utilities.git --depth=1
     - git clone https://invent.kde.org/sysadmin/repo-metadata.git ci-utilities/repo-metadata/ --depth=1
-
     - !reference [.kwi_ghostty, before_script]
+
+.kwi_wayland:
+  before_script:
+    - |
+      kwi_wayland_runtime=$(mktemp -d)
+      export XDG_RUNTIME_DIR="$kwi_wayland_runtime"
+      # The CI runner replaces XDG_RUNTIME_DIR before testing.
+      export WAYLAND_DISPLAY="$kwi_wayland_runtime/wayland-0"
+      export QT_QPA_PLATFORM=wayland
+      export XDG_SESSION_TYPE=wayland
+      unset WAYLAND_SOCKET
+
+      weston --backend=headless --renderer=pixman --fake-seat --no-config \
+        --idle-time=0 --width=1280 --height=1024 --socket=wayland-0 &
+      kwi_weston_pid=$!
+      trap 'kill "$kwi_weston_pid" 2>/dev/null || true; wait "$kwi_weston_pid" 2>/dev/null || true; rm -rf -- "$kwi_wayland_runtime"' EXIT
+
+      for ((kwi_wayland_attempt = 0; kwi_wayland_attempt < 100; ++kwi_wayland_attempt)); do
+        test -S "$WAYLAND_DISPLAY" && break
+        kill -0 "$kwi_weston_pid"
+        sleep 0.1
+      done
+
+      test -S "$WAYLAND_DISPLAY"
+      timeout 10s wayland-info > /dev/null
 
 .kwi_ghostty:
   before_script:
     - export Ghostty_ROOT="$HOME/devel/install/kwi-ci-ghostty"
-
     - |
       python3 - <<'PY'
       import hashlib
@@ -108,5 +131,4 @@ freebsd150_qt611:
 
               subprocess.run(command.replace("/app", shlex.quote(str(prefix))), shell=True, cwd=source_dir, check=True)
       PY
-
     - export LD_LIBRARY_PATH="$Ghostty_ROOT/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"

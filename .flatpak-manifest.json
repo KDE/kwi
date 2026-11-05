@@ -165,7 +165,8 @@
                 }
             ],
             "config-opts": [
-                "-DBUILD_KPART=OFF"
+                "-DBUILD_KPART=OFF",
+                "-DBUILD_TESTING=OFF"
             ]
         }
     ]

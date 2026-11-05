@@ -24,6 +24,7 @@ Dependencies:
       'libraries/kirigami-app-components': '@latest-kf6'
 
 Options:
+  require-passing-tests-on: ['Linux', 'FreeBSD']
   json-validate-include:
     - src/kpart/kwipart.json.in
   xml-validate-include:

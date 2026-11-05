@@ -30,6 +30,12 @@ include(FeatureSummary)
 
 option(BUILD_KPART "Build the Kwi terminal KPart" ON)
 
+if(BUILD_TESTING)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test)
+    include(ECMAddTests)
+    set(KWI_TEST_DATA_DIR "${PROJECT_BINARY_DIR}/autotest-data")
+endif()
+
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core Gui GuiPrivate Quick Qml QmlIntegration QuickControls2 Concurrent DBus Network Widgets
     ShaderTools Svg)
@@ -68,10 +74,15 @@ add_subdirectory(libs/kwi-terminal)
 add_subdirectory(src)
 add_subdirectory(data)
 
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
+
 ki18n_install(po)
 
 include(KDEClangFormat)
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
+    autotests/*.cpp autotests/*.h
     src/*.cpp src/*.h
     libs/*.cpp libs/*.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})

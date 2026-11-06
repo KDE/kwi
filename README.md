@@ -27,7 +27,7 @@ Join [#kwi:kde.org](https://matrix.to/#/#kwi:kde.org) on Matrix for user and dev
 ## Dependencies:
 
 - CMake 3.28+
-- Qt 6.10+
+- Qt 6.11+
 - KDE Frameworks 6.29+
 - Kirigami Addons 1.11+
 - Kirigami App Components 1.1+

@@ -378,10 +378,30 @@ void WindowManager::initializeWindow(WindowContext *context)
         return;
     }
 
-    QSizeF requested;
-    QMetaObject::invokeMethod(context->window, "initialWindowSize", Q_RETURN_ARG(QSizeF, requested));
-    const QSize size{qCeil(requested.width()), qCeil(requested.height())};
-    context->window->resize(size.expandedTo(context->window->minimumSize()).boundedTo(context->window->screen()->availableGeometry().size()));
+    const auto resizeToGrid = [context] {
+        if (context->window->windowState() != Qt::WindowNoState) {
+            return;
+        }
+
+        QSizeF requested;
+        QMetaObject::invokeMethod(context->window, "initialWindowSize", Q_RETURN_ARG(QSizeF, requested));
+        const QSize size{qCeil(requested.width()), qCeil(requested.height())};
+        context->window->resize(size.expandedTo(context->window->minimumSize()).boundedTo(context->window->screen()->availableGeometry().size()));
+    };
+    resizeToGrid();
+
+    // We get the initial surface scale inbetween show() and delivering the
+    // first frame, so we need to derive the initial grid size at that time
+    // to take scaling into account.
+    const auto scaleConnection = connect(context->window, &QQuickWindow::devicePixelRatioChanged, context, resizeToGrid);
+    connect(
+        context->window,
+        &QQuickWindow::afterAnimating,
+        context,
+        [scaleConnection] {
+            disconnect(scaleConnection);
+        },
+        Qt::SingleShotConnection);
 }
 
 void WindowManager::updateProgress()

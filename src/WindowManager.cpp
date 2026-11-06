@@ -16,6 +16,7 @@
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KWindowEffects>
+#include <KWindowStateSaver>
 #include <KWindowSystem>
 #include <QCoreApplication>
 #include <QDBusConnection>
@@ -27,9 +28,13 @@
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
 #include <QQuickWindow>
+#include <QScreen>
+#include <QSize>
+#include <QSizeF>
 #include <QTimer>
 #include <QUuid>
 #include <QVariant>
+#include <QtMath>
 #include <algorithm>
 #include <utility>
 
@@ -365,6 +370,20 @@ WindowManager::WindowContext *WindowManager::createWindow()
     return context;
 }
 
+void WindowManager::initializeWindow(WindowContext *context)
+{
+    if (!m_settings->useCustomWindowSize()) {
+        new KWindowStateSaver{context->window, QStringLiteral("MainWindow")};
+
+        return;
+    }
+
+    QSizeF requested;
+    QMetaObject::invokeMethod(context->window, "initialWindowSize", Q_RETURN_ARG(QSizeF, requested));
+    const QSize size{qCeil(requested.width()), qCeil(requested.height())};
+    context->window->resize(size.expandedTo(context->window->minimumSize()).boundedTo(context->window->screen()->availableGeometry().size()));
+}
+
 void WindowManager::updateProgress()
 {
     // Report the last active window, falling back to a surviving window after it closes.
@@ -519,7 +538,9 @@ QQuickWindow *WindowManager::launch(const LaunchOptions &options)
         }
     }
 
-    if (!context) {
+    const bool newWindow{!context};
+
+    if (newWindow) {
         context = createWindow();
     }
 
@@ -546,6 +567,10 @@ QQuickWindow *WindowManager::launch(const LaunchOptions &options)
         return nullptr;
     }
 
+    if (newWindow) {
+        initializeWindow(context);
+    }
+
     activate(context, options.fullscreen);
 
     return context->window;
@@ -566,6 +591,7 @@ void WindowManager::detach(WindowContext *source, TerminalSession *session)
     }
 
     destination->sessions->adoptSession(source->sessions->takeSession(index));
+    initializeWindow(destination);
     activate(destination);
 }
 }

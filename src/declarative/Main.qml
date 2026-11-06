@@ -10,7 +10,6 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs as Dialogs
 import org.kde.ki18n
-import org.kde.config as KConfig
 import org.kde.notification as KNotification
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.dialogs as KirigamiDialogs
@@ -36,7 +35,7 @@ Kirigami.ApplicationWindow {
     height: 650
     minimumWidth: 480
     minimumHeight: 320
-    visible: true
+    visible: false
 
     // Keep the surface alpha-capable for runtime opacity changes.
     color: "transparent"
@@ -125,8 +124,10 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    KConfig.WindowStateSaver {
-        configGroupName: "MainWindow"
+    function initialWindowSize(): size {
+        terminalToolBar.contentItem.ensurePolished();
+        const terminalSize = terminalPane.sizeForGrid(root.appSettings.windowColumns, root.appSettings.windowRows);
+        return Qt.size(terminalSize.width, terminalSize.height + terminalToolBar.implicitHeight);
     }
 
     function focusTerminal(): void {

@@ -80,7 +80,7 @@ target_include_directories(kwi-ui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" PRIVATE s
 
 qt_add_executable(kwi main.cpp)
 target_link_libraries(kwi PRIVATE kwi-ui Qt6::Widgets KirigamiApp KF6::CoreAddons
-    KF6::DBusAddons KF6::ConfigQml KF6::I18nQml KF6::Kirigami KF6::WindowSystem)
+    KF6::DBusAddons KF6::I18nQml KF6::Kirigami KF6::WindowSystem)
 target_include_directories(kwi PRIVATE "${PROJECT_BINARY_DIR}")
 
 if(BUILD_KPART)

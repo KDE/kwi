@@ -62,6 +62,7 @@ Q_SIGNALS:
 private:
     class WindowContext;
     [[nodiscard]] WindowContext *createWindow();
+    void initializeWindow(WindowContext *context);
     [[nodiscard]] WindowContext *contextForSessions(const SessionModel *sessionModel) const;
     void activate(WindowContext *context, bool fullscreen = false);
     void detach(WindowContext *source, TerminalSession *session);

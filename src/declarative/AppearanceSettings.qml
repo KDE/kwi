@@ -225,6 +225,7 @@ SettingsPage {
                         from: 0
                         to: 100
                         stepSize: 1
+                        Kirigami.StyleHints.tickMarkStepSize: 10
                         value: Math.round(root.appSettings.backgroundOpacity * 100)
 
                         onMoved: {

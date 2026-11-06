@@ -28,17 +28,29 @@ TerminalSettings::TerminalSettings(QObject *parent)
     qGuiApp->installEventFilter(this);
     connect(qGuiApp, &QGuiApplication::fontDatabaseChanged, this, &TerminalSettings::refreshFixedWidthFonts);
 
-    const auto changeSignals = {&TerminalPreferences::useSystemFontChanged,       &TerminalPreferences::fontFamilyChanged,
-                                &TerminalPreferences::fontPointSizeChanged,       &TerminalPreferences::colorSchemeChanged,
-                                &TerminalPreferences::backgroundOpacityChanged,   &TerminalPreferences::backgroundBlurChanged,
-                                &TerminalPreferences::tabBarAtBottomChanged,      &TerminalPreferences::showTabStatusIconsChanged,
-                                &TerminalPreferences::useCustomWindowSizeChanged, &TerminalPreferences::windowColumnsChanged,
-                                &TerminalPreferences::windowRowsChanged,          &TerminalPreferences::scrollbackLinesChanged,
-                                &TerminalPreferences::silenceSecondsChanged,      &TerminalPreferences::titleFormatChanged,
-                                &TerminalPreferences::remoteTitleFormatChanged,   &TerminalPreferences::windowTitleFromApplicationChanged,
-                                &TerminalPreferences::cursorStyleChanged,         &TerminalPreferences::cursorBlinkingChanged,
-                                &TerminalPreferences::confirmCloseRunningChanged, &TerminalPreferences::confirmMultilinePasteChanged,
-                                &TerminalPreferences::copyOnSelectChanged,        &TerminalPreferences::requireCtrlForLinksChanged};
+    const auto changeSignals = {&TerminalPreferences::useSystemFontChanged,
+                                &TerminalPreferences::fontFamilyChanged,
+                                &TerminalPreferences::fontPointSizeChanged,
+                                &TerminalPreferences::colorSchemeChanged,
+                                &TerminalPreferences::backgroundOpacityChanged,
+                                &TerminalPreferences::backgroundBlurChanged,
+                                &TerminalPreferences::tabBarAtBottomChanged,
+                                &TerminalPreferences::showTabStatusIconsChanged,
+                                &TerminalPreferences::showMenuBarChanged,
+                                &TerminalPreferences::useCustomWindowSizeChanged,
+                                &TerminalPreferences::windowColumnsChanged,
+                                &TerminalPreferences::windowRowsChanged,
+                                &TerminalPreferences::scrollbackLinesChanged,
+                                &TerminalPreferences::silenceSecondsChanged,
+                                &TerminalPreferences::titleFormatChanged,
+                                &TerminalPreferences::remoteTitleFormatChanged,
+                                &TerminalPreferences::windowTitleFromApplicationChanged,
+                                &TerminalPreferences::cursorStyleChanged,
+                                &TerminalPreferences::cursorBlinkingChanged,
+                                &TerminalPreferences::confirmCloseRunningChanged,
+                                &TerminalPreferences::confirmMultilinePasteChanged,
+                                &TerminalPreferences::copyOnSelectChanged,
+                                &TerminalPreferences::requireCtrlForLinksChanged};
 
     for (const auto signal : changeSignals) {
         // Every entry is a typed signal; Clazy cannot resolve the loop variable.

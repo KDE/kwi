@@ -355,6 +355,27 @@ SettingsPage {
                 }
             }
         }
+
+        Forms.FormGroup {
+            title: KI18n.i18nc("@title:group", "Menu Bar")
+
+            Forms.FormEntry {
+                subtitle: KI18n.i18nc("@info", "Replaces the application menu button.")
+
+                contentItem: Controls.CheckBox {
+                    objectName: "showMenuBarSetting"
+                    Layout.fillWidth: true
+                    text: KI18n.i18nc("@option:check", "Show menu bar")
+                    enabled: !root.appSettings.isShowMenuBarImmutable
+                    checked: root.appSettings.showMenuBar
+
+                    onToggled: {
+                        root.appSettings.showMenuBar = checked;
+                        root.appSettings.save();
+                    }
+                }
+            }
+        }
     }
 
     function editScheme(createCopy: bool): void {

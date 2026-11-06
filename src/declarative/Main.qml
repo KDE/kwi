@@ -47,6 +47,20 @@ Kirigami.ApplicationWindow {
 
     title: root.currentSession ? (root.appSettings.windowTitleFromApplication ? root.currentSession.applicationTitle : root.currentSession.title) : ""
 
+    menuBar: Controls.MenuBar {
+        objectName: "applicationMenuBar"
+        visible: root.appSettings.showMenuBar
+        height: visible ? implicitHeight : 0
+
+        FileMenu {}
+        EditMenu {}
+        ViewMenu {}
+        TabsMenu {}
+        OutputMenu {}
+        SettingsMenu {}
+        HelpMenu {}
+    }
+
     property WindowManager tabDragController: null
     property bool findVisible: false
     readonly property var terminal: terminalPane.terminal
@@ -98,6 +112,220 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    component FileMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "File")
+
+        Controls.MenuItem {
+            action: newWindowAction
+        }
+
+        Controls.MenuItem {
+            action: newTabAction
+        }
+
+        NewTabPresetMenu {}
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: closeTabAction
+        }
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: applicationQuitAction
+        }
+    }
+
+    component EditMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "Edit")
+
+        Controls.MenuItem {
+            action: copyAction
+        }
+
+        Controls.MenuItem {
+            action: pasteAction
+        }
+
+        Controls.MenuItem {
+            action: pasteSelectionAction
+        }
+
+        Controls.MenuItem {
+            action: selectAllAction
+        }
+
+        Controls.MenuItem {
+            action: selectionModeAction
+        }
+
+        Controls.MenuItem {
+            action: readOnlyAction
+        }
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: findAction
+        }
+
+        Controls.MenuItem {
+            action: findNextAction
+        }
+
+        Controls.MenuItem {
+            action: findPreviousAction
+        }
+    }
+
+    component ViewMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "View")
+
+        Controls.MenuItem {
+            action: zoomInAction
+        }
+
+        Controls.MenuItem {
+            action: zoomOutAction
+        }
+
+        Controls.MenuItem {
+            action: resetZoomAction
+        }
+
+        Controls.MenuItem {
+            action: fullscreenAction
+        }
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: showMenuBarAction
+        }
+    }
+
+    component TabsMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "Tabs")
+
+        Controls.MenuItem {
+            action: renameTabAction
+        }
+
+        Controls.MenuItem {
+            action: nextTabAction
+        }
+
+        Controls.MenuItem {
+            action: previousTabAction
+        }
+
+        Controls.MenuItem {
+            action: lastUsedTabAction
+        }
+
+        Controls.MenuItem {
+            action: searchTabsAction
+        }
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: moveTabLeftAction
+        }
+
+        Controls.MenuItem {
+            action: moveTabRightAction
+        }
+
+        Controls.MenuItem {
+            action: detachTabAction
+        }
+
+        Controls.MenuItem {
+            action: closeTabAction
+        }
+    }
+
+    component OutputMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "Output")
+
+        Controls.MenuItem {
+            action: saveOutputAction
+        }
+
+        Controls.MenuItem {
+            action: clearHistoryAction
+        }
+
+        Controls.MenuItem {
+            action: resetTerminalAction
+        }
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: previousPromptAction
+        }
+
+        Controls.MenuItem {
+            action: nextPromptAction
+        }
+
+        Controls.MenuItem {
+            action: copyCommandOutputAction
+        }
+
+        Controls.MenuItem {
+            action: openDirectoryAction
+        }
+
+        Controls.MenuItem {
+            action: openLinkChooserAction
+        }
+
+        Controls.MenuSeparator {}
+
+        Controls.MenuItem {
+            action: monitorActivityAction
+        }
+
+        Controls.MenuItem {
+            action: monitorSilenceAction
+        }
+    }
+
+    component SettingsMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "Settings")
+
+        Controls.MenuItem {
+            action: settingsAction
+        }
+
+        Controls.MenuItem {
+            action: notificationsAction
+        }
+    }
+
+    component HelpMenu: Controls.Menu {
+        title: KI18n.i18nc("@title:menu", "Help")
+
+        Controls.MenuItem {
+            text: KI18n.i18nc("@action", "About Kwi")
+            icon.name: "help-about"
+
+            onTriggered: aboutDialog.open()
+        }
+
+        Controls.MenuItem {
+            text: KI18n.i18nc("@action", "About KDE")
+            icon.name: "kde"
+
+            onTriggered: aboutKdeDialog.open()
+        }
+    }
+
     function search(forward: bool): void {
         findBar.search(forward);
     }
@@ -126,8 +354,12 @@ Kirigami.ApplicationWindow {
 
     function initialWindowSize(): size {
         terminalToolBar.contentItem.ensurePolished();
+        if (root.menuBar && root.menuBar.visible) {
+            root.menuBar.contentItem.ensurePolished();
+        }
         const terminalSize = terminalPane.sizeForGrid(root.appSettings.windowColumns, root.appSettings.windowRows);
-        return Qt.size(terminalSize.width, terminalSize.height + terminalToolBar.implicitHeight);
+        const extraHeight = terminalToolBar.implicitHeight + (root.menuBar && root.menuBar.visible ? root.menuBar.implicitHeight : 0);
+        return Qt.size(terminalSize.width, terminalSize.height + extraHeight);
     }
 
     function focusTerminal(): void {
@@ -635,6 +867,21 @@ Kirigami.ApplicationWindow {
     }
 
     Kirigami.Action {
+        id: showMenuBarAction
+
+        objectName: "showMenuBarAction"
+        text: KI18n.i18nc("@action", "Show Menu Bar")
+        checkable: true
+        checked: root.appSettings.showMenuBar
+        enabled: root.terminalActionsEnabled
+
+        onTriggered: {
+            root.appSettings.showMenuBar = checked;
+            root.appSettings.save();
+        }
+    }
+
+    Kirigami.Action {
         id: applicationQuitAction
 
         objectName: "quitAction"
@@ -875,6 +1122,7 @@ Kirigami.ApplicationWindow {
                         id: menuButton
 
                         objectName: "applicationMenuButton"
+                        visible: !root.appSettings.showMenuBar
                         focusPolicy: Qt.TabFocus
                         Kirigami.MnemonicData.enabled: false
                         icon.name: "application-menu"
@@ -909,157 +1157,13 @@ Kirigami.ApplicationWindow {
 
                             NewTabPresetMenu {}
 
-                            Controls.Menu {
-                                title: KI18n.i18nc("@title:menu", "Tabs")
+                            TabsMenu {}
 
-                                Controls.MenuItem {
-                                    action: renameTabAction
-                                }
+                            EditMenu {}
 
-                                Controls.MenuItem {
-                                    action: nextTabAction
-                                }
+                            OutputMenu {}
 
-                                Controls.MenuItem {
-                                    action: previousTabAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: lastUsedTabAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: searchTabsAction
-                                }
-
-                                Controls.MenuSeparator {}
-
-                                Controls.MenuItem {
-                                    action: moveTabLeftAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: moveTabRightAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: detachTabAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: closeTabAction
-                                }
-                            }
-
-                            Controls.Menu {
-                                title: KI18n.i18nc("@title:menu", "Edit")
-
-                                Controls.MenuItem {
-                                    action: copyAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: pasteAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: pasteSelectionAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: selectAllAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: selectionModeAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: readOnlyAction
-                                }
-
-                                Controls.MenuSeparator {}
-
-                                Controls.MenuItem {
-                                    action: findAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: findNextAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: findPreviousAction
-                                }
-                            }
-
-                            Controls.Menu {
-                                title: KI18n.i18nc("@title:menu", "Output")
-
-                                Controls.MenuItem {
-                                    action: saveOutputAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: clearHistoryAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: resetTerminalAction
-                                }
-
-                                Controls.MenuSeparator {}
-
-                                Controls.MenuItem {
-                                    action: previousPromptAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: nextPromptAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: copyCommandOutputAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: openDirectoryAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: openLinkChooserAction
-                                }
-
-                                Controls.MenuSeparator {}
-
-                                Controls.MenuItem {
-                                    action: monitorActivityAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: monitorSilenceAction
-                                }
-                            }
-
-                            Controls.Menu {
-                                title: KI18n.i18nc("@title:menu", "View")
-
-                                Controls.MenuItem {
-                                    action: zoomInAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: zoomOutAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: resetZoomAction
-                                }
-
-                                Controls.MenuItem {
-                                    action: fullscreenAction
-                                }
-                            }
+                            ViewMenu {}
 
                             Controls.MenuSeparator {}
 

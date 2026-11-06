@@ -45,6 +45,9 @@
             <min>1</min>
             <max>999</max>
         </entry>
+        <entry name="showMenuBar" key="ShowMenuBar" type="Bool">
+            <default>false</default>
+        </entry>
     </group>
     <group name="Terminal">
         <entry name="scrollbackLines" key="ScrollbackLines" type="Int">

@@ -297,7 +297,7 @@ SettingsPage {
                 contentItem: Controls.CheckBox {
                     objectName: "useCustomWindowSizeSetting"
                     Layout.fillWidth: true
-                    text: KI18n.i18nc("@option:check", "Use custom default size for new windows")
+                    text: KI18n.i18nc("@option:check", "Use custom size for new windows")
                     enabled: !root.appSettings.isUseCustomWindowSizeImmutable
                     checked: root.appSettings.useCustomWindowSize
 

@@ -104,8 +104,6 @@ SettingsPage {
             }
 
             Forms.FormEntry {
-                fullWidth: true
-
                 contentItem: Controls.Label {
                     Layout.fillWidth: true
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 24

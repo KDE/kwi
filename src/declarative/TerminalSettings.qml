@@ -181,7 +181,6 @@ SettingsPage {
 
             Forms.FormEntry {
                 visible: titleError.text.length > 0
-                fullWidth: true
 
                 contentItem: Kirigami.InlineMessage {
                     id: titleError
@@ -251,7 +250,6 @@ SettingsPage {
 
             Forms.FormEntry {
                 visible: remoteTitleError.text.length > 0
-                fullWidth: true
 
                 contentItem: Kirigami.InlineMessage {
                     id: remoteTitleError

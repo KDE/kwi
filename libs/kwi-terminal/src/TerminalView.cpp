@@ -703,6 +703,15 @@ void TerminalView::updateMetrics()
     update();
 }
 
+QSizeF TerminalView::sizeForGrid(int columns, int rows) const
+{
+    if (columns < 2 || rows < 1) {
+        return {};
+    }
+
+    return {columns * m_cellWidth + 2 * m_padding, rows * m_cellHeight + 2 * m_padding};
+}
+
 void TerminalView::resizeTerminal()
 {
     // Wait for layout instead of reflowing a live session through a 2×1 grid.

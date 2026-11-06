@@ -17,6 +17,7 @@
 #include <QRectF>
 #include <QRegion>
 #include <QSet>
+#include <QSizeF>
 #include <QString>
 #include <QTimer>
 #include <QUrl>
@@ -275,6 +276,13 @@ public:
     void setFontFamily(const QString &family);
     [[nodiscard]] qreal fontPointSize() const;
     void setFontPointSize(qreal size);
+    /*!
+     * \qmlmethod size TerminalView::sizeForGrid(int columns, int rows)
+     * Returns the view size needed for \a columns and \a rows with the current
+     * font, zoom and screen scale, including padding. It does not resize the view.
+     * Fewer than two columns or one row returns an invalid size.
+     */
+    [[nodiscard]] Q_INVOKABLE QSizeF sizeForGrid(int columns, int rows) const;
     [[nodiscard]] QString colorScheme() const;
     void setColorScheme(const QString &scheme);
     [[nodiscard]] QColor foregroundColor() const;

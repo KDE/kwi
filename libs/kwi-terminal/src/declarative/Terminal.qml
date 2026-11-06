@@ -38,6 +38,16 @@ FocusScope {
     readonly property alias view: terminal
 
     /*!
+        \qmlmethod size Terminal::sizeForGrid(int columns, int rows)
+        Returns the size from \l {TerminalView::sizeForGrid()}{view.sizeForGrid()}
+        for \a columns and \a rows, with the scrollbar width added.
+    */
+    function sizeForGrid(columns: int, rows: int): size {
+        const viewSize = terminal.sizeForGrid(columns, rows);
+        return viewSize.width < 0 ? viewSize : Qt.size(viewSize.width + scrollbar.implicitWidth, viewSize.height);
+    }
+
+    /*!
         \qmlsignal Terminal::multilinePasteRequested(Session origin, string text)
         Forwards \l {TerminalView::multilinePasteRequested()}{view.multilinePasteRequested()}
         with \a origin and \a text unchanged.

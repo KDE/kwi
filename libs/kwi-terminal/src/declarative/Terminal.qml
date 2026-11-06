@@ -25,10 +25,7 @@ FocusScope {
 
     /*!
         \qmlproperty Session Terminal::session
-        The session displayed by \l view. The default is null. Terminal does not own,
-        start or close the session. A session can be attached to only one view at a time.
-
-        \sa TerminalView::session
+        Alias for \l {TerminalView::session}{view.session}.
     */
     property alias session: terminal.session
     /*!
@@ -42,26 +39,20 @@ FocusScope {
 
     /*!
         \qmlsignal Terminal::multilinePasteRequested(Session origin, string text)
-        Emitted when pasting \a text into \a origin needs confirmation. Forwarded
-        from \l view without changing the session or text.
-
-        \sa TerminalView::multilinePasteRequested()
+        Forwards \l {TerminalView::multilinePasteRequested()}{view.multilinePasteRequested()}
+        with \a origin and \a text unchanged.
     */
     signal multilinePasteRequested(Session origin, string text)
     /*!
         \qmlsignal Terminal::contextMenuRequested(point position)
-        Emitted when a context menu is requested at \a position in \l view coordinates.
-        The embedding application creates and opens the menu.
-
-        \sa TerminalView::contextMenuRequested()
+        Forwards \l {TerminalView::contextMenuRequested()}{view.contextMenuRequested()}
+        with \a position in \l view coordinates.
     */
     signal contextMenuRequested(point position)
     /*!
         \qmlsignal Terminal::linkActivated(url url)
-        Emitted when the user activates a link with target \a url. The embedding
-        application decides how to open it.
-
-        \sa TerminalView::linkActivated()
+        Forwards \l {TerminalView::linkActivated()}{view.linkActivated()}
+        with \a url unchanged.
     */
     signal linkActivated(url url)
 

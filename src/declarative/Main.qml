@@ -753,15 +753,14 @@ Kirigami.ApplicationWindow {
                 Layout.row: root.appSettings.tabBarAtBottom ? 1 : 0
                 Layout.fillWidth: true
                 position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
-                padding: Kirigami.Units.smallSpacing
-                topPadding: position === Controls.ToolBar.Footer ? 0 : padding
-                bottomPadding: position === Controls.ToolBar.Header ? 0 : padding
+                leftPadding: Kirigami.Units.smallSpacing / 2
+                rightPadding: Kirigami.Units.smallSpacing / 2
+                topPadding: 0
+                bottomPadding: 0
                 Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
                 background: Rectangle {
-                    // Match qqc2-desktop-style's DefaultToolBarBackground minimum.
-                    implicitHeight: 40
                     color: Kirigami.Theme.backgroundColor
                 }
 
@@ -774,6 +773,8 @@ Kirigami.ApplicationWindow {
                     anchors.right: parent.right
                     y: terminalToolBar.position === Controls.ToolBar.Footer ? 0 : terminalToolBar.height - height
                     Kirigami.AlignedSize.height: 1
+                    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+                    Kirigami.Theme.inherit: false
                     z: 1
 
                     readonly property real dpr: typeof root.devicePixelRatio === "number" ? root.devicePixelRatio : Screen.devicePixelRatio
@@ -795,7 +796,7 @@ Kirigami.ApplicationWindow {
 
                 contentItem: RowLayout {
                     objectName: "terminalToolBarContents"
-                    spacing: Kirigami.Units.smallSpacing
+                    spacing: Kirigami.Units.smallSpacing / 2
 
                     Controls.ToolButton {
                         action: newTabAction

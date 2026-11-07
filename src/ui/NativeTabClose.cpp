@@ -11,6 +11,7 @@
 #include <QPalette>
 #include <QQuickWindow>
 #include <QSGImageNode>
+#include <QSGTexture>
 #include <QSizeF>
 #include <QStyle>
 #include <QStyleOption>
@@ -129,6 +130,7 @@ QSGNode *NativeTabClose::updatePaintNode(QSGNode *node, UpdatePaintNodeData *)
     if (!imageNode) {
         imageNode = window()->createImageNode();
         imageNode->setOwnsTexture(true);
+        imageNode->setFiltering(QSGTexture::Linear);
     }
 
     imageNode->setTexture(window()->createTextureFromImage(m_image, QQuickWindow::TextureCanUseAtlas));

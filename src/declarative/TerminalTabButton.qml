@@ -62,7 +62,7 @@ Controls.TabButton {
     bottomPadding: Kirigami.Units.smallSpacing
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, implicitContentWidth + leftPadding + rightPadding)
     // Reserve progress space even when hidden to keep the tab height stable.
-    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, implicitContentHeight + topPadding + bottomPadding, titleLabel.implicitHeight + 2 * (progress.height + progress.anchors.bottomMargin) + Kirigami.Units.smallSpacing)
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, implicitContentHeight + topPadding + bottomPadding, titleLabel.implicitHeight + 2 * (progress.height + progress.frameMargin) + Kirigami.Units.smallSpacing / 2)
     Accessible.role: Accessible.PageTab
     Accessible.name: session.attention ? KI18n.i18nc("@info:accessibility", "%1, needs attention", session.title) : session.title
     Accessible.description: progressDescription
@@ -127,13 +127,14 @@ Controls.TabButton {
     T.ProgressBar {
         id: progress
 
+        readonly property real frameMargin: 2
+
         objectName: "terminalTabProgress" + control.index
+        y: control.Controls.TabBar.position === Controls.TabBar.Footer ? frameMargin : control.height - height - frameMargin
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.bottom: parent.bottom
         anchors.leftMargin: Kirigami.Units.smallSpacing * 2
         anchors.rightMargin: Kirigami.Units.smallSpacing * 2
-        anchors.bottomMargin: Kirigami.Units.smallSpacing
         height: Kirigami.Units.smallSpacing
         visible: control.hasProgress
         from: 0

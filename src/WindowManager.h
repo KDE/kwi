@@ -11,8 +11,10 @@
 #include <QString>
 #include <QVariantMap>
 #include <QtQmlIntegration/qqmlintegration.h>
+#include <memory>
 
 class QQuickWindow;
+class QQmlApplicationEngine;
 
 Q_MOC_INCLUDE("SessionModel.h")
 Q_MOC_INCLUDE("TerminalSession.h")
@@ -78,6 +80,7 @@ private:
     TerminalPresets *m_presets;
     AppShortcuts *m_shortcuts;
     TerminalPaletteModel *m_palettes;
+    std::unique_ptr<QQmlApplicationEngine> m_engine;
     QList<WindowContext *> m_windows{};
     QPointer<QQuickWindow> m_activeWindow{};
     QVariantMap m_lastProgress{};

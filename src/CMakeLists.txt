@@ -61,7 +61,6 @@ qt_add_qml_module(kwi-ui
     QML_FILES ${kwi_qml_files}
     DEPENDENCIES org.kde.kwi.terminal
     SOURCES WindowManager.h WindowManager.cpp
-        ui/AppShortcuts.cpp ui/AppShortcuts.h
         ui/TextFormatting.cpp ui/TextFormatting.h
         ui/NativeTabClose.cpp ui/NativeTabClose.h
         ui/WebShortcutModel.cpp ui/WebShortcutModel.h

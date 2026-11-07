@@ -14,6 +14,7 @@
 #include <KWaylandExtras>
 #include <KWindowSystem>
 #include <QDir>
+#include <QEvent>
 #include <QGuiApplication>
 #include <QIcon>
 #include <QProcess>
@@ -91,14 +92,35 @@ void DesktopIntegration::watchSession(TerminalSession *session)
 void DesktopIntegration::setWindow(QWindow *window)
 {
     if (m_window) {
+        m_window->removeEventFilter(this);
         disconnect(m_window, nullptr, this, nullptr);
     }
 
     m_window = window;
+    if (m_windowBlocked) {
+        m_windowBlocked = false;
+        Q_EMIT windowBlockedChanged();
+    }
 
     if (window) {
+        window->installEventFilter(this);
         connect(window, &QWindow::activeChanged, this, &DesktopIntegration::dismissCurrentNotification);
     }
+}
+
+bool DesktopIntegration::windowBlocked() const
+{
+    return m_windowBlocked;
+}
+
+bool DesktopIntegration::eventFilter(QObject *object, QEvent *event)
+{
+    if (object == m_window && (event->type() == QEvent::WindowBlocked || event->type() == QEvent::WindowUnblocked)) {
+        m_windowBlocked = event->type() == QEvent::WindowBlocked;
+        Q_EMIT windowBlockedChanged();
+    }
+
+    return QObject::eventFilter(object, event);
 }
 
 void DesktopIntegration::setSessionFocused(bool focused)

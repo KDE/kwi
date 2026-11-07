@@ -10,7 +10,6 @@
 #include "settings/TerminalPaletteModel.h"
 #include "settings/TerminalPresets.h"
 #include "settings/TerminalSettings.h"
-#include "ui/AppShortcuts.h"
 
 #include <KLocalizedString>
 #include <KirigamiAppDefaults>
@@ -62,9 +61,8 @@ public:
 
     TerminalSettings settings;
     TerminalPresets presets{&settings};
-    AppShortcuts shortcuts;
     TerminalPaletteModel palettes{&settings};
-    WindowManager windows{&settings, &presets, &shortcuts, &palettes};
+    WindowManager windows{&settings, &presets, &palettes};
 };
 }
 

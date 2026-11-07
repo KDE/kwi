@@ -24,7 +24,6 @@ Kirigami.ApplicationWindow {
     required property AppSettings appSettings
     required property PresetCatalog terminalPresets
     required property PresetEditor presetEditor
-    required property AppShortcuts appShortcuts
     required property ColorSchemeModel terminalPalettes
     required property SessionModel sessionModel
     required property DesktopIntegration desktopIntegration
@@ -53,7 +52,7 @@ Kirigami.ApplicationWindow {
 
     // Qt 6.11 Action shortcuts in unopened MenuItems can trigger through modal dialogs.
     // Remove when Qt blocks these shortcuts while a modal dialog is open.
-    readonly property bool terminalActionsEnabled: !closeDialog.visible && !pasteDialog.visible && !aboutDialog.visible && !renameDialog.visible && !chooserDialog.visible && !aboutKdeDialog.visible && !saveDialog.visible && !settingsView.configViewItem
+    readonly property bool terminalActionsEnabled: !root.desktopIntegration.windowBlocked && !closeDialog.visible && !pasteDialog.visible && !renameDialog.visible && !chooserDialog.visible && !saveDialog.visible && !settingsView.configViewItem
     readonly property TerminalSession currentSession: root.sessionModel.currentSession
 
     function launchPreset(name: string): void {
@@ -205,7 +204,7 @@ Kirigami.ApplicationWindow {
         id: newWindowAction
 
         objectName: "newWindowAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("new_window")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "new_window"
         enabled: root.terminalActionsEnabled
 
@@ -216,7 +215,7 @@ Kirigami.ApplicationWindow {
         id: newTabAction
 
         objectName: "newTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("new_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "new_tab"
         enabled: root.terminalActionsEnabled
 
@@ -230,7 +229,7 @@ Kirigami.ApplicationWindow {
         id: closeTabAction
 
         objectName: "closeTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("close_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "close_tab"
         enabled: root.terminalActionsEnabled && root.sessionModel.count > 0
 
@@ -241,7 +240,7 @@ Kirigami.ApplicationWindow {
         id: renameTabAction
 
         objectName: "renameTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("rename_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "rename_tab"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -252,7 +251,7 @@ Kirigami.ApplicationWindow {
         id: nextTabAction
 
         objectName: "nextTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("next_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "next_tab"
         enabled: root.terminalActionsEnabled && root.sessionModel.count > 1
 
@@ -263,7 +262,7 @@ Kirigami.ApplicationWindow {
         id: previousTabAction
 
         objectName: "previousTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("previous_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "previous_tab"
         enabled: root.terminalActionsEnabled && root.sessionModel.count > 1
 
@@ -274,7 +273,7 @@ Kirigami.ApplicationWindow {
         id: lastUsedTabAction
 
         objectName: "lastUsedTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("last_used_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "last_used_tab"
         enabled: root.terminalActionsEnabled && root.sessionModel.count > 1
 
@@ -288,7 +287,7 @@ Kirigami.ApplicationWindow {
         id: moveTabLeftAction
 
         objectName: "moveTabLeftAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("move_tab_left")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "move_tab_left"
         enabled: root.terminalActionsEnabled && root.sessionModel.currentIndex > 0
 
@@ -299,7 +298,7 @@ Kirigami.ApplicationWindow {
         id: moveTabRightAction
 
         objectName: "moveTabRightAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("move_tab_right")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "move_tab_right"
         enabled: root.terminalActionsEnabled && root.sessionModel.currentIndex < root.sessionModel.count - 1
 
@@ -310,7 +309,7 @@ Kirigami.ApplicationWindow {
         id: detachTabAction
 
         objectName: "detachTabAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("detach_tab")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "detach_tab"
         enabled: root.terminalActionsEnabled && root.sessionModel.count > 1
 
@@ -321,7 +320,7 @@ Kirigami.ApplicationWindow {
         id: searchTabsAction
 
         objectName: "searchTabsAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("search_tabs")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "search_tabs"
         enabled: root.terminalActionsEnabled
 
@@ -332,7 +331,7 @@ Kirigami.ApplicationWindow {
         id: copyAction
 
         objectName: "copyAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("copy")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "copy"
         enabled: root.terminalActionsEnabled && root.terminal.hasSelection
 
@@ -343,7 +342,7 @@ Kirigami.ApplicationWindow {
         id: pasteAction
 
         objectName: "pasteAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("paste")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "paste"
         enabled: root.terminalActionsEnabled && root.currentSession && root.currentSession.active && !root.currentSession.readOnly
 
@@ -354,7 +353,7 @@ Kirigami.ApplicationWindow {
         id: pasteSelectionAction
 
         objectName: "pasteSelectionAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("paste_selection")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "paste_selection"
         enabled: root.terminalActionsEnabled && root.currentSession && root.currentSession.active && !root.currentSession.readOnly
 
@@ -365,7 +364,7 @@ Kirigami.ApplicationWindow {
         id: selectAllAction
 
         objectName: "selectAllAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("select_all")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "select_all"
         enabled: root.terminalActionsEnabled
 
@@ -376,7 +375,7 @@ Kirigami.ApplicationWindow {
         id: selectionModeAction
 
         objectName: "selectionModeAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("selection_mode")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "selection_mode"
         enabled: root.terminalActionsEnabled
         checkable: true
@@ -392,7 +391,7 @@ Kirigami.ApplicationWindow {
         id: saveOutputAction
 
         objectName: "saveOutputAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("save_output")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "save_output"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -406,7 +405,7 @@ Kirigami.ApplicationWindow {
         id: clearHistoryAction
 
         objectName: "clearHistoryAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("clear_history")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "clear_history"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -417,7 +416,7 @@ Kirigami.ApplicationWindow {
         id: resetTerminalAction
 
         objectName: "resetTerminalAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("reset_terminal")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "reset_terminal"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -428,7 +427,7 @@ Kirigami.ApplicationWindow {
         id: findAction
 
         objectName: "findAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("find")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "find"
         enabled: root.terminalActionsEnabled
 
@@ -439,7 +438,7 @@ Kirigami.ApplicationWindow {
         id: findNextAction
 
         objectName: "findNextAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("edit_find_next")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "edit_find_next"
         enabled: root.terminalActionsEnabled && root.findVisible && findBar.text.length > 0
 
@@ -450,7 +449,7 @@ Kirigami.ApplicationWindow {
         id: findPreviousAction
 
         objectName: "findPreviousAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("edit_find_prev")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "edit_find_prev"
         enabled: root.terminalActionsEnabled && root.findVisible && findBar.text.length > 0
 
@@ -461,7 +460,7 @@ Kirigami.ApplicationWindow {
         id: previousPromptAction
 
         objectName: "previousPromptAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("previous_prompt")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "previous_prompt"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -472,7 +471,7 @@ Kirigami.ApplicationWindow {
         id: nextPromptAction
 
         objectName: "nextPromptAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("next_prompt")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "next_prompt"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -483,7 +482,7 @@ Kirigami.ApplicationWindow {
         id: copyCommandOutputAction
 
         objectName: "copyCommandOutputAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("copy_command_output")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "copy_command_output"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -497,7 +496,7 @@ Kirigami.ApplicationWindow {
         id: openDirectoryAction
 
         objectName: "openDirectoryAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("open_directory")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "open_directory"
         enabled: root.terminalActionsEnabled && root.currentSession
 
@@ -508,7 +507,7 @@ Kirigami.ApplicationWindow {
         id: openLinkChooserAction
 
         objectName: "openLinkChooserAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("open_link_chooser")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "open_link_chooser"
         enabled: root.terminalActionsEnabled
 
@@ -519,7 +518,7 @@ Kirigami.ApplicationWindow {
         id: readOnlyAction
 
         objectName: "readOnlyAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("read_only")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "read_only"
         enabled: root.terminalActionsEnabled && root.currentSession
         checkable: true
@@ -532,7 +531,7 @@ Kirigami.ApplicationWindow {
         id: monitorActivityAction
 
         objectName: "monitorActivityAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("monitor_activity")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "monitor_activity"
         enabled: root.terminalActionsEnabled && root.currentSession && root.currentSession.active
         checkable: true
@@ -545,7 +544,7 @@ Kirigami.ApplicationWindow {
         id: monitorSilenceAction
 
         objectName: "monitorSilenceAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("monitor_silence")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "monitor_silence"
         enabled: root.terminalActionsEnabled && root.currentSession && root.currentSession.active
         checkable: true
@@ -558,7 +557,7 @@ Kirigami.ApplicationWindow {
         id: fullscreenAction
 
         objectName: "fullscreenAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("fullscreen")
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
         AC.ActionCollection.action: "fullscreen"
         enabled: root.terminalActionsEnabled
         checkable: true
@@ -571,7 +570,7 @@ Kirigami.ApplicationWindow {
         id: zoomInAction
 
         objectName: "zoomInAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("view_zoom_in")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "view_zoom_in"
         enabled: root.terminalActionsEnabled
 
@@ -582,7 +581,7 @@ Kirigami.ApplicationWindow {
         id: zoomOutAction
 
         objectName: "zoomOutAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("view_zoom_out")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "view_zoom_out"
         enabled: root.terminalActionsEnabled
 
@@ -593,7 +592,7 @@ Kirigami.ApplicationWindow {
         id: resetZoomAction
 
         objectName: "resetZoomAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("reset_zoom")
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
         AC.ActionCollection.action: "reset_zoom"
         enabled: root.terminalActionsEnabled
 
@@ -604,8 +603,8 @@ Kirigami.ApplicationWindow {
         id: settingsAction
 
         objectName: "settingsAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("settings")
-        AC.ActionCollection.action: "settings"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: AC.StandardActionData.Preferences
         enabled: root.terminalActionsEnabled
 
         onTriggered: settingsView.open()
@@ -615,7 +614,7 @@ Kirigami.ApplicationWindow {
         id: notificationsAction
 
         objectName: "notificationsAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("options_configure_notifications")
+        AC.ActionCollection.collection: "org.kde.globalactions"
         AC.ActionCollection.action: "options_configure_notifications"
         // Remove these suppressions when KNotifications adds qmltypes for this singleton.
         enabled: root.terminalActionsEnabled && KNotification.NotificationConfiguration.isAvailable // qmllint disable unresolved-type missing-property
@@ -627,7 +626,7 @@ Kirigami.ApplicationWindow {
         id: menuAction
 
         objectName: "menuAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("menu")
+        AC.ActionCollection.collection: "org.kde.globalactions"
         AC.ActionCollection.action: "menu"
         enabled: root.terminalActionsEnabled
 
@@ -638,11 +637,65 @@ Kirigami.ApplicationWindow {
         id: applicationQuitAction
 
         objectName: "quitAction"
-        AC.ActionCollection.collection: root.appShortcuts.collectionFor("quit")
+        AC.ActionCollection.collection: "org.kde.globalactions"
         AC.ActionCollection.action: "quit"
         enabled: root.terminalActionsEnabled
 
         onTriggered: root.sessionModel.closeApplication()
+    }
+
+    Kirigami.Action {
+        objectName: "findActionAction"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: "FindAction"
+        enabled: root.terminalActionsEnabled
+    }
+
+    Kirigami.Action {
+        objectName: "configureShortcutsAction"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: AC.StandardActionData.KeyBindings
+        enabled: root.terminalActionsEnabled
+    }
+
+    Kirigami.Action {
+        objectName: "reportBugAction"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: AC.StandardActionData.ReportBug
+        enabled: root.terminalActionsEnabled
+    }
+
+    Kirigami.Action {
+        objectName: "donateAction"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: AC.StandardActionData.Donate
+        enabled: root.terminalActionsEnabled
+    }
+
+    Kirigami.Action {
+        id: aboutAction
+
+        objectName: "aboutAction"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: AC.StandardActionData.AboutApp
+    }
+
+    Kirigami.Action {
+        id: aboutKdeAction
+
+        objectName: "aboutKdeAction"
+        AC.ActionCollection.collection: "org.kde.globalactions"
+        AC.ActionCollection.action: AC.StandardActionData.AboutKDE
+    }
+
+    Connections {
+        target: root.desktopIntegration
+
+        function onWindowBlockedChanged(): void {
+            if (root.terminalActionsEnabled) {
+                root.focusTerminal();
+            }
+        }
     }
 
     Instantiator {
@@ -651,7 +704,7 @@ Kirigami.ApplicationWindow {
         delegate: Kirigami.Action {
             required property int index
 
-            AC.ActionCollection.collection: root.appShortcuts.collectionFor("tab_" + (index + 1))
+            AC.ActionCollection.collection: "org.kde.kwi.tabs"
             AC.ActionCollection.action: "tab_" + (index + 1)
             enabled: root.terminalActionsEnabled && root.sessionModel.count > 1 && index < root.sessionModel.count
 
@@ -1072,17 +1125,11 @@ Kirigami.ApplicationWindow {
                             }
 
                             Controls.MenuItem {
-                                text: KI18n.i18nc("@action", "About Kwi")
-                                icon.name: "help-about"
-
-                                onTriggered: aboutDialog.open()
+                                action: aboutAction
                             }
 
                             Controls.MenuItem {
-                                text: KI18n.i18nc("@action", "About KDE")
-                                icon.name: "kde"
-
-                                onTriggered: aboutKdeDialog.open()
+                                action: aboutKdeAction
                             }
 
                             Controls.MenuSeparator {}
@@ -1637,65 +1684,5 @@ Kirigami.ApplicationWindow {
             targetSession = null;
             root.focusTerminal();
         }
-    }
-
-    component InformationWindow: QtObject {
-        id: informationWindow
-
-        required property var pageFactory
-        required property string title
-        property var initialProperties: ({})
-        property var page: null
-        readonly property var window: page?.Window.window ?? null
-        readonly property bool visible: window?.visible ?? false
-
-        function open(): void {
-            if (window) {
-                window.raise();
-                window.requestActivate();
-
-                return;
-            }
-
-            page = root.pageStack.pushDialogLayer(pageFactory(), initialProperties, {
-                objectName: objectName + "Window",
-                title: title,
-                modality: Qt.WindowModal,
-                width: Kirigami.Units.gridUnit * 30,
-                height: Kirigami.Units.gridUnit * 30
-            });
-        }
-
-        property Connections windowConnection: Connections {
-            target: informationWindow.window
-
-            function onVisibleChanged(): void {
-                if (!informationWindow.visible) {
-                    informationWindow.page = null;
-
-                    if (root.terminalActionsEnabled) {
-                        root.focusTerminal();
-                    }
-                }
-            }
-        }
-    }
-
-    InformationWindow {
-        id: aboutKdeDialog
-
-        objectName: "aboutKdeDialog"
-        title: KI18n.i18nc("@title:window", "About KDE")
-        pageFactory: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage")
-        initialProperties: ({ objectName: "aboutKdePage" })
-    }
-
-    InformationWindow {
-        id: aboutDialog
-
-        objectName: "aboutDialog"
-        title: KI18n.i18nc("@title:window", "About Kwi")
-        pageFactory: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage")
-        initialProperties: ({ objectName: "aboutPage", getInvolvedUrl: "", donateUrl: "" })
     }
 }

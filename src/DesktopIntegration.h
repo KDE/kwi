@@ -15,6 +15,7 @@
 Q_MOC_INCLUDE("TerminalSession.h")
 
 class KNotification;
+class QEvent;
 class QWindow;
 
 namespace Kwi
@@ -28,6 +29,7 @@ class DesktopIntegration final : public QObject
     QML_ELEMENT
     QML_UNCREATABLE("Desktop services belong to their window or embedded host.")
     Q_PROPERTY(QString errorString READ errorString NOTIFY errorChanged)
+    Q_PROPERTY(bool windowBlocked READ windowBlocked NOTIFY windowBlockedChanged)
 
 public:
     // Call after constructing QGuiApplication and selecting the desktop icon theme.
@@ -41,6 +43,7 @@ public:
     explicit DesktopIntegration(SessionModel *sessions, Mode mode = Mode::Standalone, QObject *parent = nullptr);
 
     void setWindow(QWindow *window);
+    [[nodiscard]] bool windowBlocked() const;
     void setSessionFocused(bool focused);
     Q_INVOKABLE void toggleFullScreen();
     Q_INVOKABLE void openUrl(const QUrl &url);
@@ -51,9 +54,11 @@ public:
 
 Q_SIGNALS:
     void errorChanged();
+    void windowBlockedChanged();
     void sessionActivationRequested(Kwi::TerminalSession *session);
 
 private:
+    bool eventFilter(QObject *object, QEvent *event) override;
     void notifyBell(TerminalSession *session);
     void notify(TerminalSession *session, const QString &event, const QString &title, const QString &text);
     void dismissNotification(TerminalSession *session);
@@ -69,5 +74,6 @@ private:
     QElapsedTimer m_lastNotification{};
     QString m_error{};
     bool m_sessionFocused;
+    bool m_windowBlocked{false};
 };
 }

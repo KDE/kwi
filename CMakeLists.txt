@@ -50,7 +50,7 @@ endif()
 
 find_package(KF6KirigamiAddons 1.11 REQUIRED)
 find_package(KF6KirigamiAppComponents 1.1 REQUIRED)
-find_package(Ghostty REQUIRED)
+find_package(Ghostty 1.0 REQUIRED)
 
 qt_standard_project_setup(REQUIRES ${QT_MIN_VERSION})
 

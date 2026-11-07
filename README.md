@@ -31,7 +31,7 @@ Join [#kwi:kde.org](https://matrix.to/#/#kwi:kde.org) on Matrix for user and dev
 - KDE Frameworks 6.29+
 - Kirigami Addons 1.11+
 - Kirigami App Components 1.1+
-- libghostty-vt 1.4.0+ (either CMake or PkgConfig)
+- libghostty-vt 1.0+ (either CMake or PkgConfig)
 
 
 ## Nightly Packages

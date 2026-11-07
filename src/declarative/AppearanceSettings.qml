@@ -235,7 +235,19 @@ SettingsPage {
                     }
 
                     Controls.Label {
+                        id: opacityLabel
+
+                        Layout.preferredWidth: Math.ceil(opacityLabelMetrics.advanceWidth)
                         text: KI18n.i18nc("@label", "%1%", Math.round(opacitySlider.value))
+                        horizontalAlignment: Text.AlignRight
+
+                        TextMetrics {
+                            id: opacityLabelMetrics
+
+                            font: opacityLabel.font
+                            renderType: opacityLabel.renderType
+                            text: KI18n.i18nc("@label", "%1%", 999)
+                        }
                     }
 
                     Controls.CheckBox {

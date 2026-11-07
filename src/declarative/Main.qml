@@ -772,7 +772,7 @@ Kirigami.ApplicationWindow {
                     anchors.left: parent.left
                     anchors.right: parent.right
                     y: terminalToolBar.position === Controls.ToolBar.Footer ? 0 : terminalToolBar.height - height
-                    Kirigami.AlignedSize.height: 1
+                    height: Math.max(1, Math.floor(dpr)) / dpr
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
                     Kirigami.Theme.inherit: false
                     z: 1

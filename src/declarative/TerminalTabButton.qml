@@ -133,8 +133,8 @@ Controls.TabButton {
         y: control.Controls.TabBar.position === Controls.TabBar.Footer ? frameMargin : control.height - height - frameMargin
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.leftMargin: Kirigami.Units.smallSpacing * 2
-        anchors.rightMargin: Kirigami.Units.smallSpacing * 2
+        anchors.leftMargin: Kirigami.Units.smallSpacing * 2.5
+        anchors.rightMargin: Kirigami.Units.smallSpacing * 2.5
         height: Kirigami.Units.smallSpacing
         visible: control.hasProgress
         from: 0

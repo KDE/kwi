@@ -23,7 +23,8 @@ FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio)
     const qreal cellHeight{result.cellSize.height() * dpr};
     // Nerd Font single-cell icons balance cap height with the full font height.
     result.iconHeight = qMin(cellHeight, (2 * fm.capHeight() + lineHeight) / 3) / dpr;
-    // Center the font in the row. Leave pixel alignment to glyph placement.
+    // Vertically center text in its row - pixel alignment for fractional is done later at
+    // glyph placement time.
     result.baseline = (fm.ascent() + (cellHeight - fm.height()) / 2) / dpr;
     result.strokeWidth = qMax(qreal(1), std::round(fm.lineWidth())) / dpr;
     result.underlinePosition = qMin(std::floor(cellHeight) / dpr - result.strokeWidth, std::round(result.baseline * dpr + fm.underlinePos()) / dpr);

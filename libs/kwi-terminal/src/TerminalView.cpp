@@ -37,7 +37,6 @@
 #include <QQuickWindow>
 #include <QRegularExpression>
 #include <QScopedValueRollback>
-#include <QScreen>
 #include <QStyleHints>
 #include <QVector>
 #include <QWheelEvent>
@@ -267,32 +266,11 @@ Session *TerminalView::session() const
     return m_session;
 }
 
-void TerminalView::watchScreen(QScreen *screen)
-{
-    disconnect(m_dpiConnection);
-
-    if (screen) {
-        m_dpiConnection = connect(screen, &QScreen::logicalDotsPerInchChanged, this, [this] {
-            updateMetrics();
-        });
-    }
-
-    updateMetrics();
-}
-
 void TerminalView::itemChange(ItemChange change, const ItemChangeData &data)
 {
     QQuickItem::itemChange(change, data);
 
-    if (change == ItemSceneChange) {
-        disconnect(m_screenConnection);
-
-        if (data.window) {
-            m_screenConnection = connect(data.window, &QWindow::screenChanged, this, &TerminalView::watchScreen);
-        }
-
-        watchScreen(data.window ? data.window->screen() : nullptr);
-    } else if (change == ItemDevicePixelRatioHasChanged) {
+    if (change == ItemSceneChange || change == ItemDevicePixelRatioHasChanged) {
         updateMetrics();
     }
 }
@@ -691,9 +669,7 @@ void TerminalView::updateMetrics()
     m_font.setStyleHint(QFont::Monospace, m_font.styleStrategy());
     m_font.setPointSizeF(qBound(6.0, fontPointSize() + m_zoom, 72.0));
     const qreal dpr{window() ? window()->effectiveDevicePixelRatio() : 1};
-    const qreal dpi{window() && window()->screen() ? window()->screen()->logicalDotsPerInch() : 96};
-
-    const auto metrics = GhosttyQt::Quick::fontMetrics(m_font, dpr, dpi);
+    const auto metrics = GhosttyQt::Quick::fontMetrics(m_font, dpr);
     m_cellWidth = metrics.cellSize.width();
     m_cellHeight = metrics.cellSize.height();
 
@@ -823,7 +799,6 @@ QSGNode *TerminalView::updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *)
     // Align the painted origin without changing the grid's logical size.
     const qreal padding{qRound(Padding * options.devicePixelRatio) / options.devicePixelRatio};
     options.contentRect = QRectF(QPointF(padding, padding), size() - QSizeF(2 * Padding, 2 * Padding));
-    options.logicalDpi = window()->screen() ? window()->screen()->logicalDotsPerInch() : 96;
     options.focused = hasActiveFocus();
     options.cursorBlinkVisible = m_cursorBlinkVisible || !hasActiveFocus();
     options.textBlinkVisible = m_textBlinkVisible;

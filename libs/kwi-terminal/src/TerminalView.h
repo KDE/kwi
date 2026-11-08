@@ -9,7 +9,6 @@
 #include <QFont>
 #include <QInputMethodEvent>
 #include <QList>
-#include <QMetaObject>
 #include <QPoint>
 #include <QPointF>
 #include <QPointer>
@@ -25,7 +24,6 @@
 #include <QtQmlIntegration/qqmlintegration.h>
 #include <optional>
 
-class QScreen;
 class KDirWatch;
 class KModifierKeyInfo;
 
@@ -512,7 +510,6 @@ private:
     void reloadColors();
     void applyColors(const TerminalColors &colors);
     void updateMetrics();
-    void watchScreen(QScreen *screen);
     void resizeTerminal();
     void updateCursorDefaults();
     void updateBlinkTimers();
@@ -555,9 +552,6 @@ private:
     KDirWatch *m_paletteWatch;
     QTimer m_paletteReloadTimer;
     QString m_palettePath;
-
-    QMetaObject::Connection m_screenConnection;
-    QMetaObject::Connection m_dpiConnection;
 
     QUrl m_hoveredLink;
     QRegion m_highlightedLink;

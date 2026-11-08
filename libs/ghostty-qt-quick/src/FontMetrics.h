@@ -18,5 +18,5 @@ struct FontMetrics {
     QFont pixelFont;
 };
 
-[[nodiscard]] FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio, qreal logicalDpi = 96);
+[[nodiscard]] FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio);
 }

@@ -27,7 +27,6 @@ public:
         QRectF contentRect;
         QFont font;
         qreal devicePixelRatio{1};
-        qreal logicalDpi{96};
         qreal backgroundOpacity{1};
         bool focused{false};
         bool cursorBlinkVisible{true};

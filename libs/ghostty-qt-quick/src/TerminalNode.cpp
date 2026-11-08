@@ -1069,8 +1069,7 @@ void TerminalNode::prepare(const Frame &frame, const Options &options)
         timer.start();
     }
 
-    const bool fontChanged = !d->initialized || options.font != d->options.font || options.devicePixelRatio != d->options.devicePixelRatio
-        || options.logicalDpi != d->options.logicalDpi;
+    const bool fontChanged = !d->initialized || options.font != d->options.font || options.devicePixelRatio != d->options.devicePixelRatio;
     const bool terminalChanged{frame.terminalId != d->frame.terminalId};
     const bool appearanceChanged = fontChanged || terminalChanged || frame.foreground != d->frame.foreground || frame.background != d->frame.background
         || frame.cursorColor != d->frame.cursorColor || frame.selectionForeground != d->frame.selectionForeground
@@ -1103,7 +1102,7 @@ void TerminalNode::prepare(const Frame &frame, const Options &options)
         }
 
         d->atlas = std::make_unique<GlyphAtlas>(d->window, d->statistics ? &d->statistics->rasterizedGlyphs : nullptr);
-        d->metrics = fontMetrics(options.font, options.devicePixelRatio, options.logicalDpi);
+        d->metrics = fontMetrics(options.font, options.devicePixelRatio);
         d->shaper.setMetrics(d->metrics, options.devicePixelRatio);
     }
 

@@ -8,13 +8,11 @@
 
 namespace GhosttyQt::Quick
 {
-FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio, qreal logicalDpi)
+FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio)
 {
     const qreal dpr{qMax(qreal(0.25), devicePixelRatio)};
-    const qreal pixels{font.pixelSize() > 0 ? font.pixelSize() : qMax(qreal(1), font.pointSizeF()) * logicalDpi / 72};
-    QFont logicalFont{font};
-    logicalFont.setPixelSize(qMax(1, qRound(pixels)));
-    const QFontMetricsF logicalMetrics{logicalFont};
+    const QFontMetricsF logicalMetrics{font};
+    const qreal pixels{font.pixelSize() > 0 ? font.pixelSize() : qMax(qreal(1), font.pointSizeF()) * logicalMetrics.fontDpi() / 72};
     FontMetrics result;
     // Keep the grid independent of screen scale. Rasterize text at the target resolution.
     result.cellSize = QSize(qMax(1, qRound(logicalMetrics.horizontalAdvance(QLatin1Char('M')))), qMax(1, qRound(logicalMetrics.lineSpacing())));

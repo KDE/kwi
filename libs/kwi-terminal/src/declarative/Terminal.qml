@@ -146,7 +146,7 @@ FocusScope {
 
         Timer {
             id: sizeHintClearTimer
-            interval: Kirigami.Units.humanMoment
+            interval: Kirigami.Units.humanMoment / 2
 
             onTriggered: {
                 sizeHint.text = "";

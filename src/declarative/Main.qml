@@ -740,23 +740,21 @@ Kirigami.ApplicationWindow {
 
         title: KI18n.i18nc("@title", "Terminal")
 
-        GridLayout {
+        Item {
             anchors.fill: parent
-            columns: 1
-            rowSpacing: 0
-            columnSpacing: 0
 
             Controls.ToolBar {
                 id: terminalToolBar
 
                 objectName: "terminalToolBar"
-                Layout.row: root.appSettings.tabBarAtBottom ? 1 : 0
-                Layout.fillWidth: true
+                anchors.left: parent.left
+                anchors.right: parent.right
+                y: root.appSettings.tabBarAtBottom ? Math.round((parent.height - height) * tabFrame.dpr) / tabFrame.dpr : 0
                 position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
                 leftPadding: Kirigami.Units.smallSpacing / 2
                 rightPadding: Kirigami.Units.smallSpacing / 2
-                topPadding: position === Controls.ToolBar.Footer ? tabFrame.height : 0
-                bottomPadding: position === Controls.ToolBar.Header ? tabFrame.height : 0
+                topPadding: position === Controls.ToolBar.Footer ? sessionTabs.outerPadding : 0
+                bottomPadding: position === Controls.ToolBar.Header ? sessionTabs.outerPadding : 0
                 Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
@@ -764,7 +762,7 @@ Kirigami.ApplicationWindow {
                     color: Kirigami.Theme.backgroundColor
                 }
 
-                Kirigami.Separator {
+                Item {
                     id: tabFrame
 
                     objectName: "terminalTabFrame"
@@ -782,11 +780,15 @@ Kirigami.ApplicationWindow {
                     readonly property real gapStart: Math.max(0, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabLeft) * dpr) / dpr))
                     readonly property real gapEnd: Math.max(gapStart, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabRight) * dpr) / dpr))
 
-                    Rectangle {
-                        x: tabFrame.gapStart
-                        width: tabFrame.gapEnd - x
+                    Kirigami.Separator {
+                        width: tabFrame.gapStart
                         height: tabFrame.height
-                        color: Kirigami.Theme.backgroundColor
+                    }
+
+                    Kirigami.Separator {
+                        x: tabFrame.gapEnd
+                        width: tabFrame.width - x
+                        height: tabFrame.height
                     }
                 }
 
@@ -1094,9 +1096,11 @@ Kirigami.ApplicationWindow {
             }
 
             ColumnLayout {
-                Layout.row: root.appSettings.tabBarAtBottom ? 0 : 1
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                id: terminalMessages
+
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.top: root.appSettings.tabBarAtBottom ? parent.top : terminalToolBar.bottom
                 spacing: 0
 
                 TerminalSearchBar {
@@ -1139,108 +1143,110 @@ Kirigami.ApplicationWindow {
                         }
                     }
                 }
+            }
 
-                TerminalPane {
-                    id: terminalPane
+            TerminalPane {
+                id: terminalPane
 
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    applicationSession: root.sessionModel.currentSession
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.top: terminalMessages.bottom
+                anchors.bottom: root.appSettings.tabBarAtBottom ? terminalToolBar.top : parent.bottom
+                applicationSession: root.sessionModel.currentSession
 
-                    // Don't let the window's Kirigami.PageRow shortcuts interfere with the terminal.
-                    Keys.onShortcutOverride: event => {
-                        event.accepted = event.matches(StandardKey.Back) || event.matches(StandardKey.Forward);
+                // Don't let the window's Kirigami.PageRow shortcuts interfere with the terminal.
+                Keys.onShortcutOverride: event => {
+                    event.accepted = event.matches(StandardKey.Back) || event.matches(StandardKey.Forward);
+                }
+
+                onMultilinePasteRequested: (origin, text) => {
+                    pasteDialog.targetSession = origin;
+                    pasteDialog.pasteContent = text;
+                    pasteDialog.open();
+                }
+
+                onContextMenuRequested: position => {
+                    terminalMenu.linkUrl = terminal.hoveredLink;
+                    webShortcuts.refresh(terminal.selectedText);
+                    terminalMenu.popup(terminal, position.x, position.y);
+                }
+
+                onLinkActivated: url => root.desktopIntegration.openUrl(url)
+                Component.onCompleted: Qt.callLater(root.focusTerminal)
+
+                Controls.Menu {
+                    id: terminalMenu
+
+                    objectName: "terminalContextMenu"
+                    modal: true
+                    dim: false
+                    property url linkUrl
+
+                    WebShortcutModel {
+                        id: webShortcuts
+
+                        onConfigurationError: message => root.showPassiveNotification(TextFormatting.plainTextToHtml(message))
                     }
 
-                    onMultilinePasteRequested: (origin, text) => {
-                        pasteDialog.targetSession = origin;
-                        pasteDialog.pasteContent = text;
-                        pasteDialog.open();
+                    Controls.MenuItem {
+                        text: KI18n.i18nc("@action", "Open Link")
+                        icon.name: "document-open"
+                        visible: terminalMenu.linkUrl.toString().length > 0
+
+                        onTriggered: root.desktopIntegration.openUrl(terminalMenu.linkUrl)
                     }
 
-                    onContextMenuRequested: position => {
-                        terminalMenu.linkUrl = terminal.hoveredLink;
-                        webShortcuts.refresh(terminal.selectedText);
-                        terminalMenu.popup(terminal, position.x, position.y);
+                    Controls.MenuItem {
+                        text: KI18n.i18nc("@action", "Copy Link")
+                        icon.name: "edit-copy"
+                        visible: terminalMenu.linkUrl.toString().length > 0
+
+                        onTriggered: root.terminal.copyLink(terminalMenu.linkUrl)
                     }
 
-                    onLinkActivated: url => root.desktopIntegration.openUrl(url)
-                    Component.onCompleted: Qt.callLater(root.focusTerminal)
+                    Controls.MenuSeparator {
+                        visible: terminalMenu.linkUrl.toString().length > 0
+                    }
 
-                    Controls.Menu {
-                        id: terminalMenu
+                    Controls.MenuItem {
+                        action: copyAction
+                    }
 
-                        objectName: "terminalContextMenu"
-                        modal: true
-                        dim: false
-                        property url linkUrl
+                    Controls.MenuItem {
+                        action: copyCommandOutputAction
+                    }
 
-                        WebShortcutModel {
-                            id: webShortcuts
+                    Controls.MenuItem {
+                        action: pasteAction
+                    }
 
-                            onConfigurationError: message => root.showPassiveNotification(TextFormatting.plainTextToHtml(message))
+                    Controls.MenuItem {
+                        action: selectAllAction
+                    }
+
+                    Controls.MenuSeparator {}
+
+                    Controls.MenuItem {
+                        action: findAction
+                    }
+
+                    Instantiator {
+                        model: webShortcuts.count > 0 ? 1 : 0
+
+                        delegate: WebShortcutMenu {
+                            providers: webShortcuts
+
+                            onUrlRequested: url => root.desktopIntegration.openUrl(url)
                         }
 
-                        Controls.MenuItem {
-                            text: KI18n.i18nc("@action", "Open Link")
-                            icon.name: "document-open"
-                            visible: terminalMenu.linkUrl.toString().length > 0
+                        onObjectAdded: (index, object) => terminalMenu.insertMenu(terminalMenu.count - 2, object)
+                        onObjectRemoved: (index, object) => terminalMenu.removeMenu(object)
+                    }
 
-                            onTriggered: root.desktopIntegration.openUrl(terminalMenu.linkUrl)
-                        }
+                    Controls.MenuSeparator {}
 
-                        Controls.MenuItem {
-                            text: KI18n.i18nc("@action", "Copy Link")
-                            icon.name: "edit-copy"
-                            visible: terminalMenu.linkUrl.toString().length > 0
-
-                            onTriggered: root.terminal.copyLink(terminalMenu.linkUrl)
-                        }
-
-                        Controls.MenuSeparator {
-                            visible: terminalMenu.linkUrl.toString().length > 0
-                        }
-
-                        Controls.MenuItem {
-                            action: copyAction
-                        }
-
-                        Controls.MenuItem {
-                            action: copyCommandOutputAction
-                        }
-
-                        Controls.MenuItem {
-                            action: pasteAction
-                        }
-
-                        Controls.MenuItem {
-                            action: selectAllAction
-                        }
-
-                        Controls.MenuSeparator {}
-
-                        Controls.MenuItem {
-                            action: findAction
-                        }
-
-                        Instantiator {
-                            model: webShortcuts.count > 0 ? 1 : 0
-
-                            delegate: WebShortcutMenu {
-                                providers: webShortcuts
-
-                                onUrlRequested: url => root.desktopIntegration.openUrl(url)
-                            }
-
-                            onObjectAdded: (index, object) => terminalMenu.insertMenu(terminalMenu.count - 2, object)
-                            onObjectRemoved: (index, object) => terminalMenu.removeMenu(object)
-                        }
-
-                        Controls.MenuSeparator {}
-
-                        Controls.MenuItem {
-                            action: openDirectoryAction
-                        }
+                    Controls.MenuItem {
+                        action: openDirectoryAction
                     }
                 }
             }

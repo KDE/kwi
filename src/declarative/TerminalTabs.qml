@@ -172,12 +172,10 @@ RowLayout {
         background: null
         Layout.fillWidth: true
         Layout.fillHeight: true
-        Layout.topMargin: -bottomPadding
-        Layout.bottomMargin: -topPadding
+        Layout.topMargin: position === Controls.TabBar.Header ? root.outerPadding : -root.outerPadding
+        Layout.bottomMargin: -Layout.topMargin
         clip: true
         position: root.position
-        topPadding: position === Controls.TabBar.Header ? root.outerPadding : 0
-        bottomPadding: position === Controls.TabBar.Footer ? root.outerPadding : 0
         currentIndex: root.sessions.currentIndex
         contentItem.objectName: "terminalTabList"
 

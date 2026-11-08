@@ -633,6 +633,11 @@ int Session::progressPercent() const
     return m_progress.percent;
 }
 
+QSize Session::gridSize() const
+{
+    return {m_columns, m_rows};
+}
+
 qint64 Session::processId() const
 {
     return qMax<qint64>(0, m_process.processId());
@@ -667,6 +672,8 @@ void Session::resize(int columns, int rows, QSize cellPixels)
     m_rows = rows;
     m_cellPixels = cellPixels;
     m_process.resize(columns, rows, cellPixels);
+
+    Q_EMIT gridSizeChanged();
 
     Q_EMIT m_events.historyChanged();
 }

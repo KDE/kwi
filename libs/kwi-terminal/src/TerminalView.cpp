@@ -1764,7 +1764,9 @@ void TerminalView::mousePressEvent(QMouseEvent *event)
 
     if (event->button() == Qt::LeftButton) {
         m_selecting = true;
-        updateSelection(GhosttyQt::SelectionEvent::Type::Press, event->position(), event->timestamp());
+        const bool extend{event->modifiers().testFlag(Qt::ShiftModifier) && m_session && m_session->terminal()
+                          && m_session->terminal()->canExtendSelectionGesture()};
+        updateSelection(extend ? GhosttyQt::SelectionEvent::Type::Drag : GhosttyQt::SelectionEvent::Type::Press, event->position(), event->timestamp());
     } else {
         if (m_session && m_session->terminal())
             m_session->terminal()->cancelSelectionGesture();

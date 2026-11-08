@@ -159,6 +159,7 @@ public:
 
     bool select(QPoint first, QPoint last, bool rectangle = false);
     bool selectionGesture(const SelectionEvent &event);
+    [[nodiscard]] bool canExtendSelectionGesture() const;
     [[nodiscard]] bool selectionAutoscroll() const;
     void cancelSelectionGesture();
     [[nodiscard]] std::optional<QPoint> adjustSelection(SelectionAdjustment adjustment, bool extendSelection);

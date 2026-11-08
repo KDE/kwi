@@ -176,6 +176,7 @@ class KWI_TERMINAL_EXPORT TerminalView : public QQuickItem
      * \qmlproperty string TerminalView::selectedText
      * \readonly
      * The selected terminal text, or an empty string when nothing is selected.
+     * Shift-click extends an existing mouse selection, including after scrolling.
      */
     Q_PROPERTY(QString selectedText READ selectedText NOTIFY selectionChanged)
     /*!

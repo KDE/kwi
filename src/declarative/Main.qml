@@ -755,8 +755,8 @@ Kirigami.ApplicationWindow {
                 position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
                 leftPadding: Kirigami.Units.smallSpacing / 2
                 rightPadding: Kirigami.Units.smallSpacing / 2
-                topPadding: 0
-                bottomPadding: 0
+                topPadding: tabFrame.height
+                bottomPadding: tabFrame.height
                 Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
@@ -764,7 +764,7 @@ Kirigami.ApplicationWindow {
                     color: Kirigami.Theme.backgroundColor
                 }
 
-                Item {
+                Rectangle {
                     id: tabFrame
 
                     objectName: "terminalTabFrame"
@@ -773,6 +773,7 @@ Kirigami.ApplicationWindow {
                     anchors.right: parent.right
                     y: terminalToolBar.position === Controls.ToolBar.Footer ? 0 : terminalToolBar.height - height
                     height: Math.max(1, Math.floor(dpr)) / dpr
+                    color: Kirigami.Theme.backgroundColor
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
                     Kirigami.Theme.inherit: false
                     z: 1

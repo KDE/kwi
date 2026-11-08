@@ -764,7 +764,7 @@ Kirigami.ApplicationWindow {
                     color: Kirigami.Theme.backgroundColor
                 }
 
-                Rectangle {
+                Kirigami.Separator {
                     id: tabFrame
 
                     objectName: "terminalTabFrame"
@@ -773,7 +773,6 @@ Kirigami.ApplicationWindow {
                     anchors.right: parent.right
                     y: terminalToolBar.position === Controls.ToolBar.Footer ? 0 : terminalToolBar.height - height
                     height: Math.max(1, Math.floor(dpr)) / dpr
-                    color: Kirigami.Theme.backgroundColor
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
                     Kirigami.Theme.inherit: false
                     z: 1
@@ -783,15 +782,11 @@ Kirigami.ApplicationWindow {
                     readonly property real gapStart: Math.max(0, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabLeft) * dpr) / dpr))
                     readonly property real gapEnd: Math.max(gapStart, Math.min(width, Math.round((tabOrigin + sessionTabs.selectedTabRight) * dpr) / dpr))
 
-                    Kirigami.Separator {
-                        width: tabFrame.gapStart
+                    Rectangle {
+                        x: tabFrame.gapStart
+                        width: tabFrame.gapEnd - x
                         height: tabFrame.height
-                    }
-
-                    Kirigami.Separator {
-                        x: tabFrame.gapEnd
-                        width: tabFrame.width - x
-                        height: tabFrame.height
+                        color: Kirigami.Theme.backgroundColor
                     }
                 }
 

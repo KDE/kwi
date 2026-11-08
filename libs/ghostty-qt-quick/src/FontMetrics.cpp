@@ -19,13 +19,12 @@ FontMetrics fontMetrics(const QFont &font, qreal devicePixelRatio)
     result.pixelFont = font;
     result.pixelFont.setPixelSize(qMax(1, qRound(pixels * dpr)));
     const QFontMetricsF fm{result.pixelFont};
-    // Include leading and center the font in the row.
     const qreal lineHeight{fm.lineSpacing()};
     const qreal cellHeight{result.cellSize.height() * dpr};
-    const qreal baselineFromBottom{fm.descent() + fm.leading() / 2 - (cellHeight - lineHeight) / 2};
     // Nerd Font single-cell icons balance cap height with the full font height.
     result.iconHeight = qMin(cellHeight, (2 * fm.capHeight() + lineHeight) / 3) / dpr;
-    result.baseline = (cellHeight - qRound(baselineFromBottom)) / dpr;
+    // Center the font in the row. Leave pixel alignment to glyph placement.
+    result.baseline = (fm.ascent() + (cellHeight - fm.height()) / 2) / dpr;
     result.strokeWidth = qMax(qreal(1), std::round(fm.lineWidth())) / dpr;
     result.underlinePosition = qMin(std::floor(cellHeight) / dpr - result.strokeWidth, std::round(result.baseline * dpr + fm.underlinePos()) / dpr);
     result.strikePosition = std::round(result.baseline * dpr - fm.strikeOutPos()) / dpr;

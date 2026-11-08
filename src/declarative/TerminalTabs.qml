@@ -172,6 +172,8 @@ RowLayout {
         background: null
         Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.topMargin: position === Controls.TabBar.Footer ? -root.outerPadding : 0
+        Layout.bottomMargin: position === Controls.TabBar.Header ? -root.outerPadding : 0
         clip: true
         position: root.position
         topPadding: position === Controls.TabBar.Header ? root.outerPadding : 0

@@ -755,8 +755,8 @@ Kirigami.ApplicationWindow {
                 position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
                 leftPadding: Kirigami.Units.smallSpacing / 2
                 rightPadding: Kirigami.Units.smallSpacing / 2
-                topPadding: tabFrame.height
-                bottomPadding: tabFrame.height
+                topPadding: position === Controls.ToolBar.Footer ? tabFrame.height : 0
+                bottomPadding: position === Controls.ToolBar.Header ? tabFrame.height : 0
                 Kirigami.Theme.colorSet: position === Controls.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
@@ -854,6 +854,7 @@ Kirigami.ApplicationWindow {
                         sessions: root.sessionModel
                         dragController: root.tabDragController
                         position: root.appSettings.tabBarAtBottom ? Controls.TabBar.Footer : Controls.TabBar.Header
+                        outerPadding: tabFrame.height
                         showStatusIcons: root.appSettings.showTabStatusIcons
 
                         onNewTabRequested: newTabAction.trigger()

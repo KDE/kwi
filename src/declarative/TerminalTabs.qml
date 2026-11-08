@@ -16,6 +16,7 @@ RowLayout {
     required property SessionModel sessions
     property WindowManager dragController: null
     property int position: Controls.TabBar.Header
+    property real outerPadding: 0
     property bool showStatusIcons: true
     readonly property int count: tabBar.count
     readonly property int currentIndex: sessions.currentIndex
@@ -173,6 +174,8 @@ RowLayout {
         Layout.fillHeight: true
         clip: true
         position: root.position
+        topPadding: position === Controls.TabBar.Header ? root.outerPadding : 0
+        bottomPadding: position === Controls.TabBar.Footer ? root.outerPadding : 0
         currentIndex: root.sessions.currentIndex
         contentItem.objectName: "terminalTabList"
 

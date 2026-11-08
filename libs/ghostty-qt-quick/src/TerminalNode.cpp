@@ -44,14 +44,16 @@ namespace
 struct Vertex {
     float x, y, u, v;
     float r, g, b, a;
+    float cellX, cellY, cellWidth, cellHeight;
 };
 
 const QSGGeometry::AttributeSet &attributes()
 {
     static const QSGGeometry::Attribute values[]{QSGGeometry::Attribute::create(0, 2, QSGGeometry::FloatType, true),
                                                  QSGGeometry::Attribute::create(1, 2, QSGGeometry::FloatType),
-                                                 QSGGeometry::Attribute::create(2, 4, QSGGeometry::FloatType)};
-    static const QSGGeometry::AttributeSet result{3, sizeof(Vertex), values};
+                                                 QSGGeometry::Attribute::create(2, 4, QSGGeometry::FloatType),
+                                                 QSGGeometry::Attribute::create(3, 4, QSGGeometry::FloatType)};
+    static const QSGGeometry::AttributeSet result{4, sizeof(Vertex), values};
 
     return result;
 }
@@ -172,6 +174,12 @@ bool AtlasShader::updateUniformData(RenderState &state, QSGMaterial *material, Q
     }
 
     const auto *current = static_cast<AtlasMaterial *>(material);
+
+    if (!oldMaterial || current->page != static_cast<AtlasMaterial *>(oldMaterial)->page) {
+        const float size[]{float(current->page->image.width()), float(current->page->image.height())};
+        std::memcpy(buffer->data() + 160, size, sizeof(size));
+        changed = true;
+    }
 
     if (!oldMaterial || current->sampleBounds != static_cast<AtlasMaterial *>(oldMaterial)->sampleBounds) {
         const auto &bounds = current->sampleBounds;
@@ -355,8 +363,13 @@ public:
         }
     }
 
-    void
-    append(const GlyphImage &image, const QRectF &rect, QRectF source, QColor color, const QRectF &sampleBounds = QRectF(0, 0, 1, 1), bool pixelAligned = true)
+    void append(const GlyphImage &image,
+                const QRectF &rect,
+                QRectF source,
+                QColor color,
+                const QRectF &sampleBounds = QRectF(0, 0, 1, 1),
+                bool pixelAligned = true,
+                const QRectF &cell = {})
     {
         if (!image.page || rect.isEmpty()) {
             return;
@@ -368,6 +381,10 @@ public:
         for (; index >= 0; --index) {
             if (m_batches[index].page == image.page && m_batches[index].sampleBounds == sampleBounds && m_batches[index].format == image.format
                 && m_batches[index].pixelAligned == pixelAligned) {
+                if (m_batches[index].vertices.size() == MaximumVertices) {
+                    index = -1;
+                }
+
                 break;
             }
 
@@ -398,14 +415,26 @@ public:
         const float red{color.redF() * alpha};
         const float green{color.greenF() * alpha};
         const float blue{color.blueF() * alpha};
-        const QPointF points[]{rect.topLeft(), rect.bottomLeft(), rect.topRight(), rect.topRight(), rect.bottomLeft(), rect.bottomRight()};
-        const QPointF coords[]{uv.topLeft(), uv.bottomLeft(), uv.topRight(), uv.topRight(), uv.bottomLeft(), uv.bottomRight()};
+        const QPointF points[]{rect.topLeft(), rect.bottomLeft(), rect.topRight(), rect.bottomRight()};
+        const QPointF coords[]{uv.topLeft(), uv.bottomLeft(), uv.topRight(), uv.bottomRight()};
         const qsizetype offset{vertices.size()};
-        vertices.resizeForOverwrite(offset + 6);
+        vertices.resizeForOverwrite(offset + 4);
         auto *quad = vertices.data() + offset;
 
-        for (int i{0}; i < 6; ++i) {
-            quad[i] = Vertex{float(points[i].x()), float(points[i].y()), float(coords[i].x()), float(coords[i].y()), red, green, blue, alpha};
+        for (int i{0}; i < 4; ++i) {
+            const QPointF cellOffset{cell.isEmpty() ? QPointF() : points[i] - cell.topLeft()};
+            quad[i] = Vertex{float(points[i].x()),
+                             float(points[i].y()),
+                             float(coords[i].x()),
+                             float(coords[i].y()),
+                             red,
+                             green,
+                             blue,
+                             alpha,
+                             float(cellOffset.x()),
+                             float(cellOffset.y()),
+                             float(cell.width()),
+                             float(cell.height())};
         }
     }
 
@@ -413,11 +442,21 @@ public:
     {
         auto emitBatch = [&](const Batch &batch, AtlasPass pass) {
             auto *node = new QSGGeometryNode;
-            auto *geometry = new QSGGeometry(attributes(), batch.vertices.size());
+            const qsizetype indexCount{batch.vertices.size() / 4 * 6};
+            auto *geometry = new QSGGeometry(attributes(), batch.vertices.size(), indexCount);
             geometry->setDrawingMode(QSGGeometry::DrawTriangles);
             geometry->setVertexDataPattern(QSGGeometry::StaticPattern);
+            geometry->setIndexDataPattern(QSGGeometry::StaticPattern);
             const auto bytes = batch.vertices.size() * sizeof(Vertex);
             std::memcpy(geometry->vertexData(), batch.vertices.constData(), bytes);
+            auto *indices = geometry->indexDataAsUShort();
+
+            for (quint32 first{0}; first < batch.vertices.size(); first += 4) {
+                for (const quint32 corner : {0u, 1u, 2u, 2u, 1u, 3u}) {
+                    *indices++ = quint16(first + corner);
+                }
+            }
+
             node->setGeometry(geometry);
             node->setFlag(QSGNode::OwnsGeometry);
             node->setMaterial(new AtlasMaterial(batch.page,
@@ -430,7 +469,7 @@ public:
             parent->appendChildNode(node);
 
             if (statistics) {
-                statistics->geometryBytes += bytes;
+                statistics->geometryBytes += bytes + indexCount * sizeof(quint16);
             }
         };
 
@@ -446,6 +485,9 @@ public:
     }
 
 private:
+    // The largest 16-bit index is reserved for primitive restart.
+    static constexpr qsizetype MaximumVertices{(1 << 16) - 4};
+
     struct Batch {
         std::shared_ptr<AtlasPage> page;
         QRectF sampleBounds;
@@ -623,7 +665,8 @@ public:
                                 source,
                                 foreground(cell, column, rowCursorColumn, cells, image.format == GlyphImage::Format::Color),
                                 QRectF(0, 0, 1, 1),
-                                pixelAligned);
+                                pixelAligned,
+                                image.hasSizeVariants ? rect : QRectF());
             }
 
             left = right;
@@ -804,17 +847,10 @@ public:
             const char32_t cp{singleCodepoint(cell.text)};
 
             if (isProceduralSymbol(cp)) {
-                const QSizeF physicalSize(cw * options.devicePixelRatio * cell.width, ch * options.devicePixelRatio);
-                const QSize size{physicalSize.toSize()};
-                const auto sprite = atlas->symbol(cp, size, qRound(metrics.strokeWidth * options.devicePixelRatio));
-                appendGlyph(glyphs,
-                            sprite,
-                            QRectF(begin * cw, 0, cell.width * cw, ch),
-                            begin,
-                            cell.width,
-                            cells,
-                            rowCursorColumn,
-                            physicalSize == QSizeF(size));
+                // Match the float coordinates used to select the raster size in the shader.
+                const QSizeF physicalSize(float(cell.width * cw) * float(options.devicePixelRatio), float(ch) * float(options.devicePixelRatio));
+                const auto sprite = atlas->symbol(cp, physicalSize, qRound(metrics.strokeWidth * options.devicePixelRatio));
+                appendGlyph(glyphs, sprite, QRectF(begin * cw, 0, cell.width * cw, ch), begin, cell.width, cells, rowCursorColumn);
                 begin += cell.width;
                 continue;
             }

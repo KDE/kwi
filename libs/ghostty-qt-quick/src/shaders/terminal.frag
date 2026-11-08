@@ -15,6 +15,7 @@ layout(std140, binding = 0) uniform Uniforms {
     mat4 projection;
     vec4 sampleBounds;
     vec4 parameters;
+    vec2 atlasSize;
 } uniforms;
 
 void main() {

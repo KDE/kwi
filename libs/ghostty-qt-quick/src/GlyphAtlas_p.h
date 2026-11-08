@@ -10,6 +10,7 @@
 #include <QRect>
 #include <QSGTexture>
 #include <QSize>
+#include <QSizeF>
 #include <cstddef>
 #include <memory>
 #include <vector>
@@ -39,6 +40,7 @@ struct GlyphImage {
     QRect pixels;
     QPointF bearing;
     Format format{Format::Grayscale};
+    bool hasSizeVariants{false};
 };
 
 class GlyphAtlas
@@ -49,7 +51,7 @@ public:
     explicit GlyphAtlas(QQuickWindow *window, quint64 *rasterizedGlyphs = nullptr, std::unique_ptr<GlyphAtlas> source = {});
 
     [[nodiscard]] GlyphImage glyph(const QRawFont &font, quint32 glyphIndex, bool allowSubpixel = false);
-    [[nodiscard]] GlyphImage symbol(char32_t codepoint, QSize cellSize, int strokeWidth);
+    [[nodiscard]] GlyphImage symbol(char32_t codepoint, QSizeF cellSize, int strokeWidth);
     [[nodiscard]] GlyphImage underline(int style, QSize cellSize, int strokeWidth);
 
     void beginFrame();
@@ -71,12 +73,17 @@ private:
         quint32 index{0};
         Kind kind{Kind::Font};
         bool subpixel{false};
+        qreal cellWidth{0};
+        qreal cellHeight{0};
+        int strokeWidth{0};
 
         bool operator==(const Key &) const = default;
 
         friend std::size_t qHash(const Key &key, std::size_t seed) noexcept
         {
-            return qHashMulti(seed, key.font, key.index, key.kind, key.subpixel);
+            const auto hash = qHashMulti(seed, key.font, key.index, key.kind, key.subpixel);
+
+            return key.kind == Kind::Font ? hash : qHashMulti(hash, key.cellWidth, key.cellHeight, key.strokeWidth);
         }
     };
 

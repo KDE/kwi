@@ -693,8 +693,6 @@ void TerminalView::updateMetrics()
     const qreal dpr{window() ? window()->effectiveDevicePixelRatio() : 1};
     const qreal dpi{window() && window()->screen() ? window()->screen()->logicalDotsPerInch() : 96};
 
-    // Align the clip and padding on a physical pixel to avoid a seam.
-    m_padding = qRound(Padding * dpr) / dpr;
     const auto metrics = GhosttyQt::Quick::fontMetrics(m_font, dpr, dpi);
     m_cellWidth = metrics.cellSize.width();
     m_cellHeight = metrics.cellSize.height();
@@ -709,16 +707,16 @@ QSizeF TerminalView::sizeForGrid(int columns, int rows) const
         return {};
     }
 
-    return {columns * m_cellWidth + 2 * m_padding, rows * m_cellHeight + 2 * m_padding};
+    return {columns * m_cellWidth + 2 * Padding, rows * m_cellHeight + 2 * Padding};
 }
 
 void TerminalView::resizeTerminal()
 {
     // Wait for layout instead of reflowing a live session through a 2×1 grid.
-    if (m_session && width() >= 2 * m_padding + 2 * m_cellWidth && height() >= 2 * m_padding + m_cellHeight) {
+    if (m_session && width() >= 2 * Padding + 2 * m_cellWidth && height() >= 2 * Padding + m_cellHeight) {
         const qreal dpr{window() ? window()->effectiveDevicePixelRatio() : 1};
-        m_session->resize(int((width() - 2 * m_padding) / m_cellWidth),
-                          int((height() - 2 * m_padding) / m_cellHeight),
+        m_session->resize(int((width() - 2 * Padding) / m_cellWidth),
+                          int((height() - 2 * Padding) / m_cellHeight),
                           QSize(qRound(m_cellWidth * dpr), qRound(m_cellHeight * dpr)));
     }
 }
@@ -819,10 +817,12 @@ QSGNode *TerminalView::updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *)
 
     GhosttyQt::Quick::TerminalNode::Options options;
     options.rect = boundingRect();
-    options.contentRect = boundingRect().adjusted(m_padding, m_padding, -m_padding, -m_padding);
     options.backgroundOpacity = m_backgroundOpacity;
     options.font = m_font;
     options.devicePixelRatio = window()->effectiveDevicePixelRatio();
+    // Align the painted origin without changing the grid's logical size.
+    const qreal padding{qRound(Padding * options.devicePixelRatio) / options.devicePixelRatio};
+    options.contentRect = QRectF(QPointF(padding, padding), size() - QSizeF(2 * Padding, 2 * Padding));
     options.logicalDpi = window()->screen() ? window()->screen()->logicalDotsPerInch() : 96;
     options.focused = hasActiveFocus();
     options.cursorBlinkVisible = m_cursorBlinkVisible || !hasActiveFocus();
@@ -869,8 +869,8 @@ QUrl TerminalView::hoveredLink() const
 
 QUrl TerminalView::linkAtPosition(QPointF position, QRegion *cells) const
 {
-    if (!m_session || !m_session->terminal() || position.x() < m_padding || position.y() < m_padding
-        || position.x() >= m_padding + m_frame.columns * m_cellWidth || position.y() >= m_padding + m_frame.rows.size() * m_cellHeight) {
+    if (!m_session || !m_session->terminal() || position.x() < Padding || position.y() < Padding || position.x() >= Padding + m_frame.columns * m_cellWidth
+        || position.y() >= Padding + m_frame.rows.size() * m_cellHeight) {
         return {};
     }
 
@@ -1303,7 +1303,7 @@ QRectF TerminalView::selectionCursorRectangle() const
         width = qMax(1, int(m_frame.rows[cell.y()][cell.x()].width));
     }
 
-    return QRectF(m_padding + cell.x() * m_cellWidth, m_padding + cell.y() * m_cellHeight, width * m_cellWidth, m_cellHeight);
+    return QRectF(Padding + cell.x() * m_cellWidth, Padding + cell.y() * m_cellHeight, width * m_cellWidth, m_cellHeight);
 }
 
 void TerminalView::toggleSelectionMode()
@@ -1594,7 +1594,7 @@ QVariant TerminalView::inputMethodQuery(Qt::InputMethodQuery query) const
     case Qt::ImCursorRectangle: {
         const QPoint caret{GhosttyQt::Quick::layoutPreedit(m_frame, m_preedit, m_preeditAttributes).caret};
 
-        return QRectF(m_padding + caret.x() * m_cellWidth, m_padding + caret.y() * m_cellHeight, m_cellWidth, m_cellHeight);
+        return QRectF(Padding + caret.x() * m_cellWidth, Padding + caret.y() * m_cellHeight, m_cellWidth, m_cellHeight);
     }
     case Qt::ImFont:
         return m_font;
@@ -1612,8 +1612,13 @@ QVariant TerminalView::inputMethodQuery(Qt::InputMethodQuery query) const
 
 QPoint TerminalView::cellAt(QPointF position) const
 {
-    return {qBound(0, int((position.x() - m_padding) / m_cellWidth), qMax(0, m_frame.columns - 1)),
-            qBound(0, int((position.y() - m_padding) / m_cellHeight), qMax(0, int(m_frame.rows.size()) - 1))};
+    return {qBound(0, int((position.x() - Padding) / m_cellWidth), qMax(0, m_frame.columns - 1)),
+            qBound(0, int((position.y() - Padding) / m_cellHeight), qMax(0, int(m_frame.rows.size()) - 1))};
+}
+
+QPointF TerminalView::terminalPosition(QPointF position) const
+{
+    return {(position.x() - Padding) * m_frame.cellPixels.width() / m_cellWidth, (position.y() - Padding) * m_frame.cellPixels.height() / m_cellHeight};
 }
 
 void TerminalView::updateSelection(GhosttyQt::SelectionEvent::Type type, QPointF position, quint64 timestamp)
@@ -1627,7 +1632,7 @@ void TerminalView::updateSelection(GhosttyQt::SelectionEvent::Type type, QPointF
     m_session->terminal()->selectionGesture({
         .type = type,
         .cell = cellAt(position),
-        .position = (position - QPointF(m_padding, m_padding)) * dpr,
+        .position = terminalPosition(position),
         .timestamp = timestamp,
         .repeatInterval = qGuiApp->styleHints()->mouseDoubleClickInterval(),
         .repeatDistance = qRound(qGuiApp->styleHints()->mouseDoubleClickDistance() * dpr),
@@ -1635,8 +1640,8 @@ void TerminalView::updateSelection(GhosttyQt::SelectionEvent::Type type, QPointF
     });
 
     if (m_session->terminal()->selectionAutoscroll()) {
-        const qreal bottom{m_padding + m_frame.rows.size() * m_cellHeight};
-        const qreal distance{qMax(m_padding - position.y(), position.y() - bottom)};
+        const qreal bottom{Padding + m_frame.rows.size() * m_cellHeight};
+        const qreal distance{qMax(Padding - position.y(), position.y() - bottom)};
         const int acceleration{qBound(1, int(distance / m_cellHeight) + 1, 10)};
         // Ghostty scrolls one row per tick, so vary the tick rate to accelerate selection scrolling.
         m_selectionScrollTimer.setInterval(30 / acceleration);
@@ -1658,10 +1663,9 @@ void TerminalView::sendMouse(GhosttyQt::MouseEvent event)
     if (!m_session || !m_session->terminal())
         return;
 
-    const qreal dpr{window() ? window()->effectiveDevicePixelRatio() : 1};
-    event.position = (event.position - QPointF(m_padding, m_padding)) * dpr;
-    event.cellSize = QSizeF(m_cellWidth * dpr, m_cellHeight * dpr);
-    event.size = QSizeF(m_frame.columns * m_cellWidth * dpr, m_frame.rows.size() * m_cellHeight * dpr);
+    event.position = terminalPosition(event.position);
+    event.cellSize = m_frame.cellPixels;
+    event.size = QSizeF(m_frame.columns * m_frame.cellPixels.width(), m_frame.rows.size() * m_frame.cellPixels.height());
     m_session->send(m_session->terminal()->encodeMouse(event));
 }
 

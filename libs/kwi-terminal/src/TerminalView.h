@@ -279,8 +279,8 @@ public:
     void setFontPointSize(qreal size);
     /*!
      * \qmlmethod size TerminalView::sizeForGrid(int columns, int rows)
-     * Returns the view size needed for \a columns and \a rows with the current
-     * font, zoom and screen scale, including padding. It does not resize the view.
+     * Returns the logical view size needed for \a columns and \a rows with the
+     * current font and zoom, including padding. It does not resize the view.
      * Fewer than two columns or one row returns an invalid size.
      */
     [[nodiscard]] Q_INVOKABLE QSizeF sizeForGrid(int columns, int rows) const;
@@ -524,6 +524,7 @@ private:
     bool handleSelectionKey(QKeyEvent *event);
     [[nodiscard]] QPoint glyphStart(QPoint cell) const;
     [[nodiscard]] QPoint cellAt(QPointF position) const;
+    [[nodiscard]] QPointF terminalPosition(QPointF position) const;
     [[nodiscard]] QUrl linkAtPosition(QPointF position, QRegion *cells = nullptr) const;
     bool reportMouse(QMouseEvent *event, bool release, bool motion);
     void sendMouse(GhosttyQt::MouseEvent event);
@@ -564,7 +565,6 @@ private:
 
     qreal m_cellWidth{10};
     qreal m_cellHeight{20};
-    qreal m_padding{Padding};
     qreal m_zoom{0};
     qreal m_pointSize{0};
     qreal m_backgroundOpacity{1};

@@ -681,11 +681,16 @@ public:
         } else if (style == 3 || style == 4) {
             const QSize size{qRound(metrics.cellSize.width() * dpr), qRound(metrics.cellSize.height() * dpr)};
             const auto image = atlas->underline(style, size, qRound(stroke * dpr));
-            const QSizeF logicalSize{QSizeF(image.pixels.size()) / dpr};
+            const QSizeF logicalSize{metrics.cellSize.width(), image.pixels.height() / dpr};
             const qreal top{qBound(qreal(0), y + image.bearing.y() / dpr, bottom - logicalSize.height())};
 
             for (int offset{0}; offset < cell.width; ++offset) {
-                sprites.append(image, QRectF(QPointF(x + offset * metrics.cellSize.width(), top), logicalSize), QRectF(QPointF(), image.pixels.size()), color);
+                sprites.append(image,
+                               QRectF(QPointF(x + offset * metrics.cellSize.width(), top), logicalSize),
+                               QRectF(QPointF(), image.pixels.size()),
+                               color,
+                               QRectF(0, 0, 1, 1),
+                               qFuzzyCompare(logicalSize.width() * dpr, qreal(image.pixels.width())));
             }
         } else {
             const int dots{style == DashDotUnderline ? 1 : style == DashDotDotUnderline ? 2 : 0};
@@ -799,9 +804,17 @@ public:
             const char32_t cp{singleCodepoint(cell.text)};
 
             if (isProceduralSymbol(cp)) {
-                const QSize size(qRound(cw * options.devicePixelRatio * cell.width), qRound(ch * options.devicePixelRatio));
+                const QSizeF physicalSize(cw * options.devicePixelRatio * cell.width, ch * options.devicePixelRatio);
+                const QSize size{physicalSize.toSize()};
                 const auto sprite = atlas->symbol(cp, size, qRound(metrics.strokeWidth * options.devicePixelRatio));
-                appendGlyph(glyphs, sprite, QRectF(begin * cw, 0, cell.width * cw, ch), begin, cell.width, cells, rowCursorColumn);
+                appendGlyph(glyphs,
+                            sprite,
+                            QRectF(begin * cw, 0, cell.width * cw, ch),
+                            begin,
+                            cell.width,
+                            cells,
+                            rowCursorColumn,
+                            physicalSize == QSizeF(size));
                 begin += cell.width;
                 continue;
             }
@@ -910,12 +923,13 @@ public:
                 cached = std::prev(next.end());
             }
 
-            const qreal dpr{options.devicePixelRatio};
+            const QSizeF pixelSize{metrics.cellSize.width() / frame.cellPixels.width(), metrics.cellSize.height() / frame.cellPixels.height()};
             const QPointF position = options.contentRect.topLeft()
-                + QPointF(placement.cell.x() * metrics.cellSize.width(), placement.cell.y() * metrics.cellSize.height()) + QPointF(placement.pixelOffset) / dpr;
+                + QPointF(placement.cell.x() * metrics.cellSize.width(), placement.cell.y() * metrics.cellSize.height())
+                + QPointF(placement.pixelOffset.x() * pixelSize.width(), placement.pixelOffset.y() * pixelSize.height());
             const QSizeF size = placement.pixelSize.isEmpty()
                 ? QSizeF(placement.gridSize.width() * metrics.cellSize.width(), placement.gridSize.height() * metrics.cellSize.height())
-                : QSizeF(placement.pixelSize) / dpr;
+                : QSizeF(placement.pixelSize.width() * pixelSize.width(), placement.pixelSize.height() * pixelSize.height());
             QSGNode *layer = placement.layer == ImageLayer::BelowBackground ? belowBackground
                 : placement.layer == ImageLayer::BelowText                  ? belowText
                                                                             : aboveText;
@@ -1067,7 +1081,8 @@ void TerminalNode::prepare(const Frame &frame, const Options &options)
         || options.cursorBlinkVisible != d->options.cursorBlinkVisible || options.preedit.isEmpty() != d->options.preedit.isEmpty();
     const bool blinkChanged{options.textBlinkVisible != d->options.textBlinkVisible};
     const bool positionChanged{options.contentRect != d->options.contentRect};
-    const bool imagesChanged{fontChanged || terminalChanged || positionChanged || frame.imagesGeneration != d->frame.imagesGeneration};
+    const bool imagesChanged{fontChanged || terminalChanged || positionChanged || frame.cellPixels != d->frame.cellPixels
+                             || frame.imagesGeneration != d->frame.imagesGeneration};
     const bool preeditChanged = appearanceChanged || cursorChanged || positionChanged || frame.columns != d->frame.columns
         || frame.rows.size() != d->frame.rows.size() || options.preedit != d->options.preedit || options.preeditAttributes != d->options.preeditAttributes;
     d->frame = frame;

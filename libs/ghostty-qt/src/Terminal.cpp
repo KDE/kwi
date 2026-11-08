@@ -449,6 +449,7 @@ public:
             || frame.selectionForeground != selectionForeground || frame.selectionBackground != selectionBackground;
         ++frame.generation;
         frame.columns = cols;
+        frame.cellPixels = cellPixels;
         frame.rows.resize(height);
         frame.rowWrapped.resize(height);
         frame.rowVersions.resize(height);

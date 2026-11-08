@@ -57,17 +57,19 @@ GlyphImage GlyphAtlas::insert(const Key &key, const QImage &image, QPointF beari
     }
 
     std::shared_ptr<AtlasPage> page;
+    const int padding{key.kind == Kind::Font ? 0 : 1};
+    const QSize size{image.size() + QSize(2 * padding, 2 * padding)};
 
     for (auto it = m_pages.rbegin(); it != m_pages.rend(); ++it) {
         const auto &candidate = *it;
 
-        if (candidate->x + image.width() + 1 > candidate->image.width()) {
+        if (candidate->x + size.width() + 1 > candidate->image.width()) {
             candidate->y += candidate->rowHeight + 1;
             candidate->x = 1;
             candidate->rowHeight = 0;
         }
 
-        if (candidate->x + image.width() + 1 <= candidate->image.width() && candidate->y + image.height() + 1 <= candidate->image.height()) {
+        if (candidate->x + size.width() + 1 <= candidate->image.width() && candidate->y + size.height() + 1 <= candidate->image.height()) {
             page = candidate;
             break;
         }
@@ -78,20 +80,35 @@ GlyphImage GlyphAtlas::insert(const Key &key, const QImage &image, QPointF beari
 
         // Start small for ASCII sessions, then grow pages to reduce CJK texture batches.
         const int pageSize{m_pages.empty() ? 256 : 512};
-        const int size{qMax(pageSize, int(qNextPowerOfTwo(quint32(qMax(image.width(), image.height()) + 2))))};
-        page->image = QImage(size, size, QImage::Format_ARGB32_Premultiplied);
+        const int extent{qMax(pageSize, int(qNextPowerOfTwo(quint32(qMax(size.width(), size.height()) + 2))))};
+        page->image = QImage(extent, extent, QImage::Format_ARGB32_Premultiplied);
         page->image.fill(Qt::transparent);
         m_pages.push_back(page);
     }
 
-    const QRect rect(page->x, page->y, image.width(), image.height());
+    const QRect rect(page->x + padding, page->y + padding, image.width(), image.height());
     QPainter painter{&page->image};
     painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.drawImage(rect.topLeft(), image);
+
+    if (padding) {
+        // Extend sprite edges so linear filtering keeps adjacent cells connected.
+        for (const int y : {-1, image.height()}) {
+            const int sourceY{qBound(0, y, image.height() - 1)};
+            painter.drawImage(QRect(rect.x(), rect.y() + y, image.width(), 1), image, QRect(0, sourceY, image.width(), 1));
+            painter.fillRect(QRect(rect.x() - 1, rect.y() + y, 1, 1), image.pixelColor(0, sourceY));
+            painter.fillRect(QRect(rect.right() + 1, rect.y() + y, 1, 1), image.pixelColor(image.width() - 1, sourceY));
+        }
+
+        for (const int x : {-1, image.width()}) {
+            painter.drawImage(QRect(rect.x() + x, rect.y(), 1, image.height()), image, QRect(qBound(0, x, image.width() - 1), 0, 1, image.height()));
+        }
+    }
+
     painter.end();
 
-    page->x += image.width() + 1;
-    page->rowHeight = qMax(page->rowHeight, image.height());
+    page->x += size.width() + 1;
+    page->rowHeight = qMax(page->rowHeight, size.height());
     page->dirty = true;
     page->lastUsed = m_frame;
     m_glyphs.insert(key, CachedGlyph{page, rect, bearing, format});

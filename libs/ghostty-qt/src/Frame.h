@@ -79,6 +79,7 @@ struct Frame {
     quint64 imagesGeneration{0};
 
     int columns{0};
+    QSize cellPixels{1, 1};
     QPoint cursor{-1, -1};
     bool cursorVisible{false};
     bool cursorBlinking{false};

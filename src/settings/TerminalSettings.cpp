@@ -37,6 +37,7 @@ TerminalSettings::TerminalSettings(QObject *parent)
                                 &TerminalPreferences::tabBarAtBottomChanged,
                                 &TerminalPreferences::showTabStatusIconsChanged,
                                 &TerminalPreferences::showMenuBarChanged,
+                                &TerminalPreferences::tabBarMarginInFullscreenChanged,
                                 &TerminalPreferences::useCustomWindowSizeChanged,
                                 &TerminalPreferences::windowColumnsChanged,
                                 &TerminalPreferences::windowRowsChanged,

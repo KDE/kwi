@@ -298,6 +298,21 @@ SettingsPage {
                     }
                 }
             }
+
+            Forms.FormEntry {
+                contentItem: Controls.CheckBox {
+                    objectName: "tabBarMarginInFullscreenSetting"
+                    Layout.fillWidth: true
+                    text: KI18n.i18nc("@option:check", "Show outer border in fullscreen")
+                    enabled: !root.appSettings.isTabBarMarginInFullscreenImmutable
+                    checked: root.appSettings.tabBarMarginInFullscreen
+
+                    onToggled: {
+                        root.appSettings.tabBarMarginInFullscreen = checked;
+                        root.appSettings.save();
+                    }
+                }
+            }
         }
 
         Forms.FormGroup {

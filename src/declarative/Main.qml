@@ -1098,7 +1098,7 @@ Kirigami.ApplicationWindow {
                         sessions: root.sessionModel
                         dragController: root.tabDragController
                         position: root.appSettings.tabBarAtBottom ? Controls.TabBar.Footer : Controls.TabBar.Header
-                        outerPadding: root.visibility === Window.FullScreen ? 0 : tabFrame.height
+                        outerPadding: (root.visibility === Window.FullScreen && !root.appSettings.tabBarMarginInFullscreen) ? 0 : tabFrame.height
                         showStatusIcons: root.appSettings.showTabStatusIcons
 
                         onNewTabRequested: newTabAction.trigger()

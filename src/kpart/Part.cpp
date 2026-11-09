@@ -803,17 +803,21 @@ void Part::setupActions()
         renameSession(activeSession());
     });
 
-    add("next-tab", i18nd("kwi", "Next Tab"), "go-next", QKeySequence(Qt::CTRL | Qt::Key_PageDown), [this] {
+    auto *nextTab = add("next-tab", i18nd("kwi", "Next Tab"), "go-next", {}, [this] {
         if (m_tabs->count()) {
             m_tabs->setCurrentIndex((m_tabs->currentIndex() + 1) % m_tabs->count());
         }
     });
 
-    add("previous-tab", i18nd("kwi", "Previous Tab"), "go-previous", QKeySequence(Qt::CTRL | Qt::Key_PageUp), [this] {
+    KActionCollection::setDefaultShortcuts(nextTab, {QKeySequence(Qt::SHIFT | Qt::Key_Right), QKeySequence(Qt::CTRL | Qt::Key_PageDown)});
+
+    auto *previousTab = add("previous-tab", i18nd("kwi", "Previous Tab"), "go-previous", {}, [this] {
         if (m_tabs->count()) {
             m_tabs->setCurrentIndex((m_tabs->currentIndex() + m_tabs->count() - 1) % m_tabs->count());
         }
     });
+
+    KActionCollection::setDefaultShortcuts(previousTab, {QKeySequence(Qt::SHIFT | Qt::Key_Left), QKeySequence(Qt::CTRL | Qt::Key_PageUp)});
 
     add("close-session", i18nd("kwi", "Close Tab"), "tab-close", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W), [this] {
         m_sessions->closeSession(m_sessions->currentIndex());

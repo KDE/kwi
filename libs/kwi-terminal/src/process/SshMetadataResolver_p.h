@@ -23,6 +23,7 @@ class HostCommandQuery;
 struct SshMetadata {
     QString userName;
     QString hostName;
+    QString originalHostName;
     int port{0};
     QString remoteCommand;
 

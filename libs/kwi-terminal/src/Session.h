@@ -205,6 +205,14 @@ class KWI_TERMINAL_EXPORT Session : public QObject
      */
     Q_PROPERTY(QString sshHostName READ sshHostName NOTIFY sshInfoChanged)
     /*!
+     * \qmlproperty string Session::sshOriginalHostName
+     * \readonly
+     * The hostname or alias given to SSH, before applying its configuration,
+     * without a user name, port or address brackets. It is empty when hasSshInfo
+     * is false. Use sshHostName for the resolved hostname.
+     */
+    Q_PROPERTY(QString sshOriginalHostName READ sshOriginalHostName NOTIFY sshInfoChanged)
+    /*!
      * \qmlproperty int Session::sshPort
      * \readonly
      * The SSH destination's resolved port, or zero when hasSshInfo is false.
@@ -385,6 +393,7 @@ public:
     [[nodiscard]] bool hasSshInfo() const;
     [[nodiscard]] QString sshUserName() const;
     [[nodiscard]] QString sshHostName() const;
+    [[nodiscard]] QString sshOriginalHostName() const;
     [[nodiscard]] int sshPort() const;
     [[nodiscard]] QString sshRemoteCommand() const;
     [[nodiscard]] qint64 processId() const;

@@ -524,6 +524,11 @@ QString Session::sshHostName() const
     return m_sshMetadata->info().hostName;
 }
 
+QString Session::sshOriginalHostName() const
+{
+    return m_sshMetadata->info().originalHostName;
+}
+
 int Session::sshPort() const
 {
     return m_sshMetadata->info().port;

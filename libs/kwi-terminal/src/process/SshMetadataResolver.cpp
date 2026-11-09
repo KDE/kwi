@@ -21,6 +21,19 @@ namespace Kwi
 {
 namespace
 {
+QString unbracketAddress(const QString &hostName)
+{
+    if (hostName.startsWith(QLatin1Char('[')) && hostName.endsWith(QLatin1Char(']'))) {
+        const QString address{hostName.mid(1, hostName.size() - 2)};
+
+        if (!QHostAddress(address).isNull()) {
+            return address;
+        }
+    }
+
+    return hostName;
+}
+
 void killNativeQuery(QProcess &query)
 {
     // Match exec may have a child: the query owns a separate session/group.
@@ -142,6 +155,8 @@ std::optional<SshMetadata> sshMetadata(const QByteArray &configuration, const QS
 
         if (key == "hostname") {
             info.hostName = value;
+        } else if (key == "host") {
+            info.originalHostName = value;
         } else if (key == "user") {
             info.userName = value;
         } else if (key == "port") {
@@ -151,18 +166,12 @@ std::optional<SshMetadata> sshMetadata(const QByteArray &configuration, const QS
         }
     }
 
-    if (info.hostName.isEmpty() || info.userName.isEmpty() || info.port < 1 || info.port > 65535) {
+    if (info.hostName.isEmpty() || info.originalHostName.isEmpty() || info.userName.isEmpty() || info.port < 1 || info.port > 65535) {
         return std::nullopt;
     }
 
-    const QString addressText{info.hostName.startsWith(QLatin1Char('[')) && info.hostName.endsWith(QLatin1Char(']'))
-                                  ? info.hostName.mid(1, info.hostName.size() - 2)
-                                  : info.hostName};
-    const QHostAddress address{addressText};
-
-    if (!address.isNull()) {
-        info.hostName = addressText;
-    }
+    info.hostName = unbracketAddress(info.hostName);
+    info.originalHostName = unbracketAddress(info.originalHostName);
 
     if (!command.isEmpty()) {
         info.remoteCommand = command;

@@ -207,9 +207,9 @@ class KWI_TERMINAL_EXPORT Session : public QObject
     /*!
      * \qmlproperty string Session::sshOriginalHostName
      * \readonly
-     * The hostname or alias given to SSH, before applying its configuration,
-     * without a user name, port or address brackets. It is empty when hasSshInfo
-     * is false. Use sshHostName for the resolved hostname.
+     * The hostname or alias given to SSH, without its port, before applying its
+     * configuration or hostname resolution. Or an empty string when hasSshInfo is
+     * false. Use sshHostName instead for the resolved hostname.
      */
     Q_PROPERTY(QString sshOriginalHostName READ sshOriginalHostName NOTIFY sshInfoChanged)
     /*!

@@ -1201,11 +1201,6 @@ Kirigami.ApplicationWindow {
                 anchors.bottom: root.appSettings.tabBarAtBottom ? terminalToolBar.top : parent.bottom
                 applicationSession: root.sessionModel.currentSession
 
-                // Don't let the window's Kirigami.PageRow shortcuts interfere with the terminal.
-                Keys.onShortcutOverride: event => {
-                    event.accepted = event.matches(StandardKey.Back) || event.matches(StandardKey.Forward);
-                }
-
                 onMultilinePasteRequested: (origin, text) => {
                     pasteDialog.targetSession = origin;
                     pasteDialog.pasteContent = text;

@@ -64,7 +64,7 @@ Controls.TabButton {
     // Reserve progress space even when hidden to keep the tab height stable.
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, implicitContentHeight + topPadding + bottomPadding, titleLabel.implicitHeight + 2 * (progress.height + progress.frameMargin) + Kirigami.Units.smallSpacing / 2)
     Accessible.role: Accessible.PageTab
-    Accessible.name: session.attention ? KI18n.i18nc("@info:accessibility", "%1, needs attention", session.title) : session.title
+    Accessible.name: session.attention ? KI18n.i18nc("@info:accessibility", "%1, needs attention", session.title) : session.hasUnreadOutput ? KI18n.i18nc("@info:accessibility", "%1, new output", session.title) : session.title
     Accessible.description: progressDescription
     Accessible.selected: checked
 
@@ -97,6 +97,11 @@ Controls.TabButton {
             font: control.font
             textFormat: Text.PlainText
             elide: Text.ElideRight
+
+            Binding on color {
+                when: control.session.hasUnreadOutput
+                value: titleLabel.Kirigami.Theme.activeTextColor
+            }
         }
 
         TabCloseButton {

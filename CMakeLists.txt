@@ -45,7 +45,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 
 if(BUILD_KPART)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS QuickWidgets)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons ColorScheme)
 endif()
 
 find_package(KF6KirigamiAddons 1.11 REQUIRED)

@@ -16,6 +16,7 @@
 #include "ui/WebShortcuts_p.h"
 
 #include <KActionCollection>
+#include <KColorScheme>
 #include <KIO/KUriFilterSearchProviderActions>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -25,6 +26,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QCheckBox>
+#include <QColor>
 #include <QDir>
 #include <QEvent>
 #include <QFileDialog>
@@ -34,6 +36,7 @@
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMessageBox>
+#include <QPalette>
 #include <QPoint>
 #include <QPushButton>
 #include <QTabBar>
@@ -355,6 +358,7 @@ void Part::addSessionWidget(TerminalSession *session)
         }
 
         m_tabs->setTabText(m_tabs->indexOf(container), session->title());
+        updateTabActivity(session);
 
         if (activeSession() == session) {
             Q_EMIT setWindowCaption(session->title());
@@ -399,6 +403,11 @@ void Part::addSessionWidget(TerminalSession *session)
     connect(m_settings, &TerminalSettings::showTabStatusIconsChanged, container, updateTabIcon);
     updateTabIcon();
 
+    connect(session, &TerminalSession::unreadOutputChanged, container, [this, session] {
+        updateTabActivity(session);
+    });
+    updateTabActivity(session);
+
     connect(session, &TerminalSession::readOnlyChanged, this, &Part::updateActions);
     connect(session, &Session::activeChanged, this, &Part::updateActions);
 
@@ -408,6 +417,25 @@ void Part::addSessionWidget(TerminalSession *session)
     }
 
     activateSession();
+}
+
+void Part::updateTabActivity(TerminalSession *session)
+{
+    if (m_destroying) {
+        return;
+    }
+
+    QColor color;
+    QString accessibleName;
+
+    if (session->hasUnreadOutput()) {
+        color = KColorScheme{m_tabs->palette().currentColorGroup(), KColorScheme::Window}.foreground(KColorScheme::ActiveText).color();
+        accessibleName = i18ndc("kwi", "@info:accessibility", "%1, new output", session->title());
+    }
+
+    const int index{m_tabs->indexOf(m_pages.value(session))};
+    m_tabs->tabBar()->setTabTextColor(index, color);
+    m_tabs->tabBar()->setAccessibleTabName(index, accessibleName);
 }
 
 void Part::removeSessionWidget(TerminalSession *session)
@@ -1063,6 +1091,12 @@ void Part::updateHostFocus()
 
 bool Part::eventFilter(QObject *object, QEvent *event)
 {
+    if (!m_destroying && object == m_tabs && event->type() == QEvent::PaletteChange) {
+        for (auto it = m_pages.cbegin(); it != m_pages.cend(); ++it) {
+            updateTabActivity(it.key());
+        }
+    }
+
     if (!m_destroying && object != m_tabs && (event->type() == QEvent::ShortcutOverride || event->type() == QEvent::KeyPress)) {
         const QKeySequence pressed{static_cast<QKeyEvent *>(event)->keyCombination()};
 

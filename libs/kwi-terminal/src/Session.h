@@ -526,6 +526,13 @@ Q_SIGNALS:
     void monitoringChanged();
     void silenceSecondsChanged();
     /*!
+     * \qmlsignal Session::outputReceived()
+     * Emitted after incoming output is processed. This does not require
+     * monitorActivity and is not rate-limited. Resizing or scrolling does not
+     * emit this signal.
+     */
+    void outputReceived();
+    /*!
      * \qmlsignal Session::activityDetected()
      * Emitted when output arrives while monitorActivity is enabled. During
      * continuous output, emissions are limited to one every two seconds.

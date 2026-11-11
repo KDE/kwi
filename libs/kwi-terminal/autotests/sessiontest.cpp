@@ -9,6 +9,7 @@
 #include <QDir>
 #include <QLatin1Char>
 #include <QObject>
+#include <QSignalSpy>
 #include <QString>
 #include <QStringLiteral>
 #include <QTemporaryDir>
@@ -25,10 +26,60 @@ public:
     using QObject::QObject;
 
 private Q_SLOTS:
+    void outputReceivedReflectsTerminalContents();
+    void outputHandlerCanCloseSession();
     void sanitizesApplicationTitles();
     void repeatedStartPreservesRunningSession();
     void restartClearsProcessMetadataAndRetainsHistory();
 };
+
+// Output handlers see updated terminal contents without enabling activity monitoring.
+void SessionTest::outputReceivedReflectsTerminalContents()
+{
+    Session session;
+    QSignalSpy output{&session, &Session::outputReceived};
+    QSignalSpy activity{&session, &Session::activityDetected};
+    QString lastOutput;
+    int progress{-1};
+    connect(&session, &Session::outputReceived, this, [&] {
+        lastOutput = session.historyText();
+        progress = session.progressPercent();
+    });
+
+    session.feed(QByteArrayLiteral("\x1b]9;4;1;42\afirst\r\n"));
+    QCOMPARE(output.count(), 1);
+    QVERIFY(lastOutput.contains(QStringLiteral("first")));
+    QCOMPARE(progress, 42);
+    QCOMPARE(activity.count(), 0);
+
+    session.feed({});
+    session.resize(40, 10);
+    session.setZoomOffset(1);
+    session.scrollPrompt(-1);
+    session.clearScrollback();
+    session.resetTerminal();
+    QCOMPARE(output.count(), 1);
+
+    session.feed(QByteArrayLiteral("second\r\n"));
+    QCOMPARE(output.count(), 2);
+    QVERIFY(lastOutput.contains(QStringLiteral("second")));
+    session.close();
+    session.feed(QByteArrayLiteral("after close\r\n"));
+    QCOMPARE(output.count(), 2);
+}
+
+// Closing from an output handler leaves the session finished with monitoring disabled.
+void SessionTest::outputHandlerCanCloseSession()
+{
+    Session session;
+    session.setMonitorActivity(true);
+    session.setMonitorSilence(true);
+    connect(&session, &Session::outputReceived, &session, &Session::close);
+    session.feed(QByteArrayLiteral("finished\r\n"));
+    QVERIFY(session.isFinished());
+    QVERIFY(!session.monitorActivity());
+    QVERIFY(!session.monitorSilence());
+}
 
 // Application titles remove control characters and remain bounded without splitting a surrogate pair.
 void SessionTest::sanitizesApplicationTitles()

@@ -683,18 +683,6 @@ bool Session::send(const QByteArray &bytes)
 
 void Session::feed(const QByteArray &bytes)
 {
-    if (!bytes.isEmpty() && !isFinished() && !m_closeRequested) {
-        if (m_monitorSilence) {
-            m_silenceTimer.start(silenceSeconds() * 1000);
-        }
-
-        if (m_monitorActivity && (!m_lastActivity.isValid() || m_lastActivity.elapsed() >= 2000)) {
-            m_lastActivity.start();
-
-            Q_EMIT activityDetected();
-        }
-    }
-
     if (m_terminal && !m_terminal->feed(bytes)) {
         reportError(i18nd("kwi-terminal", "The terminal could not process output."));
     }
@@ -707,6 +695,20 @@ void Session::feed(const QByteArray &bytes)
         if (const auto notification = m_terminal->takeNotification()) {
             Q_EMIT notificationRequested(notification->title, notification->body);
         }
+    }
+
+    if (!bytes.isEmpty() && !isFinished() && !m_closeRequested) {
+        if (m_monitorSilence) {
+            m_silenceTimer.start(silenceSeconds() * 1000);
+        }
+
+        if (m_monitorActivity && (!m_lastActivity.isValid() || m_lastActivity.elapsed() >= 2000)) {
+            m_lastActivity.start();
+
+            Q_EMIT activityDetected();
+        }
+
+        Q_EMIT outputReceived();
     }
 }
 

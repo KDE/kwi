@@ -173,6 +173,22 @@ void TerminalSession::setAttention(bool newAttention)
     Q_EMIT attentionChanged();
 }
 
+bool TerminalSession::hasUnreadOutput() const
+{
+    return m_unreadOutput;
+}
+
+void TerminalSession::setUnreadOutput(bool unread)
+{
+    if (m_unreadOutput == unread) {
+        return;
+    }
+
+    m_unreadOutput = unread;
+
+    Q_EMIT unreadOutputChanged();
+}
+
 bool TerminalSession::holdOpen() const
 {
     return m_holdOpen;

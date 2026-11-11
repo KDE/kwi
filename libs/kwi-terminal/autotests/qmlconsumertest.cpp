@@ -210,10 +210,12 @@ Item {
     required property string testDirectory
     required property string testPython
     property Session process: Session {
+        property string lastOutput
         executable: host.testPython
         arguments: ["-u", "-c", "import os; print(os.getenv('CONSUMER_VALUE')); print('PROGRAM='+str(os.getenv('TERM_PROGRAM'))); input()"]
         initialDirectory: host.testDirectory
         environmentChanges: ({CONSUMER_VALUE: "declarative 水", TERM_PROGRAM: null})
+        onOutputReceived: lastOutput = historyText()
     }
     Terminal { anchors.fill: parent; session: host.process }
     Component.onCompleted: process.start()
@@ -232,6 +234,9 @@ Item {
     QVERIFY(process->property("processId").toLongLong() > 0);
     QTRY_VERIFY(history(process).contains(QStringLiteral("declarative 水")));
     QTRY_VERIFY(history(process).contains(QStringLiteral("PROGRAM=None")));
+    QVERIFY(!process->property("monitorActivity").toBool());
+    QVERIFY(process->property("lastOutput").toString().contains(QStringLiteral("declarative 水")));
+    QVERIFY(process->property("lastOutput").toString().contains(QStringLiteral("PROGRAM=None")));
     QTRY_COMPARE(process->property("workingDirectory").toString(), m_directory->path());
     QVERIFY(QMetaObject::invokeMethod(host.get(), "finishLaunch"));
     QTRY_COMPARE(process->property("state").toInt(), stateValue(process, "Exited"));

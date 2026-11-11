@@ -85,6 +85,8 @@ Controls.TabButton {
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
             source: control.session.iconName
+            isMask: control.session.hasUnreadOutput && source === "utilities-terminal-symbolic"
+            color: isMask ? titleLabel.color : "transparent"
         }
 
         Controls.Label {

@@ -18,6 +18,8 @@
 #include <KActionCollection>
 #include <KColorScheme>
 #include <KIO/KUriFilterSearchProviderActions>
+#include <KIconColors>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStandardActions>
@@ -358,7 +360,7 @@ void Part::addSessionWidget(TerminalSession *session)
         }
 
         m_tabs->setTabText(m_tabs->indexOf(container), session->title());
-        updateTabActivity(session);
+        updateTabAppearance(session);
 
         if (activeSession() == session) {
             Q_EMIT setWindowCaption(session->title());
@@ -391,22 +393,14 @@ void Part::addSessionWidget(TerminalSession *session)
     });
 
     connect(session, &TerminalSession::monitoringChanged, this, &Part::updateActions);
-    const auto updateTabIcon = [this, session, container] {
-        if (m_destroying) {
-            return;
-        }
-
-        m_tabs->setTabIcon(m_tabs->indexOf(container), m_settings->showTabStatusIcons() ? QIcon::fromTheme(session->iconName()) : QIcon{});
+    const auto updateTab = [this, session] {
+        updateTabAppearance(session);
     };
 
-    connect(session, &TerminalSession::iconNameChanged, container, updateTabIcon);
-    connect(m_settings, &TerminalSettings::showTabStatusIconsChanged, container, updateTabIcon);
-    updateTabIcon();
-
-    connect(session, &TerminalSession::unreadOutputChanged, container, [this, session] {
-        updateTabActivity(session);
-    });
-    updateTabActivity(session);
+    connect(session, &TerminalSession::iconNameChanged, container, updateTab);
+    connect(m_settings, &TerminalSettings::showTabStatusIconsChanged, container, updateTab);
+    connect(session, &TerminalSession::unreadOutputChanged, container, updateTab);
+    updateTab();
 
     connect(session, &TerminalSession::readOnlyChanged, this, &Part::updateActions);
     connect(session, &Session::activeChanged, this, &Part::updateActions);
@@ -419,7 +413,7 @@ void Part::addSessionWidget(TerminalSession *session)
     activateSession();
 }
 
-void Part::updateTabActivity(TerminalSession *session)
+void Part::updateTabAppearance(TerminalSession *session)
 {
     if (m_destroying) {
         return;
@@ -433,7 +427,15 @@ void Part::updateTabActivity(TerminalSession *session)
         accessibleName = i18ndc("kwi", "@info:accessibility", "%1, new output", session->title());
     }
 
+    QIcon icon;
+
+    if (m_settings->showTabStatusIcons()) {
+        const QString name{session->iconName()};
+        icon = color.isValid() && name == QLatin1String("utilities-terminal-symbolic") ? KDE::icon(name, KIconColors{color}) : QIcon::fromTheme(name);
+    }
+
     const int index{m_tabs->indexOf(m_pages.value(session))};
+    m_tabs->setTabIcon(index, icon);
     m_tabs->tabBar()->setTabTextColor(index, color);
     m_tabs->tabBar()->setAccessibleTabName(index, accessibleName);
 }
@@ -1093,7 +1095,7 @@ bool Part::eventFilter(QObject *object, QEvent *event)
 {
     if (!m_destroying && object == m_tabs && event->type() == QEvent::PaletteChange) {
         for (auto it = m_pages.cbegin(); it != m_pages.cend(); ++it) {
-            updateTabActivity(it.key());
+            updateTabAppearance(it.key());
         }
     }
 

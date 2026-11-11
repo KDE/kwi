@@ -111,7 +111,7 @@ private:
 
     void setupActions();
     void updateActions();
-    void updateTabActivity(TerminalSession *session);
+    void updateTabAppearance(TerminalSession *session);
     void contextMenu(QPoint position, const QUrl &link);
     void tabContextMenu(QPoint position, TerminalSession *session);
     void renameSession(TerminalSession *session);

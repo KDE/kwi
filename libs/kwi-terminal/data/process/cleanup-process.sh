@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
 # Check session and start time before each signal to avoid signaling a reused PID.
-PATH=/usr/bin:/bin
 leader=$1
 members=$2
 

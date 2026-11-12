@@ -4,7 +4,7 @@
 
 program=$1
 
-account=$(/usr/bin/getent passwd "$(/usr/bin/id -u)") || account=
+account=$(getent passwd "$(id -u)") || account=
 account_shell=${account##*:}
 default_shell=${SHELL:-$account_shell}
 [ -n "$default_shell" ] || default_shell=/bin/sh
@@ -18,11 +18,11 @@ fi
 case "$program" in
     */*) resolved=$program ;;
     *)
-        search=${PATH-/usr/bin:/bin}
-
-        # /bin/sh may initialize PATH itself after env -u PATH. Preserve the
-        # caller's removal by searching the host's standard executable path.
-        [ "$3" != 1 ] || search=$(/usr/bin/getconf PATH)
+        case "$3" in
+            set) search=$KWI_COMMAND_PATH ;;
+            unset) search=$(getconf PATH) || exit 1 ;;
+            *) search=${PATH-$(getconf PATH)} ;;
+        esac
         resolved=
 
         while :; do
@@ -42,11 +42,11 @@ esac
 
 [ -x "$resolved" ] && [ ! -d "$resolved" ] || exit 1
 
-canonical=$(/usr/bin/readlink -f -- "$resolved") || exit 1
+canonical=$(readlink -f -- "$resolved") || exit 1
 
 matches_shell()
 {
-    [ -n "$1" ] && { [ "$1" = "$resolved" ] || [ "$(/usr/bin/readlink -f -- "$1")" = "$canonical" ]; }
+    [ -n "$1" ] && { [ "$1" = "$resolved" ] || [ "$(readlink -f -- "$1")" = "$canonical" ]; }
 }
 
 is_shell()

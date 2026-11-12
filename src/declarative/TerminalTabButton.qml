@@ -56,8 +56,8 @@ Controls.TabButton {
     // HACK: Union's QWidget style skips tab frames with empty native text.
     // Keep one space until it paints frames without native text or icons.
     text: " "
-    leftPadding: 0
-    rightPadding: 0
+    leftPadding: Kirigami.Units.smallSpacing * 2
+    rightPadding: leftPadding
     topPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.smallSpacing
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, implicitContentWidth + leftPadding + rightPadding)
@@ -80,13 +80,11 @@ Controls.TabButton {
 
         Kirigami.Icon {
             objectName: "terminalTabIcon" + control.index
-            visible: control.showStatusIcons
-            Layout.leftMargin: Kirigami.Units.smallSpacing * 2
+            visible: control.showStatusIcons && control.session.iconName.length > 0
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
             source: control.session.iconName
-            isMask: control.session.hasUnreadOutput && source === "utilities-terminal-symbolic"
-            color: isMask ? titleLabel.color : "transparent"
+            Kirigami.Theme.textColor: titleLabel.color
         }
 
         Controls.Label {
@@ -94,7 +92,6 @@ Controls.TabButton {
 
             objectName: "terminalTabLabel" + control.index
             Layout.fillWidth: true
-            Layout.leftMargin: control.showStatusIcons ? 0 : Kirigami.Units.smallSpacing * 2
             text: control.session.title
             font: control.font
             textFormat: Text.PlainText
@@ -115,7 +112,6 @@ Controls.TabButton {
             readonly property string closeLabel: KI18n.i18nc("@action:button", "Close %1", control.session.title)
 
             Layout.alignment: Qt.AlignVCenter
-            Layout.rightMargin: Kirigami.Units.smallSpacing * 2
             selected: control.checked
             // Match QTabBar by leaving keyboard access to the Close Tab action.
             focusPolicy: Qt.NoFocus
@@ -140,8 +136,8 @@ Controls.TabButton {
         y: control.Controls.TabBar.position === Controls.TabBar.Footer ? frameMargin : control.height - height - frameMargin
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.leftMargin: Kirigami.Units.smallSpacing * 2.5
-        anchors.rightMargin: Kirigami.Units.smallSpacing * 2.5
+        anchors.leftMargin: control.leftPadding
+        anchors.rightMargin: control.rightPadding
         height: Kirigami.Units.smallSpacing
         visible: control.hasProgress
         from: 0

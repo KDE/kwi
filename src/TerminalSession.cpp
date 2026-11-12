@@ -125,7 +125,7 @@ QString TerminalSession::iconName() const
         return QStringLiteral("notifications-symbolic");
     }
 
-    return isFinished() ? QStringLiteral("dialog-ok-apply") : QStringLiteral("utilities-terminal-symbolic");
+    return isFinished() ? QStringLiteral("dialog-ok-apply") : QString{};
 }
 
 void TerminalSession::updateTitleFormat()

@@ -429,9 +429,16 @@ void Part::updateTabAppearance(TerminalSession *session)
 
     QIcon icon;
 
-    if (m_settings->showTabStatusIcons()) {
-        const QString name{session->iconName()};
-        icon = color.isValid() && name == QLatin1String("utilities-terminal-symbolic") ? KDE::icon(name, KIconColors{color}) : QIcon::fromTheme(name);
+    const QString name{session->iconName()};
+
+    if (m_settings->showTabStatusIcons() && !name.isEmpty()) {
+        if (color.isValid()) {
+            KIconColors colors;
+            colors.setText(color);
+            icon = KDE::icon(name, colors);
+        } else {
+            icon = QIcon::fromTheme(name);
+        }
     }
 
     const int index{m_tabs->indexOf(m_pages.value(session))};

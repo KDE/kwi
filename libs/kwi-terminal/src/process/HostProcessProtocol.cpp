@@ -65,7 +65,7 @@ QString cleanupProcessScript()
 QStringList boundedQueryCommand(const QStringList &arguments)
 {
     // Leave time for RPC delivery/cleanup before the local five-second deadline.
-    return QStringList{QStringLiteral("timeout"), QStringLiteral("--signal=KILL"), QStringLiteral("3")} + arguments;
+    return QStringList{QStringLiteral("timeout"), QStringLiteral("-sKILL"), QStringLiteral("3")} + arguments;
 }
 
 std::optional<ResolvedCommand> decodeCommand(const QByteArray &reply)

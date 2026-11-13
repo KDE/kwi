@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Eike Hein <hein@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include "Frame.h"
 #include "ProcessTestSupport.h"
 #include "Session.h"
 #include "TerminalView.h"
@@ -41,6 +42,7 @@
 #include <QTest>
 #include <QUrl>
 #include <QWheelEvent>
+#include <QtMath>
 #include <QtQuickTest/quicktest.h>
 
 using namespace Kwi;
@@ -157,6 +159,12 @@ private Q_SLOTS:
     void tabStaysInTerminal();
     void applicationCursorAndKeypad();
     void contextMenuDoesNotSendInput();
+    void keyboardScrollsHistory_data();
+    void keyboardScrollsHistory();
+    void alternateScreenReceivesScrollKeys_data();
+    void alternateScreenReceivesScrollKeys();
+    void modifiedArrowsReachChild();
+    void selectionKeepsShiftArrows();
     void confirmsAndSanitizesPaste();
     void reportsMouseAndHover();
     void reportsMouseTrackingModes_data();
@@ -240,6 +248,129 @@ void TerminalInputTest::contextMenuDoesNotSendInput()
     fixture.key(QEvent::KeyPress, Qt::Key_C, Qt::ControlModifier, QString(QChar(3)));
     fixture.key(QEvent::KeyRelease, Qt::Key_C, Qt::ControlModifier, QString(QChar(3)));
     QTRY_COMPARE(fixture.captured(), QByteArray("\x1b[99;5u\x1b[99;5:3u"));
+}
+
+void TerminalInputTest::keyboardScrollsHistory_data()
+{
+    QTest::addColumn<bool>("history");
+    QTest::addColumn<bool>("readOnly");
+    QTest::newRow("history") << true << false;
+    QTest::newRow("history-read-only") << true << true;
+    QTest::newRow("no-history") << false << false;
+    QTest::newRow("no-history-read-only") << false << true;
+}
+
+// Shifted arrows and page keys scroll within history bounds without sending presses or releases.
+void TerminalInputTest::keyboardScrollsHistory()
+{
+    QFETCH(bool, history);
+    QFETCH(bool, readOnly);
+    InputFixture fixture;
+    QVERIFY(fixture.start());
+
+    if (history) {
+        fixture.session.feed(QByteArray("line\r\n").repeated(200));
+        QTRY_VERIFY(fixture.view.scrollSize() < 1);
+    }
+
+    fixture.session.setReadOnly(readOnly);
+    fixture.session.feed("\x1b[>3u");
+    GhosttyQt::Frame frame;
+    QVERIFY(fixture.session.snapshot(frame));
+    const qint64 bottom{qint64(frame.scrollTotal - frame.rows.size())};
+    const qint64 page{frame.rows.size() - 1};
+    const auto position = [&fixture] {
+        return qRound64(fixture.view.scrollPosition() / fixture.view.scrollStepSize());
+    };
+    const auto key = [&fixture](int key) {
+        fixture.key(QEvent::KeyPress, key, Qt::ShiftModifier);
+        fixture.key(QEvent::KeyRelease, key, Qt::ShiftModifier);
+    };
+
+    key(Qt::Key_Up);
+    QTRY_COMPARE(position(), qMax(qint64{0}, bottom - 1));
+    key(Qt::Key_Down);
+    QTRY_COMPARE(position(), bottom);
+    key(Qt::Key_PageUp);
+    QTRY_COMPARE(position(), qMax(qint64{0}, bottom - page));
+    key(Qt::Key_PageDown);
+    QTRY_COMPARE(position(), bottom);
+
+    fixture.view.scrollTo(0);
+    key(Qt::Key_Up);
+    key(Qt::Key_PageUp);
+    QTRY_COMPARE(position(), 0);
+    fixture.view.scrollTo(1);
+    key(Qt::Key_Down);
+    key(Qt::Key_PageDown);
+    QTRY_COMPARE(position(), bottom);
+    fixture.session.feed("\x1b[5n");
+    QTRY_COMPARE(fixture.captured(), QByteArray("\x1b[0n"));
+}
+
+void TerminalInputTest::alternateScreenReceivesScrollKeys_data()
+{
+    QTest::addColumn<bool>("kitty");
+    QTest::newRow("legacy") << false;
+    QTest::newRow("kitty") << true;
+}
+
+// Alternate-screen applications receive shifted arrows and page keys in their selected keyboard protocol.
+void TerminalInputTest::alternateScreenReceivesScrollKeys()
+{
+    QFETCH(bool, kitty);
+    InputFixture fixture;
+    QVERIFY(fixture.start());
+    fixture.session.feed("\x1b[?1049h");
+
+    if (kitty) {
+        fixture.session.feed("\x1b[>3u");
+    }
+
+    for (const auto key : {Qt::Key_Up, Qt::Key_Down, Qt::Key_PageUp, Qt::Key_PageDown}) {
+        fixture.key(QEvent::KeyPress, key, Qt::ShiftModifier);
+        fixture.key(QEvent::KeyRelease, key, Qt::ShiftModifier);
+    }
+
+    const QByteArray expected{kitty ? "\x1b[1;2:1A\x1b[1;2:3A\x1b[1;2:1B\x1b[1;2:3B\x1b[5;2~\x1b[5;2:3~\x1b[6;2~\x1b[6;2:3~"
+                                    : "\x1b[1;2A\x1b[1;2B\x1b[5;2~\x1b[6;2~"};
+    QTRY_COMPARE(fixture.captured(), expected);
+}
+
+// Unmodified arrows and arrows with Ctrl or Alt still act as terminal input on the normal screen.
+void TerminalInputTest::modifiedArrowsReachChild()
+{
+    InputFixture fixture;
+    QVERIFY(fixture.start());
+
+    for (const Qt::KeyboardModifiers modifiers : {Qt::KeyboardModifiers{}, Qt::ShiftModifier | Qt::ControlModifier, Qt::ShiftModifier | Qt::AltModifier}) {
+        for (const auto key : {Qt::Key_Up, Qt::Key_Down}) {
+            fixture.key(QEvent::KeyPress, key, modifiers);
+            fixture.key(QEvent::KeyRelease, key, modifiers);
+        }
+    }
+
+    QTRY_COMPARE(fixture.captured(), QByteArray("\x1b[A\x1b[B\x1b[1;6A\x1b[1;6B\x1b[1;4A\x1b[1;4B"));
+}
+
+// Shifted arrows extend the selection while keyboard selection mode is active.
+void TerminalInputTest::selectionKeepsShiftArrows()
+{
+    InputFixture fixture;
+    QVERIFY(fixture.start());
+    fixture.session.feed("\x1b[2J\x1b[Halpha\r\nbeta");
+    QVERIFY(QQuickTest::qWaitForPolish(&fixture.view));
+    fixture.view.setKeyboardSelectionMode(true);
+    fixture.key(QEvent::KeyPress, Qt::Key_Home, Qt::NoModifier);
+    QCOMPARE(fixture.view.selectedText(), QStringLiteral("b"));
+    fixture.key(QEvent::KeyPress, Qt::Key_Up, Qt::ShiftModifier);
+    fixture.key(QEvent::KeyRelease, Qt::Key_Up, Qt::ShiftModifier);
+    QCOMPARE(fixture.view.selectedText(), QStringLiteral("alpha\nb"));
+    fixture.key(QEvent::KeyPress, Qt::Key_Down, Qt::ShiftModifier);
+    fixture.key(QEvent::KeyRelease, Qt::Key_Down, Qt::ShiftModifier);
+    QCOMPARE(fixture.view.selectedText(), QStringLiteral("b"));
+    fixture.session.feed("\x1b[5n");
+    QTRY_COMPARE(fixture.captured(), QByteArray("\x1b[0n"));
 }
 
 // Multiline clipboard paste requests confirmation and removes unsafe controls before bracketed delivery.

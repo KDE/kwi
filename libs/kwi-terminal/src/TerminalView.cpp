@@ -1436,12 +1436,34 @@ void TerminalView::keyPressEvent(QKeyEvent *event)
         updateHoveredLink(m_hoverPosition, event->modifiers());
     }
 
-    if (m_session && m_session->terminal() && event->modifiers() == Qt::ShiftModifier && (event->key() == Qt::Key_PageUp || event->key() == Qt::Key_PageDown)) {
-        m_session->terminal()->scroll((event->key() == Qt::Key_PageUp ? -1 : 1) * qMax(1, int(m_frame.rows.size()) - 1));
-        refresh();
-        event->accept();
+    if (m_session && m_session->terminal() && event->modifiers() == Qt::ShiftModifier
+        && !m_session->terminal()->isModeEnabled(GhosttyQt::Mode::AlternateScreen)) {
+        int rows{0};
 
-        return;
+        switch (event->key()) {
+        case Qt::Key_Up:
+            rows = -1;
+            break;
+        case Qt::Key_Down:
+            rows = 1;
+            break;
+        case Qt::Key_PageUp:
+            rows = -qMax(1, int(m_frame.rows.size()) - 1);
+            break;
+        case Qt::Key_PageDown:
+            rows = qMax(1, int(m_frame.rows.size()) - 1);
+            break;
+        default:
+            break;
+        }
+
+        if (rows != 0) {
+            m_session->terminal()->scroll(rows);
+            refresh();
+            event->accept();
+
+            return;
+        }
     }
 
     if (m_session) {

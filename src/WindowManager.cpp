@@ -22,8 +22,10 @@
 #include <QDBusMessage>
 #include <QDebug>
 #include <QDir>
+#include <QEvent>
 #include <QEventLoopLocker>
 #include <QGuiApplication>
+#include <QKeyEvent>
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
@@ -75,6 +77,19 @@ public:
     // Keep asynchronous process cleanup alive after the window disappears.
     QEventLoopLocker quitLock{};
     bool disposeAfterDrag{false};
+
+private:
+    bool eventFilter(QObject *object, QEvent *event) override
+    {
+        if (object == window
+            && (event->type() == QEvent::WindowDeactivate || event->type() == QEvent::WindowBlocked
+                || (event->type() == QEvent::KeyRelease && !static_cast<QKeyEvent *>(event)->isAutoRepeat()
+                    && static_cast<QKeyEvent *>(event)->modifiers() == Qt::NoModifier))) {
+            sessions->finishHistoryTraversal();
+        }
+
+        return QObject::eventFilter(object, event);
+    }
 };
 
 WindowManager::WindowManager(TerminalSettings *settings, TerminalPresets *presets, TerminalPaletteModel *palettes, QObject *parent)
@@ -287,6 +302,7 @@ WindowManager::WindowContext *WindowManager::createWindow()
     }
 
     context->window->QObject::setParent(context);
+    context->window->installEventFilter(context);
 
     // HACK: Union assumes Quick tab bars are immutable (KDE bug 527467).
     // Look up Union's attached object at runtime to avoid a build dependency.

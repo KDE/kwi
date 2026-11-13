@@ -10,6 +10,7 @@
 #include "settings/TerminalSettings.h"
 
 #include <QDir>
+#include <QGuiApplication>
 #include <QTimer>
 #include <memory>
 #include <utility>
@@ -59,7 +60,13 @@ int SessionModel::currentIndex() const
 
 void SessionModel::setCurrentIndex(int index)
 {
-    if (index < 0 || index >= count() || m_currentIndex == index) {
+    if (index < 0 || index >= count()) {
+        return;
+    }
+
+    finishHistoryTraversal();
+
+    if (m_currentIndex == index) {
         return;
     }
 
@@ -132,6 +139,7 @@ void SessionModel::adoptSession(TerminalSession *session, int index)
         return;
     }
 
+    finishHistoryTraversal();
     session->setParent(this);
     const auto *current = currentSession();
     const int row{index < 0 ? m_currentIndex + 1 : qMin(index, count())};
@@ -209,9 +217,33 @@ void SessionModel::moveSession(int from, int to)
     Q_EMIT currentIndexChanged();
 }
 
-void SessionModel::activateLastUsed()
+void SessionModel::activateLastUsed(bool reverse)
 {
-    setCurrentIndex(m_sessions.indexOf(m_activationHistory.value(1)));
+    const int size{static_cast<int>(m_activationHistory.size())};
+
+    if (size < 2) {
+        return;
+    }
+
+    // Keep recent-use order until the navigation modifiers are released.
+    m_historyIndex = (qMax(0, m_historyIndex) + (reverse ? size - 1 : 1)) % size;
+    m_currentIndex = m_sessions.indexOf(m_activationHistory.at(m_historyIndex));
+
+    if (QGuiApplication::keyboardModifiers() == Qt::NoModifier) {
+        finishHistoryTraversal();
+    }
+
+    Q_EMIT currentIndexChanged();
+}
+
+void SessionModel::finishHistoryTraversal()
+{
+    if (m_historyIndex < 0) {
+        return;
+    }
+
+    auto *session = m_activationHistory.takeAt(std::exchange(m_historyIndex, -1));
+    m_activationHistory.prepend(session);
 }
 
 void SessionModel::confirmClose(quint64 requestId, bool doNotAskAgain)
@@ -347,6 +379,8 @@ void SessionModel::eraseSession(TerminalSession *session)
     if (row < 0) {
         return;
     }
+
+    finishHistoryTraversal();
 
     if (m_pendingClose && m_pendingClose->scope == CloseScope::Session && m_pendingClose->session == session) {
         cancelClose();

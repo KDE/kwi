@@ -25,7 +25,8 @@ AC.ActionCollectionManager {
         AC.ActionData { name: "rename_tab"; text: KI18n.i18nc("@action", "Rename Tab…"); icon.name: "edit-rename"; defaultShortcut: "Ctrl+Alt+S" }
         AC.ActionData { name: "next_tab"; text: KI18n.i18nc("@action", "Next Tab"); icon.name: "go-next"; defaultShortcut: "Shift+Right"; defaultAlternateShortcut: "Ctrl+PgDown" }
         AC.ActionData { name: "previous_tab"; text: KI18n.i18nc("@action", "Previous Tab"); icon.name: "go-previous"; defaultShortcut: "Shift+Left"; defaultAlternateShortcut: "Ctrl+PgUp" }
-        AC.ActionData { name: "last_used_tab"; text: KI18n.i18nc("@action", "Last Used Tab"); icon.name: "tab-duplicate"; defaultShortcut: "Ctrl+Tab" }
+        AC.ActionData { name: "last_used_tab"; text: KI18n.i18nc("@action", "Last Used Tabs"); icon.name: "tab-duplicate"; defaultShortcut: "Ctrl+Tab" }
+        AC.ActionData { name: "last_used_tab_reverse"; text: KI18n.i18nc("@action", "Last Used Tabs (Reverse)"); icon.name: "tab-duplicate"; defaultShortcut: "Ctrl+Shift+Tab" }
         AC.ActionData { name: "move_tab_left"; text: KI18n.i18nc("@action", "Move Tab Left"); icon.name: "go-previous"; defaultShortcut: "Ctrl+Alt+Left" }
         AC.ActionData { name: "move_tab_right"; text: KI18n.i18nc("@action", "Move Tab Right"); icon.name: "go-next"; defaultShortcut: "Ctrl+Alt+Right" }
         AC.ActionData { name: "detach_tab"; text: KI18n.i18nc("@action", "Detach Tab"); icon.name: "window-new" }

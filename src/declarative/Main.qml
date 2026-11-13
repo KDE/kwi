@@ -284,6 +284,20 @@ Kirigami.ApplicationWindow {
     }
 
     Kirigami.Action {
+        id: lastUsedTabReverseAction
+
+        objectName: "lastUsedTabReverseAction"
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
+        AC.ActionCollection.action: "last_used_tab_reverse"
+        enabled: root.terminalActionsEnabled && root.sessionModel.count > 1
+
+        onTriggered: {
+            root.sessionModel.activateLastUsed(true);
+            root.focusTerminal();
+        }
+    }
+
+    Kirigami.Action {
         id: moveTabLeftAction
 
         objectName: "moveTabLeftAction"

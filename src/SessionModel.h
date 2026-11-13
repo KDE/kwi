@@ -67,7 +67,8 @@ public:
     Q_INVOKABLE void closeApplication(bool force = false);
     Q_INVOKABLE void detachSession(int index);
     Q_INVOKABLE void moveSession(int from, int to);
-    Q_INVOKABLE void activateLastUsed();
+    Q_INVOKABLE void activateLastUsed(bool reverse = false);
+    void finishHistoryTraversal();
 
     Q_INVOKABLE void confirmClose(quint64 requestId, bool doNotAskAgain = false);
     Q_INVOKABLE void cancelClose(quint64 requestId = 0);
@@ -106,5 +107,6 @@ private:
     std::optional<CloseRequest> m_pendingClose;
     quint64 m_closeRequestSerial{0};
     int m_currentIndex{-1};
+    int m_historyIndex{-1};
 };
 }

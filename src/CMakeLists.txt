@@ -89,7 +89,7 @@ if(BUILD_KPART)
         ui/SettingsDialog.h ui/SettingsDialog.cpp)
     target_link_libraries(kwi-part-implementation
         PUBLIC kwi-ui Qt6::QuickWidgets Qt6::DBus KF6::Parts KF6::XmlGui KF6::WidgetsAddons
-        PRIVATE KF6::I18nQml KF6::KIOWidgets KF6::ColorScheme KF6::IconThemes)
+        PRIVATE KF6::I18nQml KF6::KIOWidgets KF6::ColorScheme KF6::IconThemes KF6::GuiAddons)
     target_compile_definitions(kwi-part-implementation PRIVATE TRANSLATION_DOMAIN="kwi")
     set_target_properties(kwi-part-implementation PROPERTIES POSITION_INDEPENDENT_CODE ON)
 

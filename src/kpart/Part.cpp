@@ -17,6 +17,7 @@
 
 #include <KActionCollection>
 #include <KColorScheme>
+#include <KColorUtils>
 #include <KIO/KUriFilterSearchProviderActions>
 #include <KIconColors>
 #include <KIconLoader>
@@ -423,7 +424,15 @@ void Part::updateTabAppearance(TerminalSession *session)
     QString accessibleName;
 
     if (session->hasUnreadOutput()) {
-        color = KColorScheme{m_tabs->palette().currentColorGroup(), KColorScheme::Window}.foreground(KColorScheme::ActiveText).color();
+        const auto &palette = m_tabs->palette();
+        const QColor activeColor{KColorScheme{palette.currentColorGroup(), KColorScheme::Window}.foreground(KColorScheme::ActiveText).color()};
+        // HACK: Use a 50/50 blend of normal and active text colors. This works
+        // around many (especially light) color schemes not providing pleasing
+        // contrast between `activeTextColor` and the background. It's not great
+        // to let the color schemes get away with this, but it's pragmatic for
+        // now. On the back of Union theming, we may revisit tab button theming
+        // later on and perhaps move toward background effects.
+        color = KColorUtils::mix(palette.text().color(), activeColor);
         accessibleName = i18ndc("kwi", "@info:accessibility", "%1, new output", session->title());
     }
 

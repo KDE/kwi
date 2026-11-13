@@ -97,9 +97,17 @@ Controls.TabButton {
             textFormat: Text.PlainText
             elide: Text.ElideRight
 
-            Binding on color {
+            states: State {
                 when: control.session.hasUnreadOutput
-                value: titleLabel.Kirigami.Theme.activeTextColor
+                PropertyChanges {
+                    // HACK: Use a 50/50 blend of normal and active text colors. This works
+                    // around many (especially light) color schemes not providing pleasing
+                    // contrast between `activeTextColor` and the background. It's not great
+                    // to let the color schemes get away with this, but it's pragmatic for
+                    // now. On the back of Union theming, we may revisit tab button theming
+                    // later on and perhaps move toward background effects.
+                    titleLabel.color: Qt.tint(titleLabel.Kirigami.Theme.textColor, Qt.alpha(titleLabel.Kirigami.Theme.activeTextColor, 0.5))
+                }
             }
         }
 

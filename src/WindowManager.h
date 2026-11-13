@@ -11,8 +11,10 @@
 #include <QString>
 #include <QVariantMap>
 #include <QtQmlIntegration/qqmlintegration.h>
+#include <memory>
 
 class QQuickWindow;
+class QQmlApplicationEngine;
 
 Q_MOC_INCLUDE("SessionModel.h")
 Q_MOC_INCLUDE("TerminalSession.h")
@@ -21,7 +23,6 @@ namespace Kwi
 {
 class TerminalSettings;
 class TerminalPresets;
-class AppShortcuts;
 class TerminalPaletteModel;
 class SessionModel;
 class TerminalSession;
@@ -43,7 +44,7 @@ class WindowManager final : public QObject
     Q_PROPERTY(Kwi::TerminalSession *draggedSession READ draggedSession NOTIFY draggedSessionChanged)
 
 public:
-    WindowManager(TerminalSettings *settings, TerminalPresets *presets, AppShortcuts *shortcuts, TerminalPaletteModel *palettes, QObject *parent = nullptr);
+    WindowManager(TerminalSettings *settings, TerminalPresets *presets, TerminalPaletteModel *palettes, QObject *parent = nullptr);
     ~WindowManager() override;
 
     QQuickWindow *launch(const LaunchOptions &options);
@@ -65,6 +66,7 @@ private:
     void initializeWindow(WindowContext *context);
     [[nodiscard]] WindowContext *contextForSessions(const SessionModel *sessionModel) const;
     void activate(WindowContext *context, bool fullscreen = false);
+    void setActiveWindow(QQuickWindow *window);
     void detach(WindowContext *source, TerminalSession *session);
     void completeTabDrop(const QString &token);
     void clearTabDrag();
@@ -76,8 +78,8 @@ private:
 
     TerminalSettings *m_settings;
     TerminalPresets *m_presets;
-    AppShortcuts *m_shortcuts;
     TerminalPaletteModel *m_palettes;
+    std::unique_ptr<QQmlApplicationEngine> m_engine;
     QList<WindowContext *> m_windows{};
     QPointer<QQuickWindow> m_activeWindow{};
     QVariantMap m_lastProgress{};

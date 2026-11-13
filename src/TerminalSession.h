@@ -28,6 +28,7 @@ class TerminalSession final : public Session
     Q_PROPERTY(QString currentPresetName READ currentPresetName WRITE setCurrentPreset NOTIFY currentPresetChanged)
     Q_PROPERTY(QString customTitle READ customTitle WRITE setCustomTitle NOTIFY titleChanged)
     Q_PROPERTY(bool attention READ attention WRITE setAttention NOTIFY attentionChanged)
+    Q_PROPERTY(bool hasUnreadOutput READ hasUnreadOutput NOTIFY unreadOutputChanged)
 
 public:
     explicit TerminalSession(TerminalSettings *settings, TerminalPresets *presets, QObject *parent = nullptr);
@@ -43,6 +44,8 @@ public:
     void setCustomTitle(const QString &newTitle);
     [[nodiscard]] bool attention() const;
     void setAttention(bool newAttention);
+    [[nodiscard]] bool hasUnreadOutput() const;
+    void setUnreadOutput(bool unread);
     [[nodiscard]] bool holdOpen() const;
     void setHoldOpen(bool hold);
 
@@ -50,6 +53,7 @@ Q_SIGNALS:
     void titleChanged();
     void iconNameChanged();
     void attentionChanged();
+    void unreadOutputChanged();
     void currentPresetChanged();
 
 private:
@@ -63,6 +67,7 @@ private:
     SessionTitleFormatter m_titleFormatter;
     QString m_customTitle;
     bool m_attention{false};
+    bool m_unreadOutput{false};
     bool m_holdOpen{false};
 };
 }

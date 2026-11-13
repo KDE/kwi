@@ -39,7 +39,7 @@ public:
     void start(const QStringList &arguments, const QString &directory = QStringLiteral("/"), const QProcessEnvironment &environment = {});
 
 Q_SIGNALS:
-    void finished(Kwi::HostCommandQuery::Result result, const QByteArray &output);
+    void finished(Kwi::HostCommandQuery::Result result, const QByteArray &output, const QString &errorString);
 
 private Q_SLOTS:
     void hostExited(uint pid, uint status);
@@ -53,7 +53,7 @@ private:
 
     void readPipe(bool standardError);
     void maybeFinish();
-    void finish(Result result);
+    void finish(Result result, const QString &errorString = {});
     void cancelCommand();
 
     QDBusConnection m_bus;

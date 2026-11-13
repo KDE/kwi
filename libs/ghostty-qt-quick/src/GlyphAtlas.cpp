@@ -9,7 +9,7 @@
 #include <QPen>
 #include <QQuickWindow>
 #include <QtGui/private/qrawfont_p.h>
-#include <cmath>
+#include <QtMath>
 #include <numbers>
 #include <numeric>
 #include <utility>
@@ -147,24 +147,20 @@ GlyphImage GlyphAtlas::glyph(const QRawFont &font, quint32 index, bool allowSubp
     }
 
     QImage source{font.alphaMapForGlyph(index, subpixel ? QRawFont::SubPixelAntialiasing : QRawFont::PixelAntialiasing)};
-    QPointF bearing;
-
-    if (subpixel) {
-        // QRawFont::boundingRect can omit the extra bearings needed for LCD filtering.
-        const auto bounds = engine->alphaMapBoundingBox(index, {}, {}, QFontEngine::Format_A32);
-        bearing = QPointF(bounds.x.truncate(), bounds.y.truncate());
-    } else {
-        const QRectF bounds{font.boundingRect(index)};
-        bearing = QPointF(std::floor(bounds.left()), std::floor(bounds.top()));
-    }
+    const bool colored = source.format() == QImage::Format_ARGB32_Premultiplied || source.format() == QImage::Format_ARGB32
+        || source.format() == QImage::Format_RGBA8888_Premultiplied || source.format() == QImage::Format_RGBA8888;
+    const auto format = colored ? QFontEngine::Format_ARGB
+        : subpixel              ? QFontEngine::Format_A32
+        : source.depth() == 1   ? QFontEngine::Format_Mono
+                                : QFontEngine::Format_A8;
+    // Font metrics can include rows or columns missing from the rasterized glyph.
+    const auto bounds = engine->alphaMapBoundingBox(index, {}, {}, format);
+    const QPointF bearing(bounds.x.truncate(), bounds.y.truncate());
 
     if (subpixel && source.format() == QImage::Format_RGB32) {
         // Opaque alpha prevents premultiplication from altering the RGB coverage channels.
         return insert(key, source.convertToFormat(QImage::Format_ARGB32_Premultiplied), bearing, GlyphImage::Format::Subpixel);
     }
-
-    const bool colored = source.format() == QImage::Format_ARGB32_Premultiplied || source.format() == QImage::Format_ARGB32
-        || source.format() == QImage::Format_RGBA8888_Premultiplied || source.format() == QImage::Format_RGBA8888;
 
     if (colored) {
         return insert(key, source.convertToFormat(QImage::Format_ARGB32_Premultiplied), bearing, GlyphImage::Format::Color);

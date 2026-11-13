@@ -269,6 +269,31 @@ RowLayout {
                     color: Kirigami.Theme.backgroundColor
                 }
 
+                DropArea {
+                    id: contentDrop
+
+                    anchors.fill: parent
+
+                    onEntered: event => {
+                        event.accepted = false;
+
+                        if ((event.supportedActions & Qt.CopyAction) !== 0
+                            && !event.formats.includes("application/x-kwi-terminal-tab")
+                            && (event.hasText || event.hasUrls || event.formats.includes("application/vnd.portal.filetransfer"))) {
+                            event.accept(Qt.CopyAction);
+                        }
+                    }
+
+                    onDropped: event => event.accepted = false
+
+                    Timer {
+                        interval: 800 // Matches Dolphin.
+                        running: contentDrop.containsDrag && contentDrop.enabled && !tabButton.checked
+
+                        onTriggered: root.activated(tabButton.index)
+                    }
+                }
+
                 onClicked: root.activated(index)
                 onCloseRequested: root.sessions.closeSession(index)
                 onContextRequested: root.contextRequested(session)

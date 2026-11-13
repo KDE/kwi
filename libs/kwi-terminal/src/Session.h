@@ -205,6 +205,14 @@ class KWI_TERMINAL_EXPORT Session : public QObject
      */
     Q_PROPERTY(QString sshHostName READ sshHostName NOTIFY sshInfoChanged)
     /*!
+     * \qmlproperty string Session::sshOriginalHostName
+     * \readonly
+     * The hostname or alias given to SSH, without its port, before applying its
+     * configuration or hostname resolution. Or an empty string when hasSshInfo is
+     * false. Use sshHostName instead for the resolved hostname.
+     */
+    Q_PROPERTY(QString sshOriginalHostName READ sshOriginalHostName NOTIFY sshInfoChanged)
+    /*!
      * \qmlproperty int Session::sshPort
      * \readonly
      * The SSH destination's resolved port, or zero when hasSshInfo is false.
@@ -385,6 +393,7 @@ public:
     [[nodiscard]] bool hasSshInfo() const;
     [[nodiscard]] QString sshUserName() const;
     [[nodiscard]] QString sshHostName() const;
+    [[nodiscard]] QString sshOriginalHostName() const;
     [[nodiscard]] int sshPort() const;
     [[nodiscard]] QString sshRemoteCommand() const;
     [[nodiscard]] qint64 processId() const;
@@ -516,6 +525,13 @@ Q_SIGNALS:
     void scrollbackLinesChanged();
     void monitoringChanged();
     void silenceSecondsChanged();
+    /*!
+     * \qmlsignal Session::outputReceived()
+     * Emitted after incoming output is processed. This does not require
+     * monitorActivity and is not rate-limited. Resizing or scrolling does not
+     * emit this signal.
+     */
+    void outputReceived();
     /*!
      * \qmlsignal Session::activityDetected()
      * Emitted when output arrives while monitorActivity is enabled. During

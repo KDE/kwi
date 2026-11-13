@@ -25,7 +25,7 @@ TitleContext titleContext(const Session &session)
 
     if (session.hasSshInfo()) {
         context.user = session.sshUserName();
-        context.host = session.sshHostName();
+        context.host = session.sshOriginalHostName();
         const QString remoteCommand{session.sshRemoteCommand()};
 
         if (!remoteCommand.isEmpty()) {

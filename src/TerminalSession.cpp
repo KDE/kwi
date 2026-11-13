@@ -125,7 +125,7 @@ QString TerminalSession::iconName() const
         return QStringLiteral("notifications-symbolic");
     }
 
-    return isFinished() ? QStringLiteral("dialog-ok-apply") : QStringLiteral("utilities-terminal-symbolic");
+    return isFinished() ? QStringLiteral("dialog-ok-apply") : QString{};
 }
 
 void TerminalSession::updateTitleFormat()
@@ -171,6 +171,22 @@ void TerminalSession::setAttention(bool newAttention)
     m_attention = newAttention;
 
     Q_EMIT attentionChanged();
+}
+
+bool TerminalSession::hasUnreadOutput() const
+{
+    return m_unreadOutput;
+}
+
+void TerminalSession::setUnreadOutput(bool unread)
+{
+    if (m_unreadOutput == unread) {
+        return;
+    }
+
+    m_unreadOutput = unread;
+
+    Q_EMIT unreadOutputChanged();
 }
 
 bool TerminalSession::holdOpen() const

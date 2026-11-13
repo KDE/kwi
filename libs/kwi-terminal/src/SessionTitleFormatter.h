@@ -54,7 +54,7 @@ class KWI_TERMINAL_EXPORT SessionTitleFormatter : public QObject
      * \row \li \c {{directory}} \li The last component of the local working directory. The home directory becomes \c ~.
      * \row \li \c {{path}} \li The local working directory, with the home directory replaced by \c ~.
      * \row \li \c {{user}} \li The local user name, or the SSH destination's resolved user name.
-     * \row \li \c {{host}} \li The local hostname, or the resolved SSH hostname with its port when it differs from 22.
+     * \row \li \c {{host}} \li The local hostname, or Session::sshOriginalHostName with its port when it differs from 22.
      * \row \li \c {{shortHost}} \li The hostname up to the first dot, without a port. SSH IP addresses are kept whole.
      * \endtable
      *

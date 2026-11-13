@@ -109,7 +109,7 @@ void HostCommandQuery::start(const QStringList &arguments, const QString &direct
         watcher->deleteLater();
 
         if (reply.isError() || reply.value() == 0) {
-            finish(Result::FailedToStart);
+            finish(Result::FailedToStart, reply.error().message());
 
             return;
         }
@@ -199,7 +199,7 @@ void HostCommandQuery::maybeFinish()
     }
 }
 
-void HostCommandQuery::finish(Result result)
+void HostCommandQuery::finish(Result result, const QString &errorString)
 {
     if (m_phase == Phase::Finished) {
         return;
@@ -225,7 +225,7 @@ void HostCommandQuery::finish(Result result)
 
     const QByteArray output{result == Result::Success ? std::exchange(m_output, {}) : QByteArray()};
 
-    Q_EMIT finished(result, output);
+    Q_EMIT finished(result, output, errorString);
 }
 
 void HostCommandQuery::cancelCommand()

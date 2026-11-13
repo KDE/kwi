@@ -16,7 +16,10 @@
 #include "ui/WebShortcuts_p.h"
 
 #include <KActionCollection>
+#include <KColorScheme>
 #include <KIO/KUriFilterSearchProviderActions>
+#include <KIconColors>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStandardActions>
@@ -25,6 +28,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QCheckBox>
+#include <QColor>
 #include <QDir>
 #include <QEvent>
 #include <QFileDialog>
@@ -34,6 +38,7 @@
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMessageBox>
+#include <QPalette>
 #include <QPoint>
 #include <QPushButton>
 #include <QTabBar>
@@ -355,6 +360,7 @@ void Part::addSessionWidget(TerminalSession *session)
         }
 
         m_tabs->setTabText(m_tabs->indexOf(container), session->title());
+        updateTabAppearance(session);
 
         if (activeSession() == session) {
             Q_EMIT setWindowCaption(session->title());
@@ -387,17 +393,14 @@ void Part::addSessionWidget(TerminalSession *session)
     });
 
     connect(session, &TerminalSession::monitoringChanged, this, &Part::updateActions);
-    const auto updateTabIcon = [this, session, container] {
-        if (m_destroying) {
-            return;
-        }
-
-        m_tabs->setTabIcon(m_tabs->indexOf(container), m_settings->showTabStatusIcons() ? QIcon::fromTheme(session->iconName()) : QIcon{});
+    const auto updateTab = [this, session] {
+        updateTabAppearance(session);
     };
 
-    connect(session, &TerminalSession::iconNameChanged, container, updateTabIcon);
-    connect(m_settings, &TerminalSettings::showTabStatusIconsChanged, container, updateTabIcon);
-    updateTabIcon();
+    connect(session, &TerminalSession::iconNameChanged, container, updateTab);
+    connect(m_settings, &TerminalSettings::showTabStatusIconsChanged, container, updateTab);
+    connect(session, &TerminalSession::unreadOutputChanged, container, updateTab);
+    updateTab();
 
     connect(session, &TerminalSession::readOnlyChanged, this, &Part::updateActions);
     connect(session, &Session::activeChanged, this, &Part::updateActions);
@@ -408,6 +411,40 @@ void Part::addSessionWidget(TerminalSession *session)
     }
 
     activateSession();
+}
+
+void Part::updateTabAppearance(TerminalSession *session)
+{
+    if (m_destroying) {
+        return;
+    }
+
+    QColor color;
+    QString accessibleName;
+
+    if (session->hasUnreadOutput()) {
+        color = KColorScheme{m_tabs->palette().currentColorGroup(), KColorScheme::Window}.foreground(KColorScheme::ActiveText).color();
+        accessibleName = i18ndc("kwi", "@info:accessibility", "%1, new output", session->title());
+    }
+
+    QIcon icon;
+
+    const QString name{session->iconName()};
+
+    if (m_settings->showTabStatusIcons() && !name.isEmpty()) {
+        if (color.isValid()) {
+            KIconColors colors;
+            colors.setText(color);
+            icon = KDE::icon(name, colors);
+        } else {
+            icon = QIcon::fromTheme(name);
+        }
+    }
+
+    const int index{m_tabs->indexOf(m_pages.value(session))};
+    m_tabs->setTabIcon(index, icon);
+    m_tabs->tabBar()->setTabTextColor(index, color);
+    m_tabs->tabBar()->setAccessibleTabName(index, accessibleName);
 }
 
 void Part::removeSessionWidget(TerminalSession *session)
@@ -803,17 +840,21 @@ void Part::setupActions()
         renameSession(activeSession());
     });
 
-    add("next-tab", i18nd("kwi", "Next Tab"), "go-next", QKeySequence(Qt::CTRL | Qt::Key_PageDown), [this] {
+    auto *nextTab = add("next-tab", i18nd("kwi", "Next Tab"), "go-next", {}, [this] {
         if (m_tabs->count()) {
             m_tabs->setCurrentIndex((m_tabs->currentIndex() + 1) % m_tabs->count());
         }
     });
 
-    add("previous-tab", i18nd("kwi", "Previous Tab"), "go-previous", QKeySequence(Qt::CTRL | Qt::Key_PageUp), [this] {
+    KActionCollection::setDefaultShortcuts(nextTab, {QKeySequence(Qt::SHIFT | Qt::Key_Right), QKeySequence(Qt::CTRL | Qt::Key_PageDown)});
+
+    auto *previousTab = add("previous-tab", i18nd("kwi", "Previous Tab"), "go-previous", {}, [this] {
         if (m_tabs->count()) {
             m_tabs->setCurrentIndex((m_tabs->currentIndex() + m_tabs->count() - 1) % m_tabs->count());
         }
     });
+
+    KActionCollection::setDefaultShortcuts(previousTab, {QKeySequence(Qt::SHIFT | Qt::Key_Left), QKeySequence(Qt::CTRL | Qt::Key_PageUp)});
 
     add("close-session", i18nd("kwi", "Close Tab"), "tab-close", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W), [this] {
         m_sessions->closeSession(m_sessions->currentIndex());
@@ -1059,6 +1100,12 @@ void Part::updateHostFocus()
 
 bool Part::eventFilter(QObject *object, QEvent *event)
 {
+    if (!m_destroying && object == m_tabs && event->type() == QEvent::PaletteChange) {
+        for (auto it = m_pages.cbegin(); it != m_pages.cend(); ++it) {
+            updateTabAppearance(it.key());
+        }
+    }
+
     if (!m_destroying && object != m_tabs && (event->type() == QEvent::ShortcutOverride || event->type() == QEvent::KeyPress)) {
         const QKeySequence pressed{static_cast<QKeyEvent *>(event)->keyCombination()};
 

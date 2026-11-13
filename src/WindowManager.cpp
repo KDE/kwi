@@ -11,7 +11,6 @@
 #include "settings/TerminalPaletteModel.h"
 #include "settings/TerminalPresets.h"
 #include "settings/TerminalSettings.h"
-#include "ui/AppShortcuts.h"
 
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
@@ -27,6 +26,7 @@
 #include <QGuiApplication>
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
+#include <QQmlComponent>
 #include <QQuickWindow>
 #include <QScreen>
 #include <QSize>
@@ -48,7 +48,6 @@ public:
         , sharedSettings{settings}
         , sessions{new SessionModel{settings, presets, this}}
         , desktop{new DesktopIntegration{sessions, DesktopIntegration::Mode::Standalone, this}}
-        , engine{new QQmlApplicationEngine{this}}
     {
         connect(settings, &TerminalSettings::backgroundBlurChanged, this, &WindowContext::updateBlur);
         connect(settings, &TerminalSettings::backgroundOpacityChanged, this, &WindowContext::updateBlur);
@@ -57,7 +56,7 @@ public:
     ~WindowContext() override
     {
         // Destroy QML bindings and render resources before their session owners.
-        delete engine;
+        delete window;
     }
 
     void updateBlur()
@@ -72,20 +71,25 @@ public:
     TerminalSettings *const sharedSettings;
     SessionModel *sessions;
     DesktopIntegration *desktop;
-    QQmlApplicationEngine *engine;
     QPointer<QQuickWindow> window{};
     // Keep asynchronous process cleanup alive after the window disappears.
     QEventLoopLocker quitLock{};
     bool disposeAfterDrag{false};
 };
 
-WindowManager::WindowManager(TerminalSettings *settings, TerminalPresets *presets, AppShortcuts *shortcuts, TerminalPaletteModel *palettes, QObject *parent)
+WindowManager::WindowManager(TerminalSettings *settings, TerminalPresets *presets, TerminalPaletteModel *palettes, QObject *parent)
     : QObject{parent}
     , m_settings{settings}
     , m_presets{presets}
-    , m_shortcuts{shortcuts}
     , m_palettes{palettes}
+    , m_engine{std::make_unique<QQmlApplicationEngine>()}
 {
+    KLocalization::setupLocalizedContext(m_engine.get());
+    m_engine->loadFromModule(QStringLiteral("org.kde.kwi"), QStringLiteral("ActionDefinitions"));
+
+    if (m_engine->rootObjects().isEmpty()) {
+        qFatal("Could not initialize application actions.");
+    }
 }
 
 WindowManager::~WindowManager()
@@ -260,33 +264,29 @@ void WindowManager::disposeWindow(WindowContext *context)
 WindowManager::WindowContext *WindowManager::createWindow()
 {
     auto *context = new WindowContext{m_settings, m_presets, this};
-    KLocalization::setupLocalizedContext(context->engine);
-    context->engine->setInitialProperties({
+    QQmlComponent component{m_engine.get()};
+    component.loadFromModule(QStringLiteral("org.kde.kwi"), QStringLiteral("Main"));
+    auto *root = component.createWithInitialProperties({
         {QStringLiteral("appSettings"), QVariant::fromValue(m_settings)},
         {QStringLiteral("terminalPresets"), QVariant::fromValue(m_presets)},
         {QStringLiteral("presetEditor"), QVariant::fromValue(new PresetEditor{m_presets, context})},
-        {QStringLiteral("appShortcuts"), QVariant::fromValue(m_shortcuts)},
         {QStringLiteral("terminalPalettes"), QVariant::fromValue(m_palettes)},
         {QStringLiteral("sessionModel"), QVariant::fromValue(context->sessions)},
         {QStringLiteral("desktopIntegration"), QVariant::fromValue(context->desktop)},
         {QStringLiteral("tabDragController"), QVariant::fromValue(this)},
     });
 
-    context->engine->loadFromModule(QStringLiteral("org.kde.kwi"), QStringLiteral("Main"));
-
-    if (context->engine->rootObjects().isEmpty()) {
-        delete context;
-
-        return nullptr;
-    }
-
-    context->window = qobject_cast<QQuickWindow *>(context->engine->rootObjects().constFirst());
+    context->window = qobject_cast<QQuickWindow *>(root);
 
     if (!context->window) {
+        qWarning() << component.errors();
+        delete root;
         delete context;
 
         return nullptr;
     }
+
+    context->window->QObject::setParent(context);
 
     // HACK: Union assumes Quick tab bars are immutable (KDE bug 527467).
     // Look up Union's attached object at runtime to avoid a build dependency.
@@ -318,7 +318,7 @@ WindowManager::WindowContext *WindowManager::createWindow()
 
     connect(context->window, &QWindow::activeChanged, this, [this, context] {
         if (context->window && context->window->isActive()) {
-            m_activeWindow = context->window;
+            setActiveWindow(context->window);
             updateProgress();
         }
     });
@@ -509,6 +509,13 @@ void WindowManager::cancelQuit(const SessionModel *source)
     }
 }
 
+void WindowManager::setActiveWindow(QQuickWindow *window)
+{
+    m_activeWindow = window;
+    m_engine->setIncubationController(window->incubationController());
+    m_engine->rootObjects().constFirst()->setProperty("pageRow", window->property("pageStack"));
+}
+
 void WindowManager::activate(WindowContext *context, bool fullscreen)
 {
     auto states = context->window->windowStates() & ~Qt::WindowMinimized;
@@ -519,7 +526,7 @@ void WindowManager::activate(WindowContext *context, bool fullscreen)
 
     context->window->setWindowStates(states);
     context->window->setVisible(true);
-    m_activeWindow = context->window;
+    setActiveWindow(context->window);
     updateProgress();
     KWindowSystem::updateStartupId(context->window);
     KWindowSystem::activateWindow(context->window);

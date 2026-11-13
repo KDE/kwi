@@ -21,6 +21,11 @@ SessionModel::SessionModel(TerminalSettings *settings, TerminalPresets *presets,
     , m_settings{settings}
     , m_presets{presets}
 {
+    connect(this, &SessionModel::currentIndexChanged, this, [this] {
+        if (auto *session = currentSession()) {
+            session->setUnreadOutput(false);
+        }
+    });
 }
 
 int SessionModel::rowCount(const QModelIndex &parent) const
@@ -139,6 +144,10 @@ void SessionModel::adoptSession(TerminalSession *session, int index)
         if (!session->holdOpen() && session->state() != Session::State::Failed) {
             removeSession(session);
         }
+    });
+
+    connect(session, &Session::outputReceived, this, [this, session] {
+        session->setUnreadOutput(session != currentSession());
     });
 
     Q_EMIT countChanged();
@@ -349,7 +358,7 @@ void SessionModel::eraseSession(TerminalSession *session)
     m_activationHistory.removeOne(session);
     m_currentIndex = m_sessions.indexOf(current == session ? m_activationHistory.value(0) : current);
     endRemoveRows();
-    disconnect(session, &TerminalSession::exited, this, nullptr);
+    disconnect(session, nullptr, this, nullptr);
 
     Q_EMIT sessionRemoved(session);
     Q_EMIT countChanged();

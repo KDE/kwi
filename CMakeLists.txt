@@ -45,12 +45,12 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 
 if(BUILD_KPART)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS QuickWidgets)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons ColorScheme IconThemes)
 endif()
 
 find_package(KF6KirigamiAddons 1.11 REQUIRED)
 find_package(KF6KirigamiAppComponents 1.1 REQUIRED)
-find_package(Ghostty 1.0 REQUIRED)
+find_package(Ghostty 1.0.1 REQUIRED)
 
 qt_standard_project_setup(REQUIRES ${QT_MIN_VERSION})
 

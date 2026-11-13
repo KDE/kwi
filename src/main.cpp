@@ -8,7 +8,6 @@
 #include "settings/TerminalPaletteModel.h"
 #include "settings/TerminalPresets.h"
 #include "settings/TerminalSettings.h"
-#include "ui/AppShortcuts.h"
 
 #include <KAboutData>
 #include <KDBusService>
@@ -123,9 +122,8 @@ int main(int argc, char **argv)
 
     Kwi::TerminalSettings settings{};
     Kwi::TerminalPresets presets{&settings};
-    Kwi::AppShortcuts shortcuts{};
     Kwi::TerminalPaletteModel palettes{&settings};
-    Kwi::WindowManager windows{&settings, &presets, &shortcuts, &palettes};
+    Kwi::WindowManager windows{&settings, &presets, &palettes};
 
     QObject::connect(
         &service,

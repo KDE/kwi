@@ -27,7 +27,7 @@ set_tests_properties(sessiontest PROPERTIES LABELS "integration;terminal;process
 ecm_add_test(accessibilitytest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test KF6::I18n)
 ecm_add_test(clipboardtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test)
 ecm_add_test(imetest.cpp LINK_LIBRARIES kwi-terminal Qt6::Test Qt6::QuickTest)
-ecm_add_test(terminalinputtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test Qt6::QuickTest KF6::I18n KF6::CoreAddons KF6::KIOCore)
+ecm_add_test(terminalinputtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test Qt6::QuickTest KF6::I18n KF6::CoreAddons)
 ecm_add_test(terminalsearchtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test KF6::I18n)
 
 ecm_add_test(qmlconsumertest.cpp LINK_LIBRARIES Qt6::Quick Qt6::QuickControls2 Qt6::Test)

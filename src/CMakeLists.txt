@@ -26,22 +26,35 @@ set_target_properties(kwi-core PROPERTIES POSITION_INDEPENDENT_CODE ON)
 add_library(kwi-ui STATIC)
 
 set(kwi_qml_files
-    declarative/Main.qml declarative/ActionDefinitions.qml declarative/TerminalTabs.qml
-    declarative/TerminalTabButton.qml declarative/SettingsPage.qml declarative/AppearanceSettings.qml
+    declarative/SettingsPage.qml declarative/AppearanceSettings.qml
     declarative/ColorSchemeEditor.qml declarative/TerminalSettings.qml declarative/BehaviorSettings.qml
-    declarative/KeyboardSettings.qml declarative/TerminalPane.qml declarative/TerminalSearchBar.qml
+    declarative/TerminalPane.qml declarative/TerminalSearchBar.qml
     declarative/TerminalSearchField.qml
     declarative/PresetsSettings.qml declarative/PromptDialogFooter.qml
-    declarative/WebShortcutMenu.qml declarative/TabCloseButton.qml
-    declarative/+org.kde.desktop/TabCloseButton.qml
-    declarative/+org.kde.union/TabCloseButton.qml
+    declarative/WebShortcutMenu.qml
     declarative/+org.kde.union/TerminalSearchField.qml)
 
-set_source_files_properties(
-    declarative/+org.kde.desktop/TabCloseButton.qml
-    declarative/+org.kde.union/TabCloseButton.qml
-    declarative/+org.kde.union/TerminalSearchField.qml
+set(kwi_ui_sources
+    ui/TextFormatting.cpp ui/TextFormatting.h
+    ui/WebShortcutModel.cpp ui/WebShortcutModel.h)
+
+set_source_files_properties(declarative/+org.kde.union/TerminalSearchField.qml
     PROPERTIES QT_QML_SKIP_QMLDIR_ENTRY TRUE)
+
+if(BUILD_APP)
+    list(APPEND kwi_qml_files
+        declarative/Main.qml declarative/ActionDefinitions.qml declarative/TerminalTabs.qml
+        declarative/TerminalTabButton.qml declarative/KeyboardSettings.qml declarative/TabCloseButton.qml
+        declarative/+org.kde.desktop/TabCloseButton.qml
+        declarative/+org.kde.union/TabCloseButton.qml)
+    list(APPEND kwi_ui_sources
+        WindowManager.h WindowManager.cpp
+        ui/NativeTabClose.cpp ui/NativeTabClose.h)
+    set_source_files_properties(
+        declarative/+org.kde.desktop/TabCloseButton.qml
+        declarative/+org.kde.union/TabCloseButton.qml
+        PROPERTIES QT_QML_SKIP_QMLDIR_ENTRY TRUE)
+endif()
 
 if(BUILD_KPART)
     list(APPEND kwi_qml_files declarative/EmbeddedTerminal.qml)
@@ -60,10 +73,7 @@ qt_add_qml_module(kwi-ui
     CLASS_NAME KwiTerminalPlugin
     QML_FILES ${kwi_qml_files}
     DEPENDENCIES org.kde.kwi.terminal
-    SOURCES WindowManager.h WindowManager.cpp
-        ui/TextFormatting.cpp ui/TextFormatting.h
-        ui/NativeTabClose.cpp ui/NativeTabClose.h
-        ui/WebShortcutModel.cpp ui/WebShortcutModel.h
+    SOURCES ${kwi_ui_sources}
 )
 qt_generate_foreign_qml_types(kwi-core kwi-ui)
 
@@ -74,13 +84,17 @@ set_target_properties(kwi-ui kwi-uiplugin ${kwi_ui_generated_targets}
 target_link_libraries(kwi-ui INTERFACE kwi-uiplugin)
 target_compile_definitions(kwi-ui PRIVATE TRANSLATION_DOMAIN="kwi")
 target_link_libraries(kwi-ui PUBLIC kwi-core Qt6::Quick
-    PRIVATE Qt6::QuickControls2 Qt6::Widgets Qt6::DBus KF6::CoreAddons KF6::KIOGui KF6::I18nQml KF6::Kirigami KF6::KirigamiPlatform KF6::KirigamiActionCollection KF6::WindowSystem)
+    PRIVATE Qt6::QuickControls2 Qt6::Widgets Qt6::DBus KF6::CoreAddons KF6::KIOGui KF6::I18nQml KF6::Kirigami KF6::KirigamiPlatform KF6::WindowSystem)
 target_include_directories(kwi-ui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" PRIVATE settings ui)
 
-qt_add_executable(kwi main.cpp)
-target_link_libraries(kwi PRIVATE kwi-ui Qt6::Widgets KirigamiApp KF6::CoreAddons
-    KF6::DBusAddons KF6::I18nQml KF6::Kirigami KF6::WindowSystem)
-target_include_directories(kwi PRIVATE "${PROJECT_BINARY_DIR}")
+if(BUILD_APP)
+    target_link_libraries(kwi-ui PRIVATE KF6::KirigamiActionCollection)
+    qt_add_executable(kwi main.cpp)
+    target_link_libraries(kwi PRIVATE kwi-ui Qt6::Widgets KirigamiApp KF6::CoreAddons
+        KF6::DBusAddons KF6::I18nQml KF6::Kirigami KF6::WindowSystem)
+    target_include_directories(kwi PRIVATE "${PROJECT_BINARY_DIR}")
+    install(TARGETS kwi ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+endif()
 
 if(BUILD_KPART)
     add_library(kwi-part-implementation STATIC
@@ -100,5 +114,3 @@ if(BUILD_KPART)
     target_include_directories(kwipart PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
     target_link_libraries(kwipart PRIVATE kwi-part-implementation)
 endif()
-
-install(TARGETS kwi ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -29,8 +29,8 @@ Join [#kwi:kde.org](https://matrix.to/#/#kwi:kde.org) on Matrix for user and dev
 - CMake 3.28+
 - Qt 6.11+
 - KDE Frameworks 6.29+
-- Kirigami Addons 1.11+
-- Kirigami App Components 1.1+
+- Kirigami Addons 1.11+ (application or KPart)
+- Kirigami App Components 1.1+ (application only)
 - libghostty-vt 1.0.1+ (either CMake or PkgConfig)
 
 

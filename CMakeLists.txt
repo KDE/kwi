@@ -28,6 +28,7 @@ include(ECMGenerateQDoc)
 include(GenerateExportHeader)
 include(FeatureSummary)
 
+option(BUILD_APP "Build the Kwi application" ON)
 option(BUILD_KPART "Build the Kwi terminal KPart" ON)
 
 if(BUILD_TESTING)
@@ -37,46 +38,65 @@ if(BUILD_TESTING)
 endif()
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
-    Core Gui GuiPrivate Quick Qml QmlIntegration QuickControls2 Concurrent DBus Network Widgets
-    ShaderTools Svg)
+    Core Gui GuiPrivate Quick Qml QmlIntegration QuickControls2 Concurrent DBus Network
+    ShaderTools)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
-    CoreAddons Config DBusAddons GuiAddons I18n Kirigami Pty KIO Notifications
-    WindowSystem)
+    CoreAddons Config GuiAddons I18n Kirigami Pty)
+
+if(BUILD_APP OR BUILD_KPART)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets Svg)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO Notifications WindowSystem)
+    find_package(KF6KirigamiAddons 1.11 REQUIRED)
+endif()
+
+if(BUILD_APP)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS DBusAddons)
+    find_package(KF6KirigamiAppComponents 1.1 REQUIRED)
+endif()
 
 if(BUILD_KPART)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS QuickWidgets)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons ColorScheme IconThemes)
 endif()
 
-find_package(KF6KirigamiAddons 1.11 REQUIRED)
-find_package(KF6KirigamiAppComponents 1.1 REQUIRED)
 find_package(Ghostty 1.0.1 REQUIRED)
 
 qt_standard_project_setup(REQUIRES ${QT_MIN_VERSION})
 
-ecm_find_qmlmodule(QtQuick.Dialogs REQUIRED)
-ecm_find_qmlmodule(org.kde.kirigami.forms REQUIRED)
-ecm_find_qmlmodule(org.kde.kirigami.dialogs REQUIRED)
-ecm_find_qmlmodule(org.kde.kirigami.delegates REQUIRED)
-ecm_find_qmlmodule(org.kde.kirigami.actioncollection REQUIRED)
-ecm_find_qmlmodule(org.kde.kirigamiaddons.settings REQUIRED)
-ecm_find_qmlmodule(org.kde.kitemmodels REQUIRED)
-ecm_find_qmlmodule(org.kde.desktop REQUIRED)
-ecm_find_qmlmodule(org.kde.notification REQUIRED)
+if(BUILD_APP OR BUILD_KPART)
+    ecm_find_qmlmodule(QtQuick.Dialogs REQUIRED)
+    ecm_find_qmlmodule(org.kde.kirigami.forms REQUIRED)
+    ecm_find_qmlmodule(org.kde.desktop REQUIRED)
+endif()
+
+if(BUILD_APP)
+    ecm_find_qmlmodule(org.kde.kirigami.dialogs REQUIRED)
+    ecm_find_qmlmodule(org.kde.kirigami.delegates REQUIRED)
+    ecm_find_qmlmodule(org.kde.kirigami.actioncollection REQUIRED)
+    ecm_find_qmlmodule(org.kde.kirigamiaddons.settings REQUIRED)
+    ecm_find_qmlmodule(org.kde.kitemmodels REQUIRED)
+    ecm_find_qmlmodule(org.kde.notification REQUIRED)
+endif()
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX KWI
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kwi-version.h")
-configure_file(src/kwi-config.h.in kwi-config.h @ONLY)
 
 add_subdirectory(libs/ghostty-qt)
 add_subdirectory(libs/ghostty-qt-quick)
 add_subdirectory(libs/kwi-terminal)
-add_subdirectory(src)
-add_subdirectory(data)
 
-if(BUILD_TESTING)
-    add_subdirectory(autotests)
+if(BUILD_APP OR BUILD_KPART)
+    configure_file(src/kwi-config.h.in kwi-config.h @ONLY)
+    add_subdirectory(src)
+    add_subdirectory(data)
+
+    if(BUILD_TESTING)
+        add_subdirectory(autotests)
+    endif()
 endif()
+
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/LICENSES/"
+    DESTINATION "${KDE_INSTALL_DATADIR}/licenses/kwi")
 
 ki18n_install(po)
 

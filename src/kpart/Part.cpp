@@ -854,11 +854,12 @@ void Part::setupActions()
     });
 
     silence->setCheckable(true);
-    add("new-tab", i18nd("kwi", "New Tab"), "tab-new", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_T), [this] {
+    // Leave session creation and naming shortcuts to the host.
+    add("new-tab", i18nd("kwi", "New Tab"), "tab-new", {}, [this] {
         newTab();
     });
 
-    add("rename-session", i18nd("kwi", "Rename Tab…"), "edit-rename", QKeySequence(Qt::CTRL | Qt::ALT | Qt::Key_S), [this] {
+    add("rename-session", i18nd("kwi", "Rename Tab…"), "edit-rename", {}, [this] {
         renameSession(activeSession());
     });
 
@@ -921,6 +922,9 @@ void Part::updateActions()
         action->setEnabled(session != nullptr && activeWidget() != nullptr);
     }
 
+    const bool multipleTabs{m_tabs->count() > 1};
+    collection->action(QStringLiteral("next-tab"))->setEnabled(multipleTabs);
+    collection->action(QStringLiteral("previous-tab"))->setEnabled(multipleTabs);
     collection->action(QStringLiteral("edit_copy"))->setEnabled(activeWidget() && activeWidget()->terminalView()->hasSelection());
 
     if (!session || !activeWidget()) {

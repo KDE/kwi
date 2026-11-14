@@ -163,8 +163,9 @@ class KWI_TERMINAL_EXPORT TerminalView : public QQuickItem
     /*!
      * \qmlproperty bool TerminalView::requireCtrlForLinks
      * Whether activating a link with the left mouse button requires Ctrl. The
-     * default is true. When false, hovering a link also changes the cursor without
-     * Ctrl. Applications that use mouse tracking still receive unmodified clicks.
+     * default is true. Links are always decorated on hover. The pointer changes
+     * to a hand only while Ctrl is held. Applications that use mouse tracking
+     * still receive unmodified clicks.
      *
      * Link activation emits linkActivated(). It does not open the URL itself.
      */

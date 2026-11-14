@@ -1025,8 +1025,7 @@ void TerminalView::updateHoveredLink(std::optional<QPointF> position, Qt::Keyboa
 {
     m_hoverPosition = position;
     QRegion cells;
-    const bool allowed{linkActivationAllowed(modifiers)};
-    const QUrl link{position ? linkAtPosition(*position, allowed ? &cells : nullptr) : QUrl()};
+    const QUrl link{position ? linkAtPosition(*position, &cells) : QUrl()};
 
     if (m_highlightedLink != cells) {
         m_highlightedLink = cells;
@@ -1039,9 +1038,10 @@ void TerminalView::updateHoveredLink(std::optional<QPointF> position, Qt::Keyboa
         Q_EMIT hoveredLinkChanged();
     }
 
-    const auto shape = !link.isEmpty() && allowed ? Qt::PointingHandCursor
-        : m_session && m_session->terminal()      ? m_session->terminal()->mouseCursorShape()
-                                                  : Qt::IBeamCursor;
+    const bool showHand{modifiers.testFlag(Qt::ControlModifier) && linkActivationAllowed(modifiers)};
+    const auto shape = !link.isEmpty() && showHand ? Qt::PointingHandCursor
+        : m_session && m_session->terminal()       ? m_session->terminal()->mouseCursorShape()
+                                                   : Qt::IBeamCursor;
 
     if (cursor().shape() != shape) {
         setCursor(shape);
@@ -1060,7 +1060,6 @@ void TerminalView::setRequireCtrlForLinks(bool required)
     }
 
     m_requireCtrlForLinks = required;
-    updateHoveredLink(m_hoverPosition, QGuiApplication::keyboardModifiers());
 
     Q_EMIT requireCtrlForLinksChanged();
 }

@@ -570,12 +570,25 @@ int Part::terminalProcessId()
 
 int Part::foregroundProcessId()
 {
-    return activeSession() ? activeSession()->foregroundCommandId() : -1;
+    const QPointer<TerminalSession> session{activeSession()};
+
+    if (session) {
+        // Hosts use this query to decide whether sending shell commands is safe.
+        session->refreshProcessInfo();
+    }
+
+    return session ? session->foregroundCommandId() : -1;
 }
 
 QString Part::foregroundProcessName()
 {
-    return activeSession() ? activeSession()->foregroundCommandName() : QString{};
+    const QPointer<TerminalSession> session{activeSession()};
+
+    if (session) {
+        session->refreshProcessInfo();
+    }
+
+    return session ? session->foregroundCommandName() : QString{};
 }
 
 QString Part::currentWorkingDirectory() const

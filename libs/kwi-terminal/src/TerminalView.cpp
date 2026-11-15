@@ -1193,6 +1193,21 @@ void TerminalView::scrollTo(qreal position)
     refresh();
 }
 
+void TerminalView::scrollLines(qint64 lines)
+{
+    if (!m_session || !m_session->terminal()) {
+        return;
+    }
+
+    m_session->terminal()->scroll(lines);
+    refresh();
+}
+
+void TerminalView::scrollPages(int pages)
+{
+    scrollLines(qint64{pages} * qMax(qsizetype{1}, m_frame.rows.size() - 1));
+}
+
 void TerminalView::scrollHistory(QPoint pixelDelta, QPoint angleDelta, Qt::KeyboardModifiers modifiers)
 {
     if (!m_session || !m_session->terminal()) {
@@ -1433,36 +1448,6 @@ void TerminalView::keyPressEvent(QKeyEvent *event)
 
     if (event->key() == Qt::Key_Control || event->key() == Qt::Key_Shift || event->key() == Qt::Key_Alt) {
         updateHoveredLink(m_hoverPosition, event->modifiers());
-    }
-
-    if (m_session && m_session->terminal() && event->modifiers() == Qt::ShiftModifier
-        && !m_session->terminal()->isModeEnabled(GhosttyQt::Mode::AlternateScreen)) {
-        int rows{0};
-
-        switch (event->key()) {
-        case Qt::Key_Up:
-            rows = -1;
-            break;
-        case Qt::Key_Down:
-            rows = 1;
-            break;
-        case Qt::Key_PageUp:
-            rows = -qMax(1, int(m_frame.rows.size()) - 1);
-            break;
-        case Qt::Key_PageDown:
-            rows = qMax(1, int(m_frame.rows.size()) - 1);
-            break;
-        default:
-            break;
-        }
-
-        if (rows != 0) {
-            m_session->terminal()->scroll(rows);
-            refresh();
-            event->accept();
-
-            return;
-        }
     }
 
     if (m_session) {

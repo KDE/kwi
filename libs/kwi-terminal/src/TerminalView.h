@@ -50,6 +50,7 @@ struct TerminalColors;
  * around this view. Use TerminalView directly when providing those controls
  * yourself. The embedding application handles context menus, link activation
  * and any required paste confirmation through the corresponding signals.
+ * It also provides shortcuts for actions such as copy, paste and history scrolling.
  */
 class KWI_TERMINAL_EXPORT TerminalView : public QQuickItem
 {
@@ -414,6 +415,20 @@ public:
      * \c {1 - scrollSize} move to the bottom. Non-finite values are ignored.
      */
     Q_INVOKABLE void scrollTo(qreal position);
+    /*!
+     * \qmlmethod void TerminalView::scrollLines(int lines)
+     * Moves the viewport by \a lines, clamped to the retained history.
+     * Negative values move toward older output. This does not send input to
+     * the process and also works in read-only mode.
+     */
+    Q_INVOKABLE void scrollLines(qint64 lines);
+    /*!
+     * \qmlmethod void TerminalView::scrollPages(int pages)
+     * Moves the viewport by \a pages, with one row of overlap between pages.
+     * Negative values move toward older output. Like scrollLines(), this does
+     * not send input to the process and also works in read-only mode.
+     */
+    Q_INVOKABLE void scrollPages(int pages);
     /*!
      * \qmlmethod void TerminalView::scrollHistory(point pixelDelta, point angleDelta, int modifiers = Qt.NoModifier)
      * Scrolls history using a wheel event's \a pixelDelta, \a angleDelta and

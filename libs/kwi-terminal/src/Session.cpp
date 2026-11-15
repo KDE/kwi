@@ -539,6 +539,11 @@ QString Session::sshRemoteCommand() const
     return m_sshMetadata->info().remoteCommand;
 }
 
+bool Session::alternateScreen() const
+{
+    return m_terminal && m_terminal->isModeEnabled(GhosttyQt::Mode::AlternateScreen);
+}
+
 int Session::scrollbackLines() const
 {
     return m_scrollbackLines;
@@ -683,11 +688,17 @@ bool Session::send(const QByteArray &bytes)
 
 void Session::feed(const QByteArray &bytes)
 {
+    const bool wasAlternateScreen{alternateScreen()};
+
     if (m_terminal && !m_terminal->feed(bytes)) {
         reportError(i18nd("kwi-terminal", "The terminal could not process output."));
     }
 
     updateProgress();
+
+    if (alternateScreen() != wasAlternateScreen) {
+        Q_EMIT alternateScreenChanged();
+    }
 
     Q_EMIT m_events.historyChanged();
 
@@ -874,8 +885,13 @@ void Session::resetTerminal()
         return;
     }
 
+    const bool wasAlternateScreen{alternateScreen()};
     m_terminal->reset();
     updateProgress();
+
+    if (alternateScreen() != wasAlternateScreen) {
+        Q_EMIT alternateScreenChanged();
+    }
 
     Q_EMIT m_events.historyChanged();
 }

@@ -267,6 +267,14 @@ class KWI_TERMINAL_EXPORT Session : public QObject
      */
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly NOTIFY readOnlyChanged)
     /*!
+     * \qmlproperty bool Session::alternateScreen
+     * \readonly
+     * Whether the process is using the alternate screen, which has no scrollback.
+     * Disable history-scrolling shortcuts on this screen to leave their keys
+     * available to the process.
+     */
+    Q_PROPERTY(bool alternateScreen READ alternateScreen NOTIFY alternateScreenChanged)
+    /*!
      * \qmlproperty int Session::scrollbackLines
      * The history limit in lines. Zero disables history. The default, -1, removes
      * the line limit and enables idle compression, with a 150 MB budget for
@@ -410,6 +418,7 @@ public:
 
     [[nodiscard]] bool isReadOnly() const;
     void setReadOnly(bool readOnly);
+    [[nodiscard]] bool alternateScreen() const;
     [[nodiscard]] int scrollbackLines() const;
     void setScrollbackLines(int lines);
     [[nodiscard]] bool monitorActivity() const;
@@ -522,6 +531,7 @@ Q_SIGNALS:
      */
     void processInfoRefreshed();
     void readOnlyChanged();
+    void alternateScreenChanged();
     void scrollbackLinesChanged();
     void monitoringChanged();
     void silenceSecondsChanged();

@@ -159,10 +159,10 @@ private Q_SLOTS:
     void tabStaysInTerminal();
     void applicationCursorAndKeypad();
     void contextMenuDoesNotSendInput();
-    void keyboardScrollsHistory_data();
-    void keyboardScrollsHistory();
-    void alternateScreenReceivesScrollKeys_data();
-    void alternateScreenReceivesScrollKeys();
+    void historyScrollOperations_data();
+    void historyScrollOperations();
+    void scrollKeysReachChild_data();
+    void scrollKeysReachChild();
     void modifiedArrowsReachChild();
     void selectionKeepsShiftArrows();
     void confirmsAndSanitizesPaste();
@@ -250,7 +250,7 @@ void TerminalInputTest::contextMenuDoesNotSendInput()
     QTRY_COMPARE(fixture.captured(), QByteArray("\x1b[99;5u\x1b[99;5:3u"));
 }
 
-void TerminalInputTest::keyboardScrollsHistory_data()
+void TerminalInputTest::historyScrollOperations_data()
 {
     QTest::addColumn<bool>("history");
     QTest::addColumn<bool>("readOnly");
@@ -260,8 +260,8 @@ void TerminalInputTest::keyboardScrollsHistory_data()
     QTest::newRow("no-history-read-only") << false << true;
 }
 
-// Shifted arrows and page keys scroll within history bounds without sending presses or releases.
-void TerminalInputTest::keyboardScrollsHistory()
+// Line and page scrolling stays within the scrollback.
+void TerminalInputTest::historyScrollOperations()
 {
     QFETCH(bool, history);
     QFETCH(bool, readOnly);
@@ -282,46 +282,48 @@ void TerminalInputTest::keyboardScrollsHistory()
     const auto position = [&fixture] {
         return qRound64(fixture.view.scrollPosition() / fixture.view.scrollStepSize());
     };
-    const auto key = [&fixture](int key) {
-        fixture.key(QEvent::KeyPress, key, Qt::ShiftModifier);
-        fixture.key(QEvent::KeyRelease, key, Qt::ShiftModifier);
-    };
-
-    key(Qt::Key_Up);
+    fixture.view.scrollLines(-1);
     QTRY_COMPARE(position(), qMax(qint64{0}, bottom - 1));
-    key(Qt::Key_Down);
+    fixture.view.scrollLines(1);
     QTRY_COMPARE(position(), bottom);
-    key(Qt::Key_PageUp);
+    fixture.view.scrollPages(-1);
     QTRY_COMPARE(position(), qMax(qint64{0}, bottom - page));
-    key(Qt::Key_PageDown);
+    fixture.view.scrollPages(1);
     QTRY_COMPARE(position(), bottom);
 
     fixture.view.scrollTo(0);
-    key(Qt::Key_Up);
-    key(Qt::Key_PageUp);
+    fixture.view.scrollLines(-1);
+    fixture.view.scrollPages(-1);
     QTRY_COMPARE(position(), 0);
     fixture.view.scrollTo(1);
-    key(Qt::Key_Down);
-    key(Qt::Key_PageDown);
+    fixture.view.scrollLines(1);
+    fixture.view.scrollPages(1);
     QTRY_COMPARE(position(), bottom);
     fixture.session.feed("\x1b[5n");
     QTRY_COMPARE(fixture.captured(), QByteArray("\x1b[0n"));
 }
 
-void TerminalInputTest::alternateScreenReceivesScrollKeys_data()
+void TerminalInputTest::scrollKeysReachChild_data()
 {
     QTest::addColumn<bool>("kitty");
-    QTest::newRow("legacy") << false;
-    QTest::newRow("kitty") << true;
+    QTest::addColumn<bool>("alternateScreen");
+    QTest::newRow("normal-legacy") << false << false;
+    QTest::newRow("normal-kitty") << true << false;
+    QTest::newRow("alternate-legacy") << false << true;
+    QTest::newRow("alternate-kitty") << true << true;
 }
 
-// Alternate-screen applications receive shifted arrows and page keys in their selected keyboard protocol.
-void TerminalInputTest::alternateScreenReceivesScrollKeys()
+// Shifted arrow and page keys are sent to the terminal process.
+void TerminalInputTest::scrollKeysReachChild()
 {
     QFETCH(bool, kitty);
+    QFETCH(bool, alternateScreen);
     InputFixture fixture;
     QVERIFY(fixture.start());
-    fixture.session.feed("\x1b[?1049h");
+
+    if (alternateScreen) {
+        fixture.session.feed("\x1b[?1049h");
+    }
 
     if (kitty) {
         fixture.session.feed("\x1b[>3u");

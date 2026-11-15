@@ -21,7 +21,7 @@
     <p xml:lang="de">Kwi ist ein modernes und schnelles Terminal, das sich gut in KDE Plasma und andere freie Desktop-Umgebungen integriert.</p>
     <p xml:lang="ko">Kwi는 KDE Plasma와 다른 자유 데스크톱 환경에 잘 통합되는 현대적이고 빠른 터미널입니다.</p>
   </description>
-  <url type="homepage">https://invent.kde.org/utilities/kwi</url>
+  <url type="homepage">https://apps.kde.org/kwi/</url>
   <url type="vcs-browser">https://invent.kde.org/utilities/kwi</url>
   <launchable type="desktop-id">@KWI_APP_ID@.desktop</launchable>
   <screenshots>

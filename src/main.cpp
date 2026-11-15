@@ -89,6 +89,7 @@ int main(int argc, char **argv)
     about.addLicenseTextFile(QStringLiteral(":/kwi/licenses/LicenseRef-KDE-Accepted-GPL.txt"));
     about.addComponent(i18n("Ghostty"), {}, QStringLiteral(KWI_GHOSTTY_VERSION), QStringLiteral("https://ghostty.org"), KAboutLicense::MIT);
     about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
+    about.setHomepage(QStringLiteral("https://apps.kde.org/kwi/"));
     about.setBugAddress({});
     KAboutData::setApplicationData(about);
 

@@ -28,6 +28,7 @@ ecm_add_test(accessibilitytest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::T
 ecm_add_test(clipboardtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test)
 ecm_add_test(imetest.cpp LINK_LIBRARIES kwi-terminal Qt6::Test Qt6::QuickTest)
 ecm_add_test(terminalinputtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test Qt6::QuickTest KF6::I18n KF6::CoreAddons)
+ecm_add_test(terminallinkstest.cpp LINK_LIBRARIES kwi-terminal Qt6::Test Qt6::QuickTest KF6::I18n)
 ecm_add_test(terminalsearchtest.cpp LINK_LIBRARIES kwi-terminal ghostty-qt Qt6::Test KF6::I18n)
 
 ecm_add_test(qmlconsumertest.cpp LINK_LIBRARIES Qt6::Quick Qt6::QuickControls2 Qt6::Test)
@@ -36,7 +37,7 @@ foreach(test IN ITEMS ptyprocesstest imetest terminalinputtest qmlconsumertest)
     target_compile_definitions(${test} PRIVATE KWI_TEST_PYTHON="${Python3_EXECUTABLE}")
 endforeach()
 
-set_tests_properties(accessibilitytest clipboardtest imetest terminalinputtest terminalsearchtest qmlconsumertest
+set_tests_properties(accessibilitytest clipboardtest imetest terminalinputtest terminallinkstest terminalsearchtest qmlconsumertest
     PROPERTIES TIMEOUT 60 LABELS "integration;terminal;gui" RESOURCE_LOCK kwi_gui)
 get_property(terminal_tests DIRECTORY PROPERTY TESTS)
 set_tests_properties(${terminal_tests} PROPERTIES

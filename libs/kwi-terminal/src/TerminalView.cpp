@@ -168,13 +168,13 @@ QVector<TextLink> textLinks(const QString &line, const QString &directory, bool 
             path.replace(0, 1, QDir::homePath());
         }
 
-        // Handle absolute paths without filesystem existence checks.
-        if (QDir::isRelativePath(path)) {
+        // Qt also treats ':' as absolute, but terminal paths refer to the filesystem.
+        if (!path.startsWith(QLatin1Char('/'))) {
             if (directory.isEmpty()) {
                 continue;
             }
 
-            path = QDir(directory).absoluteFilePath(path);
+            path.prepend(directory.endsWith(QLatin1Char('/')) ? directory : directory + QLatin1Char('/'));
             const QFileInfo info{path};
 
             if (!info.isFile() && !info.isDir()) {

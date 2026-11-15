@@ -23,11 +23,15 @@ SettingsPage {
     objectName: "appearanceSettings"
     title: KI18n.i18nc("@title:window", "Appearance")
     defaultsVisible: true
-    defaultsEnabled: root.appSettings.canResetAppearance
+    defaultsEnabled: root.appSettings.canResetAppearance || (root.showWindowSettings && WindowColorSchemes.currentIndex > 0)
 
     onRestoreDefaultsRequested: {
         root.appSettings.resetAppearanceDefaults();
         root.appSettings.save();
+
+        if (root.showWindowSettings) {
+            WindowColorSchemes.currentIndex = 0;
+        }
     }
 
     header: Kirigami.InlineMessage {
@@ -125,7 +129,23 @@ SettingsPage {
             title: KI18n.i18nc("@title:group", "Colors")
 
             Forms.FormEntry {
-                title: KI18n.i18nc("@label:listbox", "Color scheme:")
+                title: KI18n.i18nc("@label:listbox", "Window:")
+                visible: root.showWindowSettings
+
+                contentItem: Controls.ComboBox {
+                    objectName: "windowColorSchemeSelector"
+                    Layout.fillWidth: true
+                    Layout.minimumWidth: 0
+                    Layout.maximumWidth: colorSchemeSelector.width
+                    textRole: "display"
+                    model: root.showWindowSettings ? WindowColorSchemes.model : null
+                    currentIndex: root.showWindowSettings ? WindowColorSchemes.currentIndex : -1
+                    onActivated: index => WindowColorSchemes.currentIndex = index
+                }
+            }
+
+            Forms.FormEntry {
+                title: KI18n.i18nc("@label:listbox", "Terminal:")
                 enabled: !root.appSettings.isColorSchemeImmutable
 
                 contentItem: RowLayout {

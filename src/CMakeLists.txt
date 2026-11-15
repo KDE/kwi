@@ -36,6 +36,7 @@ set(kwi_qml_files
 
 set(kwi_ui_sources
     ui/TextFormatting.cpp ui/TextFormatting.h
+    settings/WindowColorSchemes.cpp settings/WindowColorSchemes.h
     ui/WebShortcutModel.cpp ui/WebShortcutModel.h)
 
 set_source_files_properties(declarative/+org.kde.union/TerminalSearchField.qml
@@ -84,7 +85,7 @@ set_target_properties(kwi-ui kwi-uiplugin ${kwi_ui_generated_targets}
 target_link_libraries(kwi-ui INTERFACE kwi-uiplugin)
 target_compile_definitions(kwi-ui PRIVATE TRANSLATION_DOMAIN="kwi")
 target_link_libraries(kwi-ui PUBLIC kwi-core Qt6::Quick
-    PRIVATE Qt6::QuickControls2 Qt6::Widgets Qt6::DBus KF6::CoreAddons KF6::KIOGui KF6::I18nQml KF6::Kirigami KF6::KirigamiPlatform KF6::WindowSystem)
+    PRIVATE Qt6::QuickControls2 Qt6::Widgets Qt6::DBus KF6::CoreAddons KF6::KIOGui KF6::I18nQml KF6::Kirigami KF6::KirigamiPlatform KF6::WindowSystem KF6::ColorScheme)
 target_include_directories(kwi-ui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" PRIVATE settings ui)
 
 if(BUILD_APP)

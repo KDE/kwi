@@ -45,7 +45,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 
 if(BUILD_APP OR BUILD_KPART)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets Svg)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO Notifications WindowSystem)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO Notifications WindowSystem ColorScheme)
     find_package(KF6KirigamiAddons 1.11 REQUIRED)
 endif()
 
@@ -56,7 +56,7 @@ endif()
 
 if(BUILD_KPART)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS QuickWidgets)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons ColorScheme IconThemes)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Parts XmlGui WidgetsAddons IconThemes)
 endif()
 
 find_package(Ghostty 1.0.1 REQUIRED)

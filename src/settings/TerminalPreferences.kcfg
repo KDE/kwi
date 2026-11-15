@@ -26,8 +26,13 @@
         <entry name="backgroundBlur" key="BackgroundBlur" type="Bool">
             <default>false</default>
         </entry>
-        <entry name="tabBarAtBottom" key="TabBarAtBottom" type="Bool">
-            <default>false</default>
+        <entry name="tabBarPosition" key="TabBarPosition" type="Enum">
+            <choices name="TabBarPosition">
+                <choice name="Top"/>
+                <choice name="Bottom"/>
+                <choice name="Hidden"/>
+            </choices>
+            <default>Top</default>
         </entry>
         <entry name="showTabStatusIcons" key="ShowTabStatusIcons" type="Bool">
             <default>true</default>

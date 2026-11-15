@@ -127,7 +127,7 @@ Kirigami.ApplicationWindow {
     function initialWindowSize(): size {
         terminalToolBar.contentItem.ensurePolished();
         const terminalSize = terminalPane.sizeForGrid(root.appSettings.windowColumns, root.appSettings.windowRows);
-        return Qt.size(terminalSize.width, terminalSize.height + terminalToolBar.implicitHeight);
+        return Qt.size(terminalSize.width, terminalSize.height + (root.appSettings.tabBarPosition === AppSettings.Hidden ? 0 : terminalToolBar.implicitHeight));
     }
 
     function focusTerminal(): void {
@@ -659,6 +659,23 @@ Kirigami.ApplicationWindow {
     }
 
     Kirigami.Action {
+        id: showTabBarAction
+
+        objectName: "showTabBarAction"
+        AC.ActionCollection.collection: "org.kde.kwi.tabs"
+        AC.ActionCollection.action: "show_tab_bar"
+        enabled: root.terminalActionsEnabled && !root.appSettings.isTabBarPositionImmutable
+        checkable: true
+        checked: root.appSettings.tabBarPosition !== AppSettings.Hidden
+
+        onTriggered: {
+            root.appSettings.tabBarPosition = root.appSettings.tabBarPosition === AppSettings.Hidden ? AppSettings.Top : AppSettings.Hidden;
+            root.appSettings.save();
+            root.focusTerminal();
+        }
+    }
+
+    Kirigami.Action {
         id: settingsAction
 
         objectName: "settingsAction"
@@ -785,7 +802,7 @@ Kirigami.ApplicationWindow {
                 text: KI18n.i18nc("@title", "Appearance")
                 icon.name: "preferences-desktop-theme-global"
                 page: () => Qt.createComponent("org.kde.kwi", "AppearanceSettings")
-                initialProperties: () => ({ appSettings: root.appSettings, terminalPalettes: root.terminalPalettes })
+                initialProperties: () => ({ appSettings: root.appSettings, terminalPalettes: root.terminalPalettes, showTabBarAction: showTabBarAction })
             },
 
             Settings.ConfigurationModule {
@@ -859,10 +876,11 @@ Kirigami.ApplicationWindow {
                 id: terminalToolBar
 
                 objectName: "terminalToolBar"
+                visible: root.appSettings.tabBarPosition !== AppSettings.Hidden
                 anchors.left: parent.left
                 anchors.right: parent.right
-                y: root.appSettings.tabBarAtBottom ? Math.round((parent.height - height) * tabFrame.dpr) / tabFrame.dpr : 0
-                position: root.appSettings.tabBarAtBottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
+                y: root.appSettings.tabBarPosition === AppSettings.Bottom ? Math.round((parent.height - height) * tabFrame.dpr) / tabFrame.dpr : 0
+                position: root.appSettings.tabBarPosition === AppSettings.Bottom ? Controls.ToolBar.Footer : Controls.ToolBar.Header
                 leftPadding: Kirigami.Units.smallSpacing / 2
                 rightPadding: Kirigami.Units.smallSpacing / 2
                 topPadding: position === Controls.ToolBar.Footer ? sessionTabs.outerPadding : 0
@@ -950,7 +968,7 @@ Kirigami.ApplicationWindow {
                             dim: false
 
                             objectName: "newTabPresetMenu"
-                            y: root.appSettings.tabBarAtBottom ? -height : presetMenuButton.height
+                            y: root.appSettings.tabBarPosition === AppSettings.Bottom ? -height : presetMenuButton.height
                         }
                     }
 
@@ -962,7 +980,7 @@ Kirigami.ApplicationWindow {
                         enabled: root.terminalActionsEnabled
                         sessions: root.sessionModel
                         dragController: root.tabDragController
-                        position: root.appSettings.tabBarAtBottom ? Controls.TabBar.Footer : Controls.TabBar.Header
+                        position: root.appSettings.tabBarPosition === AppSettings.Bottom ? Controls.TabBar.Footer : Controls.TabBar.Header
                         outerPadding: root.visibility === Window.FullScreen ? 0 : tabFrame.height
                         showStatusIcons: root.appSettings.showTabStatusIcons
 
@@ -1006,7 +1024,7 @@ Kirigami.ApplicationWindow {
                             id: applicationMenu
 
                             objectName: "applicationMenu"
-                            y: root.appSettings.tabBarAtBottom ? -height : menuButton.height
+                            y: root.appSettings.tabBarPosition === AppSettings.Bottom ? -height : menuButton.height
 
                             modal: true
                             dim: false
@@ -1171,6 +1189,10 @@ Kirigami.ApplicationWindow {
                                 Controls.MenuItem {
                                     action: fullscreenAction
                                 }
+
+                                Controls.MenuItem {
+                                    action: showTabBarAction
+                                }
                             }
 
                             Controls.MenuSeparator {}
@@ -1206,7 +1228,7 @@ Kirigami.ApplicationWindow {
 
                 anchors.left: parent.left
                 anchors.right: parent.right
-                anchors.top: root.appSettings.tabBarAtBottom ? parent.top : terminalToolBar.bottom
+                anchors.top: root.appSettings.tabBarPosition === AppSettings.Top ? terminalToolBar.bottom : parent.top
                 spacing: 0
 
                 TerminalSearchBar {
@@ -1215,7 +1237,7 @@ Kirigami.ApplicationWindow {
                     visible: root.findVisible
                     Layout.fillWidth: true
                     terminal: root.terminal
-                    tabBarAtTop: !root.appSettings.tabBarAtBottom
+                    tabBarAtTop: root.appSettings.tabBarPosition === AppSettings.Top
 
                     onCloseRequested: root.hideFind()
                 }
@@ -1257,7 +1279,7 @@ Kirigami.ApplicationWindow {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.top: terminalMessages.bottom
-                anchors.bottom: root.appSettings.tabBarAtBottom ? terminalToolBar.top : parent.bottom
+                anchors.bottom: root.appSettings.tabBarPosition === AppSettings.Bottom ? terminalToolBar.top : parent.bottom
                 applicationSession: root.sessionModel.currentSession
 
                 onMultilinePasteRequested: (origin, text) => {
@@ -1340,7 +1362,7 @@ Kirigami.ApplicationWindow {
                             onUrlRequested: url => root.desktopIntegration.openUrl(url)
                         }
 
-                        onObjectAdded: (index, object) => terminalMenu.insertMenu(terminalMenu.count - 2, object)
+                        onObjectAdded: (index, object) => terminalMenu.insertMenu(terminalMenu.count - 4, object)
                         onObjectRemoved: (index, object) => terminalMenu.removeMenu(object)
                     }
 
@@ -1348,6 +1370,18 @@ Kirigami.ApplicationWindow {
 
                     Controls.MenuItem {
                         action: openDirectoryAction
+                    }
+
+                    Controls.MenuSeparator {
+                        visible: configureMenuItem.visible
+                    }
+
+                    Controls.MenuItem {
+                        id: configureMenuItem
+
+                        objectName: "contextConfigureAction"
+                        action: settingsAction
+                        visible: root.appSettings.tabBarPosition === AppSettings.Hidden
                     }
                 }
             }

@@ -41,7 +41,7 @@ FocusScope {
             Layout.fillWidth: true
             visible: root.findVisible
             terminal: pane.terminal
-            tabBarAtTop: root.session && !root.session.settings.tabBarAtBottom
+            tabBarAtTop: root.session && root.session.settings.tabBarPosition === AppSettings.Top
 
             onCloseRequested: root.hideFind()
         }

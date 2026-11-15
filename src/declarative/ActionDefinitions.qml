@@ -19,6 +19,7 @@ AC.ActionCollectionManager {
         text: KI18n.i18nc("@title:group", "Windows and Tabs")
 
         AC.ActionData { name: "new_window"; text: KI18n.i18nc("@action", "New Window"); icon.name: "window-new"; defaultShortcut: "Ctrl+Shift+N" }
+        AC.ActionData { name: "show_tab_bar"; text: KI18n.i18nc("@action", "Show Tab Bar"); icon.name: "tab"; defaultShortcut: "Ctrl+Shift+M" }
         AC.ActionData { name: "fullscreen"; text: KI18n.i18nc("@action", "Full Screen"); icon.name: "view-fullscreen"; defaultShortcut: "Ctrl+Shift+F11" }
         AC.ActionData { name: "new_tab"; text: KI18n.i18nc("@action", "New Tab"); icon.name: "tab-new"; defaultShortcut: "Ctrl+Shift+T" }
         AC.ActionData { name: "close_tab"; text: KI18n.i18nc("@action", "Close Tab"); icon.name: "tab-close"; defaultShortcut: "Ctrl+Shift+W" }

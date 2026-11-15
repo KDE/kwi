@@ -31,7 +31,7 @@ TerminalSettings::TerminalSettings(QObject *parent)
     const auto changeSignals = {&TerminalPreferences::useSystemFontChanged,       &TerminalPreferences::fontFamilyChanged,
                                 &TerminalPreferences::fontPointSizeChanged,       &TerminalPreferences::colorSchemeChanged,
                                 &TerminalPreferences::backgroundOpacityChanged,   &TerminalPreferences::backgroundBlurChanged,
-                                &TerminalPreferences::tabBarAtBottomChanged,      &TerminalPreferences::showTabStatusIconsChanged,
+                                &TerminalPreferences::tabBarPositionChanged,      &TerminalPreferences::showTabStatusIconsChanged,
                                 &TerminalPreferences::useCustomWindowSizeChanged, &TerminalPreferences::windowColumnsChanged,
                                 &TerminalPreferences::windowRowsChanged,          &TerminalPreferences::scrollbackLinesChanged,
                                 &TerminalPreferences::silenceSecondsChanged,      &TerminalPreferences::titleFormatChanged,

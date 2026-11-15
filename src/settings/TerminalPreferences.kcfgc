@@ -13,3 +13,5 @@ Notifiers=true
 ParentInConstructor=true
 QmlRegistration=true
 QmlUncreatable=true
+GlobalEnums=true
+UseEnumTypes=true

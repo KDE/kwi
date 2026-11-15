@@ -18,6 +18,7 @@ SettingsPage {
     required property AppSettings appSettings
     required property ColorSchemeModel terminalPalettes
     property bool showWindowSettings: true
+    property Kirigami.Action showTabBarAction: null
 
     objectName: "appearanceSettings"
     title: KI18n.i18nc("@title:window", "Appearance")
@@ -275,14 +276,27 @@ SettingsPage {
 
                 contentItem: Controls.ComboBox {
                     objectName: "tabBarPositionSetting"
-                    enabled: !root.appSettings.isTabBarAtBottomImmutable
-                    model: [KI18n.i18nc("@item:inlistbox tab bar position", "Top"), KI18n.i18nc("@item:inlistbox tab bar position", "Bottom")]
-                    currentIndex: root.appSettings.tabBarAtBottom ? 1 : 0
+                    enabled: !root.appSettings.isTabBarPositionImmutable
+                    model: [KI18n.i18nc("@item:inlistbox tab bar position", "Top"), KI18n.i18nc("@item:inlistbox tab bar position", "Bottom"), KI18n.i18nc("@item:inlistbox tab bar position", "Hidden")]
+                    currentIndex: root.appSettings.tabBarPosition
 
                     onActivated: index => {
-                        root.appSettings.tabBarAtBottom = index === 1;
+                        root.appSettings.tabBarPosition = index;
                         root.appSettings.save();
                     }
+                }
+            }
+
+            Forms.FormEntry {
+                visible: root.appSettings.tabBarPosition === AppSettings.Hidden
+
+                contentItem: Kirigami.InlineMessage {
+                    objectName: "hiddenTabBarMessage"
+                    Layout.fillWidth: true
+                    visible: true
+                    type: Kirigami.MessageType.Information
+                    readonly property string shortcut: root.showTabBarAction ? root.showTabBarAction.shortcut : ""
+                    text: shortcut.length > 0 ? KI18n.i18nc("@info", "A hidden tab bar can be brought back with %1, or you can access application settings from the context menu.", shortcut) : KI18n.i18nc("@info", "You can access application settings from the context menu.")
                 }
             }
 

@@ -26,12 +26,47 @@ public:
     using QObject::QObject;
 
 private Q_SLOTS:
+    void alternateScreenTracksOutputAndReset();
     void outputReceivedReflectsTerminalContents();
     void outputHandlerCanCloseSession();
     void sanitizesApplicationTitles();
     void repeatedStartPreservesRunningSession();
     void restartClearsProcessMetadataAndRetainsHistory();
 };
+
+// Sessions report screen switches and return to the main screen after a reset.
+void SessionTest::alternateScreenTracksOutputAndReset()
+{
+    Session session;
+    QSignalSpy changed{&session, &Session::alternateScreenChanged};
+    QVERIFY(!session.alternateScreen());
+    session.feed("plain text");
+    QCOMPARE(changed.count(), 0);
+
+    for (const auto mode : {47, 1047, 1049}) {
+        const QByteArray prefix{QByteArray("\x1b[?") + QByteArray::number(mode)};
+        session.feed(prefix + 'h');
+        QVERIFY(session.alternateScreen());
+        QCOMPARE(changed.count(), 1);
+        session.feed(prefix + 'h');
+        QCOMPARE(changed.count(), 1);
+        session.feed(prefix + 'l');
+        QVERIFY(!session.alternateScreen());
+        QCOMPARE(changed.count(), 2);
+        changed.clear();
+    }
+
+    session.feed("\x1b[?1049h");
+    session.resetTerminal();
+    QVERIFY(!session.alternateScreen());
+    QCOMPARE(changed.count(), 2);
+    session.resetTerminal();
+    QCOMPARE(changed.count(), 2);
+    session.feed("\x1b[?1049h");
+    session.feed("\033c");
+    QVERIFY(!session.alternateScreen());
+    QCOMPARE(changed.count(), 4);
+}
 
 // Output handlers see updated terminal contents without enabling activity monitoring.
 void SessionTest::outputReceivedReflectsTerminalContents()

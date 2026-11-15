@@ -405,9 +405,12 @@ void Part::addSessionWidget(TerminalSession *session)
 
     connect(session, &TerminalSession::readOnlyChanged, this, &Part::updateActions);
     connect(session, &Session::activeChanged, this, &Part::updateActions);
+    connect(session, &Session::alternateScreenChanged, this, &Part::updateActions);
 
     if (auto *terminal = page->terminalView()) {
         connect(terminal, &TerminalView::selectionChanged, this, &Part::updateActions);
+        connect(terminal, &TerminalView::keyboardSelectionChanged, this, &Part::updateActions);
+        connect(terminal, &TerminalView::activeFocusChanged, this, &Part::updateActions);
         connect(terminal, &QObject::destroyed, this, &Part::updateActions);
     }
 
@@ -776,6 +779,30 @@ void Part::setupActions()
 
     KActionCollection::setDefaultShortcuts(selectAll, {});
 
+    add("scroll_line_up", i18ndc("kwi", "@action", "Scroll Up One Line"), "go-up", QKeySequence(Qt::SHIFT | Qt::Key_Up), [this] {
+        if (activeWidget()) {
+            activeWidget()->terminalView()->scrollLines(-1);
+        }
+    });
+
+    add("scroll_line_down", i18ndc("kwi", "@action", "Scroll Down One Line"), "go-down", QKeySequence(Qt::SHIFT | Qt::Key_Down), [this] {
+        if (activeWidget()) {
+            activeWidget()->terminalView()->scrollLines(1);
+        }
+    });
+
+    add("scroll_page_up", i18ndc("kwi", "@action", "Scroll Up One Page"), "go-up", QKeySequence(Qt::SHIFT | Qt::Key_PageUp), [this] {
+        if (activeWidget()) {
+            activeWidget()->terminalView()->scrollPages(-1);
+        }
+    });
+
+    add("scroll_page_down", i18ndc("kwi", "@action", "Scroll Down One Page"), "go-down", QKeySequence(Qt::SHIFT | Qt::Key_PageDown), [this] {
+        if (activeWidget()) {
+            activeWidget()->terminalView()->scrollPages(1);
+        }
+    });
+
     auto *find = collection->addAction(KStandardActions::Find, this, [this] {
         if (activeWidget()) {
             activeWidget()->showFind();
@@ -929,6 +956,13 @@ void Part::updateActions()
 
     if (!session || !activeWidget()) {
         return;
+    }
+
+    auto *terminal = activeWidget()->terminalView();
+    const bool canScrollHistory{terminal->hasActiveFocus() && !session->alternateScreen() && !terminal->keyboardSelectionMode()};
+
+    for (const auto *id : {"scroll_line_up", "scroll_line_down", "scroll_page_up", "scroll_page_down"}) {
+        collection->action(QString::fromLatin1(id))->setEnabled(canScrollHistory);
     }
 
     collection->action(QStringLiteral("view-readonly"))->setChecked(session->isReadOnly());

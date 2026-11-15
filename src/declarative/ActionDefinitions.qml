@@ -60,6 +60,10 @@ AC.ActionCollectionManager {
         AC.StandardActionData { standardAction: AC.StandardActionData.ZoomIn }
         AC.StandardActionData { standardAction: AC.StandardActionData.ZoomOut }
         AC.ActionData { name: "reset_zoom"; text: KI18n.i18nc("@action", "Reset Zoom"); icon.name: "zoom-original"; defaultShortcut: "Ctrl+0" }
+        AC.ActionData { name: "scroll_line_up"; text: KI18n.i18nc("@action", "Scroll Up One Line"); icon.name: "go-up"; defaultShortcut: "Shift+Up" }
+        AC.ActionData { name: "scroll_line_down"; text: KI18n.i18nc("@action", "Scroll Down One Line"); icon.name: "go-down"; defaultShortcut: "Shift+Down" }
+        AC.ActionData { name: "scroll_page_up"; text: KI18n.i18nc("@action", "Scroll Up One Page"); icon.name: "go-up"; defaultShortcut: "Shift+PgUp" }
+        AC.ActionData { name: "scroll_page_down"; text: KI18n.i18nc("@action", "Scroll Down One Page"); icon.name: "go-down"; defaultShortcut: "Shift+PgDown" }
         AC.ActionData { name: "previous_prompt"; text: KI18n.i18nc("@action", "Previous Prompt"); icon.name: "go-up" }
         AC.ActionData { name: "next_prompt"; text: KI18n.i18nc("@action", "Next Prompt"); icon.name: "go-down" }
         AC.ActionData { name: "copy_command_output"; text: KI18n.i18nc("@action", "Copy Last Command Output"); icon.name: "edit-copy" }

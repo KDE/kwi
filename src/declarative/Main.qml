@@ -53,6 +53,7 @@ Kirigami.ApplicationWindow {
     // Qt 6.11 Action shortcuts in unopened MenuItems can trigger through modal dialogs.
     // Remove when Qt blocks these shortcuts while a modal dialog is open.
     readonly property bool terminalActionsEnabled: !root.desktopIntegration.windowBlocked && !closeDialog.visible && !pasteDialog.visible && !renameDialog.visible && !chooserDialog.visible && !saveDialog.visible && !settingsView.configViewItem
+    readonly property bool historyScrollActionsEnabled: root.terminalActionsEnabled && root.currentSession && root.terminal.activeFocus && !root.currentSession.alternateScreen && !root.terminal.keyboardSelectionMode
     readonly property TerminalSession currentSession: root.sessionModel.currentSession
 
     function launchPreset(name: string): void {
@@ -468,6 +469,50 @@ Kirigami.ApplicationWindow {
         enabled: root.terminalActionsEnabled && root.findVisible && findBar.text.length > 0
 
         onTriggered: root.search(false)
+    }
+
+    Kirigami.Action {
+        id: scrollLineUpAction
+
+        objectName: "scrollLineUpAction"
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
+        AC.ActionCollection.action: "scroll_line_up"
+        enabled: root.historyScrollActionsEnabled
+
+        onTriggered: root.terminal.scrollLines(-1)
+    }
+
+    Kirigami.Action {
+        id: scrollLineDownAction
+
+        objectName: "scrollLineDownAction"
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
+        AC.ActionCollection.action: "scroll_line_down"
+        enabled: root.historyScrollActionsEnabled
+
+        onTriggered: root.terminal.scrollLines(1)
+    }
+
+    Kirigami.Action {
+        id: scrollPageUpAction
+
+        objectName: "scrollPageUpAction"
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
+        AC.ActionCollection.action: "scroll_page_up"
+        enabled: root.historyScrollActionsEnabled
+
+        onTriggered: root.terminal.scrollPages(-1)
+    }
+
+    Kirigami.Action {
+        id: scrollPageDownAction
+
+        objectName: "scrollPageDownAction"
+        AC.ActionCollection.collection: "org.kde.kwi.terminal"
+        AC.ActionCollection.action: "scroll_page_down"
+        enabled: root.historyScrollActionsEnabled
+
+        onTriggered: root.terminal.scrollPages(1)
     }
 
     Kirigami.Action {

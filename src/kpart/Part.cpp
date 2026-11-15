@@ -144,14 +144,13 @@ Part::Part(QWidget *, QObject *parent, const KPluginMetaData &metadata, const QV
     m_tabs->setObjectName(QStringLiteral("kwiPartTabs"));
     m_tabs->setDocumentMode(true);
     m_tabs->setTabsClosable(true);
+    m_tabs->setTabBarAutoHide(true);
     m_tabs->setMovable(true);
     m_tabs->installEventFilter(this);
 
     const auto updateTabPosition = [this] {
         const auto position{m_settings->tabBarPosition()};
         m_tabs->setTabPosition(position == TerminalSettings::Bottom ? QTabWidget::South : QTabWidget::North);
-        m_tabs->setTabBarAutoHide(position != TerminalSettings::Hidden);
-        m_tabs->tabBar()->setVisible(position != TerminalSettings::Hidden && m_tabs->count() > 1);
     };
 
     connect(m_settings, &TerminalSettings::tabBarPositionChanged, m_tabs, updateTabPosition);

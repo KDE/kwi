@@ -55,6 +55,7 @@ Kirigami.ApplicationWindow {
     // Remove when Qt blocks these shortcuts while a modal dialog is open.
     readonly property bool terminalActionsEnabled: !root.desktopIntegration.windowBlocked && !closeDialog.visible && !pasteDialog.visible && !renameDialog.visible && !chooserDialog.visible && !saveDialog.visible && !settingsView.configViewItem
     readonly property bool historyScrollActionsEnabled: root.terminalActionsEnabled && root.currentSession && root.terminal.activeFocus && !root.currentSession.alternateScreen && !root.terminal.keyboardSelectionMode
+    readonly property bool tabBarVisible: !root.appSettings.autoHideTabBar || root.sessionModel.count > 1
     readonly property TerminalSession currentSession: root.sessionModel.currentSession
 
     function launchPreset(name: string): void {
@@ -128,7 +129,7 @@ Kirigami.ApplicationWindow {
     function initialWindowSize(): size {
         terminalToolBar.contentItem.ensurePolished();
         const terminalSize = terminalPane.sizeForGrid(root.appSettings.windowColumns, root.appSettings.windowRows);
-        return Qt.size(terminalSize.width, terminalSize.height + (root.appSettings.tabBarPosition === AppSettings.Hidden ? 0 : terminalToolBar.implicitHeight));
+        return Qt.size(terminalSize.width, terminalSize.height + (root.tabBarVisible ? terminalToolBar.implicitHeight : 0));
     }
 
     function focusTerminal(): void {
@@ -660,17 +661,17 @@ Kirigami.ApplicationWindow {
     }
 
     Kirigami.Action {
-        id: showTabBarAction
+        id: autoHideTabBarAction
 
-        objectName: "showTabBarAction"
+        objectName: "autoHideTabBarAction"
         AC.ActionCollection.collection: "org.kde.kwi.tabs"
-        AC.ActionCollection.action: "show_tab_bar"
-        enabled: root.terminalActionsEnabled && !root.appSettings.isTabBarPositionImmutable
+        AC.ActionCollection.action: "auto_hide_tab_bar"
+        enabled: root.terminalActionsEnabled && !root.appSettings.isAutoHideTabBarImmutable
         checkable: true
-        checked: root.appSettings.tabBarPosition !== AppSettings.Hidden
+        checked: root.appSettings.autoHideTabBar
 
         onTriggered: {
-            root.appSettings.tabBarPosition = root.appSettings.tabBarPosition === AppSettings.Hidden ? AppSettings.Top : AppSettings.Hidden;
+            root.appSettings.autoHideTabBar = checked;
             root.appSettings.save();
             root.focusTerminal();
         }
@@ -844,7 +845,7 @@ Kirigami.ApplicationWindow {
                 NativeMenuItem { action: zoomOutAction }
                 NativeMenuItem { action: resetZoomAction }
                 NativeMenuItem { action: fullscreenAction }
-                NativeMenuItem { action: showTabBarAction }
+                NativeMenuItem { action: autoHideTabBarAction }
             }
 
             Platform.Menu {
@@ -901,7 +902,7 @@ Kirigami.ApplicationWindow {
                 text: KI18n.i18nc("@title", "Appearance")
                 icon.name: "preferences-desktop-theme-global"
                 page: () => Qt.createComponent("org.kde.kwi", "AppearanceSettings")
-                initialProperties: () => ({ appSettings: root.appSettings, terminalPalettes: root.terminalPalettes, showTabBarAction: showTabBarAction })
+                initialProperties: () => ({ appSettings: root.appSettings, terminalPalettes: root.terminalPalettes, autoHideTabBarAction: autoHideTabBarAction })
             },
 
             Settings.ConfigurationModule {
@@ -975,7 +976,7 @@ Kirigami.ApplicationWindow {
                 id: terminalToolBar
 
                 objectName: "terminalToolBar"
-                visible: root.appSettings.tabBarPosition !== AppSettings.Hidden
+                visible: root.tabBarVisible
                 anchors.left: parent.left
                 anchors.right: parent.right
                 y: root.appSettings.tabBarPosition === AppSettings.Bottom ? Math.round((parent.height - height) * tabFrame.dpr) / tabFrame.dpr : 0
@@ -1290,7 +1291,7 @@ Kirigami.ApplicationWindow {
                                 }
 
                                 Controls.MenuItem {
-                                    action: showTabBarAction
+                                    action: autoHideTabBarAction
                                 }
                             }
 
@@ -1327,7 +1328,7 @@ Kirigami.ApplicationWindow {
 
                 anchors.left: parent.left
                 anchors.right: parent.right
-                anchors.top: root.appSettings.tabBarPosition === AppSettings.Top ? terminalToolBar.bottom : parent.top
+                anchors.top: root.tabBarVisible && root.appSettings.tabBarPosition === AppSettings.Top ? terminalToolBar.bottom : parent.top
                 spacing: 0
 
                 TerminalSearchBar {
@@ -1336,7 +1337,7 @@ Kirigami.ApplicationWindow {
                     visible: root.findVisible
                     Layout.fillWidth: true
                     terminal: root.terminal
-                    tabBarAtTop: root.appSettings.tabBarPosition === AppSettings.Top
+                    tabBarAtTop: root.tabBarVisible && root.appSettings.tabBarPosition === AppSettings.Top
 
                     onCloseRequested: root.hideFind()
                 }
@@ -1378,7 +1379,7 @@ Kirigami.ApplicationWindow {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.top: terminalMessages.bottom
-                anchors.bottom: root.appSettings.tabBarPosition === AppSettings.Bottom ? terminalToolBar.top : parent.bottom
+                anchors.bottom: root.tabBarVisible && root.appSettings.tabBarPosition === AppSettings.Bottom ? terminalToolBar.top : parent.bottom
                 applicationSession: root.sessionModel.currentSession
 
                 onMultilinePasteRequested: (origin, text) => {
@@ -1480,7 +1481,7 @@ Kirigami.ApplicationWindow {
 
                         objectName: "contextConfigureAction"
                         action: settingsAction
-                        visible: root.appSettings.tabBarPosition === AppSettings.Hidden
+                        visible: !root.tabBarVisible
                     }
                 }
             }

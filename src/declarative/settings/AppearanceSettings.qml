@@ -18,7 +18,7 @@ SettingsPage {
     required property AppSettings appSettings
     required property ColorSchemeModel terminalPalettes
     property bool showWindowSettings: true
-    property Kirigami.Action showTabBarAction: null
+    property Kirigami.Action autoHideTabBarAction: null
 
     objectName: "appearanceSettings"
     title: KI18n.i18nc("@title:window", "Appearance")
@@ -297,7 +297,7 @@ SettingsPage {
                 contentItem: Controls.ComboBox {
                     objectName: "tabBarPositionSetting"
                     enabled: !root.appSettings.isTabBarPositionImmutable
-                    model: [KI18n.i18nc("@item:inlistbox tab bar position", "Top"), KI18n.i18nc("@item:inlistbox tab bar position", "Bottom"), KI18n.i18nc("@item:inlistbox tab bar position", "Hidden")]
+                    model: [KI18n.i18nc("@item:inlistbox tab bar position", "Top"), KI18n.i18nc("@item:inlistbox tab bar position", "Bottom")]
                     currentIndex: root.appSettings.tabBarPosition
 
                     onActivated: index => {
@@ -308,14 +308,29 @@ SettingsPage {
             }
 
             Forms.FormEntry {
-                visible: root.appSettings.tabBarPosition === AppSettings.Hidden
+                contentItem: Controls.CheckBox {
+                    objectName: "autoHideTabBarSetting"
+                    Layout.fillWidth: true
+                    text: KI18n.i18nc("@option:check", "Hide for single tabs")
+                    enabled: !root.appSettings.isAutoHideTabBarImmutable
+                    checked: root.appSettings.autoHideTabBar
+
+                    onToggled: {
+                        root.appSettings.autoHideTabBar = checked;
+                        root.appSettings.save();
+                    }
+                }
+            }
+
+            Forms.FormEntry {
+                visible: root.appSettings.autoHideTabBar
 
                 contentItem: Kirigami.InlineMessage {
                     objectName: "hiddenTabBarMessage"
                     Layout.fillWidth: true
                     visible: true
                     type: Kirigami.MessageType.Information
-                    readonly property string shortcut: root.showTabBarAction ? root.showTabBarAction.shortcut : ""
+                    readonly property string shortcut: root.autoHideTabBarAction ? root.autoHideTabBarAction.shortcut : ""
                     text: shortcut.length > 0 ? KI18n.i18nc("@info", "A hidden tab bar can be brought back with %1, or you can access application settings from the context menu.", shortcut) : KI18n.i18nc("@info", "You can access application settings from the context menu.")
                 }
             }

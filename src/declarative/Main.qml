@@ -9,6 +9,7 @@ import QtQuick.Window
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs as Dialogs
+import Qt.labs.platform as Platform
 import org.kde.ki18n
 import org.kde.notification as KNotification
 import org.kde.kirigami as Kirigami
@@ -762,6 +763,104 @@ Kirigami.ApplicationWindow {
         objectName: "aboutKdeAction"
         AC.ActionCollection.collection: "org.kde.globalactions"
         AC.ActionCollection.action: AC.StandardActionData.AboutKDE
+    }
+
+    Kirigami.Action {
+        id: menuSeparator
+
+        separator: true
+    }
+
+    Loader {
+        active: Kirigami.Settings.hasPlatformMenuBar
+
+        sourceComponent: Platform.MenuBar {
+            window: root
+
+            Platform.Menu {
+                title: KI18n.i18nc("@title:menu", "File")
+
+                NativeMenuItem { action: newWindowAction }
+                NativeMenuItem { action: newTabAction }
+
+                Platform.Menu {
+                    id: nativePresetsMenu
+
+                    title: KI18n.i18nc("@title:menu", "New Tab with Preset")
+
+                    Instantiator {
+                        model: root.terminalPresets.entries
+
+                        delegate: Platform.MenuItem {
+                            required property var modelData
+
+                            text: modelData.label
+                            icon.name: "utilities-terminal"
+                            enabled: root.terminalActionsEnabled
+
+                            onTriggered: root.launchPreset(modelData.name)
+                        }
+
+                        onObjectAdded: (index, object) => nativePresetsMenu.insertItem(index, object)
+                        onObjectRemoved: (index, object) => nativePresetsMenu.removeItem(object)
+                    }
+
+                    Platform.MenuSeparator {}
+
+                    Platform.MenuItem {
+                        text: KI18n.i18nc("@action:inmenu", "Manage Presets…")
+                        icon.name: "configure"
+                        enabled: root.terminalActionsEnabled
+
+                        onTriggered: settingsView.open("presets")
+                    }
+                }
+
+                Platform.MenuSeparator {}
+                NativeMenuItem { action: closeTabAction }
+                NativeMenuItem { action: applicationQuitAction; role: Platform.MenuItem.QuitRole }
+            }
+
+            NativeMenu {
+                title: KI18n.i18nc("@title:menu", "Edit")
+                actions: [copyAction, pasteAction, pasteSelectionAction, selectAllAction, selectionModeAction, readOnlyAction, menuSeparator, findAction, findNextAction, findPreviousAction]
+            }
+
+            Platform.Menu {
+                title: KI18n.i18nc("@title:menu", "View")
+
+                NativeMenu {
+                    title: KI18n.i18nc("@title:menu", "Tabs")
+                    actions: [renameTabAction, nextTabAction, previousTabAction, lastUsedTabAction, searchTabsAction, menuSeparator, moveTabLeftAction, moveTabRightAction, detachTabAction, closeTabAction]
+                }
+
+                NativeMenu {
+                    title: KI18n.i18nc("@title:menu", "Output")
+                    actions: [saveOutputAction, clearHistoryAction, resetTerminalAction, menuSeparator, previousPromptAction, nextPromptAction, copyCommandOutputAction, openDirectoryAction, openLinkChooserAction, menuSeparator, monitorActivityAction, monitorSilenceAction]
+                }
+
+                Platform.MenuSeparator {}
+                NativeMenuItem { action: zoomInAction }
+                NativeMenuItem { action: zoomOutAction }
+                NativeMenuItem { action: resetZoomAction }
+                NativeMenuItem { action: fullscreenAction }
+                NativeMenuItem { action: showTabBarAction }
+            }
+
+            Platform.Menu {
+                title: KI18n.i18nc("@title:menu", "Settings")
+
+                NativeMenuItem { action: settingsAction; role: Platform.MenuItem.PreferencesRole }
+                NativeMenuItem { action: notificationsAction }
+            }
+
+            Platform.Menu {
+                title: KI18n.i18nc("@title:menu", "Help")
+
+                NativeMenuItem { action: aboutAction; role: Platform.MenuItem.AboutRole }
+                NativeMenuItem { action: aboutKdeAction }
+            }
+        }
     }
 
     Connections {

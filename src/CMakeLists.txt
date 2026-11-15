@@ -45,6 +45,7 @@ set_source_files_properties(declarative/+org.kde.union/TerminalSearchField.qml
 if(BUILD_APP)
     list(APPEND kwi_qml_files
         declarative/Main.qml declarative/ActionDefinitions.qml declarative/TerminalTabs.qml
+        declarative/NativeMenu.qml declarative/NativeMenuItem.qml
         declarative/TerminalTabButton.qml declarative/KeyboardSettings.qml declarative/TabCloseButton.qml
         declarative/+org.kde.desktop/TabCloseButton.qml
         declarative/+org.kde.union/TabCloseButton.qml)

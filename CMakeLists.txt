@@ -70,6 +70,7 @@ if(BUILD_APP OR BUILD_KPART)
 endif()
 
 if(BUILD_APP)
+    ecm_find_qmlmodule(Qt.labs.platform REQUIRED)
     ecm_find_qmlmodule(org.kde.kirigami.dialogs REQUIRED)
     ecm_find_qmlmodule(org.kde.kirigami.delegates REQUIRED)
     ecm_find_qmlmodule(org.kde.kirigami.actioncollection REQUIRED)

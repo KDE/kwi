@@ -26,13 +26,18 @@ set_target_properties(kwi-core PROPERTIES POSITION_INDEPENDENT_CODE ON)
 add_library(kwi-ui STATIC)
 
 set(kwi_qml_files
-    declarative/SettingsPage.qml declarative/AppearanceSettings.qml
-    declarative/ColorSchemeEditor.qml declarative/TerminalSettings.qml declarative/BehaviorSettings.qml
-    declarative/TerminalPane.qml declarative/TerminalSearchBar.qml
+    declarative/TerminalPane.qml
+    declarative/TerminalSearchBar.qml
     declarative/TerminalSearchField.qml
-    declarative/PresetsSettings.qml declarative/PromptDialogFooter.qml
-    declarative/WebShortcutMenu.qml
-    declarative/+org.kde.union/TerminalSearchField.qml)
+    declarative/+org.kde.union/TerminalSearchField.qml
+    declarative/components/PromptDialogFooter.qml
+    declarative/components/WebShortcutMenu.qml
+    declarative/settings/AppearanceSettings.qml
+    declarative/settings/BehaviorSettings.qml
+    declarative/settings/ColorSchemeEditor.qml
+    declarative/settings/PresetsSettings.qml
+    declarative/settings/SettingsPage.qml
+    declarative/settings/TerminalSettings.qml)
 
 set(kwi_ui_sources
     ui/TextFormatting.cpp ui/TextFormatting.h
@@ -44,11 +49,16 @@ set_source_files_properties(declarative/+org.kde.union/TerminalSearchField.qml
 
 if(BUILD_APP)
     list(APPEND kwi_qml_files
-        declarative/Main.qml declarative/ActionDefinitions.qml declarative/TerminalTabs.qml
-        declarative/NativeMenu.qml declarative/NativeMenuItem.qml
-        declarative/TerminalTabButton.qml declarative/KeyboardSettings.qml declarative/TabCloseButton.qml
+        declarative/ActionDefinitions.qml
+        declarative/Main.qml
+        declarative/TabCloseButton.qml
+        declarative/TerminalTabButton.qml
+        declarative/TerminalTabs.qml
         declarative/+org.kde.desktop/TabCloseButton.qml
-        declarative/+org.kde.union/TabCloseButton.qml)
+        declarative/+org.kde.union/TabCloseButton.qml
+        declarative/components/NativeMenu.qml
+        declarative/components/NativeMenuItem.qml
+        declarative/settings/KeyboardSettings.qml)
     list(APPEND kwi_ui_sources
         WindowManager.h WindowManager.cpp
         ui/NativeTabClose.cpp ui/NativeTabClose.h)

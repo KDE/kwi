@@ -2,7 +2,27 @@
 # SPDX-License-Identifier: CC0-1.0
 [Icon Theme]
 Name=Hicolor
+Name[ca]=Hicolor
+Name[ca@valencia]=Hicolor
+Name[nl]=Hicolor
+Name[pt_BR]=Hicolor
+Name[sr]=Hicolor
+Name[sr@ijekavian]=Hicolor
+Name[sr@ijekavianlatin]=Hicolor
+Name[sr@latin]=Hicolor
+Name[tr]=Hicolor
+Name[uk]=Кольорова
 Comment=Embedded application icon fallback
+Comment[ca]=Icona alternativa de reserva de l'aplicació incrustada
+Comment[ca@valencia]=Icona alternativa de reserva de l'aplicació incrustada
+Comment[nl]=Terugvaloptie voor ingebed toepassingspictogram
+Comment[pt_BR]=Alternativa para ícone de aplicativo incorporado
+Comment[sr]=Угнежђена резервна иконица програма
+Comment[sr@ijekavian]=Угнијежђена резервна иконица програма
+Comment[sr@ijekavianlatin]=Ugniježđena rezervna ikonica programa
+Comment[sr@latin]=Ugnežđena rezervna ikonica programa
+Comment[tr]=Gömülü uygulama simgesi yedeği
+Comment[uk]=Резервна піктограма вбудованої програми
 Hidden=true
 Directories=16x16/apps,22x22/apps,24x24/apps,32x32/apps,48x48/apps
 

@@ -1,0 +1,2303 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-16 01:12+0000\n"
+"PO-Revision-Date: 2026-11-15 10:40+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: schemas.cpp:1
+#, kde-format
+msgid "Black on Light Yellow"
+msgstr "Црна на светложутој"
+
+#: schemas.cpp:2
+#, kde-format
+msgid "Black on Random Light"
+msgstr "Црна на насумичној светлој"
+
+#: schemas.cpp:3
+#, kde-format
+msgid "Black on White"
+msgstr "Црна на белој"
+
+#: schemas.cpp:4
+#, kde-format
+msgid "Blue on Black"
+msgstr "Плава на црној"
+
+#: schemas.cpp:5
+#, kde-format
+msgid "Breeze"
+msgstr "Поветарац"
+
+#: schemas.cpp:6
+#, kde-format
+msgid "Campbell"
+msgstr "Кембел"
+
+#: schemas.cpp:7
+#, kde-format
+msgid "Dark Pastels"
+msgstr "Тамне пастеле"
+
+#: schemas.cpp:8
+#, kde-format
+msgid "Green on Black"
+msgstr "Зелена на црној"
+
+#: schemas.cpp:9
+#, kde-format
+msgid "Linux Colors"
+msgstr "Боје Линукса"
+
+#: schemas.cpp:10
+#, kde-format
+msgid "Red on Black"
+msgstr "Црвена на црној"
+
+#: schemas.cpp:11
+#, kde-format
+msgid "Solarized"
+msgstr "Осунчано"
+
+#: schemas.cpp:12
+#, kde-format
+msgid "Solarized Light"
+msgstr "Осунчано светло"
+
+#: schemas.cpp:13
+#, kde-format
+msgid "White on Black"
+msgstr "Бела на црној"
+
+#: src/declarative/ActionDefinitions.qml:10
+#, kde-format
+msgctxt "@title:group"
+msgid "Application"
+msgstr "Програм"
+
+#: src/declarative/ActionDefinitions.qml:13
+#, kde-format
+msgctxt "@action"
+msgid "Application Menu"
+msgstr "Мени програма"
+
+#: src/declarative/ActionDefinitions.qml:14
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Напусти"
+
+#: src/declarative/ActionDefinitions.qml:19
+#, kde-format
+msgctxt "@title:group"
+msgid "Windows and Tabs"
+msgstr "Прозори и језичци"
+
+#: src/declarative/ActionDefinitions.qml:21
+#, kde-format
+msgctxt "@action"
+msgid "New Window"
+msgstr "Нови прозор"
+
+#: src/declarative/ActionDefinitions.qml:22
+#, kde-format
+msgctxt "@action"
+msgid "Hide Tab Bar for Single Tabs"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:23
+#, kde-format
+msgctxt "@action"
+msgid "Full Screen"
+msgstr "Цео екран"
+
+#: src/declarative/ActionDefinitions.qml:24
+#, kde-format
+msgctxt "@action"
+msgid "New Tab"
+msgstr "Нови језичак"
+
+#: src/declarative/ActionDefinitions.qml:25
+#, kde-format
+msgctxt "@action"
+msgid "Close Tab"
+msgstr "Затвори језичак"
+
+#: src/declarative/ActionDefinitions.qml:26
+#, kde-format
+msgctxt "@action"
+msgid "Rename Tab…"
+msgstr "Преименуј језичак…"
+
+#: src/declarative/ActionDefinitions.qml:27
+#, kde-format
+msgctxt "@action"
+msgid "Next Tab"
+msgstr "Следећи језичак"
+
+#: src/declarative/ActionDefinitions.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Previous Tab"
+msgstr "Претходни језичак"
+
+#: src/declarative/ActionDefinitions.qml:29
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs"
+msgstr "Последње коришћени језичци"
+
+#: src/declarative/ActionDefinitions.qml:30
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs (Reverse)"
+msgstr "Последње коришћени језичци (обрнуто)"
+
+#: src/declarative/ActionDefinitions.qml:31 src/kpart/Part.cpp:1020
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Left"
+msgstr "Помери језичак улево"
+
+#: src/declarative/ActionDefinitions.qml:32 src/kpart/Part.cpp:1025
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Right"
+msgstr "Помери језичак удесно"
+
+#: src/declarative/ActionDefinitions.qml:33
+#, kde-format
+msgctxt "@action"
+msgid "Detach Tab"
+msgstr "Откачи језичак"
+
+#: src/declarative/ActionDefinitions.qml:34
+#, kde-format
+msgctxt "@action"
+msgid "Search Tabs…"
+msgstr "Претражи језичке…"
+
+#: src/declarative/ActionDefinitions.qml:35
+#: src/declarative/ActionDefinitions.qml:36
+#: src/declarative/ActionDefinitions.qml:37
+#: src/declarative/ActionDefinitions.qml:38
+#: src/declarative/ActionDefinitions.qml:39
+#: src/declarative/ActionDefinitions.qml:40
+#: src/declarative/ActionDefinitions.qml:41
+#: src/declarative/ActionDefinitions.qml:42
+#: src/declarative/ActionDefinitions.qml:43
+#, kde-format
+msgctxt "@action"
+msgid "Switch to Tab %1"
+msgstr "Пребаци на језичак %1"
+
+#: src/declarative/ActionDefinitions.qml:48
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal"
+msgstr "Терминал"
+
+#: src/declarative/ActionDefinitions.qml:50
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "Копирај"
+
+#: src/declarative/ActionDefinitions.qml:51
+#, kde-format
+msgctxt "@action"
+msgid "Paste"
+msgstr "Налепи"
+
+#: src/declarative/ActionDefinitions.qml:52
+#, kde-format
+msgctxt "@action"
+msgid "Paste Selection"
+msgstr "Налепи избор"
+
+#: src/declarative/ActionDefinitions.qml:53
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "Изабери све"
+
+#: src/declarative/ActionDefinitions.qml:54
+#, kde-format
+msgctxt "@action"
+msgid "Keyboard Selection Mode"
+msgstr "Режим избора тастатуром"
+
+#: src/declarative/ActionDefinitions.qml:55 src/kpart/Part.cpp:831
+#, kde-format
+msgctxt "@action"
+msgid "Save Output As…"
+msgstr "Сачувај излаз као…"
+
+#: src/declarative/ActionDefinitions.qml:56
+#, kde-format
+msgctxt "@action"
+msgid "Clear Scrollback"
+msgstr "Очисти препис"
+
+#: src/declarative/ActionDefinitions.qml:57 src/kpart/Part.cpp:840
+#, kde-format
+msgctxt "@action"
+msgid "Reset Terminal"
+msgstr "Ресетуј терминал"
+
+#: src/declarative/ActionDefinitions.qml:58
+#, kde-format
+msgctxt "@action"
+msgid "Find…"
+msgstr "Нађи…"
+
+#: src/declarative/ActionDefinitions.qml:63
+#, kde-format
+msgctxt "@action"
+msgid "Reset Zoom"
+msgstr "Ресетуј увеличање"
+
+#: src/declarative/ActionDefinitions.qml:64 src/kpart/Part.cpp:783
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Line"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Line"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Page"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Page"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:68
+#, kde-format
+msgctxt "@action"
+msgid "Previous Prompt"
+msgstr "Претходни промпт"
+
+#: src/declarative/ActionDefinitions.qml:69
+#, kde-format
+msgctxt "@action"
+msgid "Next Prompt"
+msgstr "Следећи промпт"
+
+#: src/declarative/ActionDefinitions.qml:70 src/kpart/Part.cpp:755
+#, kde-format
+msgctxt "@action"
+msgid "Copy Last Command Output"
+msgstr "Копирај излаз последње наредбе"
+
+#: src/declarative/ActionDefinitions.qml:71 src/kpart/Part.cpp:864
+#, kde-format
+msgctxt "@action"
+msgid "Open Current Directory"
+msgstr "Отвори тренутну фасциклу"
+
+#: src/declarative/ActionDefinitions.qml:72
+#, kde-format
+msgctxt "@action"
+msgid "Open Link…"
+msgstr "Отвори везу…"
+
+#: src/declarative/ActionDefinitions.qml:73 src/kpart/Part.cpp:868
+#, kde-format
+msgctxt "@action"
+msgid "Read-Only Terminal"
+msgstr "Терминал само за читање"
+
+#: src/declarative/ActionDefinitions.qml:74
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Activity"
+msgstr "Надгледај активност"
+
+#: src/declarative/ActionDefinitions.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Silence"
+msgstr "Надгледај тишину"
+
+#: src/declarative/components/WebShortcutMenu.qml:44
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure Web Shortcuts…"
+msgstr "Подеси веб пречице…"
+
+#: src/declarative/Main.qml:66
+#, kde-format
+msgctxt "@info"
+msgid "The terminal preset is no longer available."
+msgstr "Претподешавање терминала више није доступно."
+
+#: src/declarative/Main.qml:73 src/declarative/Main.qml:790
+#, kde-format
+msgctxt "@title:menu"
+msgid "New Tab with Preset"
+msgstr "Нови језичак са претподешавањем"
+
+#: src/declarative/Main.qml:96 src/declarative/Main.qml:812
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Manage Presets…"
+msgstr "Управљај претподешавањима…"
+
+#: src/declarative/Main.qml:552 src/kpart/Part.cpp:757
+#, kde-format
+msgctxt "@info"
+msgid "No command output is marked by the shell in retained history."
+msgstr "У задржаном историјату нема излаза наредбе који је шкољка означила."
+
+#: src/declarative/Main.qml:782
+#, kde-format
+msgctxt "@title:menu"
+msgid "File"
+msgstr ""
+
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#, kde-format
+msgctxt "@title:menu"
+msgid "Edit"
+msgstr "Уређивање"
+
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#, kde-format
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Приказ"
+
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tabs"
+msgstr "Језичци"
+
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#, kde-format
+msgctxt "@title:menu"
+msgid "Output"
+msgstr "Излаз"
+
+#: src/declarative/Main.qml:852
+#, kde-format
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr ""
+
+#: src/declarative/Main.qml:859
+#, kde-format
+msgctxt "@title:menu"
+msgid "Help"
+msgstr ""
+
+#: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Appearance"
+msgstr "Изглед"
+
+#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:66
+#, kde-format
+msgctxt "@title"
+msgid "Behavior"
+msgstr "Понашање"
+
+#: src/declarative/Main.qml:918 src/declarative/Main.qml:970
+#: src/ui/SettingsDialog.cpp:67
+#, kde-format
+msgctxt "@title"
+msgid "Terminal"
+msgstr "Терминал"
+
+#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:69
+#, kde-format
+msgctxt "@title"
+msgid "Presets"
+msgstr "Претподешавања"
+
+#: src/declarative/Main.qml:934
+#, kde-format
+msgctxt "@title"
+msgid "Keyboard"
+msgstr "Тастатура"
+
+#: src/declarative/Main.qml:1050
+#, kde-format
+msgctxt "@action:button"
+msgid "New Tab with Preset"
+msgstr "Нови језичак са претподешавањем"
+
+#: src/declarative/Main.qml:1111
+#, kde-format
+msgctxt "@action:button"
+msgid "Application Menu"
+msgstr "Мени програма"
+
+#: src/declarative/Main.qml:1357
+#, kde-format
+msgctxt "@info"
+msgid "Process exited with status %1."
+msgstr "Процес је завршио стањем %1."
+
+#: src/declarative/Main.qml:1357
+#, kde-format
+msgctxt "@info"
+msgid "Process finished."
+msgstr "Процес је завршен."
+
+#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#, kde-format
+msgctxt "@action"
+msgid "Open Link"
+msgstr "Отвори везу"
+
+#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#, kde-format
+msgctxt "@action"
+msgid "Copy Link"
+msgstr "Копирај везу"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Quit Kwi?"
+msgstr "Напустити Kwi?"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Close All Terminals?"
+msgstr "Затворити све терминале?"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Terminal?"
+msgstr "Затворити терминал?"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit Kwi"
+msgstr "Напусти Kwi"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Close All Terminals"
+msgstr "Затвори све терминале"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Terminal"
+msgstr "Затвори терминал"
+
+#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
+#, kde-format
+msgctxt "@option:check"
+msgid "Do not ask again"
+msgstr "Не питај више"
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Quitting will stop commands in all windows."
+msgstr "Напуштање ће зауставити наредбе у свим прозорима."
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Closing this window will stop its running commands."
+msgstr "Затварање овог прозора зауставиће наредбе које се у њему извршавају."
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Closing “%1” will stop its running command."
+msgstr "Затварање „%1“ зауставиће наредбу која се у њему извршава."
+
+#: src/declarative/Main.qml:1585
+#, kde-format
+msgctxt "@title:window"
+msgid "Paste Multiple Lines?"
+msgstr "Налепити више редова?"
+
+#: src/declarative/Main.qml:1592
+#, kde-format
+msgctxt "@action:button"
+msgid "Paste"
+msgstr "Налепи"
+
+#: src/declarative/Main.qml:1614
+#, kde-format
+msgctxt "@info"
+msgid "Pasting this text may run commands."
+msgstr "Налепљивање овог текста може покренути наредбе."
+
+#: src/declarative/Main.qml:1631
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Paste preview"
+msgstr "Преглед текста за налепљивање"
+
+#: src/declarative/Main.qml:1638
+#, kde-format
+msgctxt "@info"
+msgid "Showing the first character."
+msgid_plural "Showing the first %1 characters."
+msgstr[0] "Приказан је први %1 знак."
+msgstr[1] "Приказана су прва %1 знака."
+msgstr[2] "Приказано је првих %1 знакова."
+msgstr[3] "Приказан је први знак."
+
+#: src/declarative/Main.qml:1744
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Tab"
+msgstr "Преименовање језичка"
+
+#: src/declarative/Main.qml:1749
+#, kde-format
+msgctxt "@action:button"
+msgid "Rename"
+msgstr "Преименуј"
+
+#: src/declarative/Main.qml:1765
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Automatic title"
+msgstr "Аутоматски наслов"
+
+#: src/declarative/Main.qml:1766
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title"
+msgstr "Наслов језичка"
+
+#: src/declarative/Main.qml:1773
+#, kde-format
+msgctxt "@info"
+msgid "Leave empty to use the automatic title."
+msgstr "Оставите празно за аутоматски наслов."
+
+#: src/declarative/Main.qml:1805
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter links…"
+msgstr "Филтрирај везе…"
+
+#: src/declarative/Main.qml:1805
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter tabs…"
+msgstr "Филтрирај језичке…"
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No links in the visible terminal output."
+msgstr "Нема веза у видљивом излазу терминала."
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No matching links."
+msgstr "Нема поклапајућих веза."
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No matching tabs."
+msgstr "Нема поклапајућих језичака."
+
+#: src/declarative/Main.qml:1815
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy Link"
+msgstr "Копирај везу"
+
+#: src/declarative/Main.qml:1864
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Terminal Output"
+msgstr "Уписивање излаза терминала"
+
+#: src/declarative/Main.qml:1867
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Text files (*.txt)"
+msgstr "текстуални фајлови (*.txt)"
+
+#: src/declarative/Main.qml:1867
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "All files (*)"
+msgstr "сви фајлови (*)"
+
+#: src/declarative/settings/AppearanceSettings.qml:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Appearance"
+msgstr "Изглед"
+
+#: src/declarative/settings/AppearanceSettings.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Text"
+msgstr "Текст"
+
+#: src/declarative/settings/AppearanceSettings.qml:51
+#, kde-format
+msgctxt "@option:check"
+msgid "Use system fixed-width font"
+msgstr "Користи системски фонт фиксне ширине"
+
+#: src/declarative/settings/AppearanceSettings.qml:63
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Font:"
+msgstr "Фонт:"
+
+#: src/declarative/settings/AppearanceSettings.qml:81
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Size (pt):"
+msgstr "Величина (pt):"
+
+#: src/declarative/settings/AppearanceSettings.qml:118
+#, kde-format
+msgctxt "@info font preview. Include letters, digits and shell punctuation."
+msgid "Aa Bb 0123456789 — ~/Documents $"
+msgstr "Аа Бб 0123456789 — ~/Документи $"
+
+#: src/declarative/settings/AppearanceSettings.qml:123
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal font preview"
+msgstr "Преглед фонта терминала"
+
+#: src/declarative/settings/AppearanceSettings.qml:129
+#, kde-format
+msgctxt "@title:group"
+msgid "Colors"
+msgstr "Боје"
+
+#: src/declarative/settings/AppearanceSettings.qml:132
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Window"
+msgctxt "@label:listbox"
+msgid "Window:"
+msgstr "Прозор"
+
+#: src/declarative/settings/AppearanceSettings.qml:148
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Terminal"
+msgctxt "@label:listbox"
+msgid "Terminal:"
+msgstr "Терминал"
+
+#: src/declarative/settings/AppearanceSettings.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Color Scheme…"
+msgstr "Уреди шему боја…"
+
+#: src/declarative/settings/AppearanceSettings.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "More Color Scheme Actions"
+msgstr "Више радњи за шему боја"
+
+#: src/declarative/settings/AppearanceSettings.qml:207
+#: src/declarative/settings/PresetsSettings.qml:202
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Duplicate…"
+msgstr "Дуплирај…"
+
+#: src/declarative/settings/AppearanceSettings.qml:214
+#: src/declarative/settings/PresetsSettings.qml:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import…"
+msgstr "Увези…"
+
+#: src/declarative/settings/AppearanceSettings.qml:223
+#: src/declarative/settings/PresetsSettings.qml:218
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "Уклони"
+
+#: src/declarative/settings/AppearanceSettings.qml:235
+#, kde-format
+msgctxt "@label:slider"
+msgid "Background opacity:"
+msgstr "Непрозирност позадине:"
+
+#: src/declarative/settings/AppearanceSettings.qml:262
+#: src/declarative/settings/AppearanceSettings.qml:270
+#, kde-format
+msgctxt "@label"
+msgid "%1%"
+msgstr "%1%"
+
+#: src/declarative/settings/AppearanceSettings.qml:278
+#, kde-format
+msgctxt "@option:check"
+msgid "Blur"
+msgstr "Замућење"
+
+#: src/declarative/settings/AppearanceSettings.qml:292
+#, kde-format
+msgctxt "@title:group"
+msgid "Tab Bar"
+msgstr "Трака језичака"
+
+#: src/declarative/settings/AppearanceSettings.qml:295
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Position:"
+msgstr "Положај:"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Top"
+msgstr "горе"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Bottom"
+msgstr "доле"
+
+#: src/declarative/settings/AppearanceSettings.qml:314
+#, kde-format
+msgctxt "@option:check"
+msgid "Hide for single tabs"
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A hidden tab bar can be brought back with %1, or you can access application "
+"settings from the context menu."
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid "You can access application settings from the context menu."
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:342
+#, kde-format
+msgctxt "@option:check"
+msgid "Show status icons"
+msgstr "Прикажи иконице стања"
+
+#: src/declarative/settings/AppearanceSettings.qml:355
+#, kde-format
+msgctxt "@title:group"
+msgid "Window"
+msgstr "Прозор"
+
+#: src/declarative/settings/AppearanceSettings.qml:362
+#, kde-format
+msgctxt "@option:check"
+msgid "Use custom size for new windows"
+msgstr "Користи посебну величину за нове прозоре"
+
+#: src/declarative/settings/AppearanceSettings.qml:374
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Columns:"
+msgstr "Колоне:"
+
+#: src/declarative/settings/AppearanceSettings.qml:392
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Rows:"
+msgstr "Редови:"
+
+#: src/declarative/settings/AppearanceSettings.qml:433
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Color Scheme"
+msgstr "Увоз шеме боја"
+
+#: src/declarative/settings/AppearanceSettings.qml:434
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Konsole Color Schemes (*.colorscheme)"
+msgstr "шеме боја Конзоле (*.colorscheme)"
+
+#: src/declarative/settings/BehaviorSettings.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Behavior"
+msgstr "Понашање"
+
+#: src/declarative/settings/BehaviorSettings.qml:28
+#, kde-format
+msgctxt "@title:group"
+msgid "Confirmations"
+msgstr "Потврде"
+
+#: src/declarative/settings/BehaviorSettings.qml:34
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm quit when a command is running"
+msgstr "Потврди напуштање док се извршава наредба"
+
+#: src/declarative/settings/BehaviorSettings.qml:49
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm pasting multiple lines"
+msgstr "Потврди налепљивање више редова"
+
+#: src/declarative/settings/BehaviorSettings.qml:62
+#, kde-format
+msgctxt "@title:group"
+msgid "Clipboard"
+msgstr "Клипборд"
+
+#: src/declarative/settings/BehaviorSettings.qml:65
+#, kde-format
+msgctxt "@info"
+msgid "Middle-click paste also works with this option off."
+msgstr "Налепљивање средњим кликом ради и кад је ова опција искључена."
+
+#: src/declarative/settings/BehaviorSettings.qml:70
+#, kde-format
+msgctxt "@option:check"
+msgid "Copy mouse-selected text to clipboard"
+msgstr "Копирај мишем изабрани текст у клипборд"
+
+#: src/declarative/settings/BehaviorSettings.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "Links"
+msgstr "Везе"
+
+#: src/declarative/settings/BehaviorSettings.qml:89
+#, kde-format
+msgctxt "@option:check"
+msgid "Require Ctrl when clicking links"
+msgstr "Захтевај Ctrl при клику на везе"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Black"
+msgstr "Црна"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Red"
+msgstr "Црвена"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Green"
+msgstr "Зелена"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Yellow"
+msgstr "Жута"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Blue"
+msgstr "Плава"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Magenta"
+msgstr "Пурпурна"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Cyan"
+msgstr "Тиркизна"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "White"
+msgstr "Бела"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Black"
+msgstr "Изразита црна"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Red"
+msgstr "Изразита црвена"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Green"
+msgstr "Изразита зелена"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Yellow"
+msgstr "Изразита жута"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Blue"
+msgstr "Изразита плава"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Magenta"
+msgstr "Изразита пурпурна"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Cyan"
+msgstr "Изразита тиркизна"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright White"
+msgstr "Изразита бела"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:39
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Current color: %1. Opens a color chooser."
+msgstr "Тренутна боја: %1. Отвара бирач боја."
+
+#: src/declarative/settings/ColorSchemeEditor.qml:73
+#, kde-format
+msgctxt "@label:color"
+msgid "%1:"
+msgstr "%1:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:159
+#: src/declarative/settings/PresetsSettings.qml:101
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Сачувај"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Duplicate Color Scheme"
+msgstr "Дуплирање шеме боја"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Color Scheme"
+msgstr "Уређивање шеме боја"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:195
+#, kde-format
+msgctxt "@title:group"
+msgid "Preview"
+msgstr "Преглед"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:206
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Color scheme preview"
+msgstr "Преглед шеме боја"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:217
+#, kde-format
+msgctxt "@info color scheme preview. Keep the shell command syntax intact."
+msgid "user@host:~/Documents $ echo \"Hello, world\""
+msgstr "корисник@домаћин:~/Документи $ echo \"Здраво, свете\""
+
+#: src/declarative/settings/ColorSchemeEditor.qml:235
+#, kde-format
+msgctxt "@info short color sample"
+msgid "Aa"
+msgstr "Аа"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:259
+#: src/declarative/settings/PresetsSettings.qml:230
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Име:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:269
+#, kde-format
+msgctxt "@label:color"
+msgid "Text:"
+msgstr "Текст:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Text Color"
+msgstr "Боја текста"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:273
+#, kde-format
+msgctxt "@label:color"
+msgid "Text"
+msgstr "Текст"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:280
+#, kde-format
+msgctxt "@label:color"
+msgid "Background:"
+msgstr "Позадина:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:283
+#, kde-format
+msgctxt "@title:window"
+msgid "Background Color"
+msgstr "Боја позадине"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:284
+#, kde-format
+msgctxt "@label:color"
+msgid "Background"
+msgstr "Позадина"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:290
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal Colors"
+msgstr "Боје терминала"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:304
+#, kde-format
+msgctxt "@label:column"
+msgid "Normal"
+msgstr "Нормална"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:312
+#, kde-format
+msgctxt "@label:column"
+msgid "Bright"
+msgstr "Изразита"
+
+#: src/declarative/settings/PresetsSettings.qml:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Presets"
+msgstr "Претподешавања"
+
+#: src/declarative/settings/PresetsSettings.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Ресетуј"
+
+#: src/declarative/settings/PresetsSettings.qml:123
+#, kde-format
+msgctxt "@title:group"
+msgid "New Sessions"
+msgstr "Нове сесије"
+
+#: src/declarative/settings/PresetsSettings.qml:126
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Default preset:"
+msgstr "Подразумевано претподешавање:"
+
+#: src/declarative/settings/PresetsSettings.qml:143
+#, kde-format
+msgctxt "@title:group"
+msgid "Manage Presets"
+msgstr "Управљање претподешавањима"
+
+#: src/declarative/settings/PresetsSettings.qml:146
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Preset:"
+msgstr "Претподешавање:"
+
+#: src/declarative/settings/PresetsSettings.qml:171
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Preset"
+msgstr "Уреди претподешавање"
+
+#: src/declarative/settings/PresetsSettings.qml:185
+#, kde-format
+msgctxt "@action:button"
+msgid "More Preset Actions"
+msgstr "Више радњи за претподешавање"
+
+#: src/declarative/settings/PresetsSettings.qml:245
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Command:"
+msgstr "Наредба:"
+
+#: src/declarative/settings/PresetsSettings.qml:251
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "System shell"
+msgstr "Системска шкољка"
+
+#: src/declarative/settings/PresetsSettings.qml:258
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Starting folder:"
+msgstr "Почетна фасцикла:"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Current folder"
+msgstr "тренутна фасцикла"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Home folder"
+msgstr "домаћа фасцикла"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Custom folder"
+msgstr "посебна фасцикла"
+
+#: src/declarative/settings/PresetsSettings.qml:271
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Folder:"
+msgstr "Фасцикла:"
+
+#: src/declarative/settings/PresetsSettings.qml:289
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose…"
+msgstr "Изабери…"
+
+#: src/declarative/settings/PresetsSettings.qml:291
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Choose starting folder"
+msgstr "Изабери почетну фасциклу"
+
+#: src/declarative/settings/PresetsSettings.qml:301
+#, kde-format
+msgctxt "@label"
+msgid "Environment:"
+msgstr "Окружење:"
+
+#: src/declarative/settings/PresetsSettings.qml:307
+#, kde-format
+msgctxt "@info"
+msgid "No additional variables."
+msgstr "Нема додатних променљивих."
+
+#: src/declarative/settings/PresetsSettings.qml:344
+#, kde-format
+msgctxt "@item environment variable value"
+msgid "(empty)"
+msgstr "(празно)"
+
+#: src/declarative/settings/PresetsSettings.qml:353
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit %1"
+msgstr "Уреди %1"
+
+#: src/declarative/settings/PresetsSettings.qml:365
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove %1"
+msgstr "Уклони %1"
+
+#: src/declarative/settings/PresetsSettings.qml:385
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Variable…"
+msgstr "Додај променљиву…"
+
+#: src/declarative/settings/PresetsSettings.qml:400
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Preset Changes"
+msgstr "Несачуване измене претподешавања"
+
+#: src/declarative/settings/PresetsSettings.qml:401
+#, kde-format
+msgctxt "@info"
+msgid "Save changes before continuing?"
+msgstr "Сачувати измене пре настављања?"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Environment Variable"
+msgstr "Додавање променљиве окружења"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Environment Variable"
+msgstr "Уређивање променљиве окружења"
+
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Додај"
+
+#: src/declarative/settings/PresetsSettings.qml:469
+#, kde-format
+msgctxt "@label:textbox environment variable name"
+msgid "Name:"
+msgstr "Име:"
+
+#: src/declarative/settings/PresetsSettings.qml:480
+#, kde-format
+msgctxt "@label:textbox environment variable value"
+msgid "Value:"
+msgstr "Вредност:"
+
+#: src/declarative/settings/PresetsSettings.qml:508
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Preset"
+msgstr "Уклањање претподешавања"
+
+#: src/declarative/settings/PresetsSettings.qml:522
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "Уклони"
+
+#: src/declarative/settings/PresetsSettings.qml:536
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”? New sessions will use System Shell."
+msgstr ""
+"Уклонити претподешавање „%1“? Нове сесије ће користити претподешавање "
+"„системска шкољка“."
+
+#: src/declarative/settings/PresetsSettings.qml:537
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”?"
+msgstr "Уклонити претподешавање „%1“?"
+
+#: src/declarative/settings/PresetsSettings.qml:556
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Terminal Preset"
+msgstr "Увоз претподешавања терминала"
+
+#: src/declarative/settings/PresetsSettings.qml:557
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Kwi Launch Presets (*.preset)"
+msgstr "претподешавања покретања Kwi (*.preset)"
+
+#: src/declarative/settings/PresetsSettings.qml:565
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Starting Folder"
+msgstr "Избор почетне фасцикле"
+
+#: src/declarative/settings/TerminalSettings.qml:20
+#, kde-format
+msgctxt "@title:window"
+msgid "Terminal"
+msgstr "Терминал"
+
+#: src/declarative/settings/TerminalSettings.qml:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Application title"
+msgstr "Наслов програма"
+
+#: src/declarative/settings/TerminalSettings.qml:83
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Command"
+msgstr "Наредба"
+
+#: src/declarative/settings/TerminalSettings.qml:89
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory name"
+msgstr "Име фасцикле"
+
+#: src/declarative/settings/TerminalSettings.qml:95
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory path"
+msgstr "Путања фасцикле"
+
+#: src/declarative/settings/TerminalSettings.qml:103
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "User name"
+msgstr "Корисничко име"
+
+#: src/declarative/settings/TerminalSettings.qml:109
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name"
+msgstr "Име домаћина"
+
+#: src/declarative/settings/TerminalSettings.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name (short)"
+msgstr "Име домаћина (кратко)"
+
+#: src/declarative/settings/TerminalSettings.qml:123
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Opening brace: {"
+msgstr "Отворена витичаста заграда: {"
+
+#: src/declarative/settings/TerminalSettings.qml:129
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Closing brace: }"
+msgstr "Затворена витичаста заграда: }"
+
+#: src/declarative/settings/TerminalSettings.qml:136
+#, kde-format
+msgctxt "@title:group"
+msgid "Session Titles"
+msgstr "Наслови сесија"
+
+#: src/declarative/settings/TerminalSettings.qml:139
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title format:"
+msgstr "Формат наслова језичка:"
+
+#: src/declarative/settings/TerminalSettings.qml:141
+#, kde-format
+msgctxt "@info"
+msgid "Renamed tabs keep their names."
+msgstr "Преименовани језичци задржавају своја имена."
+
+#: src/declarative/settings/TerminalSettings.qml:171
+#: src/declarative/settings/TerminalSettings.qml:241
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "Уметни"
+
+#: src/declarative/settings/TerminalSettings.qml:197
+#: src/declarative/settings/TerminalSettings.qml:267
+#, kde-format
+msgctxt "@label"
+msgid "Preview:"
+msgstr "Преглед:"
+
+#: src/declarative/settings/TerminalSettings.qml:210
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Remote tab title format:"
+msgstr "Формат удаљеног наслова језичка:"
+
+#: src/declarative/settings/TerminalSettings.qml:282
+#, kde-format
+msgctxt "@option:check"
+msgid "Use application title for the window"
+msgstr "Користи наслов програма за прозор"
+
+#: src/declarative/settings/TerminalSettings.qml:295
+#, kde-format
+msgctxt "@title:group"
+msgid "Scrollback"
+msgstr "Препис"
+
+#: src/declarative/settings/TerminalSettings.qml:298
+#, kde-format
+msgctxt "@label:listbox"
+msgid "History:"
+msgstr "Историјат:"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "None"
+msgstr "никакав"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Limited"
+msgstr "ограничен"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Unlimited"
+msgstr "неограничен"
+
+#: src/declarative/settings/TerminalSettings.qml:325
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Retained lines"
+msgstr "Задржани редови"
+
+#: src/declarative/settings/TerminalSettings.qml:340
+#, kde-format
+msgctxt "@label unit after the retained-line count"
+msgid "line"
+msgid_plural "lines"
+msgstr[0] "ред"
+msgstr[1] "реда"
+msgstr[2] "редова"
+msgstr[3] "ред"
+
+#: src/declarative/settings/TerminalSettings.qml:348
+#, kde-format
+msgctxt "@title:group"
+msgid "Monitoring"
+msgstr "Надгледање"
+
+#: src/declarative/settings/TerminalSettings.qml:351
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Silence timeout (seconds):"
+msgstr "Прековреме тишине (у секундама):"
+
+#: src/declarative/settings/TerminalSettings.qml:370
+#, kde-format
+msgctxt "@title:group"
+msgid "Cursor"
+msgstr "Курсор"
+
+#: src/declarative/settings/TerminalSettings.qml:373
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Shape:"
+msgstr "Облик:"
+
+#: src/declarative/settings/TerminalSettings.qml:382
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Block"
+msgstr "блок"
+
+#: src/declarative/settings/TerminalSettings.qml:386
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Beam"
+msgstr "усправна црта"
+
+#: src/declarative/settings/TerminalSettings.qml:390
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Underline"
+msgstr "подвлака"
+
+#: src/declarative/settings/TerminalSettings.qml:406
+#, kde-format
+msgctxt "@option:check"
+msgid "Blink cursor"
+msgstr "Трепћући курсор"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "Терминал: %1"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "Терминал"
+
+#: src/declarative/TerminalSearchBar.qml:70
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Find in terminal…"
+msgstr "Нађи у терминалу…"
+
+#: src/declarative/TerminalSearchBar.qml:71
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Find in terminal"
+msgstr "Нађи у терминалу"
+
+#: src/declarative/TerminalSearchBar.qml:135
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Searching terminal output"
+msgstr "Претражујем излаз терминала"
+
+#: src/declarative/TerminalSearchBar.qml:152
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Match"
+msgstr "Следеће поклапање"
+
+#: src/declarative/TerminalSearchBar.qml:166
+#, kde-format
+msgctxt "@action:button"
+msgid "Previous Match"
+msgstr "Претходно поклапање"
+
+#: src/declarative/TerminalSearchBar.qml:180
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Find Bar"
+msgstr "Затвори траку претраге"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity and silence"
+msgstr "Надгледање активности и тишине"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity"
+msgstr "Надгледање активности"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring silence"
+msgstr "Надгледање тишине"
+
+#: src/declarative/TerminalTabButton.qml:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Progress: %1%"
+msgstr "Напредак: %1%"
+
+#: src/declarative/TerminalTabButton.qml:33
+#: src/declarative/TerminalTabButton.qml:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "In progress"
+msgstr "У току"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error: %1%"
+msgstr "Грешка: %1%"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error"
+msgstr "Грешка"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused: %1%"
+msgstr "Паузирано: %1%"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused"
+msgstr "Паузирано"
+
+#: src/declarative/TerminalTabButton.qml:67
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, needs attention"
+msgstr "%1, тражи пажњу"
+
+#: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, new output"
+msgstr "%1, нови излаз"
+
+#: src/declarative/TerminalTabButton.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Close %1"
+msgstr "Затвори %1"
+
+#: src/declarative/TerminalTabs.qml:157
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Left"
+msgstr "Клизај језичке улево"
+
+#: src/declarative/TerminalTabs.qml:427
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Right"
+msgstr "Клизај језичке удесно"
+
+#: src/DesktopIntegration.cpp:77
+#, kde-format
+msgid "Terminal Notification"
+msgstr "Обавештење терминала"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "Terminal Activity"
+msgstr "Активност терминала"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "New output in %1"
+msgstr "Нови излаз у %1"
+
+#: src/DesktopIntegration.cpp:87
+#, kde-format
+msgid "Terminal Silence"
+msgstr "Тишина терминала"
+
+#: src/DesktopIntegration.cpp:88
+#, kde-format
+msgid "No output in %2 for %1 second"
+msgid_plural "No output in %2 for %1 seconds"
+msgstr[0] "У %2 нема излаза већ %1 секунду"
+msgstr[1] "У %2 нема излаза већ %1 секунде"
+msgstr[2] "У %2 нема излаза већ %1 секунди"
+msgstr[3] "У %2 нема излаза већ једну секунду"
+
+#: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "Овај терминал више није доступан."
+
+#: src/DesktopIntegration.cpp:180
+#, kde-format
+msgid "Choose a local file to save terminal output."
+msgstr "Изаберите локални фајл за уписивање излаза терминала."
+
+#: src/DesktopIntegration.cpp:190
+#, kde-format
+msgid "Could not save terminal output: %1"
+msgstr "Не могу да сачувам излаз терминала: %1"
+
+#: src/DesktopIntegration.cpp:208
+#, kde-format
+msgid "The terminal's current folder is no longer available."
+msgstr "Тренутна фасцикла терминала више није доступна."
+
+#: src/DesktopIntegration.cpp:239
+#, kde-format
+msgid "Could not launch the desktop application: %1"
+msgstr "Не могу да покренем програм површи: %1"
+
+#: src/DesktopIntegration.cpp:274
+#, kde-format
+msgid "Could not open the link: %1"
+msgstr "Не могу да отворим везу: %1"
+
+#: src/DesktopIntegration.cpp:283
+#, kde-format
+msgid "Terminal Bell"
+msgstr "Звоно терминала"
+
+#: src/DesktopIntegration.cpp:315
+#, kde-format
+msgid "Show Terminal"
+msgstr "Прикажи терминал"
+
+#: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
+#, kde-format
+msgid "Kwi Terminal"
+msgstr "Терминал Kwi"
+
+#: src/kpart/Part.cpp:329
+#, kde-format
+msgid "Paste Multiple Lines?"
+msgstr "Налепити више редова?"
+
+#: src/kpart/Part.cpp:330
+#, kde-format
+msgid "Pasting this text may run commands."
+msgstr "Налепљивање овог текста може покренути наредбе."
+
+#: src/kpart/Part.cpp:339
+#, kde-format
+msgid "Paste"
+msgstr "Налепи"
+
+#: src/kpart/Part.cpp:664
+#, kde-format
+msgid "The supplied terminal descriptor is invalid."
+msgstr "Задати описник терминала није исправан."
+
+#: src/kpart/Part.cpp:769
+#, kde-format
+msgid "Paste Selection"
+msgstr "Налепи избор"
+
+#: src/kpart/Part.cpp:834
+#, kde-format
+msgid "Clear Scrollback"
+msgstr "Очисти препис"
+
+#: src/kpart/Part.cpp:858
+#, kde-format
+msgid "Reset Zoom"
+msgstr "Ресетуј увеличање"
+
+#: src/kpart/Part.cpp:875
+#, kde-format
+msgid "Monitor for Activity"
+msgstr "Надгледај активност"
+
+#: src/kpart/Part.cpp:880
+#, kde-format
+msgid "Monitor for Silence"
+msgstr "Надгледај тишину"
+
+#: src/kpart/Part.cpp:886
+#, kde-format
+msgid "New Tab"
+msgstr "Нови језичак"
+
+#: src/kpart/Part.cpp:890
+#, kde-format
+msgid "Rename Tab…"
+msgstr "Преименуј језичак…"
+
+#: src/kpart/Part.cpp:894
+#, kde-format
+msgid "Next Tab"
+msgstr "Следећи језичак"
+
+#: src/kpart/Part.cpp:902
+#, kde-format
+msgid "Previous Tab"
+msgstr "Претходни језичак"
+
+#: src/kpart/Part.cpp:910
+#, kde-format
+msgid "Close Tab"
+msgstr "Затвори језичак"
+
+#: src/kpart/Part.cpp:914
+#, kde-format
+msgid "Configure Kwi…"
+msgstr "Подеси Kwi…"
+
+#: src/kpart/Part.cpp:919
+#, kde-format
+msgid "Manage Presets…"
+msgstr "Управљај претподешавањима…"
+
+#: src/kpart/Part.cpp:923
+#, kde-format
+msgid "Edit Current Preset…"
+msgstr "Уреди текуће претподешавање…"
+
+#: src/kpart/Part.cpp:990
+#, kde-format
+msgid "Rename Tab"
+msgstr "Преименовање језичка"
+
+#: src/kpart/Part.cpp:991
+#, kde-format
+msgid "Tab name (leave empty to use the automatic title):"
+msgstr "Име језичка (оставите празно за аутоматски наслов):"
+
+#: src/kpart/Part.cpp:1097
+#, kde-format
+msgid "Save Terminal Output"
+msgstr "Уписивање излаза терминала"
+
+#: src/kpart/Part.cpp:1102
+#, kde-format
+msgid "Text Files (*.txt)"
+msgstr "текстуални фајлови (*.txt)"
+
+#: src/kpart/Part.cpp:1117
+#, kde-format
+msgid "Close Running Command?"
+msgstr "Затворити наредбу која се извршава?"
+
+#: src/kpart/Part.cpp:1124
+#, kde-format
+msgid "Closing “%1” will stop its running command."
+msgstr "Затварање „%1“ зауставиће наредбу која се у њему извршава."
+
+#: src/kpart/Part.cpp:1125
+#, kde-format
+msgid "Close Terminal"
+msgstr "Затвори терминал"
+
+#: src/main.cpp:33
+#, kde-format
+msgid "-e requires a program."
+msgstr "-e захтева програм."
+
+#: src/main.cpp:37
+#, kde-format
+msgid "--preset requires a preset name."
+msgstr "--preset захтева име претподешавања."
+
+#: src/main.cpp:83
+#, kde-format
+msgid "Kwi"
+msgstr "Kwi"
+
+#: src/main.cpp:85
+#, kde-format
+msgid "A modern and fast terminal"
+msgstr "Модеран и брз терминал"
+
+#: src/main.cpp:87
+#, kde-format
+msgid "© 2026 Kwi contributors"
+msgstr "© 2026 доприносиоци Kwi"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Ghostty"
+msgstr "Ghostty"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Немања Хиршл"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: src/main.cpp:100
+#, kde-format
+msgid "Start in this directory."
+msgstr "Почни у овој фасцикли."
+
+#: src/main.cpp:100
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "directory"
+msgstr "фасцикла"
+
+#: src/main.cpp:101
+#, kde-format
+msgid "Start with this terminal preset."
+msgstr "Почни са овим претподешавањем терминала."
+
+#: src/main.cpp:101
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "name"
+msgstr "име"
+
+#: src/main.cpp:102
+#, kde-format
+msgid "Keep the terminal open after its command exits."
+msgstr "Држи терминал отвореним пошто се његова наредба заврши."
+
+#: src/main.cpp:103
+#, kde-format
+msgid "Open a tab in the most recently active window."
+msgstr "Отвори језичак у последње активном прозору."
+
+#: src/main.cpp:104
+#, kde-format
+msgid "Open the window in full screen."
+msgstr "Отвори прозор преко целог екрана."
+
+#: src/main.cpp:106
+#, kde-format
+msgid "Set the initial tab title."
+msgstr "Постави почетни наслов језичка."
+
+#: src/main.cpp:106
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "title"
+msgstr "наслов"
+
+#: src/main.cpp:107
+#, kde-format
+msgid "Run the specified program."
+msgstr "Изврши задати програм."
+
+#: src/main.cpp:108
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "program"
+msgstr "програм"
+
+#: src/main.cpp:109
+#, kde-format
+msgid "Optional program and its arguments."
+msgstr "Опциони програм и његови аргументи."
+
+#: src/main.cpp:110
+#, kde-format
+msgctxt "@info:shell command-line syntax"
+msgid "[program [arguments…]]"
+msgstr "[програм [аргументи…]]"
+
+#: src/settings/LaunchSettings.cpp:53
+#, kde-format
+msgid "Too many environment variables."
+msgstr "Превише променљивих окружења."
+
+#: src/settings/LaunchSettings.cpp:63
+#, kde-format
+msgid ""
+"Enter one NAME=value assignment per line. Names may contain letters, digits "
+"and underscores, and must not start with a digit."
+msgstr ""
+"Унесите по једну доделу NAME=value у сваком реду. Имена могу садржати слова, "
+"цифре и подвлаке, и не смеју почињати цифром."
+
+#: src/settings/LaunchSettings.cpp:77
+#, kde-format
+msgid ""
+"Enter a program followed by its arguments, or leave the command empty to use "
+"the system shell."
+msgstr ""
+"Унесите програм и за њим његове аргументе, или оставите наредбу празном да "
+"бисте користили системску шкољку."
+
+#: src/settings/LaunchSettings.cpp:86
+#, kde-format
+msgid "The command is too long or contains a null character."
+msgstr "Наредба је предугачка или садржи нулти знак."
+
+#: src/settings/LaunchSettings.cpp:94
+#, kde-format
+msgid "Only a custom working directory can contain a path."
+msgstr "Само посебна радна фасцикла може садржати путању."
+
+#: src/settings/LaunchSettings.cpp:100
+#, kde-format
+msgid "Choose an absolute path for the working directory."
+msgstr "Изаберите апсолутну путању за радну фасциклу."
+
+#: src/settings/LaunchSettings.cpp:105
+#, kde-format
+msgid "Choose how the working directory is determined."
+msgstr "Изаберите како се одређује радна фасцикла."
+
+#: src/settings/PresetEditor.cpp:146
+#, kde-format
+msgid ""
+"Use letters, numbers and underscores. The name must not start with a number."
+msgstr "Користите слова, бројеве и подвлаке. Име не сме почињати бројем."
+
+#: src/settings/PresetEditor.cpp:150
+#, kde-format
+msgid "Enter the value on a single line."
+msgstr "Унесите вредност у једном реду."
+
+#: src/settings/PresetEditor.cpp:156
+#, kde-format
+msgid "This variable is no longer available."
+msgstr "Ова променљива више није доступна."
+
+#: src/settings/PresetEditor.cpp:163
+#, kde-format
+msgid "A variable with this name already exists."
+msgstr "Променљива са овим именом већ постоји."
+
+#: src/settings/PresetEditor.cpp:243
+#, kde-format
+msgid "Save or discard the current preset changes first."
+msgstr "Прво сачувајте или одбаците измене текућег претподешавања."
+
+#: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
+#, kde-format
+msgid "The terminal preset is not available."
+msgstr "Претподешавање терминала није доступно."
+
+#: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "System Shell"
+msgstr "системска шкољка"
+
+#: src/settings/PresetEditor.cpp:274
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "%1 (Modified)"
+msgstr "%1 (измењено)"
+
+#: src/settings/PresetEditor.cpp:283
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "Copy of %1"
+msgstr "%1 (копија)"
+
+#: src/settings/PresetEditor.cpp:300
+#, kde-format
+msgid ""
+"Enter a program and its arguments. Quote spaces; shell operators and "
+"expansions are not supported."
+msgstr ""
+"Унесите програм и његове аргументе. Размаке ставите под наводнике; оператори "
+"и проширења шкољке нису подржани."
+
+#: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
+#, kde-format
+msgid "A terminal preset named %1 already exists."
+msgstr "Претподешавање терминала по имену %1 већ постоји."
+
+#: src/settings/PresetEditor.cpp:338
+#, kde-format
+msgid "The preset was saved, but could not be made the default: %1"
+msgstr ""
+"Претподешавање је сачувано, али не могу да га поставим за подразумевано: %1"
+
+#: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
+#, kde-format
+msgid "Only user-owned terminal presets can be removed."
+msgstr "Уклонити се могу само кориснична претподешавања терминала."
+
+#: src/settings/TerminalPaletteModel.cpp:108
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "System"
+msgstr "системска"
+
+#: src/settings/TerminalPaletteModel.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid "Choose a local Konsole color scheme file."
+msgstr "Изаберите локални фајл шеме боја Конзоле."
+
+#: src/settings/TerminalPaletteModel.cpp:172
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be read or is too large."
+msgstr "Не могу да прочитам шему боја, или је превелика."
+
+#: src/settings/TerminalPaletteModel.cpp:180
+#, kde-format
+msgctxt "@info"
+msgid "This file does not contain a valid terminal color scheme."
+msgstr "Овај фајл не садржи исправну шему боја терминала."
+
+#: src/settings/TerminalPaletteModel.cpp:192
+#: src/settings/TerminalPaletteModel.cpp:341
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme directory could not be created."
+msgstr "Не могу да направим фасциклу шема боја."
+
+#: src/settings/TerminalPaletteModel.cpp:202
+#, kde-format
+msgctxt "@info"
+msgid "The imported color scheme could not be saved."
+msgstr "Не могу да сачувам увезену шему боја."
+
+#: src/settings/TerminalPaletteModel.cpp:220
+#, kde-format
+msgctxt "@info"
+msgid "Only color schemes imported or created in Kwi can be removed."
+msgstr "Уклонити се могу само шеме боја увезене или направљене у програму Kwi."
+
+#: src/settings/TerminalPaletteModel.cpp:275
+#, kde-format
+msgctxt "@item color scheme"
+msgid "Copy of %1"
+msgstr "%1 (копија)"
+
+#: src/settings/TerminalPaletteModel.cpp:275
+#, kde-format
+msgctxt "@item color scheme"
+msgid "%1 (Modified)"
+msgstr "%1 (измењена)"
+
+#: src/settings/TerminalPaletteModel.cpp:318
+#, kde-format
+msgctxt "@info"
+msgid "Choose an opaque foreground, background, and all 16 terminal colors."
+msgstr "Изаберите непрозирне боје за испис, позадину и свих 16 боја терминала."
+
+#: src/settings/TerminalPaletteModel.cpp:335
+#, kde-format
+msgctxt "@info"
+msgid "This color scheme cannot be overwritten. Create a new copy instead."
+msgstr ""
+"Ова шема боја не може да се пребрише. Уместо тога направите нову копију."
+
+#: src/settings/TerminalPaletteModel.cpp:364
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be saved."
+msgstr "Не могу да сачувам шему боја."
+
+#: src/settings/TerminalPaletteModel.cpp:382
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Enter a color scheme name of 1 to 80 characters without control characters."
+msgstr "Унесите име шеме боја од 1 до 80 знакова, без контролних знакова."
+
+#: src/settings/TerminalPaletteModel.cpp:393
+#, kde-format
+msgctxt "@info"
+msgid "A color scheme with this name already exists. Choose another name."
+msgstr "Шема боја са овим именом већ постоји. Изаберите друго име."
+
+#: src/settings/TerminalPresets.cpp:147
+#, kde-format
+msgid "The default terminal preset is managed by the system."
+msgstr "Подразумеваним претподешавањем терминала управља систем."
+
+#: src/settings/TerminalPresets.cpp:153
+#, kde-format
+msgid "The default terminal preset could not be saved."
+msgstr "Не могу да сачувам подразумевано претподешавање терминала."
+
+#: src/settings/TerminalPresets.cpp:182
+#, kde-format
+msgctxt "@item:inlistbox terminal preset"
+msgid "System Shell"
+msgstr "системска шкољка"
+
+#. i18n: System Shell is the reserved storage identifier and must remain untranslated.
+#: src/settings/TerminalPresets.cpp:260
+#, kde-format
+msgid "Choose a preset name of 1–80 characters other than System Shell."
+msgstr ""
+"Изаберите име претподешавања од 1 до 80 знакова, различито од System Shell "
+"(системска шкољка)."
+
+#: src/settings/TerminalPresets.cpp:266
+#, kde-format
+msgid "Make a copy to customize an installed terminal preset."
+msgstr ""
+"Направите копију да бисте прилагодили инсталирано претподешавање терминала."
+
+#: src/settings/TerminalPresets.cpp:276
+#, kde-format
+msgid "The terminal preset directory could not be created."
+msgstr "Не могу да направим фасциклу претподешавања терминала."
+
+#: src/settings/TerminalPresets.cpp:283 src/settings/TerminalPresets.cpp:307
+#, kde-format
+msgid "The terminal preset could not be saved."
+msgstr "Не могу да сачувам претподешавање терминала."
+
+#: src/settings/TerminalPresets.cpp:297
+#, kde-format
+msgid "Choose a unique name for a user-owned terminal preset."
+msgstr "Изаберите јединствено име за корисничко претподешавање терминала."
+
+#: src/settings/TerminalPresets.cpp:342
+#, kde-format
+msgid "Choose a local Kwi terminal preset."
+msgstr "Изаберите локално претподешавање терминала Kwi."
+
+#: src/settings/TerminalPresets.cpp:348
+#, kde-format
+msgid "This file is not a valid Kwi launch preset."
+msgstr "Овај фајл није исправно претподешавање покретања Kwi."
+
+#: src/settings/TerminalSettings.cpp:162
+#, kde-format
+msgctxt "@info title format preview"
+msgid "Shell"
+msgstr "Шкољка"
+
+#: src/ui/SettingsDialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Kwi Terminal"
+msgstr "Подешавање терминала Kwi"
+
+#: src/ui/SettingsDialog.cpp:149
+#, kde-format
+msgid "Save changes before closing?"
+msgstr "Сачувати измене пре затварања?"
+
+#: src/ui/SettingsDialog.cpp:150
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr "Несачуване измене"
+
+#: src/ui/TerminalWidget.cpp:69
+#, kde-format
+msgid "The terminal view is missing from the interface."
+msgstr "Из сучеља недостаје приказ терминала."
+
+#: src/ui/TerminalWidget.cpp:99
+#, kde-format
+msgid "The terminal interface could not be loaded."
+msgstr "Не могу да учитам сучеље терминала."
+
+#: src/ui/WebShortcutModel.cpp:94
+#, kde-format
+msgctxt "@title:menu"
+msgid "Search for '%1' with"
+msgstr "Потражи „%1“ помоћу"
+
+#: src/WindowManager.cpp:331
+#, kde-format
+msgid "Could not initialize terminal graphics: %1"
+msgstr "Не могу да припремим графику терминала: %1"
+
+#: src/WindowManager.cpp:554
+#, kde-format
+msgid "The terminal preset %1 is not available."
+msgstr "Претподешавање терминала %1 није доступно."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Color scheme:"
+#~ msgstr "Шема боја:"

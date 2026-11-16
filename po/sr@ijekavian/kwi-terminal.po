@@ -1,0 +1,245 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-15 07:46+0000\n"
+"PO-Revision-Date: 2026-11-15 10:40+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "Терминал: %1"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "Терминал"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:83
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal output and command input."
+msgstr "Излаз терминала и унос наредби."
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:122
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal bell"
+msgstr "Звоно терминала"
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:105
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:138
+#, kde-format
+msgid "Could not read terminal output."
+msgstr "Не могу да прочитам излаз терминала."
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:132
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "Овај терминал више није доступан."
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:135
+#, kde-format
+msgid "The terminal history changed while saving output."
+msgstr "Историјат терминала се промијенио при уписивању излаза."
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#, kde-format
+msgid "Could not attach to an invalid terminal descriptor."
+msgstr "Не могу да се прикачим на лош описник терминала."
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/ProcessController.cpp:21
+#, kde-format
+msgid "Could not attach to the terminal: %1"
+msgstr "Не могу да се прикачим на терминал: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:163
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:121
+#, kde-format
+msgid "Could not create a terminal: %1"
+msgstr "Не могу да направим терминал: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start the host terminal query."
+msgstr "Не могу да покренем терминалски упит на домаћину."
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start a host helper: %1"
+msgstr "Не могу да покренем помоћника на домаћину: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:309
+#, kde-format
+msgid "Could not find the system shell on the host."
+msgstr "Не могу да нађем системску шкољку на домаћину."
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:310
+#, kde-format
+msgid "Could not find the terminal command on the host: %1"
+msgstr "Не могу да нађем терминалску наредбу на домаћину: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:354
+#, kde-format
+msgid "Could not start the host terminal command: %1"
+msgstr "Не могу да покренем терминалску наредбу на домаћину: %1"
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:142
+#, kde-format
+msgid "Could not find executable: %1"
+msgstr "Не могу да нађем извршни фајл: %1"
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:183
+#, kde-format
+msgid "Could not run the terminal command: %1"
+msgstr "Не могу да извршим терминалску наредбу: %1"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:67
+#, kde-format
+msgid "A terminal process is already running."
+msgstr "Процес терминала се већ извршава."
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#, kde-format
+msgid ""
+"The terminal input queue is full. Wait for the running program before "
+"pasting more text."
+msgstr ""
+"Ред уноса у терминал је пун. Сачекајте програм који се извршава прије него "
+"што налијепите још текста."
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#, kde-format
+msgid "Could not write to the terminal: %1"
+msgstr "Не могу да пишем у терминал: %1"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#, kde-format
+msgid "Could not resize the terminal: %1"
+msgstr "Не могу да промијеним величину терминала: %1"
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:41
+#, kde-format
+msgid "A terminal's initial directory must be an absolute path."
+msgstr "Почетна фасцикла терминала мора бити апсолутна путања."
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:47
+#, kde-format
+msgid "The command contains a null character."
+msgstr "Наредба садржи нулти знак."
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:59
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:64
+#: libs/kwi-terminal/src/Session.cpp:223
+#, kde-format
+msgid "The terminal environment contains an invalid assignment."
+msgstr "Окружење терминала садржи лошу додјелу."
+
+#: libs/kwi-terminal/src/Session.cpp:30
+#, kde-format
+msgid "Could not allocate terminal state."
+msgstr "Не могу да резервишем стање терминала."
+
+#: libs/kwi-terminal/src/Session.cpp:32
+#, kde-format
+msgid "Could not capture terminal render state."
+msgstr "Не могу да ухватим стање рендеровања терминала."
+
+#: libs/kwi-terminal/src/Session.cpp:42 libs/kwi-terminal/src/Session.cpp:264
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:146
+#, kde-format
+msgid "Terminal"
+msgstr "Терминал"
+
+#: libs/kwi-terminal/src/Session.cpp:671
+#, kde-format
+msgid "Could not resize the terminal."
+msgstr "Не могу да промијеним величину терминала."
+
+#: libs/kwi-terminal/src/Session.cpp:694
+#, kde-format
+msgid "The terminal could not process output."
+msgstr "Терминал није успио да обради излаз."
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:144
+#, kde-format
+msgid "Terminal: %1"
+msgstr "Терминал: %1"
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:156
+#, kde-format
+msgid "Terminal output. Use keyboard selection mode to review and copy text."
+msgstr ""
+"Излаз терминала. Користите режим избора тастатуром да прегледате и копирате "
+"текст."
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:209
+#, kde-format
+msgid "No matches"
+msgstr "Нема поклапања"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:211
+#, kde-format
+msgid "%1 of %2"
+msgstr "%1 од %2"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:213
+#, kde-format
+msgid "%1 match"
+msgid_plural "%1 matches"
+msgstr[0] "%1 поклапање"
+msgstr[1] "%1 поклапања"
+msgstr[2] "%1 поклапања"
+msgstr[3] "%1 поклапање"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:232
+#, kde-format
+msgid "Could not search terminal history"
+msgstr "Не могу да претражим историјат терминала"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:22
+#, kde-format
+msgid "Enter a title format."
+msgstr "Унесите формат наслова."
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:28
+#, kde-format
+msgid "Title formats can contain at most 256 characters."
+msgstr "Формат наслова може имати највише 256 знакова."
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:41
+#, kde-format
+msgid "Title formats cannot contain control characters."
+msgstr "Формат наслова не може садржати контролне знакове."
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:56
+#, kde-format
+msgid "Close each placeholder with }. Use {{ and }} for literal braces."
+msgstr ""
+"Затворите сваки мјестодржач знаком }. За дословне витичасте заграде "
+"користите {{ и }}."
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:93
+#, kde-format
+msgid "Unknown title placeholder: {%1}"
+msgstr "Непознат мјестодржач наслова: {%1}"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:101
+#, kde-format
+msgid "Use }} for a literal closing brace."
+msgstr "За дословну затворену витичасту заграду користите }}."

@@ -1,0 +1,2319 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kwi package.
+#
+# SPDX-FileCopyrightText: 2026 Yuri Chornoivan <yurchor@ukr.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-16 01:12+0000\n"
+"PO-Revision-Date: 2026-11-15 16:21+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.1\n"
+
+#: schemas.cpp:1
+#, kde-format
+msgid "Black on Light Yellow"
+msgstr "Чорний на світло-жовтому"
+
+#: schemas.cpp:2
+#, kde-format
+msgid "Black on Random Light"
+msgstr "Чорний на випадковому світлі"
+
+#: schemas.cpp:3
+#, kde-format
+msgid "Black on White"
+msgstr "Чорний на білому"
+
+#: schemas.cpp:4
+#, kde-format
+msgid "Blue on Black"
+msgstr "Синій на чорному"
+
+#: schemas.cpp:5
+#, kde-format
+msgid "Breeze"
+msgstr "Breeze"
+
+#: schemas.cpp:6
+#, kde-format
+msgid "Campbell"
+msgstr "Campbell"
+
+#: schemas.cpp:7
+#, kde-format
+msgid "Dark Pastels"
+msgstr "Темні пастелі"
+
+#: schemas.cpp:8
+#, kde-format
+msgid "Green on Black"
+msgstr "Зелений на чорному"
+
+#: schemas.cpp:9
+#, kde-format
+msgid "Linux Colors"
+msgstr "Кольори Linux"
+
+#: schemas.cpp:10
+#, kde-format
+msgid "Red on Black"
+msgstr "Червоний на чорному"
+
+#: schemas.cpp:11
+#, kde-format
+msgid "Solarized"
+msgstr "Засвічена"
+
+#: schemas.cpp:12
+#, kde-format
+msgid "Solarized Light"
+msgstr "Засвічена світла"
+
+#: schemas.cpp:13
+#, kde-format
+msgid "White on Black"
+msgstr "Білий на чорному"
+
+#: src/declarative/ActionDefinitions.qml:10
+#, kde-format
+msgctxt "@title:group"
+msgid "Application"
+msgstr "Програма"
+
+#: src/declarative/ActionDefinitions.qml:13
+#, kde-format
+msgctxt "@action"
+msgid "Application Menu"
+msgstr "Меню програми"
+
+#: src/declarative/ActionDefinitions.qml:14
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Вийти"
+
+#: src/declarative/ActionDefinitions.qml:19
+#, kde-format
+msgctxt "@title:group"
+msgid "Windows and Tabs"
+msgstr "Вікна та вкладки"
+
+#: src/declarative/ActionDefinitions.qml:21
+#, kde-format
+msgctxt "@action"
+msgid "New Window"
+msgstr "Нове вікно"
+
+#: src/declarative/ActionDefinitions.qml:22
+#, kde-format
+msgctxt "@action"
+msgid "Hide Tab Bar for Single Tabs"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:23
+#, kde-format
+msgctxt "@action"
+msgid "Full Screen"
+msgstr "Повноекранний режим"
+
+#: src/declarative/ActionDefinitions.qml:24
+#, kde-format
+msgctxt "@action"
+msgid "New Tab"
+msgstr "Створити вкладку"
+
+#: src/declarative/ActionDefinitions.qml:25
+#, kde-format
+msgctxt "@action"
+msgid "Close Tab"
+msgstr "Закрити вкладку"
+
+#: src/declarative/ActionDefinitions.qml:26
+#, kde-format
+msgctxt "@action"
+msgid "Rename Tab…"
+msgstr "Перейменувати вкладку…"
+
+#: src/declarative/ActionDefinitions.qml:27
+#, kde-format
+msgctxt "@action"
+msgid "Next Tab"
+msgstr "Наступна вкладка"
+
+#: src/declarative/ActionDefinitions.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Previous Tab"
+msgstr "Попередня вкладка"
+
+#: src/declarative/ActionDefinitions.qml:29
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs"
+msgstr "Останні використані вкладки"
+
+#: src/declarative/ActionDefinitions.qml:30
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs (Reverse)"
+msgstr "Останні використані вкладки (у зв. порядку)"
+
+#: src/declarative/ActionDefinitions.qml:31 src/kpart/Part.cpp:1020
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Left"
+msgstr "Пересунути вкладку ліворуч"
+
+#: src/declarative/ActionDefinitions.qml:32 src/kpart/Part.cpp:1025
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Right"
+msgstr "Пересунути вкладку праворуч"
+
+#: src/declarative/ActionDefinitions.qml:33
+#, kde-format
+msgctxt "@action"
+msgid "Detach Tab"
+msgstr "Відокремити вкладку"
+
+#: src/declarative/ActionDefinitions.qml:34
+#, kde-format
+msgctxt "@action"
+msgid "Search Tabs…"
+msgstr "Шукати вкладки…"
+
+#: src/declarative/ActionDefinitions.qml:35
+#: src/declarative/ActionDefinitions.qml:36
+#: src/declarative/ActionDefinitions.qml:37
+#: src/declarative/ActionDefinitions.qml:38
+#: src/declarative/ActionDefinitions.qml:39
+#: src/declarative/ActionDefinitions.qml:40
+#: src/declarative/ActionDefinitions.qml:41
+#: src/declarative/ActionDefinitions.qml:42
+#: src/declarative/ActionDefinitions.qml:43
+#, kde-format
+msgctxt "@action"
+msgid "Switch to Tab %1"
+msgstr "Перемкнутися на вкладку %1"
+
+#: src/declarative/ActionDefinitions.qml:48
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal"
+msgstr "Термінал"
+
+#: src/declarative/ActionDefinitions.qml:50
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "Копіювати"
+
+#: src/declarative/ActionDefinitions.qml:51
+#, kde-format
+msgctxt "@action"
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/declarative/ActionDefinitions.qml:52
+#, kde-format
+msgctxt "@action"
+msgid "Paste Selection"
+msgstr "Вставити позначене"
+
+#: src/declarative/ActionDefinitions.qml:53
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "Вибрати все"
+
+#: src/declarative/ActionDefinitions.qml:54
+#, kde-format
+msgctxt "@action"
+msgid "Keyboard Selection Mode"
+msgstr "Режим вибору клавіатури"
+
+#: src/declarative/ActionDefinitions.qml:55 src/kpart/Part.cpp:831
+#, kde-format
+msgctxt "@action"
+msgid "Save Output As…"
+msgstr "Зберегти виведене як…"
+
+#: src/declarative/ActionDefinitions.qml:56
+#, kde-format
+msgctxt "@action"
+msgid "Clear Scrollback"
+msgstr "Спорожнити буфер гортання"
+
+#: src/declarative/ActionDefinitions.qml:57 src/kpart/Part.cpp:840
+#, kde-format
+msgctxt "@action"
+msgid "Reset Terminal"
+msgstr "Скинути термінал"
+
+#: src/declarative/ActionDefinitions.qml:58
+#, kde-format
+msgctxt "@action"
+msgid "Find…"
+msgstr "Знайти…"
+
+#: src/declarative/ActionDefinitions.qml:63
+#, kde-format
+msgctxt "@action"
+msgid "Reset Zoom"
+msgstr "Відновити початковий масштаб"
+
+#: src/declarative/ActionDefinitions.qml:64 src/kpart/Part.cpp:783
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Line"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Line"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Page"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Page"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:68
+#, kde-format
+msgctxt "@action"
+msgid "Previous Prompt"
+msgstr "Попередній запит"
+
+#: src/declarative/ActionDefinitions.qml:69
+#, kde-format
+msgctxt "@action"
+msgid "Next Prompt"
+msgstr "Наступний запит"
+
+#: src/declarative/ActionDefinitions.qml:70 src/kpart/Part.cpp:755
+#, kde-format
+msgctxt "@action"
+msgid "Copy Last Command Output"
+msgstr "Скопіювати виведені результати останньої команди"
+
+#: src/declarative/ActionDefinitions.qml:71 src/kpart/Part.cpp:864
+#, kde-format
+msgctxt "@action"
+msgid "Open Current Directory"
+msgstr "Відкрити поточний каталог"
+
+#: src/declarative/ActionDefinitions.qml:72
+#, kde-format
+msgctxt "@action"
+msgid "Open Link…"
+msgstr "Відкрити посилання…"
+
+#: src/declarative/ActionDefinitions.qml:73 src/kpart/Part.cpp:868
+#, kde-format
+msgctxt "@action"
+msgid "Read-Only Terminal"
+msgstr "Термінал лише для читання"
+
+#: src/declarative/ActionDefinitions.qml:74
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Activity"
+msgstr "Слідкувати за діяльністю"
+
+#: src/declarative/ActionDefinitions.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Silence"
+msgstr "Слідкувати за бездіяльністю"
+
+#: src/declarative/components/WebShortcutMenu.qml:44
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure Web Shortcuts…"
+msgstr "Налаштувати вебскорочення…"
+
+#: src/declarative/Main.qml:66
+#, kde-format
+msgctxt "@info"
+msgid "The terminal preset is no longer available."
+msgstr "Доступ до шаблону термінала втрачено."
+
+#: src/declarative/Main.qml:73 src/declarative/Main.qml:790
+#, kde-format
+msgctxt "@title:menu"
+msgid "New Tab with Preset"
+msgstr "Нова вкладка з шаблоном"
+
+#: src/declarative/Main.qml:96 src/declarative/Main.qml:812
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Manage Presets…"
+msgstr "Керування шаблонами…"
+
+#: src/declarative/Main.qml:552 src/kpart/Part.cpp:757
+#, kde-format
+msgctxt "@info"
+msgid "No command output is marked by the shell in retained history."
+msgstr ""
+"У збереженому журналі командної оболонки не позначено виведені командами "
+"дані."
+
+#: src/declarative/Main.qml:782
+#, kde-format
+msgctxt "@title:menu"
+msgid "File"
+msgstr ""
+
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#, kde-format
+msgctxt "@title:menu"
+msgid "Edit"
+msgstr "Зміни"
+
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#, kde-format
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Перегляд"
+
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tabs"
+msgstr "Вкладки"
+
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#, kde-format
+msgctxt "@title:menu"
+msgid "Output"
+msgstr "Вивід"
+
+#: src/declarative/Main.qml:852
+#, kde-format
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr ""
+
+#: src/declarative/Main.qml:859
+#, kde-format
+msgctxt "@title:menu"
+msgid "Help"
+msgstr ""
+
+#: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Appearance"
+msgstr "Вигляд"
+
+#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:66
+#, kde-format
+msgctxt "@title"
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: src/declarative/Main.qml:918 src/declarative/Main.qml:970
+#: src/ui/SettingsDialog.cpp:67
+#, kde-format
+msgctxt "@title"
+msgid "Terminal"
+msgstr "Термінал"
+
+#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:69
+#, kde-format
+msgctxt "@title"
+msgid "Presets"
+msgstr "Шаблони"
+
+#: src/declarative/Main.qml:934
+#, kde-format
+msgctxt "@title"
+msgid "Keyboard"
+msgstr "Клавіатура"
+
+#: src/declarative/Main.qml:1050
+#, kde-format
+msgctxt "@action:button"
+msgid "New Tab with Preset"
+msgstr "Нова вкладка з шаблоном"
+
+#: src/declarative/Main.qml:1111
+#, kde-format
+msgctxt "@action:button"
+msgid "Application Menu"
+msgstr "Меню програми"
+
+#: src/declarative/Main.qml:1357
+#, kde-format
+msgctxt "@info"
+msgid "Process exited with status %1."
+msgstr "Процес завершив роботу зі станом %1."
+
+#: src/declarative/Main.qml:1357
+#, kde-format
+msgctxt "@info"
+msgid "Process finished."
+msgstr "Процес завершив роботу."
+
+#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#, kde-format
+msgctxt "@action"
+msgid "Open Link"
+msgstr "Відкрити посилання"
+
+#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#, kde-format
+msgctxt "@action"
+msgid "Copy Link"
+msgstr "Копіювати посилання"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Quit Kwi?"
+msgstr "Вийти з Kwi?"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Close All Terminals?"
+msgstr "Закрити усі термінали?"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Terminal?"
+msgstr "Закрити термінал?"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit Kwi"
+msgstr "Вийти з Kwi"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Close All Terminals"
+msgstr "Закрити усі термінали"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Terminal"
+msgstr "Закрити «Термінал»"
+
+#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
+#, kde-format
+msgctxt "@option:check"
+msgid "Do not ask again"
+msgstr "Більше не питати"
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Quitting will stop commands in all windows."
+msgstr "Вихід спричинить припинення виконання команд в усіх вікнах."
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Closing this window will stop its running commands."
+msgstr ""
+"Закриття цього вікна призведе до зупинення виконання відданих у ньому команд."
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Closing “%1” will stop its running command."
+msgstr ""
+"Закриття «%1» призведе до припинення виконання відданої у ньому команди."
+
+#: src/declarative/Main.qml:1585
+#, kde-format
+msgctxt "@title:window"
+msgid "Paste Multiple Lines?"
+msgstr "Вставити декілька рядків?"
+
+#: src/declarative/Main.qml:1592
+#, kde-format
+msgctxt "@action:button"
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/declarative/Main.qml:1614
+#, kde-format
+msgctxt "@info"
+msgid "Pasting this text may run commands."
+msgstr "Вставлення цього тексту може призвести до виконання команд."
+
+#: src/declarative/Main.qml:1631
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Paste preview"
+msgstr "Попередній перегляд вставлення"
+
+#: src/declarative/Main.qml:1638
+#, kde-format
+msgctxt "@info"
+msgid "Showing the first character."
+msgid_plural "Showing the first %1 characters."
+msgstr[0] "Показ першого %1 символу."
+msgstr[1] "Показ перших %1 символів."
+msgstr[2] "Показ перших %1 символів."
+msgstr[3] "Показ першого символу."
+
+#: src/declarative/Main.qml:1744
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Tab"
+msgstr "Перейменування вкладки"
+
+#: src/declarative/Main.qml:1749
+#, kde-format
+msgctxt "@action:button"
+msgid "Rename"
+msgstr "Перейменувати"
+
+#: src/declarative/Main.qml:1765
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Automatic title"
+msgstr "Автоматичний заголовок"
+
+#: src/declarative/Main.qml:1766
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title"
+msgstr "Заголовок вкладки"
+
+#: src/declarative/Main.qml:1773
+#, kde-format
+msgctxt "@info"
+msgid "Leave empty to use the automatic title."
+msgstr "Не заповнюйте, якщо слід використати автоматичний заголовок."
+
+#: src/declarative/Main.qml:1805
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter links…"
+msgstr "Фільтрувати посилання…"
+
+#: src/declarative/Main.qml:1805
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter tabs…"
+msgstr "Фільтрувати вкладки…"
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No links in the visible terminal output."
+msgstr "У видимому виведенні до термінала немає посилань."
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No matching links."
+msgstr "Немає відповідних посилань."
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No matching tabs."
+msgstr "Немає відповідних вкладок."
+
+#: src/declarative/Main.qml:1815
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy Link"
+msgstr "Копіювати посилання"
+
+#: src/declarative/Main.qml:1864
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Terminal Output"
+msgstr "Зберегти виведення до термінала"
+
+#: src/declarative/Main.qml:1867
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Text files (*.txt)"
+msgstr "текстові файли (*.txt)"
+
+#: src/declarative/Main.qml:1867
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "All files (*)"
+msgstr "усі файли (*)"
+
+#: src/declarative/settings/AppearanceSettings.qml:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Appearance"
+msgstr "Вигляд"
+
+#: src/declarative/settings/AppearanceSettings.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Text"
+msgstr "Текст"
+
+#: src/declarative/settings/AppearanceSettings.qml:51
+#, kde-format
+msgctxt "@option:check"
+msgid "Use system fixed-width font"
+msgstr "Використовувати системний моноширинний шрифт"
+
+#: src/declarative/settings/AppearanceSettings.qml:63
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Font:"
+msgstr "Шрифт:"
+
+#: src/declarative/settings/AppearanceSettings.qml:81
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Size (pt):"
+msgstr "Розмір (пункти):"
+
+#: src/declarative/settings/AppearanceSettings.qml:118
+#, kde-format
+msgctxt "@info font preview. Include letters, digits and shell punctuation."
+msgid "Aa Bb 0123456789 — ~/Documents $"
+msgstr "Aa Bb 0123456789 — ~/Документи $"
+
+#: src/declarative/settings/AppearanceSettings.qml:123
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal font preview"
+msgstr "Попередній перегляд шрифту термінала"
+
+#: src/declarative/settings/AppearanceSettings.qml:129
+#, kde-format
+msgctxt "@title:group"
+msgid "Colors"
+msgstr "Кольори"
+
+#: src/declarative/settings/AppearanceSettings.qml:132
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Window"
+msgctxt "@label:listbox"
+msgid "Window:"
+msgstr "Вікно"
+
+#: src/declarative/settings/AppearanceSettings.qml:148
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Terminal"
+msgctxt "@label:listbox"
+msgid "Terminal:"
+msgstr "Термінал"
+
+#: src/declarative/settings/AppearanceSettings.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Color Scheme…"
+msgstr "Змінити схему кольорів…"
+
+#: src/declarative/settings/AppearanceSettings.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "More Color Scheme Actions"
+msgstr "Додаткові дії зі схемами кольорів"
+
+#: src/declarative/settings/AppearanceSettings.qml:207
+#: src/declarative/settings/PresetsSettings.qml:202
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Duplicate…"
+msgstr "Здублювати…"
+
+#: src/declarative/settings/AppearanceSettings.qml:214
+#: src/declarative/settings/PresetsSettings.qml:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import…"
+msgstr "Імпортувати…"
+
+#: src/declarative/settings/AppearanceSettings.qml:223
+#: src/declarative/settings/PresetsSettings.qml:218
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "Вилучити"
+
+#: src/declarative/settings/AppearanceSettings.qml:235
+#, kde-format
+msgctxt "@label:slider"
+msgid "Background opacity:"
+msgstr "Непрозорість тла:"
+
+#: src/declarative/settings/AppearanceSettings.qml:262
+#: src/declarative/settings/AppearanceSettings.qml:270
+#, kde-format
+msgctxt "@label"
+msgid "%1%"
+msgstr "%1%"
+
+#: src/declarative/settings/AppearanceSettings.qml:278
+#, kde-format
+msgctxt "@option:check"
+msgid "Blur"
+msgstr "Розмивання"
+
+#: src/declarative/settings/AppearanceSettings.qml:292
+#, kde-format
+msgctxt "@title:group"
+msgid "Tab Bar"
+msgstr "Панель вкладок"
+
+#: src/declarative/settings/AppearanceSettings.qml:295
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Position:"
+msgstr "Розташування:"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Top"
+msgstr "Вгорі"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Bottom"
+msgstr "Внизу"
+
+#: src/declarative/settings/AppearanceSettings.qml:314
+#, kde-format
+msgctxt "@option:check"
+msgid "Hide for single tabs"
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A hidden tab bar can be brought back with %1, or you can access application "
+"settings from the context menu."
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid "You can access application settings from the context menu."
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:342
+#, kde-format
+msgctxt "@option:check"
+msgid "Show status icons"
+msgstr "Показувати піктограми стану"
+
+#: src/declarative/settings/AppearanceSettings.qml:355
+#, kde-format
+msgctxt "@title:group"
+msgid "Window"
+msgstr "Вікно"
+
+#: src/declarative/settings/AppearanceSettings.qml:362
+#, kde-format
+msgctxt "@option:check"
+msgid "Use custom size for new windows"
+msgstr "Використовувати нетиповий розмір для нових вікон"
+
+#: src/declarative/settings/AppearanceSettings.qml:374
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Columns:"
+msgstr "Стовпчиків:"
+
+#: src/declarative/settings/AppearanceSettings.qml:392
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Rows:"
+msgstr "Рядків:"
+
+#: src/declarative/settings/AppearanceSettings.qml:433
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Color Scheme"
+msgstr "Імпортування схеми кольорів"
+
+#: src/declarative/settings/AppearanceSettings.qml:434
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Konsole Color Schemes (*.colorscheme)"
+msgstr "схеми кольорів Konsole (*.colorscheme)"
+
+#: src/declarative/settings/BehaviorSettings.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: src/declarative/settings/BehaviorSettings.qml:28
+#, kde-format
+msgctxt "@title:group"
+msgid "Confirmations"
+msgstr "Підтвердження"
+
+#: src/declarative/settings/BehaviorSettings.qml:34
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm quit when a command is running"
+msgstr "Підтверджувати вихід, якщо виконується команда"
+
+#: src/declarative/settings/BehaviorSettings.qml:49
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm pasting multiple lines"
+msgstr "Підтверджувати вставлення декількох рядків"
+
+#: src/declarative/settings/BehaviorSettings.qml:62
+#, kde-format
+msgctxt "@title:group"
+msgid "Clipboard"
+msgstr "Буфер обміну"
+
+#: src/declarative/settings/BehaviorSettings.qml:65
+#, kde-format
+msgctxt "@info"
+msgid "Middle-click paste also works with this option off."
+msgstr ""
+"Вставлення за допомогою клацання середньою кнопкою миші працює, і якщо цей "
+"пункт не позначено."
+
+#: src/declarative/settings/BehaviorSettings.qml:70
+#, kde-format
+msgctxt "@option:check"
+msgid "Copy mouse-selected text to clipboard"
+msgstr "Скопіювати позначений мишею текст до буфера"
+
+#: src/declarative/settings/BehaviorSettings.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "Links"
+msgstr "Посилання"
+
+#: src/declarative/settings/BehaviorSettings.qml:89
+#, kde-format
+msgctxt "@option:check"
+msgid "Require Ctrl when clicking links"
+msgstr "Потрібне натискання Ctrl при клацанні на посиланнях"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Black"
+msgstr "Чорний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Red"
+msgstr "Червоний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Green"
+msgstr "Зелений"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Yellow"
+msgstr "Жовтий"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Blue"
+msgstr "Синій"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Magenta"
+msgstr "Бузковий"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Cyan"
+msgstr "Блакитний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "White"
+msgstr "Білий"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Black"
+msgstr "Темно-чорний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Red"
+msgstr "Яскраво-червоний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Green"
+msgstr "Яскраво-зелений"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Yellow"
+msgstr "Яскраво-жовтий"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Blue"
+msgstr "Яскраво-синій"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Magenta"
+msgstr "Яскраво-пурпуровий"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Cyan"
+msgstr "Яскраво-блакитний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright White"
+msgstr "Яскраво-білий"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:39
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Current color: %1. Opens a color chooser."
+msgstr "Поточний колір: %1. Відкриває вікно вибору кольору."
+
+#: src/declarative/settings/ColorSchemeEditor.qml:73
+#, kde-format
+msgctxt "@label:color"
+msgid "%1:"
+msgstr "%1:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:159
+#: src/declarative/settings/PresetsSettings.qml:101
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Зберегти"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Duplicate Color Scheme"
+msgstr "Дублювання схем кольорів"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Color Scheme"
+msgstr "Зміна схеми кольорів"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:195
+#, kde-format
+msgctxt "@title:group"
+msgid "Preview"
+msgstr "Перегляд"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:206
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Color scheme preview"
+msgstr "Попередній перегляд схеми кольорів"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:217
+#, kde-format
+msgctxt "@info color scheme preview. Keep the shell command syntax intact."
+msgid "user@host:~/Documents $ echo \"Hello, world\""
+msgstr "user@host:~/Documents $ echo \"Привіт, світе\""
+
+#: src/declarative/settings/ColorSchemeEditor.qml:235
+#, kde-format
+msgctxt "@info short color sample"
+msgid "Aa"
+msgstr "AaВв"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:259
+#: src/declarative/settings/PresetsSettings.qml:230
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Назва:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:269
+#, kde-format
+msgctxt "@label:color"
+msgid "Text:"
+msgstr "Текст:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Text Color"
+msgstr "Колір тексту"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:273
+#, kde-format
+msgctxt "@label:color"
+msgid "Text"
+msgstr "Текст"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:280
+#, kde-format
+msgctxt "@label:color"
+msgid "Background:"
+msgstr "Тло:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:283
+#, kde-format
+msgctxt "@title:window"
+msgid "Background Color"
+msgstr "Колір тла"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:284
+#, kde-format
+msgctxt "@label:color"
+msgid "Background"
+msgstr "Тло"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:290
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal Colors"
+msgstr "Кольори термінала"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:304
+#, kde-format
+msgctxt "@label:column"
+msgid "Normal"
+msgstr "Звичайний"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:312
+#, kde-format
+msgctxt "@label:column"
+msgid "Bright"
+msgstr "Яскравий"
+
+#: src/declarative/settings/PresetsSettings.qml:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Presets"
+msgstr "Шаблони"
+
+#: src/declarative/settings/PresetsSettings.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Скинути"
+
+#: src/declarative/settings/PresetsSettings.qml:123
+#, kde-format
+msgctxt "@title:group"
+msgid "New Sessions"
+msgstr "Нові сеанси"
+
+#: src/declarative/settings/PresetsSettings.qml:126
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Default preset:"
+msgstr "Типовий шаблон:"
+
+#: src/declarative/settings/PresetsSettings.qml:143
+#, kde-format
+msgctxt "@title:group"
+msgid "Manage Presets"
+msgstr "Керування шаблонами"
+
+#: src/declarative/settings/PresetsSettings.qml:146
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Preset:"
+msgstr "Шаблон:"
+
+#: src/declarative/settings/PresetsSettings.qml:171
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Preset"
+msgstr "Редагувати набір параметрів"
+
+#: src/declarative/settings/PresetsSettings.qml:185
+#, kde-format
+msgctxt "@action:button"
+msgid "More Preset Actions"
+msgstr "Додаткові дії з шаблонами"
+
+#: src/declarative/settings/PresetsSettings.qml:245
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Command:"
+msgstr "Команда:"
+
+#: src/declarative/settings/PresetsSettings.qml:251
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "System shell"
+msgstr "Системна оболонка"
+
+#: src/declarative/settings/PresetsSettings.qml:258
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Starting folder:"
+msgstr "Початкова тека:"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Current folder"
+msgstr "Поточна тека"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Home folder"
+msgstr "Домашня тека"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Custom folder"
+msgstr "Нетипова тека"
+
+#: src/declarative/settings/PresetsSettings.qml:271
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Folder:"
+msgstr "Тека:"
+
+#: src/declarative/settings/PresetsSettings.qml:289
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose…"
+msgstr "Вибрати…"
+
+#: src/declarative/settings/PresetsSettings.qml:291
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Choose starting folder"
+msgstr "Виберіть початкову теку"
+
+#: src/declarative/settings/PresetsSettings.qml:301
+#, kde-format
+msgctxt "@label"
+msgid "Environment:"
+msgstr "Середовище:"
+
+#: src/declarative/settings/PresetsSettings.qml:307
+#, kde-format
+msgctxt "@info"
+msgid "No additional variables."
+msgstr "Немає додаткових змінних."
+
+#: src/declarative/settings/PresetsSettings.qml:344
+#, kde-format
+msgctxt "@item environment variable value"
+msgid "(empty)"
+msgstr "(порожньо)"
+
+#: src/declarative/settings/PresetsSettings.qml:353
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit %1"
+msgstr "Змінити %1"
+
+#: src/declarative/settings/PresetsSettings.qml:365
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove %1"
+msgstr "Вилучити %1"
+
+#: src/declarative/settings/PresetsSettings.qml:385
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Variable…"
+msgstr "Додати змінну…"
+
+#: src/declarative/settings/PresetsSettings.qml:400
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Preset Changes"
+msgstr "Незбережені зміни у шаблоні"
+
+#: src/declarative/settings/PresetsSettings.qml:401
+#, kde-format
+msgctxt "@info"
+msgid "Save changes before continuing?"
+msgstr "Зберегти зміни, перш ніж продовжувати?"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Environment Variable"
+msgstr "Додавання змінної середовища"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Environment Variable"
+msgstr "Редагування змінної середовища"
+
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Додати"
+
+#: src/declarative/settings/PresetsSettings.qml:469
+#, kde-format
+msgctxt "@label:textbox environment variable name"
+msgid "Name:"
+msgstr "Назва:"
+
+#: src/declarative/settings/PresetsSettings.qml:480
+#, kde-format
+msgctxt "@label:textbox environment variable value"
+msgid "Value:"
+msgstr "Значення:"
+
+#: src/declarative/settings/PresetsSettings.qml:508
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Preset"
+msgstr "Вилучити шаблон"
+
+#: src/declarative/settings/PresetsSettings.qml:522
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "Вилучити"
+
+#: src/declarative/settings/PresetsSettings.qml:536
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”? New sessions will use System Shell."
+msgstr ""
+"Вилучити шаблон «%1»? У нових сеансах буде використано «Системна оболонка»."
+
+#: src/declarative/settings/PresetsSettings.qml:537
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”?"
+msgstr "Вилучити шаблон «%1»?"
+
+#: src/declarative/settings/PresetsSettings.qml:556
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Terminal Preset"
+msgstr "Імпортування шаблону термінала"
+
+#: src/declarative/settings/PresetsSettings.qml:557
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Kwi Launch Presets (*.preset)"
+msgstr "шаблони запуску Kwi (*.preset)"
+
+#: src/declarative/settings/PresetsSettings.qml:565
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Starting Folder"
+msgstr "Виберіть початкову теку"
+
+#: src/declarative/settings/TerminalSettings.qml:20
+#, kde-format
+msgctxt "@title:window"
+msgid "Terminal"
+msgstr "Термінал"
+
+#: src/declarative/settings/TerminalSettings.qml:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Application title"
+msgstr "Назва програми"
+
+#: src/declarative/settings/TerminalSettings.qml:83
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Command"
+msgstr "Команда"
+
+#: src/declarative/settings/TerminalSettings.qml:89
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory name"
+msgstr "Назва каталогу"
+
+#: src/declarative/settings/TerminalSettings.qml:95
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory path"
+msgstr "Шлях до каталогу"
+
+#: src/declarative/settings/TerminalSettings.qml:103
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "User name"
+msgstr "Ім'я користувача"
+
+#: src/declarative/settings/TerminalSettings.qml:109
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name"
+msgstr "Назва вузла"
+
+#: src/declarative/settings/TerminalSettings.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name (short)"
+msgstr "Назва вузла (скорочена)"
+
+#: src/declarative/settings/TerminalSettings.qml:123
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Opening brace: {"
+msgstr "Початкова дужка: {"
+
+#: src/declarative/settings/TerminalSettings.qml:129
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Closing brace: }"
+msgstr "Завершальна дужка: }"
+
+#: src/declarative/settings/TerminalSettings.qml:136
+#, kde-format
+msgctxt "@title:group"
+msgid "Session Titles"
+msgstr "Заголовки сеансів"
+
+#: src/declarative/settings/TerminalSettings.qml:139
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title format:"
+msgstr "Формат заголовків вкладок:"
+
+#: src/declarative/settings/TerminalSettings.qml:141
+#, kde-format
+msgctxt "@info"
+msgid "Renamed tabs keep their names."
+msgstr "Перейменовані вкладки зберігають назви."
+
+#: src/declarative/settings/TerminalSettings.qml:171
+#: src/declarative/settings/TerminalSettings.qml:241
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "Вставити"
+
+#: src/declarative/settings/TerminalSettings.qml:197
+#: src/declarative/settings/TerminalSettings.qml:267
+#, kde-format
+msgctxt "@label"
+msgid "Preview:"
+msgstr "Перегляд:"
+
+#: src/declarative/settings/TerminalSettings.qml:210
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Remote tab title format:"
+msgstr "Формат вкладки віддалених команд:"
+
+#: src/declarative/settings/TerminalSettings.qml:282
+#, kde-format
+msgctxt "@option:check"
+msgid "Use application title for the window"
+msgstr "Назва програми для вікна"
+
+#: src/declarative/settings/TerminalSettings.qml:295
+#, kde-format
+msgctxt "@title:group"
+msgid "Scrollback"
+msgstr "Буфер гортання"
+
+#: src/declarative/settings/TerminalSettings.qml:298
+#, kde-format
+msgctxt "@label:listbox"
+msgid "History:"
+msgstr "Журнал:"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "None"
+msgstr "Немає"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Limited"
+msgstr "Обмежено"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Unlimited"
+msgstr "Не обмежено"
+
+#: src/declarative/settings/TerminalSettings.qml:325
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Retained lines"
+msgstr "Збережені рядки"
+
+#: src/declarative/settings/TerminalSettings.qml:340
+#, kde-format
+msgctxt "@label unit after the retained-line count"
+msgid "line"
+msgid_plural "lines"
+msgstr[0] "рядок"
+msgstr[1] "рядки"
+msgstr[2] "рядків"
+msgstr[3] "рядок"
+
+#: src/declarative/settings/TerminalSettings.qml:348
+#, kde-format
+msgctxt "@title:group"
+msgid "Monitoring"
+msgstr "Спостереження"
+
+#: src/declarative/settings/TerminalSettings.qml:351
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Silence timeout (seconds):"
+msgstr "Час бездіяльності (у секундах):"
+
+#: src/declarative/settings/TerminalSettings.qml:370
+#, kde-format
+msgctxt "@title:group"
+msgid "Cursor"
+msgstr "Курсор"
+
+#: src/declarative/settings/TerminalSettings.qml:373
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Shape:"
+msgstr "Форма:"
+
+#: src/declarative/settings/TerminalSettings.qml:382
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Block"
+msgstr "Блок"
+
+#: src/declarative/settings/TerminalSettings.qml:386
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Beam"
+msgstr "Промінь"
+
+#: src/declarative/settings/TerminalSettings.qml:390
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Underline"
+msgstr "Підкреслення"
+
+#: src/declarative/settings/TerminalSettings.qml:406
+#, kde-format
+msgctxt "@option:check"
+msgid "Blink cursor"
+msgstr "Блимання курсором"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "Термінал: %1"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "Термінал"
+
+#: src/declarative/TerminalSearchBar.qml:70
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Find in terminal…"
+msgstr "Знайти у терміналі…"
+
+#: src/declarative/TerminalSearchBar.qml:71
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Find in terminal"
+msgstr "Знайти у терміналі"
+
+#: src/declarative/TerminalSearchBar.qml:135
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Searching terminal output"
+msgstr "Пошук у виведених до термінала даних"
+
+#: src/declarative/TerminalSearchBar.qml:152
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Match"
+msgstr "Наступний відповідник"
+
+#: src/declarative/TerminalSearchBar.qml:166
+#, kde-format
+msgctxt "@action:button"
+msgid "Previous Match"
+msgstr "Попередній відповідник"
+
+#: src/declarative/TerminalSearchBar.qml:180
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Find Bar"
+msgstr "Закрити панель пошуку"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity and silence"
+msgstr "Стеження за діяльністю і бездіяльністю"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity"
+msgstr "Стеження за діяльністю"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring silence"
+msgstr "Стеження за бездіяльністю"
+
+#: src/declarative/TerminalTabButton.qml:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Progress: %1%"
+msgstr "Поступ: %1%"
+
+#: src/declarative/TerminalTabButton.qml:33
+#: src/declarative/TerminalTabButton.qml:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "In progress"
+msgstr "Виконуємо"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error: %1%"
+msgstr "Помилка: %1%"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error"
+msgstr "Помилка"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused: %1%"
+msgstr "Призупинено: %1%"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused"
+msgstr "Призупинено"
+
+#: src/declarative/TerminalTabButton.qml:67
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, needs attention"
+msgstr "%1, потребує уваги"
+
+#: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, new output"
+msgstr "%1, нове виведення"
+
+#: src/declarative/TerminalTabButton.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Close %1"
+msgstr "Закрити %1"
+
+#: src/declarative/TerminalTabs.qml:157
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Left"
+msgstr "Гортати вкладки ліворуч"
+
+#: src/declarative/TerminalTabs.qml:427
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Right"
+msgstr "Гортати вкладки праворуч"
+
+#: src/DesktopIntegration.cpp:77
+#, kde-format
+msgid "Terminal Notification"
+msgstr "Сповіщення термінала"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "Terminal Activity"
+msgstr "Діяльність у терміналі"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "New output in %1"
+msgstr "Нове виведення у %1"
+
+#: src/DesktopIntegration.cpp:87
+#, kde-format
+msgid "Terminal Silence"
+msgstr "Бездіяльність у терміналі"
+
+#: src/DesktopIntegration.cpp:88
+#, kde-format
+msgid "No output in %2 for %1 second"
+msgid_plural "No output in %2 for %1 seconds"
+msgstr[0] "Немає виведення у %2 протягом %1 секунди"
+msgstr[1] "Немає виведення у %2 протягом %1 секунд"
+msgstr[2] "Немає виведення у %2 протягом %1 секунд"
+msgstr[3] "Немає виведення у %2 протягом %1 секунди"
+
+#: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "Доступ до цього термінала втрачено."
+
+#: src/DesktopIntegration.cpp:180
+#, kde-format
+msgid "Choose a local file to save terminal output."
+msgstr "Виберіть локальний файл для збереження виведених до термінала даних."
+
+#: src/DesktopIntegration.cpp:190
+#, kde-format
+msgid "Could not save terminal output: %1"
+msgstr "Не вдалося зберегти виведене до термінала: %1"
+
+#: src/DesktopIntegration.cpp:208
+#, kde-format
+msgid "The terminal's current folder is no longer available."
+msgstr "Втрачено доступ до поточної теки термінала."
+
+#: src/DesktopIntegration.cpp:239
+#, kde-format
+msgid "Could not launch the desktop application: %1"
+msgstr "Не вдалося запустити стільничну програму: %1"
+
+#: src/DesktopIntegration.cpp:274
+#, kde-format
+msgid "Could not open the link: %1"
+msgstr "Не вдалося відкрити посилання: %1"
+
+#: src/DesktopIntegration.cpp:283
+#, kde-format
+msgid "Terminal Bell"
+msgstr "Звуковий сигнал у терміналі"
+
+#: src/DesktopIntegration.cpp:315
+#, kde-format
+msgid "Show Terminal"
+msgstr "Показати термінал"
+
+#: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
+#, kde-format
+msgid "Kwi Terminal"
+msgstr "Термінал Kwi"
+
+#: src/kpart/Part.cpp:329
+#, kde-format
+msgid "Paste Multiple Lines?"
+msgstr "Вставити декілька рядків?"
+
+#: src/kpart/Part.cpp:330
+#, kde-format
+msgid "Pasting this text may run commands."
+msgstr "Вставлення цього тексту може призвести до виконання команд."
+
+#: src/kpart/Part.cpp:339
+#, kde-format
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/kpart/Part.cpp:664
+#, kde-format
+msgid "The supplied terminal descriptor is invalid."
+msgstr "Наданий дескриптор термінала є некоректним."
+
+#: src/kpart/Part.cpp:769
+#, kde-format
+msgid "Paste Selection"
+msgstr "Вставити вибір"
+
+#: src/kpart/Part.cpp:834
+#, kde-format
+msgid "Clear Scrollback"
+msgstr "Спорожнити буфер гортання"
+
+#: src/kpart/Part.cpp:858
+#, kde-format
+msgid "Reset Zoom"
+msgstr "Відновити початковий масштаб"
+
+#: src/kpart/Part.cpp:875
+#, kde-format
+msgid "Monitor for Activity"
+msgstr "Слідкувати за діяльністю"
+
+#: src/kpart/Part.cpp:880
+#, kde-format
+msgid "Monitor for Silence"
+msgstr "Слідкувати за бездіяльністю"
+
+#: src/kpart/Part.cpp:886
+#, kde-format
+msgid "New Tab"
+msgstr "Нова вкладка"
+
+#: src/kpart/Part.cpp:890
+#, kde-format
+msgid "Rename Tab…"
+msgstr "Перейменувати вкладку…"
+
+#: src/kpart/Part.cpp:894
+#, kde-format
+msgid "Next Tab"
+msgstr "Наступна вкладка"
+
+#: src/kpart/Part.cpp:902
+#, kde-format
+msgid "Previous Tab"
+msgstr "Попередня вкладка"
+
+#: src/kpart/Part.cpp:910
+#, kde-format
+msgid "Close Tab"
+msgstr "Закрити вкладку"
+
+#: src/kpart/Part.cpp:914
+#, kde-format
+msgid "Configure Kwi…"
+msgstr "Налаштувати Kwi…"
+
+#: src/kpart/Part.cpp:919
+#, kde-format
+msgid "Manage Presets…"
+msgstr "Керування шаблонами…"
+
+#: src/kpart/Part.cpp:923
+#, kde-format
+msgid "Edit Current Preset…"
+msgstr "Редагувати поточний шаблон…"
+
+#: src/kpart/Part.cpp:990
+#, kde-format
+msgid "Rename Tab"
+msgstr "Перейменувати вкладку"
+
+#: src/kpart/Part.cpp:991
+#, kde-format
+msgid "Tab name (leave empty to use the automatic title):"
+msgstr ""
+"Назва вкладки (не заповнюйте, якщо слід використати автоматичний заголовок):"
+
+#: src/kpart/Part.cpp:1097
+#, kde-format
+msgid "Save Terminal Output"
+msgstr "Зберегти виведення до термінала"
+
+#: src/kpart/Part.cpp:1102
+#, kde-format
+msgid "Text Files (*.txt)"
+msgstr "текстові файли (*.txt)"
+
+#: src/kpart/Part.cpp:1117
+#, kde-format
+msgid "Close Running Command?"
+msgstr "Перервати виконання поточної команди?"
+
+#: src/kpart/Part.cpp:1124
+#, kde-format
+msgid "Closing “%1” will stop its running command."
+msgstr ""
+"Закриття «%1» призведе до припинення виконання відданої у ньому команди."
+
+#: src/kpart/Part.cpp:1125
+#, kde-format
+msgid "Close Terminal"
+msgstr "Закрити «Термінал»"
+
+#: src/main.cpp:33
+#, kde-format
+msgid "-e requires a program."
+msgstr "-e потребує визначення програми."
+
+#: src/main.cpp:37
+#, kde-format
+msgid "--preset requires a preset name."
+msgstr "--preset потребує назви шаблону."
+
+#: src/main.cpp:83
+#, kde-format
+msgid "Kwi"
+msgstr "Kwi"
+
+#: src/main.cpp:85
+#, kde-format
+msgid "A modern and fast terminal"
+msgstr "Сучасний і швидкий термінал"
+
+#: src/main.cpp:87
+#, kde-format
+msgid "© 2026 Kwi contributors"
+msgstr "© Учасники розробки Kwi, 2026"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Ghostty"
+msgstr "Ghostty"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andriy Rysin,Dmytro Kovalov,Юрій Чорноіван"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "rysin@kde.org,kov@tokyo.email.ne.jp,yurchor@ukr.net"
+
+#: src/main.cpp:100
+#, kde-format
+msgid "Start in this directory."
+msgstr "Запустити у цьому каталозі."
+
+#: src/main.cpp:100
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "directory"
+msgstr "каталог"
+
+#: src/main.cpp:101
+#, kde-format
+msgid "Start with this terminal preset."
+msgstr "Запустити з цим шаблоном термінала."
+
+#: src/main.cpp:101
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "name"
+msgstr "назва"
+
+#: src/main.cpp:102
+#, kde-format
+msgid "Keep the terminal open after its command exits."
+msgstr "Не закривати вікно термінала після завершення виконання команди."
+
+#: src/main.cpp:103
+#, kde-format
+msgid "Open a tab in the most recently active window."
+msgstr "Відкрити вкладку у вікні з найсвіжішою зареєстрованою діяльністю."
+
+#: src/main.cpp:104
+#, kde-format
+msgid "Open the window in full screen."
+msgstr "Відкрити вікно у повноекранному режимі."
+
+#: src/main.cpp:106
+#, kde-format
+msgid "Set the initial tab title."
+msgstr "Встановити початковий заголовок вкладки."
+
+#: src/main.cpp:106
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "title"
+msgstr "заголовок"
+
+#: src/main.cpp:107
+#, kde-format
+msgid "Run the specified program."
+msgstr "Запустити вказану програму."
+
+#: src/main.cpp:108
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "program"
+msgstr "програма"
+
+#: src/main.cpp:109
+#, kde-format
+msgid "Optional program and its arguments."
+msgstr "Необов'язкова назва програми і її аргументи."
+
+#: src/main.cpp:110
+#, kde-format
+msgctxt "@info:shell command-line syntax"
+msgid "[program [arguments…]]"
+msgstr "[програма [аргументи…]]"
+
+#: src/settings/LaunchSettings.cpp:53
+#, kde-format
+msgid "Too many environment variables."
+msgstr "Забагато змінних середовища."
+
+#: src/settings/LaunchSettings.cpp:63
+#, kde-format
+msgid ""
+"Enter one NAME=value assignment per line. Names may contain letters, digits "
+"and underscores, and must not start with a digit."
+msgstr ""
+"Вводьте по одній інструкції «НАЗВА=значення» у кожному рядку. Назви можуть "
+"містити літери, цифри та символи підкреслення, але не повинні починатися з "
+"цифри."
+
+#: src/settings/LaunchSettings.cpp:77
+#, kde-format
+msgid ""
+"Enter a program followed by its arguments, or leave the command empty to use "
+"the system shell."
+msgstr ""
+"Введіть назву програми, а після неї — її аргументи; або залиште поле команди "
+"порожнім, щоб скористатися системною оболонкою."
+
+#: src/settings/LaunchSettings.cpp:86
+#, kde-format
+msgid "The command is too long or contains a null character."
+msgstr "Команда є надто довгою або містить порожній символ."
+
+#: src/settings/LaunchSettings.cpp:94
+#, kde-format
+msgid "Only a custom working directory can contain a path."
+msgstr "Лише у нетиповому робочому каталозі може міститися шлях."
+
+#: src/settings/LaunchSettings.cpp:100
+#, kde-format
+msgid "Choose an absolute path for the working directory."
+msgstr "Виберіть абсолютний шлях до робочого каталогу."
+
+#: src/settings/LaunchSettings.cpp:105
+#, kde-format
+msgid "Choose how the working directory is determined."
+msgstr "Виберіть спосіб визначення робочого каталогу."
+
+#: src/settings/PresetEditor.cpp:146
+#, kde-format
+msgid ""
+"Use letters, numbers and underscores. The name must not start with a number."
+msgstr ""
+"Можна використовувати лише латинські літери, цифри та символи "
+"підкреслювання. Назва не повинна починатися з цифри."
+
+#: src/settings/PresetEditor.cpp:150
+#, kde-format
+msgid "Enter the value on a single line."
+msgstr "Введіть значення в один рядок."
+
+#: src/settings/PresetEditor.cpp:156
+#, kde-format
+msgid "This variable is no longer available."
+msgstr "Доступ до цієї змінної втрачено."
+
+#: src/settings/PresetEditor.cpp:163
+#, kde-format
+msgid "A variable with this name already exists."
+msgstr "Змінна з такою назвою вже існує."
+
+#: src/settings/PresetEditor.cpp:243
+#, kde-format
+msgid "Save or discard the current preset changes first."
+msgstr "Спочатку збережіть або відкиньте поточні зміни у шаблоні."
+
+#: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
+#, kde-format
+msgid "The terminal preset is not available."
+msgstr "Немає доступу до шаблону термінала."
+
+#: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "System Shell"
+msgstr "Системна оболонка"
+
+#: src/settings/PresetEditor.cpp:274
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "%1 (Modified)"
+msgstr "%1 (змінено)"
+
+#: src/settings/PresetEditor.cpp:283
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "Copy of %1"
+msgstr "Копія %1"
+
+#: src/settings/PresetEditor.cpp:300
+#, kde-format
+msgid ""
+"Enter a program and its arguments. Quote spaces; shell operators and "
+"expansions are not supported."
+msgstr ""
+"Введіть назву програми і її аргументи. Беріть у лапки фрагменти з пробілами; "
+"підтримки операторів оболонки і розгортання не передбачено."
+
+#: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
+#, kde-format
+msgid "A terminal preset named %1 already exists."
+msgstr "Шаблон термінала з назвою %1 вже існує."
+
+#: src/settings/PresetEditor.cpp:338
+#, kde-format
+msgid "The preset was saved, but could not be made the default: %1"
+msgstr "Шаблон збережено, але не вдалося зробити його типовим: %1"
+
+#: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
+#, kde-format
+msgid "Only user-owned terminal presets can be removed."
+msgstr ""
+"Можна вилучати лише шаблони, права власності на які належать користувачеві."
+
+#: src/settings/TerminalPaletteModel.cpp:108
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "System"
+msgstr "Система"
+
+#: src/settings/TerminalPaletteModel.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid "Choose a local Konsole color scheme file."
+msgstr "Виберіть локальний файл схеми кольорів Konsole."
+
+#: src/settings/TerminalPaletteModel.cpp:172
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be read or is too large."
+msgstr ""
+"Не вдалося прочитати схему кольорів або схема кольорів є надто великою."
+
+#: src/settings/TerminalPaletteModel.cpp:180
+#, kde-format
+msgctxt "@info"
+msgid "This file does not contain a valid terminal color scheme."
+msgstr "У цьому файлі не міститься коректної схеми кольорів термінала."
+
+#: src/settings/TerminalPaletteModel.cpp:192
+#: src/settings/TerminalPaletteModel.cpp:341
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme directory could not be created."
+msgstr "Не вдалося створити каталог схеми кольорів."
+
+#: src/settings/TerminalPaletteModel.cpp:202
+#, kde-format
+msgctxt "@info"
+msgid "The imported color scheme could not be saved."
+msgstr "Не вдалося зберегти імпортовану схему кольорів."
+
+#: src/settings/TerminalPaletteModel.cpp:220
+#, kde-format
+msgctxt "@info"
+msgid "Only color schemes imported or created in Kwi can be removed."
+msgstr ""
+"Можна вилучати лише схеми кольорів, які імпортовано або створено у Kwi."
+
+#: src/settings/TerminalPaletteModel.cpp:275
+#, kde-format
+msgctxt "@item color scheme"
+msgid "Copy of %1"
+msgstr "Копія %1"
+
+#: src/settings/TerminalPaletteModel.cpp:275
+#, kde-format
+msgctxt "@item color scheme"
+msgid "%1 (Modified)"
+msgstr "%1 (змінено)"
+
+#: src/settings/TerminalPaletteModel.cpp:318
+#, kde-format
+msgctxt "@info"
+msgid "Choose an opaque foreground, background, and all 16 terminal colors."
+msgstr ""
+"Виберіть непрозорий колір переднього плану, тла і усі 16 кольорів термінала."
+
+#: src/settings/TerminalPaletteModel.cpp:335
+#, kde-format
+msgctxt "@info"
+msgid "This color scheme cannot be overwritten. Create a new copy instead."
+msgstr ""
+"Цю схему кольорів не можна перезаписати. Натомість, створіть нову копію."
+
+#: src/settings/TerminalPaletteModel.cpp:364
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be saved."
+msgstr "Не вдалося зберегти схему кольорів."
+
+#: src/settings/TerminalPaletteModel.cpp:382
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Enter a color scheme name of 1 to 80 characters without control characters."
+msgstr ""
+"Введіть назву схеми кольорів з кількістю символів від 1 до 80, без керівних "
+"символів."
+
+#: src/settings/TerminalPaletteModel.cpp:393
+#, kde-format
+msgctxt "@info"
+msgid "A color scheme with this name already exists. Choose another name."
+msgstr "Схема кольорів з такою назвою вже існує. Виберіть іншу назву."
+
+#: src/settings/TerminalPresets.cpp:147
+#, kde-format
+msgid "The default terminal preset is managed by the system."
+msgstr "Типовим шаблоном термінала керує системи."
+
+#: src/settings/TerminalPresets.cpp:153
+#, kde-format
+msgid "The default terminal preset could not be saved."
+msgstr "Не вдалося зберегти типовий шаблон термінала."
+
+#: src/settings/TerminalPresets.cpp:182
+#, kde-format
+msgctxt "@item:inlistbox terminal preset"
+msgid "System Shell"
+msgstr "Системна оболонка"
+
+#. i18n: System Shell is the reserved storage identifier and must remain untranslated.
+#: src/settings/TerminalPresets.cpp:260
+#, kde-format
+msgid "Choose a preset name of 1–80 characters other than System Shell."
+msgstr ""
+"Виберіть назву шаблону з 1–80 символів, яка відрізнятиметься від «System "
+"Shell»."
+
+#: src/settings/TerminalPresets.cpp:266
+#, kde-format
+msgid "Make a copy to customize an installed terminal preset."
+msgstr "Створіть копію, щоб налаштувати встановлений шаблон термінала."
+
+#: src/settings/TerminalPresets.cpp:276
+#, kde-format
+msgid "The terminal preset directory could not be created."
+msgstr "Не вдалося створити каталог шаблонів термінала."
+
+#: src/settings/TerminalPresets.cpp:283 src/settings/TerminalPresets.cpp:307
+#, kde-format
+msgid "The terminal preset could not be saved."
+msgstr "Не вдалося зберегти шаблон термінала."
+
+#: src/settings/TerminalPresets.cpp:297
+#, kde-format
+msgid "Choose a unique name for a user-owned terminal preset."
+msgstr ""
+"Виберіть унікальну назву шаблону термінала, який належатиме користувачеві."
+
+#: src/settings/TerminalPresets.cpp:342
+#, kde-format
+msgid "Choose a local Kwi terminal preset."
+msgstr "Виберіть локальний шаблон термінала Kwi."
+
+#: src/settings/TerminalPresets.cpp:348
+#, kde-format
+msgid "This file is not a valid Kwi launch preset."
+msgstr "Цей файл не є коректним шаблоном запуску Kwi."
+
+#: src/settings/TerminalSettings.cpp:162
+#, kde-format
+msgctxt "@info title format preview"
+msgid "Shell"
+msgstr "Оболонка"
+
+#: src/ui/SettingsDialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Kwi Terminal"
+msgstr "Налаштовування термінала Kwi"
+
+#: src/ui/SettingsDialog.cpp:149
+#, kde-format
+msgid "Save changes before closing?"
+msgstr "Зберегти зміни перед закриттям?"
+
+#: src/ui/SettingsDialog.cpp:150
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr "Незбережені зміни"
+
+#: src/ui/TerminalWidget.cpp:69
+#, kde-format
+msgid "The terminal view is missing from the interface."
+msgstr "В інтерфейсі немає панелі перегляду термінала."
+
+#: src/ui/TerminalWidget.cpp:99
+#, kde-format
+msgid "The terminal interface could not be loaded."
+msgstr "Не вдалося завантажити інтерфейс термінала."
+
+#: src/ui/WebShortcutModel.cpp:94
+#, kde-format
+msgctxt "@title:menu"
+msgid "Search for '%1' with"
+msgstr "Шукати «%1» за допомогою"
+
+#: src/WindowManager.cpp:331
+#, kde-format
+msgid "Could not initialize terminal graphics: %1"
+msgstr "Не вдалося ініціалізувати графіку термінала: %1"
+
+#: src/WindowManager.cpp:554
+#, kde-format
+msgid "The terminal preset %1 is not available."
+msgstr "Немає доступу до шаблону термінала %1."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Color scheme:"
+#~ msgstr "Схема кольорів:"

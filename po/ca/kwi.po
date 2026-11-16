@@ -1,0 +1,2310 @@
+# Translation of kwi.po to Catalan
+# Copyright (C) 2026 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# SPDX-FileCopyrightText: 2026 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-16 01:12+0000\n"
+"PO-Revision-Date: 2026-11-15 16:15+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
+
+#: schemas.cpp:1
+#, kde-format
+msgid "Black on Light Yellow"
+msgstr "Negre sobre groc clar"
+
+#: schemas.cpp:2
+#, kde-format
+msgid "Black on Random Light"
+msgstr "Negre sobre clar aleatori"
+
+#: schemas.cpp:3
+#, kde-format
+msgid "Black on White"
+msgstr "Negre sobre blanc"
+
+#: schemas.cpp:4
+#, kde-format
+msgid "Blue on Black"
+msgstr "Blau sobre negre"
+
+#: schemas.cpp:5
+#, kde-format
+msgid "Breeze"
+msgstr "Brisa"
+
+#: schemas.cpp:6
+#, kde-format
+msgid "Campbell"
+msgstr "Campbell"
+
+#: schemas.cpp:7
+#, kde-format
+msgid "Dark Pastels"
+msgstr "Pastels foscos"
+
+#: schemas.cpp:8
+#, kde-format
+msgid "Green on Black"
+msgstr "Verd sobre negre"
+
+#: schemas.cpp:9
+#, kde-format
+msgid "Linux Colors"
+msgstr "Colors Linux"
+
+#: schemas.cpp:10
+#, kde-format
+msgid "Red on Black"
+msgstr "Vermell sobre negre"
+
+#: schemas.cpp:11
+#, kde-format
+msgid "Solarized"
+msgstr "Solarized"
+
+#: schemas.cpp:12
+#, kde-format
+msgid "Solarized Light"
+msgstr "Solarized clar"
+
+#: schemas.cpp:13
+#, kde-format
+msgid "White on Black"
+msgstr "Blanc sobre negre"
+
+#: src/declarative/ActionDefinitions.qml:10
+#, kde-format
+msgctxt "@title:group"
+msgid "Application"
+msgstr "Aplicació"
+
+#: src/declarative/ActionDefinitions.qml:13
+#, kde-format
+msgctxt "@action"
+msgid "Application Menu"
+msgstr "Menú d'aplicacions"
+
+#: src/declarative/ActionDefinitions.qml:14
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Surt"
+
+#: src/declarative/ActionDefinitions.qml:19
+#, kde-format
+msgctxt "@title:group"
+msgid "Windows and Tabs"
+msgstr "Finestres i pestanyes"
+
+#: src/declarative/ActionDefinitions.qml:21
+#, kde-format
+msgctxt "@action"
+msgid "New Window"
+msgstr "Finestra nova"
+
+#: src/declarative/ActionDefinitions.qml:22
+#, kde-format
+msgctxt "@action"
+msgid "Hide Tab Bar for Single Tabs"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:23
+#, kde-format
+msgctxt "@action"
+msgid "Full Screen"
+msgstr "Pantalla completa"
+
+#: src/declarative/ActionDefinitions.qml:24
+#, kde-format
+msgctxt "@action"
+msgid "New Tab"
+msgstr "Pestanya nova"
+
+#: src/declarative/ActionDefinitions.qml:25
+#, kde-format
+msgctxt "@action"
+msgid "Close Tab"
+msgstr "Tanca la pestanya"
+
+#: src/declarative/ActionDefinitions.qml:26
+#, kde-format
+msgctxt "@action"
+msgid "Rename Tab…"
+msgstr "Reanomena la pestanya…"
+
+#: src/declarative/ActionDefinitions.qml:27
+#, kde-format
+msgctxt "@action"
+msgid "Next Tab"
+msgstr "Pestanya següent"
+
+#: src/declarative/ActionDefinitions.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Previous Tab"
+msgstr "Pestanya anterior"
+
+#: src/declarative/ActionDefinitions.qml:29
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs"
+msgstr "Últimes pestanyes usades"
+
+#: src/declarative/ActionDefinitions.qml:30
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs (Reverse)"
+msgstr "Últimes pestanyes usades (a l'inrevés)"
+
+#: src/declarative/ActionDefinitions.qml:31 src/kpart/Part.cpp:1020
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Left"
+msgstr "Mou la pestanya a l'esquerra"
+
+#: src/declarative/ActionDefinitions.qml:32 src/kpart/Part.cpp:1025
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Right"
+msgstr "Mou la pestanya a la dreta"
+
+#: src/declarative/ActionDefinitions.qml:33
+#, kde-format
+msgctxt "@action"
+msgid "Detach Tab"
+msgstr "Separa la pestanya"
+
+#: src/declarative/ActionDefinitions.qml:34
+#, kde-format
+msgctxt "@action"
+msgid "Search Tabs…"
+msgstr "Cerca de pestanyes…"
+
+#: src/declarative/ActionDefinitions.qml:35
+#: src/declarative/ActionDefinitions.qml:36
+#: src/declarative/ActionDefinitions.qml:37
+#: src/declarative/ActionDefinitions.qml:38
+#: src/declarative/ActionDefinitions.qml:39
+#: src/declarative/ActionDefinitions.qml:40
+#: src/declarative/ActionDefinitions.qml:41
+#: src/declarative/ActionDefinitions.qml:42
+#: src/declarative/ActionDefinitions.qml:43
+#, kde-format
+msgctxt "@action"
+msgid "Switch to Tab %1"
+msgstr "Canvia a la pestanya %1"
+
+#: src/declarative/ActionDefinitions.qml:48
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/declarative/ActionDefinitions.qml:50
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "Copia"
+
+#: src/declarative/ActionDefinitions.qml:51
+#, kde-format
+msgctxt "@action"
+msgid "Paste"
+msgstr "Enganxa"
+
+#: src/declarative/ActionDefinitions.qml:52
+#, kde-format
+msgctxt "@action"
+msgid "Paste Selection"
+msgstr "Enganxa la selecció"
+
+#: src/declarative/ActionDefinitions.qml:53
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "Selecciona-ho tot"
+
+#: src/declarative/ActionDefinitions.qml:54
+#, kde-format
+msgctxt "@action"
+msgid "Keyboard Selection Mode"
+msgstr "Mode de selecció del teclat"
+
+#: src/declarative/ActionDefinitions.qml:55 src/kpart/Part.cpp:831
+#, kde-format
+msgctxt "@action"
+msgid "Save Output As…"
+msgstr "Desa la sortida com a…"
+
+#: src/declarative/ActionDefinitions.qml:56
+#, kde-format
+msgctxt "@action"
+msgid "Clear Scrollback"
+msgstr "Neteja l'historial"
+
+#: src/declarative/ActionDefinitions.qml:57 src/kpart/Part.cpp:840
+#, kde-format
+msgctxt "@action"
+msgid "Reset Terminal"
+msgstr "Reinicialitza el terminal"
+
+#: src/declarative/ActionDefinitions.qml:58
+#, kde-format
+msgctxt "@action"
+msgid "Find…"
+msgstr "Cerca…"
+
+#: src/declarative/ActionDefinitions.qml:63
+#, kde-format
+msgctxt "@action"
+msgid "Reset Zoom"
+msgstr "Reinicialitza el zoom"
+
+#: src/declarative/ActionDefinitions.qml:64 src/kpart/Part.cpp:783
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Line"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Line"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Page"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Page"
+msgstr ""
+
+#: src/declarative/ActionDefinitions.qml:68
+#, kde-format
+msgctxt "@action"
+msgid "Previous Prompt"
+msgstr "Indicador anterior"
+
+#: src/declarative/ActionDefinitions.qml:69
+#, kde-format
+msgctxt "@action"
+msgid "Next Prompt"
+msgstr "Indicador següent"
+
+#: src/declarative/ActionDefinitions.qml:70 src/kpart/Part.cpp:755
+#, kde-format
+msgctxt "@action"
+msgid "Copy Last Command Output"
+msgstr "Copia l'última sortida d'ordre"
+
+#: src/declarative/ActionDefinitions.qml:71 src/kpart/Part.cpp:864
+#, kde-format
+msgctxt "@action"
+msgid "Open Current Directory"
+msgstr "Obre el directori actual"
+
+#: src/declarative/ActionDefinitions.qml:72
+#, kde-format
+msgctxt "@action"
+msgid "Open Link…"
+msgstr "Obre l'enllaç…"
+
+#: src/declarative/ActionDefinitions.qml:73 src/kpart/Part.cpp:868
+#, kde-format
+msgctxt "@action"
+msgid "Read-Only Terminal"
+msgstr "Terminal de només de lectura"
+
+#: src/declarative/ActionDefinitions.qml:74
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Activity"
+msgstr "Vigila l'activitat"
+
+#: src/declarative/ActionDefinitions.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Silence"
+msgstr "Vigila el silenci"
+
+#: src/declarative/components/WebShortcutMenu.qml:44
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure Web Shortcuts…"
+msgstr "Configura les dreceres web…"
+
+#: src/declarative/Main.qml:66
+#, kde-format
+msgctxt "@info"
+msgid "The terminal preset is no longer available."
+msgstr "El predefinit de terminal ja no està disponible."
+
+#: src/declarative/Main.qml:73 src/declarative/Main.qml:790
+#, kde-format
+msgctxt "@title:menu"
+msgid "New Tab with Preset"
+msgstr "Pestanya nova amb predefinit"
+
+#: src/declarative/Main.qml:96 src/declarative/Main.qml:812
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Manage Presets…"
+msgstr "Gestió dels predefinits…"
+
+#: src/declarative/Main.qml:552 src/kpart/Part.cpp:757
+#, kde-format
+msgctxt "@info"
+msgid "No command output is marked by the shell in retained history."
+msgstr ""
+"No hi ha cap sortida d'ordre marcada per l'intèrpret d'ordres en l'historial "
+"retingut."
+
+#: src/declarative/Main.qml:782
+#, kde-format
+msgctxt "@title:menu"
+msgid "File"
+msgstr ""
+
+# skip-rule: t-sc-edit
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#, kde-format
+msgctxt "@title:menu"
+msgid "Edit"
+msgstr "Edició"
+
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#, kde-format
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Visualització"
+
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tabs"
+msgstr "Pestanyes"
+
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#, kde-format
+msgctxt "@title:menu"
+msgid "Output"
+msgstr "Sortida"
+
+#: src/declarative/Main.qml:852
+#, kde-format
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr ""
+
+#: src/declarative/Main.qml:859
+#, kde-format
+msgctxt "@title:menu"
+msgid "Help"
+msgstr ""
+
+#: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Appearance"
+msgstr "Aparença"
+
+#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:66
+#, kde-format
+msgctxt "@title"
+msgid "Behavior"
+msgstr "Comportament"
+
+#: src/declarative/Main.qml:918 src/declarative/Main.qml:970
+#: src/ui/SettingsDialog.cpp:67
+#, kde-format
+msgctxt "@title"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:69
+#, kde-format
+msgctxt "@title"
+msgid "Presets"
+msgstr "Predefinits"
+
+#: src/declarative/Main.qml:934
+#, kde-format
+msgctxt "@title"
+msgid "Keyboard"
+msgstr "Teclat"
+
+#: src/declarative/Main.qml:1050
+#, kde-format
+msgctxt "@action:button"
+msgid "New Tab with Preset"
+msgstr "Pestanya nova amb predefinits"
+
+#: src/declarative/Main.qml:1111
+#, kde-format
+msgctxt "@action:button"
+msgid "Application Menu"
+msgstr "Menú d'aplicacions"
+
+#: src/declarative/Main.qml:1357
+#, kde-format
+msgctxt "@info"
+msgid "Process exited with status %1."
+msgstr "El procés ha sortit amb l'estat %1."
+
+#: src/declarative/Main.qml:1357
+#, kde-format
+msgctxt "@info"
+msgid "Process finished."
+msgstr "El procés ha finalitzat."
+
+#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#, kde-format
+msgctxt "@action"
+msgid "Open Link"
+msgstr "Obre l'enllaç"
+
+#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#, kde-format
+msgctxt "@action"
+msgid "Copy Link"
+msgstr "Copia l'enllaç"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Quit Kwi?"
+msgstr "Surto del Kwi?"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Close All Terminals?"
+msgstr "Tanco tots els terminals?"
+
+#: src/declarative/Main.qml:1507
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Terminal?"
+msgstr "Tanco el terminal?"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit Kwi"
+msgstr "Surt del Kwi"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Close All Terminals"
+msgstr "Tanca tots els terminals"
+
+#: src/declarative/Main.qml:1515
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Terminal"
+msgstr "Tanca el terminal"
+
+#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
+#, kde-format
+msgctxt "@option:check"
+msgid "Do not ask again"
+msgstr "No ho tornis a preguntar"
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Quitting will stop commands in all windows."
+msgstr "Si se surt, s'aturaran les ordres a totes les finestres."
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Closing this window will stop its running commands."
+msgstr "Tancar aquesta finestra aturarà les seves ordres en execució."
+
+#: src/declarative/Main.qml:1536
+#, kde-format
+msgctxt "@info"
+msgid "Closing “%1” will stop its running command."
+msgstr "En tancar «%1» s'aturarà l'ordre en execució."
+
+#: src/declarative/Main.qml:1585
+#, kde-format
+msgctxt "@title:window"
+msgid "Paste Multiple Lines?"
+msgstr "Enganxo diverses línies?"
+
+#: src/declarative/Main.qml:1592
+#, kde-format
+msgctxt "@action:button"
+msgid "Paste"
+msgstr "Enganxa"
+
+#: src/declarative/Main.qml:1614
+#, kde-format
+msgctxt "@info"
+msgid "Pasting this text may run commands."
+msgstr "L'enganxament d'aquest text pot executar ordres."
+
+#: src/declarative/Main.qml:1631
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Paste preview"
+msgstr "Enganxa la vista prèvia"
+
+#: src/declarative/Main.qml:1638
+#, kde-format
+msgctxt "@info"
+msgid "Showing the first character."
+msgid_plural "Showing the first %1 characters."
+msgstr[0] "Es mostra el primer caràcter."
+msgstr[1] "Es mostren els %1 primers caràcters."
+
+#: src/declarative/Main.qml:1744
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Tab"
+msgstr "Reanomena la pestanya"
+
+#: src/declarative/Main.qml:1749
+#, kde-format
+msgctxt "@action:button"
+msgid "Rename"
+msgstr "Reanomena"
+
+#: src/declarative/Main.qml:1765
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Automatic title"
+msgstr "Títol automàtic"
+
+#: src/declarative/Main.qml:1766
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title"
+msgstr "Títol de pestanya"
+
+#: src/declarative/Main.qml:1773
+#, kde-format
+msgctxt "@info"
+msgid "Leave empty to use the automatic title."
+msgstr "Deixeu-ho buit per a utilitzar el títol automàtic."
+
+#: src/declarative/Main.qml:1805
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter links…"
+msgstr "Filtra els enllaços…"
+
+#: src/declarative/Main.qml:1805
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter tabs…"
+msgstr "Filtra les pestanyes…"
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No links in the visible terminal output."
+msgstr "No hi ha enllaços a la sortida visible del terminal."
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No matching links."
+msgstr "No hi ha enllaços coincidents."
+
+#: src/declarative/Main.qml:1806
+#, kde-format
+msgctxt "@info"
+msgid "No matching tabs."
+msgstr "No hi ha pestanyes coincidents."
+
+#: src/declarative/Main.qml:1815
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy Link"
+msgstr "Copia l'enllaç"
+
+#: src/declarative/Main.qml:1864
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Terminal Output"
+msgstr "Desa la sortida del terminal"
+
+#: src/declarative/Main.qml:1867
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Text files (*.txt)"
+msgstr "Fitxers de text (*.txt)"
+
+#: src/declarative/Main.qml:1867
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "All files (*)"
+msgstr "Tots els fitxers (*)"
+
+#: src/declarative/settings/AppearanceSettings.qml:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Appearance"
+msgstr "Aparença"
+
+#: src/declarative/settings/AppearanceSettings.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Text"
+msgstr "Text"
+
+#: src/declarative/settings/AppearanceSettings.qml:51
+#, kde-format
+msgctxt "@option:check"
+msgid "Use system fixed-width font"
+msgstr "Usa la lletra d'amplada fixa del sistema"
+
+#: src/declarative/settings/AppearanceSettings.qml:63
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Font:"
+msgstr "Lletra:"
+
+#: src/declarative/settings/AppearanceSettings.qml:81
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Size (pt):"
+msgstr "Mida (pt):"
+
+#: src/declarative/settings/AppearanceSettings.qml:118
+#, kde-format
+msgctxt "@info font preview. Include letters, digits and shell punctuation."
+msgid "Aa Bb 0123456789 — ~/Documents $"
+msgstr "Aa Bb 0123456789 — ~/Documents $"
+
+#: src/declarative/settings/AppearanceSettings.qml:123
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal font preview"
+msgstr "Vista prèvia de la lletra del terminal"
+
+#: src/declarative/settings/AppearanceSettings.qml:129
+#, kde-format
+msgctxt "@title:group"
+msgid "Colors"
+msgstr "Colors"
+
+#: src/declarative/settings/AppearanceSettings.qml:132
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Window"
+msgctxt "@label:listbox"
+msgid "Window:"
+msgstr "Finestra"
+
+#: src/declarative/settings/AppearanceSettings.qml:148
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Terminal"
+msgctxt "@label:listbox"
+msgid "Terminal:"
+msgstr "Terminal"
+
+#: src/declarative/settings/AppearanceSettings.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Color Scheme…"
+msgstr "Edita l'esquema de colors…"
+
+#: src/declarative/settings/AppearanceSettings.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "More Color Scheme Actions"
+msgstr "Més accions de l'esquema de colors"
+
+#: src/declarative/settings/AppearanceSettings.qml:207
+#: src/declarative/settings/PresetsSettings.qml:202
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Duplicate…"
+msgstr "Duplica…"
+
+#: src/declarative/settings/AppearanceSettings.qml:214
+#: src/declarative/settings/PresetsSettings.qml:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import…"
+msgstr "Importa…"
+
+#: src/declarative/settings/AppearanceSettings.qml:223
+#: src/declarative/settings/PresetsSettings.qml:218
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "Elimina"
+
+#: src/declarative/settings/AppearanceSettings.qml:235
+#, kde-format
+msgctxt "@label:slider"
+msgid "Background opacity:"
+msgstr "Opacitat del fons:"
+
+#: src/declarative/settings/AppearanceSettings.qml:262
+#: src/declarative/settings/AppearanceSettings.qml:270
+#, kde-format
+msgctxt "@label"
+msgid "%1%"
+msgstr "%1%"
+
+#: src/declarative/settings/AppearanceSettings.qml:278
+#, kde-format
+msgctxt "@option:check"
+msgid "Blur"
+msgstr "Difumina"
+
+#: src/declarative/settings/AppearanceSettings.qml:292
+#, kde-format
+msgctxt "@title:group"
+msgid "Tab Bar"
+msgstr "Barra de pestanyes"
+
+#: src/declarative/settings/AppearanceSettings.qml:295
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Position:"
+msgstr "Posició:"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Top"
+msgstr "Superior"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Bottom"
+msgstr "Inferior"
+
+#: src/declarative/settings/AppearanceSettings.qml:314
+#, kde-format
+msgctxt "@option:check"
+msgid "Hide for single tabs"
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A hidden tab bar can be brought back with %1, or you can access application "
+"settings from the context menu."
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid "You can access application settings from the context menu."
+msgstr ""
+
+#: src/declarative/settings/AppearanceSettings.qml:342
+#, kde-format
+msgctxt "@option:check"
+msgid "Show status icons"
+msgstr "Mostra les icones d'estat"
+
+#: src/declarative/settings/AppearanceSettings.qml:355
+#, kde-format
+msgctxt "@title:group"
+msgid "Window"
+msgstr "Finestra"
+
+#: src/declarative/settings/AppearanceSettings.qml:362
+#, kde-format
+msgctxt "@option:check"
+msgid "Use custom size for new windows"
+msgstr "Usa una mida personalitzada per a les finestres noves"
+
+#: src/declarative/settings/AppearanceSettings.qml:374
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Columns:"
+msgstr "Columnes:"
+
+#: src/declarative/settings/AppearanceSettings.qml:392
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Rows:"
+msgstr "Files:"
+
+#: src/declarative/settings/AppearanceSettings.qml:433
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Color Scheme"
+msgstr "Importa un esquema de colors"
+
+#: src/declarative/settings/AppearanceSettings.qml:434
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Konsole Color Schemes (*.colorscheme)"
+msgstr "Esquemes de colors del Konsole (*.colorscheme)"
+
+#: src/declarative/settings/BehaviorSettings.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Behavior"
+msgstr "Comportament"
+
+#: src/declarative/settings/BehaviorSettings.qml:28
+#, kde-format
+msgctxt "@title:group"
+msgid "Confirmations"
+msgstr "Confirmacions"
+
+#: src/declarative/settings/BehaviorSettings.qml:34
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm quit when a command is running"
+msgstr "Confirma la sortida quan hi hagi una ordre en execució"
+
+#: src/declarative/settings/BehaviorSettings.qml:49
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm pasting multiple lines"
+msgstr "Confirma l'enganxament de diverses línies"
+
+#: src/declarative/settings/BehaviorSettings.qml:62
+#, kde-format
+msgctxt "@title:group"
+msgid "Clipboard"
+msgstr "Porta-retalls"
+
+#: src/declarative/settings/BehaviorSettings.qml:65
+#, kde-format
+msgctxt "@info"
+msgid "Middle-click paste also works with this option off."
+msgstr ""
+"L'enganxament del clic del mig també funciona amb aquesta opció desactivada."
+
+#: src/declarative/settings/BehaviorSettings.qml:70
+#, kde-format
+msgctxt "@option:check"
+msgid "Copy mouse-selected text to clipboard"
+msgstr "Copia el text seleccionat amb el ratolí al porta-retalls"
+
+#: src/declarative/settings/BehaviorSettings.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "Links"
+msgstr "Enllaços"
+
+#: src/declarative/settings/BehaviorSettings.qml:89
+#, kde-format
+msgctxt "@option:check"
+msgid "Require Ctrl when clicking links"
+msgstr "Requereix Ctrl en fer clic als enllaços"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Black"
+msgstr "Negre"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Red"
+msgstr "Vermell"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Green"
+msgstr "Verd"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Yellow"
+msgstr "Groc"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Blue"
+msgstr "Blau"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Magenta"
+msgstr "Magenta"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Cyan"
+msgstr "Cian"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "White"
+msgstr "Blanc"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Black"
+msgstr "Blanc brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Red"
+msgstr "Vermell brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Green"
+msgstr "Verd brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Yellow"
+msgstr "Groc brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Blue"
+msgstr "Blau brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Magenta"
+msgstr "Magenta brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Cyan"
+msgstr "Cian brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright White"
+msgstr "Blanc brillant"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:39
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Current color: %1. Opens a color chooser."
+msgstr "Color actual: %1. Obre un selector de color."
+
+#: src/declarative/settings/ColorSchemeEditor.qml:73
+#, kde-format
+msgctxt "@label:color"
+msgid "%1:"
+msgstr "%1:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:159
+#: src/declarative/settings/PresetsSettings.qml:101
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Desa"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Duplicate Color Scheme"
+msgstr "Duplicació d'esquema de colors"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Color Scheme"
+msgstr "Edició d'esquema de colors"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:195
+#, kde-format
+msgctxt "@title:group"
+msgid "Preview"
+msgstr "Vista prèvia"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:206
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Color scheme preview"
+msgstr "Vista prèvia de l'esquema de colors"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:217
+#, kde-format
+msgctxt "@info color scheme preview. Keep the shell command syntax intact."
+msgid "user@host:~/Documents $ echo \"Hello, world\""
+msgstr "usuari@màquina:~/Documents $ echo \"Hola, món\""
+
+#: src/declarative/settings/ColorSchemeEditor.qml:235
+#, kde-format
+msgctxt "@info short color sample"
+msgid "Aa"
+msgstr "Aa"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:259
+#: src/declarative/settings/PresetsSettings.qml:230
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Nom:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:269
+#, kde-format
+msgctxt "@label:color"
+msgid "Text:"
+msgstr "Text:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Text Color"
+msgstr "Color del text"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:273
+#, kde-format
+msgctxt "@label:color"
+msgid "Text"
+msgstr "Text"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:280
+#, kde-format
+msgctxt "@label:color"
+msgid "Background:"
+msgstr "Fons:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:283
+#, kde-format
+msgctxt "@title:window"
+msgid "Background Color"
+msgstr "Color del fons"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:284
+#, kde-format
+msgctxt "@label:color"
+msgid "Background"
+msgstr "Fons"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:290
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal Colors"
+msgstr "Colors del terminal"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:304
+#, kde-format
+msgctxt "@label:column"
+msgid "Normal"
+msgstr "Normal"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:312
+#, kde-format
+msgctxt "@label:column"
+msgid "Bright"
+msgstr "Brillant"
+
+#: src/declarative/settings/PresetsSettings.qml:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Presets"
+msgstr "Predefinits"
+
+#: src/declarative/settings/PresetsSettings.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Reinicia"
+
+#: src/declarative/settings/PresetsSettings.qml:123
+#, kde-format
+msgctxt "@title:group"
+msgid "New Sessions"
+msgstr "Sessions noves"
+
+#: src/declarative/settings/PresetsSettings.qml:126
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Default preset:"
+msgstr "Predefinit predeterminat:"
+
+#: src/declarative/settings/PresetsSettings.qml:143
+#, kde-format
+msgctxt "@title:group"
+msgid "Manage Presets"
+msgstr "Gestió dels predefinits"
+
+#: src/declarative/settings/PresetsSettings.qml:146
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Preset:"
+msgstr "Predefinit:"
+
+#: src/declarative/settings/PresetsSettings.qml:171
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Preset"
+msgstr "Edita el predefinit"
+
+#: src/declarative/settings/PresetsSettings.qml:185
+#, kde-format
+msgctxt "@action:button"
+msgid "More Preset Actions"
+msgstr "Més accions de predefinit"
+
+#: src/declarative/settings/PresetsSettings.qml:245
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Command:"
+msgstr "Ordre:"
+
+#: src/declarative/settings/PresetsSettings.qml:251
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "System shell"
+msgstr "Intèrpret d'ordres del sistema"
+
+#: src/declarative/settings/PresetsSettings.qml:258
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Starting folder:"
+msgstr "Carpeta inicial:"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Current folder"
+msgstr "Carpeta actual"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Home folder"
+msgstr "Carpeta personal"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Custom folder"
+msgstr "Carpeta personalitzada"
+
+#: src/declarative/settings/PresetsSettings.qml:271
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Folder:"
+msgstr "Carpeta:"
+
+#: src/declarative/settings/PresetsSettings.qml:289
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose…"
+msgstr "Trieu…"
+
+#: src/declarative/settings/PresetsSettings.qml:291
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Choose starting folder"
+msgstr "Trieu la carpeta inicial"
+
+#: src/declarative/settings/PresetsSettings.qml:301
+#, kde-format
+msgctxt "@label"
+msgid "Environment:"
+msgstr "Entorn:"
+
+#: src/declarative/settings/PresetsSettings.qml:307
+#, kde-format
+msgctxt "@info"
+msgid "No additional variables."
+msgstr "No hi ha variables addicionals."
+
+#: src/declarative/settings/PresetsSettings.qml:344
+#, kde-format
+msgctxt "@item environment variable value"
+msgid "(empty)"
+msgstr "(buit)"
+
+#: src/declarative/settings/PresetsSettings.qml:353
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit %1"
+msgstr "Edita %1"
+
+#: src/declarative/settings/PresetsSettings.qml:365
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove %1"
+msgstr "Elimina %1"
+
+#: src/declarative/settings/PresetsSettings.qml:385
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Variable…"
+msgstr "Afegeix una variable…"
+
+#: src/declarative/settings/PresetsSettings.qml:400
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Preset Changes"
+msgstr "Canvis sense desar dels predefinits"
+
+#: src/declarative/settings/PresetsSettings.qml:401
+#, kde-format
+msgctxt "@info"
+msgid "Save changes before continuing?"
+msgstr "Deso els canvis abans de continuar?"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Environment Variable"
+msgstr "Addició de variable d'entorn"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Environment Variable"
+msgstr "Edició de variable d'entorn"
+
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Afegeix"
+
+#: src/declarative/settings/PresetsSettings.qml:469
+#, kde-format
+msgctxt "@label:textbox environment variable name"
+msgid "Name:"
+msgstr "Nom:"
+
+#: src/declarative/settings/PresetsSettings.qml:480
+#, kde-format
+msgctxt "@label:textbox environment variable value"
+msgid "Value:"
+msgstr "Valor:"
+
+#: src/declarative/settings/PresetsSettings.qml:508
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Preset"
+msgstr "Elimina el predefinit"
+
+#: src/declarative/settings/PresetsSettings.qml:522
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "Elimina"
+
+#: src/declarative/settings/PresetsSettings.qml:536
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”? New sessions will use System Shell."
+msgstr ""
+"Elimino el predefinit «%1»? Les sessions noves utilitzaran l'intèrpret "
+"d'ordres del sistema."
+
+#: src/declarative/settings/PresetsSettings.qml:537
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”?"
+msgstr "Elimino la predefinició «%1»?"
+
+#: src/declarative/settings/PresetsSettings.qml:556
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Terminal Preset"
+msgstr "Importació de predefinit de terminal"
+
+#: src/declarative/settings/PresetsSettings.qml:557
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Kwi Launch Presets (*.preset)"
+msgstr "Predefinits de llançament del Kwi (*.preset)"
+
+#: src/declarative/settings/PresetsSettings.qml:565
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Starting Folder"
+msgstr "Tria de la carpeta inicial"
+
+#: src/declarative/settings/TerminalSettings.qml:20
+#, kde-format
+msgctxt "@title:window"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/declarative/settings/TerminalSettings.qml:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Application title"
+msgstr "Títol de l'aplicació"
+
+#: src/declarative/settings/TerminalSettings.qml:83
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Command"
+msgstr "Ordre"
+
+#: src/declarative/settings/TerminalSettings.qml:89
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory name"
+msgstr "Nom del directori"
+
+#: src/declarative/settings/TerminalSettings.qml:95
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory path"
+msgstr "Camí del directori"
+
+#: src/declarative/settings/TerminalSettings.qml:103
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "User name"
+msgstr "Nom d'usuari"
+
+#: src/declarative/settings/TerminalSettings.qml:109
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name"
+msgstr "Nom de la màquina"
+
+#: src/declarative/settings/TerminalSettings.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name (short)"
+msgstr "Nom de la màquina (curt)"
+
+# skip-rule: t-claus_obe_tan
+#: src/declarative/settings/TerminalSettings.qml:123
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Opening brace: {"
+msgstr "Clau d'obertura: {"
+
+#: src/declarative/settings/TerminalSettings.qml:129
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Closing brace: }"
+msgstr "Clau de tancament: }"
+
+#: src/declarative/settings/TerminalSettings.qml:136
+#, kde-format
+msgctxt "@title:group"
+msgid "Session Titles"
+msgstr "Títols de sessions"
+
+#: src/declarative/settings/TerminalSettings.qml:139
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title format:"
+msgstr "Format de títol de les pestanyes:"
+
+#: src/declarative/settings/TerminalSettings.qml:141
+#, kde-format
+msgctxt "@info"
+msgid "Renamed tabs keep their names."
+msgstr "Les pestanyes reanomenades mantenen els seus noms."
+
+#: src/declarative/settings/TerminalSettings.qml:171
+#: src/declarative/settings/TerminalSettings.qml:241
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "Insereix"
+
+#: src/declarative/settings/TerminalSettings.qml:197
+#: src/declarative/settings/TerminalSettings.qml:267
+#, kde-format
+msgctxt "@label"
+msgid "Preview:"
+msgstr "Vista prèvia:"
+
+#: src/declarative/settings/TerminalSettings.qml:210
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Remote tab title format:"
+msgstr "Format de títol de les pestanyes remotes:"
+
+#: src/declarative/settings/TerminalSettings.qml:282
+#, kde-format
+msgctxt "@option:check"
+msgid "Use application title for the window"
+msgstr "Usa el títol de l'aplicació a la finestra"
+
+#: src/declarative/settings/TerminalSettings.qml:295
+#, kde-format
+msgctxt "@title:group"
+msgid "Scrollback"
+msgstr "Historial"
+
+#: src/declarative/settings/TerminalSettings.qml:298
+#, kde-format
+msgctxt "@label:listbox"
+msgid "History:"
+msgstr "Historial:"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "None"
+msgstr "Sense"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Limited"
+msgstr "Limitat"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Unlimited"
+msgstr "Sense límit"
+
+#: src/declarative/settings/TerminalSettings.qml:325
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Retained lines"
+msgstr "Línies retingudes"
+
+#: src/declarative/settings/TerminalSettings.qml:340
+#, kde-format
+msgctxt "@label unit after the retained-line count"
+msgid "line"
+msgid_plural "lines"
+msgstr[0] "línia"
+msgstr[1] "línies"
+
+#: src/declarative/settings/TerminalSettings.qml:348
+#, kde-format
+msgctxt "@title:group"
+msgid "Monitoring"
+msgstr "Vigilància"
+
+#: src/declarative/settings/TerminalSettings.qml:351
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Silence timeout (seconds):"
+msgstr "Temps d'espera del silenci (segons):"
+
+#: src/declarative/settings/TerminalSettings.qml:370
+#, kde-format
+msgctxt "@title:group"
+msgid "Cursor"
+msgstr "Cursor"
+
+#: src/declarative/settings/TerminalSettings.qml:373
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Shape:"
+msgstr "Forma:"
+
+#: src/declarative/settings/TerminalSettings.qml:382
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Block"
+msgstr "Bloc"
+
+#: src/declarative/settings/TerminalSettings.qml:386
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Beam"
+msgstr "Raig"
+
+#: src/declarative/settings/TerminalSettings.qml:390
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Underline"
+msgstr "Subratllat"
+
+#: src/declarative/settings/TerminalSettings.qml:406
+#, kde-format
+msgctxt "@option:check"
+msgid "Blink cursor"
+msgstr "Cursor parpellejant"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "Terminal: %1"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/declarative/TerminalSearchBar.qml:70
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Find in terminal…"
+msgstr "Cerca en el terminal…"
+
+#: src/declarative/TerminalSearchBar.qml:71
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Find in terminal"
+msgstr "Cerca en el terminal"
+
+#: src/declarative/TerminalSearchBar.qml:135
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Searching terminal output"
+msgstr "S'està cercant la sortida del terminal"
+
+#: src/declarative/TerminalSearchBar.qml:152
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Match"
+msgstr "Coincidència següent"
+
+#: src/declarative/TerminalSearchBar.qml:166
+#, kde-format
+msgctxt "@action:button"
+msgid "Previous Match"
+msgstr "Coincidència anterior"
+
+#: src/declarative/TerminalSearchBar.qml:180
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Find Bar"
+msgstr "Tanca la barra de cerca"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity and silence"
+msgstr "Vigila l'activitat i el silenci"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity"
+msgstr "Vigila l'activitat"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring silence"
+msgstr "Vigila el silenci"
+
+#: src/declarative/TerminalTabButton.qml:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Progress: %1%"
+msgstr "En curs: %1%"
+
+#: src/declarative/TerminalTabButton.qml:33
+#: src/declarative/TerminalTabButton.qml:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "In progress"
+msgstr "En curs"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error: %1%"
+msgstr "Error: %1%"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error"
+msgstr "Error"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused: %1%"
+msgstr "En pausa: %1%"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused"
+msgstr "En pausa"
+
+#: src/declarative/TerminalTabButton.qml:67
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, needs attention"
+msgstr "%1, necessita atenció"
+
+#: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, new output"
+msgstr "%1, sortida nova"
+
+#: src/declarative/TerminalTabButton.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Close %1"
+msgstr "Tanca %1"
+
+#: src/declarative/TerminalTabs.qml:157
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Left"
+msgstr "Desplaça les pestanyes a l'esquerra"
+
+#: src/declarative/TerminalTabs.qml:427
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Right"
+msgstr "Desplaça les pestanyes a la dreta"
+
+#: src/DesktopIntegration.cpp:77
+#, kde-format
+msgid "Terminal Notification"
+msgstr "Notificació del terminal"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "Terminal Activity"
+msgstr "Activitat del terminal"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "New output in %1"
+msgstr "Sortida nova a %1"
+
+#: src/DesktopIntegration.cpp:87
+#, kde-format
+msgid "Terminal Silence"
+msgstr "Silenci del terminal"
+
+#: src/DesktopIntegration.cpp:88
+#, kde-format
+msgid "No output in %2 for %1 second"
+msgid_plural "No output in %2 for %1 seconds"
+msgstr[0] "No hi ha sortida en %2 durant %1 segons"
+msgstr[1] "No hi ha sortida en %2 durant %1 segons"
+
+#: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "Aquest terminal ja no està disponible."
+
+#: src/DesktopIntegration.cpp:180
+#, kde-format
+msgid "Choose a local file to save terminal output."
+msgstr "Trieu un fitxer local per a desar la sortida del terminal."
+
+#: src/DesktopIntegration.cpp:190
+#, kde-format
+msgid "Could not save terminal output: %1"
+msgstr "No s'ha pogut desar la sortida del terminal: %1"
+
+#: src/DesktopIntegration.cpp:208
+#, kde-format
+msgid "The terminal's current folder is no longer available."
+msgstr "La carpeta actual del terminal ja no està disponible."
+
+#: src/DesktopIntegration.cpp:239
+#, kde-format
+msgid "Could not launch the desktop application: %1"
+msgstr "No s'ha pogut llançar l'aplicació d'escriptori: %1"
+
+#: src/DesktopIntegration.cpp:274
+#, kde-format
+msgid "Could not open the link: %1"
+msgstr "No s'ha pogut obrir l'enllaç: %1"
+
+#: src/DesktopIntegration.cpp:283
+#, kde-format
+msgid "Terminal Bell"
+msgstr "Timbre del terminal"
+
+#: src/DesktopIntegration.cpp:315
+#, kde-format
+msgid "Show Terminal"
+msgstr "Mostra el terminal"
+
+#: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
+#, kde-format
+msgid "Kwi Terminal"
+msgstr "Terminal Kwi"
+
+#: src/kpart/Part.cpp:329
+#, kde-format
+msgid "Paste Multiple Lines?"
+msgstr "Enganxo diverses línies?"
+
+#: src/kpart/Part.cpp:330
+#, kde-format
+msgid "Pasting this text may run commands."
+msgstr "L'enganxament d'aquest text podria executar ordres."
+
+#: src/kpart/Part.cpp:339
+#, kde-format
+msgid "Paste"
+msgstr "Enganxa"
+
+#: src/kpart/Part.cpp:664
+#, kde-format
+msgid "The supplied terminal descriptor is invalid."
+msgstr "El descriptor proporcionat de terminal no és vàlid."
+
+#: src/kpart/Part.cpp:769
+#, kde-format
+msgid "Paste Selection"
+msgstr "Enganxa la selecció"
+
+#: src/kpart/Part.cpp:834
+#, kde-format
+msgid "Clear Scrollback"
+msgstr "Neteja l'historial"
+
+#: src/kpart/Part.cpp:858
+#, kde-format
+msgid "Reset Zoom"
+msgstr "Reinicialitza el zoom"
+
+#: src/kpart/Part.cpp:875
+#, kde-format
+msgid "Monitor for Activity"
+msgstr "Vigila l'activitat"
+
+#: src/kpart/Part.cpp:880
+#, kde-format
+msgid "Monitor for Silence"
+msgstr "Vigila el silenci"
+
+#: src/kpart/Part.cpp:886
+#, kde-format
+msgid "New Tab"
+msgstr "Pestanya nova"
+
+#: src/kpart/Part.cpp:890
+#, kde-format
+msgid "Rename Tab…"
+msgstr "Reanomena la pestanya…"
+
+#: src/kpart/Part.cpp:894
+#, kde-format
+msgid "Next Tab"
+msgstr "Pestanya següent"
+
+#: src/kpart/Part.cpp:902
+#, kde-format
+msgid "Previous Tab"
+msgstr "Pestanya anterior"
+
+#: src/kpart/Part.cpp:910
+#, kde-format
+msgid "Close Tab"
+msgstr "Tanca la pestanya"
+
+#: src/kpart/Part.cpp:914
+#, kde-format
+msgid "Configure Kwi…"
+msgstr "Configura el Kwi…"
+
+#: src/kpart/Part.cpp:919
+#, kde-format
+msgid "Manage Presets…"
+msgstr "Gestió dels predefinits…"
+
+#: src/kpart/Part.cpp:923
+#, kde-format
+msgid "Edit Current Preset…"
+msgstr "Edita el valor predefinit actual…"
+
+#: src/kpart/Part.cpp:990
+#, kde-format
+msgid "Rename Tab"
+msgstr "Reanomena la pestanya"
+
+#: src/kpart/Part.cpp:991
+#, kde-format
+msgid "Tab name (leave empty to use the automatic title):"
+msgstr ""
+"Nom de la pestanya (deixeu-ho buit per a utilitzar el títol automàtic):"
+
+#: src/kpart/Part.cpp:1097
+#, kde-format
+msgid "Save Terminal Output"
+msgstr "Desa la sortida del terminal"
+
+#: src/kpart/Part.cpp:1102
+#, kde-format
+msgid "Text Files (*.txt)"
+msgstr "Fitxers de text (*.txt)"
+
+#: src/kpart/Part.cpp:1117
+#, kde-format
+msgid "Close Running Command?"
+msgstr "Tanco l'ordre en execució?"
+
+#: src/kpart/Part.cpp:1124
+#, kde-format
+msgid "Closing “%1” will stop its running command."
+msgstr "En tancar «%1» s'aturarà l'ordre en execució."
+
+#: src/kpart/Part.cpp:1125
+#, kde-format
+msgid "Close Terminal"
+msgstr "Tanca el terminal"
+
+#: src/main.cpp:33
+#, kde-format
+msgid "-e requires a program."
+msgstr "-e requereix un programa."
+
+#: src/main.cpp:37
+#, kde-format
+msgid "--preset requires a preset name."
+msgstr "--preset requereix un nom de predefinit."
+
+#: src/main.cpp:83
+#, kde-format
+msgid "Kwi"
+msgstr "Kwi"
+
+#: src/main.cpp:85
+#, kde-format
+msgid "A modern and fast terminal"
+msgstr "Un terminal modern i ràpid"
+
+#: src/main.cpp:87
+#, kde-format
+msgid "© 2026 Kwi contributors"
+msgstr "© 2026 Kwi contributors"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Ghostty"
+msgstr "Ghostty"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Josep M. Ferrer"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "txemaq@gmail.com"
+
+#: src/main.cpp:100
+#, kde-format
+msgid "Start in this directory."
+msgstr "Inicia en aquest directori."
+
+#: src/main.cpp:100
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "directory"
+msgstr "directory"
+
+#: src/main.cpp:101
+#, kde-format
+msgid "Start with this terminal preset."
+msgstr "Comença amb aquest predefinit de terminal."
+
+#: src/main.cpp:101
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "name"
+msgstr "name"
+
+#: src/main.cpp:102
+#, kde-format
+msgid "Keep the terminal open after its command exits."
+msgstr "Manté el terminal obert després de la sortida de l'ordre."
+
+#: src/main.cpp:103
+#, kde-format
+msgid "Open a tab in the most recently active window."
+msgstr "Obre una pestanya a la finestra activa més recent."
+
+#: src/main.cpp:104
+#, kde-format
+msgid "Open the window in full screen."
+msgstr "Obre la finestra a pantalla completa."
+
+#: src/main.cpp:106
+#, kde-format
+msgid "Set the initial tab title."
+msgstr "Estableix el títol inicial de la pestanya."
+
+#: src/main.cpp:106
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "title"
+msgstr "title"
+
+#: src/main.cpp:107
+#, kde-format
+msgid "Run the specified program."
+msgstr "Executa el programa especificat."
+
+#: src/main.cpp:108
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "program"
+msgstr "program"
+
+#: src/main.cpp:109
+#, kde-format
+msgid "Optional program and its arguments."
+msgstr "Programa opcional i els seus arguments."
+
+#: src/main.cpp:110
+#, kde-format
+msgctxt "@info:shell command-line syntax"
+msgid "[program [arguments…]]"
+msgstr "[program [arguments…]]"
+
+#: src/settings/LaunchSettings.cpp:53
+#, kde-format
+msgid "Too many environment variables."
+msgstr "Hi ha massa variables d'entorn."
+
+#: src/settings/LaunchSettings.cpp:63
+#, kde-format
+msgid ""
+"Enter one NAME=value assignment per line. Names may contain letters, digits "
+"and underscores, and must not start with a digit."
+msgstr ""
+"Introduïu un «NAME=valor assignat» per línia. Els noms poden contenir "
+"lletres, dígits i guions baixos i no han de començar per un dígit."
+
+#: src/settings/LaunchSettings.cpp:77
+#, kde-format
+msgid ""
+"Enter a program followed by its arguments, or leave the command empty to use "
+"the system shell."
+msgstr ""
+"Introduïu un programa seguit dels seus arguments, o deixeu l'ordre buida per "
+"a utilitzar l'intèrpret d'ordres del sistema."
+
+#: src/settings/LaunchSettings.cpp:86
+#, kde-format
+msgid "The command is too long or contains a null character."
+msgstr "L'ordre és massa llarga o conté un caràcter nul."
+
+#: src/settings/LaunchSettings.cpp:94
+#, kde-format
+msgid "Only a custom working directory can contain a path."
+msgstr "Només un directori de treball personalitzat pot contenir un camí."
+
+#: src/settings/LaunchSettings.cpp:100
+#, kde-format
+msgid "Choose an absolute path for the working directory."
+msgstr "Trieu un camí absolut per al directori de treball."
+
+#: src/settings/LaunchSettings.cpp:105
+#, kde-format
+msgid "Choose how the working directory is determined."
+msgstr "Trieu com es determina el directori de treball."
+
+#: src/settings/PresetEditor.cpp:146
+#, kde-format
+msgid ""
+"Use letters, numbers and underscores. The name must not start with a number."
+msgstr ""
+"Utilitzeu lletres, números i guions baixos. El nom no ha de començar per un "
+"nombre."
+
+#: src/settings/PresetEditor.cpp:150
+#, kde-format
+msgid "Enter the value on a single line."
+msgstr "Introduïu el valor en una línia individual."
+
+#: src/settings/PresetEditor.cpp:156
+#, kde-format
+msgid "This variable is no longer available."
+msgstr "Aquesta variable ja no està disponible."
+
+#: src/settings/PresetEditor.cpp:163
+#, kde-format
+msgid "A variable with this name already exists."
+msgstr "Ja existeix una variable amb aquest nom."
+
+#: src/settings/PresetEditor.cpp:243
+#, kde-format
+msgid "Save or discard the current preset changes first."
+msgstr "Primer deseu o descarteu els canvis al predefinit actual."
+
+#: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
+#, kde-format
+msgid "The terminal preset is not available."
+msgstr "El predefinit de terminal no està disponible."
+
+#: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "System Shell"
+msgstr "Intèrpret d'ordres del sistema"
+
+#: src/settings/PresetEditor.cpp:274
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "%1 (Modified)"
+msgstr "%1 (modificat)"
+
+#: src/settings/PresetEditor.cpp:283
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "Copy of %1"
+msgstr "Còpia de %1"
+
+#: src/settings/PresetEditor.cpp:300
+#, kde-format
+msgid ""
+"Enter a program and its arguments. Quote spaces; shell operators and "
+"expansions are not supported."
+msgstr ""
+"Introduïu un programa i els seus arguments. Cal posar els espais entre "
+"cometes; no són compatibles els operadors de l'intèrpret d'ordres ni les "
+"expansions."
+
+#: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
+#, kde-format
+msgid "A terminal preset named %1 already exists."
+msgstr "Ja existeix un predefinit de terminal anomenat %1."
+
+#: src/settings/PresetEditor.cpp:338
+#, kde-format
+msgid "The preset was saved, but could not be made the default: %1"
+msgstr "S'ha desat el predefinit, però no s'ha pogut fer-lo predeterminat: %1"
+
+#: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
+#, kde-format
+msgid "Only user-owned terminal presets can be removed."
+msgstr ""
+"Només es poden eliminar els predefinits de terminal propietat de l'usuari."
+
+#: src/settings/TerminalPaletteModel.cpp:108
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "System"
+msgstr "Sistema"
+
+#: src/settings/TerminalPaletteModel.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid "Choose a local Konsole color scheme file."
+msgstr "Trieu un fitxer local d'esquema de colors del Konsole."
+
+#: src/settings/TerminalPaletteModel.cpp:172
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be read or is too large."
+msgstr "L'esquema de colors no s'ha pogut llegir o és massa gran."
+
+#: src/settings/TerminalPaletteModel.cpp:180
+#, kde-format
+msgctxt "@info"
+msgid "This file does not contain a valid terminal color scheme."
+msgstr "Aquest fitxer no conté un esquema de colors de terminal vàlid."
+
+#: src/settings/TerminalPaletteModel.cpp:192
+#: src/settings/TerminalPaletteModel.cpp:341
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme directory could not be created."
+msgstr "No s'ha pogut crear el directori d'esquemes de colors."
+
+#: src/settings/TerminalPaletteModel.cpp:202
+#, kde-format
+msgctxt "@info"
+msgid "The imported color scheme could not be saved."
+msgstr "No s'ha pogut desar l'esquema de colors importat."
+
+#: src/settings/TerminalPaletteModel.cpp:220
+#, kde-format
+msgctxt "@info"
+msgid "Only color schemes imported or created in Kwi can be removed."
+msgstr ""
+"Només es poden eliminar els esquemes de colors importats o creats al Kwi."
+
+#: src/settings/TerminalPaletteModel.cpp:275
+#, kde-format
+msgctxt "@item color scheme"
+msgid "Copy of %1"
+msgstr "Còpia de %1"
+
+#: src/settings/TerminalPaletteModel.cpp:275
+#, kde-format
+msgctxt "@item color scheme"
+msgid "%1 (Modified)"
+msgstr "%1 (modificat)"
+
+#: src/settings/TerminalPaletteModel.cpp:318
+#, kde-format
+msgctxt "@info"
+msgid "Choose an opaque foreground, background, and all 16 terminal colors."
+msgstr "Trieu un primer pla, un fons i els 16 colors del terminal opacs."
+
+#: src/settings/TerminalPaletteModel.cpp:335
+#, kde-format
+msgctxt "@info"
+msgid "This color scheme cannot be overwritten. Create a new copy instead."
+msgstr ""
+"Aquest esquema de colors no es pot sobreescriure. Creeu una còpia nova."
+
+#: src/settings/TerminalPaletteModel.cpp:364
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be saved."
+msgstr "No s'ha pogut desar l'esquema de colors."
+
+#: src/settings/TerminalPaletteModel.cpp:382
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Enter a color scheme name of 1 to 80 characters without control characters."
+msgstr ""
+"Introduïu un nom d'esquema de colors d'1 a 80 caràcters sense caràcters de "
+"control."
+
+#: src/settings/TerminalPaletteModel.cpp:393
+#, kde-format
+msgctxt "@info"
+msgid "A color scheme with this name already exists. Choose another name."
+msgstr "Ja existeix un esquema de colors amb aquest nom. Trieu un altre nom."
+
+#: src/settings/TerminalPresets.cpp:147
+#, kde-format
+msgid "The default terminal preset is managed by the system."
+msgstr "El sistema gestiona el predefinit de terminal predeterminat."
+
+#: src/settings/TerminalPresets.cpp:153
+#, kde-format
+msgid "The default terminal preset could not be saved."
+msgstr "No s'ha pogut desar el predefinit de terminal predeterminat."
+
+#: src/settings/TerminalPresets.cpp:182
+#, kde-format
+msgctxt "@item:inlistbox terminal preset"
+msgid "System Shell"
+msgstr "Intèrpret d'ordres del sistema"
+
+#. i18n: System Shell is the reserved storage identifier and must remain untranslated.
+#: src/settings/TerminalPresets.cpp:260
+#, kde-format
+msgid "Choose a preset name of 1–80 characters other than System Shell."
+msgstr ""
+"Trieu un nom de predefinit d'1 a 80 caràcters diferent de l'intèrpret "
+"d'ordres del sistema."
+
+#: src/settings/TerminalPresets.cpp:266
+#, kde-format
+msgid "Make a copy to customize an installed terminal preset."
+msgstr "Fes una còpia per personalitzar un predefinit de terminal instal·lat."
+
+#: src/settings/TerminalPresets.cpp:276
+#, kde-format
+msgid "The terminal preset directory could not be created."
+msgstr "No s'ha pogut crear el directori de predefinits de terminal."
+
+#: src/settings/TerminalPresets.cpp:283 src/settings/TerminalPresets.cpp:307
+#, kde-format
+msgid "The terminal preset could not be saved."
+msgstr "No s'ha pogut desar el predefinit de terminal."
+
+#: src/settings/TerminalPresets.cpp:297
+#, kde-format
+msgid "Choose a unique name for a user-owned terminal preset."
+msgstr "Trieu un nom únic per a un terminal predefinit propietat de l'usuari."
+
+#: src/settings/TerminalPresets.cpp:342
+#, kde-format
+msgid "Choose a local Kwi terminal preset."
+msgstr "Trieu un predefinit de terminal local del Kwi."
+
+#: src/settings/TerminalPresets.cpp:348
+#, kde-format
+msgid "This file is not a valid Kwi launch preset."
+msgstr "Aquest fitxer no és un predefinit de llançament vàlid del Kwi."
+
+#: src/settings/TerminalSettings.cpp:162
+#, kde-format
+msgctxt "@info title format preview"
+msgid "Shell"
+msgstr "Intèrpret d'ordres"
+
+#: src/ui/SettingsDialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Kwi Terminal"
+msgstr "Configuració del terminal del Kwi"
+
+#: src/ui/SettingsDialog.cpp:149
+#, kde-format
+msgid "Save changes before closing?"
+msgstr "Deso els canvis abans de tancar?"
+
+#: src/ui/SettingsDialog.cpp:150
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr "Canvis sense desar"
+
+#: src/ui/TerminalWidget.cpp:69
+#, kde-format
+msgid "The terminal view is missing from the interface."
+msgstr "Manca la vista de terminal a la interfície."
+
+#: src/ui/TerminalWidget.cpp:99
+#, kde-format
+msgid "The terminal interface could not be loaded."
+msgstr "No s'ha pogut carregar la interfície del terminal."
+
+#: src/ui/WebShortcutModel.cpp:94
+#, kde-format
+msgctxt "@title:menu"
+msgid "Search for '%1' with"
+msgstr "Cerca «%1» amb"
+
+#: src/WindowManager.cpp:331
+#, kde-format
+msgid "Could not initialize terminal graphics: %1"
+msgstr "No s'han pogut inicialitzar els gràfics del terminal: %1"
+
+#: src/WindowManager.cpp:554
+#, kde-format
+msgid "The terminal preset %1 is not available."
+msgstr "El predefinit de terminal %1 no està disponible."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Color scheme:"
+#~ msgstr "Esquema de colors:"

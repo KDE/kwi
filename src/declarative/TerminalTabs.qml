@@ -252,6 +252,7 @@ RowLayout {
                 width: tabBar.tabWidth
                 height: tabBar.availableHeight
                 showStatusIcons: root.showStatusIcons
+                checked: index === root.sessions.currentIndex
                 draggable: root.dragController !== null
                 dragging: dragHelper.Drag.active && dragHelper.tab === tabButton
                 readonly property bool moving: dragHelper.local && dragHelper.tab === tabButton

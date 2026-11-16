@@ -85,6 +85,16 @@ FocusScope {
         onMultilinePasteRequested: (origin, text) => root.multilinePasteRequested(origin, text)
         onContextMenuRequested: position => root.contextMenuRequested(position)
         onLinkActivated: url => root.linkActivated(url)
+
+        TapHandler {
+            acceptedDevices: PointerDevice.TouchScreen
+            enabled: terminal.session && terminal.session.state === Session.Running && !terminal.session.readOnly
+
+            onTapped: {
+                terminal.forceActiveFocus(Qt.MouseFocusReason);
+                InputMethod.show();
+            }
+        }
     }
 
     Rectangle {

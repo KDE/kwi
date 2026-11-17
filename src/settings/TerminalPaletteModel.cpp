@@ -155,6 +155,10 @@ void TerminalPaletteModel::refresh()
     appendDirectory(schemeDirectory(), QStringLiteral("imported:"));
     appendDirectory(userDirectory(), QStringLiteral("user:"));
 
+    std::sort(m_entries.begin() + 1, m_entries.end(), [](const QVariant &left, const QVariant &right) {
+        return QString::localeAwareCompare(left.toMap().value(QStringLiteral("name")).toString(), right.toMap().value(QStringLiteral("name")).toString()) < 0;
+    });
+
     Q_EMIT changed();
 }
 

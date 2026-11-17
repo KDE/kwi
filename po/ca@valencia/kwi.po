@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 01:12+0000\n"
-"PO-Revision-Date: 2026-11-15 16:15+0100\n"
+"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"PO-Revision-Date: 2026-11-16 10:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
 
 #: schemas.cpp:1
@@ -118,7 +118,7 @@ msgstr "Finestra nova"
 #, kde-format
 msgctxt "@action"
 msgid "Hide Tab Bar for Single Tabs"
-msgstr ""
+msgstr "Oculta la barra de pestanyes a les pestanyes individuals"
 
 #: src/declarative/ActionDefinitions.qml:23
 #, kde-format
@@ -276,25 +276,25 @@ msgstr "Reinicialitza el zoom"
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Line"
-msgstr ""
+msgstr "Desplaça cap amunt una línia"
 
 #: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Line"
-msgstr ""
+msgstr "Desplaça cap avall una línia"
 
 #: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Page"
-msgstr ""
+msgstr "Desplaça cap amunt una pàgina"
 
 #: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Page"
-msgstr ""
+msgstr "Desplaça cap avall una pàgina"
 
 #: src/declarative/ActionDefinitions.qml:68
 #, kde-format
@@ -380,7 +380,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
-msgstr ""
+msgstr "Fitxer"
 
 # skip-rule: t-sc-edit
 #: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
@@ -411,13 +411,13 @@ msgstr "Eixida"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"
 
 #: src/declarative/Main.qml:859
 #, kde-format
 msgctxt "@title:menu"
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
 #, kde-format
@@ -490,7 +490,7 @@ msgstr "Copia l'enllaç"
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
-msgstr "Voleu eixir del Kwi?"
+msgstr "Voleu eixir de Kwi?"
 
 #: src/declarative/Main.qml:1507
 #, kde-format
@@ -712,20 +712,16 @@ msgid "Colors"
 msgstr "Colors"
 
 #: src/declarative/settings/AppearanceSettings.qml:132
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Window:"
-msgstr "Finestra"
+msgstr "Finestra:"
 
 #: src/declarative/settings/AppearanceSettings.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Terminal"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Terminal:"
-msgstr "Terminal"
+msgstr "Terminal:"
 
 #: src/declarative/settings/AppearanceSettings.qml:175
 #, kde-format
@@ -807,7 +803,7 @@ msgstr "Inferior"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide for single tabs"
-msgstr ""
+msgstr "Oculta a les pestanyes individuals"
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -816,12 +812,15 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"Una barra de pestanyes oculta es pot recuperar amb %1, o podeu accedir a la "
+"configuració de l'aplicació des del menú contextual."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
 msgstr ""
+"Podeu accedir a la configuració de l'aplicació des del menú contextual."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
@@ -1348,7 +1347,7 @@ msgstr "Importació de predefinit de terminal"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Kwi Launch Presets (*.preset)"
-msgstr "Predefinits de llançament del Kwi (*.preset)"
+msgstr "Predefinits de llançament de Kwi (*.preset)"
 
 #: src/declarative/settings/PresetsSettings.qml:565
 #, kde-format
@@ -1680,7 +1679,7 @@ msgctxt "@action:button"
 msgid "Scroll Tabs Left"
 msgstr "Desplaça les pestanyes a l'esquerra"
 
-#: src/declarative/TerminalTabs.qml:427
+#: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"
@@ -1831,7 +1830,7 @@ msgstr "Tanca la pestanya"
 #: src/kpart/Part.cpp:914
 #, kde-format
 msgid "Configure Kwi…"
-msgstr "Configura el Kwi…"
+msgstr "Configura Kwi…"
 
 #: src/kpart/Part.cpp:919
 #, kde-format
@@ -2154,7 +2153,7 @@ msgstr "No s'ha pogut guardar l'esquema de colors importat."
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
 msgstr ""
-"Només es poden eliminar els esquemes de color importats o creats al Kwi."
+"Només es poden eliminar els esquemes de color importats o creats a Kwi."
 
 #: src/settings/TerminalPaletteModel.cpp:275
 #, kde-format
@@ -2249,12 +2248,12 @@ msgstr "Trieu un nom únic per a un terminal predefinit propietat de l'usuari."
 #: src/settings/TerminalPresets.cpp:342
 #, kde-format
 msgid "Choose a local Kwi terminal preset."
-msgstr "Trieu un predefinit de terminal local del Kwi."
+msgstr "Trieu un predefinit de terminal local de Kwi."
 
 #: src/settings/TerminalPresets.cpp:348
 #, kde-format
 msgid "This file is not a valid Kwi launch preset."
-msgstr "Este fitxer no és un predefinit de llançament vàlid del Kwi."
+msgstr "Este fitxer no és un predefinit de llançament vàlid de Kwi."
 
 #: src/settings/TerminalSettings.cpp:162
 #, kde-format
@@ -2266,7 +2265,7 @@ msgstr "Intèrpret d'ordres"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Kwi Terminal"
-msgstr "Configureu el terminal del Kwi"
+msgstr "Configureu el terminal de Kwi"
 
 #: src/ui/SettingsDialog.cpp:149
 #, kde-format
@@ -2304,7 +2303,3 @@ msgstr "No s'han pogut restablir els gràfics del terminal: %1"
 #, kde-format
 msgid "The terminal preset %1 is not available."
 msgstr "El predefinit de terminal %1 no està disponible."
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Color scheme:"
-#~ msgstr "Esquema de colors:"

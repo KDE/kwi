@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-15 07:46+0000\n"
+"POT-Creation-Date: 2026-11-16 15:29+0000\n"
 "PO-Revision-Date: 2026-11-15 11:57+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -37,7 +37,7 @@ msgctxt "@info:accessibility"
 msgid "Terminal output and command input."
 msgstr ""
 
-#: libs/kwi-terminal/src/declarative/Terminal.qml:122
+#: libs/kwi-terminal/src/declarative/Terminal.qml:132
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal bell"
@@ -164,7 +164,7 @@ msgstr ""
 #: libs/kwi-terminal/src/TerminalAccessible.cpp:146
 #, kde-format
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format
@@ -189,12 +189,12 @@ msgstr ""
 #: libs/kwi-terminal/src/TerminalSearch.cpp:209
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "Žádné shody"
 
 #: libs/kwi-terminal/src/TerminalSearch.cpp:211
 #, kde-format
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 z %2"
 
 #: libs/kwi-terminal/src/TerminalSearch.cpp:213
 #, kde-format

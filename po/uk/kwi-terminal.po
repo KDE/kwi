@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-15 07:46+0000\n"
+"POT-Creation-Date: 2026-11-16 15:29+0000\n"
 "PO-Revision-Date: 2026-11-15 15:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -36,7 +36,7 @@ msgctxt "@info:accessibility"
 msgid "Terminal output and command input."
 msgstr "Виведення до термінала і введення команд."
 
-#: libs/kwi-terminal/src/declarative/Terminal.qml:122
+#: libs/kwi-terminal/src/declarative/Terminal.qml:132
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal bell"

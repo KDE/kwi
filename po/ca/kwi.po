@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 01:12+0000\n"
-"PO-Revision-Date: 2026-11-15 16:15+0100\n"
+"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"PO-Revision-Date: 2026-11-16 10:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
 
 #: schemas.cpp:1
@@ -118,7 +118,7 @@ msgstr "Finestra nova"
 #, kde-format
 msgctxt "@action"
 msgid "Hide Tab Bar for Single Tabs"
-msgstr ""
+msgstr "Oculta la barra de pestanyes a les pestanyes individuals"
 
 #: src/declarative/ActionDefinitions.qml:23
 #, kde-format
@@ -276,25 +276,25 @@ msgstr "Reinicialitza el zoom"
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Line"
-msgstr ""
+msgstr "Desplaça amunt una línia"
 
 #: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Line"
-msgstr ""
+msgstr "Desplaça avall una línia"
 
 #: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Page"
-msgstr ""
+msgstr "Desplaça amunt una pàgina"
 
 #: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Page"
-msgstr ""
+msgstr "Desplaça avall una pàgina"
 
 #: src/declarative/ActionDefinitions.qml:68
 #, kde-format
@@ -380,7 +380,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
-msgstr ""
+msgstr "Fitxer"
 
 # skip-rule: t-sc-edit
 #: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
@@ -411,13 +411,13 @@ msgstr "Sortida"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"
 
 #: src/declarative/Main.qml:859
 #, kde-format
 msgctxt "@title:menu"
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
 #, kde-format
@@ -712,20 +712,16 @@ msgid "Colors"
 msgstr "Colors"
 
 #: src/declarative/settings/AppearanceSettings.qml:132
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Window:"
-msgstr "Finestra"
+msgstr "Finestra:"
 
 #: src/declarative/settings/AppearanceSettings.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Terminal"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Terminal:"
-msgstr "Terminal"
+msgstr "Terminal:"
 
 #: src/declarative/settings/AppearanceSettings.qml:175
 #, kde-format
@@ -807,7 +803,7 @@ msgstr "Inferior"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide for single tabs"
-msgstr ""
+msgstr "Oculta a les pestanyes individuals"
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -816,12 +812,15 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"Una barra de pestanyes oculta es pot recuperar amb %1, o podeu accedir a la "
+"configuració de l'aplicació des del menú contextual."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
 msgstr ""
+"Podeu accedir a la configuració de l'aplicació des del menú contextual."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
@@ -1681,7 +1680,7 @@ msgctxt "@action:button"
 msgid "Scroll Tabs Left"
 msgstr "Desplaça les pestanyes a l'esquerra"
 
-#: src/declarative/TerminalTabs.qml:427
+#: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"

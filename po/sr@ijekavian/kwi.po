@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 01:12+0000\n"
-"PO-Revision-Date: 2026-11-15 10:40+0100\n"
+"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"PO-Revision-Date: 2026-11-16 12:41+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
@@ -116,7 +116,7 @@ msgstr "Нови прозор"
 #, kde-format
 msgctxt "@action"
 msgid "Hide Tab Bar for Single Tabs"
-msgstr ""
+msgstr "Сакриј траку језичака при једном језичку"
 
 #: src/declarative/ActionDefinitions.qml:23
 #, kde-format
@@ -274,25 +274,25 @@ msgstr "Ресетуј увеличање"
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Line"
-msgstr ""
+msgstr "Клизај један ред нагоре"
 
 #: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Line"
-msgstr ""
+msgstr "Клизај један ред надоље"
 
 #: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Page"
-msgstr ""
+msgstr "Клизај једну страницу нагоре"
 
 #: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Page"
-msgstr ""
+msgstr "Клизај једну страницу надоље"
 
 #: src/declarative/ActionDefinitions.qml:68
 #, kde-format
@@ -376,7 +376,7 @@ msgstr "У задржаном историјату нема излаза нар�
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
-msgstr ""
+msgstr "Фајл"
 
 #: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
 #, kde-format
@@ -406,13 +406,13 @@ msgstr "Излаз"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Settings"
-msgstr ""
+msgstr "Подешавање"
 
 #: src/declarative/Main.qml:859
 #, kde-format
 msgctxt "@title:menu"
 msgid "Help"
-msgstr ""
+msgstr "Помоћ"
 
 #: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
 #, kde-format
@@ -709,20 +709,16 @@ msgid "Colors"
 msgstr "Боје"
 
 #: src/declarative/settings/AppearanceSettings.qml:132
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Window:"
-msgstr "Прозор"
+msgstr "Прозор:"
 
 #: src/declarative/settings/AppearanceSettings.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Terminal"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Terminal:"
-msgstr "Терминал"
+msgstr "Терминал:"
 
 #: src/declarative/settings/AppearanceSettings.qml:175
 #, kde-format
@@ -804,7 +800,7 @@ msgstr "доље"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide for single tabs"
-msgstr ""
+msgstr "Сакриј при једном језичку"
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -813,12 +809,14 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"Скривена трака језичака може се вратити пречицом %1, а поставкама програма "
+"можете приступити и из контекстног менија."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
-msgstr ""
+msgstr "Поставкама програма можете приступити из контекстног менија."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
@@ -1678,7 +1676,7 @@ msgctxt "@action:button"
 msgid "Scroll Tabs Left"
 msgstr "Клизај језичке улијево"
 
-#: src/declarative/TerminalTabs.qml:427
+#: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"
@@ -2297,7 +2295,3 @@ msgstr "Не могу да припремим графику терминала:
 #, kde-format
 msgid "The terminal preset %1 is not available."
 msgstr "Претподешавање терминала %1 није доступно."
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Color scheme:"
-#~ msgstr "Шема боја:"

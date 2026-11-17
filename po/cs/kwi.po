@@ -1,17 +1,15 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kwi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 01:12+0000\n"
-"PO-Revision-Date: 2026-11-15 11:53+0100\n"
+"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"PO-Revision-Date: 2026-11-17 01:17+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,175 +20,175 @@ msgstr ""
 #: schemas.cpp:1
 #, kde-format
 msgid "Black on Light Yellow"
-msgstr ""
+msgstr "Černá na světle žluté"
 
 #: schemas.cpp:2
 #, kde-format
 msgid "Black on Random Light"
-msgstr ""
+msgstr "Černá na náhodné světlé"
 
 #: schemas.cpp:3
 #, kde-format
 msgid "Black on White"
-msgstr ""
+msgstr "Černá na bílé"
 
 #: schemas.cpp:4
 #, kde-format
 msgid "Blue on Black"
-msgstr ""
+msgstr "Modrá na černé"
 
 #: schemas.cpp:5
 #, kde-format
 msgid "Breeze"
-msgstr ""
+msgstr "Breeze"
 
 #: schemas.cpp:6
 #, kde-format
 msgid "Campbell"
-msgstr ""
+msgstr "Campbell"
 
 #: schemas.cpp:7
 #, kde-format
 msgid "Dark Pastels"
-msgstr ""
+msgstr "Tmavé pastely"
 
 #: schemas.cpp:8
 #, kde-format
 msgid "Green on Black"
-msgstr ""
+msgstr "Zelená na černé"
 
 #: schemas.cpp:9
 #, kde-format
 msgid "Linux Colors"
-msgstr ""
+msgstr "Linuxové barvy"
 
 #: schemas.cpp:10
 #, kde-format
 msgid "Red on Black"
-msgstr ""
+msgstr "Červená na černé"
 
 #: schemas.cpp:11
 #, kde-format
 msgid "Solarized"
-msgstr ""
+msgstr "Solarized"
 
 #: schemas.cpp:12
 #, kde-format
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized světlé"
 
 #: schemas.cpp:13
 #, kde-format
 msgid "White on Black"
-msgstr ""
+msgstr "Bílá na černé"
 
 #: src/declarative/ActionDefinitions.qml:10
 #, kde-format
 msgctxt "@title:group"
 msgid "Application"
-msgstr ""
+msgstr "Aplikace"
 
 #: src/declarative/ActionDefinitions.qml:13
 #, kde-format
 msgctxt "@action"
 msgid "Application Menu"
-msgstr ""
+msgstr "Nabídka aplikací"
 
 #: src/declarative/ActionDefinitions.qml:14
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "Ukončit"
 
 #: src/declarative/ActionDefinitions.qml:19
 #, kde-format
 msgctxt "@title:group"
 msgid "Windows and Tabs"
-msgstr ""
+msgstr "Okna a karty"
 
 #: src/declarative/ActionDefinitions.qml:21
 #, kde-format
 msgctxt "@action"
 msgid "New Window"
-msgstr ""
+msgstr "Nové okno"
 
 #: src/declarative/ActionDefinitions.qml:22
 #, kde-format
 msgctxt "@action"
 msgid "Hide Tab Bar for Single Tabs"
-msgstr ""
+msgstr "Skrýt lištu karet pro jednotlivé karty"
 
 #: src/declarative/ActionDefinitions.qml:23
 #, kde-format
 msgctxt "@action"
 msgid "Full Screen"
-msgstr ""
+msgstr "Celá obrazovka"
 
 #: src/declarative/ActionDefinitions.qml:24
 #, kde-format
 msgctxt "@action"
 msgid "New Tab"
-msgstr ""
+msgstr "Nová karta"
 
 #: src/declarative/ActionDefinitions.qml:25
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
-msgstr ""
+msgstr "Zavřít kartu"
 
 #: src/declarative/ActionDefinitions.qml:26
 #, kde-format
 msgctxt "@action"
 msgid "Rename Tab…"
-msgstr ""
+msgstr "Přejmenovat kartu…"
 
 #: src/declarative/ActionDefinitions.qml:27
 #, kde-format
 msgctxt "@action"
 msgid "Next Tab"
-msgstr ""
+msgstr "Následující karta"
 
 #: src/declarative/ActionDefinitions.qml:28
 #, kde-format
 msgctxt "@action"
 msgid "Previous Tab"
-msgstr ""
+msgstr "Předchozí karta"
 
 #: src/declarative/ActionDefinitions.qml:29
 #, kde-format
 msgctxt "@action"
 msgid "Last Used Tabs"
-msgstr ""
+msgstr "Naposledy použité karty"
 
 #: src/declarative/ActionDefinitions.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Last Used Tabs (Reverse)"
-msgstr ""
+msgstr "Naposledy použité karty (pozpátku)"
 
 #: src/declarative/ActionDefinitions.qml:31 src/kpart/Part.cpp:1020
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
-msgstr ""
+msgstr "Přesunout kartu doleva"
 
 #: src/declarative/ActionDefinitions.qml:32 src/kpart/Part.cpp:1025
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
-msgstr ""
+msgstr "Přesunout kartu doprava"
 
 #: src/declarative/ActionDefinitions.qml:33
 #, kde-format
 msgctxt "@action"
 msgid "Detach Tab"
-msgstr ""
+msgstr "Odpojit kartu"
 
 #: src/declarative/ActionDefinitions.qml:34
 #, kde-format
 msgctxt "@action"
 msgid "Search Tabs…"
-msgstr ""
+msgstr "Karty vyhledávání…"
 
 #: src/declarative/ActionDefinitions.qml:35
 #: src/declarative/ActionDefinitions.qml:36
@@ -204,327 +202,329 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Switch to Tab %1"
-msgstr ""
+msgstr "Přepnout na kartu %1"
 
 #: src/declarative/ActionDefinitions.qml:48
 #, kde-format
 msgctxt "@title:group"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: src/declarative/ActionDefinitions.qml:50
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 #: src/declarative/ActionDefinitions.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Paste"
-msgstr ""
+msgstr "Vložit"
 
 #: src/declarative/ActionDefinitions.qml:52
 #, kde-format
 msgctxt "@action"
 msgid "Paste Selection"
-msgstr ""
+msgstr "Vložit výběr"
 
 #: src/declarative/ActionDefinitions.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "Vybrat vše"
 
 #: src/declarative/ActionDefinitions.qml:54
 #, kde-format
 msgctxt "@action"
 msgid "Keyboard Selection Mode"
-msgstr ""
+msgstr "Režim výběru klávesnice"
 
 #: src/declarative/ActionDefinitions.qml:55 src/kpart/Part.cpp:831
 #, kde-format
 msgctxt "@action"
 msgid "Save Output As…"
-msgstr ""
+msgstr "Uložit výstup jako…"
 
 #: src/declarative/ActionDefinitions.qml:56
 #, kde-format
 msgctxt "@action"
 msgid "Clear Scrollback"
-msgstr ""
+msgstr "Vyčistit rolování"
 
 #: src/declarative/ActionDefinitions.qml:57 src/kpart/Part.cpp:840
 #, kde-format
 msgctxt "@action"
 msgid "Reset Terminal"
-msgstr ""
+msgstr "Obnovit terminál"
 
 #: src/declarative/ActionDefinitions.qml:58
 #, kde-format
 msgctxt "@action"
 msgid "Find…"
-msgstr ""
+msgstr "Najít…"
 
 #: src/declarative/ActionDefinitions.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Původní přiblížení"
 
 #: src/declarative/ActionDefinitions.qml:64 src/kpart/Part.cpp:783
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Line"
-msgstr ""
+msgstr "Posunout o jeden řádek nahoru"
 
 #: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Line"
-msgstr ""
+msgstr "Posunout o jeden řádek dolů"
 
 #: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Page"
-msgstr ""
+msgstr "Posunout o jednu stránku nahoru"
 
 #: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Page"
-msgstr ""
+msgstr "Posunout o jednu stránku dolů"
 
 #: src/declarative/ActionDefinitions.qml:68
 #, kde-format
 msgctxt "@action"
 msgid "Previous Prompt"
-msgstr ""
+msgstr "Předchozí zadání"
 
 #: src/declarative/ActionDefinitions.qml:69
 #, kde-format
 msgctxt "@action"
 msgid "Next Prompt"
-msgstr ""
+msgstr "Další zadání"
 
 #: src/declarative/ActionDefinitions.qml:70 src/kpart/Part.cpp:755
 #, kde-format
 msgctxt "@action"
 msgid "Copy Last Command Output"
-msgstr ""
+msgstr "Zkopírovat výstup posledního příkazu"
 
 #: src/declarative/ActionDefinitions.qml:71 src/kpart/Part.cpp:864
 #, kde-format
 msgctxt "@action"
 msgid "Open Current Directory"
-msgstr ""
+msgstr "Otevřít aktuální adresář"
 
 #: src/declarative/ActionDefinitions.qml:72
 #, kde-format
 msgctxt "@action"
 msgid "Open Link…"
-msgstr ""
+msgstr "Otevřít odkaz…"
 
 #: src/declarative/ActionDefinitions.qml:73 src/kpart/Part.cpp:868
 #, kde-format
 msgctxt "@action"
 msgid "Read-Only Terminal"
-msgstr ""
+msgstr "Terminál pouze pro čtení"
 
 #: src/declarative/ActionDefinitions.qml:74
 #, kde-format
 msgctxt "@action"
 msgid "Monitor for Activity"
-msgstr ""
+msgstr "Detekovat aktivitu"
 
 #: src/declarative/ActionDefinitions.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Monitor for Silence"
-msgstr ""
+msgstr "Detekovat nečinnost"
 
 #: src/declarative/components/WebShortcutMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure Web Shortcuts…"
-msgstr ""
+msgstr "Nastavit webové zkratky…"
 
 #: src/declarative/Main.qml:66
 #, kde-format
 msgctxt "@info"
 msgid "The terminal preset is no longer available."
-msgstr ""
+msgstr "Přednastavení terminálu již není k dispozici."
 
 #: src/declarative/Main.qml:73 src/declarative/Main.qml:790
 #, kde-format
 msgctxt "@title:menu"
 msgid "New Tab with Preset"
-msgstr ""
+msgstr "Nová karta s přednastavením"
 
 #: src/declarative/Main.qml:96 src/declarative/Main.qml:812
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Manage Presets…"
-msgstr ""
+msgstr "Správa přednastavení…"
 
 #: src/declarative/Main.qml:552 src/kpart/Part.cpp:757
 #, kde-format
 msgctxt "@info"
 msgid "No command output is marked by the shell in retained history."
 msgstr ""
+"Žádný výstup příkazu není v historii, kterou si shell uchovává, nijak "
+"označen."
 
 #: src/declarative/Main.qml:782
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
-msgstr ""
+msgstr "Soubor"
 
 #: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
-msgstr ""
+msgstr "Pohled"
 
 #: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tabs"
-msgstr ""
+msgstr "Karty"
 
 #: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
 #, kde-format
 msgctxt "@title:menu"
 msgid "Output"
-msgstr ""
+msgstr "Výstup"
 
 #: src/declarative/Main.qml:852
 #, kde-format
 msgctxt "@title:menu"
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: src/declarative/Main.qml:859
 #, kde-format
 msgctxt "@title:menu"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr ""
+msgstr "Vzhled"
 
 #: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:66
 #, kde-format
 msgctxt "@title"
 msgid "Behavior"
-msgstr ""
+msgstr "Chování"
 
 #: src/declarative/Main.qml:918 src/declarative/Main.qml:970
 #: src/ui/SettingsDialog.cpp:67
 #, kde-format
 msgctxt "@title"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:69
 #, kde-format
 msgctxt "@title"
 msgid "Presets"
-msgstr ""
+msgstr "Přednastavení"
 
 #: src/declarative/Main.qml:934
 #, kde-format
 msgctxt "@title"
 msgid "Keyboard"
-msgstr ""
+msgstr "Klávesnice"
 
 #: src/declarative/Main.qml:1050
 #, kde-format
 msgctxt "@action:button"
 msgid "New Tab with Preset"
-msgstr ""
+msgstr "Nová karta s přednastavením"
 
 #: src/declarative/Main.qml:1111
 #, kde-format
 msgctxt "@action:button"
 msgid "Application Menu"
-msgstr ""
+msgstr "Nabídka aplikací"
 
 #: src/declarative/Main.qml:1357
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
-msgstr ""
+msgstr "Proces byl ukončen se stavem %1."
 
 #: src/declarative/Main.qml:1357
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
-msgstr ""
+msgstr "Proces dokončen."
 
 #: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
-msgstr ""
+msgstr "Otevřít odkaz"
 
 #: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopírovat odkaz"
 
 #: src/declarative/Main.qml:1507
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
-msgstr ""
+msgstr "Ukončit Kwi?"
 
 #: src/declarative/Main.qml:1507
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
-msgstr ""
+msgstr "Zavřít všechny terminály?"
 
 #: src/declarative/Main.qml:1507
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
-msgstr ""
+msgstr "Zavřít terminál?"
 
 #: src/declarative/Main.qml:1515
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
-msgstr ""
+msgstr "Ukončit Kwi"
 
 #: src/declarative/Main.qml:1515
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
-msgstr ""
+msgstr "Zavřít všechny terminály"
 
 #: src/declarative/Main.qml:1515
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
-msgstr ""
+msgstr "Zavřít terminál"
 
 #: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
-msgstr ""
+msgstr "Znovu se nedotazovat"
 
 #: src/declarative/Main.qml:1536
 #, kde-format
@@ -554,7 +554,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
-msgstr ""
+msgstr "Vložit"
 
 #: src/declarative/Main.qml:1614
 #, kde-format
@@ -580,13 +580,13 @@ msgstr[1] ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
-msgstr ""
+msgstr "Přejmenovat kartu"
 
 #: src/declarative/Main.qml:1749
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
-msgstr ""
+msgstr "Přejmenovat"
 
 #: src/declarative/Main.qml:1765
 #, kde-format
@@ -598,7 +598,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
-msgstr ""
+msgstr "Název karty"
 
 #: src/declarative/Main.qml:1773
 #, kde-format
@@ -640,7 +640,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopírovat odkaz"
 
 #: src/declarative/Main.qml:1864
 #, kde-format
@@ -652,25 +652,25 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Textové soubory (*.txt)"
 
 #: src/declarative/Main.qml:1867
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"
-msgstr ""
+msgstr "Všechny soubory (*)"
 
 #: src/declarative/settings/AppearanceSettings.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Appearance"
-msgstr ""
+msgstr "Vzhled"
 
 #: src/declarative/settings/AppearanceSettings.qml:45
 #, kde-format
 msgctxt "@title:group"
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: src/declarative/settings/AppearanceSettings.qml:51
 #, kde-format
@@ -682,7 +682,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Font:"
-msgstr ""
+msgstr "Písmo:"
 
 #: src/declarative/settings/AppearanceSettings.qml:81
 #, kde-format
@@ -706,25 +706,25 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors"
-msgstr ""
+msgstr "Barvy"
 
 #: src/declarative/settings/AppearanceSettings.qml:132
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Window:"
-msgstr ""
+msgstr "Okno:"
 
 #: src/declarative/settings/AppearanceSettings.qml:148
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Terminal:"
-msgstr ""
+msgstr "Terminál:"
 
 #: src/declarative/settings/AppearanceSettings.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Color Scheme…"
-msgstr ""
+msgstr "Upravit barevné schéma…"
 
 #: src/declarative/settings/AppearanceSettings.qml:190
 #, kde-format
@@ -737,27 +737,27 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplikovat…"
 
 #: src/declarative/settings/AppearanceSettings.qml:214
 #: src/declarative/settings/PresetsSettings.qml:209
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import…"
-msgstr ""
+msgstr "Importovat…"
 
 #: src/declarative/settings/AppearanceSettings.qml:223
 #: src/declarative/settings/PresetsSettings.qml:218
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: src/declarative/settings/AppearanceSettings.qml:235
 #, kde-format
 msgctxt "@label:slider"
 msgid "Background opacity:"
-msgstr ""
+msgstr "Průhlednost pozadí:"
 
 #: src/declarative/settings/AppearanceSettings.qml:262
 #: src/declarative/settings/AppearanceSettings.qml:270
@@ -770,31 +770,31 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Blur"
-msgstr ""
+msgstr "Rozostření"
 
 #: src/declarative/settings/AppearanceSettings.qml:292
 #, kde-format
 msgctxt "@title:group"
 msgid "Tab Bar"
-msgstr ""
+msgstr "Panel karet"
 
 #: src/declarative/settings/AppearanceSettings.qml:295
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Position:"
-msgstr ""
+msgstr "Pozice:"
 
 #: src/declarative/settings/AppearanceSettings.qml:300
 #, kde-format
 msgctxt "@item:inlistbox tab bar position"
 msgid "Top"
-msgstr ""
+msgstr "Nahoře"
 
 #: src/declarative/settings/AppearanceSettings.qml:300
 #, kde-format
 msgctxt "@item:inlistbox tab bar position"
 msgid "Bottom"
-msgstr ""
+msgstr "Dole"
 
 #: src/declarative/settings/AppearanceSettings.qml:314
 #, kde-format
@@ -826,7 +826,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Window"
-msgstr ""
+msgstr "Okno"
 
 #: src/declarative/settings/AppearanceSettings.qml:362
 #, kde-format
@@ -838,19 +838,19 @@ msgstr ""
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Columns:"
-msgstr ""
+msgstr "Sloupce:"
 
 #: src/declarative/settings/AppearanceSettings.qml:392
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Rows:"
-msgstr ""
+msgstr "Řádky:"
 
 #: src/declarative/settings/AppearanceSettings.qml:433
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Color Scheme"
-msgstr ""
+msgstr "Importovat barevné schéma"
 
 #: src/declarative/settings/AppearanceSettings.qml:434
 #, kde-format
@@ -862,13 +862,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Behavior"
-msgstr ""
+msgstr "Chování"
 
 #: src/declarative/settings/BehaviorSettings.qml:28
 #, kde-format
 msgctxt "@title:group"
 msgid "Confirmations"
-msgstr ""
+msgstr "Potvrzování"
 
 #: src/declarative/settings/BehaviorSettings.qml:34
 #, kde-format
@@ -886,7 +886,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Clipboard"
-msgstr ""
+msgstr "Schránka"
 
 #: src/declarative/settings/BehaviorSettings.qml:65
 #, kde-format
@@ -904,7 +904,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Links"
-msgstr ""
+msgstr "Odkazy"
 
 #: src/declarative/settings/BehaviorSettings.qml:89
 #, kde-format
@@ -916,49 +916,49 @@ msgstr ""
 #, kde-format
 msgctxt "@label:color"
 msgid "Black"
-msgstr ""
+msgstr "Černá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Red"
-msgstr ""
+msgstr "Červená"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Green"
-msgstr ""
+msgstr "Zelená"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Yellow"
-msgstr ""
+msgstr "Žlutá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Blue"
-msgstr ""
+msgstr "Modrá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Magenta"
-msgstr ""
+msgstr "Purpurová"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Cyan"
-msgstr ""
+msgstr "Azurová"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "White"
-msgstr ""
+msgstr "Bílá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
@@ -1026,7 +1026,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:167
 #, kde-format
@@ -1038,13 +1038,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Color Scheme"
-msgstr ""
+msgstr "Upravit barevné schéma"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:195
 #, kde-format
 msgctxt "@title:group"
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:206
 #, kde-format
@@ -1062,50 +1062,50 @@ msgstr ""
 #, kde-format
 msgctxt "@info short color sample"
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:259
 #: src/declarative/settings/PresetsSettings.qml:230
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Název:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:269
 #, kde-format
 msgctxt "@label:color"
 msgid "Text:"
-msgstr ""
+msgstr "Text:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:272
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Color"
-msgstr ""
+msgstr "Barva textu"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:273
 #, kde-format
 msgctxt "@label:color"
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:280
 #, kde-format
 msgctxt "@label:color"
 msgid "Background:"
-msgstr ""
+msgstr "Pozadí:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:283
 #, kde-format
 msgctxt "@title:window"
 msgid "Background Color"
-msgstr ""
+msgstr "Barva pozadí"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:284
 #, kde-format
 msgctxt "@label:color"
 msgid "Background"
-msgstr ""
+msgstr "Pozadí"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:290
 #, kde-format
@@ -1117,25 +1117,25 @@ msgstr ""
 #, kde-format
 msgctxt "@label:column"
 msgid "Normal"
-msgstr ""
+msgstr "Normální"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:312
 #, kde-format
 msgctxt "@label:column"
 msgid "Bright"
-msgstr ""
+msgstr "Jasný"
 
 #: src/declarative/settings/PresetsSettings.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Presets"
-msgstr ""
+msgstr "Přednastavení"
 
 #: src/declarative/settings/PresetsSettings.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
-msgstr ""
+msgstr "Obnovit"
 
 #: src/declarative/settings/PresetsSettings.qml:123
 #, kde-format
@@ -1159,7 +1159,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Preset:"
-msgstr ""
+msgstr "Přednastavení:"
 
 #: src/declarative/settings/PresetsSettings.qml:171
 #, kde-format
@@ -1177,7 +1177,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
-msgstr ""
+msgstr "Příkaz:"
 
 #: src/declarative/settings/PresetsSettings.qml:251
 #, kde-format
@@ -1195,31 +1195,31 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Current folder"
-msgstr ""
+msgstr "Současná složka"
 
 #: src/declarative/settings/PresetsSettings.qml:263
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Home folder"
-msgstr ""
+msgstr "Domovská složka"
 
 #: src/declarative/settings/PresetsSettings.qml:263
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Custom folder"
-msgstr ""
+msgstr "Vlastní složka"
 
 #: src/declarative/settings/PresetsSettings.qml:271
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Folder:"
-msgstr ""
+msgstr "Složka:"
 
 #: src/declarative/settings/PresetsSettings.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose…"
-msgstr ""
+msgstr "Vybrat…"
 
 #: src/declarative/settings/PresetsSettings.qml:291
 #, kde-format
@@ -1231,7 +1231,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Environment:"
-msgstr ""
+msgstr "Prostředí:"
 
 #: src/declarative/settings/PresetsSettings.qml:307
 #, kde-format
@@ -1243,25 +1243,25 @@ msgstr ""
 #, kde-format
 msgctxt "@item environment variable value"
 msgid "(empty)"
-msgstr ""
+msgstr "(prázdný)"
 
 #: src/declarative/settings/PresetsSettings.qml:353
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit %1"
-msgstr ""
+msgstr "Upravit %1"
 
 #: src/declarative/settings/PresetsSettings.qml:365
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove %1"
-msgstr ""
+msgstr "Odstranit %1"
 
 #: src/declarative/settings/PresetsSettings.qml:385
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Variable…"
-msgstr ""
+msgstr "Přidat proměnnou…"
 
 #: src/declarative/settings/PresetsSettings.qml:400
 #, kde-format
@@ -1291,31 +1291,31 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 #: src/declarative/settings/PresetsSettings.qml:469
 #, kde-format
 msgctxt "@label:textbox environment variable name"
 msgid "Name:"
-msgstr ""
+msgstr "Název:"
 
 #: src/declarative/settings/PresetsSettings.qml:480
 #, kde-format
 msgctxt "@label:textbox environment variable value"
 msgid "Value:"
-msgstr ""
+msgstr "Hodnota:"
 
 #: src/declarative/settings/PresetsSettings.qml:508
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Preset"
-msgstr ""
+msgstr "Odstranit přednastavení"
 
 #: src/declarative/settings/PresetsSettings.qml:522
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: src/declarative/settings/PresetsSettings.qml:536
 #, kde-format
@@ -1327,7 +1327,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Remove preset “%1”?"
-msgstr ""
+msgstr "Odstranit přednastavení \"%1\"?"
 
 #: src/declarative/settings/PresetsSettings.qml:556
 #, kde-format
@@ -1351,7 +1351,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: src/declarative/settings/TerminalSettings.qml:77
 #, kde-format
@@ -1363,13 +1363,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Command"
-msgstr ""
+msgstr "Příkaz"
 
 #: src/declarative/settings/TerminalSettings.qml:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Directory name"
-msgstr ""
+msgstr "Název adresáře"
 
 #: src/declarative/settings/TerminalSettings.qml:95
 #, kde-format
@@ -1381,13 +1381,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "User name"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 #: src/declarative/settings/TerminalSettings.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Host name"
-msgstr ""
+msgstr "Název hostitele"
 
 #: src/declarative/settings/TerminalSettings.qml:115
 #, kde-format
@@ -1417,7 +1417,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title format:"
-msgstr ""
+msgstr "Formát názvu karty:"
 
 #: src/declarative/settings/TerminalSettings.qml:141
 #, kde-format
@@ -1430,20 +1430,20 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr ""
+msgstr "Vložit"
 
 #: src/declarative/settings/TerminalSettings.qml:197
 #: src/declarative/settings/TerminalSettings.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "Preview:"
-msgstr ""
+msgstr "Náhled:"
 
 #: src/declarative/settings/TerminalSettings.qml:210
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Remote tab title format:"
-msgstr ""
+msgstr "Formát názvu karty pro vzdálené připojení:"
 
 #: src/declarative/settings/TerminalSettings.qml:282
 #, kde-format
@@ -1455,31 +1455,32 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Scrollback"
-msgstr ""
+msgstr "Zpětné posouvání"
 
 #: src/declarative/settings/TerminalSettings.qml:298
 #, kde-format
 msgctxt "@label:listbox"
 msgid "History:"
-msgstr ""
+msgstr "Historie:"
 
+# žádné parametry funkce v inspektoru funkcí
 #: src/declarative/settings/TerminalSettings.qml:309
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "None"
-msgstr ""
+msgstr "Nic"
 
 #: src/declarative/settings/TerminalSettings.qml:309
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Limited"
-msgstr ""
+msgstr "Omezená"
 
 #: src/declarative/settings/TerminalSettings.qml:309
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unlimited"
-msgstr ""
+msgstr "Bez omezení"
 
 #: src/declarative/settings/TerminalSettings.qml:325
 #, kde-format
@@ -1492,8 +1493,9 @@ msgstr ""
 msgctxt "@label unit after the retained-line count"
 msgid "line"
 msgid_plural "lines"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "řádek"
+msgstr[1] "řádky"
+msgstr[2] "řádků"
 
 #: src/declarative/settings/TerminalSettings.qml:348
 #, kde-format
@@ -1511,31 +1513,31 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Cursor"
-msgstr ""
+msgstr "Kurzor"
 
 #: src/declarative/settings/TerminalSettings.qml:373
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Shape:"
-msgstr ""
+msgstr "Tvar:"
 
 #: src/declarative/settings/TerminalSettings.qml:382
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Block"
-msgstr ""
+msgstr "Blok"
 
 #: src/declarative/settings/TerminalSettings.qml:386
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Beam"
-msgstr ""
+msgstr "Paprsek"
 
 #: src/declarative/settings/TerminalSettings.qml:390
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Underline"
-msgstr ""
+msgstr "Podtržené"
 
 #: src/declarative/settings/TerminalSettings.qml:406
 #, kde-format
@@ -1547,13 +1549,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal: %1"
-msgstr ""
+msgstr "Terminál: %1"
 
 #: src/declarative/TerminalPane.qml:17
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: src/declarative/TerminalSearchBar.qml:70
 #, kde-format
@@ -1589,7 +1591,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Find Bar"
-msgstr ""
+msgstr "Zavřít vyhledávací panel"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
@@ -1613,38 +1615,38 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Progress: %1%"
-msgstr ""
+msgstr "Průběh: %1%"
 
 #: src/declarative/TerminalTabButton.qml:33
 #: src/declarative/TerminalTabButton.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In progress"
-msgstr ""
+msgstr "Probíhá"
 
 #: src/declarative/TerminalTabButton.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Error: %1%"
-msgstr ""
+msgstr "Chyba: %1%"
 
 #: src/declarative/TerminalTabButton.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #: src/declarative/TerminalTabButton.qml:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paused: %1%"
-msgstr ""
+msgstr "Pozastaveno: %1%"
 
 #: src/declarative/TerminalTabButton.qml:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paused"
-msgstr ""
+msgstr "Pozastaveno"
 
 #: src/declarative/TerminalTabButton.qml:67
 #, kde-format
@@ -1662,7 +1664,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Close %1"
-msgstr ""
+msgstr "Zavřít %1"
 
 #: src/declarative/TerminalTabs.qml:157
 #, kde-format
@@ -1670,7 +1672,7 @@ msgctxt "@action:button"
 msgid "Scroll Tabs Left"
 msgstr ""
 
-#: src/declarative/TerminalTabs.qml:427
+#: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"
@@ -1761,7 +1763,7 @@ msgstr ""
 #: src/kpart/Part.cpp:339
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Vložit"
 
 #: src/kpart/Part.cpp:664
 #, kde-format
@@ -1771,52 +1773,52 @@ msgstr ""
 #: src/kpart/Part.cpp:769
 #, kde-format
 msgid "Paste Selection"
-msgstr ""
+msgstr "Vložit výběr"
 
 #: src/kpart/Part.cpp:834
 #, kde-format
 msgid "Clear Scrollback"
-msgstr ""
+msgstr "Vyčistit rolování"
 
 #: src/kpart/Part.cpp:858
 #, kde-format
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Původní přiblížení"
 
 #: src/kpart/Part.cpp:875
 #, kde-format
 msgid "Monitor for Activity"
-msgstr ""
+msgstr "Detekovat aktivitu"
 
 #: src/kpart/Part.cpp:880
 #, kde-format
 msgid "Monitor for Silence"
-msgstr ""
+msgstr "Detekovat nečinnost"
 
 #: src/kpart/Part.cpp:886
 #, kde-format
 msgid "New Tab"
-msgstr ""
+msgstr "Nová karta"
 
 #: src/kpart/Part.cpp:890
 #, kde-format
 msgid "Rename Tab…"
-msgstr ""
+msgstr "Přejmenovat kartu…"
 
 #: src/kpart/Part.cpp:894
 #, kde-format
 msgid "Next Tab"
-msgstr ""
+msgstr "Následující karta"
 
 #: src/kpart/Part.cpp:902
 #, kde-format
 msgid "Previous Tab"
-msgstr ""
+msgstr "Předchozí karta"
 
 #: src/kpart/Part.cpp:910
 #, kde-format
 msgid "Close Tab"
-msgstr ""
+msgstr "Zavřít kartu"
 
 #: src/kpart/Part.cpp:914
 #, kde-format
@@ -1836,7 +1838,7 @@ msgstr ""
 #: src/kpart/Part.cpp:990
 #, kde-format
 msgid "Rename Tab"
-msgstr ""
+msgstr "Přejmenovat kartu"
 
 #: src/kpart/Part.cpp:991
 #, kde-format
@@ -1851,7 +1853,7 @@ msgstr ""
 #: src/kpart/Part.cpp:1102
 #, kde-format
 msgid "Text Files (*.txt)"
-msgstr ""
+msgstr "Textové soubory (*.txt)"
 
 #: src/kpart/Part.cpp:1117
 #, kde-format
@@ -1866,7 +1868,7 @@ msgstr ""
 #: src/kpart/Part.cpp:1125
 #, kde-format
 msgid "Close Terminal"
-msgstr ""
+msgstr "Zavřít terminál"
 
 #: src/main.cpp:33
 #, kde-format
@@ -1886,7 +1888,7 @@ msgstr ""
 #: src/main.cpp:85
 #, kde-format
 msgid "A modern and fast terminal"
-msgstr ""
+msgstr "Moderní a rychlý terminál"
 
 #: src/main.cpp:87
 #, kde-format
@@ -1902,13 +1904,13 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Libor Filípek"
 
 #: src/main.cpp:91
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "libor.filipek@gmail.com"
 
 #: src/main.cpp:100
 #, kde-format
@@ -1919,7 +1921,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "directory"
-msgstr ""
+msgstr "adresář"
 
 #: src/main.cpp:101
 #, kde-format
@@ -1930,7 +1932,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "name"
-msgstr ""
+msgstr "název"
 
 #: src/main.cpp:102
 #, kde-format
@@ -1956,7 +1958,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "title"
-msgstr ""
+msgstr "název"
 
 #: src/main.cpp:107
 #, kde-format
@@ -1967,7 +1969,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "program"
-msgstr ""
+msgstr "program"
 
 #: src/main.cpp:109
 #, kde-format
@@ -2060,13 +2062,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "%1 (Modified)"
-msgstr ""
+msgstr "%1 (změněno)"
 
 #: src/settings/PresetEditor.cpp:283
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "Copy of %1"
-msgstr ""
+msgstr "Kopie %1"
 
 #: src/settings/PresetEditor.cpp:300
 #, kde-format
@@ -2094,7 +2096,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "System"
-msgstr ""
+msgstr "Systém"
 
 #: src/settings/TerminalPaletteModel.cpp:164
 #, kde-format
@@ -2137,13 +2139,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item color scheme"
 msgid "Copy of %1"
-msgstr ""
+msgstr "Kopie %1"
 
 #: src/settings/TerminalPaletteModel.cpp:275
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
-msgstr ""
+msgstr "%1 (změněno)"
 
 #: src/settings/TerminalPaletteModel.cpp:318
 #, kde-format
@@ -2232,7 +2234,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info title format preview"
 msgid "Shell"
-msgstr ""
+msgstr "Shell"
 
 #: src/ui/SettingsDialog.cpp:35
 #, kde-format
@@ -2249,7 +2251,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Neuložené změny"
 
 #: src/ui/TerminalWidget.cpp:69
 #, kde-format
@@ -2265,7 +2267,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "Search for '%1' with"
-msgstr ""
+msgstr "Hledat '%1' pomocí"
 
 #: src/WindowManager.cpp:331
 #, kde-format

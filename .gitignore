@@ -1,6 +1,8 @@
+# Ignore the following files
+*.kate-swp
+*.user
 /build*/
 /*.md
 !/README.md
 /.clang-format
-*.user
-*.kate-swp
+/compile_commands.json

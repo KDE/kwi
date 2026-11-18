@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-17 01:12+0000\n"
-"PO-Revision-Date: 2026-11-16 15:15+0100\n"
+"PO-Revision-Date: 2026-11-17 15:55+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -116,7 +116,7 @@ msgstr "Nieuw venster"
 #, kde-format
 msgctxt "@action"
 msgid "Hide Tab Bar for Single Tabs"
-msgstr ""
+msgstr "Tabbladen verbergen voor een enkel tabblad"
 
 #: src/declarative/ActionDefinitions.qml:23
 #, kde-format
@@ -238,7 +238,7 @@ msgstr "Alles selecteren"
 #, kde-format
 msgctxt "@action"
 msgid "Keyboard Selection Mode"
-msgstr ""
+msgstr "Selectiemodus voor toetsenbord"
 
 #: src/declarative/ActionDefinitions.qml:55 src/kpart/Part.cpp:831
 #, kde-format
@@ -256,7 +256,7 @@ msgstr "Geschiedenis opschonen"
 #, kde-format
 msgctxt "@action"
 msgid "Reset Terminal"
-msgstr ""
+msgstr "Terminal resetten"
 
 #: src/declarative/ActionDefinitions.qml:58
 #, kde-format
@@ -376,7 +376,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
-msgstr ""
+msgstr "Bestand"
 
 #: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
 #, kde-format
@@ -406,13 +406,13 @@ msgstr "Uitvoer"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: src/declarative/Main.qml:859
 #, kde-format
 msgctxt "@title:menu"
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
 #, kde-format
@@ -546,7 +546,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "Meerdere lijnen plakken?"
 
 #: src/declarative/Main.qml:1592
 #, kde-format
@@ -558,7 +558,7 @@ msgstr "Plakken"
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "Het plakken van deze tekst kan opdrachten uitvoeren."
 
 #: src/declarative/Main.qml:1631
 #, kde-format
@@ -1704,7 +1704,7 @@ msgstr[1] ""
 #: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
 #, kde-format
 msgid "This terminal is no longer available."
-msgstr ""
+msgstr "Deze terminal is niet langer beschikbaar."
 
 #: src/DesktopIntegration.cpp:180
 #, kde-format
@@ -1734,27 +1734,27 @@ msgstr ""
 #: src/DesktopIntegration.cpp:283
 #, kde-format
 msgid "Terminal Bell"
-msgstr ""
+msgstr "Terminalbel"
 
 #: src/DesktopIntegration.cpp:315
 #, kde-format
 msgid "Show Terminal"
-msgstr ""
+msgstr "Terminal tonen"
 
 #: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
 #, kde-format
 msgid "Kwi Terminal"
-msgstr ""
+msgstr "Kwi-terminal"
 
 #: src/kpart/Part.cpp:329
 #, kde-format
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "Meerdere lijnen plakken?"
 
 #: src/kpart/Part.cpp:330
 #, kde-format
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "Het plakken van deze tekst kan opdrachten uitvoeren."
 
 #: src/kpart/Part.cpp:339
 #, kde-format
@@ -1879,7 +1879,7 @@ msgstr ""
 #: src/main.cpp:83
 #, kde-format
 msgid "Kwi"
-msgstr ""
+msgstr "Kwi"
 
 #: src/main.cpp:85
 #, kde-format

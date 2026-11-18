@@ -21,7 +21,7 @@ RowLayout {
     readonly property int count: tabBar.count
     readonly property int currentIndex: sessions.currentIndex
     readonly property ListView view: tabBar.contentItem as ListView
-    readonly property bool overflowing: count * Kirigami.Units.gridUnit * 5 > width
+    readonly property bool overflowing: count * Kirigami.Units.gridUnit * 4 > width
 
     // Clip the selected tab's frame opening to the scrolled viewport.
     readonly property real viewportLeft: tabBar.x + view.x
@@ -190,7 +190,7 @@ RowLayout {
         implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, contentItem.implicitHeight + topPadding + bottomPadding)
         contentHeight: availableHeight
 
-        readonly property real tabWidth: Math.max(Kirigami.Units.gridUnit * 5, Math.min(Kirigami.Units.gridUnit * 14, width / Math.max(1, count)))
+        readonly property real tabWidth: Math.max(Kirigami.Units.gridUnit * 4, Math.min(Kirigami.Units.gridUnit * 14, width / Math.max(1, count)))
 
         function revealCurrent(): void {
             setCurrentIndex(root.sessions.currentIndex);

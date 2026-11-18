@@ -1076,6 +1076,7 @@ Kirigami.ApplicationWindow {
                         id: sessionTabs
 
                         Layout.fillWidth: true
+                        Layout.minimumWidth: 0
                         Layout.fillHeight: true
                         enabled: root.terminalActionsEnabled
                         sessions: root.sessionModel

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"POT-Creation-Date: 2026-11-19 01:12+0000\n"
 "PO-Revision-Date: 2026-11-16 12:41+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -378,25 +378,25 @@ msgctxt "@title:menu"
 msgid "File"
 msgstr "Фајл"
 
-#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1186
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Уређивање"
 
-#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1276
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Приказ"
 
-#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1144
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tabs"
 msgstr "Језичци"
 
-#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1228
 #, kde-format
 msgctxt "@title:menu"
 msgid "Output"
@@ -451,122 +451,122 @@ msgctxt "@action:button"
 msgid "New Tab with Preset"
 msgstr "Нови језичак са претподешавањем"
 
-#: src/declarative/Main.qml:1111
+#: src/declarative/Main.qml:1112
 #, kde-format
 msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Мени програма"
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "Процес је завршио стањем %1."
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Процес је завршен."
 
-#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Отвори везу"
 
-#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Копирај везу"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Напустити Kwi?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Затворити све терминале?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Затворити терминал?"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Напусти Kwi"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Затвори све терминале"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Затвори терминал"
 
-#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Не питај више"
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Напуштање ће зауставити наредбе у свим прозорима."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr "Затварање овог прозора зауставиће наредбе које се у њему извршавају."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "Затварање „%1“ зауставиће наредбу која се у њему извршава."
 
-#: src/declarative/Main.qml:1585
+#: src/declarative/Main.qml:1586
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Налепити више редова?"
 
-#: src/declarative/Main.qml:1592
+#: src/declarative/Main.qml:1593
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Налепи"
 
-#: src/declarative/Main.qml:1614
+#: src/declarative/Main.qml:1615
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Налепљивање овог текста може покренути наредбе."
 
-#: src/declarative/Main.qml:1631
+#: src/declarative/Main.qml:1632
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Преглед текста за налепљивање"
 
-#: src/declarative/Main.qml:1638
+#: src/declarative/Main.qml:1639
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -576,85 +576,85 @@ msgstr[1] "Приказана су прва %1 знака."
 msgstr[2] "Приказано је првих %1 знакова."
 msgstr[3] "Приказан је први знак."
 
-#: src/declarative/Main.qml:1744
+#: src/declarative/Main.qml:1745
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Преименовање језичка"
 
-#: src/declarative/Main.qml:1749
+#: src/declarative/Main.qml:1750
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Преименуј"
 
-#: src/declarative/Main.qml:1765
+#: src/declarative/Main.qml:1766
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Аутоматски наслов"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1767
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Наслов језичка"
 
-#: src/declarative/Main.qml:1773
+#: src/declarative/Main.qml:1774
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Оставите празно за аутоматски наслов."
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Филтрирај везе…"
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Филтрирај језичке…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "Нема веза у видљивом излазу терминала."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Нема поклапајућих веза."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Нема поклапајућих језичака."
 
-#: src/declarative/Main.qml:1815
+#: src/declarative/Main.qml:1816
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Копирај везу"
 
-#: src/declarative/Main.qml:1864
+#: src/declarative/Main.qml:1865
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Уписивање излаза терминала"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "текстуални фајлови (*.txt)"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"
@@ -2111,82 +2111,82 @@ msgctxt "@item:inlistbox"
 msgid "System"
 msgstr "системска"
 
-#: src/settings/TerminalPaletteModel.cpp:164
+#: src/settings/TerminalPaletteModel.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid "Choose a local Konsole color scheme file."
 msgstr "Изаберите локални фајл шеме боја Конзоле."
 
-#: src/settings/TerminalPaletteModel.cpp:172
+#: src/settings/TerminalPaletteModel.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be read or is too large."
 msgstr "Не могу да прочитам шему боја, или је превелика."
 
-#: src/settings/TerminalPaletteModel.cpp:180
+#: src/settings/TerminalPaletteModel.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "This file does not contain a valid terminal color scheme."
 msgstr "Овај фајл не садржи исправну шему боја терминала."
 
-#: src/settings/TerminalPaletteModel.cpp:192
-#: src/settings/TerminalPaletteModel.cpp:341
+#: src/settings/TerminalPaletteModel.cpp:196
+#: src/settings/TerminalPaletteModel.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme directory could not be created."
 msgstr "Не могу да направим фасциклу шема боја."
 
-#: src/settings/TerminalPaletteModel.cpp:202
+#: src/settings/TerminalPaletteModel.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "The imported color scheme could not be saved."
 msgstr "Не могу да сачувам увезену шему боја."
 
-#: src/settings/TerminalPaletteModel.cpp:220
+#: src/settings/TerminalPaletteModel.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
 msgstr "Уклонити се могу само шеме боја увезене или направљене у програму Kwi."
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "Copy of %1"
 msgstr "%1 (копија)"
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
 msgstr "%1 (измењена)"
 
-#: src/settings/TerminalPaletteModel.cpp:318
+#: src/settings/TerminalPaletteModel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "Choose an opaque foreground, background, and all 16 terminal colors."
 msgstr "Изаберите непрозирне боје за испис, позадину и свих 16 боја терминала."
 
-#: src/settings/TerminalPaletteModel.cpp:335
+#: src/settings/TerminalPaletteModel.cpp:339
 #, kde-format
 msgctxt "@info"
 msgid "This color scheme cannot be overwritten. Create a new copy instead."
 msgstr ""
 "Ова шема боја не може да се пребрише. Уместо тога направите нову копију."
 
-#: src/settings/TerminalPaletteModel.cpp:364
+#: src/settings/TerminalPaletteModel.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be saved."
 msgstr "Не могу да сачувам шему боја."
 
-#: src/settings/TerminalPaletteModel.cpp:382
+#: src/settings/TerminalPaletteModel.cpp:386
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Enter a color scheme name of 1 to 80 characters without control characters."
 msgstr "Унесите име шеме боја од 1 до 80 знакова, без контролних знакова."
 
-#: src/settings/TerminalPaletteModel.cpp:393
+#: src/settings/TerminalPaletteModel.cpp:397
 #, kde-format
 msgctxt "@info"
 msgid "A color scheme with this name already exists. Choose another name."

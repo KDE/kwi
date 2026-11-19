@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"POT-Creation-Date: 2026-11-19 01:12+0000\n"
 "PO-Revision-Date: 2026-11-16 10:14+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -381,25 +381,25 @@ msgctxt "@title:menu"
 msgid "File"
 msgstr "Файл"
 
-#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1186
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Зміни"
 
-#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1276
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Перегляд"
 
-#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1144
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tabs"
 msgstr "Вкладки"
 
-#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1228
 #, kde-format
 msgctxt "@title:menu"
 msgid "Output"
@@ -454,124 +454,124 @@ msgctxt "@action:button"
 msgid "New Tab with Preset"
 msgstr "Нова вкладка з шаблоном"
 
-#: src/declarative/Main.qml:1111
+#: src/declarative/Main.qml:1112
 #, kde-format
 msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Меню програми"
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "Процес завершив роботу зі станом %1."
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Процес завершив роботу."
 
-#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Відкрити посилання"
 
-#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Копіювати посилання"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Вийти з Kwi?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Закрити усі термінали?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Закрити термінал?"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Вийти з Kwi"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Закрити усі термінали"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Закрити «Термінал»"
 
-#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Більше не питати"
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Вихід спричинить припинення виконання команд в усіх вікнах."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr ""
 "Закриття цього вікна призведе до зупинення виконання відданих у ньому команд."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr ""
 "Закриття «%1» призведе до припинення виконання відданої у ньому команди."
 
-#: src/declarative/Main.qml:1585
+#: src/declarative/Main.qml:1586
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Вставити декілька рядків?"
 
-#: src/declarative/Main.qml:1592
+#: src/declarative/Main.qml:1593
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/declarative/Main.qml:1614
+#: src/declarative/Main.qml:1615
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Вставлення цього тексту може призвести до виконання команд."
 
-#: src/declarative/Main.qml:1631
+#: src/declarative/Main.qml:1632
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Попередній перегляд вставлення"
 
-#: src/declarative/Main.qml:1638
+#: src/declarative/Main.qml:1639
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -581,85 +581,85 @@ msgstr[1] "Показ перших %1 символів."
 msgstr[2] "Показ перших %1 символів."
 msgstr[3] "Показ першого символу."
 
-#: src/declarative/Main.qml:1744
+#: src/declarative/Main.qml:1745
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Перейменування вкладки"
 
-#: src/declarative/Main.qml:1749
+#: src/declarative/Main.qml:1750
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Перейменувати"
 
-#: src/declarative/Main.qml:1765
+#: src/declarative/Main.qml:1766
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Автоматичний заголовок"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1767
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Заголовок вкладки"
 
-#: src/declarative/Main.qml:1773
+#: src/declarative/Main.qml:1774
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Не заповнюйте, якщо слід використати автоматичний заголовок."
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Фільтрувати посилання…"
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Фільтрувати вкладки…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "У видимому виведенні до термінала немає посилань."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Немає відповідних посилань."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Немає відповідних вкладок."
 
-#: src/declarative/Main.qml:1815
+#: src/declarative/Main.qml:1816
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Копіювати посилання"
 
-#: src/declarative/Main.qml:1864
+#: src/declarative/Main.qml:1865
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Зберегти виведення до термінала"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "текстові файли (*.txt)"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"
@@ -2124,78 +2124,78 @@ msgctxt "@item:inlistbox"
 msgid "System"
 msgstr "Система"
 
-#: src/settings/TerminalPaletteModel.cpp:164
+#: src/settings/TerminalPaletteModel.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid "Choose a local Konsole color scheme file."
 msgstr "Виберіть локальний файл схеми кольорів Konsole."
 
-#: src/settings/TerminalPaletteModel.cpp:172
+#: src/settings/TerminalPaletteModel.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be read or is too large."
 msgstr ""
 "Не вдалося прочитати схему кольорів або схема кольорів є надто великою."
 
-#: src/settings/TerminalPaletteModel.cpp:180
+#: src/settings/TerminalPaletteModel.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "This file does not contain a valid terminal color scheme."
 msgstr "У цьому файлі не міститься коректної схеми кольорів термінала."
 
-#: src/settings/TerminalPaletteModel.cpp:192
-#: src/settings/TerminalPaletteModel.cpp:341
+#: src/settings/TerminalPaletteModel.cpp:196
+#: src/settings/TerminalPaletteModel.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme directory could not be created."
 msgstr "Не вдалося створити каталог схеми кольорів."
 
-#: src/settings/TerminalPaletteModel.cpp:202
+#: src/settings/TerminalPaletteModel.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "The imported color scheme could not be saved."
 msgstr "Не вдалося зберегти імпортовану схему кольорів."
 
-#: src/settings/TerminalPaletteModel.cpp:220
+#: src/settings/TerminalPaletteModel.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
 msgstr ""
 "Можна вилучати лише схеми кольорів, які імпортовано або створено у Kwi."
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "Copy of %1"
 msgstr "Копія %1"
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
 msgstr "%1 (змінено)"
 
-#: src/settings/TerminalPaletteModel.cpp:318
+#: src/settings/TerminalPaletteModel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "Choose an opaque foreground, background, and all 16 terminal colors."
 msgstr ""
 "Виберіть непрозорий колір переднього плану, тла і усі 16 кольорів термінала."
 
-#: src/settings/TerminalPaletteModel.cpp:335
+#: src/settings/TerminalPaletteModel.cpp:339
 #, kde-format
 msgctxt "@info"
 msgid "This color scheme cannot be overwritten. Create a new copy instead."
 msgstr ""
 "Цю схему кольорів не можна перезаписати. Натомість, створіть нову копію."
 
-#: src/settings/TerminalPaletteModel.cpp:364
+#: src/settings/TerminalPaletteModel.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be saved."
 msgstr "Не вдалося зберегти схему кольорів."
 
-#: src/settings/TerminalPaletteModel.cpp:382
+#: src/settings/TerminalPaletteModel.cpp:386
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -2204,7 +2204,7 @@ msgstr ""
 "Введіть назву схеми кольорів з кількістю символів від 1 до 80, без керівних "
 "символів."
 
-#: src/settings/TerminalPaletteModel.cpp:393
+#: src/settings/TerminalPaletteModel.cpp:397
 #, kde-format
 msgctxt "@info"
 msgid "A color scheme with this name already exists. Choose another name."

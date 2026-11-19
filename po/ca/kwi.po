@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"POT-Creation-Date: 2026-11-19 01:12+0000\n"
 "PO-Revision-Date: 2026-11-16 10:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -383,25 +383,25 @@ msgid "File"
 msgstr "Fitxer"
 
 # skip-rule: t-sc-edit
-#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1186
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Edició"
 
-#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1276
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Visualització"
 
-#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1144
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tabs"
 msgstr "Pestanyes"
 
-#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1228
 #, kde-format
 msgctxt "@title:menu"
 msgid "Output"
@@ -456,122 +456,122 @@ msgctxt "@action:button"
 msgid "New Tab with Preset"
 msgstr "Pestanya nova amb predefinits"
 
-#: src/declarative/Main.qml:1111
+#: src/declarative/Main.qml:1112
 #, kde-format
 msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Menú d'aplicacions"
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "El procés ha sortit amb l'estat %1."
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "El procés ha finalitzat."
 
-#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Obre l'enllaç"
 
-#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Surto del Kwi?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Tanco tots els terminals?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Tanco el terminal?"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Surt del Kwi"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Tanca tots els terminals"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Tanca el terminal"
 
-#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "No ho tornis a preguntar"
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Si se surt, s'aturaran les ordres a totes les finestres."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr "Tancar aquesta finestra aturarà les seves ordres en execució."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "En tancar «%1» s'aturarà l'ordre en execució."
 
-#: src/declarative/Main.qml:1585
+#: src/declarative/Main.qml:1586
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Enganxo diverses línies?"
 
-#: src/declarative/Main.qml:1592
+#: src/declarative/Main.qml:1593
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Enganxa"
 
-#: src/declarative/Main.qml:1614
+#: src/declarative/Main.qml:1615
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "L'enganxament d'aquest text pot executar ordres."
 
-#: src/declarative/Main.qml:1631
+#: src/declarative/Main.qml:1632
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Enganxa la vista prèvia"
 
-#: src/declarative/Main.qml:1638
+#: src/declarative/Main.qml:1639
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -579,85 +579,85 @@ msgid_plural "Showing the first %1 characters."
 msgstr[0] "Es mostra el primer caràcter."
 msgstr[1] "Es mostren els %1 primers caràcters."
 
-#: src/declarative/Main.qml:1744
+#: src/declarative/Main.qml:1745
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Reanomena la pestanya"
 
-#: src/declarative/Main.qml:1749
+#: src/declarative/Main.qml:1750
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Reanomena"
 
-#: src/declarative/Main.qml:1765
+#: src/declarative/Main.qml:1766
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Títol automàtic"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1767
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Títol de pestanya"
 
-#: src/declarative/Main.qml:1773
+#: src/declarative/Main.qml:1774
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Deixeu-ho buit per a utilitzar el títol automàtic."
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Filtra els enllaços…"
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Filtra les pestanyes…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "No hi ha enllaços a la sortida visible del terminal."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "No hi ha enllaços coincidents."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "No hi ha pestanyes coincidents."
 
-#: src/declarative/Main.qml:1815
+#: src/declarative/Main.qml:1816
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: src/declarative/Main.qml:1864
+#: src/declarative/Main.qml:1865
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Desa la sortida del terminal"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "Fitxers de text (*.txt)"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"
@@ -2117,76 +2117,76 @@ msgctxt "@item:inlistbox"
 msgid "System"
 msgstr "Sistema"
 
-#: src/settings/TerminalPaletteModel.cpp:164
+#: src/settings/TerminalPaletteModel.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid "Choose a local Konsole color scheme file."
 msgstr "Trieu un fitxer local d'esquema de colors del Konsole."
 
-#: src/settings/TerminalPaletteModel.cpp:172
+#: src/settings/TerminalPaletteModel.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be read or is too large."
 msgstr "L'esquema de colors no s'ha pogut llegir o és massa gran."
 
-#: src/settings/TerminalPaletteModel.cpp:180
+#: src/settings/TerminalPaletteModel.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "This file does not contain a valid terminal color scheme."
 msgstr "Aquest fitxer no conté un esquema de colors de terminal vàlid."
 
-#: src/settings/TerminalPaletteModel.cpp:192
-#: src/settings/TerminalPaletteModel.cpp:341
+#: src/settings/TerminalPaletteModel.cpp:196
+#: src/settings/TerminalPaletteModel.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme directory could not be created."
 msgstr "No s'ha pogut crear el directori d'esquemes de colors."
 
-#: src/settings/TerminalPaletteModel.cpp:202
+#: src/settings/TerminalPaletteModel.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "The imported color scheme could not be saved."
 msgstr "No s'ha pogut desar l'esquema de colors importat."
 
-#: src/settings/TerminalPaletteModel.cpp:220
+#: src/settings/TerminalPaletteModel.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
 msgstr ""
 "Només es poden eliminar els esquemes de colors importats o creats al Kwi."
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "Copy of %1"
 msgstr "Còpia de %1"
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
 msgstr "%1 (modificat)"
 
-#: src/settings/TerminalPaletteModel.cpp:318
+#: src/settings/TerminalPaletteModel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "Choose an opaque foreground, background, and all 16 terminal colors."
 msgstr "Trieu un primer pla, un fons i els 16 colors del terminal opacs."
 
-#: src/settings/TerminalPaletteModel.cpp:335
+#: src/settings/TerminalPaletteModel.cpp:339
 #, kde-format
 msgctxt "@info"
 msgid "This color scheme cannot be overwritten. Create a new copy instead."
 msgstr ""
 "Aquest esquema de colors no es pot sobreescriure. Creeu una còpia nova."
 
-#: src/settings/TerminalPaletteModel.cpp:364
+#: src/settings/TerminalPaletteModel.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be saved."
 msgstr "No s'ha pogut desar l'esquema de colors."
 
-#: src/settings/TerminalPaletteModel.cpp:382
+#: src/settings/TerminalPaletteModel.cpp:386
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -2195,7 +2195,7 @@ msgstr ""
 "Introduïu un nom d'esquema de colors d'1 a 80 caràcters sense caràcters de "
 "control."
 
-#: src/settings/TerminalPaletteModel.cpp:393
+#: src/settings/TerminalPaletteModel.cpp:397
 #, kde-format
 msgctxt "@info"
 msgid "A color scheme with this name already exists. Choose another name."

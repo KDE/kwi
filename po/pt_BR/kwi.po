@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:12+0000\n"
+"POT-Creation-Date: 2026-11-19 01:12+0000\n"
 "PO-Revision-Date: 2026-11-16 07:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -378,25 +378,25 @@ msgctxt "@title:menu"
 msgid "File"
 msgstr "Arquivo"
 
-#: src/declarative/Main.qml:826 src/declarative/Main.qml:1185
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1186
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Editar"
 
-#: src/declarative/Main.qml:831 src/declarative/Main.qml:1275
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1276
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Exibir"
 
-#: src/declarative/Main.qml:834 src/declarative/Main.qml:1143
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1144
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tabs"
 msgstr "Abas"
 
-#: src/declarative/Main.qml:839 src/declarative/Main.qml:1227
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1228
 #, kde-format
 msgctxt "@title:menu"
 msgid "Output"
@@ -451,123 +451,123 @@ msgctxt "@action:button"
 msgid "New Tab with Preset"
 msgstr "Nova aba com predefinição"
 
-#: src/declarative/Main.qml:1111
+#: src/declarative/Main.qml:1112
 #, kde-format
 msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Menu do aplicativo"
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "O processo foi encerrado com o status %1."
 
-#: src/declarative/Main.qml:1357
+#: src/declarative/Main.qml:1358
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Processo concluído."
 
-#: src/declarative/Main.qml:1415 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Abrir link"
 
-#: src/declarative/Main.qml:1423 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Copiar link"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Sair do Kwi?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Fechar todos os terminais?"
 
-#: src/declarative/Main.qml:1507
+#: src/declarative/Main.qml:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Fechar terminal?"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Sair do Kwi"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Fechar todos os terminais"
 
-#: src/declarative/Main.qml:1515
+#: src/declarative/Main.qml:1516
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Fechar terminal"
 
-#: src/declarative/Main.qml:1523 src/declarative/Main.qml:1600
+#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Não perguntar novamente"
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Sair interromperá os comandos em todas as janelas."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr ""
 "Fechar esta janela interromperá os comandos que estão sendo executados nela."
 
-#: src/declarative/Main.qml:1536
+#: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "Fechar “%1” interromperá o comando que está sendo executado."
 
-#: src/declarative/Main.qml:1585
+#: src/declarative/Main.qml:1586
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Colar várias linhas?"
 
-#: src/declarative/Main.qml:1592
+#: src/declarative/Main.qml:1593
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Colar"
 
-#: src/declarative/Main.qml:1614
+#: src/declarative/Main.qml:1615
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Colar este texto pode executar comandos."
 
-#: src/declarative/Main.qml:1631
+#: src/declarative/Main.qml:1632
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Visualização do colar"
 
-#: src/declarative/Main.qml:1638
+#: src/declarative/Main.qml:1639
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -575,85 +575,85 @@ msgid_plural "Showing the first %1 characters."
 msgstr[0] "Mostrando o primeiro caractere."
 msgstr[1] "Mostrando os primeiros %1 caracteres."
 
-#: src/declarative/Main.qml:1744
+#: src/declarative/Main.qml:1745
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Renomear aba"
 
-#: src/declarative/Main.qml:1749
+#: src/declarative/Main.qml:1750
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Renomear"
 
-#: src/declarative/Main.qml:1765
+#: src/declarative/Main.qml:1766
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Título automático"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1767
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Título da aba"
 
-#: src/declarative/Main.qml:1773
+#: src/declarative/Main.qml:1774
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Deixe em branco para usar o título automático."
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Filtrar links…"
 
-#: src/declarative/Main.qml:1805
+#: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Filtrar abas…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "Sem links na saída visível do terminal."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Nenhum link correspondente."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Nenhuma aba correspondente."
 
-#: src/declarative/Main.qml:1815
+#: src/declarative/Main.qml:1816
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Copiar link"
 
-#: src/declarative/Main.qml:1864
+#: src/declarative/Main.qml:1865
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Salvar saída do terminal"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "Arquivos de texto (*.txt)"
 
-#: src/declarative/Main.qml:1867
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"
@@ -2108,57 +2108,57 @@ msgctxt "@item:inlistbox"
 msgid "System"
 msgstr "Sistema"
 
-#: src/settings/TerminalPaletteModel.cpp:164
+#: src/settings/TerminalPaletteModel.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid "Choose a local Konsole color scheme file."
 msgstr "Escolha um arquivo de esquema de cores do Konsole."
 
-#: src/settings/TerminalPaletteModel.cpp:172
+#: src/settings/TerminalPaletteModel.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be read or is too large."
 msgstr "O esquema de cores não pôde ser lido ou é grande demais."
 
-#: src/settings/TerminalPaletteModel.cpp:180
+#: src/settings/TerminalPaletteModel.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "This file does not contain a valid terminal color scheme."
 msgstr "Este arquivo não contém um esquema de cores de terminal válido."
 
-#: src/settings/TerminalPaletteModel.cpp:192
-#: src/settings/TerminalPaletteModel.cpp:341
+#: src/settings/TerminalPaletteModel.cpp:196
+#: src/settings/TerminalPaletteModel.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme directory could not be created."
 msgstr "Não foi possível criar a pasta de esquemas de cores."
 
-#: src/settings/TerminalPaletteModel.cpp:202
+#: src/settings/TerminalPaletteModel.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "The imported color scheme could not be saved."
 msgstr "O esquema de cores importado não pôde ser salvo."
 
-#: src/settings/TerminalPaletteModel.cpp:220
+#: src/settings/TerminalPaletteModel.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
 msgstr ""
 "Apenas esquemas de cores importados ou criados no Kwi podem ser removidos."
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "Copy of %1"
 msgstr "Cópia de %1"
 
-#: src/settings/TerminalPaletteModel.cpp:275
+#: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
 msgstr "%1 (Modificado)"
 
-#: src/settings/TerminalPaletteModel.cpp:318
+#: src/settings/TerminalPaletteModel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "Choose an opaque foreground, background, and all 16 terminal colors."
@@ -2166,7 +2166,7 @@ msgstr ""
 "Escolha um primeiro plano opaco, um plano de fundo e todas as 16 cores de "
 "terminal."
 
-#: src/settings/TerminalPaletteModel.cpp:335
+#: src/settings/TerminalPaletteModel.cpp:339
 #, kde-format
 msgctxt "@info"
 msgid "This color scheme cannot be overwritten. Create a new copy instead."
@@ -2174,13 +2174,13 @@ msgstr ""
 "Este esquema de cores não pode ser sobrescrito. Em vez disso, crie uma nova "
 "cópia."
 
-#: src/settings/TerminalPaletteModel.cpp:364
+#: src/settings/TerminalPaletteModel.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be saved."
 msgstr "O esquema de cores não pôde ser salvo."
 
-#: src/settings/TerminalPaletteModel.cpp:382
+#: src/settings/TerminalPaletteModel.cpp:386
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -2189,7 +2189,7 @@ msgstr ""
 "Insira um nome para o esquema de cores, com 1 a 80 caracteres e sem "
 "caracteres de controle."
 
-#: src/settings/TerminalPaletteModel.cpp:393
+#: src/settings/TerminalPaletteModel.cpp:397
 #, kde-format
 msgctxt "@info"
 msgid "A color scheme with this name already exists. Choose another name."

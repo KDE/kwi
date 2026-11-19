@@ -1,0 +1,239 @@
+# Spanish translations for kwi-terminal.po package.
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kwi package.
+# Automatically generated, 2026.
+#
+# SPDX-FileCopyrightText: 2026 Eloy Cuadra <ecuadra@eloihr.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi-terminal\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-16 15:29+0000\n"
+"PO-Revision-Date: 2026-11-19 00:43+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.08.3\n"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "Terminal: %1"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:83
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal output and command input."
+msgstr "Salida de terminal e introducción de órdenes."
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:132
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal bell"
+msgstr "Timbre del terminal"
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:105
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:138
+#, kde-format
+msgid "Could not read terminal output."
+msgstr "No se ha podido leer la salida del terminal."
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:132
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "Este terminal ya no está disponible."
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:135
+#, kde-format
+msgid "The terminal history changed while saving output."
+msgstr "El historial del terminal ha cambiado cuando se guardaba salida."
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#, kde-format
+msgid "Could not attach to an invalid terminal descriptor."
+msgstr ""
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/ProcessController.cpp:21
+#, kde-format
+msgid "Could not attach to the terminal: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:163
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:121
+#, kde-format
+msgid "Could not create a terminal: %1"
+msgstr "No se ha podido crear un terminal: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start the host terminal query."
+msgstr ""
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start a host helper: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:309
+#, kde-format
+msgid "Could not find the system shell on the host."
+msgstr ""
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:310
+#, kde-format
+msgid "Could not find the terminal command on the host: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:354
+#, kde-format
+msgid "Could not start the host terminal command: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:142
+#, kde-format
+msgid "Could not find executable: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:183
+#, kde-format
+msgid "Could not run the terminal command: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:67
+#, kde-format
+msgid "A terminal process is already running."
+msgstr ""
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#, kde-format
+msgid ""
+"The terminal input queue is full. Wait for the running program before "
+"pasting more text."
+msgstr ""
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#, kde-format
+msgid "Could not write to the terminal: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#, kde-format
+msgid "Could not resize the terminal: %1"
+msgstr ""
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:41
+#, kde-format
+msgid "A terminal's initial directory must be an absolute path."
+msgstr ""
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:47
+#, kde-format
+msgid "The command contains a null character."
+msgstr ""
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:59
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:64
+#: libs/kwi-terminal/src/Session.cpp:223
+#, kde-format
+msgid "The terminal environment contains an invalid assignment."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:30
+#, kde-format
+msgid "Could not allocate terminal state."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:32
+#, kde-format
+msgid "Could not capture terminal render state."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:42 libs/kwi-terminal/src/Session.cpp:264
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:146
+#, kde-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: libs/kwi-terminal/src/Session.cpp:671
+#, kde-format
+msgid "Could not resize the terminal."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:694
+#, kde-format
+msgid "The terminal could not process output."
+msgstr ""
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:144
+#, kde-format
+msgid "Terminal: %1"
+msgstr "Terminal: %1"
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:156
+#, kde-format
+msgid "Terminal output. Use keyboard selection mode to review and copy text."
+msgstr ""
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:209
+#, kde-format
+msgid "No matches"
+msgstr "No hay coincidencias"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:211
+#, kde-format
+msgid "%1 of %2"
+msgstr "%1 de %2"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:213
+#, kde-format
+msgid "%1 match"
+msgid_plural "%1 matches"
+msgstr[0] "%1 coincidencia"
+msgstr[1] "%1 coincidencias"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:232
+#, kde-format
+msgid "Could not search terminal history"
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:22
+#, kde-format
+msgid "Enter a title format."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:28
+#, kde-format
+msgid "Title formats can contain at most 256 characters."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:41
+#, kde-format
+msgid "Title formats cannot contain control characters."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:56
+#, kde-format
+msgid "Close each placeholder with }. Use {{ and }} for literal braces."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:93
+#, kde-format
+msgid "Unknown title placeholder: {%1}"
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:101
+#, kde-format
+msgid "Use }} for a literal closing brace."
+msgstr ""

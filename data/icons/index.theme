@@ -4,6 +4,7 @@
 Name=Hicolor
 Name[ca]=Hicolor
 Name[ca@valencia]=Hicolor
+Name[es]=Hicolor
 Name[nl]=Hicolor
 Name[pt_BR]=Hicolor
 Name[sr]=Hicolor
@@ -15,6 +16,7 @@ Name[uk]=Кольорова
 Comment=Embedded application icon fallback
 Comment[ca]=Icona alternativa de reserva de l'aplicació incrustada
 Comment[ca@valencia]=Icona alternativa de reserva de l'aplicació incrustada
+Comment[es]=Alternativa de icono de la aplicación integrada
 Comment[nl]=Terugvaloptie voor ingebed toepassingspictogram
 Comment[pt_BR]=Alternativa para ícone de aplicativo incorporado
 Comment[sr]=Угнежђена резервна иконица програма

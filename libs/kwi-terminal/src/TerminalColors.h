@@ -19,7 +19,6 @@ struct TerminalColors {
     QColor foreground{};
     QColor boldForeground{}; // Unset uses the default foreground, including OSC 10.
     QColor background{};
-    QColor cursor{};
     QColor selectionForeground{};
     QColor selectionBackground{};
     QVector<QRgb> ansi{};

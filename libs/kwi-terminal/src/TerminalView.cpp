@@ -722,7 +722,7 @@ void TerminalView::applyColors(const TerminalColors &colors)
     }
 
     m_session->setColors(colors.foreground, colors.background, colors.ansi, colors.boldForeground);
-    m_session->terminal()->setDecorations(colors.cursor, colors.selectionForeground, colors.selectionBackground);
+    m_session->terminal()->setDecorations({}, colors.selectionForeground, colors.selectionBackground);
     updateCursorDefaults();
     refresh();
 }

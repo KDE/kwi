@@ -63,7 +63,6 @@ TerminalColors defaultTerminalColors(QStringView scheme, const QPalette &applica
         result.foreground = applicationPalette.color(QPalette::Active, QPalette::Text);
     }
 
-    result.cursor = result.foreground;
     result.selectionBackground = applicationPalette.color(QPalette::Active, QPalette::Highlight);
     result.selectionForeground = applicationPalette.color(QPalette::Active, QPalette::HighlightedText);
 
@@ -182,7 +181,6 @@ std::optional<TerminalPalette> loadTerminalPaletteFile(const QString &path, cons
     result.background = background;
     result.foreground.setAlpha(255);
     result.background.setAlpha(255);
-    result.cursor = result.foreground;
     const KConfigGroup intenseForeground{&config, QStringLiteral("ForegroundIntense")};
 
     if (intenseForeground.hasKey("Color")) {

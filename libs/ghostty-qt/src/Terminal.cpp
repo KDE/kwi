@@ -456,7 +456,7 @@ public:
         frame.rowIdentities.resize(height);
         frame.background = QColor::fromRgb(rgb(colors.background));
         frame.foreground = QColor::fromRgb(rgb(colors.foreground));
-        frame.cursorColor = QColor::fromRgb(rgb(colors.cursor_has_value ? colors.cursor : colors.foreground));
+        frame.cursorColor = colors.cursor_has_value ? QColor::fromRgb(rgb(colors.cursor)) : QColor{};
         frame.selectionForeground = selectionForeground;
         frame.selectionBackground = selectionBackground;
         frame.cursor = cursor.viewport_has_value ? QPoint(cursor.viewport_x, cursor.viewport_y) : QPoint(-1, -1);

@@ -599,7 +599,7 @@ public:
         if (colored) {
             color = Qt::white;
         } else if (isCursorCell(column, rowCursorColumn, cells) && options.focused && frame.cursorStyle == CursorStyle::Block) {
-            color = frame.background;
+            color = QColor::fromRgb(cell.background);
         } else if (cell.flags & Selected) {
             color = frame.selectionForeground.isValid() ? frame.selectionForeground : frame.background;
         }
@@ -802,7 +802,7 @@ public:
             QColor color;
 
             if (isCursorCell(column, rowCursorColumn, cells) && options.focused && frame.cursorStyle == CursorStyle::Block) {
-                color = frame.cursorColor;
+                color = frame.cursorColor.isValid() ? frame.cursorColor : QColor::fromRgb(cell.foreground);
             } else if (cell.flags & Selected) {
                 color = frame.selectionBackground.isValid() ? frame.selectionBackground : frame.foreground;
             } else if (!cell.defaultBackground || (cell.flags & Inverse)) {
@@ -1005,7 +1005,7 @@ public:
         const QPointF position{options.contentRect.topLeft() + QPointF(column * cw, frame.cursor.y() * ch)};
         const qreal width{qMax(1, int(frame.rows.at(frame.cursor.y()).at(column).width)) * cw};
         QVector<ColorQuad> quads;
-        const QColor color{frame.cursorColor};
+        const QColor color{frame.cursorColor.isValid() ? frame.cursorColor : QColor::fromRgb(frame.rows.at(frame.cursor.y()).at(column).foreground)};
 
         if (!options.focused || frame.cursorStyle == CursorStyle::HollowBlock) {
             quads += {QRectF(position, QSizeF(width, stroke)), color};

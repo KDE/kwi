@@ -88,7 +88,7 @@ struct Frame {
 
     QColor foreground;
     QColor background;
-    QColor cursorColor;
+    QColor cursorColor; // Invalid uses the cell foreground.
     QColor selectionForeground;
     QColor selectionBackground;
 

@@ -72,5 +72,12 @@
     <binary>@KWI_EXECUTABLE@</binary>
   </provides>
   <translation type="gettext">@KWI_EXECUTABLE@</translation>
+  <releases>
+    <release version="0.1.0" date="2026-11-20" type="stable">
+      <description>
+        <p>Initial release.</p>
+      </description>
+    </release>
+  </releases>
   <content_rating type="oars-1.1"/>
 </component>

@@ -1,0 +1,236 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kwi package.
+#
+# SPDX-FileCopyrightText: 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-16 15:29+0000\n"
+"PO-Revision-Date: 2026-11-19 23:06+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 27.03.70\n"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "終端機：%1"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "終端機"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:83
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal output and command input."
+msgstr "終端機輸出與指令輸入。"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:132
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal bell"
+msgstr "終端機響鈴"
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:105
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:138
+#, kde-format
+msgid "Could not read terminal output."
+msgstr "無法讀取終端機輸出。"
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:132
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "此終端機已不再可用。"
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:135
+#, kde-format
+msgid "The terminal history changed while saving output."
+msgstr "終端機歷史在儲存輸出時改變了。"
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#, kde-format
+msgid "Could not attach to an invalid terminal descriptor."
+msgstr "無法附加到無效的終端機描述子上。"
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/ProcessController.cpp:21
+#, kde-format
+msgid "Could not attach to the terminal: %1"
+msgstr "無法附加到終端機：%1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:163
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:121
+#, kde-format
+msgid "Could not create a terminal: %1"
+msgstr "無法建立終端機：%1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start the host terminal query."
+msgstr "無法啟動主機終端機查詢。"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start a host helper: %1"
+msgstr "無法啟動主機幫助程式：%1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:309
+#, kde-format
+msgid "Could not find the system shell on the host."
+msgstr "找不到主機上的系統 shell。"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:310
+#, kde-format
+msgid "Could not find the terminal command on the host: %1"
+msgstr "找不到主機上的終端機指令：%1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:354
+#, kde-format
+msgid "Could not start the host terminal command: %1"
+msgstr "無法啟動主機終端機指令：%1"
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:142
+#, kde-format
+msgid "Could not find executable: %1"
+msgstr "找不到執行檔：%1"
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:183
+#, kde-format
+msgid "Could not run the terminal command: %1"
+msgstr "無法執行終端機指令：%1"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:67
+#, kde-format
+msgid "A terminal process is already running."
+msgstr "已經有執行中的終端機程序。"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#, kde-format
+msgid ""
+"The terminal input queue is full. Wait for the running program before "
+"pasting more text."
+msgstr "終端機輸入佇列已滿。請先等執行中的程式處理之後再貼上更多文字。"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#, kde-format
+msgid "Could not write to the terminal: %1"
+msgstr "無法寫入終端機：%1"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#, kde-format
+msgid "Could not resize the terminal: %1"
+msgstr "無法調整終端機大小：%1"
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:41
+#, kde-format
+msgid "A terminal's initial directory must be an absolute path."
+msgstr "終端機的初始目錄必須是絕對路徑。"
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:47
+#, kde-format
+msgid "The command contains a null character."
+msgstr "指令包含 null 字元。"
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:59
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:64
+#: libs/kwi-terminal/src/Session.cpp:223
+#, kde-format
+msgid "The terminal environment contains an invalid assignment."
+msgstr "終端機環境包含無效的指派。"
+
+#: libs/kwi-terminal/src/Session.cpp:30
+#, kde-format
+msgid "Could not allocate terminal state."
+msgstr "無法分配終端機狀態。"
+
+#: libs/kwi-terminal/src/Session.cpp:32
+#, kde-format
+msgid "Could not capture terminal render state."
+msgstr "無法擷取終端機算繪狀態。"
+
+#: libs/kwi-terminal/src/Session.cpp:42 libs/kwi-terminal/src/Session.cpp:264
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:146
+#, kde-format
+msgid "Terminal"
+msgstr "終端機"
+
+#: libs/kwi-terminal/src/Session.cpp:671
+#, kde-format
+msgid "Could not resize the terminal."
+msgstr "無法調整終端機大小。"
+
+#: libs/kwi-terminal/src/Session.cpp:694
+#, kde-format
+msgid "The terminal could not process output."
+msgstr "終端機無法處理輸出。"
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:144
+#, kde-format
+msgid "Terminal: %1"
+msgstr "終端機：%1"
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:156
+#, kde-format
+msgid "Terminal output. Use keyboard selection mode to review and copy text."
+msgstr "終端機輸出。用鍵盤選取模式來查看或複製文字。"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:209
+#, kde-format
+msgid "No matches"
+msgstr "無相符項目"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:211
+#, kde-format
+msgid "%1 of %2"
+msgstr "%1 / %2"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:213
+#, kde-format
+msgid "%1 match"
+msgid_plural "%1 matches"
+msgstr[0] "%1 個相符項目"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:232
+#, kde-format
+msgid "Could not search terminal history"
+msgstr "無法搜尋終端機歷史"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:22
+#, kde-format
+msgid "Enter a title format."
+msgstr "請輸入標題格式。"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:28
+#, kde-format
+msgid "Title formats can contain at most 256 characters."
+msgstr "標題格式最多能包含 256 個字元。"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:41
+#, kde-format
+msgid "Title formats cannot contain control characters."
+msgstr "標題格式不能包含控制字元。"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:56
+#, kde-format
+msgid "Close each placeholder with }. Use {{ and }} for literal braces."
+msgstr "請用 } 關上每個佔位符。用 {{ 或 }} 來指定大括弧本身。"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:93
+#, kde-format
+msgid "Unknown title placeholder: {%1}"
+msgstr "未知的標題佔位符：{%1}"
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:101
+#, kde-format
+msgid "Use }} for a literal closing brace."
+msgstr "用 }} 來指定結尾大括弧本身。"

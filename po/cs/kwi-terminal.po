@@ -1,120 +1,118 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kwi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-16 15:29+0000\n"
-"PO-Revision-Date: 2026-11-15 11:57+0100\n"
+"PO-Revision-Date: 2026-11-19 03:36+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.10\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: libs/kwi-terminal/src/declarative/Terminal.qml:82
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal: %1"
-msgstr ""
+msgstr "Terminál: %1"
 
 #: libs/kwi-terminal/src/declarative/Terminal.qml:82
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: libs/kwi-terminal/src/declarative/Terminal.qml:83
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal output and command input."
-msgstr ""
+msgstr "Výstup terminálu a zadávání příkazů."
 
 #: libs/kwi-terminal/src/declarative/Terminal.qml:132
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal bell"
-msgstr ""
+msgstr "Zvonek terminálu"
 
 #: libs/kwi-terminal/src/OutputSaveJob.cpp:105
 #: libs/kwi-terminal/src/OutputSaveJob.cpp:138
 #, kde-format
 msgid "Could not read terminal output."
-msgstr ""
+msgstr "Nepodařilo se načíst výstup z terminálu."
 
 #: libs/kwi-terminal/src/OutputSaveJob.cpp:132
 #, kde-format
 msgid "This terminal is no longer available."
-msgstr ""
+msgstr "Tento terminál již není k dispozici."
 
 #: libs/kwi-terminal/src/OutputSaveJob.cpp:135
 #, kde-format
 msgid "The terminal history changed while saving output."
-msgstr ""
+msgstr "Při ukládání výstupu došlo ke změně historie terminálu."
 
 #: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
 #, kde-format
 msgid "Could not attach to an invalid terminal descriptor."
-msgstr ""
+msgstr "Nelze se připojit k neplatnému deskriptoru terminálu."
 
 #: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
 #: libs/kwi-terminal/src/process/ProcessController.cpp:21
 #, kde-format
 msgid "Could not attach to the terminal: %1"
-msgstr ""
+msgstr "Nepodařilo se připojit k terminálu: %1"
 
 #: libs/kwi-terminal/src/process/HostProcess.cpp:163
 #: libs/kwi-terminal/src/process/NativeProcess.cpp:121
 #, kde-format
 msgid "Could not create a terminal: %1"
-msgstr ""
+msgstr "Nelze vytvořit terminál: %1"
 
 #: libs/kwi-terminal/src/process/HostProcess.cpp:303
 #, kde-format
 msgid "Could not start the host terminal query."
-msgstr ""
+msgstr "Nepodařilo se spustit dotaz na hostitelský terminál."
 
 #: libs/kwi-terminal/src/process/HostProcess.cpp:303
 #, kde-format
 msgid "Could not start a host helper: %1"
-msgstr ""
+msgstr "Nepodařilo se spustit pomocný program hostitele: %1"
 
 #: libs/kwi-terminal/src/process/HostProcess.cpp:309
 #, kde-format
 msgid "Could not find the system shell on the host."
-msgstr ""
+msgstr "Na hostitelském počítači se nepodařilo najít systémový shell."
 
 #: libs/kwi-terminal/src/process/HostProcess.cpp:310
 #, kde-format
 msgid "Could not find the terminal command on the host: %1"
-msgstr ""
+msgstr "Na hostitelském počítači se nepodařilo najít příkaz terminálu: %1"
 
 #: libs/kwi-terminal/src/process/HostProcess.cpp:354
 #, kde-format
 msgid "Could not start the host terminal command: %1"
-msgstr ""
+msgstr "Nepodařilo se spustit příkaz hostitelského terminálu: %1"
 
 #: libs/kwi-terminal/src/process/NativeProcess.cpp:142
 #, kde-format
 msgid "Could not find executable: %1"
-msgstr ""
+msgstr "Nelze najít spustitelný soubor: %1"
 
 #: libs/kwi-terminal/src/process/NativeProcess.cpp:183
 #, kde-format
 msgid "Could not run the terminal command: %1"
-msgstr ""
+msgstr "Nelze spustit příkaz v terminálu: %1"
 
 #: libs/kwi-terminal/src/process/PtyProcess.cpp:67
 #, kde-format
 msgid "A terminal process is already running."
-msgstr ""
+msgstr "Proces terminálu již běží."
 
 #: libs/kwi-terminal/src/process/PtyProcess.cpp:158
 #, kde-format
@@ -122,43 +120,45 @@ msgid ""
 "The terminal input queue is full. Wait for the running program before "
 "pasting more text."
 msgstr ""
+"Vstupní fronta terminálu je plná. Před vložením dalšího textu počkejte, až "
+"se spustí program."
 
 #: libs/kwi-terminal/src/process/PtyProcess.cpp:189
 #, kde-format
 msgid "Could not write to the terminal: %1"
-msgstr ""
+msgstr "Nelze zapisovat do terminálu: %1"
 
 #: libs/kwi-terminal/src/process/PtyProcess.cpp:270
 #, kde-format
 msgid "Could not resize the terminal: %1"
-msgstr ""
+msgstr "Nelze změnit velikost terminálu: %1"
 
 #: libs/kwi-terminal/src/ProcessLaunch.cpp:41
 #, kde-format
 msgid "A terminal's initial directory must be an absolute path."
-msgstr ""
+msgstr "Výchozí adresář terminálu musí být absolutní cesta."
 
 #: libs/kwi-terminal/src/ProcessLaunch.cpp:47
 #, kde-format
 msgid "The command contains a null character."
-msgstr ""
+msgstr "Příkaz obsahuje nulový znak."
 
 #: libs/kwi-terminal/src/ProcessLaunch.cpp:59
 #: libs/kwi-terminal/src/ProcessLaunch.cpp:64
 #: libs/kwi-terminal/src/Session.cpp:223
 #, kde-format
 msgid "The terminal environment contains an invalid assignment."
-msgstr ""
+msgstr "V prostředí terminálu se nachází neplatné přiřazení."
 
 #: libs/kwi-terminal/src/Session.cpp:30
 #, kde-format
 msgid "Could not allocate terminal state."
-msgstr ""
+msgstr "Nepodařilo se přiřadit stav terminálu."
 
 #: libs/kwi-terminal/src/Session.cpp:32
 #, kde-format
 msgid "Could not capture terminal render state."
-msgstr ""
+msgstr "Nepodařilo se zachytit stav vykreslení terminálu."
 
 #: libs/kwi-terminal/src/Session.cpp:42 libs/kwi-terminal/src/Session.cpp:264
 #: libs/kwi-terminal/src/TerminalAccessible.cpp:146
@@ -169,22 +169,24 @@ msgstr "Terminál"
 #: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format
 msgid "Could not resize the terminal."
-msgstr ""
+msgstr "Nedařilo se změnit velikost terminálu."
 
 #: libs/kwi-terminal/src/Session.cpp:694
 #, kde-format
 msgid "The terminal could not process output."
-msgstr ""
+msgstr "Terminál nemohl zpracovat výstup."
 
 #: libs/kwi-terminal/src/TerminalAccessible.cpp:144
 #, kde-format
 msgid "Terminal: %1"
-msgstr ""
+msgstr "Terminál: %1"
 
 #: libs/kwi-terminal/src/TerminalAccessible.cpp:156
 #, kde-format
 msgid "Terminal output. Use keyboard selection mode to review and copy text."
 msgstr ""
+"Výstup terminálu. K prohlížení a kopírování textu použijte režim výběru "
+"pomocí klávesnice."
 
 #: libs/kwi-terminal/src/TerminalSearch.cpp:209
 #, kde-format
@@ -200,40 +202,43 @@ msgstr "%1 z %2"
 #, kde-format
 msgid "%1 match"
 msgid_plural "%1 matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 shoda"
+msgstr[1] "%1 shody"
+msgstr[2] "%1 shod"
 
 #: libs/kwi-terminal/src/TerminalSearch.cpp:232
 #, kde-format
 msgid "Could not search terminal history"
-msgstr ""
+msgstr "Nelze prohledat historii terminálu"
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:22
 #, kde-format
 msgid "Enter a title format."
-msgstr ""
+msgstr "Zadejte formát názvu."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:28
 #, kde-format
 msgid "Title formats can contain at most 256 characters."
-msgstr ""
+msgstr "Formáty názvů mohou obsahovat maximálně 256 znaků."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:41
 #, kde-format
 msgid "Title formats cannot contain control characters."
-msgstr ""
+msgstr "Formáty názvů nesmí obsahovat řídicí znaky."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:56
 #, kde-format
 msgid "Close each placeholder with }. Use {{ and }} for literal braces."
 msgstr ""
+"Každý zástupný symbol uzavřete znakem }. Pro doslovné složené závorky "
+"použijte {{ a }}."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:93
 #, kde-format
 msgid "Unknown title placeholder: {%1}"
-msgstr ""
+msgstr "Zástupný symbol pro neznámý název: {%1}"
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:101
 #, kde-format
 msgid "Use }} for a literal closing brace."
-msgstr ""
+msgstr "Pro doslovnou složenou závorku použijte }}."

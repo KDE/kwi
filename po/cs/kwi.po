@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-19 01:12+0000\n"
-"PO-Revision-Date: 2026-11-17 01:17+0100\n"
+"PO-Revision-Date: 2026-11-19 03:37+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.10\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: schemas.cpp:1
 #, kde-format
@@ -530,25 +530,25 @@ msgstr "Znovu se nedotazovat"
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
-msgstr ""
+msgstr "Ukončením se zastaví provádění příkazů ve všech oknech."
 
 #: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
-msgstr ""
+msgstr "Zavřením tohoto okna se zastaví provádění příkazů v něm."
 
 #: src/declarative/Main.qml:1537
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "Ukončením \"%1\" se zastaví jeho spuštěný příkaz."
 
 #: src/declarative/Main.qml:1586
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "Vložit více řádků?"
 
 #: src/declarative/Main.qml:1593
 #, kde-format
@@ -560,21 +560,22 @@ msgstr "Vložit"
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "Vložením tohoto textu se mohou spustit příkazy."
 
 #: src/declarative/Main.qml:1632
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
-msgstr ""
+msgstr "Náhled vloženého textu"
 
 #: src/declarative/Main.qml:1639
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
 msgid_plural "Showing the first %1 characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zobrazuje se první znak."
+msgstr[1] "Zobrazují se první %1 znaky."
+msgstr[2] "Zobrazuje se prvních %1 znaků."
 
 #: src/declarative/Main.qml:1745
 #, kde-format
@@ -592,7 +593,7 @@ msgstr "Přejmenovat"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
-msgstr ""
+msgstr "Automatický název"
 
 #: src/declarative/Main.qml:1767
 #, kde-format
@@ -604,37 +605,37 @@ msgstr "Název karty"
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
-msgstr ""
+msgstr "Nechte pole prázdné, chcete-li použít automatický název."
 
 #: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
-msgstr ""
+msgstr "Filtrovat odkazy…"
 
 #: src/declarative/Main.qml:1806
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
-msgstr ""
+msgstr "Filtrovat karty…"
 
 #: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
-msgstr ""
+msgstr "Ve viditelném výstupu terminálu nejsou žádné odkazy."
 
 #: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
-msgstr ""
+msgstr "Žádné odpovídající odkazy."
 
 #: src/declarative/Main.qml:1807
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
-msgstr ""
+msgstr "Žádné odpovídající karty."
 
 #: src/declarative/Main.qml:1816
 #, kde-format
@@ -646,7 +647,7 @@ msgstr "Kopírovat odkaz"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
-msgstr ""
+msgstr "Uložit výstup terminálu"
 
 #: src/declarative/Main.qml:1868
 #, kde-format
@@ -676,7 +677,7 @@ msgstr "Text"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use system fixed-width font"
-msgstr ""
+msgstr "Použít systémové písmo s pevnou šířkou"
 
 #: src/declarative/settings/AppearanceSettings.qml:63
 #, kde-format
@@ -688,19 +689,19 @@ msgstr "Písmo:"
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Size (pt):"
-msgstr ""
+msgstr "Velikost (pt):"
 
 #: src/declarative/settings/AppearanceSettings.qml:118
 #, kde-format
 msgctxt "@info font preview. Include letters, digits and shell punctuation."
 msgid "Aa Bb 0123456789 — ~/Documents $"
-msgstr ""
+msgstr "Aa Bb 0123456789 — ~/Documents $"
 
 #: src/declarative/settings/AppearanceSettings.qml:123
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal font preview"
-msgstr ""
+msgstr "Náhled písma v terminálu"
 
 #: src/declarative/settings/AppearanceSettings.qml:129
 #, kde-format
@@ -730,7 +731,7 @@ msgstr "Upravit barevné schéma…"
 #, kde-format
 msgctxt "@action:button"
 msgid "More Color Scheme Actions"
-msgstr ""
+msgstr "Další možnosti barevného schématu"
 
 #: src/declarative/settings/AppearanceSettings.qml:207
 #: src/declarative/settings/PresetsSettings.qml:202
@@ -764,7 +765,7 @@ msgstr "Průhlednost pozadí:"
 #, kde-format
 msgctxt "@label"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: src/declarative/settings/AppearanceSettings.qml:278
 #, kde-format
@@ -800,7 +801,7 @@ msgstr "Dole"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide for single tabs"
-msgstr ""
+msgstr "Skrýt pro jednotlivé karty"
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -809,18 +810,20 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"Skrytý panel karet lze znovu zobrazit pomocí %1, případně můžete do "
+"nastavení aplikace vstoupit z kontextové nabídky."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
-msgstr ""
+msgstr "K nastavením aplikace se dostanete z kontextové nabídky."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
 msgctxt "@option:check"
 msgid "Show status icons"
-msgstr ""
+msgstr "Zobrazit ikony stavu"
 
 #: src/declarative/settings/AppearanceSettings.qml:355
 #, kde-format
@@ -832,7 +835,7 @@ msgstr "Okno"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use custom size for new windows"
-msgstr ""
+msgstr "Použít vlastní velikost pro nová okna"
 
 #: src/declarative/settings/AppearanceSettings.qml:374
 #, kde-format
@@ -856,7 +859,7 @@ msgstr "Importovat barevné schéma"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Konsole Color Schemes (*.colorscheme)"
-msgstr ""
+msgstr "Barevná schémata pro Konsole (*.colorscheme)"
 
 #: src/declarative/settings/BehaviorSettings.qml:17
 #, kde-format
@@ -874,13 +877,13 @@ msgstr "Potvrzování"
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm quit when a command is running"
-msgstr ""
+msgstr "Potvrdit ukončení během provádění příkazu"
 
 #: src/declarative/settings/BehaviorSettings.qml:49
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm pasting multiple lines"
-msgstr ""
+msgstr "Potvrdit vložení více řádků"
 
 #: src/declarative/settings/BehaviorSettings.qml:62
 #, kde-format
@@ -892,13 +895,13 @@ msgstr "Schránka"
 #, kde-format
 msgctxt "@info"
 msgid "Middle-click paste also works with this option off."
-msgstr ""
+msgstr "Vkládání středním tlačítkem myši funguje i při vypnutí této možnosti."
 
 #: src/declarative/settings/BehaviorSettings.qml:70
 #, kde-format
 msgctxt "@option:check"
 msgid "Copy mouse-selected text to clipboard"
-msgstr ""
+msgstr "Zkopírovat text vybraný myší do schránky"
 
 #: src/declarative/settings/BehaviorSettings.qml:83
 #, kde-format
@@ -910,7 +913,7 @@ msgstr "Odkazy"
 #, kde-format
 msgctxt "@option:check"
 msgid "Require Ctrl when clicking links"
-msgstr ""
+msgstr "Při klikání na odkazy je nutné držet stisknutou klávesu Ctrl"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
@@ -964,61 +967,61 @@ msgstr "Bílá"
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Black"
-msgstr ""
+msgstr "Zářivě černá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Red"
-msgstr ""
+msgstr "Zářivě červená"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Green"
-msgstr ""
+msgstr "Zářivě zelená"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Yellow"
-msgstr ""
+msgstr "Zářivě žlutá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Blue"
-msgstr ""
+msgstr "Zářivě modrá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Magenta"
-msgstr ""
+msgstr "Zářivě purpurová"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Cyan"
-msgstr ""
+msgstr "Zářivě azurová"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright White"
-msgstr ""
+msgstr "Zářivě bílá"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:39
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Current color: %1. Opens a color chooser."
-msgstr ""
+msgstr "Aktuální barva: %1. Otevře okno pro výběr barvy."
 
 #: src/declarative/settings/ColorSchemeEditor.qml:73
 #, kde-format
 msgctxt "@label:color"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:159
 #: src/declarative/settings/PresetsSettings.qml:101
@@ -1032,7 +1035,7 @@ msgstr "Uložit"
 #, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Color Scheme"
-msgstr ""
+msgstr "Duplikovat barevné schéma"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:167
 #, kde-format
@@ -1050,13 +1053,13 @@ msgstr "Náhled"
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Color scheme preview"
-msgstr ""
+msgstr "Náhled barevného schématu"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:217
 #, kde-format
 msgctxt "@info color scheme preview. Keep the shell command syntax intact."
 msgid "user@host:~/Documents $ echo \"Hello, world\""
-msgstr ""
+msgstr "user@host:~/Dokumenty $ echo \"Hello, world\""
 
 #: src/declarative/settings/ColorSchemeEditor.qml:235
 #, kde-format
@@ -1111,7 +1114,7 @@ msgstr "Pozadí"
 #, kde-format
 msgctxt "@title:group"
 msgid "Terminal Colors"
-msgstr ""
+msgstr "Barvy terminálu"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:304
 #, kde-format
@@ -1141,19 +1144,19 @@ msgstr "Obnovit"
 #, kde-format
 msgctxt "@title:group"
 msgid "New Sessions"
-msgstr ""
+msgstr "Nové sezení"
 
 #: src/declarative/settings/PresetsSettings.qml:126
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Default preset:"
-msgstr ""
+msgstr "Výchozí přednastavení:"
 
 #: src/declarative/settings/PresetsSettings.qml:143
 #, kde-format
 msgctxt "@title:group"
 msgid "Manage Presets"
-msgstr ""
+msgstr "Správa přednastavení"
 
 #: src/declarative/settings/PresetsSettings.qml:146
 #, kde-format
@@ -1165,13 +1168,13 @@ msgstr "Přednastavení:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Preset"
-msgstr ""
+msgstr "Upravit přednastavení"
 
 #: src/declarative/settings/PresetsSettings.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "More Preset Actions"
-msgstr ""
+msgstr "Více možností přednastavení"
 
 #: src/declarative/settings/PresetsSettings.qml:245
 #, kde-format
@@ -1183,13 +1186,13 @@ msgstr "Příkaz:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "System shell"
-msgstr ""
+msgstr "Systémový shell"
 
 #: src/declarative/settings/PresetsSettings.qml:258
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Starting folder:"
-msgstr ""
+msgstr "Počáteční složka:"
 
 #: src/declarative/settings/PresetsSettings.qml:263
 #, kde-format
@@ -1225,7 +1228,7 @@ msgstr "Vybrat…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Choose starting folder"
-msgstr ""
+msgstr "Vybrat počáteční složku"
 
 #: src/declarative/settings/PresetsSettings.qml:301
 #, kde-format
@@ -1237,7 +1240,7 @@ msgstr "Prostředí:"
 #, kde-format
 msgctxt "@info"
 msgid "No additional variables."
-msgstr ""
+msgstr "Žádné další proměnné."
 
 #: src/declarative/settings/PresetsSettings.qml:344
 #, kde-format
@@ -1267,25 +1270,25 @@ msgstr "Přidat proměnnou…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Preset Changes"
-msgstr ""
+msgstr "Neuložené změny přednastavení"
 
 #: src/declarative/settings/PresetsSettings.qml:401
 #, kde-format
 msgctxt "@info"
 msgid "Save changes before continuing?"
-msgstr ""
+msgstr "Chcete změny uložit, než budete pokračovat?"
 
 #: src/declarative/settings/PresetsSettings.qml:430
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Environment Variable"
-msgstr ""
+msgstr "Přidat proměnnou prostředí"
 
 #: src/declarative/settings/PresetsSettings.qml:430
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Environment Variable"
-msgstr ""
+msgstr "Upravit proměnnou prostředí"
 
 #: src/declarative/settings/PresetsSettings.qml:440
 #, kde-format
@@ -1322,6 +1325,7 @@ msgstr "Odstranit"
 msgctxt "@info"
 msgid "Remove preset “%1”? New sessions will use System Shell."
 msgstr ""
+"Odstranit přednastavení \"%1\"? Nová sezení budou používat systémový shell."
 
 #: src/declarative/settings/PresetsSettings.qml:537
 #, kde-format
@@ -1333,19 +1337,19 @@ msgstr "Odstranit přednastavení \"%1\"?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Terminal Preset"
-msgstr ""
+msgstr "Importovat přednastavení terminálu"
 
 #: src/declarative/settings/PresetsSettings.qml:557
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Kwi Launch Presets (*.preset)"
-msgstr ""
+msgstr "Přednastavení spuštění Kwi (*.preset)"
 
 #: src/declarative/settings/PresetsSettings.qml:565
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Starting Folder"
-msgstr ""
+msgstr "Vybrat počáteční složku"
 
 #: src/declarative/settings/TerminalSettings.qml:20
 #, kde-format
@@ -1357,7 +1361,7 @@ msgstr "Terminál"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Application title"
-msgstr ""
+msgstr "Název aplikace"
 
 #: src/declarative/settings/TerminalSettings.qml:83
 #, kde-format
@@ -1375,7 +1379,7 @@ msgstr "Název adresáře"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Directory path"
-msgstr ""
+msgstr "Cesta k adresáři"
 
 #: src/declarative/settings/TerminalSettings.qml:103
 #, kde-format
@@ -1393,25 +1397,25 @@ msgstr "Název hostitele"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Host name (short)"
-msgstr ""
+msgstr "Název hostitele (zkrácený)"
 
 #: src/declarative/settings/TerminalSettings.qml:123
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Opening brace: {"
-msgstr ""
+msgstr "Otevírací složená závorka: {"
 
 #: src/declarative/settings/TerminalSettings.qml:129
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Closing brace: }"
-msgstr ""
+msgstr "Uzavírací složená závorka: }"
 
 #: src/declarative/settings/TerminalSettings.qml:136
 #, kde-format
 msgctxt "@title:group"
 msgid "Session Titles"
-msgstr ""
+msgstr "Názvy sezení"
 
 #: src/declarative/settings/TerminalSettings.qml:139
 #, kde-format
@@ -1423,7 +1427,7 @@ msgstr "Formát názvu karty:"
 #, kde-format
 msgctxt "@info"
 msgid "Renamed tabs keep their names."
-msgstr ""
+msgstr "Přejmenované karty si zachovají své názvy."
 
 #: src/declarative/settings/TerminalSettings.qml:171
 #: src/declarative/settings/TerminalSettings.qml:241
@@ -1449,7 +1453,7 @@ msgstr "Formát názvu karty pro vzdálené připojení:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use application title for the window"
-msgstr ""
+msgstr "Použít název aplikace jako název okna"
 
 #: src/declarative/settings/TerminalSettings.qml:295
 #, kde-format
@@ -1486,7 +1490,7 @@ msgstr "Bez omezení"
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Retained lines"
-msgstr ""
+msgstr "Zachované řádky"
 
 #: src/declarative/settings/TerminalSettings.qml:340
 #, kde-format
@@ -1501,13 +1505,13 @@ msgstr[2] "řádků"
 #, kde-format
 msgctxt "@title:group"
 msgid "Monitoring"
-msgstr ""
+msgstr "Sledování"
 
 #: src/declarative/settings/TerminalSettings.qml:351
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Silence timeout (seconds):"
-msgstr ""
+msgstr "Časový limit nečinnosti (sekundy) :"
 
 #: src/declarative/settings/TerminalSettings.qml:370
 #, kde-format
@@ -1543,7 +1547,7 @@ msgstr "Podtržené"
 #, kde-format
 msgctxt "@option:check"
 msgid "Blink cursor"
-msgstr ""
+msgstr "Blikající kurzor"
 
 #: src/declarative/TerminalPane.qml:17
 #, kde-format
@@ -1561,31 +1565,31 @@ msgstr "Terminál"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Find in terminal…"
-msgstr ""
+msgstr "Najít v terminálu…"
 
 #: src/declarative/TerminalSearchBar.qml:71
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Find in terminal"
-msgstr ""
+msgstr "Najít v terminálu"
 
 #: src/declarative/TerminalSearchBar.qml:135
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Searching terminal output"
-msgstr ""
+msgstr "Prohledat výstup terminálu"
 
 #: src/declarative/TerminalSearchBar.qml:152
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Match"
-msgstr ""
+msgstr "Následující výskyt"
 
 #: src/declarative/TerminalSearchBar.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous Match"
-msgstr ""
+msgstr "Předchozí výskyt"
 
 #: src/declarative/TerminalSearchBar.qml:180
 #, kde-format
@@ -1597,19 +1601,19 @@ msgstr "Zavřít vyhledávací panel"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring activity and silence"
-msgstr ""
+msgstr "Sledování aktivity a nečinnosti"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring activity"
-msgstr ""
+msgstr "Sledování aktivity"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring silence"
-msgstr ""
+msgstr "Sledování nečinnosti"
 
 #: src/declarative/TerminalTabButton.qml:33
 #, kde-format
@@ -1652,13 +1656,13 @@ msgstr "Pozastaveno"
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "%1, needs attention"
-msgstr ""
+msgstr "%1, vyžaduje pozornost"
 
 #: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "%1, new output"
-msgstr ""
+msgstr "%1, nový výstup"
 
 #: src/declarative/TerminalTabButton.qml:120
 #, kde-format
@@ -1670,95 +1674,96 @@ msgstr "Zavřít %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Left"
-msgstr ""
+msgstr "Posunout karty doleva"
 
 #: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"
-msgstr ""
+msgstr "Posunout karty doprava"
 
 #: src/DesktopIntegration.cpp:77
 #, kde-format
 msgid "Terminal Notification"
-msgstr ""
+msgstr "Upozornění terminálu"
 
 #: src/DesktopIntegration.cpp:81
 #, kde-format
 msgid "Terminal Activity"
-msgstr ""
+msgstr "Aktivita terminálu"
 
 #: src/DesktopIntegration.cpp:81
 #, kde-format
 msgid "New output in %1"
-msgstr ""
+msgstr "Nový výstup v %1"
 
 #: src/DesktopIntegration.cpp:87
 #, kde-format
 msgid "Terminal Silence"
-msgstr ""
+msgstr "Nečinnost terminálu"
 
 #: src/DesktopIntegration.cpp:88
 #, kde-format
 msgid "No output in %2 for %1 second"
 msgid_plural "No output in %2 for %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Žádný výstup v %2 po dobu %1 sekundy"
+msgstr[1] "Žádný výstup v %2 po dobu %1 sekund"
+msgstr[2] "Žádný výstup v %2 po dobu %1 sekund"
 
 #: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
 #, kde-format
 msgid "This terminal is no longer available."
-msgstr ""
+msgstr "Tento terminál již není k dispozici."
 
 #: src/DesktopIntegration.cpp:180
 #, kde-format
 msgid "Choose a local file to save terminal output."
-msgstr ""
+msgstr "Vyberte lokální soubor, do kterého se má uložit výstup terminálu."
 
 #: src/DesktopIntegration.cpp:190
 #, kde-format
 msgid "Could not save terminal output: %1"
-msgstr ""
+msgstr "Nelze uložit výstup terminálu: %1"
 
 #: src/DesktopIntegration.cpp:208
 #, kde-format
 msgid "The terminal's current folder is no longer available."
-msgstr ""
+msgstr "Aktuální složka terminálu již není k dispozici."
 
 #: src/DesktopIntegration.cpp:239
 #, kde-format
 msgid "Could not launch the desktop application: %1"
-msgstr ""
+msgstr "Nelze spustit desktopovou aplikaci: %1"
 
 #: src/DesktopIntegration.cpp:274
 #, kde-format
 msgid "Could not open the link: %1"
-msgstr ""
+msgstr "Nelze otevřít odkaz: %1"
 
 #: src/DesktopIntegration.cpp:283
 #, kde-format
 msgid "Terminal Bell"
-msgstr ""
+msgstr "Zvonek terminálu"
 
 #: src/DesktopIntegration.cpp:315
 #, kde-format
 msgid "Show Terminal"
-msgstr ""
+msgstr "Zobrazit terminál"
 
 #: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
 #, kde-format
 msgid "Kwi Terminal"
-msgstr ""
+msgstr "Terminál Kwi"
 
 #: src/kpart/Part.cpp:329
 #, kde-format
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "Vložit více řádků?"
 
 #: src/kpart/Part.cpp:330
 #, kde-format
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "Vložením tohoto textu se mohou spustit příkazy."
 
 #: src/kpart/Part.cpp:339
 #, kde-format
@@ -1768,7 +1773,7 @@ msgstr "Vložit"
 #: src/kpart/Part.cpp:664
 #, kde-format
 msgid "The supplied terminal descriptor is invalid."
-msgstr ""
+msgstr "Zadaný popisovač terminálu je neplatný."
 
 #: src/kpart/Part.cpp:769
 #, kde-format
@@ -1823,17 +1828,17 @@ msgstr "Zavřít kartu"
 #: src/kpart/Part.cpp:914
 #, kde-format
 msgid "Configure Kwi…"
-msgstr ""
+msgstr "Nastavení Kwi…"
 
 #: src/kpart/Part.cpp:919
 #, kde-format
 msgid "Manage Presets…"
-msgstr ""
+msgstr "Správa přednastavení…"
 
 #: src/kpart/Part.cpp:923
 #, kde-format
 msgid "Edit Current Preset…"
-msgstr ""
+msgstr "Upravit aktuální přednastavení…"
 
 #: src/kpart/Part.cpp:990
 #, kde-format
@@ -1843,12 +1848,12 @@ msgstr "Přejmenovat kartu"
 #: src/kpart/Part.cpp:991
 #, kde-format
 msgid "Tab name (leave empty to use the automatic title):"
-msgstr ""
+msgstr "Název karty (nechte prázdné, chcete-li použít automatický název):"
 
 #: src/kpart/Part.cpp:1097
 #, kde-format
 msgid "Save Terminal Output"
-msgstr ""
+msgstr "Uložit výstup terminálu"
 
 #: src/kpart/Part.cpp:1102
 #, kde-format
@@ -1858,12 +1863,12 @@ msgstr "Textové soubory (*.txt)"
 #: src/kpart/Part.cpp:1117
 #, kde-format
 msgid "Close Running Command?"
-msgstr ""
+msgstr "Zavřít prováděný příkaz?"
 
 #: src/kpart/Part.cpp:1124
 #, kde-format
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "Ukončením \"%1\" se zastaví jeho spuštěný příkaz."
 
 #: src/kpart/Part.cpp:1125
 #, kde-format
@@ -1873,17 +1878,17 @@ msgstr "Zavřít terminál"
 #: src/main.cpp:33
 #, kde-format
 msgid "-e requires a program."
-msgstr ""
+msgstr "-e vyžaduje program."
 
 #: src/main.cpp:37
 #, kde-format
 msgid "--preset requires a preset name."
-msgstr ""
+msgstr "--preset vyžaduje zadání názvu přednastavení."
 
 #: src/main.cpp:83
 #, kde-format
 msgid "Kwi"
-msgstr ""
+msgstr "Kwi"
 
 #: src/main.cpp:85
 #, kde-format
@@ -1893,12 +1898,12 @@ msgstr "Moderní a rychlý terminál"
 #: src/main.cpp:87
 #, kde-format
 msgid "© 2026 Kwi contributors"
-msgstr ""
+msgstr "© 2026 Přispěvatelé Kwi"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Ghostty"
-msgstr ""
+msgstr "Ghostty"
 
 #: src/main.cpp:91
 #, kde-format
@@ -1915,7 +1920,7 @@ msgstr "libor.filipek@gmail.com"
 #: src/main.cpp:100
 #, kde-format
 msgid "Start in this directory."
-msgstr ""
+msgstr "Spustit v tomto adresáři."
 
 #: src/main.cpp:100
 #, kde-format
@@ -1926,7 +1931,7 @@ msgstr "adresář"
 #: src/main.cpp:101
 #, kde-format
 msgid "Start with this terminal preset."
-msgstr ""
+msgstr "Spustit s tímto přednastavením terminálu."
 
 #: src/main.cpp:101
 #, kde-format
@@ -1937,22 +1942,22 @@ msgstr "název"
 #: src/main.cpp:102
 #, kde-format
 msgid "Keep the terminal open after its command exits."
-msgstr ""
+msgstr "Nechat terminál otevřený i po ukončení příkazu."
 
 #: src/main.cpp:103
 #, kde-format
 msgid "Open a tab in the most recently active window."
-msgstr ""
+msgstr "Otevřít kartu v okně, které bylo naposledy aktivní."
 
 #: src/main.cpp:104
 #, kde-format
 msgid "Open the window in full screen."
-msgstr ""
+msgstr "Otevřít okno v režimu celé obrazovky."
 
 #: src/main.cpp:106
 #, kde-format
 msgid "Set the initial tab title."
-msgstr ""
+msgstr "Nastavit počáteční název karty."
 
 #: src/main.cpp:106
 #, kde-format
@@ -1963,7 +1968,7 @@ msgstr "název"
 #: src/main.cpp:107
 #, kde-format
 msgid "Run the specified program."
-msgstr ""
+msgstr "Spustit zadaný program."
 
 #: src/main.cpp:108
 #, kde-format
@@ -1974,18 +1979,18 @@ msgstr "program"
 #: src/main.cpp:109
 #, kde-format
 msgid "Optional program and its arguments."
-msgstr ""
+msgstr "Volitelný program a jeho argumenty."
 
 #: src/main.cpp:110
 #, kde-format
 msgctxt "@info:shell command-line syntax"
 msgid "[program [arguments…]]"
-msgstr ""
+msgstr "[program [argumenty…]]"
 
 #: src/settings/LaunchSettings.cpp:53
 #, kde-format
 msgid "Too many environment variables."
-msgstr ""
+msgstr "Příliš mnoho proměnných prostředí."
 
 #: src/settings/LaunchSettings.cpp:63
 #, kde-format
@@ -1993,6 +1998,8 @@ msgid ""
 "Enter one NAME=value assignment per line. Names may contain letters, digits "
 "and underscores, and must not start with a digit."
 msgstr ""
+"Do každého řádku zadejte jedno přiřazení NAME=hodnota. Názvy mohou obsahovat "
+"písmena, číslice a podtržítka, nesmí však začínat číslicí."
 
 #: src/settings/LaunchSettings.cpp:77
 #, kde-format
@@ -2000,63 +2007,65 @@ msgid ""
 "Enter a program followed by its arguments, or leave the command empty to use "
 "the system shell."
 msgstr ""
+"Zadejte název programu a za ním jeho argumenty, nebo ponechte příkaz "
+"prázdný, chcete-li použít systémový shell."
 
 #: src/settings/LaunchSettings.cpp:86
 #, kde-format
 msgid "The command is too long or contains a null character."
-msgstr ""
+msgstr "Příkaz je příliš dlouhý nebo obsahuje nulový znak."
 
 #: src/settings/LaunchSettings.cpp:94
 #, kde-format
 msgid "Only a custom working directory can contain a path."
-msgstr ""
+msgstr "Cestu může obsahovat pouze vlastní pracovní adresář."
 
 #: src/settings/LaunchSettings.cpp:100
 #, kde-format
 msgid "Choose an absolute path for the working directory."
-msgstr ""
+msgstr "Zvolte absolutní cestu k pracovnímu adresáři."
 
 #: src/settings/LaunchSettings.cpp:105
 #, kde-format
 msgid "Choose how the working directory is determined."
-msgstr ""
+msgstr "Zvolte způsob určení pracovního adresáře."
 
 #: src/settings/PresetEditor.cpp:146
 #, kde-format
 msgid ""
 "Use letters, numbers and underscores. The name must not start with a number."
-msgstr ""
+msgstr "Použijte písmena, číslice a podtržítka. Název nesmí začínat číslicí."
 
 #: src/settings/PresetEditor.cpp:150
 #, kde-format
 msgid "Enter the value on a single line."
-msgstr ""
+msgstr "Zadejte hodnotu na jednom řádku."
 
 #: src/settings/PresetEditor.cpp:156
 #, kde-format
 msgid "This variable is no longer available."
-msgstr ""
+msgstr "Tato proměnná již není k dispozici."
 
 #: src/settings/PresetEditor.cpp:163
 #, kde-format
 msgid "A variable with this name already exists."
-msgstr ""
+msgstr "Proměnná s tímto názvem již existuje."
 
 #: src/settings/PresetEditor.cpp:243
 #, kde-format
 msgid "Save or discard the current preset changes first."
-msgstr ""
+msgstr "Nejprve uložte nebo zrušte aktuální změny přednastavení."
 
 #: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
 #, kde-format
 msgid "The terminal preset is not available."
-msgstr ""
+msgstr "Přednastavení terminálu není k dispozici."
 
 #: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "System Shell"
-msgstr ""
+msgstr "Systémový shell"
 
 #: src/settings/PresetEditor.cpp:274
 #, kde-format
@@ -2076,21 +2085,24 @@ msgid ""
 "Enter a program and its arguments. Quote spaces; shell operators and "
 "expansions are not supported."
 msgstr ""
+"Zadejte program a jeho argumenty. Mezery uveďte v uvozovkách; operátory a "
+"expanze shellu nejsou podporovány."
 
 #: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
 #, kde-format
 msgid "A terminal preset named %1 already exists."
-msgstr ""
+msgstr "Přednastavení terminálu s názvem %1 již existuje."
 
 #: src/settings/PresetEditor.cpp:338
 #, kde-format
 msgid "The preset was saved, but could not be made the default: %1"
 msgstr ""
+"Přednastavení bylo uloženo, ale nebylo možné jej nastavit jako výchozí: %1"
 
 #: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
 #, kde-format
 msgid "Only user-owned terminal presets can be removed."
-msgstr ""
+msgstr "Odstranit lze pouze přednastavení terminálu, které patří uživateli."
 
 #: src/settings/TerminalPaletteModel.cpp:108
 #, kde-format
@@ -2102,38 +2114,40 @@ msgstr "Systém"
 #, kde-format
 msgctxt "@info"
 msgid "Choose a local Konsole color scheme file."
-msgstr ""
+msgstr "Vyberte místní soubor s barevným schématem pro Konsole."
 
 #: src/settings/TerminalPaletteModel.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be read or is too large."
-msgstr ""
+msgstr "Barevné schéma nebylo možné načíst nebo je příliš velké."
 
 #: src/settings/TerminalPaletteModel.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "This file does not contain a valid terminal color scheme."
-msgstr ""
+msgstr "Tento soubor neobsahuje platné barevné schéma terminálu."
 
 #: src/settings/TerminalPaletteModel.cpp:196
 #: src/settings/TerminalPaletteModel.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme directory could not be created."
-msgstr ""
+msgstr "Adresář barevných schémat se nepodařilo vytvořit."
 
 #: src/settings/TerminalPaletteModel.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "The imported color scheme could not be saved."
-msgstr ""
+msgstr "Importované barevné schéma se nepodařilo uložit."
 
 #: src/settings/TerminalPaletteModel.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
 msgstr ""
+"Odstranit lze pouze barevná schémata importovaná nebo vytvořená v aplikaci "
+"Kwi."
 
 #: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
@@ -2151,19 +2165,19 @@ msgstr "%1 (změněno)"
 #, kde-format
 msgctxt "@info"
 msgid "Choose an opaque foreground, background, and all 16 terminal colors."
-msgstr ""
+msgstr "Vyberte průhlednost popředí, pozadí a všech 16 barev terminálu."
 
 #: src/settings/TerminalPaletteModel.cpp:339
 #, kde-format
 msgctxt "@info"
 msgid "This color scheme cannot be overwritten. Create a new copy instead."
-msgstr ""
+msgstr "Toto barevné schéma nelze přepsat. Místo toho vytvořte novou kopii."
 
 #: src/settings/TerminalPaletteModel.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be saved."
-msgstr ""
+msgstr "Barevné schéma se nepodařilo uložit."
 
 #: src/settings/TerminalPaletteModel.cpp:386
 #, kde-format
@@ -2171,64 +2185,69 @@ msgctxt "@info"
 msgid ""
 "Enter a color scheme name of 1 to 80 characters without control characters."
 msgstr ""
+"Zadejte název barevného schématu o délce 1 až 80 znaků bez řídicích znaků."
 
 #: src/settings/TerminalPaletteModel.cpp:397
 #, kde-format
 msgctxt "@info"
 msgid "A color scheme with this name already exists. Choose another name."
-msgstr ""
+msgstr "Barevné schéma s tímto názvem již existuje. Zvolte jiný název."
 
 #: src/settings/TerminalPresets.cpp:147
 #, kde-format
 msgid "The default terminal preset is managed by the system."
-msgstr ""
+msgstr "Výchozí přednastavení terminálu spravuje systém."
 
 #: src/settings/TerminalPresets.cpp:153
 #, kde-format
 msgid "The default terminal preset could not be saved."
-msgstr ""
+msgstr "Výchozí přednastavení terminálu se nepodařilo uložit."
 
 #: src/settings/TerminalPresets.cpp:182
 #, kde-format
 msgctxt "@item:inlistbox terminal preset"
 msgid "System Shell"
-msgstr ""
+msgstr "Systémový shell"
 
 #. i18n: System Shell is the reserved storage identifier and must remain untranslated.
 #: src/settings/TerminalPresets.cpp:260
 #, kde-format
 msgid "Choose a preset name of 1–80 characters other than System Shell."
 msgstr ""
+"Zvolte název přednastavení o délce 1–80 znaků, který se liší od názvu System "
+"Shell."
 
 #: src/settings/TerminalPresets.cpp:266
 #, kde-format
 msgid "Make a copy to customize an installed terminal preset."
 msgstr ""
+"Vytvořte kopii, abyste mohli přizpůsobit nainstalované přednastavení "
+"terminálu."
 
 #: src/settings/TerminalPresets.cpp:276
 #, kde-format
 msgid "The terminal preset directory could not be created."
-msgstr ""
+msgstr "Nelze vytvořit adresář přednastavení terminálu."
 
 #: src/settings/TerminalPresets.cpp:283 src/settings/TerminalPresets.cpp:307
 #, kde-format
 msgid "The terminal preset could not be saved."
-msgstr ""
+msgstr "Přednastavení terminálu se nepodařilo uložit."
 
 #: src/settings/TerminalPresets.cpp:297
 #, kde-format
 msgid "Choose a unique name for a user-owned terminal preset."
-msgstr ""
+msgstr "Zvolte jedinečný název pro uživatelské přednastavení terminálu."
 
 #: src/settings/TerminalPresets.cpp:342
 #, kde-format
 msgid "Choose a local Kwi terminal preset."
-msgstr ""
+msgstr "Vyberte lokální přednastavení terminálu Kwi."
 
 #: src/settings/TerminalPresets.cpp:348
 #, kde-format
 msgid "This file is not a valid Kwi launch preset."
-msgstr ""
+msgstr "Tento soubor není platným přednastavením spouštění Kwi."
 
 #: src/settings/TerminalSettings.cpp:162
 #, kde-format
@@ -2240,12 +2259,12 @@ msgstr "Shell"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Kwi Terminal"
-msgstr ""
+msgstr "Nastavení terminálu Kwi"
 
 #: src/ui/SettingsDialog.cpp:149
 #, kde-format
 msgid "Save changes before closing?"
-msgstr ""
+msgstr "Chcete změny uložit před uzavřením?"
 
 #: src/ui/SettingsDialog.cpp:150
 #, kde-format
@@ -2256,12 +2275,12 @@ msgstr "Neuložené změny"
 #: src/ui/TerminalWidget.cpp:69
 #, kde-format
 msgid "The terminal view is missing from the interface."
-msgstr ""
+msgstr "V rozhraní chybí zobrazení terminálu."
 
 #: src/ui/TerminalWidget.cpp:99
 #, kde-format
 msgid "The terminal interface could not be loaded."
-msgstr ""
+msgstr "Nedařilo se načíst rozhraní terminálu."
 
 #: src/ui/WebShortcutModel.cpp:94
 #, kde-format
@@ -2272,9 +2291,9 @@ msgstr "Hledat '%1' pomocí"
 #: src/WindowManager.cpp:331
 #, kde-format
 msgid "Could not initialize terminal graphics: %1"
-msgstr ""
+msgstr "Nepodařilo se inicializovat grafické rozhraní terminálu: %1"
 
 #: src/WindowManager.cpp:554
 #, kde-format
 msgid "The terminal preset %1 is not available."
-msgstr ""
+msgstr "Přednastavení terminálu %1 není k dispozici."

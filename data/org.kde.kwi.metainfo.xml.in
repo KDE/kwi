@@ -74,6 +74,14 @@
   <provides>
     <binary>@KWI_EXECUTABLE@</binary>
   </provides>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+  <recommends>
+    <display_length compare="ge">600</display_length>
+  </recommends>
   <translation type="gettext">@KWI_EXECUTABLE@</translation>
   <releases>
     <release version="0.1.0" date="2026-11-20" type="stable">

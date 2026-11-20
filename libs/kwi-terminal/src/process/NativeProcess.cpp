@@ -172,7 +172,7 @@ bool NativeProcess::start(const TerminalLaunch &launch)
         m_terminateTimer.stop();
         m_killTimer.stop();
 
-        Q_EMIT finished(status == QProcess::CrashExit ? 128 + code : code);
+        Q_EMIT finished(status == QProcess::CrashExit ? 128 + code : code, status);
     });
 
     connect(m_process.get(), &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
@@ -195,7 +195,7 @@ bool NativeProcess::start(const TerminalLaunch &launch)
             if (guard != nullptr) {
                 // Let Qt finish failed-exec cleanup before owners react to exit.
                 QTimer::singleShot(0, this, [this] {
-                    Q_EMIT finished(127);
+                    Q_EMIT finished(127, QProcess::NormalExit);
                 });
             }
         }

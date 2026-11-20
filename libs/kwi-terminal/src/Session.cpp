@@ -373,15 +373,20 @@ void Session::setState(State newState)
     }
 }
 
-void Session::finish(int code)
+void Session::finish(int code, QProcess::ExitStatus status)
 {
     if (isFinished()) {
         return;
     }
 
-    const State result{!m_started && !m_error.isEmpty() ? State::Failed : State::Exited};
+    const bool crashed{status == QProcess::CrashExit && !m_closeRequested};
+    const State result{crashed || (!m_started && !m_error.isEmpty()) ? State::Failed : State::Exited};
     m_exitCode = code;
     m_progress = {};
+
+    if (crashed) {
+        reportError(i18nd("kwi-terminal", "Program '%1' crashed.", m_launchedProgramName));
+    }
 
     setMonitorActivity(false);
     setMonitorSilence(false);

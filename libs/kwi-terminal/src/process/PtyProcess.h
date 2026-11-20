@@ -8,6 +8,7 @@
 #include <QByteArray>
 #include <QList>
 #include <QObject>
+#include <QProcess>
 #include <QSize>
 #include <QString>
 #include <QTimer>
@@ -57,7 +58,7 @@ public:
 Q_SIGNALS:
     void started();
     void dataReceived(const QByteArray &data);
-    void exited(int exitCode);
+    void exited(int exitCode, QProcess::ExitStatus exitStatus);
     void errorOccurred(const QString &message);
     void processInfoChanged();
 
@@ -67,7 +68,7 @@ private:
     void invalidateProcessInfo(bool input);
     void readOutput();
     void flushInput();
-    void processFinished(int exitCode);
+    void processFinished(int exitCode, QProcess::ExitStatus exitStatus);
     void closeMaster();
     void finishExit();
 
@@ -79,6 +80,7 @@ private:
     quint64 m_ioGeneration{0};
     quint64 m_runGeneration{0};
     int m_exitCode{0};
+    QProcess::ExitStatus m_exitStatus{QProcess::NormalExit};
     bool m_closing{false};
     bool m_exitPending{false};
     bool m_readScheduled{false};

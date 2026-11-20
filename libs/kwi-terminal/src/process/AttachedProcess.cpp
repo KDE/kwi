@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <KPtyDevice>
 #include <QPointer>
+#include <QProcess>
 #include <QTimer>
 #include <utility>
 
@@ -120,7 +121,7 @@ private:
     void finish()
     {
         if (std::exchange(m_active, false)) {
-            Q_EMIT finished(0);
+            Q_EMIT finished(0, QProcess::NormalExit);
         }
     }
 

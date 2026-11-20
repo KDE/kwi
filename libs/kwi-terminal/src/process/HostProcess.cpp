@@ -399,7 +399,7 @@ void HostProcess::fail(const QString &message)
     }
 }
 
-void HostProcess::finish(int exitCode)
+void HostProcess::finish(int exitCode, QProcess::ExitStatus exitStatus)
 {
     if (m_phase == Phase::Finished) {
         return;
@@ -416,7 +416,7 @@ void HostProcess::finish(int exitCode)
     completeRefresh();
 
     if (guard != nullptr) {
-        Q_EMIT finished(exitCode);
+        Q_EMIT finished(exitCode, exitStatus);
     }
 }
 
@@ -425,7 +425,8 @@ void HostProcess::hostExited(uint pid, uint status)
     if (!m_pid && m_spawn && isRunning()) {
         m_earlyExits.insert(pid, status);
     } else if (pid == m_pid && isRunning()) {
-        finish(WIFEXITED(status) ? WEXITSTATUS(status) : 128 + (WIFSIGNALED(status) ? WTERMSIG(status) : 0));
+        finish(WIFEXITED(status) ? WEXITSTATUS(status) : 128 + (WIFSIGNALED(status) ? WTERMSIG(status) : 0),
+               WIFSIGNALED(status) ? QProcess::CrashExit : QProcess::NormalExit);
     }
 }
 

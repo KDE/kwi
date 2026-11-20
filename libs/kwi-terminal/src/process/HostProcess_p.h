@@ -11,6 +11,7 @@
 #include <QHash>
 #include <QList>
 #include <QPointer>
+#include <QProcess>
 #include <QString>
 #include <QStringList>
 #include <QTimer>
@@ -65,7 +66,7 @@ private:
     void completeRefresh(bool changed = false);
     [[nodiscard]] bool waitingForLauncher() const;
     void beginCleanup();
-    void finish(int exitCode);
+    void finish(int exitCode, QProcess::ExitStatus exitStatus = QProcess::NormalExit);
     void fail(const QString &message);
 
     QDBusConnection m_bus;

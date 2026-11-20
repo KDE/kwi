@@ -11,6 +11,7 @@
 #include <QElapsedTimer>
 #include <QObject>
 #include <QPointer>
+#include <QProcess>
 #include <QSize>
 #include <QString>
 #include <QStringList>
@@ -95,7 +96,8 @@ class KWI_TERMINAL_EXPORT Session : public QObject
      * \value Session.Running The process has started.
      * \value Session.Closing The process is being closed.
      * \value Session.Exited The process has exited, or the session was closed before launch.
-     * \value Session.Failed The terminal could not be initialized, or the process failed to start.
+     * \value Session.Failed The terminal could not be initialized, the process failed to start,
+     * or it was terminated by a signal without a close() request.
      *
      * \sa active, finished, errorString
      */
@@ -118,6 +120,7 @@ class KWI_TERMINAL_EXPORT Session : public QObject
      * \qmlproperty int Session::exitCode
      * \readonly
      * The last process exit code. It is reset to zero when a launch is accepted.
+     * Signal termination is reported as 128 plus the signal number.
      * Use exited() to observe process completion.
      */
     Q_PROPERTY(int exitCode READ exitCode NOTIFY exitStatusChanged)
@@ -574,7 +577,7 @@ private:
     QPointer<TerminalView> m_view;
 
     void setState(State newState);
-    void finish(int code);
+    void finish(int code, QProcess::ExitStatus status = QProcess::NormalExit);
     void updateProgress();
     void refreshSessionMetadata();
     void reportError(const QString &message);

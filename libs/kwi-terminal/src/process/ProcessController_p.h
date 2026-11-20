@@ -6,6 +6,7 @@
 #include "ProcessInfo_p.h"
 #include <QDBusUnixFileDescriptor>
 #include <QObject>
+#include <QProcess>
 #include <QString>
 #include <functional>
 
@@ -40,7 +41,7 @@ public:
 
 Q_SIGNALS:
     void started();
-    void finished(int exitCode);
+    void finished(int exitCode, QProcess::ExitStatus exitStatus);
     void errorOccurred(const QString &message);
     void transportClosed();
     void processInfoChanged();

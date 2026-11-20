@@ -78,6 +78,7 @@ bool PtyProcess::initialize(std::unique_ptr<ProcessController> controller, int m
     m_exitEmitted = false;
     m_readScheduled = false;
     m_exitCode = 0;
+    m_exitStatus = QProcess::NormalExit;
     m_pendingInput.clear();
     m_inputOffset = 0;
 
@@ -292,10 +293,11 @@ void PtyProcess::closeMaster()
     }
 }
 
-void PtyProcess::processFinished(int exitCode)
+void PtyProcess::processFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     m_metadataTimer.stop();
     m_exitCode = exitCode;
+    m_exitStatus = exitStatus;
     m_exitPending = true;
     readOutput();
 }
@@ -310,7 +312,7 @@ void PtyProcess::finishExit()
     m_exitEmitted = true;
     m_metadataTimer.stop();
 
-    Q_EMIT exited(m_exitCode);
+    Q_EMIT exited(m_exitCode, m_exitStatus);
 }
 
 bool PtyProcess::isRunning() const

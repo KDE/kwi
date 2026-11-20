@@ -142,6 +142,9 @@
             "config-opts": [
                 "-DBUILD_KPART=OFF",
                 "-DBUILD_TESTING=OFF"
+            ],
+            "post-install": [
+                "install -Dm644 LICENSES/* -t /app/share/licenses/org.kde.kwi/kwi"
             ]
         }
     ]

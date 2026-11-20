@@ -96,9 +96,6 @@ if(BUILD_APP OR BUILD_KPART)
     endif()
 endif()
 
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/LICENSES/"
-    DESTINATION "${KDE_INSTALL_DATADIR}/licenses/kwi")
-
 ki18n_install(po)
 
 include(KDEClangFormat)

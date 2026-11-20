@@ -42,7 +42,10 @@ private Q_SLOTS:
     void confirmsDirectCommandAndClosesIdleShell();
 
     void preservesLaunchErrors();
+    void preservesCrashedSession_data();
+    void preservesCrashedSession();
 
+    void removesNaturallyExitedSession_data();
     void removesNaturallyExitedSession();
     void inheritsWorkingDirectory();
     void moveAndLastUsedPreserveIdentity();
@@ -80,6 +83,10 @@ void SessionModelTest::closesAsynchronously()
         false);
     QPointer<TerminalSession> session = model.currentSession();
     QSignalSpy exited{session, &TerminalSession::exited};
+    connect(session, &TerminalSession::exited, this, [session] {
+        QCOMPARE(session->state(), Session::State::Exited);
+        QVERIFY(session->errorString().isEmpty());
+    });
     QTRY_VERIFY_WITH_TIMEOUT(session->historyText().contains(QStringLiteral("READY")), 5000);
     model.closeSession(0);
     QCOMPARE(model.count(), 0);
@@ -223,18 +230,66 @@ void SessionModelTest::preservesLaunchErrors()
     QCOMPARE(closed.size(), 1);
 }
 
-// An exited child closes its tab and leaves the model empty.
+void SessionModelTest::preservesCrashedSession_data()
+{
+    QTest::addColumn<QString>("signal");
+    QTest::newRow("abort") << QStringLiteral("ABRT");
+    QTest::newRow("kill") << QStringLiteral("KILL");
+}
+
+// A crashed process leaves its tab and output available until explicitly closed.
+void SessionModelTest::preservesCrashedSession()
+{
+    QFETCH(QString, signal);
+    TerminalSettings settings;
+    TerminalPresets presets{&settings};
+    SessionModel model{&settings, &presets};
+    QSignalSpy closed{&model, &SessionModel::allClosed};
+    QSignalSpy confirmation{&model, &SessionModel::closeConfirmationRequested};
+    model.launchSession(
+        {.command =
+             QStringList{QStringLiteral("/bin/sh"), QStringLiteral("-c"), QStringLiteral("ulimit -c 0; printf 'final-output\\n'; kill -%1 $$").arg(signal)},
+         .directory = QDir::tempPath()},
+        {},
+        false);
+    const QPointer<TerminalSession> session{model.currentSession()};
+    QTRY_VERIFY(session && session->isFinished());
+    QCOMPARE(session->state(), Session::State::Failed);
+    QCOMPARE(model.count(), 1);
+    QCOMPARE(model.currentSession(), session);
+    QVERIFY(!session->errorString().isEmpty());
+    QCOMPARE(session->iconName(), QStringLiteral("dialog-error"));
+    QVERIFY(session->historyText().contains(QStringLiteral("final-output")));
+    QCOMPARE(closed.size(), 0);
+    model.closeSession(0);
+    QTRY_COMPARE(closed.size(), 1);
+    QCOMPARE(model.count(), 0);
+    QCOMPARE(confirmation.size(), 0);
+}
+
+void SessionModelTest::removesNaturallyExitedSession_data()
+{
+    QTest::addColumn<int>("exitCode");
+    QTest::newRow("success") << 0;
+    QTest::newRow("failure") << 1;
+    QTest::newRow("exit-134") << 134;
+    QTest::newRow("exit-137") << 137;
+}
+
+// Normal process exits close their tabs regardless of the exit code.
 void SessionModelTest::removesNaturallyExitedSession()
 {
+    QFETCH(int, exitCode);
     TerminalSettings settings;
     settings.setDefaultPreset(m_shellPreset);
     TerminalPresets presets{&settings};
     SessionModel model{&settings, &presets};
 
     QSignalSpy closed{&model, &SessionModel::allClosed};
-    model.launchSession({.command = QStringList{QStringLiteral("/bin/sh"), QStringLiteral("-c"), QStringLiteral("exit 0")}, .directory = QDir::tempPath()},
-                        {},
-                        false);
+    model.launchSession(
+        {.command = QStringList{QStringLiteral("/bin/sh"), QStringLiteral("-c"), QStringLiteral("exit %1").arg(exitCode)}, .directory = QDir::tempPath()},
+        {},
+        false);
     QTRY_COMPARE_WITH_TIMEOUT(closed.size(), 1, 5000);
     QCOMPARE(model.count(), 0);
     QCOMPARE(model.currentIndex(), -1);

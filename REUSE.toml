@@ -15,3 +15,9 @@ path = [".gitignore", "CMakePresets.json", "src/kpart/kwipart.json.in", "libs/kw
 precedence = "aggregate"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "data/icons/*.png"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Kwi contributors"
+SPDX-License-Identifier = "CC0-1.0"

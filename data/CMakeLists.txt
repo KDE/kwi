@@ -16,16 +16,16 @@ set_source_files_properties(icons/index.theme PROPERTIES
     QT_RESOURCE_ALIAS hicolor/index.theme)
 
 foreach(size IN ITEMS 16 22 24 32 48)
-    set_source_files_properties(icons/${size}-apps-org.kde.kwi.svg PROPERTIES
-        QT_RESOURCE_ALIAS hicolor/${size}x${size}/apps/org.kde.kwi.svg)
+    set_source_files_properties(icons/${size}-apps-org.kde.kwi.png PROPERTIES
+        QT_RESOURCE_ALIAS hicolor/${size}x${size}/apps/org.kde.kwi.png)
 endforeach()
 
 qt_add_resources(kwi-core kwi_icon_data
     PREFIX "/icons"
     FILES icons/sc-apps-org.kde.kwi.svg icons/index.theme
-        icons/16-apps-org.kde.kwi.svg icons/22-apps-org.kde.kwi.svg
-        icons/24-apps-org.kde.kwi.svg icons/32-apps-org.kde.kwi.svg
-        icons/48-apps-org.kde.kwi.svg)
+        icons/16-apps-org.kde.kwi.png icons/22-apps-org.kde.kwi.png
+        icons/24-apps-org.kde.kwi.png icons/32-apps-org.kde.kwi.png
+        icons/48-apps-org.kde.kwi.png)
 
 if(BUILD_APP)
     configure_file(org.kde.kwi.desktop.in org.kde.kwi.desktop @ONLY)
@@ -43,10 +43,11 @@ install(FILES kwi.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 
 configure_file("${PROJECT_SOURCE_DIR}/logo.png" 256-apps-org.kde.kwi.png COPYONLY)
 ecm_install_icons(ICONS
-    icons/16-apps-org.kde.kwi.svg
-    icons/22-apps-org.kde.kwi.svg
-    icons/24-apps-org.kde.kwi.svg
-    icons/32-apps-org.kde.kwi.svg
-    icons/48-apps-org.kde.kwi.svg
+    icons/sc-apps-org.kde.kwi.svg
+    icons/16-apps-org.kde.kwi.png
+    icons/22-apps-org.kde.kwi.png
+    icons/24-apps-org.kde.kwi.png
+    icons/32-apps-org.kde.kwi.png
+    icons/48-apps-org.kde.kwi.png
     "${CMAKE_CURRENT_BINARY_DIR}/256-apps-org.kde.kwi.png"
     DESTINATION ${KDE_INSTALL_ICONDIR})

@@ -91,35 +91,79 @@
             ]
         },
         {
-            "name": "kirigami-app-components",
+            "name": "kdbusaddons",
             "buildsystem": "cmake-ninja",
+            "builddir": true,
             "config-opts": [
+                "-DKDE_INSTALL_LIBDIR=lib",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/frameworks/kdbusaddons.git"
+                }
+            ],
+            "post-install": [
+                "install -Dm644 ../LICENSES/* -t /app/share/licenses/org.kde.kwi/kdbusaddons"
+            ]
+        },
+        {
+            "name": "kirigami",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DKDE_INSTALL_LIBDIR=lib",
                 "-DBUILD_TESTING=OFF",
                 "-DBUILD_EXAMPLES=OFF"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://invent.kde.org/libraries/kirigami-app-components.git",
-                    "branch": "master"
+                    "url": "https://invent.kde.org/frameworks/kirigami.git"
                 }
             ],
             "post-install": [
-                "install -Dm644 LICENSES/* -t /app/share/licenses/kirigami-app-components"
+                "install -Dm644 ../LICENSES/* -t /app/share/licenses/org.kde.kwi/kirigami"
             ]
+        },
+        {
+            "name": "kirigami-app-components",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DKDE_INSTALL_LIBDIR=lib",
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_EXAMPLES=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kirigami-app-components.git"
+                }
+            ],
+            "post-install": [
+                "install -Dm644 ../LICENSES/* -t /app/share/licenses/org.kde.kwi/kirigami-app-components"
+            ],
+            "builddir": true
         },
         {
             "name": "union",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DBUILD_TESTING=OFF"
+                "-DKDE_INSTALL_LIBDIR=lib",
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_EXAMPLES=OFF",
+                "-DBUILD_TOOLS=OFF"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/plasma/union.git"
                 }
+            ],
+            "post-install": [
+                "install -Dm644 ../LICENSES/* -t /app/share/licenses/org.kde.kwi/union"
             ]
         },
         {

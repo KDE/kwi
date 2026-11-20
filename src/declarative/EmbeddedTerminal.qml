@@ -49,6 +49,7 @@ FocusScope {
         Kirigami.InlineMessage {
             objectName: "embeddedErrorMessage"
             Layout.fillWidth: true
+            position: Kirigami.InlineMessage.Position.Header
             visible: text.length > 0
             type: Kirigami.MessageType.Error
             text: TextFormatting.plainTextToHtml(root.hostError || (root.session ? root.session.errorString : ""))

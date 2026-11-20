@@ -1346,6 +1346,7 @@ Kirigami.ApplicationWindow {
                 Kirigami.InlineMessage {
                     objectName: "sessionErrorMessage"
                     Layout.fillWidth: true
+                    position: Kirigami.InlineMessage.Position.Header
                     visible: text.length > 0
                     type: Kirigami.MessageType.Error
                     text: TextFormatting.plainTextToHtml(root.sessionModel.currentSession ? root.sessionModel.currentSession.errorString : "")
@@ -1353,6 +1354,7 @@ Kirigami.ApplicationWindow {
 
                 Kirigami.InlineMessage {
                     Layout.fillWidth: true
+                    position: Kirigami.InlineMessage.Position.Header
                     visible: root.currentSession && root.currentSession.finished && !root.currentSession.errorString
                     type: root.currentSession && root.currentSession.exitCode !== 0 ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
                     text: root.currentSession && root.currentSession.exitCode !== 0 ? KI18n.i18nc("@info", "Process exited with status %1.", root.currentSession.exitCode) : KI18n.i18nc("@info", "Process finished.")
@@ -1360,6 +1362,7 @@ Kirigami.ApplicationWindow {
 
                 Kirigami.InlineMessage {
                     Layout.fillWidth: true
+                    position: Kirigami.InlineMessage.Position.Header
                     visible: false
                     type: Kirigami.MessageType.Error
                     text: TextFormatting.plainTextToHtml(root.desktopIntegration.errorString)

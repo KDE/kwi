@@ -62,6 +62,9 @@
   </description>
   <url type="homepage">https://apps.kde.org/kwi/</url>
   <url type="vcs-browser">https://invent.kde.org/utilities/kwi</url>
+  <custom>
+    <value key="KDE::matrix">#kwi:kde.org</value>
+  </custom>
   <launchable type="desktop-id">@KWI_APP_ID@.desktop</launchable>
   <screenshots>
     <screenshot type="default">

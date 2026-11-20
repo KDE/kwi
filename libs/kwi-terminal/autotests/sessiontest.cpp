@@ -179,7 +179,7 @@ void SessionTest::processTermination_data()
     QTest::newRow("terminate") << QStringLiteral("kill -TERM $$") << 128 + SIGTERM << true;
 }
 
-// Process termination preserves final output and distinguishes crashes from normal exits.
+// Process termination retains output and distinguishes crashes from normal exits.
 void SessionTest::processTermination()
 {
     QFETCH(QString, command);
@@ -197,12 +197,12 @@ void SessionTest::processTermination()
         QVERIFY(!session.monitorActivity());
         QVERIFY(!session.monitorSilence());
     });
-    QVERIFY(
-        session.start(testLaunch(QStringLiteral("/bin/sh"),
-                                 {QStringLiteral("-c"), QStringLiteral("ulimit -c 0; printf 'ready\\n'; read -r ack; printf 'final-output\\n'; ") + command},
-                                 {},
-                                 {QStringLiteral("ENV="), QStringLiteral("BASH_ENV=")})));
-    QTRY_VERIFY(session.historyText().contains(QStringLiteral("ready")));
+    QVERIFY(session.start(testLaunch(QStringLiteral("/bin/sh"),
+                                     {QStringLiteral("-c"), QStringLiteral("ulimit -c 0; printf 'final-output\\n'; read -r ack; ") + command},
+                                     {},
+                                     {QStringLiteral("ENV="), QStringLiteral("BASH_ENV=")})));
+    // Receive the output before the child revokes its FreeBSD controlling TTY.
+    QTRY_VERIFY(session.historyText().contains(QStringLiteral("final-output")));
     session.setMonitorActivity(true);
     session.setMonitorSilence(true);
     QVERIFY(session.sendInput(QStringLiteral("\n")));

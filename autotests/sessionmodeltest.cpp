@@ -246,14 +246,19 @@ void SessionModelTest::preservesCrashedSession()
     SessionModel model{&settings, &presets};
     QSignalSpy closed{&model, &SessionModel::allClosed};
     QSignalSpy confirmation{&model, &SessionModel::closeConfirmationRequested};
-    model.launchSession(
-        {.command =
-             QStringList{QStringLiteral("/bin/sh"), QStringLiteral("-c"), QStringLiteral("ulimit -c 0; printf 'final-output\\n'; kill -%1 $$").arg(signal)},
-         .directory = QDir::tempPath()},
-        {},
-        false);
+    model.launchSession({.command = QStringList{QStringLiteral("/bin/sh"),
+                                                QStringLiteral("-c"),
+                                                QStringLiteral("ulimit -c 0; printf 'final-output\\n'; read -r ack; kill -%1 $$").arg(signal)},
+                         .directory = QDir::tempPath()},
+                        {},
+                        false);
     const QPointer<TerminalSession> session{model.currentSession()};
-    QTRY_VERIFY(session && session->isFinished());
+    // Receive the output before the child revokes its FreeBSD controlling TTY.
+    QTRY_VERIFY(session && session->historyText().contains(QStringLiteral("final-output")));
+    QSignalSpy exited{session, &Session::exited};
+    QVERIFY(session->sendInput(QStringLiteral("\n")));
+    QTRY_COMPARE(exited.size(), 1);
+    QVERIFY(session);
     QCOMPARE(session->state(), Session::State::Failed);
     QCOMPARE(model.count(), 1);
     QCOMPARE(model.currentSession(), session);

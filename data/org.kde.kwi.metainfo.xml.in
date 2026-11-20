@@ -8,10 +8,12 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>@KWI_PROJECT_LICENSE@</project_license>
   <name>@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="ar">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="ca">Terminal @KWI_DISPLAY_NAME@</name>
   <name xml:lang="ca-valencia">Terminal @KWI_DISPLAY_NAME@</name>
   <name xml:lang="cs">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="es">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="it">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nl">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="pt-BR">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="sr">@KWI_DISPLAY_NAME@</name>
@@ -20,14 +22,17 @@
   <name xml:lang="sr-ijekavianlatin">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="tr">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="uk">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="zh-TW">@KWI_DISPLAY_NAME@</name>
   <developer id="@KWI_APP_ID@">
     <name>Kwi contributors</name>
   </developer>
   <summary>A modern and fast terminal</summary>
+  <summary xml:lang="ar">طرفية حديثة وسريعة</summary>
   <summary xml:lang="ca">Un terminal modern i ràpid</summary>
   <summary xml:lang="ca-valencia">Un terminal modern i ràpid</summary>
   <summary xml:lang="cs">Moderní a rychlý terminál</summary>
   <summary xml:lang="es">Un terminal moderno y rápido</summary>
+  <summary xml:lang="it">Un terminale moderno e veloce</summary>
   <summary xml:lang="nl">Een moderne en snelle terminal</summary>
   <summary xml:lang="pt-BR">Um terminal moderno e rápido</summary>
   <summary xml:lang="sr">Модеран и брз терминал</summary>
@@ -36,12 +41,15 @@
   <summary xml:lang="sr-ijekavianlatin">Moderan i brz terminal</summary>
   <summary xml:lang="tr">Çağdaş ve hızlı bir uçbirim</summary>
   <summary xml:lang="uk">Сучасний і швидкий термінал</summary>
+  <summary xml:lang="zh-TW">現代且高效能的終端機</summary>
   <description>
     <p>Kwi is a modern and fast terminal that integrates well with KDE Plasma and other free desktops.</p>
+    <p xml:lang="ar">كوي هو محاكي طرفية عصري وسريع، يتكامل بشكل جيد مع بيئة كيدي بلازما وغيرها من بيئات سطح المكتب الحرة.</p>
     <p xml:lang="ca">El Kwi és un terminal modern i ràpid que s'integra bé amb el Plasma de KDE i altres escriptoris lliures.</p>
     <p xml:lang="ca-valencia">Kwi és un terminal modern i ràpid que s'integra bé amb Plasma de KDE i altres escriptoris lliures.</p>
     <p xml:lang="cs">Kwi je moderní a rychlý terminál, který se dobře integruje do prostředí KDE Plasma a dalších svobodných desktopových prostředí.</p>
     <p xml:lang="es">Kwi es un terminal moderno y rápido que se integra bien con KDE Plasma y otros escritorios libres.</p>
+    <p xml:lang="it">Kwi è un terminale moderno e veloce che si integra bene con KDE Plasma e altri desktop liberi.</p>
     <p xml:lang="nl">Kwi is een moderne en snelle terminal die goed integreert met KDE Plasma en andere vrije bureaubladen.</p>
     <p xml:lang="pt-BR">Kwi é um terminal moderno e rápido que se integra bem ao KDE Plasma e a outros ambientes de desktop livres.</p>
     <p xml:lang="sr">Kwi је модеран и брз терминал који се добро уклапа у КДЕ Плазму и друге слободне површи.</p>
@@ -50,6 +58,7 @@
     <p xml:lang="sr-ijekavianlatin">Kwi je moderan i brz terminal koji se dobro uklapa u KDE Plasmu i druge slobodne površi.</p>
     <p xml:lang="tr">Kwi; KDE Plasma ve diğer özgür masaüstleri ile pek iyi tümleşen, çağdaş ve hızlı bir uçbirimdir.</p>
     <p xml:lang="uk">Kwi — сучасний і швидкий термінал, який добре вписується у Плазму KDE та інші вільні стільничні середовища.</p>
+    <p xml:lang="zh-TW">Kwi 是一個現代化、高效能，且與 KDE Plasma 及其他自由桌面整合的終端機。</p>
   </description>
   <url type="homepage">https://apps.kde.org/kwi/</url>
   <url type="vcs-browser">https://invent.kde.org/utilities/kwi</url>

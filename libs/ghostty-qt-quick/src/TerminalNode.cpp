@@ -599,8 +599,8 @@ public:
         if (colored) {
             color = Qt::white;
         } else if (isCursorCell(column, rowCursorColumn, cells) && options.focused && frame.cursorStyle == CursorStyle::Block) {
-            color = QColor{cell.background};
-        } else if (cell.flags & Selected) {
+            color = QColor{cells[column].background};
+        } else if (cells[column].flags & Selected) {
             color = frame.selectionForeground.isValid() ? frame.selectionForeground : frame.background;
         }
 
@@ -645,14 +645,14 @@ public:
         qreal left{rect.left()};
 
         while (left < rect.right() - 0.0001) {
-            const int column{qBound(firstColumn, int(std::floor(left / cw)), lastColumn)};
-            const qreal right{column >= lastColumn ? rect.right() : qMin(rect.right(), (column + 1) * cw)};
+            const int column{qBound(0, int(std::floor(left / cw)), int(cells.size()) - 1)};
+            const qreal right{column == cells.size() - 1 ? rect.right() : qMin(rect.right(), (column + 1) * cw)};
 
             if (right <= left) {
                 break;
             }
 
-            const Cell &cell = cells[column];
+            const Cell &cell = cells[qBound(firstColumn, column, lastColumn)];
 
             if (!(cell.flags & Invisible) && (!(cell.flags & Blink) || options.textBlinkVisible)) {
                 const QRectF part(left, rect.y(), right - left, rect.height());
@@ -868,7 +868,8 @@ public:
                 const Cell &next = cells[end];
 
                 // Fit icons independently of text ligatures and neighboring icons.
-                if (!next.width || next.text.isEmpty() || (next.flags & ImagePlaceholder) || (next.flags & (Bold | Italic)) != (cell.flags & (Bold | Italic))
+                if (!next.width || next.text.isEmpty() || (next.flags & ImagePlaceholder) || (next.flags & ~Selected) != (cell.flags & ~Selected)
+                    || next.foreground != cell.foreground || next.underline != cell.underline || next.underlineColor != cell.underlineColor
                     || isFontIcon(next.text) || isProceduralSymbol(singleCodepoint(next.text))) {
                     break;
                 }

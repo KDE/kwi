@@ -11,6 +11,7 @@
 #include <ghostty/vt.h>
 
 #include <QBuffer>
+#include <QByteArray>
 #include <QChar>
 #include <QElapsedTimer>
 #include <QHash>
@@ -22,6 +23,7 @@
 #include <QThread>
 #include <QTimer>
 #include <QUtf8StringView>
+#include <QVector>
 
 #include <algorithm>
 #include <array>
@@ -67,6 +69,44 @@ constexpr size_t ImageLimit = 64 * 1024 * 1024;
 QString string(GhosttyString value)
 {
     return QString::fromUtf8(reinterpret_cast<const char *>(value.ptr), qsizetype(value.len));
+}
+
+QString cellText(GhosttyRenderStateRowCells rowCells, const QVector<Cell> &previousRow, qsizetype column)
+{
+    std::array<uint8_t, 64> text{};
+    GhosttyBuffer buffer{text.data(), text.size(), 0};
+    const auto result = ghostty_render_state_row_cells_get(rowCells, GHOSTTY_RENDER_STATE_ROW_CELLS_DATA_GRAPHEMES_UTF8, &buffer);
+
+    if (result == GHOSTTY_OUT_OF_SPACE) {
+        QByteArray expanded(qsizetype(buffer.len), Qt::Uninitialized);
+        buffer.ptr = reinterpret_cast<uint8_t *>(expanded.data());
+        buffer.cap = size_t(expanded.size());
+
+        if (ghostty_render_state_row_cells_get(rowCells, GHOSTTY_RENDER_STATE_ROW_CELLS_DATA_GRAPHEMES_UTF8, &buffer) != GHOSTTY_SUCCESS)
+            return {};
+
+        return QString::fromUtf8(expanded);
+    }
+
+    if (result != GHOSTTY_SUCCESS)
+        return {};
+
+    if (buffer.len <= 1 && text[0] < 0x80) {
+        static constexpr auto ascii = []() {
+            std::array<std::array<char16_t, 2>, 128> strings{};
+
+            for (size_t i{0}; i < strings.size(); ++i)
+                strings[i][0] = char16_t(i);
+
+            return strings;
+        }();
+
+        return QString::fromRawData(ascii[text[0]].data(), qsizetype(buffer.len));
+    }
+
+    const QUtf8StringView grapheme{reinterpret_cast<const char *>(text.data()), qsizetype(buffer.len)};
+
+    return column < previousRow.size() && previousRow[column].text == grapheme ? previousRow[column].text : QString::fromUtf8(grapheme);
 }
 
 QString notificationText(GhosttyString value, qsizetype limit)
@@ -485,10 +525,10 @@ public:
 
             GhosttyRenderStateRowSelection selected{GHOSTTY_INIT_SIZED(GhosttyRenderStateRowSelection)};
             const bool hasRowSelection{ghostty_render_state_row_get(rowIterator, GHOSTTY_RENDER_STATE_ROW_DATA_SELECTION, &selected) == GHOSTTY_SUCCESS};
+            const auto &previous = frame.rows.at(y);
 
             if (reuseCells) {
                 // Avoid detaching shared rows whose selection bits have not changed.
-                const auto &previous = frame.rows.at(y);
                 qsizetype first{0};
 
                 while (first < previous.size()
@@ -532,23 +572,7 @@ public:
                 GhosttyCellWide wide{GHOSTTY_CELL_WIDE_NARROW};
                 ghostty_cell_get(raw, GHOSTTY_CELL_DATA_WIDE, &wide);
                 cell.width = wide == GHOSTTY_CELL_WIDE_WIDE ? 2 : wide == GHOSTTY_CELL_WIDE_NARROW ? 1 : 0;
-                std::array<uint8_t, 64> text{};
-                GhosttyBuffer buffer{text.data(), text.size(), 0};
-                auto result = ghostty_render_state_row_cells_get(rowCells, GHOSTTY_RENDER_STATE_ROW_CELLS_DATA_GRAPHEMES_UTF8, &buffer);
-
-                if (result == GHOSTTY_OUT_OF_SPACE) {
-                    QByteArray expanded(qsizetype(buffer.len), Qt::Uninitialized);
-                    buffer.ptr = reinterpret_cast<uint8_t *>(expanded.data());
-                    buffer.cap = size_t(expanded.size());
-
-                    if (ghostty_render_state_row_cells_get(rowCells, GHOSTTY_RENDER_STATE_ROW_CELLS_DATA_GRAPHEMES_UTF8, &buffer) == GHOSTTY_SUCCESS)
-                        cell.text = QString::fromUtf8(expanded);
-                } else if (result == GHOSTTY_SUCCESS) {
-                    const QUtf8StringView grapheme{reinterpret_cast<const char *>(text.data()), qsizetype(buffer.len)};
-                    const auto &previous = frame.rows.at(y);
-                    const qsizetype x{cells.size()};
-                    cell.text = x < previous.size() && previous[x].text == grapheme ? previous[x].text : QString::fromUtf8(grapheme);
-                }
+                cell.text = cellText(rowCells, previous, cells.size());
 
                 GhosttyColorRgb fg{colors.foreground};
                 GhosttyColorRgb bg{colors.background};

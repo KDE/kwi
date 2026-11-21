@@ -147,15 +147,11 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
             fittedClusters.tryEmplace(firstColumn);
         }
 
-        shaped.append(PositionedGlyph{raw,
-                                      index,
-                                      QPointF(firstColumn * cellWidth + position.x() - origin, baseline + position.y() - line.ascent()),
-                                      1,
-                                      firstColumn,
-                                      span});
+        const QPointF glyphBaseline{firstColumn * cellWidth + position.x() - origin, baseline + position.y() - line.ascent()};
+        shaped.emplaceBack(raw, index, glyphBaseline, 1, firstColumn, span);
     };
 
-    QVector<int> boundaries{textEnd};
+    QVector<int> boundaries;
     bool overlappingRuns{false};
     int previousEnd{1};
 
@@ -174,6 +170,8 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
     }
 
     if (!overlappingRuns) {
+        shaped.reserve(boundaries.size());
+        boundaries.append(textEnd);
         std::sort(boundaries.begin(), boundaries.end());
         boundaries.erase(std::unique(boundaries.begin(), boundaries.end()), boundaries.end());
 

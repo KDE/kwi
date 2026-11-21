@@ -188,7 +188,8 @@
                 "-DBUILD_TESTING=OFF"
             ],
             "post-install": [
-                "install -Dm644 LICENSES/* -t /app/share/licenses/org.kde.kwi/kwi"
+                "install -Dm644 LICENSES/* -t /app/share/licenses/org.kde.kwi/kwi",
+                "install -Dm644 data/packaging/flatpak/.flatpak-fontconfig.conf /app/etc/fonts/local.conf"
             ]
         }
     ]

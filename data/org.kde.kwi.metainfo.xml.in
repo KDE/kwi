@@ -16,6 +16,7 @@
   <name xml:lang="it">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nl">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="pt-BR">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="sk">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="sr">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="sr-Latn">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="sr-ijekavian">@KWI_DISPLAY_NAME@</name>
@@ -35,6 +36,7 @@
   <summary xml:lang="it">Un terminale moderno e veloce</summary>
   <summary xml:lang="nl">Een moderne en snelle terminal</summary>
   <summary xml:lang="pt-BR">Um terminal moderno e rápido</summary>
+  <summary xml:lang="sk">Moderný a rýchly terminál</summary>
   <summary xml:lang="sr">Модеран и брз терминал</summary>
   <summary xml:lang="sr-Latn">Moderan i brz terminal</summary>
   <summary xml:lang="sr-ijekavian">Модеран и брз терминал</summary>
@@ -52,6 +54,7 @@
     <p xml:lang="it">Kwi è un terminale moderno e veloce che si integra bene con KDE Plasma e altri desktop liberi.</p>
     <p xml:lang="nl">Kwi is een moderne en snelle terminal die goed integreert met KDE Plasma en andere vrije bureaubladen.</p>
     <p xml:lang="pt-BR">Kwi é um terminal moderno e rápido que se integra bem ao KDE Plasma e a outros ambientes de desktop livres.</p>
+    <p xml:lang="sk">Kwi je moderný a rýchly terminál, ktorý sa dobre začleňuje do KDE Plasma a ďalších slobodných prostredí.</p>
     <p xml:lang="sr">Kwi је модеран и брз терминал који се добро уклапа у КДЕ Плазму и друге слободне површи.</p>
     <p xml:lang="sr-Latn">Kwi je moderan i brz terminal koji se dobro uklapa u KDE Plasmu i druge slobodne površi.</p>
     <p xml:lang="sr-ijekavian">Kwi је модеран и брз терминал који се добро уклапа у КДЕ Плазму и друге слободне површи.</p>

@@ -601,19 +601,14 @@ bool Session::pasteApprovedText(const QString &text)
         return false;
     }
 
-    QString clean;
-    clean.reserve(text.size());
-    QString normalized{text};
-    normalized.replace(QStringLiteral("\r\n"), QStringLiteral("\n"));
-    normalized.replace(QLatin1Char('\r'), QLatin1Char('\n'));
+    QString clean{text};
+    clean.replace(QStringLiteral("\r\n"), QStringLiteral("\r"));
+    clean.replace(QLatin1Char('\n'), QLatin1Char('\r'));
+    clean.removeIf([](QChar character) {
+        const auto code = character.unicode();
 
-    for (const QChar character : normalized) {
-        if (character == QLatin1Char('\n')) {
-            clean += QLatin1Char('\r');
-        } else if (character == QLatin1Char('\t') || (character.unicode() >= 0x20 && !(character.unicode() >= 0x7f && character.unicode() <= 0x9f))) {
-            clean += character;
-        }
-    }
+        return (code < 0x20 && code != '\t' && code != '\r') || (code >= 0x7f && code <= 0x9f);
+    });
 
     const bool accepted{send(m_terminal->encodePaste(clean.toUtf8()))};
 

@@ -1819,10 +1819,9 @@ QByteArray Terminal::encodeFocus(bool focused) const
     return QByteArray(bytes, qsizetype(length));
 }
 
-QByteArray Terminal::encodePaste(QByteArrayView bytes) const
+QByteArray Terminal::encodePaste(QByteArray data) const
 {
     d->assertThread();
-    QByteArray data(bytes);
     QByteArray result(data.size() + 32, Qt::Uninitialized);
     size_t length{0};
 

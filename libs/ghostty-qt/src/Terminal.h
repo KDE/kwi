@@ -185,7 +185,7 @@ public:
     [[nodiscard]] QByteArray encodeKey(const QKeyEvent &event, KeyboardLocks locks = {});
     [[nodiscard]] QByteArray encodeMouse(const MouseEvent &event);
     [[nodiscard]] QByteArray encodeFocus(bool focused) const;
-    [[nodiscard]] QByteArray encodePaste(QByteArrayView bytes) const;
+    [[nodiscard]] QByteArray encodePaste(QByteArray data) const;
 
     [[nodiscard]] bool isModeEnabled(Mode mode) const;
     [[nodiscard]] Qt::CursorShape mouseCursorShape() const;

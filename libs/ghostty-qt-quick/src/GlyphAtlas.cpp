@@ -287,6 +287,7 @@ void GlyphAtlas::flush(quint64 *uploadedBytes)
 
 void GlyphAtlas::trim()
 {
+    const auto previousPageCount{m_pages.size()};
     qsizetype total{byteSize()};
 
     while (total > PixelBudget) {
@@ -306,9 +307,11 @@ void GlyphAtlas::trim()
         m_pages.erase(oldest);
     }
 
-    m_glyphs.removeIf([](auto it) {
-        return it->page.expired();
-    });
+    if (m_pages.size() != previousPageCount) {
+        m_glyphs.removeIf([](auto it) {
+            return it->page.expired();
+        });
+    }
 }
 
 int GlyphAtlas::pageCount() const

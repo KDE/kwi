@@ -594,12 +594,12 @@ public:
 
     QColor foreground(const Cell &cell, int column, int rowCursorColumn, const QVector<Cell> &cells, bool colored) const
     {
-        QColor color{QColor::fromRgb(cell.foreground)};
+        QColor color{cell.foreground};
 
         if (colored) {
             color = Qt::white;
         } else if (isCursorCell(column, rowCursorColumn, cells) && options.focused && frame.cursorStyle == CursorStyle::Block) {
-            color = QColor::fromRgb(cell.background);
+            color = QColor{cell.background};
         } else if (cell.flags & Selected) {
             color = frame.selectionForeground.isValid() ? frame.selectionForeground : frame.background;
         }
@@ -704,7 +704,7 @@ public:
             return;
         }
 
-        QColor color{QColor::fromRgb(cell.underlineColor)};
+        QColor color{cell.underlineColor};
 
         if (cell.flags & (Selected | Faint) || isCursorCell(column, rowCursorColumn, cells)) {
             color = fg;
@@ -802,11 +802,11 @@ public:
             QColor color;
 
             if (isCursorCell(column, rowCursorColumn, cells) && options.focused && frame.cursorStyle == CursorStyle::Block) {
-                color = frame.cursorColor.isValid() ? frame.cursorColor : QColor::fromRgb(cell.foreground);
+                color = frame.cursorColor.isValid() ? frame.cursorColor : QColor{cell.foreground};
             } else if (cell.flags & Selected) {
                 color = frame.selectionBackground.isValid() ? frame.selectionBackground : frame.foreground;
             } else if (!cell.defaultBackground || (cell.flags & Inverse)) {
-                color = QColor::fromRgb(cell.background);
+                color = QColor{cell.background};
             }
 
             if (color.isValid() || row.base) {
@@ -850,8 +850,13 @@ public:
                 // Match the float coordinates used to select the raster size in the shader.
                 const QSizeF physicalSize(float(cell.width * cw) * float(options.devicePixelRatio), float(ch) * float(options.devicePixelRatio));
                 const auto sprite = atlas->symbol(cp, physicalSize, qRound(metrics.strokeWidth * options.devicePixelRatio));
-                appendGlyph(glyphs, sprite, QRectF(begin * cw, 0, cell.width * cw, ch), begin, cell.width, cells, rowCursorColumn);
-                begin += cell.width;
+
+                do {
+                    appendGlyph(glyphs, sprite, QRectF(begin * cw, 0, cell.width * cw, ch), begin, cell.width, cells, rowCursorColumn);
+                    begin += cell.width;
+                } while (begin < cells.size() && cells[begin].width == cell.width && !(cells[begin].flags & ImagePlaceholder)
+                         && singleCodepoint(cells[begin].text) == cp);
+
                 continue;
             }
 
@@ -1005,7 +1010,7 @@ public:
         const QPointF position{options.contentRect.topLeft() + QPointF(column * cw, frame.cursor.y() * ch)};
         const qreal width{qMax(1, int(frame.rows.at(frame.cursor.y()).at(column).width)) * cw};
         QVector<ColorQuad> quads;
-        const QColor color{frame.cursorColor.isValid() ? frame.cursorColor : QColor::fromRgb(frame.rows.at(frame.cursor.y()).at(column).foreground)};
+        const QColor color{frame.cursorColor.isValid() ? frame.cursorColor : QColor{frame.rows.at(frame.cursor.y()).at(column).foreground}};
 
         if (!options.focused || frame.cursorStyle == CursorStyle::HollowBlock) {
             quads += {QRectF(position, QSizeF(width, stroke)), color};

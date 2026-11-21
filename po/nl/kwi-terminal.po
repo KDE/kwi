@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 15:29+0000\n"
+"POT-Creation-Date: 2026-11-20 19:12+0000\n"
 "PO-Revision-Date: 2026-11-17 15:31+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -58,12 +58,12 @@ msgid "The terminal history changed while saving output."
 msgstr ""
 "De terminalgeschiedenis is gewijzigd tijdens het opslaan van de uitvoer."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:25
 #, kde-format
 msgid "Could not attach to an invalid terminal descriptor."
 msgstr "Kon niet koppelen aan een ongeldige terminaldescriptor."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:37
 #: libs/kwi-terminal/src/process/ProcessController.cpp:21
 #, kde-format
 msgid "Could not attach to the terminal: %1"
@@ -115,7 +115,7 @@ msgstr "Het terminalcommando kon niet worden uitgevoerd: %1"
 msgid "A terminal process is already running."
 msgstr "Er is al een terminalproces actief."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:159
 #, kde-format
 msgid ""
 "The terminal input queue is full. Wait for the running program before "
@@ -124,12 +124,12 @@ msgstr ""
 "De invoerwachtrij van de terminal is vol. Wacht tot het actieve programma "
 "klaar is voordat u meer tekst plakt."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:190
 #, kde-format
 msgid "Could not write to the terminal: %1"
 msgstr "Kon niet naar de terminal schrijven: %1"
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:271
 #, kde-format
 msgid "Could not resize the terminal: %1"
 msgstr "Kon de grootte van de terminal niet wijzigen: %1"
@@ -167,12 +167,17 @@ msgstr "Kon de renderstatus van de terminal niet vangen."
 msgid "Terminal"
 msgstr "Terminal"
 
-#: libs/kwi-terminal/src/Session.cpp:671
+#: libs/kwi-terminal/src/Session.cpp:388
+#, kde-format
+msgid "Program '%1' crashed."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:676
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "Kon de grootte van de terminal niet wijzigen."
 
-#: libs/kwi-terminal/src/Session.cpp:694
+#: libs/kwi-terminal/src/Session.cpp:699
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "De terminal kon de uitvoer niet verwerken."

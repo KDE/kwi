@@ -1,0 +1,242 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kwi package.
+#
+# SPDX-FileCopyrightText: 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-20 19:12+0000\n"
+"PO-Revision-Date: 2026-11-19 10:40+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 26.08.3\n"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "מסוף: %1"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:82
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "מסוף"
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:83
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal output and command input."
+msgstr "פלט מסוף וקלט פקודות."
+
+#: libs/kwi-terminal/src/declarative/Terminal.qml:132
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal bell"
+msgstr "פעמון מסוף"
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:105
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:138
+#, kde-format
+msgid "Could not read terminal output."
+msgstr "לא ניתן לקרוא את פלט המסוף."
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:132
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "המסוף הזה לא זמין יותר."
+
+#: libs/kwi-terminal/src/OutputSaveJob.cpp:135
+#, kde-format
+msgid "The terminal history changed while saving output."
+msgstr "היסטוריית המסוף השתנתה תוך שמירת הפלט."
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:25
+#, kde-format
+msgid "Could not attach to an invalid terminal descriptor."
+msgstr "לא ניתן להצטרף למתאר מסוף שגוי."
+
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:37
+#: libs/kwi-terminal/src/process/ProcessController.cpp:21
+#, kde-format
+msgid "Could not attach to the terminal: %1"
+msgstr "לא ניתן להצטרף למסוף: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:163
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:121
+#, kde-format
+msgid "Could not create a terminal: %1"
+msgstr "לא ניתן ליצור מסוף: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start the host terminal query."
+msgstr "לא ניתן להפעיל את השאילתה במסוף המארח."
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:303
+#, kde-format
+msgid "Could not start a host helper: %1"
+msgstr "לא ניתן להפעיל את מסייע המארח: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:309
+#, kde-format
+msgid "Could not find the system shell on the host."
+msgstr "לא ניתן למצוא את מעטפת המערכת במארח."
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:310
+#, kde-format
+msgid "Could not find the terminal command on the host: %1"
+msgstr "לא ניתן למצוא את פקודת המסוף במארח: %1"
+
+#: libs/kwi-terminal/src/process/HostProcess.cpp:354
+#, kde-format
+msgid "Could not start the host terminal command: %1"
+msgstr "לא ניתן להפעיל את הפקודה במסוף המארח: %1"
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:142
+#, kde-format
+msgid "Could not find executable: %1"
+msgstr "לא ניתן לאתר את קובץ ההפעלה: %1"
+
+#: libs/kwi-terminal/src/process/NativeProcess.cpp:183
+#, kde-format
+msgid "Could not run the terminal command: %1"
+msgstr "לא ניתן להריץ את הפקודה במסוף: %1"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:67
+#, kde-format
+msgid "A terminal process is already running."
+msgstr "כבר יש תהליך מסוף פעיל."
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:159
+#, kde-format
+msgid ""
+"The terminal input queue is full. Wait for the running program before "
+"pasting more text."
+msgstr "תור קלט המסוף מלא. נא להמתין לתוכנית שרצה לפני הדבקה של טקסט נוסף."
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:190
+#, kde-format
+msgid "Could not write to the terminal: %1"
+msgstr "לא ניתן לכתוב למסוף: %1"
+
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:271
+#, kde-format
+msgid "Could not resize the terminal: %1"
+msgstr "לא ניתן לשנות את גודל המסוף: %1"
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:41
+#, kde-format
+msgid "A terminal's initial directory must be an absolute path."
+msgstr "תיקיית האתחול של המסוף חייבת להיות נתיב מוחלט."
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:47
+#, kde-format
+msgid "The command contains a null character."
+msgstr "הפקודה מכילה תו מאופס."
+
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:59
+#: libs/kwi-terminal/src/ProcessLaunch.cpp:64
+#: libs/kwi-terminal/src/Session.cpp:223
+#, kde-format
+msgid "The terminal environment contains an invalid assignment."
+msgstr "סביבת המסוף מכילה הקצאה שגויה."
+
+#: libs/kwi-terminal/src/Session.cpp:30
+#, kde-format
+msgid "Could not allocate terminal state."
+msgstr "לא ניתן להקצות מצב מסוף."
+
+#: libs/kwi-terminal/src/Session.cpp:32
+#, kde-format
+msgid "Could not capture terminal render state."
+msgstr "לא ניתן ללכוד את מצב התיצוג של המסוף."
+
+#: libs/kwi-terminal/src/Session.cpp:42 libs/kwi-terminal/src/Session.cpp:264
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:146
+#, kde-format
+msgid "Terminal"
+msgstr "מסוף"
+
+#: libs/kwi-terminal/src/Session.cpp:388
+#, kde-format
+msgid "Program '%1' crashed."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:676
+#, kde-format
+msgid "Could not resize the terminal."
+msgstr "לא ניתן לשנות את גודל המסוף."
+
+#: libs/kwi-terminal/src/Session.cpp:699
+#, kde-format
+msgid "The terminal could not process output."
+msgstr "המסוף לא יכול לעבד פלט."
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:144
+#, kde-format
+msgid "Terminal: %1"
+msgstr "מסוף: %1"
+
+#: libs/kwi-terminal/src/TerminalAccessible.cpp:156
+#, kde-format
+msgid "Terminal output. Use keyboard selection mode to review and copy text."
+msgstr "פלט מסוף. אפשר להשתמש במצב הבחירה במקלדת כדי לסקור ולהעתיק טקסט."
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:209
+#, kde-format
+msgid "No matches"
+msgstr "אין תוצאות"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:211
+#, kde-format
+msgid "%1 of %2"
+msgstr "%1 מתוך %2"
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:213
+#, kde-format
+msgid "%1 match"
+msgid_plural "%1 matches"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/kwi-terminal/src/TerminalSearch.cpp:232
+#, kde-format
+msgid "Could not search terminal history"
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:22
+#, kde-format
+msgid "Enter a title format."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:28
+#, kde-format
+msgid "Title formats can contain at most 256 characters."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:41
+#, kde-format
+msgid "Title formats cannot contain control characters."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:56
+#, kde-format
+msgid "Close each placeholder with }. Use {{ and }} for literal braces."
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:93
+#, kde-format
+msgid "Unknown title placeholder: {%1}"
+msgstr ""
+
+#: libs/kwi-terminal/src/TitleFormat.cpp:101
+#, kde-format
+msgid "Use }} for a literal closing brace."
+msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:12+0000\n"
+"POT-Creation-Date: 2026-11-21 01:15+0000\n"
 "PO-Revision-Date: 2026-11-19 03:37+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -459,116 +459,116 @@ msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Nabídka aplikací"
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "Proces byl ukončen se stavem %1."
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Proces dokončen."
 
-#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1419 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Otevřít odkaz"
 
-#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1427 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Kopírovat odkaz"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Ukončit Kwi?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Zavřít všechny terminály?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Zavřít terminál?"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Ukončit Kwi"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Zavřít všechny terminály"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Zavřít terminál"
 
-#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
+#: src/declarative/Main.qml:1527 src/declarative/Main.qml:1604
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Znovu se nedotazovat"
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Ukončením se zastaví provádění příkazů ve všech oknech."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr "Zavřením tohoto okna se zastaví provádění příkazů v něm."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "Ukončením \"%1\" se zastaví jeho spuštěný příkaz."
 
-#: src/declarative/Main.qml:1586
+#: src/declarative/Main.qml:1589
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Vložit více řádků?"
 
-#: src/declarative/Main.qml:1593
+#: src/declarative/Main.qml:1596
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/declarative/Main.qml:1615
+#: src/declarative/Main.qml:1618
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Vložením tohoto textu se mohou spustit příkazy."
 
-#: src/declarative/Main.qml:1632
+#: src/declarative/Main.qml:1635
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Náhled vloženého textu"
 
-#: src/declarative/Main.qml:1639
+#: src/declarative/Main.qml:1642
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -577,85 +577,85 @@ msgstr[0] "Zobrazuje se první znak."
 msgstr[1] "Zobrazují se první %1 znaky."
 msgstr[2] "Zobrazuje se prvních %1 znaků."
 
-#: src/declarative/Main.qml:1745
+#: src/declarative/Main.qml:1748
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Přejmenovat kartu"
 
-#: src/declarative/Main.qml:1750
+#: src/declarative/Main.qml:1753
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Přejmenovat"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1769
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Automatický název"
 
-#: src/declarative/Main.qml:1767
+#: src/declarative/Main.qml:1770
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Název karty"
 
-#: src/declarative/Main.qml:1774
+#: src/declarative/Main.qml:1777
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Nechte pole prázdné, chcete-li použít automatický název."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Filtrovat odkazy…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Filtrovat karty…"
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "Ve viditelném výstupu terminálu nejsou žádné odkazy."
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Žádné odpovídající odkazy."
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Žádné odpovídající karty."
 
-#: src/declarative/Main.qml:1816
+#: src/declarative/Main.qml:1819
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Kopírovat odkaz"
 
-#: src/declarative/Main.qml:1865
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Uložit výstup terminálu"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "Textové soubory (*.txt)"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"

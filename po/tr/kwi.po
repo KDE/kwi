@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:12+0000\n"
+"POT-Creation-Date: 2026-11-21 01:15+0000\n"
 "PO-Revision-Date: 2026-11-16 18:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -458,116 +458,116 @@ msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Uygulama Menüsü"
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "Süreç, %1 durumu ile çıktı."
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Süreç bitti."
 
-#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1419 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Bağlantıyı Aç"
 
-#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1427 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Bağlantıyı Kopyala"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Kwi’den Çık?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Tüm Uçbirimleri Kapat?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Uçbirimi Kapat?"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Kwi’den Çık"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Tüm Uçbirimleri Kapat"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Uçbirimi Kapat"
 
-#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
+#: src/declarative/Main.qml:1527 src/declarative/Main.qml:1604
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Bir daha sorma"
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Çıkış işlemi, bütün pencerelerdeki komutları durduracaktır."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr "Bu pencereyi kapatmak, çalışan komutları durduracaktır."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "“%1” ögesini kapatmak, çalışan komutları durduracaktır."
 
-#: src/declarative/Main.qml:1586
+#: src/declarative/Main.qml:1589
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Birden Çok Satır Yapıştır?"
 
-#: src/declarative/Main.qml:1593
+#: src/declarative/Main.qml:1596
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/declarative/Main.qml:1615
+#: src/declarative/Main.qml:1618
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Bu metni yapıştırırsanız metindeki komutlar çalıştırılabilir."
 
-#: src/declarative/Main.qml:1632
+#: src/declarative/Main.qml:1635
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Yapıştırma ön izlemesi"
 
-#: src/declarative/Main.qml:1639
+#: src/declarative/Main.qml:1642
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -575,85 +575,85 @@ msgid_plural "Showing the first %1 characters."
 msgstr[0] "İlk karakter gösteriliyor."
 msgstr[1] "İlk %1 karakter gösteriliyor."
 
-#: src/declarative/Main.qml:1745
+#: src/declarative/Main.qml:1748
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Sekmeyi Yeniden Adlandır"
 
-#: src/declarative/Main.qml:1750
+#: src/declarative/Main.qml:1753
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Yeniden Adlandır"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1769
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Otomatik başlık"
 
-#: src/declarative/Main.qml:1767
+#: src/declarative/Main.qml:1770
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Sekme başlığı"
 
-#: src/declarative/Main.qml:1774
+#: src/declarative/Main.qml:1777
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Otomatik başlığı kullanmak için boş bırakın."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Bağlantıları süz…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Sekmeleri süz…"
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "Görünür uçbirim çıktısında bağlantı yok"
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Eşleşen bağlantılar yok"
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Eşleşen sekmeler yok"
 
-#: src/declarative/Main.qml:1816
+#: src/declarative/Main.qml:1819
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Bağlantıyı Kopyala"
 
-#: src/declarative/Main.qml:1865
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Uçbirim Çıktısını Kaydet"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "Metin dosyaları (*.txt)"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"

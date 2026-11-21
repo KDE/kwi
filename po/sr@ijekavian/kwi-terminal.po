@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 15:29+0000\n"
+"POT-Creation-Date: 2026-11-20 19:12+0000\n"
 "PO-Revision-Date: 2026-11-15 10:40+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr "Овај терминал више није доступан."
 msgid "The terminal history changed while saving output."
 msgstr "Историјат терминала се промијенио при уписивању излаза."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:25
 #, kde-format
 msgid "Could not attach to an invalid terminal descriptor."
 msgstr "Не могу да се прикачим на лош описник терминала."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:37
 #: libs/kwi-terminal/src/process/ProcessController.cpp:21
 #, kde-format
 msgid "Could not attach to the terminal: %1"
@@ -114,7 +114,7 @@ msgstr "Не могу да извршим терминалску наредбу:
 msgid "A terminal process is already running."
 msgstr "Процес терминала се већ извршава."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:159
 #, kde-format
 msgid ""
 "The terminal input queue is full. Wait for the running program before "
@@ -123,12 +123,12 @@ msgstr ""
 "Ред уноса у терминал је пун. Сачекајте програм који се извршава прије него "
 "што налијепите још текста."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:190
 #, kde-format
 msgid "Could not write to the terminal: %1"
 msgstr "Не могу да пишем у терминал: %1"
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:271
 #, kde-format
 msgid "Could not resize the terminal: %1"
 msgstr "Не могу да промијеним величину терминала: %1"
@@ -166,12 +166,17 @@ msgstr "Не могу да ухватим стање рендеровања те
 msgid "Terminal"
 msgstr "Терминал"
 
-#: libs/kwi-terminal/src/Session.cpp:671
+#: libs/kwi-terminal/src/Session.cpp:388
+#, kde-format
+msgid "Program '%1' crashed."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:676
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "Не могу да промијеним величину терминала."
 
-#: libs/kwi-terminal/src/Session.cpp:694
+#: libs/kwi-terminal/src/Session.cpp:699
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "Терминал није успио да обради излаз."

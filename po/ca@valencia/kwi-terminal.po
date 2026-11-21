@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 15:29+0000\n"
+"POT-Creation-Date: 2026-11-20 19:12+0000\n"
 "PO-Revision-Date: 2026-11-15 11:01+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -59,12 +59,12 @@ msgstr "Este terminal ja no es troba disponible."
 msgid "The terminal history changed while saving output."
 msgstr "L'historial del terminal ha canviat mentre es guardava l'eixida."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:25
 #, kde-format
 msgid "Could not attach to an invalid terminal descriptor."
 msgstr "No s'ha pogut adjuntar a un descriptor de terminal no vàlid."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:37
 #: libs/kwi-terminal/src/process/ProcessController.cpp:21
 #, kde-format
 msgid "Could not attach to the terminal: %1"
@@ -116,7 +116,7 @@ msgstr "No s'ha pogut executar l'ordre de terminal: %1"
 msgid "A terminal process is already running."
 msgstr "Ja s'està executant un procés de terminal."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:159
 #, kde-format
 msgid ""
 "The terminal input queue is full. Wait for the running program before "
@@ -125,12 +125,12 @@ msgstr ""
 "La cua d'entrada del terminal està plena. Espereu el programa en execució "
 "abans d'apegar més text."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:190
 #, kde-format
 msgid "Could not write to the terminal: %1"
 msgstr "No s'ha pogut escriure al terminal: %1"
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:271
 #, kde-format
 msgid "Could not resize the terminal: %1"
 msgstr "No s'ha pogut canviar la mida del terminal: %1"
@@ -168,12 +168,17 @@ msgstr "No s'ha pogut capturar l'estat de renderització del terminal."
 msgid "Terminal"
 msgstr "Terminal"
 
-#: libs/kwi-terminal/src/Session.cpp:671
+#: libs/kwi-terminal/src/Session.cpp:388
+#, kde-format
+msgid "Program '%1' crashed."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:676
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "No s'ha pogut canviar la mida del terminal."
 
-#: libs/kwi-terminal/src/Session.cpp:694
+#: libs/kwi-terminal/src/Session.cpp:699
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "El terminal no ha pogut processar l'eixida."

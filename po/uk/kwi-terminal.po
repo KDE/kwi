@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 15:29+0000\n"
+"POT-Creation-Date: 2026-11-20 19:12+0000\n"
 "PO-Revision-Date: 2026-11-15 15:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -58,12 +58,12 @@ msgstr "Доступ до цього термінала втрачено."
 msgid "The terminal history changed while saving output."
 msgstr "Журнал термінала змінено під час збереження виведення."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:24
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:25
 #, kde-format
 msgid "Could not attach to an invalid terminal descriptor."
 msgstr "Не вдалося долучитися до некоректного дескриптора термінала."
 
-#: libs/kwi-terminal/src/process/AttachedProcess.cpp:36
+#: libs/kwi-terminal/src/process/AttachedProcess.cpp:37
 #: libs/kwi-terminal/src/process/ProcessController.cpp:21
 #, kde-format
 msgid "Could not attach to the terminal: %1"
@@ -115,7 +115,7 @@ msgstr "Не вдалося запустити команду термінала
 msgid "A terminal process is already running."
 msgstr "Процес термінала вже запущено."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:158
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:159
 #, kde-format
 msgid ""
 "The terminal input queue is full. Wait for the running program before "
@@ -124,12 +124,12 @@ msgstr ""
 "Вхідна черга команд термінала переповнена. Зачекайте на завершення запущеної "
 "програми до вставляння додаткового тексту."
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:189
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:190
 #, kde-format
 msgid "Could not write to the terminal: %1"
 msgstr "Не вдалося записати дані до термінала: %1"
 
-#: libs/kwi-terminal/src/process/PtyProcess.cpp:270
+#: libs/kwi-terminal/src/process/PtyProcess.cpp:271
 #, kde-format
 msgid "Could not resize the terminal: %1"
 msgstr "Не вдалося змінити розміни термінала: %1"
@@ -168,12 +168,17 @@ msgstr "Не вдалося захопити стан обробки термі�
 msgid "Terminal"
 msgstr "Термінал"
 
-#: libs/kwi-terminal/src/Session.cpp:671
+#: libs/kwi-terminal/src/Session.cpp:388
+#, kde-format
+msgid "Program '%1' crashed."
+msgstr ""
+
+#: libs/kwi-terminal/src/Session.cpp:676
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "Не вдалося змінити розміри термінала."
 
-#: libs/kwi-terminal/src/Session.cpp:694
+#: libs/kwi-terminal/src/Session.cpp:699
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "Терміналу не вдалося обробити виведені дані."

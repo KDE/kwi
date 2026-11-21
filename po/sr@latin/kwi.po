@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:12+0000\n"
+"POT-Creation-Date: 2026-11-21 01:15+0000\n"
 "PO-Revision-Date: 2026-11-16 12:41+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -457,116 +457,116 @@ msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Meni programa"
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "Proces je završio stanjem %1."
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Proces je završen."
 
-#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1419 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Otvori vezu"
 
-#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1427 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Kopiraj vezu"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Napustiti Kwi?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Zatvoriti sve terminale?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Zatvoriti terminal?"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Napusti Kwi"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Zatvori sve terminale"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Zatvori terminal"
 
-#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
+#: src/declarative/Main.qml:1527 src/declarative/Main.qml:1604
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Ne pitaj više"
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "Napuštanje će zaustaviti naredbe u svim prozorima."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr "Zatvaranje ovog prozora zaustaviće naredbe koje se u njemu izvršavaju."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "Zatvaranje „%1“ zaustaviće naredbu koja se u njemu izvršava."
 
-#: src/declarative/Main.qml:1586
+#: src/declarative/Main.qml:1589
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Nalepiti više redova?"
 
-#: src/declarative/Main.qml:1593
+#: src/declarative/Main.qml:1596
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Nalepi"
 
-#: src/declarative/Main.qml:1615
+#: src/declarative/Main.qml:1618
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Nalepljivanje ovog teksta može pokrenuti naredbe."
 
-#: src/declarative/Main.qml:1632
+#: src/declarative/Main.qml:1635
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Pregled teksta za nalepljivanje"
 
-#: src/declarative/Main.qml:1639
+#: src/declarative/Main.qml:1642
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -576,85 +576,85 @@ msgstr[1] "Prikazana su prva %1 znaka."
 msgstr[2] "Prikazano je prvih %1 znakova."
 msgstr[3] "Prikazan je prvi znak."
 
-#: src/declarative/Main.qml:1745
+#: src/declarative/Main.qml:1748
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Preimenovanje jezička"
 
-#: src/declarative/Main.qml:1750
+#: src/declarative/Main.qml:1753
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1769
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Automatski naslov"
 
-#: src/declarative/Main.qml:1767
+#: src/declarative/Main.qml:1770
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Naslov jezička"
 
-#: src/declarative/Main.qml:1774
+#: src/declarative/Main.qml:1777
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Ostavite prazno za automatski naslov."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Filtriraj veze…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Filtriraj jezičke…"
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "Nema veza u vidljivom izlazu terminala."
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Nema poklapajućih veza."
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Nema poklapajućih jezičaka."
 
-#: src/declarative/Main.qml:1816
+#: src/declarative/Main.qml:1819
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Kopiraj vezu"
 
-#: src/declarative/Main.qml:1865
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Upisivanje izlaza terminala"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "tekstualni fajlovi (*.txt)"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"

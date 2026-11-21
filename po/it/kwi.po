@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:12+0000\n"
+"POT-Creation-Date: 2026-11-21 01:15+0000\n"
 "PO-Revision-Date: 2026-11-16 16:26+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -459,80 +459,80 @@ msgctxt "@action:button"
 msgid "Application Menu"
 msgstr "Menu dell'applicazione"
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
 msgstr "Il processo è terminato con stato %1."
 
-#: src/declarative/Main.qml:1358
+#: src/declarative/Main.qml:1360
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
 msgstr "Processo terminato."
 
-#: src/declarative/Main.qml:1416 src/kpart/Part.cpp:1048
+#: src/declarative/Main.qml:1419 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
 msgstr "Apri collegamento"
 
-#: src/declarative/Main.qml:1424 src/kpart/Part.cpp:1052
+#: src/declarative/Main.qml:1427 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
 msgstr "Copia collegamento"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
 msgstr "Vuoi chiudere Kwi?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
 msgstr "Vuoi chiudere tutti i terminali?"
 
-#: src/declarative/Main.qml:1508
+#: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
 msgstr "Vuoi chiudere il terminale?"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
 msgstr "Esci da Kwi"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
 msgstr "Chiudi tutti i terminali"
 
-#: src/declarative/Main.qml:1516
+#: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
 msgstr "Chiudi terminale"
 
-#: src/declarative/Main.qml:1524 src/declarative/Main.qml:1601
+#: src/declarative/Main.qml:1527 src/declarative/Main.qml:1604
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
 msgstr "Non chiedere più"
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
 msgstr "L'uscita interromperà i comandi in tutte le finestre."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
@@ -540,37 +540,37 @@ msgstr ""
 "La chiusura di questa finestra interromperà i comandi in esecuzione al suo "
 "interno."
 
-#: src/declarative/Main.qml:1537
+#: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
 msgstr "La chiusura di «%1» interromperà il comando in esecuzione."
 
-#: src/declarative/Main.qml:1586
+#: src/declarative/Main.qml:1589
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
 msgstr "Vuoi incollare più righe?"
 
-#: src/declarative/Main.qml:1593
+#: src/declarative/Main.qml:1596
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
 msgstr "Incolla"
 
-#: src/declarative/Main.qml:1615
+#: src/declarative/Main.qml:1618
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
 msgstr "Incollare questo testo potrebbe eseguire dei comandi."
 
-#: src/declarative/Main.qml:1632
+#: src/declarative/Main.qml:1635
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
 msgstr "Anteprima del contenuto da incollare"
 
-#: src/declarative/Main.qml:1639
+#: src/declarative/Main.qml:1642
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
@@ -578,85 +578,85 @@ msgid_plural "Showing the first %1 characters."
 msgstr[0] "Visualizzazione del primo carattere."
 msgstr[1] "Visualizzazione dei primi %1 caratteri."
 
-#: src/declarative/Main.qml:1745
+#: src/declarative/Main.qml:1748
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
 msgstr "Rinomina scheda"
 
-#: src/declarative/Main.qml:1750
+#: src/declarative/Main.qml:1753
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
 msgstr "Rinomina"
 
-#: src/declarative/Main.qml:1766
+#: src/declarative/Main.qml:1769
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
 msgstr "Titolo automatico"
 
-#: src/declarative/Main.qml:1767
+#: src/declarative/Main.qml:1770
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
 msgstr "Titolo della scheda"
 
-#: src/declarative/Main.qml:1774
+#: src/declarative/Main.qml:1777
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
 msgstr "Lascia vuoto per utilizzare il titolo automatico."
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
 msgstr "Filtra i collegamenti…"
 
-#: src/declarative/Main.qml:1806
+#: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
 msgstr "Filtra le schede…"
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
 msgstr "Nessun collegamento nell'output visibile del terminale."
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
 msgstr "Nessun collegamento corrispondente."
 
-#: src/declarative/Main.qml:1807
+#: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
 msgstr "Nessuna scheda corrispondente."
 
-#: src/declarative/Main.qml:1816
+#: src/declarative/Main.qml:1819
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
 msgstr "Copia collegamento"
 
-#: src/declarative/Main.qml:1865
+#: src/declarative/Main.qml:1868
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
 msgstr "Salva output del terminale"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
 msgstr "File di testo (*.txt)"
 
-#: src/declarative/Main.qml:1868
+#: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"

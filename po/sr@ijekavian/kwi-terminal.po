@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-20 19:12+0000\n"
+"POT-Creation-Date: 2026-11-21 02:38+0000\n"
 "PO-Revision-Date: 2026-11-15 10:40+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -171,12 +171,12 @@ msgstr "Терминал"
 msgid "Program '%1' crashed."
 msgstr ""
 
-#: libs/kwi-terminal/src/Session.cpp:676
+#: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "Не могу да промијеним величину терминала."
 
-#: libs/kwi-terminal/src/Session.cpp:699
+#: libs/kwi-terminal/src/Session.cpp:694
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "Терминал није успио да обради излаз."

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-20 19:12+0000\n"
-"PO-Revision-Date: 2026-11-15 15:01+0200\n"
+"POT-Creation-Date: 2026-11-21 02:38+0000\n"
+"PO-Revision-Date: 2026-11-21 11:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -171,14 +171,14 @@ msgstr "Термінал"
 #: libs/kwi-terminal/src/Session.cpp:388
 #, kde-format
 msgid "Program '%1' crashed."
-msgstr ""
+msgstr "Програма «%1» завершила роботу в аварійному режимі."
 
-#: libs/kwi-terminal/src/Session.cpp:676
+#: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "Не вдалося змінити розміри термінала."
 
-#: libs/kwi-terminal/src/Session.cpp:699
+#: libs/kwi-terminal/src/Session.cpp:694
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "Терміналу не вдалося обробити виведені дані."

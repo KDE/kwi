@@ -6,15 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-20 19:12+0000\n"
-"PO-Revision-Date: 2026-11-19 10:40+0200\n"
+"POT-Creation-Date: 2026-11-21 02:38+0000\n"
+"PO-Revision-Date: 2026-11-21 09:02+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 26.08.3\n"
 
 #: libs/kwi-terminal/src/declarative/Terminal.qml:82
@@ -167,14 +168,14 @@ msgstr "מסוף"
 #: libs/kwi-terminal/src/Session.cpp:388
 #, kde-format
 msgid "Program '%1' crashed."
-msgstr ""
+msgstr "התוכנית ‚%1’ קרסה."
 
-#: libs/kwi-terminal/src/Session.cpp:676
+#: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "לא ניתן לשנות את גודל המסוף."
 
-#: libs/kwi-terminal/src/Session.cpp:699
+#: libs/kwi-terminal/src/Session.cpp:694
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "המסוף לא יכול לעבד פלט."
@@ -203,40 +204,43 @@ msgstr "%1 מתוך %2"
 #, kde-format
 msgid "%1 match"
 msgid_plural "%1 matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "תוצאה אחת"
+msgstr[1] "שתי תוצאות"
+msgstr[2] "%1 תוצאות"
+msgstr[3] "%1 תוצאות"
 
 #: libs/kwi-terminal/src/TerminalSearch.cpp:232
 #, kde-format
 msgid "Could not search terminal history"
-msgstr ""
+msgstr "לא ניתן לחפש בהיסטוריית המסוף"
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:22
 #, kde-format
 msgid "Enter a title format."
-msgstr ""
+msgstr "נא למלא תבנית כותרת."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:28
 #, kde-format
 msgid "Title formats can contain at most 256 characters."
-msgstr ""
+msgstr "תבניות כותרת יכולות להכיל עד 256 תווים."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:41
 #, kde-format
 msgid "Title formats cannot contain control characters."
-msgstr ""
+msgstr "תבניות הכותרת לא יכולות להכיל תווי בקרה."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:56
 #, kde-format
 msgid "Close each placeholder with }. Use {{ and }} for literal braces."
 msgstr ""
+"יש לסגור כל ממלא מקום ב־}. יש להשתמש ב־{{ וב־}} כדי להציג סוגריים מסולסלים."
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:93
 #, kde-format
 msgid "Unknown title placeholder: {%1}"
-msgstr ""
+msgstr "ממלא מקום לא ידוע בכותרת: {%1}"
 
 #: libs/kwi-terminal/src/TitleFormat.cpp:101
 #, kde-format
 msgid "Use }} for a literal closing brace."
-msgstr ""
+msgstr "יש להשתמש ב־}} לסגירת סוגריים מסולסלים שמוצגים."

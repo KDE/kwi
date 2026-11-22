@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-20 19:12+0000\n"
-"PO-Revision-Date: 2026-11-16 04:12+0100\n"
+"POT-Creation-Date: 2026-11-21 02:38+0000\n"
+"PO-Revision-Date: 2026-11-21 08:29+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -170,14 +170,14 @@ msgstr "Terminale"
 #: libs/kwi-terminal/src/Session.cpp:388
 #, kde-format
 msgid "Program '%1' crashed."
-msgstr ""
+msgstr "Il programma «%1» si è arrestato in modo anomalo."
 
-#: libs/kwi-terminal/src/Session.cpp:676
+#: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format
 msgid "Could not resize the terminal."
 msgstr "Impossibile ridimensionare il terminale."
 
-#: libs/kwi-terminal/src/Session.cpp:699
+#: libs/kwi-terminal/src/Session.cpp:694
 #, kde-format
 msgid "The terminal could not process output."
 msgstr "Il terminale non è riuscito a elaborare l'output."

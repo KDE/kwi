@@ -65,6 +65,7 @@
   </description>
   <url type="homepage">https://apps.kde.org/kwi/</url>
   <url type="vcs-browser">https://invent.kde.org/utilities/kwi</url>
+  <url type="bugtracker">https://invent.kde.org/utilities/kwi/-/work_items</url>
   <custom>
     <value key="KDE::matrix">#kwi:kde.org</value>
   </custom>

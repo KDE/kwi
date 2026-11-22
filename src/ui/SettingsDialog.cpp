@@ -63,7 +63,10 @@ SettingsDialog::SettingsDialog(QWidget *parent, TerminalSettings *settings, Term
                                 {{QStringLiteral("appSettings"), QVariant::fromValue(m_settings)},
                                  {QStringLiteral("terminalPalettes"), QVariant::fromValue(m_palettes)},
                                  {QStringLiteral("showWindowSettings"), false}});
-    addForm(QStringLiteral("BehaviorSettings"), i18nc("@title", "Behavior"), QStringLiteral("preferences-system"), settingsProperties);
+    addForm(QStringLiteral("BehaviorSettings"),
+            i18nc("@title", "Behavior"),
+            QStringLiteral("preferences-system"),
+            {{QStringLiteral("appSettings"), QVariant::fromValue(m_settings)}, {QStringLiteral("showWindowSettings"), false}});
     addForm(QStringLiteral("TerminalSettings"), i18nc("@title", "Terminal"), QStringLiteral("utilities-terminal"), settingsProperties);
     m_presetsPage = addForm(QStringLiteral("PresetsSettings"),
                             i18nc("@title", "Presets"),

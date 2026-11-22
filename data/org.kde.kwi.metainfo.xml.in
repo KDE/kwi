@@ -90,6 +90,12 @@
     <release version="0.1.0" date="2026-11-20" type="stable">
       <description>
         <p>Initial release.</p>
+        <p xml:lang="ca">Versió inicial.</p>
+        <p xml:lang="cs">Úvodní vydání.</p>
+        <p xml:lang="es">Lanzamiento inicial.</p>
+        <p xml:lang="it">Rilascio iniziale.</p>
+        <p xml:lang="pt-BR">Versão inicial.</p>
+        <p xml:lang="uk">Початковий випуск.</p>
       </description>
     </release>
   </releases>

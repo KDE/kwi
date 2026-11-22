@@ -47,6 +47,7 @@ TerminalSettings::TerminalSettings(QObject *parent)
                                 &TerminalPreferences::windowTitleFromApplicationChanged,
                                 &TerminalPreferences::cursorStyleChanged,
                                 &TerminalPreferences::cursorBlinkingChanged,
+                                &TerminalPreferences::openNewInstancesInTabsChanged,
                                 &TerminalPreferences::confirmCloseRunningChanged,
                                 &TerminalPreferences::confirmMultilinePasteChanged,
                                 &TerminalPreferences::copyOnSelectChanged,

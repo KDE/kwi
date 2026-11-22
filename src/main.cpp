@@ -138,7 +138,9 @@ int main(int argc, char **argv)
             }
 
             const QString cwd{directory.isEmpty() ? QDir::homePath() : directory};
-            service.setExitValue(windows.launch(launchOptions(parser, cwd)) ? 0 : 1);
+            auto options = launchOptions(parser, cwd);
+            options.newTab = options.newTab || settings.openNewInstancesInTabs();
+            service.setExitValue(windows.launch(options) ? 0 : 1);
         },
         Qt::DirectConnection);
 

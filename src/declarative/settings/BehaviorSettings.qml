@@ -25,6 +25,28 @@ SettingsPage {
 
     Forms.Form {
         Forms.FormGroup {
+            title: KI18n.i18nc("@title:group", "Windows")
+
+            Forms.FormEntry {
+                title: KI18n.i18nc("@label:listbox", "When opened by other applications:")
+
+                contentItem: Controls.ComboBox {
+                    objectName: "openNewInstancesInTabsSetting"
+                    Layout.fillWidth: true
+                    Layout.minimumWidth: 0
+                    enabled: !root.appSettings.isOpenNewInstancesInTabsImmutable
+                    model: [KI18n.i18nc("@item:inlistbox", "Open a new window"), KI18n.i18nc("@item:inlistbox", "Open a new tab")]
+                    currentIndex: root.appSettings.openNewInstancesInTabs ? 1 : 0
+
+                    onActivated: index => {
+                        root.appSettings.openNewInstancesInTabs = index === 1;
+                        root.appSettings.save();
+                    }
+                }
+            }
+        }
+
+        Forms.FormGroup {
             title: KI18n.i18nc("@title:group", "Confirmations")
 
             Forms.FormEntry {

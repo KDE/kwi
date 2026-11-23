@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-21 01:15+0000\n"
+"POT-Creation-Date: 2026-11-23 01:09+0000\n"
 "PO-Revision-Date: 2026-11-16 07:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -420,20 +420,20 @@ msgctxt "@title"
 msgid "Appearance"
 msgstr "Aparência"
 
-#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:66
+#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:67
 #, kde-format
 msgctxt "@title"
 msgid "Behavior"
 msgstr "Comportamento"
 
 #: src/declarative/Main.qml:918 src/declarative/Main.qml:970
-#: src/ui/SettingsDialog.cpp:67
+#: src/ui/SettingsDialog.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:69
+#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Presets"
@@ -825,91 +825,111 @@ msgctxt "@option:check"
 msgid "Show status icons"
 msgstr "Mostrar ícones de status"
 
-#: src/declarative/settings/AppearanceSettings.qml:355
-#, kde-format
-msgctxt "@title:group"
-msgid "Window"
-msgstr "Janela"
-
-#: src/declarative/settings/AppearanceSettings.qml:362
-#, kde-format
-msgctxt "@option:check"
-msgid "Use custom size for new windows"
-msgstr "Usar tamanho personalizado para novas janelas"
-
-#: src/declarative/settings/AppearanceSettings.qml:374
-#, kde-format
-msgctxt "@label:spinbox"
-msgid "Columns:"
-msgstr "Colunas:"
-
-#: src/declarative/settings/AppearanceSettings.qml:392
-#, kde-format
-msgctxt "@label:spinbox"
-msgid "Rows:"
-msgstr "Linhas:"
-
-#: src/declarative/settings/AppearanceSettings.qml:433
+#: src/declarative/settings/AppearanceSettings.qml:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Color Scheme"
 msgstr "Importar esquema de cores"
 
-#: src/declarative/settings/AppearanceSettings.qml:434
+#: src/declarative/settings/AppearanceSettings.qml:378
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Konsole Color Schemes (*.colorscheme)"
 msgstr "Esquemas de cores do Konsole (*.colorscheme)"
 
-#: src/declarative/settings/BehaviorSettings.qml:17
+#: src/declarative/settings/BehaviorSettings.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Behavior"
 msgstr "Comportamento"
 
-#: src/declarative/settings/BehaviorSettings.qml:28
+#: src/declarative/settings/BehaviorSettings.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Window"
+msgctxt "@title:group"
+msgid "Windows"
+msgstr "Janela"
+
+#: src/declarative/settings/BehaviorSettings.qml:33
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When opened by other applications:"
+msgstr ""
+
+#: src/declarative/settings/BehaviorSettings.qml:40
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Open a new window"
+msgstr ""
+
+#: src/declarative/settings/BehaviorSettings.qml:40
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Open a new tab"
+msgstr ""
+
+#: src/declarative/settings/BehaviorSettings.qml:54
+#, kde-format
+msgctxt "@option:check"
+msgid "Use custom size for new windows"
+msgstr "Usar tamanho personalizado para novas janelas"
+
+#: src/declarative/settings/BehaviorSettings.qml:66
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Columns:"
+msgstr "Colunas:"
+
+#: src/declarative/settings/BehaviorSettings.qml:84
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Rows:"
+msgstr "Linhas:"
+
+#: src/declarative/settings/BehaviorSettings.qml:103
 #, kde-format
 msgctxt "@title:group"
 msgid "Confirmations"
 msgstr "Confirmações"
 
-#: src/declarative/settings/BehaviorSettings.qml:34
+#: src/declarative/settings/BehaviorSettings.qml:109
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm quit when a command is running"
 msgstr "Confirmar saída ao executar um comando"
 
-#: src/declarative/settings/BehaviorSettings.qml:49
+#: src/declarative/settings/BehaviorSettings.qml:124
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm pasting multiple lines"
 msgstr "Confirmar a colagem de várias linhas"
 
-#: src/declarative/settings/BehaviorSettings.qml:62
+#: src/declarative/settings/BehaviorSettings.qml:137
 #, kde-format
 msgctxt "@title:group"
 msgid "Clipboard"
 msgstr "Área de transferência"
 
-#: src/declarative/settings/BehaviorSettings.qml:65
+#: src/declarative/settings/BehaviorSettings.qml:140
 #, kde-format
 msgctxt "@info"
 msgid "Middle-click paste also works with this option off."
 msgstr "Colar com o clique do meio também funciona com esta opção desativada."
 
-#: src/declarative/settings/BehaviorSettings.qml:70
+#: src/declarative/settings/BehaviorSettings.qml:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Copy mouse-selected text to clipboard"
 msgstr "Copiar para a área de transferência o texto selecionado com o mouse"
 
-#: src/declarative/settings/BehaviorSettings.qml:83
+#: src/declarative/settings/BehaviorSettings.qml:158
 #, kde-format
 msgctxt "@title:group"
 msgid "Links"
 msgstr "Links"
 
-#: src/declarative/settings/BehaviorSettings.qml:89
+#: src/declarative/settings/BehaviorSettings.qml:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Require Ctrl when clicking links"
@@ -2252,7 +2272,7 @@ msgstr "Escolha uma predefinição de terminal do Kwi local."
 msgid "This file is not a valid Kwi launch preset."
 msgstr "Este arquivo não é uma predefinição de inicialização do Kwi válida."
 
-#: src/settings/TerminalSettings.cpp:162
+#: src/settings/TerminalSettings.cpp:163
 #, kde-format
 msgctxt "@info title format preview"
 msgid "Shell"
@@ -2264,12 +2284,12 @@ msgctxt "@title:window"
 msgid "Configure Kwi Terminal"
 msgstr "Configurar terminal do Kwi"
 
-#: src/ui/SettingsDialog.cpp:149
+#: src/ui/SettingsDialog.cpp:152
 #, kde-format
 msgid "Save changes before closing?"
 msgstr "Salvar alterações antes de fechar?"
 
-#: src/ui/SettingsDialog.cpp:150
+#: src/ui/SettingsDialog.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"

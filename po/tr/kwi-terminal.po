@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-21 02:38+0000\n"
-"PO-Revision-Date: 2026-11-15 18:51+0300\n"
+"PO-Revision-Date: 2026-11-22 19:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -169,7 +169,7 @@ msgstr "Uçbirim"
 #: libs/kwi-terminal/src/Session.cpp:388
 #, kde-format
 msgid "Program '%1' crashed."
-msgstr ""
+msgstr "“%1” programı çöktü."
 
 #: libs/kwi-terminal/src/Session.cpp:671
 #, kde-format

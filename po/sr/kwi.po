@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-21 01:15+0000\n"
+"POT-Creation-Date: 2026-11-23 01:09+0000\n"
 "PO-Revision-Date: 2026-11-16 12:41+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -420,20 +420,20 @@ msgctxt "@title"
 msgid "Appearance"
 msgstr "Изглед"
 
-#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:66
+#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:67
 #, kde-format
 msgctxt "@title"
 msgid "Behavior"
 msgstr "Понашање"
 
 #: src/declarative/Main.qml:918 src/declarative/Main.qml:970
-#: src/ui/SettingsDialog.cpp:67
+#: src/ui/SettingsDialog.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid "Terminal"
 msgstr "Терминал"
 
-#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:69
+#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Presets"
@@ -824,91 +824,111 @@ msgctxt "@option:check"
 msgid "Show status icons"
 msgstr "Прикажи иконице стања"
 
-#: src/declarative/settings/AppearanceSettings.qml:355
-#, kde-format
-msgctxt "@title:group"
-msgid "Window"
-msgstr "Прозор"
-
-#: src/declarative/settings/AppearanceSettings.qml:362
-#, kde-format
-msgctxt "@option:check"
-msgid "Use custom size for new windows"
-msgstr "Користи посебну величину за нове прозоре"
-
-#: src/declarative/settings/AppearanceSettings.qml:374
-#, kde-format
-msgctxt "@label:spinbox"
-msgid "Columns:"
-msgstr "Колоне:"
-
-#: src/declarative/settings/AppearanceSettings.qml:392
-#, kde-format
-msgctxt "@label:spinbox"
-msgid "Rows:"
-msgstr "Редови:"
-
-#: src/declarative/settings/AppearanceSettings.qml:433
+#: src/declarative/settings/AppearanceSettings.qml:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Color Scheme"
 msgstr "Увоз шеме боја"
 
-#: src/declarative/settings/AppearanceSettings.qml:434
+#: src/declarative/settings/AppearanceSettings.qml:378
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Konsole Color Schemes (*.colorscheme)"
 msgstr "шеме боја Конзоле (*.colorscheme)"
 
-#: src/declarative/settings/BehaviorSettings.qml:17
+#: src/declarative/settings/BehaviorSettings.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Behavior"
 msgstr "Понашање"
 
-#: src/declarative/settings/BehaviorSettings.qml:28
+#: src/declarative/settings/BehaviorSettings.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Window"
+msgctxt "@title:group"
+msgid "Windows"
+msgstr "Прозор"
+
+#: src/declarative/settings/BehaviorSettings.qml:33
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When opened by other applications:"
+msgstr ""
+
+#: src/declarative/settings/BehaviorSettings.qml:40
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Open a new window"
+msgstr ""
+
+#: src/declarative/settings/BehaviorSettings.qml:40
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Open a new tab"
+msgstr ""
+
+#: src/declarative/settings/BehaviorSettings.qml:54
+#, kde-format
+msgctxt "@option:check"
+msgid "Use custom size for new windows"
+msgstr "Користи посебну величину за нове прозоре"
+
+#: src/declarative/settings/BehaviorSettings.qml:66
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Columns:"
+msgstr "Колоне:"
+
+#: src/declarative/settings/BehaviorSettings.qml:84
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Rows:"
+msgstr "Редови:"
+
+#: src/declarative/settings/BehaviorSettings.qml:103
 #, kde-format
 msgctxt "@title:group"
 msgid "Confirmations"
 msgstr "Потврде"
 
-#: src/declarative/settings/BehaviorSettings.qml:34
+#: src/declarative/settings/BehaviorSettings.qml:109
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm quit when a command is running"
 msgstr "Потврди напуштање док се извршава наредба"
 
-#: src/declarative/settings/BehaviorSettings.qml:49
+#: src/declarative/settings/BehaviorSettings.qml:124
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm pasting multiple lines"
 msgstr "Потврди налепљивање више редова"
 
-#: src/declarative/settings/BehaviorSettings.qml:62
+#: src/declarative/settings/BehaviorSettings.qml:137
 #, kde-format
 msgctxt "@title:group"
 msgid "Clipboard"
 msgstr "Клипборд"
 
-#: src/declarative/settings/BehaviorSettings.qml:65
+#: src/declarative/settings/BehaviorSettings.qml:140
 #, kde-format
 msgctxt "@info"
 msgid "Middle-click paste also works with this option off."
 msgstr "Налепљивање средњим кликом ради и кад је ова опција искључена."
 
-#: src/declarative/settings/BehaviorSettings.qml:70
+#: src/declarative/settings/BehaviorSettings.qml:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Copy mouse-selected text to clipboard"
 msgstr "Копирај мишем изабрани текст у клипборд"
 
-#: src/declarative/settings/BehaviorSettings.qml:83
+#: src/declarative/settings/BehaviorSettings.qml:158
 #, kde-format
 msgctxt "@title:group"
 msgid "Links"
 msgstr "Везе"
 
-#: src/declarative/settings/BehaviorSettings.qml:89
+#: src/declarative/settings/BehaviorSettings.qml:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Require Ctrl when clicking links"
@@ -2247,7 +2267,7 @@ msgstr "Изаберите локално претподешавање терм�
 msgid "This file is not a valid Kwi launch preset."
 msgstr "Овај фајл није исправно претподешавање покретања Kwi."
 
-#: src/settings/TerminalSettings.cpp:162
+#: src/settings/TerminalSettings.cpp:163
 #, kde-format
 msgctxt "@info title format preview"
 msgid "Shell"
@@ -2259,12 +2279,12 @@ msgctxt "@title:window"
 msgid "Configure Kwi Terminal"
 msgstr "Подешавање терминала Kwi"
 
-#: src/ui/SettingsDialog.cpp:149
+#: src/ui/SettingsDialog.cpp:152
 #, kde-format
 msgid "Save changes before closing?"
 msgstr "Сачувати измене пре затварања?"
 
-#: src/ui/SettingsDialog.cpp:150
+#: src/ui/SettingsDialog.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"

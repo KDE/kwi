@@ -133,6 +133,7 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
     const qreal cellHeight{m_metrics.cellSize.height() * m_dpr};
     const qreal baseline{m_metrics.baseline * m_dpr};
     const QRawFont primary{QRawFont::fromFont(font)};
+    const QString primaryFamily{primary.isValid() ? primary.familyName() : font.family()};
     struct FittedCluster {
         QRectF bounds;
         int columns{1};
@@ -180,7 +181,12 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
             const auto positions = run.positions();
             const auto sources = run.stringIndexes();
             const QRawFont raw{run.rawFont()};
-            const bool fallback{raw.familyName() != primary.familyName()};
+
+            if (!raw.isValid()) {
+                continue;
+            }
+
+            const bool fallback{raw.familyName() != primaryFamily};
 
             for (qsizetype i{0}; i < indexes.size(); ++i) {
                 const int source{int(sources[i])};
@@ -214,7 +220,12 @@ QVector<PositionedGlyph> GridShaper::shape(const QVector<Cell> &cells, int begin
                 const auto indexes = run.glyphIndexes();
                 const auto positions = run.positions();
                 const QRawFont raw{run.rawFont()};
-                const bool fallback{raw.familyName() != primary.familyName()};
+
+                if (!raw.isValid()) {
+                    continue;
+                }
+
+                const bool fallback{raw.familyName() != primaryFamily};
                 const bool split{run.flags().testFlag(QGlyphRun::SplitLigature)};
 
                 for (qsizetype i{0}; i < indexes.size(); ++i) {

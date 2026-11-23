@@ -22,6 +22,7 @@
         "Description[sr]": "Угнездиви терминал за КДЕ програме",
         "Description[tr]": "KDE uygulamaları için gömülebilir bir uçbirim",
         "Description[uk]": "Придатний до вбудовування термінал для програм KDE",
+        "Description[zh_CN]": "适用于 KDE 应用程序的可嵌入终端",
         "Description[zh_TW]": "供 KDE 應用程式用的嵌入式終端機",
         "Icon": "@KWI_APP_ID@",
         "License": "@KWI_PROJECT_LICENSE@",
@@ -42,6 +43,7 @@
         "Name[sr]": "Терминал @KWI_DISPLAY_NAME@",
         "Name[tr]": "@KWI_DISPLAY_NAME@ Uçbirim",
         "Name[uk]": "Термінал @KWI_DISPLAY_NAME@",
+        "Name[zh_CN]": "@KWI_DISPLAY_NAME@ 终端",
         "Name[zh_TW]": "@KWI_DISPLAY_NAME@ 終端機",
         "Version": "@PROJECT_VERSION@"
     },

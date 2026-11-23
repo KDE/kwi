@@ -23,6 +23,7 @@
   <name xml:lang="sr-ijekavianlatin">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="tr">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="uk">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="zh-CN">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="zh-TW">@KWI_DISPLAY_NAME@</name>
   <developer id="@KWI_APP_ID@">
     <name>Kwi contributors</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="sr-ijekavianlatin">Moderan i brz terminal</summary>
   <summary xml:lang="tr">Çağdaş ve hızlı bir uçbirim</summary>
   <summary xml:lang="uk">Сучасний і швидкий термінал</summary>
+  <summary xml:lang="zh-CN">一款现代化且响应快速的终端应用</summary>
   <summary xml:lang="zh-TW">現代且高效能的終端機</summary>
   <description>
     <p>Kwi is a modern and fast terminal that integrates well with KDE Plasma and other free desktops.</p>
@@ -61,6 +63,7 @@
     <p xml:lang="sr-ijekavianlatin">Kwi je moderan i brz terminal koji se dobro uklapa u KDE Plasmu i druge slobodne površi.</p>
     <p xml:lang="tr">Kwi; KDE Plasma ve diğer özgür masaüstleri ile pek iyi tümleşen, çağdaş ve hızlı bir uçbirimdir.</p>
     <p xml:lang="uk">Kwi — сучасний і швидкий термінал, який добре вписується у Плазму KDE та інші вільні стільничні середовища.</p>
+    <p xml:lang="zh-CN">Kwi 是一款现代且快速的终端，能够很好地与 KDE Plasma 及其他自由桌面环境集成。</p>
     <p xml:lang="zh-TW">Kwi 是一個現代化、高效能，且與 KDE Plasma 及其他自由桌面整合的終端機。</p>
   </description>
   <url type="homepage">https://apps.kde.org/kwi/</url>
@@ -95,8 +98,11 @@
         <p xml:lang="cs">Úvodní vydání.</p>
         <p xml:lang="es">Lanzamiento inicial.</p>
         <p xml:lang="it">Rilascio iniziale.</p>
+        <p xml:lang="nl">Initiële uitgave.</p>
         <p xml:lang="pt-BR">Versão inicial.</p>
+        <p xml:lang="tr">İlk yayım</p>
         <p xml:lang="uk">Початковий випуск.</p>
+        <p xml:lang="zh-CN">初始版本。</p>
       </description>
     </release>
   </releases>

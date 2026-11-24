@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-16 18:14+0300\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -769,7 +769,7 @@ msgstr "%%1"
 #, kde-format
 msgctxt "@option:check"
 msgid "Blur"
-msgstr "Bulanıklık"
+msgstr "Bulanık"
 
 #: src/declarative/settings/AppearanceSettings.qml:292
 #, kde-format
@@ -842,30 +842,28 @@ msgid "Behavior"
 msgstr "Davranış"
 
 #: src/declarative/settings/BehaviorSettings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr "Pencere"
+msgstr "Pencereler"
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When opened by other applications:"
-msgstr ""
+msgstr "Diğer uygulamalar tarafından açıldığında:"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new window"
-msgstr ""
+msgstr "Yeni bir pencere aç"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new tab"
-msgstr ""
+msgstr "Yeni bir sekme aç"
 
 #: src/declarative/settings/BehaviorSettings.qml:54
 #, kde-format
@@ -1168,7 +1166,7 @@ msgstr "Yeni Oturumlar"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Default preset:"
-msgstr "Öntanımlı hazır ayar:"
+msgstr "Varsayılan hazır ayar:"
 
 #: src/declarative/settings/PresetsSettings.qml:143
 #, kde-format
@@ -2081,7 +2079,7 @@ msgstr "Uçbirim hazır ayarı kullanılabilir değil."
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "System Shell"
-msgstr "Sistem kabuğu"
+msgstr "Sistem Kabuğu"
 
 #: src/settings/PresetEditor.cpp:274
 #, kde-format
@@ -2112,7 +2110,7 @@ msgstr "%1 adlı bir uçbirim hazır ayarı hâlihazırda var."
 #: src/settings/PresetEditor.cpp:338
 #, kde-format
 msgid "The preset was saved, but could not be made the default: %1"
-msgstr "Hazır ayar kaydedildi; ancak öntanımlı yapılamadı: %1"
+msgstr "Hazır ayar kaydedildi; ancak varsayılan yapılamadı: %1"
 
 #: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
 #, kde-format
@@ -2213,25 +2211,25 @@ msgstr "Bu ad ile bir renk şeması hâlihazırda var. Başka bir ad seçin."
 #: src/settings/TerminalPresets.cpp:147
 #, kde-format
 msgid "The default terminal preset is managed by the system."
-msgstr "Öntanımlı uçbirim hazır ayarı sistem tarafından yönetilir."
+msgstr "Varsayılan uçbirim hazır ayarı sistem tarafından yönetilir."
 
 #: src/settings/TerminalPresets.cpp:153
 #, kde-format
 msgid "The default terminal preset could not be saved."
-msgstr "Öntanımlı uçbirim hazır ayarı kaydedilemedi."
+msgstr "Varsayılan uçbirim hazır ayarı kaydedilemedi."
 
 #: src/settings/TerminalPresets.cpp:182
 #, kde-format
 msgctxt "@item:inlistbox terminal preset"
 msgid "System Shell"
-msgstr "Sistem kabuğu"
+msgstr "Sistem Kabuğu"
 
 #. i18n: System Shell is the reserved storage identifier and must remain untranslated.
 #: src/settings/TerminalPresets.cpp:260
 #, kde-format
 msgid "Choose a preset name of 1–80 characters other than System Shell."
 msgstr ""
-"“Sistem kabuğu” dışında, 1–80 karakter uzunluğunda bir hazır ayar adı seçin."
+"“Sistem Kabuğu” dışında, 1–80 karakter uzunluğunda bir hazır ayar adı seçin."
 
 #: src/settings/TerminalPresets.cpp:266
 #, kde-format

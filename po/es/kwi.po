@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-18 02:59+0100\n"
+"PO-Revision-Date: 2026-11-24 01:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -264,7 +264,7 @@ msgstr "Reiniciar terminal"
 #, kde-format
 msgctxt "@action"
 msgid "Find…"
-msgstr ""
+msgstr "Buscar…"
 
 #: src/declarative/ActionDefinitions.qml:63
 #, kde-format
@@ -276,25 +276,25 @@ msgstr "Reiniciar la ampliación"
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Line"
-msgstr ""
+msgstr "Desplazar una línea hacia arriba"
 
 #: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Line"
-msgstr ""
+msgstr "Desplazar una línea hacia abajo"
 
 #: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Up One Page"
-msgstr ""
+msgstr "Desplazar una página hacia arriba"
 
 #: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Down One Page"
-msgstr ""
+msgstr "Desplazar una página hacia abajo"
 
 #: src/declarative/ActionDefinitions.qml:68
 #, kde-format
@@ -312,43 +312,43 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Copy Last Command Output"
-msgstr ""
+msgstr "Copiar la salida de la última orden"
 
 #: src/declarative/ActionDefinitions.qml:71 src/kpart/Part.cpp:864
 #, kde-format
 msgctxt "@action"
 msgid "Open Current Directory"
-msgstr ""
+msgstr "Abrir el directorio actual"
 
 #: src/declarative/ActionDefinitions.qml:72
 #, kde-format
 msgctxt "@action"
 msgid "Open Link…"
-msgstr ""
+msgstr "Abrir enlace…"
 
 #: src/declarative/ActionDefinitions.qml:73 src/kpart/Part.cpp:868
 #, kde-format
 msgctxt "@action"
 msgid "Read-Only Terminal"
-msgstr ""
+msgstr "Terminal de solo lectura"
 
 #: src/declarative/ActionDefinitions.qml:74
 #, kde-format
 msgctxt "@action"
 msgid "Monitor for Activity"
-msgstr ""
+msgstr "Monitor de actividad"
 
 #: src/declarative/ActionDefinitions.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Monitor for Silence"
-msgstr ""
+msgstr "Monitor de silencio"
 
 #: src/declarative/components/WebShortcutMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure Web Shortcuts…"
-msgstr ""
+msgstr "Configurar atajos web…"
 
 #: src/declarative/Main.qml:66
 #, kde-format
@@ -366,7 +366,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Manage Presets…"
-msgstr ""
+msgstr "Gestión de preajustes…"
 
 #: src/declarative/Main.qml:552 src/kpart/Part.cpp:757
 #, kde-format
@@ -378,74 +378,74 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
-msgstr ""
+msgstr "Archivo"
 
 #: src/declarative/Main.qml:826 src/declarative/Main.qml:1186
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: src/declarative/Main.qml:831 src/declarative/Main.qml:1276
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: src/declarative/Main.qml:834 src/declarative/Main.qml:1144
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tabs"
-msgstr ""
+msgstr "Pestañas"
 
 #: src/declarative/Main.qml:839 src/declarative/Main.qml:1228
 #, kde-format
 msgctxt "@title:menu"
 msgid "Output"
-msgstr ""
+msgstr "Salida"
 
 #: src/declarative/Main.qml:852
 #, kde-format
 msgctxt "@title:menu"
 msgid "Settings"
-msgstr ""
+msgstr "Preferencias"
 
 #: src/declarative/Main.qml:859
 #, kde-format
 msgctxt "@title:menu"
 msgid "Help"
-msgstr ""
+msgstr "Ayuda"
 
 #: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr ""
+msgstr "Aspecto"
 
 #: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:67
 #, kde-format
 msgctxt "@title"
 msgid "Behavior"
-msgstr ""
+msgstr "Comportamiento"
 
 #: src/declarative/Main.qml:918 src/declarative/Main.qml:970
 #: src/ui/SettingsDialog.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Presets"
-msgstr ""
+msgstr "Preajustes"
 
 #: src/declarative/Main.qml:934
 #, kde-format
 msgctxt "@title"
 msgid "Keyboard"
-msgstr ""
+msgstr "Teclado"
 
 #: src/declarative/Main.qml:1050
 #, kde-format
@@ -457,7 +457,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Application Menu"
-msgstr ""
+msgstr "Menú de la aplicación"
 
 #: src/declarative/Main.qml:1360
 #, kde-format
@@ -469,25 +469,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Process finished."
-msgstr ""
+msgstr "Proceso terminado."
 
 #: src/declarative/Main.qml:1419 src/kpart/Part.cpp:1048
 #, kde-format
 msgctxt "@action"
 msgid "Open Link"
-msgstr ""
+msgstr "Abrir enlace"
 
 #: src/declarative/Main.qml:1427 src/kpart/Part.cpp:1052
 #, kde-format
 msgctxt "@action"
 msgid "Copy Link"
-msgstr ""
+msgstr "Copiar enlace"
 
 #: src/declarative/Main.qml:1511
 #, kde-format
 msgctxt "@title:window"
 msgid "Quit Kwi?"
-msgstr ""
+msgstr "¿Salir de Kwi?"
 
 #: src/declarative/Main.qml:1511
 #, kde-format
@@ -499,13 +499,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Terminal?"
-msgstr ""
+msgstr "¿Cerrar terminal?"
 
 #: src/declarative/Main.qml:1519
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Kwi"
-msgstr ""
+msgstr "Salir de Kwi"
 
 #: src/declarative/Main.qml:1519
 #, kde-format
@@ -517,14 +517,14 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Terminal"
-msgstr ""
+msgstr "Cerrar terminal"
 
 #: src/declarative/Main.qml:1527 src/declarative/Main.qml:1604
 #: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not ask again"
-msgstr ""
+msgstr "No volver a preguntar"
 
 #: src/declarative/Main.qml:1540
 #, kde-format
@@ -548,13 +548,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "¿Pegar múltiples líneas?"
 
 #: src/declarative/Main.qml:1596
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste"
-msgstr ""
+msgstr "Pegar"
 
 #: src/declarative/Main.qml:1618
 #, kde-format
@@ -573,44 +573,44 @@ msgstr ""
 msgctxt "@info"
 msgid "Showing the first character."
 msgid_plural "Showing the first %1 characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mostrando el primer carácter."
+msgstr[1] "Mostrando los primeros %1 caracteres."
 
 #: src/declarative/Main.qml:1748
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Tab"
-msgstr ""
+msgstr "Cambiar nombre de pestaña"
 
 #: src/declarative/Main.qml:1753
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename"
-msgstr ""
+msgstr "Cambiar nombre"
 
 #: src/declarative/Main.qml:1769
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
-msgstr ""
+msgstr "Título automático"
 
 #: src/declarative/Main.qml:1770
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title"
-msgstr ""
+msgstr "Título de la pestaña"
 
 #: src/declarative/Main.qml:1777
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
-msgstr ""
+msgstr "Deje en blanco para usar el título automático."
 
 #: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
-msgstr ""
+msgstr "Filtrar enlaces…"
 
 #: src/declarative/Main.qml:1809
 #, kde-format
@@ -640,7 +640,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Link"
-msgstr ""
+msgstr "Copiar enlace"
 
 #: src/declarative/Main.qml:1868
 #, kde-format
@@ -652,25 +652,25 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Archivos de texto (*.txt)"
 
 #: src/declarative/Main.qml:1871
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All files (*)"
-msgstr ""
+msgstr "Todos los archivos (*)"
 
 #: src/declarative/settings/AppearanceSettings.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Appearance"
-msgstr ""
+msgstr "Aspecto"
 
 #: src/declarative/settings/AppearanceSettings.qml:45
 #, kde-format
 msgctxt "@title:group"
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: src/declarative/settings/AppearanceSettings.qml:51
 #, kde-format
@@ -682,19 +682,19 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Font:"
-msgstr ""
+msgstr "Tipo de letra:"
 
 #: src/declarative/settings/AppearanceSettings.qml:81
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Size (pt):"
-msgstr ""
+msgstr "Tamaño (pt):"
 
 #: src/declarative/settings/AppearanceSettings.qml:118
 #, kde-format
 msgctxt "@info font preview. Include letters, digits and shell punctuation."
 msgid "Aa Bb 0123456789 — ~/Documents $"
-msgstr ""
+msgstr "Aa Bb 0123456789 — ~/Documentos $"
 
 #: src/declarative/settings/AppearanceSettings.qml:123
 #, kde-format
@@ -706,101 +706,101 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors"
-msgstr ""
+msgstr "Colores"
 
 #: src/declarative/settings/AppearanceSettings.qml:132
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Window:"
-msgstr ""
+msgstr "Ventana:"
 
 #: src/declarative/settings/AppearanceSettings.qml:148
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Terminal:"
-msgstr ""
+msgstr "Terminal:"
 
 #: src/declarative/settings/AppearanceSettings.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Color Scheme…"
-msgstr ""
+msgstr "Editar esquema de color…"
 
 #: src/declarative/settings/AppearanceSettings.qml:190
 #, kde-format
 msgctxt "@action:button"
 msgid "More Color Scheme Actions"
-msgstr ""
+msgstr "Más acciones del esquema de color"
 
 #: src/declarative/settings/AppearanceSettings.qml:207
 #: src/declarative/settings/PresetsSettings.qml:202
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplicar…"
 
 #: src/declarative/settings/AppearanceSettings.qml:214
 #: src/declarative/settings/PresetsSettings.qml:209
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import…"
-msgstr ""
+msgstr "Importar…"
 
 #: src/declarative/settings/AppearanceSettings.qml:223
 #: src/declarative/settings/PresetsSettings.qml:218
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: src/declarative/settings/AppearanceSettings.qml:235
 #, kde-format
 msgctxt "@label:slider"
 msgid "Background opacity:"
-msgstr ""
+msgstr "Opacidad de fondo:"
 
 #: src/declarative/settings/AppearanceSettings.qml:262
 #: src/declarative/settings/AppearanceSettings.qml:270
 #, kde-format
 msgctxt "@label"
 msgid "%1%"
-msgstr ""
+msgstr "%1 %"
 
 #: src/declarative/settings/AppearanceSettings.qml:278
 #, kde-format
 msgctxt "@option:check"
 msgid "Blur"
-msgstr ""
+msgstr "Desenfocar"
 
 #: src/declarative/settings/AppearanceSettings.qml:292
 #, kde-format
 msgctxt "@title:group"
 msgid "Tab Bar"
-msgstr ""
+msgstr "Barra de pestañas"
 
 #: src/declarative/settings/AppearanceSettings.qml:295
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Position:"
-msgstr ""
+msgstr "Posición:"
 
 #: src/declarative/settings/AppearanceSettings.qml:300
 #, kde-format
 msgctxt "@item:inlistbox tab bar position"
 msgid "Top"
-msgstr ""
+msgstr "Arriba"
 
 #: src/declarative/settings/AppearanceSettings.qml:300
 #, kde-format
 msgctxt "@item:inlistbox tab bar position"
 msgid "Bottom"
-msgstr ""
+msgstr "Abajo"
 
 #: src/declarative/settings/AppearanceSettings.qml:314
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide for single tabs"
-msgstr ""
+msgstr "Ocultar cuando solo hay una pestaña"
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -820,33 +820,31 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Show status icons"
-msgstr ""
+msgstr "Mostrar iconos de estado"
 
 #: src/declarative/settings/AppearanceSettings.qml:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Color Scheme"
-msgstr ""
+msgstr "Importar esquema de color"
 
 #: src/declarative/settings/AppearanceSettings.qml:378
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Konsole Color Schemes (*.colorscheme)"
-msgstr ""
+msgstr "Esquemas de color de Konsole (*.colorscheme)"
 
 #: src/declarative/settings/BehaviorSettings.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Behavior"
-msgstr ""
+msgstr "Comportamiento"
 
 #: src/declarative/settings/BehaviorSettings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Window"
+#, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr "Nueva ventana"
+msgstr "Ventanas"
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format
@@ -858,13 +856,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new window"
-msgstr ""
+msgstr "Abrir una nueva ventana"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new tab"
-msgstr ""
+msgstr "Abrir una nueva pestaña"
 
 #: src/declarative/settings/BehaviorSettings.qml:54
 #, kde-format
@@ -876,19 +874,19 @@ msgstr ""
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Columns:"
-msgstr ""
+msgstr "Columnas:"
 
 #: src/declarative/settings/BehaviorSettings.qml:84
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Rows:"
-msgstr ""
+msgstr "Filas:"
 
 #: src/declarative/settings/BehaviorSettings.qml:103
 #, kde-format
 msgctxt "@title:group"
 msgid "Confirmations"
-msgstr ""
+msgstr "Confirmaciones"
 
 #: src/declarative/settings/BehaviorSettings.qml:109
 #, kde-format
@@ -906,7 +904,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Clipboard"
-msgstr ""
+msgstr "Portapapeles"
 
 #: src/declarative/settings/BehaviorSettings.qml:140
 #, kde-format
@@ -924,7 +922,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Links"
-msgstr ""
+msgstr "Enlaces"
 
 #: src/declarative/settings/BehaviorSettings.qml:164
 #, kde-format
@@ -936,49 +934,49 @@ msgstr ""
 #, kde-format
 msgctxt "@label:color"
 msgid "Black"
-msgstr ""
+msgstr "Negro"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Red"
-msgstr ""
+msgstr "Rojo"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Green"
-msgstr ""
+msgstr "Verde"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Yellow"
-msgstr ""
+msgstr "Amarillo"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Blue"
-msgstr ""
+msgstr "Azul"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Magenta"
-msgstr ""
+msgstr "Magenta"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "Cyan"
-msgstr ""
+msgstr "Cian"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
 msgctxt "@label:color"
 msgid "White"
-msgstr ""
+msgstr "Blanco"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
@@ -1038,7 +1036,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:color"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:159
 #: src/declarative/settings/PresetsSettings.qml:101
@@ -1046,31 +1044,31 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:167
 #, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Color Scheme"
-msgstr ""
+msgstr "Duplicar esquema de color"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:167
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Color Scheme"
-msgstr ""
+msgstr "Editar esquema de color"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:195
 #, kde-format
 msgctxt "@title:group"
 msgid "Preview"
-msgstr ""
+msgstr "Vista previa"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:206
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Color scheme preview"
-msgstr ""
+msgstr "Vista previa del esquema de color"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:217
 #, kde-format
@@ -1082,50 +1080,50 @@ msgstr ""
 #, kde-format
 msgctxt "@info short color sample"
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:259
 #: src/declarative/settings/PresetsSettings.qml:230
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Nombre:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:269
 #, kde-format
 msgctxt "@label:color"
 msgid "Text:"
-msgstr ""
+msgstr "Texto:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:272
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Color"
-msgstr ""
+msgstr "Color del texto"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:273
 #, kde-format
 msgctxt "@label:color"
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:280
 #, kde-format
 msgctxt "@label:color"
 msgid "Background:"
-msgstr ""
+msgstr "Fondo:"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:283
 #, kde-format
 msgctxt "@title:window"
 msgid "Background Color"
-msgstr ""
+msgstr "Color del fondo"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:284
 #, kde-format
 msgctxt "@label:color"
 msgid "Background"
-msgstr ""
+msgstr "Fondo"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:290
 #, kde-format
@@ -1137,7 +1135,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:column"
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:312
 #, kde-format
@@ -1149,43 +1147,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Presets"
-msgstr ""
+msgstr "Preajustes"
 
 #: src/declarative/settings/PresetsSettings.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: src/declarative/settings/PresetsSettings.qml:123
 #, kde-format
 msgctxt "@title:group"
 msgid "New Sessions"
-msgstr ""
+msgstr "Nuevas sesiones"
 
 #: src/declarative/settings/PresetsSettings.qml:126
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Default preset:"
-msgstr ""
+msgstr "Preajuste predeterminado:"
 
 #: src/declarative/settings/PresetsSettings.qml:143
 #, kde-format
 msgctxt "@title:group"
 msgid "Manage Presets"
-msgstr ""
+msgstr "Gestión de preajustes"
 
 #: src/declarative/settings/PresetsSettings.qml:146
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Preset:"
-msgstr ""
+msgstr "Preajuste:"
 
 #: src/declarative/settings/PresetsSettings.qml:171
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Preset"
-msgstr ""
+msgstr "Editar preajuste"
 
 #: src/declarative/settings/PresetsSettings.qml:185
 #, kde-format
@@ -1197,91 +1195,91 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
-msgstr ""
+msgstr "Orden:"
 
 #: src/declarative/settings/PresetsSettings.qml:251
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "System shell"
-msgstr ""
+msgstr "Intérprete del sistema"
 
 #: src/declarative/settings/PresetsSettings.qml:258
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Starting folder:"
-msgstr ""
+msgstr "Carpeta de inicio:"
 
 #: src/declarative/settings/PresetsSettings.qml:263
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Current folder"
-msgstr ""
+msgstr "Carpeta actual"
 
 #: src/declarative/settings/PresetsSettings.qml:263
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Home folder"
-msgstr ""
+msgstr "Carpeta personal"
 
 #: src/declarative/settings/PresetsSettings.qml:263
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Custom folder"
-msgstr ""
+msgstr "Carpeta personalizada"
 
 #: src/declarative/settings/PresetsSettings.qml:271
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Folder:"
-msgstr ""
+msgstr "Carpeta:"
 
 #: src/declarative/settings/PresetsSettings.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose…"
-msgstr ""
+msgstr "Escoger…"
 
 #: src/declarative/settings/PresetsSettings.qml:291
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Choose starting folder"
-msgstr ""
+msgstr "Escoger la carpeta de inicio"
 
 #: src/declarative/settings/PresetsSettings.qml:301
 #, kde-format
 msgctxt "@label"
 msgid "Environment:"
-msgstr ""
+msgstr "Entorno:"
 
 #: src/declarative/settings/PresetsSettings.qml:307
 #, kde-format
 msgctxt "@info"
 msgid "No additional variables."
-msgstr ""
+msgstr "No hay variables adicionales."
 
 #: src/declarative/settings/PresetsSettings.qml:344
 #, kde-format
 msgctxt "@item environment variable value"
 msgid "(empty)"
-msgstr ""
+msgstr "(vacío)"
 
 #: src/declarative/settings/PresetsSettings.qml:353
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit %1"
-msgstr ""
+msgstr "Editar %1"
 
 #: src/declarative/settings/PresetsSettings.qml:365
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove %1"
-msgstr ""
+msgstr "Eliminar %1"
 
 #: src/declarative/settings/PresetsSettings.qml:385
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Variable…"
-msgstr ""
+msgstr "Añadir variable…"
 
 #: src/declarative/settings/PresetsSettings.qml:400
 #, kde-format
@@ -1299,43 +1297,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Environment Variable"
-msgstr ""
+msgstr "Añadir variable de entorno"
 
 #: src/declarative/settings/PresetsSettings.qml:430
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Environment Variable"
-msgstr ""
+msgstr "Editar variable de entorno"
 
 #: src/declarative/settings/PresetsSettings.qml:440
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "Añadir"
 
 #: src/declarative/settings/PresetsSettings.qml:469
 #, kde-format
 msgctxt "@label:textbox environment variable name"
 msgid "Name:"
-msgstr ""
+msgstr "Nombre:"
 
 #: src/declarative/settings/PresetsSettings.qml:480
 #, kde-format
 msgctxt "@label:textbox environment variable value"
 msgid "Value:"
-msgstr ""
+msgstr "Valor:"
 
 #: src/declarative/settings/PresetsSettings.qml:508
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Preset"
-msgstr ""
+msgstr "Eliminar preajuste"
 
 #: src/declarative/settings/PresetsSettings.qml:522
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: src/declarative/settings/PresetsSettings.qml:536
 #, kde-format
@@ -1347,7 +1345,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Remove preset “%1”?"
-msgstr ""
+msgstr "¿Eliminar el preajuste «%1»?"
 
 #: src/declarative/settings/PresetsSettings.qml:556
 #, kde-format
@@ -1365,55 +1363,55 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Starting Folder"
-msgstr ""
+msgstr "Escoger carpeta de inicio"
 
 #: src/declarative/settings/TerminalSettings.qml:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: src/declarative/settings/TerminalSettings.qml:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Application title"
-msgstr ""
+msgstr "Título de la aplicación"
 
 #: src/declarative/settings/TerminalSettings.qml:83
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Command"
-msgstr ""
+msgstr "Orden"
 
 #: src/declarative/settings/TerminalSettings.qml:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Directory name"
-msgstr ""
+msgstr "Nombre del directorio"
 
 #: src/declarative/settings/TerminalSettings.qml:95
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Directory path"
-msgstr ""
+msgstr "Ruta del directorio"
 
 #: src/declarative/settings/TerminalSettings.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "User name"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: src/declarative/settings/TerminalSettings.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Host name"
-msgstr ""
+msgstr "Nombre de máquina"
 
 #: src/declarative/settings/TerminalSettings.qml:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Host name (short)"
-msgstr ""
+msgstr "Nombre de máquina (corto)"
 
 #: src/declarative/settings/TerminalSettings.qml:123
 #, kde-format
@@ -1450,56 +1448,56 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr ""
+msgstr "Insertar"
 
 #: src/declarative/settings/TerminalSettings.qml:197
 #: src/declarative/settings/TerminalSettings.qml:267
 #, kde-format
 msgctxt "@label"
 msgid "Preview:"
-msgstr ""
+msgstr "Vista previa:"
 
 #: src/declarative/settings/TerminalSettings.qml:210
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Remote tab title format:"
-msgstr ""
+msgstr "Formato del título de las pestañas remota:"
 
 #: src/declarative/settings/TerminalSettings.qml:282
 #, kde-format
 msgctxt "@option:check"
 msgid "Use application title for the window"
-msgstr ""
+msgstr "Usar el título de la aplicación para la ventana"
 
 #: src/declarative/settings/TerminalSettings.qml:295
 #, kde-format
 msgctxt "@title:group"
 msgid "Scrollback"
-msgstr ""
+msgstr "Historial de desplazamiento"
 
 #: src/declarative/settings/TerminalSettings.qml:298
 #, kde-format
 msgctxt "@label:listbox"
 msgid "History:"
-msgstr ""
+msgstr "Historial:"
 
 #: src/declarative/settings/TerminalSettings.qml:309
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
 
 #: src/declarative/settings/TerminalSettings.qml:309
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Limited"
-msgstr ""
+msgstr "Limitado"
 
 #: src/declarative/settings/TerminalSettings.qml:309
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unlimited"
-msgstr ""
+msgstr "Ilimitado"
 
 #: src/declarative/settings/TerminalSettings.qml:325
 #, kde-format
@@ -1512,8 +1510,8 @@ msgstr ""
 msgctxt "@label unit after the retained-line count"
 msgid "line"
 msgid_plural "lines"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "línea"
+msgstr[1] "líneas"
 
 #: src/declarative/settings/TerminalSettings.qml:348
 #, kde-format
@@ -1531,19 +1529,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Cursor"
-msgstr ""
+msgstr "Cursor"
 
 #: src/declarative/settings/TerminalSettings.qml:373
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Shape:"
-msgstr ""
+msgstr "Forma:"
 
 #: src/declarative/settings/TerminalSettings.qml:382
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Block"
-msgstr ""
+msgstr "Bloque"
 
 #: src/declarative/settings/TerminalSettings.qml:386
 #, kde-format
@@ -1555,7 +1553,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Underline"
-msgstr ""
+msgstr "Subrayado"
 
 #: src/declarative/settings/TerminalSettings.qml:406
 #, kde-format
@@ -1567,13 +1565,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal: %1"
-msgstr ""
+msgstr "Terminal: %1"
 
 #: src/declarative/TerminalPane.qml:17
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: src/declarative/TerminalSearchBar.qml:70
 #, kde-format
@@ -1597,19 +1595,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Match"
-msgstr ""
+msgstr "Siguiente coincidencia"
 
 #: src/declarative/TerminalSearchBar.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous Match"
-msgstr ""
+msgstr "Anterior coincidencia"
 
 #: src/declarative/TerminalSearchBar.qml:180
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Find Bar"
-msgstr ""
+msgstr "Cerrar la barra de búsqueda"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
@@ -1633,38 +1631,38 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Progress: %1%"
-msgstr ""
+msgstr "Avance: %1 %"
 
 #: src/declarative/TerminalTabButton.qml:33
 #: src/declarative/TerminalTabButton.qml:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In progress"
-msgstr ""
+msgstr "En curso"
 
 #: src/declarative/TerminalTabButton.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Error: %1%"
-msgstr ""
+msgstr "Error: %1 %"
 
 #: src/declarative/TerminalTabButton.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: src/declarative/TerminalTabButton.qml:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paused: %1%"
-msgstr ""
+msgstr "En pausa: %1 %"
 
 #: src/declarative/TerminalTabButton.qml:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paused"
-msgstr ""
+msgstr "En pausa"
 
 #: src/declarative/TerminalTabButton.qml:67
 #, kde-format
@@ -1682,7 +1680,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Close %1"
-msgstr ""
+msgstr "Cerrar %1"
 
 #: src/declarative/TerminalTabs.qml:157
 #, kde-format
@@ -1709,7 +1707,7 @@ msgstr ""
 #: src/DesktopIntegration.cpp:81
 #, kde-format
 msgid "New output in %1"
-msgstr ""
+msgstr "Nueva salida en %1"
 
 #: src/DesktopIntegration.cpp:87
 #, kde-format
@@ -1726,7 +1724,7 @@ msgstr[1] ""
 #: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
 #, kde-format
 msgid "This terminal is no longer available."
-msgstr ""
+msgstr "Este terminal ya no está disponible."
 
 #: src/DesktopIntegration.cpp:180
 #, kde-format
@@ -1736,7 +1734,7 @@ msgstr ""
 #: src/DesktopIntegration.cpp:190
 #, kde-format
 msgid "Could not save terminal output: %1"
-msgstr ""
+msgstr "No se ha podido guardar la salida del terminal: %1"
 
 #: src/DesktopIntegration.cpp:208
 #, kde-format
@@ -1751,27 +1749,27 @@ msgstr ""
 #: src/DesktopIntegration.cpp:274
 #, kde-format
 msgid "Could not open the link: %1"
-msgstr ""
+msgstr "No se ha podido abrir el enlace: %1"
 
 #: src/DesktopIntegration.cpp:283
 #, kde-format
 msgid "Terminal Bell"
-msgstr ""
+msgstr "Timbre del terminal"
 
 #: src/DesktopIntegration.cpp:315
 #, kde-format
 msgid "Show Terminal"
-msgstr ""
+msgstr "Mostrar terminal"
 
 #: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
 #, kde-format
 msgid "Kwi Terminal"
-msgstr ""
+msgstr "Terminal Kwi"
 
 #: src/kpart/Part.cpp:329
 #, kde-format
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "¿Pegar múltiples líneas?"
 
 #: src/kpart/Part.cpp:330
 #, kde-format
@@ -1781,7 +1779,7 @@ msgstr ""
 #: src/kpart/Part.cpp:339
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Pegar"
 
 #: src/kpart/Part.cpp:664
 #, kde-format
@@ -1791,72 +1789,72 @@ msgstr ""
 #: src/kpart/Part.cpp:769
 #, kde-format
 msgid "Paste Selection"
-msgstr ""
+msgstr "Pegar selección"
 
 #: src/kpart/Part.cpp:834
 #, kde-format
 msgid "Clear Scrollback"
-msgstr ""
+msgstr "Borrar historial de desplazamiento"
 
 #: src/kpart/Part.cpp:858
 #, kde-format
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Reiniciar la ampliación"
 
 #: src/kpart/Part.cpp:875
 #, kde-format
 msgid "Monitor for Activity"
-msgstr ""
+msgstr "Monitor de actividad"
 
 #: src/kpart/Part.cpp:880
 #, kde-format
 msgid "Monitor for Silence"
-msgstr ""
+msgstr "Monitor de silencio"
 
 #: src/kpart/Part.cpp:886
 #, kde-format
 msgid "New Tab"
-msgstr ""
+msgstr "Nueva pestaña"
 
 #: src/kpart/Part.cpp:890
 #, kde-format
 msgid "Rename Tab…"
-msgstr ""
+msgstr "Cambiar nombre de pestaña…"
 
 #: src/kpart/Part.cpp:894
 #, kde-format
 msgid "Next Tab"
-msgstr ""
+msgstr "Pestaña siguiente"
 
 #: src/kpart/Part.cpp:902
 #, kde-format
 msgid "Previous Tab"
-msgstr ""
+msgstr "Pestaña anterior"
 
 #: src/kpart/Part.cpp:910
 #, kde-format
 msgid "Close Tab"
-msgstr ""
+msgstr "Cerrar pestaña"
 
 #: src/kpart/Part.cpp:914
 #, kde-format
 msgid "Configure Kwi…"
-msgstr ""
+msgstr "Configurar Kwi…"
 
 #: src/kpart/Part.cpp:919
 #, kde-format
 msgid "Manage Presets…"
-msgstr ""
+msgstr "Gestión de preajustes…"
 
 #: src/kpart/Part.cpp:923
 #, kde-format
 msgid "Edit Current Preset…"
-msgstr ""
+msgstr "Editar el preajuste actual…"
 
 #: src/kpart/Part.cpp:990
 #, kde-format
 msgid "Rename Tab"
-msgstr ""
+msgstr "Cambiar nombre de pestaña"
 
 #: src/kpart/Part.cpp:991
 #, kde-format
@@ -1866,12 +1864,12 @@ msgstr ""
 #: src/kpart/Part.cpp:1097
 #, kde-format
 msgid "Save Terminal Output"
-msgstr ""
+msgstr "Guardar salida del terminal"
 
 #: src/kpart/Part.cpp:1102
 #, kde-format
 msgid "Text Files (*.txt)"
-msgstr ""
+msgstr "Archivos de texto (*.txt)"
 
 #: src/kpart/Part.cpp:1117
 #, kde-format
@@ -1886,7 +1884,7 @@ msgstr ""
 #: src/kpart/Part.cpp:1125
 #, kde-format
 msgid "Close Terminal"
-msgstr ""
+msgstr "Cerrar terminal"
 
 #: src/main.cpp:33
 #, kde-format
@@ -1901,56 +1899,56 @@ msgstr ""
 #: src/main.cpp:83
 #, kde-format
 msgid "Kwi"
-msgstr ""
+msgstr "Kwi"
 
 #: src/main.cpp:85
 #, kde-format
 msgid "A modern and fast terminal"
-msgstr ""
+msgstr "Un terminal moderno y rápido"
 
 #: src/main.cpp:87
 #, kde-format
 msgid "© 2026 Kwi contributors"
-msgstr ""
+msgstr "© 2026 Los colaboradores de Kwi"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Ghostty"
-msgstr ""
+msgstr "Ghostty"
 
 #: src/main.cpp:91
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Eloy Cuadra"
 
 #: src/main.cpp:91
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "ecuadra@eloihr.net"
 
 #: src/main.cpp:100
 #, kde-format
 msgid "Start in this directory."
-msgstr ""
+msgstr "Empezar en este directorio."
 
 #: src/main.cpp:100
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "directory"
-msgstr ""
+msgstr "directorio"
 
 #: src/main.cpp:101
 #, kde-format
 msgid "Start with this terminal preset."
-msgstr ""
+msgstr "Empezar con este preajuste de terminal."
 
 #: src/main.cpp:101
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "name"
-msgstr ""
+msgstr "nombre"
 
 #: src/main.cpp:102
 #, kde-format
@@ -1965,45 +1963,45 @@ msgstr ""
 #: src/main.cpp:104
 #, kde-format
 msgid "Open the window in full screen."
-msgstr ""
+msgstr "Abrir la ventana a pantalla completa."
 
 #: src/main.cpp:106
 #, kde-format
 msgid "Set the initial tab title."
-msgstr ""
+msgstr "Definir el título inicial de la pestaña."
 
 #: src/main.cpp:106
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "title"
-msgstr ""
+msgstr "título"
 
 #: src/main.cpp:107
 #, kde-format
 msgid "Run the specified program."
-msgstr ""
+msgstr "Ejecutar el programa especificado."
 
 #: src/main.cpp:108
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "program"
-msgstr ""
+msgstr "programa"
 
 #: src/main.cpp:109
 #, kde-format
 msgid "Optional program and its arguments."
-msgstr ""
+msgstr "Programa opcional y sus argumentos."
 
 #: src/main.cpp:110
 #, kde-format
 msgctxt "@info:shell command-line syntax"
 msgid "[program [arguments…]]"
-msgstr ""
+msgstr "[programa [argumentos…]]"
 
 #: src/settings/LaunchSettings.cpp:53
 #, kde-format
 msgid "Too many environment variables."
-msgstr ""
+msgstr "Demasiadas variables de entorno."
 
 #: src/settings/LaunchSettings.cpp:63
 #, kde-format
@@ -2053,12 +2051,12 @@ msgstr ""
 #: src/settings/PresetEditor.cpp:156
 #, kde-format
 msgid "This variable is no longer available."
-msgstr ""
+msgstr "Esta variable ya no está disponible."
 
 #: src/settings/PresetEditor.cpp:163
 #, kde-format
 msgid "A variable with this name already exists."
-msgstr ""
+msgstr "Ya existe una variable con este nombre."
 
 #: src/settings/PresetEditor.cpp:243
 #, kde-format
@@ -2074,19 +2072,19 @@ msgstr ""
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "System Shell"
-msgstr ""
+msgstr "Intérprete del sistema"
 
 #: src/settings/PresetEditor.cpp:274
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "%1 (Modified)"
-msgstr ""
+msgstr "%1 (modificado)"
 
 #: src/settings/PresetEditor.cpp:283
 #, kde-format
 msgctxt "@item terminal preset"
 msgid "Copy of %1"
-msgstr ""
+msgstr "Copia de %1"
 
 #: src/settings/PresetEditor.cpp:300
 #, kde-format
@@ -2114,7 +2112,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #: src/settings/TerminalPaletteModel.cpp:168
 #, kde-format
@@ -2157,13 +2155,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item color scheme"
 msgid "Copy of %1"
-msgstr ""
+msgstr "Copia de %1"
 
 #: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
-msgstr ""
+msgstr "%1 (modificado)"
 
 #: src/settings/TerminalPaletteModel.cpp:322
 #, kde-format
@@ -2210,7 +2208,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox terminal preset"
 msgid "System Shell"
-msgstr ""
+msgstr "Intérprete del sistema"
 
 #. i18n: System Shell is the reserved storage identifier and must remain untranslated.
 #: src/settings/TerminalPresets.cpp:260
@@ -2252,24 +2250,24 @@ msgstr ""
 #, kde-format
 msgctxt "@info title format preview"
 msgid "Shell"
-msgstr ""
+msgstr "Intérprete"
 
 #: src/ui/SettingsDialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Kwi Terminal"
-msgstr ""
+msgstr "Configurar el terminal Kwi"
 
 #: src/ui/SettingsDialog.cpp:152
 #, kde-format
 msgid "Save changes before closing?"
-msgstr ""
+msgstr "¿Guardar cambios antes de cerrar?"
 
 #: src/ui/SettingsDialog.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Cambios sin guardar"
 
 #: src/ui/TerminalWidget.cpp:69
 #, kde-format
@@ -2285,7 +2283,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "Search for '%1' with"
-msgstr ""
+msgstr "Buscar «%1» con"
 
 #: src/WindowManager.cpp:331
 #, kde-format

@@ -15,6 +15,7 @@
   <name xml:lang="es">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="it">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nl">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="nn">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="pt-BR">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="sk">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="sr">@KWI_DISPLAY_NAME@</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="es">Un terminal moderno y rápido</summary>
   <summary xml:lang="it">Un terminale moderno e veloce</summary>
   <summary xml:lang="nl">Een moderne en snelle terminal</summary>
+  <summary xml:lang="nn">Ein moderne og rask terminal</summary>
   <summary xml:lang="pt-BR">Um terminal moderno e rápido</summary>
   <summary xml:lang="sk">Moderný a rýchly terminál</summary>
   <summary xml:lang="sr">Модеран и брз терминал</summary>

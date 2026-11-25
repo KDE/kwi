@@ -13,6 +13,7 @@
   <name xml:lang="ca-valencia">Terminal @KWI_DISPLAY_NAME@</name>
   <name xml:lang="cs">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="es">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="he">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="it">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nl">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nn">@KWI_DISPLAY_NAME@</name>
@@ -35,6 +36,7 @@
   <summary xml:lang="ca-valencia">Un terminal modern i ràpid</summary>
   <summary xml:lang="cs">Moderní a rychlý terminál</summary>
   <summary xml:lang="es">Un terminal moderno y rápido</summary>
+  <summary xml:lang="he">מסוף עדכני ומהיר</summary>
   <summary xml:lang="it">Un terminale moderno e veloce</summary>
   <summary xml:lang="nl">Een moderne en snelle terminal</summary>
   <summary xml:lang="nn">Ein moderne og rask terminal</summary>
@@ -55,6 +57,7 @@
     <p xml:lang="ca-valencia">Kwi és un terminal modern i ràpid que s'integra bé amb Plasma de KDE i altres escriptoris lliures.</p>
     <p xml:lang="cs">Kwi je moderní a rychlý terminál, který se dobře integruje do prostředí KDE Plasma a dalších svobodných desktopových prostředí.</p>
     <p xml:lang="es">Kwi es un terminal moderno y rápido que se integra bien con KDE Plasma y otros escritorios libres.</p>
+    <p xml:lang="he">Kwi הוא מסוף עדכני ומהיר שמשתלב היטב עם פלזמה מבית KDE ושולחנות עבודה חופשיים נוספים.</p>
     <p xml:lang="it">Kwi è un terminale moderno e veloce che si integra bene con KDE Plasma e altri desktop liberi.</p>
     <p xml:lang="nl">Kwi is een moderne en snelle terminal die goed integreert met KDE Plasma en andere vrije bureaubladen.</p>
     <p xml:lang="pt-BR">Kwi é um terminal moderno e rápido que se integra bem ao KDE Plasma e a outros ambientes de desktop livres.</p>
@@ -99,6 +102,7 @@
         <p xml:lang="ca">Versió inicial.</p>
         <p xml:lang="cs">Úvodní vydání.</p>
         <p xml:lang="es">Lanzamiento inicial.</p>
+        <p xml:lang="he">מהדורה ראשונית.</p>
         <p xml:lang="it">Rilascio iniziale.</p>
         <p xml:lang="nl">Initiële uitgave.</p>
         <p xml:lang="pt-BR">Versão inicial.</p>

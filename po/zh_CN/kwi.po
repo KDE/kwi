@@ -838,12 +838,10 @@ msgid "Behavior"
 msgstr "行为"
 
 #: src/declarative/settings/BehaviorSettings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr "窗口"
+msgstr ""
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-18 14:04+0100\n"
+"PO-Revision-Date: 2026-11-24 23:46+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -537,12 +537,14 @@ msgstr "Afsluiten zal opdrachten in alle vensters stoppen."
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
 msgstr ""
+"Als u dit venster sluit, worden de opdrachten die erin worden uitgevoerd, "
+"gestopt."
 
 #: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "Het sluiten van “%1” zal het actieve commando ervan beëindigen."
 
 #: src/declarative/Main.qml:1589
 #, kde-format
@@ -566,15 +568,15 @@ msgstr "Het plakken van deze tekst kan opdrachten uitvoeren."
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
-msgstr ""
+msgstr "Voorbeeld van plakken"
 
 #: src/declarative/Main.qml:1642
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
 msgid_plural "Showing the first %1 characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Het eerste teken wordt weergegeven."
+msgstr[1] "De eerste %1 tekens worden weergegeven."
 
 #: src/declarative/Main.qml:1748
 #, kde-format
@@ -592,7 +594,7 @@ msgstr "Hernoemen"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Automatic title"
-msgstr ""
+msgstr "Automatische titel"
 
 #: src/declarative/Main.qml:1770
 #, kde-format
@@ -604,7 +606,7 @@ msgstr "Titel van tabblad"
 #, kde-format
 msgctxt "@info"
 msgid "Leave empty to use the automatic title."
-msgstr ""
+msgstr "Laat leeg om de automatische titel te gebruiken."
 
 #: src/declarative/Main.qml:1809
 #, kde-format
@@ -809,6 +811,8 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"Een verborgen tabbladbalk kan worden teruggehaald met %1, of u kunt via het "
+"contextmenu toegang krijgen tot de toepassingsinstellingen."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -841,12 +845,10 @@ msgid "Behavior"
 msgstr "Gedrag"
 
 #: src/declarative/settings/BehaviorSettings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr "Venster"
+msgstr "Vensters"
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format
@@ -864,7 +866,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new tab"
-msgstr ""
+msgstr "Een nieuw tabblad openen"
 
 #: src/declarative/settings/BehaviorSettings.qml:54
 #, kde-format
@@ -1173,7 +1175,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Manage Presets"
-msgstr ""
+msgstr "Voorinstellingen beheren…"
 
 #: src/declarative/settings/PresetsSettings.qml:146
 #, kde-format
@@ -1846,7 +1848,7 @@ msgstr ""
 #: src/kpart/Part.cpp:919
 #, kde-format
 msgid "Manage Presets…"
-msgstr ""
+msgstr "Voorinstellingen beheren…"
 
 #: src/kpart/Part.cpp:923
 #, kde-format
@@ -2011,6 +2013,9 @@ msgid ""
 "Enter one NAME=value assignment per line. Names may contain letters, digits "
 "and underscores, and must not start with a digit."
 msgstr ""
+"Voer per regel één toewijzing van het type NAAM=waarde in. Namen mogen "
+"letters, cijfers en underscores bevatten en mogen niet met een cijfer "
+"beginnen."
 
 #: src/settings/LaunchSettings.cpp:77
 #, kde-format
@@ -2018,6 +2023,8 @@ msgid ""
 "Enter a program followed by its arguments, or leave the command empty to use "
 "the system shell."
 msgstr ""
+"Voer een programma in, gevolgd door de bijbehorende argumenten, of laat de "
+"opdrachtregel leeg om de systeem-shell te gebruiken."
 
 #: src/settings/LaunchSettings.cpp:86
 #, kde-format
@@ -2094,6 +2101,8 @@ msgid ""
 "Enter a program and its arguments. Quote spaces; shell operators and "
 "expansions are not supported."
 msgstr ""
+"Voer een programma en de bijbehorende argumenten in. Plaats spaties tussen "
+"aanhalingstekens; shell-operators en expansies worden niet ondersteund."
 
 #: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-21 09:19+0200\n"
+"PO-Revision-Date: 2026-11-24 12:36+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -371,7 +371,7 @@ msgstr "ניהול ערכות…"
 #, kde-format
 msgctxt "@info"
 msgid "No command output is marked by the shell in retained history."
-msgstr ""
+msgstr "אין פלט פקודות שסומן על ידי המעטפת בהיסטוריה שנשמרה."
 
 #: src/declarative/Main.qml:782
 #, kde-format
@@ -462,7 +462,7 @@ msgstr "תפריט היישום"
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
-msgstr ""
+msgstr "התהליך הסתיים במצב %1."
 
 #: src/declarative/Main.qml:1360
 #, kde-format
@@ -535,13 +535,13 @@ msgstr "יציאה תצעור את כל הפקודות בכל החלונות."
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
-msgstr ""
+msgstr "סגירת החלון הזה תעצור את הפקודות שרצות בו."
 
 #: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "סגירת „%1” תעצור את הפקודה שרצה בו."
 
 #: src/declarative/Main.qml:1589
 #, kde-format
@@ -559,23 +559,23 @@ msgstr "הדבקה"
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "הדבקת הטקסט הזה עלולה להריץ פקודות."
 
 #: src/declarative/Main.qml:1635
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
-msgstr ""
+msgstr "הדבקת תצוגה מקדימה"
 
 #: src/declarative/Main.qml:1642
 #, kde-format
 msgctxt "@info"
 msgid "Showing the first character."
 msgid_plural "Showing the first %1 characters."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "התו הראשון מוצג."
+msgstr[1] "שני התווים הראשונים מוצגים."
+msgstr[2] "%1 התווים הראשונים מוצגים."
+msgstr[3] "%1 התווים הראשונים מוצגים."
 
 #: src/declarative/Main.qml:1748
 #, kde-format
@@ -623,19 +623,19 @@ msgstr "סינון לשוניות…"
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
-msgstr ""
+msgstr "אין קישורים בפלט המסוף הגלוי."
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
-msgstr ""
+msgstr "אין קישורים תואמים."
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
-msgstr ""
+msgstr "אין לשוניות תואמות."
 
 #: src/declarative/Main.qml:1819
 #, kde-format
@@ -725,13 +725,13 @@ msgstr "מסוף:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Color Scheme…"
-msgstr ""
+msgstr "עריכת ערכת צבעים…"
 
 #: src/declarative/settings/AppearanceSettings.qml:190
 #, kde-format
 msgctxt "@action:button"
 msgid "More Color Scheme Actions"
-msgstr ""
+msgstr "פעולות נוספות על ערכת צבעים"
 
 #: src/declarative/settings/AppearanceSettings.qml:207
 #: src/declarative/settings/PresetsSettings.qml:202
@@ -810,12 +810,14 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"ניתן להחזיר סרגל לשוניות שהוסתר עם %1, או שאפשר לגשת להגדרות היישום דרך "
+"תפריט ההקשר."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
-msgstr ""
+msgstr "אפשר לגשת להגדרות היישום דרך תפריט ההקשר."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
@@ -827,13 +829,13 @@ msgstr "הצגת סמלי מצב"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Color Scheme"
-msgstr ""
+msgstr "ייבוא ערכת צבעים"
 
 #: src/declarative/settings/AppearanceSettings.qml:378
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Konsole Color Schemes (*.colorscheme)"
-msgstr ""
+msgstr "ערכות צבעים של Konsole ‏(‎*.colorscheme)"
 
 #: src/declarative/settings/BehaviorSettings.qml:18
 #, kde-format
@@ -842,36 +844,34 @@ msgid "Behavior"
 msgstr "התנהגות"
 
 #: src/declarative/settings/BehaviorSettings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr "חלון"
+msgstr "חלונות"
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When opened by other applications:"
-msgstr ""
+msgstr "כשנפתח על ידי יישומים אחרים:"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new window"
-msgstr ""
+msgstr "לפתוח חלון חדש"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new tab"
-msgstr ""
+msgstr "לפתוח לשונית חדשה"
 
 #: src/declarative/settings/BehaviorSettings.qml:54
 #, kde-format
 msgctxt "@option:check"
 msgid "Use custom size for new windows"
-msgstr ""
+msgstr "להשתמש בגודל מותאם אישית לחלונות חדשים"
 
 #: src/declarative/settings/BehaviorSettings.qml:66
 #, kde-format
@@ -895,13 +895,13 @@ msgstr "אישורים"
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm quit when a command is running"
-msgstr ""
+msgstr "לאשר יציאה כשפקודה עדיין רצה"
 
 #: src/declarative/settings/BehaviorSettings.qml:124
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm pasting multiple lines"
-msgstr ""
+msgstr "אישור הדבקת שורות במרוכז"
 
 #: src/declarative/settings/BehaviorSettings.qml:137
 #, kde-format
@@ -913,13 +913,13 @@ msgstr "לוח גזירים"
 #, kde-format
 msgctxt "@info"
 msgid "Middle-click paste also works with this option off."
-msgstr ""
+msgstr "הדבקה בלחיצה אמצעית עובדת גם כשהאפשרות הזאת כבויה."
 
 #: src/declarative/settings/BehaviorSettings.qml:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Copy mouse-selected text to clipboard"
-msgstr ""
+msgstr "להעתיק את הטקסט שנבחר עם העכבר ללוח הגזירים"
 
 #: src/declarative/settings/BehaviorSettings.qml:158
 #, kde-format
@@ -931,7 +931,7 @@ msgstr "קישורים"
 #, kde-format
 msgctxt "@option:check"
 msgid "Require Ctrl when clicking links"
-msgstr ""
+msgstr "לדרוש החזקה של Ctrl בלחיצה על קישורים"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
@@ -1015,25 +1015,25 @@ msgstr "כחול בוהק"
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Magenta"
-msgstr ""
+msgstr "ארגמן בוהק"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Cyan"
-msgstr ""
+msgstr "ציאן בוהק"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright White"
-msgstr ""
+msgstr "לבן בוהק"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:39
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Current color: %1. Opens a color chooser."
-msgstr ""
+msgstr "צבע נוכחי: %1. פתיחת בורר צבעים."
 
 #: src/declarative/settings/ColorSchemeEditor.qml:73
 #, kde-format
@@ -1053,25 +1053,25 @@ msgstr "שמירה"
 #, kde-format
 msgctxt "@title:window"
 msgid "Duplicate Color Scheme"
-msgstr ""
+msgstr "שכפול ערכת צבעים"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:167
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Color Scheme"
-msgstr ""
+msgstr "עריכת ערכת צבעים"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:195
 #, kde-format
 msgctxt "@title:group"
 msgid "Preview"
-msgstr ""
+msgstr "תצוגה מקדימה"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:206
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Color scheme preview"
-msgstr ""
+msgstr "תצוגת ערכת צבע מקדימה"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:217
 #, kde-format
@@ -1192,7 +1192,7 @@ msgstr "עריכת ערכה"
 #, kde-format
 msgctxt "@action:button"
 msgid "More Preset Actions"
-msgstr ""
+msgstr "פעולות ערכה נוספות"
 
 #: src/declarative/settings/PresetsSettings.qml:245
 #, kde-format
@@ -1288,13 +1288,13 @@ msgstr "הוספת משתנה…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Preset Changes"
-msgstr ""
+msgstr "שינויים שלא נשמרו בערכה"
 
 #: src/declarative/settings/PresetsSettings.qml:401
 #, kde-format
 msgctxt "@info"
 msgid "Save changes before continuing?"
-msgstr ""
+msgstr "לשמור את השינויים לפני שממשיכים?"
 
 #: src/declarative/settings/PresetsSettings.qml:430
 #, kde-format
@@ -1354,7 +1354,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Terminal Preset"
-msgstr ""
+msgstr "ייבוא ערכת מסוף"
 
 #: src/declarative/settings/PresetsSettings.qml:557
 #, kde-format
@@ -1432,26 +1432,26 @@ msgstr "סוגריים מסולסלים סוגרים: }"
 #, kde-format
 msgctxt "@title:group"
 msgid "Session Titles"
-msgstr ""
+msgstr "כותרות הפעלה"
 
 #: src/declarative/settings/TerminalSettings.qml:139
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title format:"
-msgstr ""
+msgstr "תבנית שמות הלשוניות:"
 
 #: src/declarative/settings/TerminalSettings.qml:141
 #, kde-format
 msgctxt "@info"
 msgid "Renamed tabs keep their names."
-msgstr ""
+msgstr "לשוניות ששמן השתנה ישמרו על השם שלהן."
 
 #: src/declarative/settings/TerminalSettings.qml:171
 #: src/declarative/settings/TerminalSettings.qml:241
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr ""
+msgstr "הוספה"
 
 #: src/declarative/settings/TerminalSettings.qml:197
 #: src/declarative/settings/TerminalSettings.qml:267
@@ -1470,7 +1470,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Use application title for the window"
-msgstr ""
+msgstr "להשתמש בכותרת היישום עבור החלון"
 
 #: src/declarative/settings/TerminalSettings.qml:295
 #, kde-format
@@ -1522,13 +1522,13 @@ msgstr[3] "שורות"
 #, kde-format
 msgctxt "@title:group"
 msgid "Monitoring"
-msgstr ""
+msgstr "מעקב"
 
 #: src/declarative/settings/TerminalSettings.qml:351
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Silence timeout (seconds):"
-msgstr ""
+msgstr "זמן המתנה לשקט (שניות):"
 
 #: src/declarative/settings/TerminalSettings.qml:370
 #, kde-format
@@ -1546,25 +1546,25 @@ msgstr "צורה:"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Block"
-msgstr ""
+msgstr "מלבן"
 
 #: src/declarative/settings/TerminalSettings.qml:386
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Beam"
-msgstr ""
+msgstr "קורה בצורת I"
 
 #: src/declarative/settings/TerminalSettings.qml:390
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Underline"
-msgstr ""
+msgstr "קו תחתון"
 
 #: src/declarative/settings/TerminalSettings.qml:406
 #, kde-format
 msgctxt "@option:check"
 msgid "Blink cursor"
-msgstr ""
+msgstr "הבהוב הסמן"
 
 #: src/declarative/TerminalPane.qml:17
 #, kde-format
@@ -1594,43 +1594,43 @@ msgstr "איתור במסוף"
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Searching terminal output"
-msgstr ""
+msgstr "חיפוש בפלט המסוף"
 
 #: src/declarative/TerminalSearchBar.qml:152
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Match"
-msgstr ""
+msgstr "התוצאה הבאה"
 
 #: src/declarative/TerminalSearchBar.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous Match"
-msgstr ""
+msgstr "התוצאה הקודמת"
 
 #: src/declarative/TerminalSearchBar.qml:180
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Find Bar"
-msgstr ""
+msgstr "סגירת סרגל האיתור"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring activity and silence"
-msgstr ""
+msgstr "מעקב אחר פעילות ושקט"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring activity"
-msgstr ""
+msgstr "מעקב אחר פעילות"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring silence"
-msgstr ""
+msgstr "מעקב אחר שקט"
 
 #: src/declarative/TerminalTabButton.qml:33
 #, kde-format
@@ -1643,7 +1643,7 @@ msgstr "התקדמות: %1%"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In progress"
-msgstr ""
+msgstr "מתרחש כרגע"
 
 #: src/declarative/TerminalTabButton.qml:35
 #, kde-format
@@ -1661,25 +1661,25 @@ msgstr "שגיאה"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paused: %1%"
-msgstr ""
+msgstr "מושהה: %1%"
 
 #: src/declarative/TerminalTabButton.qml:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paused"
-msgstr ""
+msgstr "מושהה"
 
 #: src/declarative/TerminalTabButton.qml:67
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "%1, needs attention"
-msgstr ""
+msgstr "%1, דורש תשומת לב"
 
 #: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "%1, new output"
-msgstr ""
+msgstr "%1, פלט חדש"
 
 #: src/declarative/TerminalTabButton.qml:120
 #, kde-format
@@ -1691,33 +1691,33 @@ msgstr "סגירת %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Left"
-msgstr ""
+msgstr "גלילת הלשוניות שמאלה"
 
 #: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"
-msgstr ""
+msgstr "גלילת הלשוניות ימינה"
 
 #: src/DesktopIntegration.cpp:77
 #, kde-format
 msgid "Terminal Notification"
-msgstr ""
+msgstr "התראת מסוף"
 
 #: src/DesktopIntegration.cpp:81
 #, kde-format
 msgid "Terminal Activity"
-msgstr ""
+msgstr "פעילות מסוף"
 
 #: src/DesktopIntegration.cpp:81
 #, kde-format
 msgid "New output in %1"
-msgstr ""
+msgstr "פלט חדש ב־%1"
 
 #: src/DesktopIntegration.cpp:87
 #, kde-format
 msgid "Terminal Silence"
-msgstr ""
+msgstr "שקט במסוף"
 
 #: src/DesktopIntegration.cpp:88
 #, kde-format
@@ -1731,17 +1731,17 @@ msgstr[3] ""
 #: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
 #, kde-format
 msgid "This terminal is no longer available."
-msgstr ""
+msgstr "המסוף הזה לא זמין יותר."
 
 #: src/DesktopIntegration.cpp:180
 #, kde-format
 msgid "Choose a local file to save terminal output."
-msgstr ""
+msgstr "נא לבחור קובץ מקומי לשמירת פלט המסוף."
 
 #: src/DesktopIntegration.cpp:190
 #, kde-format
 msgid "Could not save terminal output: %1"
-msgstr ""
+msgstr "לא ניתן לשמור את פלט המסוף: %1"
 
 #: src/DesktopIntegration.cpp:208
 #, kde-format
@@ -1756,37 +1756,37 @@ msgstr ""
 #: src/DesktopIntegration.cpp:274
 #, kde-format
 msgid "Could not open the link: %1"
-msgstr ""
+msgstr "לא ניתן לפתוח את הקישור: %1"
 
 #: src/DesktopIntegration.cpp:283
 #, kde-format
 msgid "Terminal Bell"
-msgstr ""
+msgstr "פעמון מסוף"
 
 #: src/DesktopIntegration.cpp:315
 #, kde-format
 msgid "Show Terminal"
-msgstr ""
+msgstr "הצגת מסוף"
 
 #: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
 #, kde-format
 msgid "Kwi Terminal"
-msgstr ""
+msgstr "מסוף Kwi"
 
 #: src/kpart/Part.cpp:329
 #, kde-format
 msgid "Paste Multiple Lines?"
-msgstr ""
+msgstr "להדביק כמה שורות?"
 
 #: src/kpart/Part.cpp:330
 #, kde-format
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "הדבקת הטקסט הזה עלולה להריץ פקודות."
 
 #: src/kpart/Part.cpp:339
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "הדבקה"
 
 #: src/kpart/Part.cpp:664
 #, kde-format
@@ -1796,12 +1796,12 @@ msgstr ""
 #: src/kpart/Part.cpp:769
 #, kde-format
 msgid "Paste Selection"
-msgstr ""
+msgstr "הדבקת בחירה"
 
 #: src/kpart/Part.cpp:834
 #, kde-format
 msgid "Clear Scrollback"
-msgstr ""
+msgstr "פינוי היסטוריית גלילה"
 
 #: src/kpart/Part.cpp:858
 #, kde-format
@@ -1944,7 +1944,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "directory"
-msgstr ""
+msgstr "תיקייה"
 
 #: src/main.cpp:101
 #, kde-format
@@ -1955,49 +1955,49 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "name"
-msgstr ""
+msgstr "שם"
 
 #: src/main.cpp:102
 #, kde-format
 msgid "Keep the terminal open after its command exits."
-msgstr ""
+msgstr "להשאיר את המסוף פתוח לאחר שהפקודה שלו מסתיימת."
 
 #: src/main.cpp:103
 #, kde-format
 msgid "Open a tab in the most recently active window."
-msgstr ""
+msgstr "לפתוח לשונית בחלון האחרון שהיה פעיל."
 
 #: src/main.cpp:104
 #, kde-format
 msgid "Open the window in full screen."
-msgstr ""
+msgstr "פתיחת החלון במסך מלא."
 
 #: src/main.cpp:106
 #, kde-format
 msgid "Set the initial tab title."
-msgstr ""
+msgstr "הגדרת הכותרת הראשונית של הלשוניות."
 
 #: src/main.cpp:106
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "title"
-msgstr ""
+msgstr "כותרת"
 
 #: src/main.cpp:107
 #, kde-format
 msgid "Run the specified program."
-msgstr ""
+msgstr "הרצת תוכנית מסוימת."
 
 #: src/main.cpp:108
 #, kde-format
 msgctxt "@info:shell command-line argument"
 msgid "program"
-msgstr ""
+msgstr "תוכנית"
 
 #: src/main.cpp:109
 #, kde-format
 msgid "Optional program and its arguments."
-msgstr ""
+msgstr "תוכנית והארגומנטים שלה כרשות."
 
 #: src/main.cpp:110
 #, kde-format
@@ -2144,19 +2144,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme directory could not be created."
-msgstr ""
+msgstr "לא ניתן ליצור את תיקיית ערכות הצבעים."
 
 #: src/settings/TerminalPaletteModel.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "The imported color scheme could not be saved."
-msgstr ""
+msgstr "לא ניתן לשמור את ערכת הצבעים שיובאה."
 
 #: src/settings/TerminalPaletteModel.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Only color schemes imported or created in Kwi can be removed."
-msgstr ""
+msgstr "ניתן להסיר רק ערכות צבעים שיובאו או נוצרו ב־Kwi."
 
 #: src/settings/TerminalPaletteModel.cpp:279
 #, kde-format
@@ -2168,25 +2168,25 @@ msgstr "עותק של %1"
 #, kde-format
 msgctxt "@item color scheme"
 msgid "%1 (Modified)"
-msgstr ""
+msgstr "%1 (נערכה)"
 
 #: src/settings/TerminalPaletteModel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "Choose an opaque foreground, background, and all 16 terminal colors."
-msgstr ""
+msgstr "נא לבחור חזית ורקע אטומים ואת כל 16 צבעי המסוף."
 
 #: src/settings/TerminalPaletteModel.cpp:339
 #, kde-format
 msgctxt "@info"
 msgid "This color scheme cannot be overwritten. Create a new copy instead."
-msgstr ""
+msgstr "לא ניתן לדרוש את ערכת הצבעים. אפשר ליצור עותק חדש במקום."
 
 #: src/settings/TerminalPaletteModel.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be saved."
-msgstr ""
+msgstr "לא ניתן לשמור את ערכת הצבעים."
 
 #: src/settings/TerminalPaletteModel.cpp:386
 #, kde-format
@@ -2231,27 +2231,27 @@ msgstr ""
 #: src/settings/TerminalPresets.cpp:276
 #, kde-format
 msgid "The terminal preset directory could not be created."
-msgstr ""
+msgstr "לא ניתן ליצור את תיקיית ערכות המסוף."
 
 #: src/settings/TerminalPresets.cpp:283 src/settings/TerminalPresets.cpp:307
 #, kde-format
 msgid "The terminal preset could not be saved."
-msgstr ""
+msgstr "לא ניתן לשמור את ערכת המסוף."
 
 #: src/settings/TerminalPresets.cpp:297
 #, kde-format
 msgid "Choose a unique name for a user-owned terminal preset."
-msgstr ""
+msgstr "נא לבחור שם ייחודי לערכת מסוף בבעלות המשתמש."
 
 #: src/settings/TerminalPresets.cpp:342
 #, kde-format
 msgid "Choose a local Kwi terminal preset."
-msgstr ""
+msgstr "בחירת ערכת מסוף Kwi מקומי."
 
 #: src/settings/TerminalPresets.cpp:348
 #, kde-format
 msgid "This file is not a valid Kwi launch preset."
-msgstr ""
+msgstr "הקובץ הזה הוא לא קובץ ערכת טעינת Kwi תקני."
 
 #: src/settings/TerminalSettings.cpp:163
 #, kde-format
@@ -2279,7 +2279,7 @@ msgstr "שינויים שלא נשמרו"
 #: src/ui/TerminalWidget.cpp:69
 #, kde-format
 msgid "The terminal view is missing from the interface."
-msgstr ""
+msgstr "תצוגת המסוף חסרה בממשק."
 
 #: src/ui/TerminalWidget.cpp:99
 #, kde-format
@@ -2295,9 +2295,9 @@ msgstr "חיפוש אחר ‚%1’ עם"
 #: src/WindowManager.cpp:331
 #, kde-format
 msgid "Could not initialize terminal graphics: %1"
-msgstr ""
+msgstr "לא ניתן לאתחל את גרפיקת המסוף: %1"
 
 #: src/WindowManager.cpp:554
 #, kde-format
 msgid "The terminal preset %1 is not available."
-msgstr ""
+msgstr "ערכת המסוף %1 לא זמינה."

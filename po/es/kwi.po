@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-24 01:26+0100\n"
+"PO-Revision-Date: 2026-11-25 01:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -463,7 +463,7 @@ msgstr "Menú de la aplicación"
 #, kde-format
 msgctxt "@info"
 msgid "Process exited with status %1."
-msgstr ""
+msgstr "El proceso ha terminado con el estado %1."
 
 #: src/declarative/Main.qml:1360
 #, kde-format
@@ -493,7 +493,7 @@ msgstr "¿Salir de Kwi?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Close All Terminals?"
-msgstr ""
+msgstr "¿Cerrar todos los terminales?"
 
 #: src/declarative/Main.qml:1511
 #, kde-format
@@ -511,7 +511,7 @@ msgstr "Salir de Kwi"
 #, kde-format
 msgctxt "@action:button"
 msgid "Close All Terminals"
-msgstr ""
+msgstr "Cerrar todos los terminales"
 
 #: src/declarative/Main.qml:1519
 #, kde-format
@@ -530,19 +530,19 @@ msgstr "No volver a preguntar"
 #, kde-format
 msgctxt "@info"
 msgid "Quitting will stop commands in all windows."
-msgstr ""
+msgstr "Si sale se detendrán las órdenes de todas las ventanas."
 
 #: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing this window will stop its running commands."
-msgstr ""
+msgstr "Si cierra esta ventana se detendrán las órdenes que está ejecutando."
 
 #: src/declarative/Main.qml:1540
 #, kde-format
 msgctxt "@info"
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "Si cierra «%1» se detendrá la orden que está ejecutando."
 
 #: src/declarative/Main.qml:1589
 #, kde-format
@@ -560,13 +560,13 @@ msgstr "Pegar"
 #, kde-format
 msgctxt "@info"
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "Si pega este texto se podrían ejecutar órdenes."
 
 #: src/declarative/Main.qml:1635
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Paste preview"
-msgstr ""
+msgstr "Vista previa del pegado"
 
 #: src/declarative/Main.qml:1642
 #, kde-format
@@ -616,25 +616,25 @@ msgstr "Filtrar enlaces…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
-msgstr ""
+msgstr "Filtrar pestañas…"
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
-msgstr ""
+msgstr "No haya enlaces en la salida visible del terminal."
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
-msgstr ""
+msgstr "No hay enlaces coincidentes."
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
-msgstr ""
+msgstr "No hay pestañas coincidentes."
 
 #: src/declarative/Main.qml:1819
 #, kde-format
@@ -646,7 +646,7 @@ msgstr "Copiar enlace"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
-msgstr ""
+msgstr "Guardar la salida del terminal"
 
 #: src/declarative/Main.qml:1871
 #, kde-format
@@ -676,7 +676,7 @@ msgstr "Texto"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use system fixed-width font"
-msgstr ""
+msgstr "Usar tipo de letra de ancho fijo del sistema"
 
 #: src/declarative/settings/AppearanceSettings.qml:63
 #, kde-format
@@ -700,7 +700,7 @@ msgstr "Aa Bb 0123456789 — ~/Documentos $"
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Terminal font preview"
-msgstr ""
+msgstr "Vista previa del tipo de letra del terminal"
 
 #: src/declarative/settings/AppearanceSettings.qml:129
 #, kde-format
@@ -809,12 +809,14 @@ msgid ""
 "A hidden tab bar can be brought back with %1, or you can access application "
 "settings from the context menu."
 msgstr ""
+"Puede volver a mostrar la barra de pestañas oculta con %1; también puede "
+"acceder a los ajustes de la aplicación con el menú de contexto."
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
-msgstr ""
+msgstr "Puede acceder a los ajustes de la aplicación con el menú de contexto."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
@@ -850,7 +852,7 @@ msgstr "Ventanas"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When opened by other applications:"
-msgstr ""
+msgstr "Cuando las han abierto otras aplicaciones:"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
@@ -868,7 +870,7 @@ msgstr "Abrir una nueva pestaña"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use custom size for new windows"
-msgstr ""
+msgstr "Usar tamaño personalizado para nuevas ventanas"
 
 #: src/declarative/settings/BehaviorSettings.qml:66
 #, kde-format
@@ -892,13 +894,13 @@ msgstr "Confirmaciones"
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm quit when a command is running"
-msgstr ""
+msgstr "Confirmar la salida cuando se está ejecutando una orden"
 
 #: src/declarative/settings/BehaviorSettings.qml:124
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm pasting multiple lines"
-msgstr ""
+msgstr "Confirmar el pegado de múltiples líneas"
 
 #: src/declarative/settings/BehaviorSettings.qml:137
 #, kde-format
@@ -910,13 +912,13 @@ msgstr "Portapapeles"
 #, kde-format
 msgctxt "@info"
 msgid "Middle-click paste also works with this option off."
-msgstr ""
+msgstr "También puede pegar con el botón central con esta opción desactivada."
 
 #: src/declarative/settings/BehaviorSettings.qml:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Copy mouse-selected text to clipboard"
-msgstr ""
+msgstr "Copiar el texto seleccionado con el ratón al portapapeles"
 
 #: src/declarative/settings/BehaviorSettings.qml:158
 #, kde-format
@@ -928,7 +930,7 @@ msgstr "Enlaces"
 #, kde-format
 msgctxt "@option:check"
 msgid "Require Ctrl when clicking links"
-msgstr ""
+msgstr "Requerir Ctrl al pulsar enlaces"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:28
 #, kde-format
@@ -982,55 +984,55 @@ msgstr "Blanco"
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Black"
-msgstr ""
+msgstr "Negro brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Red"
-msgstr ""
+msgstr "Rojo brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Green"
-msgstr ""
+msgstr "Verde brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Yellow"
-msgstr ""
+msgstr "Amarillo brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Blue"
-msgstr ""
+msgstr "Azul brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Magenta"
-msgstr ""
+msgstr "Magenta brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright Cyan"
-msgstr ""
+msgstr "Cian brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:29
 #, kde-format
 msgctxt "@label:color"
 msgid "Bright White"
-msgstr ""
+msgstr "Blanco brillante"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:39
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Current color: %1. Opens a color chooser."
-msgstr ""
+msgstr "Color actual: %1. Abre un selector de color."
 
 #: src/declarative/settings/ColorSchemeEditor.qml:73
 #, kde-format
@@ -1129,7 +1131,7 @@ msgstr "Fondo"
 #, kde-format
 msgctxt "@title:group"
 msgid "Terminal Colors"
-msgstr ""
+msgstr "Colores del terminal"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:304
 #, kde-format
@@ -1141,7 +1143,7 @@ msgstr "Normal"
 #, kde-format
 msgctxt "@label:column"
 msgid "Bright"
-msgstr ""
+msgstr "Brillantes"
 
 #: src/declarative/settings/PresetsSettings.qml:23
 #, kde-format
@@ -1189,7 +1191,7 @@ msgstr "Editar preajuste"
 #, kde-format
 msgctxt "@action:button"
 msgid "More Preset Actions"
-msgstr ""
+msgstr "Más acciones de preajustes"
 
 #: src/declarative/settings/PresetsSettings.qml:245
 #, kde-format
@@ -1285,13 +1287,13 @@ msgstr "Añadir variable…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Preset Changes"
-msgstr ""
+msgstr "Cambios de preajustes sin guardar"
 
 #: src/declarative/settings/PresetsSettings.qml:401
 #, kde-format
 msgctxt "@info"
 msgid "Save changes before continuing?"
-msgstr ""
+msgstr "¿Guardar los cambios antes de continuar?"
 
 #: src/declarative/settings/PresetsSettings.qml:430
 #, kde-format
@@ -1340,6 +1342,8 @@ msgstr "Eliminar"
 msgctxt "@info"
 msgid "Remove preset “%1”? New sessions will use System Shell."
 msgstr ""
+"¿Eliminar el preajuste «%1»? Las nuevas sesiones usarán el intérprete del "
+"sistema."
 
 #: src/declarative/settings/PresetsSettings.qml:537
 #, kde-format
@@ -1351,7 +1355,7 @@ msgstr "¿Eliminar el preajuste «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Terminal Preset"
-msgstr ""
+msgstr "Importar preajuste del terminal"
 
 #: src/declarative/settings/PresetsSettings.qml:557
 #, kde-format
@@ -1417,25 +1421,25 @@ msgstr "Nombre de máquina (corto)"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Opening brace: {"
-msgstr ""
+msgstr "Apertura de llave: {"
 
 #: src/declarative/settings/TerminalSettings.qml:129
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Closing brace: }"
-msgstr ""
+msgstr "Cierre de llave: }"
 
 #: src/declarative/settings/TerminalSettings.qml:136
 #, kde-format
 msgctxt "@title:group"
 msgid "Session Titles"
-msgstr ""
+msgstr "Títulos de sesiones"
 
 #: src/declarative/settings/TerminalSettings.qml:139
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tab title format:"
-msgstr ""
+msgstr "Formato del título de la pestaña:"
 
 #: src/declarative/settings/TerminalSettings.qml:141
 #, kde-format
@@ -1503,7 +1507,7 @@ msgstr "Ilimitado"
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Retained lines"
-msgstr ""
+msgstr "Líneas retenidas"
 
 #: src/declarative/settings/TerminalSettings.qml:340
 #, kde-format
@@ -1517,13 +1521,13 @@ msgstr[1] "líneas"
 #, kde-format
 msgctxt "@title:group"
 msgid "Monitoring"
-msgstr ""
+msgstr "Monitorización"
 
 #: src/declarative/settings/TerminalSettings.qml:351
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Silence timeout (seconds):"
-msgstr ""
+msgstr "Tiempo de espera del silencio (segundos):"
 
 #: src/declarative/settings/TerminalSettings.qml:370
 #, kde-format
@@ -1547,7 +1551,7 @@ msgstr "Bloque"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Beam"
-msgstr ""
+msgstr "Línea vertical"
 
 #: src/declarative/settings/TerminalSettings.qml:390
 #, kde-format
@@ -1559,7 +1563,7 @@ msgstr "Subrayado"
 #, kde-format
 msgctxt "@option:check"
 msgid "Blink cursor"
-msgstr ""
+msgstr "Cursor parpadeante"
 
 #: src/declarative/TerminalPane.qml:17
 #, kde-format
@@ -1577,19 +1581,19 @@ msgstr "Terminal"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Find in terminal…"
-msgstr ""
+msgstr "Buscar en el terminal…"
 
 #: src/declarative/TerminalSearchBar.qml:71
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Find in terminal"
-msgstr ""
+msgstr "Buscar en el terminal"
 
 #: src/declarative/TerminalSearchBar.qml:135
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Searching terminal output"
-msgstr ""
+msgstr "Búsqueda en la salida del terminal"
 
 #: src/declarative/TerminalSearchBar.qml:152
 #, kde-format
@@ -1613,19 +1617,19 @@ msgstr "Cerrar la barra de búsqueda"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring activity and silence"
-msgstr ""
+msgstr "Supervisando la actividad y el silencio"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring activity"
-msgstr ""
+msgstr "Supervisando la actividad"
 
 #: src/declarative/TerminalTabButton.qml:25
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Monitoring silence"
-msgstr ""
+msgstr "Supervisando el silencio"
 
 #: src/declarative/TerminalTabButton.qml:33
 #, kde-format
@@ -1668,13 +1672,13 @@ msgstr "En pausa"
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "%1, needs attention"
-msgstr ""
+msgstr "%1, necesita atención"
 
 #: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "%1, new output"
-msgstr ""
+msgstr "%1, nueva salida"
 
 #: src/declarative/TerminalTabButton.qml:120
 #, kde-format
@@ -1697,12 +1701,12 @@ msgstr ""
 #: src/DesktopIntegration.cpp:77
 #, kde-format
 msgid "Terminal Notification"
-msgstr ""
+msgstr "Notificación del terminal"
 
 #: src/DesktopIntegration.cpp:81
 #, kde-format
 msgid "Terminal Activity"
-msgstr ""
+msgstr "Actividad del terminal"
 
 #: src/DesktopIntegration.cpp:81
 #, kde-format
@@ -1712,14 +1716,14 @@ msgstr "Nueva salida en %1"
 #: src/DesktopIntegration.cpp:87
 #, kde-format
 msgid "Terminal Silence"
-msgstr ""
+msgstr "Silencio del terminal"
 
 #: src/DesktopIntegration.cpp:88
 #, kde-format
 msgid "No output in %2 for %1 second"
 msgid_plural "No output in %2 for %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "No ha habido salida en %2 durante %1 segundo"
+msgstr[1] "No ha habido salida en %2 durante %1 segundos"
 
 #: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
 #, kde-format
@@ -1729,7 +1733,7 @@ msgstr "Este terminal ya no está disponible."
 #: src/DesktopIntegration.cpp:180
 #, kde-format
 msgid "Choose a local file to save terminal output."
-msgstr ""
+msgstr "Escoja un archivo local para guardar la salida del terminal."
 
 #: src/DesktopIntegration.cpp:190
 #, kde-format
@@ -1739,12 +1743,12 @@ msgstr "No se ha podido guardar la salida del terminal: %1"
 #: src/DesktopIntegration.cpp:208
 #, kde-format
 msgid "The terminal's current folder is no longer available."
-msgstr ""
+msgstr "La carpeta actual del terminal ya no está disponible."
 
 #: src/DesktopIntegration.cpp:239
 #, kde-format
 msgid "Could not launch the desktop application: %1"
-msgstr ""
+msgstr "No se ha podido lanzar la aplicación del escritorio: %1"
 
 #: src/DesktopIntegration.cpp:274
 #, kde-format
@@ -1774,7 +1778,7 @@ msgstr "¿Pegar múltiples líneas?"
 #: src/kpart/Part.cpp:330
 #, kde-format
 msgid "Pasting this text may run commands."
-msgstr ""
+msgstr "Si pega este texto se podrían ejecutar órdenes."
 
 #: src/kpart/Part.cpp:339
 #, kde-format
@@ -1784,7 +1788,7 @@ msgstr "Pegar"
 #: src/kpart/Part.cpp:664
 #, kde-format
 msgid "The supplied terminal descriptor is invalid."
-msgstr ""
+msgstr "El descriptor de terminal suministrado no es válido."
 
 #: src/kpart/Part.cpp:769
 #, kde-format
@@ -1859,7 +1863,7 @@ msgstr "Cambiar nombre de pestaña"
 #: src/kpart/Part.cpp:991
 #, kde-format
 msgid "Tab name (leave empty to use the automatic title):"
-msgstr ""
+msgstr "Nombre de la pestaña (deje en blanco para usar un título automático):"
 
 #: src/kpart/Part.cpp:1097
 #, kde-format
@@ -1874,12 +1878,12 @@ msgstr "Archivos de texto (*.txt)"
 #: src/kpart/Part.cpp:1117
 #, kde-format
 msgid "Close Running Command?"
-msgstr ""
+msgstr "¿Cerrar la orden que se está ejecutando?"
 
 #: src/kpart/Part.cpp:1124
 #, kde-format
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "Si cierra «%1» se detendrá la orden que está ejecutando."
 
 #: src/kpart/Part.cpp:1125
 #, kde-format
@@ -1889,12 +1893,12 @@ msgstr "Cerrar terminal"
 #: src/main.cpp:33
 #, kde-format
 msgid "-e requires a program."
-msgstr ""
+msgstr "-e requiere un programa."
 
 #: src/main.cpp:37
 #, kde-format
 msgid "--preset requires a preset name."
-msgstr ""
+msgstr "--preset requiere un nombre de preajuste."
 
 #: src/main.cpp:83
 #, kde-format
@@ -1953,12 +1957,12 @@ msgstr "nombre"
 #: src/main.cpp:102
 #, kde-format
 msgid "Keep the terminal open after its command exits."
-msgstr ""
+msgstr "Mantener el terminal abierto cuando esta orden termine."
 
 #: src/main.cpp:103
 #, kde-format
 msgid "Open a tab in the most recently active window."
-msgstr ""
+msgstr "Abrir una pestaña en la ventana activa más reciente."
 
 #: src/main.cpp:104
 #, kde-format

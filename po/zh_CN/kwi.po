@@ -841,25 +841,25 @@ msgstr "行为"
 #, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr ""
+msgstr "窗口"
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When opened by other applications:"
-msgstr ""
+msgstr "当通过其他应用程序打开时："
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new window"
-msgstr ""
+msgstr "打开新窗口"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new tab"
-msgstr ""
+msgstr "打开新标签页"
 
 #: src/declarative/settings/BehaviorSettings.qml:54
 #, kde-format

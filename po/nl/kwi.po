@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-24 23:46+0100\n"
+"PO-Revision-Date: 2026-11-25 13:45+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -612,31 +612,31 @@ msgstr "Laat leeg om de automatische titel te gebruiken."
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter links…"
-msgstr ""
+msgstr "Koppelingen filteren…"
 
 #: src/declarative/Main.qml:1809
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Filter tabs…"
-msgstr ""
+msgstr "Tabbladen filteren…"
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No links in the visible terminal output."
-msgstr ""
+msgstr "Geen koppelingen in de zichtbare terminaluitvoer."
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching links."
-msgstr ""
+msgstr "Geen overeenkomende koppelingen."
 
 #: src/declarative/Main.qml:1810
 #, kde-format
 msgctxt "@info"
 msgid "No matching tabs."
-msgstr ""
+msgstr "Geen overeenkomende tabbladen."
 
 #: src/declarative/Main.qml:1819
 #, kde-format
@@ -648,7 +648,7 @@ msgstr "Koppeling kopiëren"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Terminal Output"
-msgstr ""
+msgstr "Terminaluitvoer opslaan"
 
 #: src/declarative/Main.qml:1871
 #, kde-format
@@ -678,7 +678,7 @@ msgstr "Tekst"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use system fixed-width font"
-msgstr ""
+msgstr "Systeemlettertype met vaste letterbreedte gebruiken"
 
 #: src/declarative/settings/AppearanceSettings.qml:63
 #, kde-format
@@ -690,13 +690,13 @@ msgstr "Lettertype:"
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Size (pt):"
-msgstr ""
+msgstr "Grootte (pt):"
 
 #: src/declarative/settings/AppearanceSettings.qml:118
 #, kde-format
 msgctxt "@info font preview. Include letters, digits and shell punctuation."
 msgid "Aa Bb 0123456789 — ~/Documents $"
-msgstr ""
+msgstr "Aa Bb 0123456789 — ~/Documenten $"
 
 #: src/declarative/settings/AppearanceSettings.qml:123
 #, kde-format
@@ -732,7 +732,7 @@ msgstr "Kleurenschema bewerken…"
 #, kde-format
 msgctxt "@action:button"
 msgid "More Color Scheme Actions"
-msgstr ""
+msgstr "Meer kleurenschema-acties"
 
 #: src/declarative/settings/AppearanceSettings.qml:207
 #: src/declarative/settings/PresetsSettings.qml:202
@@ -766,7 +766,7 @@ msgstr "Achtergronddekking:"
 #, kde-format
 msgctxt "@label"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: src/declarative/settings/AppearanceSettings.qml:278
 #, kde-format
@@ -802,7 +802,7 @@ msgstr "Onder"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide for single tabs"
-msgstr ""
+msgstr "Een enkel tabblad verbergen"
 
 #: src/declarative/settings/AppearanceSettings.qml:334
 #, kde-format
@@ -819,12 +819,13 @@ msgstr ""
 msgctxt "@info"
 msgid "You can access application settings from the context menu."
 msgstr ""
+"U kunt via het contextmenu toegang krijgen tot de toepassingsinstellingen."
 
 #: src/declarative/settings/AppearanceSettings.qml:342
 #, kde-format
 msgctxt "@option:check"
 msgid "Show status icons"
-msgstr ""
+msgstr "Statuspictogrammen tonen"
 
 #: src/declarative/settings/AppearanceSettings.qml:377
 #, kde-format
@@ -836,7 +837,7 @@ msgstr "Kleurenschema importeren"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Konsole Color Schemes (*.colorscheme)"
-msgstr ""
+msgstr "Kleurenschema's van konsole (*.colorscheme)"
 
 #: src/declarative/settings/BehaviorSettings.qml:18
 #, kde-format
@@ -854,13 +855,13 @@ msgstr "Vensters"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When opened by other applications:"
-msgstr ""
+msgstr "Bij opening door andere toepassen:"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new window"
-msgstr ""
+msgstr "Een nieuw venster openen"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
@@ -872,7 +873,7 @@ msgstr "Een nieuw tabblad openen"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use custom size for new windows"
-msgstr ""
+msgstr "Aangepaste grootte voor nieuwe vensters gebruiken"
 
 #: src/declarative/settings/BehaviorSettings.qml:66
 #, kde-format
@@ -896,7 +897,7 @@ msgstr "Bevestigingen"
 #, kde-format
 msgctxt "@option:check"
 msgid "Confirm quit when a command is running"
-msgstr ""
+msgstr "Afsluiten bevestigen wanneer een opdracht actief is"
 
 #: src/declarative/settings/BehaviorSettings.qml:124
 #, kde-format
@@ -1883,7 +1884,7 @@ msgstr ""
 #: src/kpart/Part.cpp:1124
 #, kde-format
 msgid "Closing “%1” will stop its running command."
-msgstr ""
+msgstr "Het sluiten van “%1” zal het actieve commando ervan beëindigen."
 
 #: src/kpart/Part.cpp:1125
 #, kde-format

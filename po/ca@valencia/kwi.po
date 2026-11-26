@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-16 10:27+0100\n"
+"PO-Revision-Date: 2026-11-23 10:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -847,30 +847,28 @@ msgid "Behavior"
 msgstr "Comportament"
 
 #: src/declarative/settings/BehaviorSettings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Window"
+#, kde-format
 msgctxt "@title:group"
 msgid "Windows"
-msgstr "Finestra"
+msgstr "Windows"
 
 #: src/declarative/settings/BehaviorSettings.qml:33
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When opened by other applications:"
-msgstr ""
+msgstr "Quan altres aplicacions les òbriguen:"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new window"
-msgstr ""
+msgstr "Obri una finestra nova"
 
 #: src/declarative/settings/BehaviorSettings.qml:40
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Open a new tab"
-msgstr ""
+msgstr "Obri una pestanya nova"
 
 #: src/declarative/settings/BehaviorSettings.qml:54
 #, kde-format
@@ -1064,7 +1062,7 @@ msgstr "Duplicació d'esquema de colors"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Color Scheme"
-msgstr "Editeu esquema de colors"
+msgstr "Editeu l'esquema de colors"
 
 #: src/declarative/settings/ColorSchemeEditor.qml:195
 #, kde-format

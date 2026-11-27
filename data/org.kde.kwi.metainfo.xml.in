@@ -15,6 +15,7 @@
   <name xml:lang="es">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="he">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="it">@KWI_DISPLAY_NAME@</name>
+  <name xml:lang="ka">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nl">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="nn">@KWI_DISPLAY_NAME@</name>
   <name xml:lang="pt-BR">@KWI_DISPLAY_NAME@</name>
@@ -38,6 +39,7 @@
   <summary xml:lang="es">Un terminal moderno y rápido</summary>
   <summary xml:lang="he">מסוף עדכני ומהיר</summary>
   <summary xml:lang="it">Un terminale moderno e veloce</summary>
+  <summary xml:lang="ka">თანამედროვე და სწრაფი ტერმინალი</summary>
   <summary xml:lang="nl">Een moderne en snelle terminal</summary>
   <summary xml:lang="nn">Ein moderne og rask terminal</summary>
   <summary xml:lang="pt-BR">Um terminal moderno e rápido</summary>
@@ -59,6 +61,7 @@
     <p xml:lang="es">Kwi es un terminal moderno y rápido que se integra bien con KDE Plasma y otros escritorios libres.</p>
     <p xml:lang="he">Kwi הוא מסוף עדכני ומהיר שמשתלב היטב עם פלזמה מבית KDE ושולחנות עבודה חופשיים נוספים.</p>
     <p xml:lang="it">Kwi è un terminale moderno e veloce che si integra bene con KDE Plasma e altri desktop liberi.</p>
+    <p xml:lang="ka">Kwi თანამედროვე და სწრაფი ტერმინალია, რომელიც კარგად ინტეგრირდება KDE Plasma-ში და სხვა თავისუფალ სამუშაო მაგიდებში.</p>
     <p xml:lang="nl">Kwi is een moderne en snelle terminal die goed integreert met KDE Plasma en andere vrije bureaubladen.</p>
     <p xml:lang="pt-BR">Kwi é um terminal moderno e rápido que se integra bem ao KDE Plasma e a outros ambientes de desktop livres.</p>
     <p xml:lang="sk">Kwi je moderný a rýchly terminál, ktorý sa dobre začleňuje do KDE Plasma a ďalších slobodných prostredí.</p>
@@ -105,6 +108,7 @@
         <p xml:lang="es">Lanzamiento inicial.</p>
         <p xml:lang="he">מהדורה ראשונית.</p>
         <p xml:lang="it">Rilascio iniziale.</p>
+        <p xml:lang="ka">საწყისი რელიზი.</p>
         <p xml:lang="nl">Initiële uitgave.</p>
         <p xml:lang="pt-BR">Versão inicial.</p>
         <p xml:lang="tr">İlk yayım</p>

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-25 01:32+0100\n"
+"PO-Revision-Date: 2026-11-27 00:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -118,7 +118,7 @@ msgstr "Nueva ventana"
 #, kde-format
 msgctxt "@action"
 msgid "Hide Tab Bar for Single Tabs"
-msgstr ""
+msgstr "Ocultar la barra de pestañas cuando solo hay una pestaña"
 
 #: src/declarative/ActionDefinitions.qml:23
 #, kde-format
@@ -300,13 +300,13 @@ msgstr "Desplazar una página hacia abajo"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Prompt"
-msgstr ""
+msgstr "Indicación anterior"
 
 #: src/declarative/ActionDefinitions.qml:69
 #, kde-format
 msgctxt "@action"
 msgid "Next Prompt"
-msgstr ""
+msgstr "Indicación siguiente"
 
 #: src/declarative/ActionDefinitions.qml:70 src/kpart/Part.cpp:755
 #, kde-format
@@ -354,13 +354,13 @@ msgstr "Configurar atajos web…"
 #, kde-format
 msgctxt "@info"
 msgid "The terminal preset is no longer available."
-msgstr ""
+msgstr "El preajuste de terminal ya no está disponible."
 
 #: src/declarative/Main.qml:73 src/declarative/Main.qml:790
 #, kde-format
 msgctxt "@title:menu"
 msgid "New Tab with Preset"
-msgstr ""
+msgstr "Nueva pestaña con preajuste"
 
 #: src/declarative/Main.qml:96 src/declarative/Main.qml:812
 #, kde-format
@@ -373,6 +373,8 @@ msgstr "Gestión de preajustes…"
 msgctxt "@info"
 msgid "No command output is marked by the shell in retained history."
 msgstr ""
+"La salida de las órdenes no queda registrada por el intérprete en el "
+"historial conservado."
 
 #: src/declarative/Main.qml:782
 #, kde-format
@@ -451,7 +453,7 @@ msgstr "Teclado"
 #, kde-format
 msgctxt "@action:button"
 msgid "New Tab with Preset"
-msgstr ""
+msgstr "Nueva pestaña con preajuste"
 
 #: src/declarative/Main.qml:1112
 #, kde-format
@@ -1361,7 +1363,7 @@ msgstr "Importar preajuste del terminal"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Kwi Launch Presets (*.preset)"
-msgstr ""
+msgstr "Preajustes de lanzamiento de Kwi (*.preset)"
 
 #: src/declarative/settings/PresetsSettings.qml:565
 #, kde-format
@@ -1445,7 +1447,7 @@ msgstr "Formato del título de la pestaña:"
 #, kde-format
 msgctxt "@info"
 msgid "Renamed tabs keep their names."
-msgstr ""
+msgstr "Las pestañas renombradas conservan sus nombres."
 
 #: src/declarative/settings/TerminalSettings.qml:171
 #: src/declarative/settings/TerminalSettings.qml:241
@@ -1690,13 +1692,13 @@ msgstr "Cerrar %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Left"
-msgstr ""
+msgstr "Desplazar pestañas a la izquierda"
 
 #: src/declarative/TerminalTabs.qml:428
 #, kde-format
 msgctxt "@action:button"
 msgid "Scroll Tabs Right"
-msgstr ""
+msgstr "Desplazar pestañas a la derecha"
 
 #: src/DesktopIntegration.cpp:77
 #, kde-format
@@ -2013,6 +2015,8 @@ msgid ""
 "Enter one NAME=value assignment per line. Names may contain letters, digits "
 "and underscores, and must not start with a digit."
 msgstr ""
+"Introduce una asignación NOMBRE=valor por línea. Los nombres pueden contener "
+"letras, dígitos y signos de subrayado, y no deben comenzar con un dígito."
 
 #: src/settings/LaunchSettings.cpp:77
 #, kde-format
@@ -2020,11 +2024,13 @@ msgid ""
 "Enter a program followed by its arguments, or leave the command empty to use "
 "the system shell."
 msgstr ""
+"Introduzca un programa seguido de sus argumentos, o deje la orden vacía para "
+"usar el intérprete de órdenes del sistema."
 
 #: src/settings/LaunchSettings.cpp:86
 #, kde-format
 msgid "The command is too long or contains a null character."
-msgstr ""
+msgstr "La orden es demasiado larga o contiene un carácter nulo."
 
 #: src/settings/LaunchSettings.cpp:94
 #, kde-format
@@ -2070,7 +2076,7 @@ msgstr ""
 #: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
 #, kde-format
 msgid "The terminal preset is not available."
-msgstr ""
+msgstr "El preajuste de terminal no está disponible."
 
 #: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
 #, kde-format
@@ -2248,7 +2254,7 @@ msgstr ""
 #: src/settings/TerminalPresets.cpp:348
 #, kde-format
 msgid "This file is not a valid Kwi launch preset."
-msgstr ""
+msgstr "Este archivo no es un preajuste de lanzamiento de Kwi válido."
 
 #: src/settings/TerminalSettings.cpp:163
 #, kde-format
@@ -2276,12 +2282,12 @@ msgstr "Cambios sin guardar"
 #: src/ui/TerminalWidget.cpp:69
 #, kde-format
 msgid "The terminal view is missing from the interface."
-msgstr ""
+msgstr "La vista de terminal no aparece en la interfaz."
 
 #: src/ui/TerminalWidget.cpp:99
 #, kde-format
 msgid "The terminal interface could not be loaded."
-msgstr ""
+msgstr "No se ha podido cargar la interfaz del terminal."
 
 #: src/ui/WebShortcutModel.cpp:94
 #, kde-format
@@ -2292,9 +2298,9 @@ msgstr "Buscar «%1» con"
 #: src/WindowManager.cpp:331
 #, kde-format
 msgid "Could not initialize terminal graphics: %1"
-msgstr ""
+msgstr "No se han podido inicializar los gráficos del terminal: %1"
 
 #: src/WindowManager.cpp:554
 #, kde-format
 msgid "The terminal preset %1 is not available."
-msgstr ""
+msgstr "El preajuste de terminal %1 no está disponible."

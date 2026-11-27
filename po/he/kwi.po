@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-24 12:36+0200\n"
+"PO-Revision-Date: 2026-11-26 09:47+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -1342,13 +1342,13 @@ msgstr "הסרה"
 #, kde-format
 msgctxt "@info"
 msgid "Remove preset “%1”? New sessions will use System Shell."
-msgstr ""
+msgstr "להסיר את הערכה „%1”? הפעלות חדשות תשתמשנה במעטפת המערכת."
 
 #: src/declarative/settings/PresetsSettings.qml:537
 #, kde-format
 msgctxt "@info"
 msgid "Remove preset “%1”?"
-msgstr ""
+msgstr "להסיר את הערכה „%1”?"
 
 #: src/declarative/settings/PresetsSettings.qml:556
 #, kde-format
@@ -1360,7 +1360,7 @@ msgstr "ייבוא ערכת מסוף"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Kwi Launch Presets (*.preset)"
-msgstr ""
+msgstr "ערכות טעינה של Kwi ‏(‎*.preset)"
 
 #: src/declarative/settings/PresetsSettings.qml:565
 #, kde-format
@@ -1464,7 +1464,7 @@ msgstr "תצוגה מקדימה:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Remote tab title format:"
-msgstr ""
+msgstr "תבנית שם כרטיסייה מרוחקת:"
 
 #: src/declarative/settings/TerminalSettings.qml:282
 #, kde-format
@@ -1723,10 +1723,10 @@ msgstr "שקט במסוף"
 #, kde-format
 msgid "No output in %2 for %1 second"
 msgid_plural "No output in %2 for %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "אין פלט ב־%1 למשך שנייה"
+msgstr[1] "אין פלט ב־%1 למשך שתי שניות"
+msgstr[2] "אין פלט ב־%1 למשך %2 שניות"
+msgstr[3] "אין פלט ב־%1 למשך %2 שניות"
 
 #: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
 #, kde-format
@@ -1746,12 +1746,12 @@ msgstr "לא ניתן לשמור את פלט המסוף: %1"
 #: src/DesktopIntegration.cpp:208
 #, kde-format
 msgid "The terminal's current folder is no longer available."
-msgstr ""
+msgstr "התיקייה הנוכחית של המסוף  לא זמינה יותר."
 
 #: src/DesktopIntegration.cpp:239
 #, kde-format
 msgid "Could not launch the desktop application: %1"
-msgstr ""
+msgstr "לא ניתן להפעיל את יישום שולחן העבודה: %1"
 
 #: src/DesktopIntegration.cpp:274
 #, kde-format
@@ -1896,12 +1896,12 @@ msgstr "סגירת מסוף"
 #: src/main.cpp:33
 #, kde-format
 msgid "-e requires a program."
-msgstr ""
+msgstr "‏‎-e דורש תוכנית."
 
 #: src/main.cpp:37
 #, kde-format
 msgid "--preset requires a preset name."
-msgstr ""
+msgstr "‏‎--preset דורש שם של ערכה."
 
 #: src/main.cpp:83
 #, kde-format
@@ -1938,7 +1938,7 @@ msgstr "kde-l10n-he@kde.org"
 #: src/main.cpp:100
 #, kde-format
 msgid "Start in this directory."
-msgstr ""
+msgstr "התחלה בתיקייה הזאת."
 
 #: src/main.cpp:100
 #, kde-format
@@ -1949,7 +1949,7 @@ msgstr "תיקייה"
 #: src/main.cpp:101
 #, kde-format
 msgid "Start with this terminal preset."
-msgstr ""
+msgstr "התחלה עם ערכת המסוף הזאת."
 
 #: src/main.cpp:101
 #, kde-format
@@ -2008,7 +2008,7 @@ msgstr ""
 #: src/settings/LaunchSettings.cpp:53
 #, kde-format
 msgid "Too many environment variables."
-msgstr ""
+msgstr "יותר מדי משתני סביבה."
 
 #: src/settings/LaunchSettings.cpp:63
 #, kde-format
@@ -2027,17 +2027,17 @@ msgstr ""
 #: src/settings/LaunchSettings.cpp:86
 #, kde-format
 msgid "The command is too long or contains a null character."
-msgstr ""
+msgstr "הפקודה ארוכה מדי או שהיא מכילה תו מאופס (null)."
 
 #: src/settings/LaunchSettings.cpp:94
 #, kde-format
 msgid "Only a custom working directory can contain a path."
-msgstr ""
+msgstr "רק תיקיית עבודה מותאמת אישית יכולה להכיל נתיב."
 
 #: src/settings/LaunchSettings.cpp:100
 #, kde-format
 msgid "Choose an absolute path for the working directory."
-msgstr ""
+msgstr "יש לבחור נתיב מוחלט כתיקיית עבודה."
 
 #: src/settings/LaunchSettings.cpp:105
 #, kde-format
@@ -2073,7 +2073,7 @@ msgstr ""
 #: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
 #, kde-format
 msgid "The terminal preset is not available."
-msgstr ""
+msgstr "ערכת המסוף לא זמינה."
 
 #: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
 #, kde-format
@@ -2103,7 +2103,7 @@ msgstr ""
 #: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
 #, kde-format
 msgid "A terminal preset named %1 already exists."
-msgstr ""
+msgstr "כבר קיימת ערכת מסוף בשם %1."
 
 #: src/settings/PresetEditor.cpp:338
 #, kde-format
@@ -2131,13 +2131,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "The color scheme could not be read or is too large."
-msgstr ""
+msgstr "לא ניתן לקרוא את סכמת הצבעים או שהיא גדולה מדי."
 
 #: src/settings/TerminalPaletteModel.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "This file does not contain a valid terminal color scheme."
-msgstr ""
+msgstr "הקובץ הזה לא מכיל ערכת צבעי מסוף תקנית."
 
 #: src/settings/TerminalPaletteModel.cpp:196
 #: src/settings/TerminalPaletteModel.cpp:345
@@ -2199,7 +2199,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "A color scheme with this name already exists. Choose another name."
-msgstr ""
+msgstr "כבר קיימת ערכת צבעים בשם הזה. נא לבחור שם אחר."
 
 #: src/settings/TerminalPresets.cpp:147
 #, kde-format
@@ -2226,7 +2226,7 @@ msgstr ""
 #: src/settings/TerminalPresets.cpp:266
 #, kde-format
 msgid "Make a copy to customize an installed terminal preset."
-msgstr ""
+msgstr "יש לשכפל כדי להתאים אישית ערכת מסוף מותקנת."
 
 #: src/settings/TerminalPresets.cpp:276
 #, kde-format

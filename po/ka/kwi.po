@@ -1,0 +1,2312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kwi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kwi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-23 01:09+0000\n"
+"PO-Revision-Date: 2026-11-26 07:37+0100\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.10\n"
+
+#: schemas.cpp:1
+#, kde-format
+msgid "Black on Light Yellow"
+msgstr "შავი ღია ყვითელ ფონზე"
+
+#: schemas.cpp:2
+#, kde-format
+msgid "Black on Random Light"
+msgstr "შავი შემთხვევით ფონზე"
+
+#: schemas.cpp:3
+#, kde-format
+msgid "Black on White"
+msgstr "ლურჯი თეთრ ფონზე"
+
+#: schemas.cpp:4
+#, kde-format
+msgid "Blue on Black"
+msgstr "ლურჯი შავ ფონზე"
+
+#: schemas.cpp:5
+#, kde-format
+msgid "Breeze"
+msgstr "ბრიზი"
+
+#: schemas.cpp:6
+#, kde-format
+msgid "Campbell"
+msgstr "კემპბელი"
+
+#: schemas.cpp:7
+#, kde-format
+msgid "Dark Pastels"
+msgstr "მუქი პასტელები"
+
+#: schemas.cpp:8
+#, kde-format
+msgid "Green on Black"
+msgstr "მწვანე შავ ფონზე"
+
+#: schemas.cpp:9
+#, kde-format
+msgid "Linux Colors"
+msgstr "ლინუქსის ფერები"
+
+#: schemas.cpp:10
+#, kde-format
+msgid "Red on Black"
+msgstr "წითელი შავზე"
+
+#: schemas.cpp:11
+#, kde-format
+msgid "Solarized"
+msgstr "სოლარიზება"
+
+#: schemas.cpp:12
+#, kde-format
+msgid "Solarized Light"
+msgstr "Solarized ღია"
+
+#: schemas.cpp:13
+#, kde-format
+msgid "White on Black"
+msgstr "თეთრი შავ ფონზე"
+
+#: src/declarative/ActionDefinitions.qml:10
+#, kde-format
+msgctxt "@title:group"
+msgid "Application"
+msgstr "აპლიკაცია"
+
+#: src/declarative/ActionDefinitions.qml:13
+#, kde-format
+msgctxt "@action"
+msgid "Application Menu"
+msgstr "აპლიკაციის მენიუ"
+
+#: src/declarative/ActionDefinitions.qml:14
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "გასვლა"
+
+#: src/declarative/ActionDefinitions.qml:19
+#, kde-format
+msgctxt "@title:group"
+msgid "Windows and Tabs"
+msgstr "ფანჯრები და ჩანართები"
+
+#: src/declarative/ActionDefinitions.qml:21
+#, kde-format
+msgctxt "@action"
+msgid "New Window"
+msgstr "ახალი ფანჯარა"
+
+#: src/declarative/ActionDefinitions.qml:22
+#, kde-format
+msgctxt "@action"
+msgid "Hide Tab Bar for Single Tabs"
+msgstr "ჩანართების ზოლის დამალვა ერთი ჩანართის არსებობისას"
+
+#: src/declarative/ActionDefinitions.qml:23
+#, kde-format
+msgctxt "@action"
+msgid "Full Screen"
+msgstr "სრული ეკრანი"
+
+#: src/declarative/ActionDefinitions.qml:24
+#, kde-format
+msgctxt "@action"
+msgid "New Tab"
+msgstr "ახალი ჩანართი"
+
+#: src/declarative/ActionDefinitions.qml:25
+#, kde-format
+msgctxt "@action"
+msgid "Close Tab"
+msgstr "ჩანართის დახურვა"
+
+#: src/declarative/ActionDefinitions.qml:26
+#, kde-format
+msgctxt "@action"
+msgid "Rename Tab…"
+msgstr "ჩანართის სახელის გადარქმევა…"
+
+#: src/declarative/ActionDefinitions.qml:27
+#, kde-format
+msgctxt "@action"
+msgid "Next Tab"
+msgstr "შემდეგი ჩანართი"
+
+#: src/declarative/ActionDefinitions.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Previous Tab"
+msgstr "წინა ჩანართი"
+
+#: src/declarative/ActionDefinitions.qml:29
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs"
+msgstr "ბოლოს გამოყენებული ჩანართები"
+
+#: src/declarative/ActionDefinitions.qml:30
+#, kde-format
+msgctxt "@action"
+msgid "Last Used Tabs (Reverse)"
+msgstr "ბოლოს გამოყენებული ჩანართები (უკუღმა)"
+
+#: src/declarative/ActionDefinitions.qml:31 src/kpart/Part.cpp:1020
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Left"
+msgstr "ჩანართის გადატანა მარცხნივ"
+
+#: src/declarative/ActionDefinitions.qml:32 src/kpart/Part.cpp:1025
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Right"
+msgstr "ჩანართის გადატანა მარჯვნივ"
+
+#: src/declarative/ActionDefinitions.qml:33
+#, kde-format
+msgctxt "@action"
+msgid "Detach Tab"
+msgstr "ჩანართის მოხსნა"
+
+#: src/declarative/ActionDefinitions.qml:34
+#, kde-format
+msgctxt "@action"
+msgid "Search Tabs…"
+msgstr "ჩანართების ძებნა…"
+
+#: src/declarative/ActionDefinitions.qml:35
+#: src/declarative/ActionDefinitions.qml:36
+#: src/declarative/ActionDefinitions.qml:37
+#: src/declarative/ActionDefinitions.qml:38
+#: src/declarative/ActionDefinitions.qml:39
+#: src/declarative/ActionDefinitions.qml:40
+#: src/declarative/ActionDefinitions.qml:41
+#: src/declarative/ActionDefinitions.qml:42
+#: src/declarative/ActionDefinitions.qml:43
+#, kde-format
+msgctxt "@action"
+msgid "Switch to Tab %1"
+msgstr "%1-ე ჩანართზე გადართვა"
+
+#: src/declarative/ActionDefinitions.qml:48
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#: src/declarative/ActionDefinitions.qml:50
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "კოპირება"
+
+#: src/declarative/ActionDefinitions.qml:51
+#, kde-format
+msgctxt "@action"
+msgid "Paste"
+msgstr "ჩასმა"
+
+#: src/declarative/ActionDefinitions.qml:52
+#, kde-format
+msgctxt "@action"
+msgid "Paste Selection"
+msgstr "მონიშნულის ჩასმა"
+
+#: src/declarative/ActionDefinitions.qml:53
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "ყველას მონიშვნა"
+
+#: src/declarative/ActionDefinitions.qml:54
+#, kde-format
+msgctxt "@action"
+msgid "Keyboard Selection Mode"
+msgstr "კლავიატურის მონიშვნის რეჟიმი"
+
+#: src/declarative/ActionDefinitions.qml:55 src/kpart/Part.cpp:831
+#, kde-format
+msgctxt "@action"
+msgid "Save Output As…"
+msgstr "გამოტანის შენახვა, როგორც…"
+
+#: src/declarative/ActionDefinitions.qml:56
+#, kde-format
+msgctxt "@action"
+msgid "Clear Scrollback"
+msgstr "საუბრის გაწმენდა"
+
+#: src/declarative/ActionDefinitions.qml:57 src/kpart/Part.cpp:840
+#, kde-format
+msgctxt "@action"
+msgid "Reset Terminal"
+msgstr "ტერმინალის ჩამოყრა"
+
+#: src/declarative/ActionDefinitions.qml:58
+#, kde-format
+msgctxt "@action"
+msgid "Find…"
+msgstr "ძებნა…"
+
+#: src/declarative/ActionDefinitions.qml:63
+#, kde-format
+msgctxt "@action"
+msgid "Reset Zoom"
+msgstr "გადიდების ჩამოყრა"
+
+#: src/declarative/ActionDefinitions.qml:64 src/kpart/Part.cpp:783
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Line"
+msgstr "ერთი ხაზით მაღლა აწევა"
+
+#: src/declarative/ActionDefinitions.qml:65 src/kpart/Part.cpp:789
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Line"
+msgstr "ერთი ხაზით დაბლა ჩამოწევა"
+
+#: src/declarative/ActionDefinitions.qml:66 src/kpart/Part.cpp:795
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Up One Page"
+msgstr "ერთი გვერდით მაღლა აწევა"
+
+#: src/declarative/ActionDefinitions.qml:67 src/kpart/Part.cpp:801
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Down One Page"
+msgstr "ერთი გვერდით დაბლა ჩამოწევა"
+
+#: src/declarative/ActionDefinitions.qml:68
+#, kde-format
+msgctxt "@action"
+msgid "Previous Prompt"
+msgstr "წინა მოთხოვნა"
+
+#: src/declarative/ActionDefinitions.qml:69
+#, kde-format
+msgctxt "@action"
+msgid "Next Prompt"
+msgstr "შემდეგი მოთხოვნა"
+
+#: src/declarative/ActionDefinitions.qml:70 src/kpart/Part.cpp:755
+#, kde-format
+msgctxt "@action"
+msgid "Copy Last Command Output"
+msgstr "ბოლოს ბრძანების გამოტანის კოპირება"
+
+#: src/declarative/ActionDefinitions.qml:71 src/kpart/Part.cpp:864
+#, kde-format
+msgctxt "@action"
+msgid "Open Current Directory"
+msgstr "მიმდინარე საქაღალდის გახსნა"
+
+#: src/declarative/ActionDefinitions.qml:72
+#, kde-format
+msgctxt "@action"
+msgid "Open Link…"
+msgstr "ბმულის გახსნა…"
+
+#: src/declarative/ActionDefinitions.qml:73 src/kpart/Part.cpp:868
+#, kde-format
+msgctxt "@action"
+msgid "Read-Only Terminal"
+msgstr "მხოლოდ-წაკითხვადი ტერმინალი"
+
+#: src/declarative/ActionDefinitions.qml:74
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Activity"
+msgstr "აქტივობის მონიტორინგი"
+
+#: src/declarative/ActionDefinitions.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Monitor for Silence"
+msgstr "სიჩუმის მონიტორინგი"
+
+#: src/declarative/components/WebShortcutMenu.qml:44
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure Web Shortcuts…"
+msgstr "ვებ-მალსახმობების მორგება…"
+
+#: src/declarative/Main.qml:66
+#, kde-format
+msgctxt "@info"
+msgid "The terminal preset is no longer available."
+msgstr "ტერმინალის პრესეტი ხელმისაწვდომი აღარაა."
+
+#: src/declarative/Main.qml:73 src/declarative/Main.qml:790
+#, kde-format
+msgctxt "@title:menu"
+msgid "New Tab with Preset"
+msgstr "ახალი ჩანართი პრესეტით"
+
+#: src/declarative/Main.qml:96 src/declarative/Main.qml:812
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Manage Presets…"
+msgstr "პრესეტების მართვა…"
+
+#: src/declarative/Main.qml:552 src/kpart/Part.cpp:757
+#, kde-format
+msgctxt "@info"
+msgid "No command output is marked by the shell in retained history."
+msgstr ""
+"შენარჩუნებულ საქაღალდეში ამ გარსის მიერ ბრძანების გამონატანი დანიშნული არაა."
+
+#: src/declarative/Main.qml:782
+#, kde-format
+msgctxt "@title:menu"
+msgid "File"
+msgstr "ფაილი"
+
+#: src/declarative/Main.qml:826 src/declarative/Main.qml:1186
+#, kde-format
+msgctxt "@title:menu"
+msgid "Edit"
+msgstr "ჩასწორება"
+
+#: src/declarative/Main.qml:831 src/declarative/Main.qml:1276
+#, kde-format
+msgctxt "@title:menu"
+msgid "View"
+msgstr "ხედი"
+
+#: src/declarative/Main.qml:834 src/declarative/Main.qml:1144
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tabs"
+msgstr "ჩანართები"
+
+#: src/declarative/Main.qml:839 src/declarative/Main.qml:1228
+#, kde-format
+msgctxt "@title:menu"
+msgid "Output"
+msgstr "გამოტანა"
+
+#: src/declarative/Main.qml:852
+#, kde-format
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr "მორგება"
+
+#: src/declarative/Main.qml:859
+#, kde-format
+msgctxt "@title:menu"
+msgid "Help"
+msgstr "დახმარება"
+
+#: src/declarative/Main.qml:902 src/ui/SettingsDialog.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Appearance"
+msgstr "გარეგნობა"
+
+#: src/declarative/Main.qml:910 src/ui/SettingsDialog.cpp:67
+#, kde-format
+msgctxt "@title"
+msgid "Behavior"
+msgstr "ქცევა"
+
+#: src/declarative/Main.qml:918 src/declarative/Main.qml:970
+#: src/ui/SettingsDialog.cpp:70
+#, kde-format
+msgctxt "@title"
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#: src/declarative/Main.qml:926 src/ui/SettingsDialog.cpp:72
+#, kde-format
+msgctxt "@title"
+msgid "Presets"
+msgstr "პრესეტები"
+
+#: src/declarative/Main.qml:934
+#, kde-format
+msgctxt "@title"
+msgid "Keyboard"
+msgstr "კლავიატურა"
+
+#: src/declarative/Main.qml:1050
+#, kde-format
+msgctxt "@action:button"
+msgid "New Tab with Preset"
+msgstr "ახალი ჩანართი პრესეტით"
+
+#: src/declarative/Main.qml:1112
+#, kde-format
+msgctxt "@action:button"
+msgid "Application Menu"
+msgstr "აპლიკაციის მენიუ"
+
+#: src/declarative/Main.qml:1360
+#, kde-format
+msgctxt "@info"
+msgid "Process exited with status %1."
+msgstr "პროცესი დასრულდა სტატუსით %1."
+
+#: src/declarative/Main.qml:1360
+#, kde-format
+msgctxt "@info"
+msgid "Process finished."
+msgstr "პროცესი დასრულდა."
+
+#: src/declarative/Main.qml:1419 src/kpart/Part.cpp:1048
+#, kde-format
+msgctxt "@action"
+msgid "Open Link"
+msgstr "ბმულის გახსნა"
+
+#: src/declarative/Main.qml:1427 src/kpart/Part.cpp:1052
+#, kde-format
+msgctxt "@action"
+msgid "Copy Link"
+msgstr "ბმულის კოპირება"
+
+#: src/declarative/Main.qml:1511
+#, kde-format
+msgctxt "@title:window"
+msgid "Quit Kwi?"
+msgstr "გნებავთ Kwi-დან გასვლა?"
+
+#: src/declarative/Main.qml:1511
+#, kde-format
+msgctxt "@title:window"
+msgid "Close All Terminals?"
+msgstr "გნებავთ ყველა ტერმინალის დახურვა?"
+
+#: src/declarative/Main.qml:1511
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Terminal?"
+msgstr "გნებავთ ტერმინალის დახურვა?"
+
+#: src/declarative/Main.qml:1519
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit Kwi"
+msgstr "Kwi-დან გასვლა"
+
+#: src/declarative/Main.qml:1519
+#, kde-format
+msgctxt "@action:button"
+msgid "Close All Terminals"
+msgstr "ყველა ტერმინალის დახურვა"
+
+#: src/declarative/Main.qml:1519
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Terminal"
+msgstr "ტერმინალის დახურვა"
+
+#: src/declarative/Main.qml:1527 src/declarative/Main.qml:1604
+#: src/kpart/Part.cpp:340 src/kpart/Part.cpp:1127
+#, kde-format
+msgctxt "@option:check"
+msgid "Do not ask again"
+msgstr "აღარ მკითხო"
+
+#: src/declarative/Main.qml:1540
+#, kde-format
+msgctxt "@info"
+msgid "Quitting will stop commands in all windows."
+msgstr "გასვლა ბრძანებებს ყველა ფანჯარაში გააჩერებს."
+
+#: src/declarative/Main.qml:1540
+#, kde-format
+msgctxt "@info"
+msgid "Closing this window will stop its running commands."
+msgstr "ამ ფანჯრის დახურვა მასში გაშვებულ ყველა ბრძანებას დაასრულებს."
+
+#: src/declarative/Main.qml:1540
+#, kde-format
+msgctxt "@info"
+msgid "Closing “%1” will stop its running command."
+msgstr "\"%1\"-ის დახურვა მასში გაშვებულ ბრძანებას გააჩერებს."
+
+#: src/declarative/Main.qml:1589
+#, kde-format
+msgctxt "@title:window"
+msgid "Paste Multiple Lines?"
+msgstr "გნებავთ ერთზე მეტი ხაზის ჩასმა?"
+
+#: src/declarative/Main.qml:1596
+#, kde-format
+msgctxt "@action:button"
+msgid "Paste"
+msgstr "ჩასმა"
+
+#: src/declarative/Main.qml:1618
+#, kde-format
+msgctxt "@info"
+msgid "Pasting this text may run commands."
+msgstr "ამ ტექსტის ჩასმას ბრძანებების გაშვება შეუძლია."
+
+#: src/declarative/Main.qml:1635
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Paste preview"
+msgstr "ჩასმის გადახედვა"
+
+#: src/declarative/Main.qml:1642
+#, kde-format
+msgctxt "@info"
+msgid "Showing the first character."
+msgid_plural "Showing the first %1 characters."
+msgstr[0] "ნაჩვენებია პირველი სიმბოლო."
+msgstr[1] "ნაჩვენებია პირველი %1 სიმბოლო."
+
+#: src/declarative/Main.qml:1748
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Tab"
+msgstr "ჩანართის სახელის გადარქმევა"
+
+#: src/declarative/Main.qml:1753
+#, kde-format
+msgctxt "@action:button"
+msgid "Rename"
+msgstr "სახელის გადარქმევა"
+
+#: src/declarative/Main.qml:1769
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Automatic title"
+msgstr "ავტომატური სათაური"
+
+#: src/declarative/Main.qml:1770
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title"
+msgstr "ჩანართის სათაური"
+
+#: src/declarative/Main.qml:1777
+#, kde-format
+msgctxt "@info"
+msgid "Leave empty to use the automatic title."
+msgstr "დატოვეთ ცარიელი ავტომატური სათაურის გამოსაყენებლად."
+
+#: src/declarative/Main.qml:1809
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter links…"
+msgstr "ბმულების გაფილტვრა…"
+
+#: src/declarative/Main.qml:1809
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Filter tabs…"
+msgstr "ჩანართების გაფილტვრა…"
+
+#: src/declarative/Main.qml:1810
+#, kde-format
+msgctxt "@info"
+msgid "No links in the visible terminal output."
+msgstr "ხილულ ტერმინალის გამონატანში ბმულები არაა."
+
+#: src/declarative/Main.qml:1810
+#, kde-format
+msgctxt "@info"
+msgid "No matching links."
+msgstr "შესაბამისი ბმულების გარეშე."
+
+#: src/declarative/Main.qml:1810
+#, kde-format
+msgctxt "@info"
+msgid "No matching tabs."
+msgstr "შესაბამისი ჩანართების გარეშე."
+
+#: src/declarative/Main.qml:1819
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy Link"
+msgstr "ბმულის კოპირება"
+
+#: src/declarative/Main.qml:1868
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Terminal Output"
+msgstr "ტერმინალის გამოტანის შენახვა"
+
+#: src/declarative/Main.qml:1871
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Text files (*.txt)"
+msgstr "ტექსტური ფაილები (*.txt)"
+
+#: src/declarative/Main.qml:1871
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "All files (*)"
+msgstr "ყველა ფაილი (*)"
+
+#: src/declarative/settings/AppearanceSettings.qml:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Appearance"
+msgstr "გარეგნობა"
+
+#: src/declarative/settings/AppearanceSettings.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Text"
+msgstr "ტექსტი"
+
+#: src/declarative/settings/AppearanceSettings.qml:51
+#, kde-format
+msgctxt "@option:check"
+msgid "Use system fixed-width font"
+msgstr "სისტემური ფიქსირებული სიგანის მქონე ფონტის გამოყენება"
+
+#: src/declarative/settings/AppearanceSettings.qml:63
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Font:"
+msgstr "ფონტი:"
+
+#: src/declarative/settings/AppearanceSettings.qml:81
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Size (pt):"
+msgstr "ზომა (წრტ):"
+
+#: src/declarative/settings/AppearanceSettings.qml:118
+#, kde-format
+msgctxt "@info font preview. Include letters, digits and shell punctuation."
+msgid "Aa Bb 0123456789 — ~/Documents $"
+msgstr "Aa Bb 0123456789 — ~/Documents $"
+
+#: src/declarative/settings/AppearanceSettings.qml:123
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal font preview"
+msgstr "ტერმინალის ფონტის მინიატურა"
+
+#: src/declarative/settings/AppearanceSettings.qml:129
+#, kde-format
+msgctxt "@title:group"
+msgid "Colors"
+msgstr "ფერები"
+
+#: src/declarative/settings/AppearanceSettings.qml:132
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window:"
+msgstr "ფანჯარა:"
+
+#: src/declarative/settings/AppearanceSettings.qml:148
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Terminal:"
+msgstr "ტერმინალი:"
+
+#: src/declarative/settings/AppearanceSettings.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Color Scheme…"
+msgstr "ფერთა სქემის ჩასწორება…"
+
+#: src/declarative/settings/AppearanceSettings.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "More Color Scheme Actions"
+msgstr "მეტი ფერთა სქემის ქმედება"
+
+#: src/declarative/settings/AppearanceSettings.qml:207
+#: src/declarative/settings/PresetsSettings.qml:202
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Duplicate…"
+msgstr "დუბლირება…"
+
+#: src/declarative/settings/AppearanceSettings.qml:214
+#: src/declarative/settings/PresetsSettings.qml:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import…"
+msgstr "შემოტანა…"
+
+#: src/declarative/settings/AppearanceSettings.qml:223
+#: src/declarative/settings/PresetsSettings.qml:218
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "წაშლა"
+
+#: src/declarative/settings/AppearanceSettings.qml:235
+#, kde-format
+msgctxt "@label:slider"
+msgid "Background opacity:"
+msgstr "ფონის გაუმჭვირვალობა:"
+
+#: src/declarative/settings/AppearanceSettings.qml:262
+#: src/declarative/settings/AppearanceSettings.qml:270
+#, kde-format
+msgctxt "@label"
+msgid "%1%"
+msgstr "%1%"
+
+#: src/declarative/settings/AppearanceSettings.qml:278
+#, kde-format
+msgctxt "@option:check"
+msgid "Blur"
+msgstr "ბუნდოვნება"
+
+#: src/declarative/settings/AppearanceSettings.qml:292
+#, kde-format
+msgctxt "@title:group"
+msgid "Tab Bar"
+msgstr "ჩანართების ზოლი"
+
+#: src/declarative/settings/AppearanceSettings.qml:295
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Position:"
+msgstr "მდებარეობა:"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Top"
+msgstr "ზედა"
+
+#: src/declarative/settings/AppearanceSettings.qml:300
+#, kde-format
+msgctxt "@item:inlistbox tab bar position"
+msgid "Bottom"
+msgstr "ქვემო"
+
+#: src/declarative/settings/AppearanceSettings.qml:314
+#, kde-format
+msgctxt "@option:check"
+msgid "Hide for single tabs"
+msgstr "დამალვა ერთი ჩანართისთვის"
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A hidden tab bar can be brought back with %1, or you can access application "
+"settings from the context menu."
+msgstr ""
+"დამალული ჩანართის ზოლის გამოჩენა %1-ით შეგიძლიათ. აპლიკაციის მორგების "
+"დიალოგთან წვდომა კონტექსტური მენიუდან შეგიძლიათ."
+
+#: src/declarative/settings/AppearanceSettings.qml:334
+#, kde-format
+msgctxt "@info"
+msgid "You can access application settings from the context menu."
+msgstr "აპლიკაციის მორგების დიალოგთან წვდომა კონტექსტური მენიუდან შეგიძლიათ."
+
+#: src/declarative/settings/AppearanceSettings.qml:342
+#, kde-format
+msgctxt "@option:check"
+msgid "Show status icons"
+msgstr "სტატუსის ხატულების ჩვენება"
+
+#: src/declarative/settings/AppearanceSettings.qml:377
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Color Scheme"
+msgstr "ფერების სქემის შემოტანა"
+
+#: src/declarative/settings/AppearanceSettings.qml:378
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Konsole Color Schemes (*.colorscheme)"
+msgstr "Konsole-ის ფერთა სქემები (*.colorscheme)"
+
+#: src/declarative/settings/BehaviorSettings.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Behavior"
+msgstr "ქცევა"
+
+#: src/declarative/settings/BehaviorSettings.qml:29
+#, kde-format
+msgctxt "@title:group"
+msgid "Windows"
+msgstr "ფანჯრები"
+
+#: src/declarative/settings/BehaviorSettings.qml:33
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When opened by other applications:"
+msgstr "როდესაც გახსნილია სხვა აპლიკაციების მიერ:"
+
+#: src/declarative/settings/BehaviorSettings.qml:40
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Open a new window"
+msgstr "ახალი ფანჯრის გახსნა"
+
+#: src/declarative/settings/BehaviorSettings.qml:40
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Open a new tab"
+msgstr "ახალი ჩანართის გახსნა"
+
+#: src/declarative/settings/BehaviorSettings.qml:54
+#, kde-format
+msgctxt "@option:check"
+msgid "Use custom size for new windows"
+msgstr "მორგებული ზომის გამოყენება ახალი ფანჯრებისთვის"
+
+#: src/declarative/settings/BehaviorSettings.qml:66
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Columns:"
+msgstr "სვეტი:"
+
+#: src/declarative/settings/BehaviorSettings.qml:84
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Rows:"
+msgstr "სტრიქონები:"
+
+#: src/declarative/settings/BehaviorSettings.qml:103
+#, kde-format
+msgctxt "@title:group"
+msgid "Confirmations"
+msgstr "დადასტურებები"
+
+#: src/declarative/settings/BehaviorSettings.qml:109
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm quit when a command is running"
+msgstr "გასვლის დადასტურების მოთხოვნა, როცა ბრძანება გაშვებულია"
+
+#: src/declarative/settings/BehaviorSettings.qml:124
+#, kde-format
+msgctxt "@option:check"
+msgid "Confirm pasting multiple lines"
+msgstr "ერთზე მეტი ხაზის ჩასმის დადასტურება"
+
+#: src/declarative/settings/BehaviorSettings.qml:137
+#, kde-format
+msgctxt "@title:group"
+msgid "Clipboard"
+msgstr "გაცვლის ბუფერი"
+
+#: src/declarative/settings/BehaviorSettings.qml:140
+#, kde-format
+msgctxt "@info"
+msgid "Middle-click paste also works with this option off."
+msgstr "შუაწკაპით ჩასმა მაშინაც მუშაობს, თუ ეს გამორთულია."
+
+#: src/declarative/settings/BehaviorSettings.qml:145
+#, kde-format
+msgctxt "@option:check"
+msgid "Copy mouse-selected text to clipboard"
+msgstr "თაგუნათი მონიშნული ტექსტის ბუფერში კოპირება"
+
+#: src/declarative/settings/BehaviorSettings.qml:158
+#, kde-format
+msgctxt "@title:group"
+msgid "Links"
+msgstr "ბმულები"
+
+#: src/declarative/settings/BehaviorSettings.qml:164
+#, kde-format
+msgctxt "@option:check"
+msgid "Require Ctrl when clicking links"
+msgstr "Ctrl-ის მოთხოვნა ბმულებზე დაწკაპუნებისას"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Black"
+msgstr "შავი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Red"
+msgstr "წითელი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Green"
+msgstr "მწვანე"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Yellow"
+msgstr "ყვითელი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Blue"
+msgstr "ლურჯი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Magenta"
+msgstr "ალისფერი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "Cyan"
+msgstr "ცისფერი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:28
+#, kde-format
+msgctxt "@label:color"
+msgid "White"
+msgstr "თეთრი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Black"
+msgstr "კაშკაშა შავი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Red"
+msgstr "კაშკაშა წითელი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Green"
+msgstr "კაშკაშა მწვანე"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Yellow"
+msgstr "კაშკაშა ყვითელი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Blue"
+msgstr "კაშკაშკა ლურჯი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Magenta"
+msgstr "კაშკაშა იასამნისფერი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright Cyan"
+msgstr "კაშკაშა ცისფერი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:29
+#, kde-format
+msgctxt "@label:color"
+msgid "Bright White"
+msgstr "კაშკაშა თეთრი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:39
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Current color: %1. Opens a color chooser."
+msgstr "მიმდინარე ფერი: %1. გახსნის ფერის ამრჩევს."
+
+#: src/declarative/settings/ColorSchemeEditor.qml:73
+#, kde-format
+msgctxt "@label:color"
+msgid "%1:"
+msgstr "%1:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:159
+#: src/declarative/settings/PresetsSettings.qml:101
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "შენახვა"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Duplicate Color Scheme"
+msgstr "ფერთა სქემის დუბლირება"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:167
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Color Scheme"
+msgstr "ფერების სქემის ჩასწორება"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:195
+#, kde-format
+msgctxt "@title:group"
+msgid "Preview"
+msgstr "მინიატურა"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:206
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Color scheme preview"
+msgstr "ფერთა სქემის მინიატურა"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:217
+#, kde-format
+msgctxt "@info color scheme preview. Keep the shell command syntax intact."
+msgid "user@host:~/Documents $ echo \"Hello, world\""
+msgstr "user@host:~/Documents $ echo \"გამარჯობა, კინო\""
+
+#: src/declarative/settings/ColorSchemeEditor.qml:235
+#, kde-format
+msgctxt "@info short color sample"
+msgid "Aa"
+msgstr "Aa"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:259
+#: src/declarative/settings/PresetsSettings.qml:230
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "სახელი:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:269
+#, kde-format
+msgctxt "@label:color"
+msgid "Text:"
+msgstr "ტექსტი:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Text Color"
+msgstr "ტექსტის ფერი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:273
+#, kde-format
+msgctxt "@label:color"
+msgid "Text"
+msgstr "ტექსტი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:280
+#, kde-format
+msgctxt "@label:color"
+msgid "Background:"
+msgstr "ფონი:"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:283
+#, kde-format
+msgctxt "@title:window"
+msgid "Background Color"
+msgstr "ფონის ფერი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:284
+#, kde-format
+msgctxt "@label:color"
+msgid "Background"
+msgstr "ფონი"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:290
+#, kde-format
+msgctxt "@title:group"
+msgid "Terminal Colors"
+msgstr "ტერმინალის ფერები"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:304
+#, kde-format
+msgctxt "@label:column"
+msgid "Normal"
+msgstr "ნორმალური"
+
+#: src/declarative/settings/ColorSchemeEditor.qml:312
+#, kde-format
+msgctxt "@label:column"
+msgid "Bright"
+msgstr "კაშკაშა"
+
+#: src/declarative/settings/PresetsSettings.qml:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Presets"
+msgstr "პრესეტები"
+
+#: src/declarative/settings/PresetsSettings.qml:111
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "საწყისი პარამეტრები"
+
+#: src/declarative/settings/PresetsSettings.qml:123
+#, kde-format
+msgctxt "@title:group"
+msgid "New Sessions"
+msgstr "ახალი სესიები"
+
+#: src/declarative/settings/PresetsSettings.qml:126
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Default preset:"
+msgstr "ნაგულისხმევი პრესეტი:"
+
+#: src/declarative/settings/PresetsSettings.qml:143
+#, kde-format
+msgctxt "@title:group"
+msgid "Manage Presets"
+msgstr "პრესეტების მართვა"
+
+#: src/declarative/settings/PresetsSettings.qml:146
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Preset:"
+msgstr "პრესეტი:"
+
+#: src/declarative/settings/PresetsSettings.qml:171
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit Preset"
+msgstr "პრესეტის ჩასწორება"
+
+#: src/declarative/settings/PresetsSettings.qml:185
+#, kde-format
+msgctxt "@action:button"
+msgid "More Preset Actions"
+msgstr "მეტი პრესეტის ქმედება"
+
+#: src/declarative/settings/PresetsSettings.qml:245
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Command:"
+msgstr "ბრძანება:"
+
+#: src/declarative/settings/PresetsSettings.qml:251
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "System shell"
+msgstr "სისტემის გარსი"
+
+#: src/declarative/settings/PresetsSettings.qml:258
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Starting folder:"
+msgstr "საწყისი საქაღალდე:"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Current folder"
+msgstr "მიმდინარე საქაღალდე"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Home folder"
+msgstr "საწყისი საქაღალდე"
+
+#: src/declarative/settings/PresetsSettings.qml:263
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Custom folder"
+msgstr "მორგებული საქაღალდე"
+
+#: src/declarative/settings/PresetsSettings.qml:271
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Folder:"
+msgstr "საქაღალდე:"
+
+#: src/declarative/settings/PresetsSettings.qml:289
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose…"
+msgstr "არჩევა…"
+
+#: src/declarative/settings/PresetsSettings.qml:291
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Choose starting folder"
+msgstr "აირჩიეთ საწყისი საქაღალდე"
+
+#: src/declarative/settings/PresetsSettings.qml:301
+#, kde-format
+msgctxt "@label"
+msgid "Environment:"
+msgstr "გარემო:"
+
+#: src/declarative/settings/PresetsSettings.qml:307
+#, kde-format
+msgctxt "@info"
+msgid "No additional variables."
+msgstr "დამატებითი ცვლადების გარეშე."
+
+#: src/declarative/settings/PresetsSettings.qml:344
+#, kde-format
+msgctxt "@item environment variable value"
+msgid "(empty)"
+msgstr "(ცარიელი)"
+
+#: src/declarative/settings/PresetsSettings.qml:353
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit %1"
+msgstr "%1-ის ჩასწორება"
+
+#: src/declarative/settings/PresetsSettings.qml:365
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove %1"
+msgstr "%1-ის წაშლა"
+
+#: src/declarative/settings/PresetsSettings.qml:385
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Variable…"
+msgstr "ცვლადის დამატება…"
+
+#: src/declarative/settings/PresetsSettings.qml:400
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Preset Changes"
+msgstr "შეუნახავი პრესეტის ცვლილებები"
+
+#: src/declarative/settings/PresetsSettings.qml:401
+#, kde-format
+msgctxt "@info"
+msgid "Save changes before continuing?"
+msgstr "გნებავთ ცვლილებების შენახვა გაგრძელებამდე?"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Environment Variable"
+msgstr "გარემოს ცვლადის დამატება"
+
+#: src/declarative/settings/PresetsSettings.qml:430
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Environment Variable"
+msgstr "გარემოს ცვლადის ჩასწორება"
+
+#: src/declarative/settings/PresetsSettings.qml:440
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "დამატება"
+
+#: src/declarative/settings/PresetsSettings.qml:469
+#, kde-format
+msgctxt "@label:textbox environment variable name"
+msgid "Name:"
+msgstr "სახელი:"
+
+#: src/declarative/settings/PresetsSettings.qml:480
+#, kde-format
+msgctxt "@label:textbox environment variable value"
+msgid "Value:"
+msgstr "მნიშვნელობა:"
+
+#: src/declarative/settings/PresetsSettings.qml:508
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Preset"
+msgstr "პრესეტის წაშლა"
+
+#: src/declarative/settings/PresetsSettings.qml:522
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "წაშლა"
+
+#: src/declarative/settings/PresetsSettings.qml:536
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”? New sessions will use System Shell."
+msgstr ""
+"გნებავთ პრესეტის '%1' წაშლა? ახალი სესიები სისტემის გარსს გამოიყენებენ."
+
+#: src/declarative/settings/PresetsSettings.qml:537
+#, kde-format
+msgctxt "@info"
+msgid "Remove preset “%1”?"
+msgstr "გნებავთ, წაშალოთ პრესეტი \"%1\"?"
+
+#: src/declarative/settings/PresetsSettings.qml:556
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Terminal Preset"
+msgstr "ტერმინალის პრესეტის შემოტანა"
+
+#: src/declarative/settings/PresetsSettings.qml:557
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Kwi Launch Presets (*.preset)"
+msgstr "Kwi-ის გაშვების პრესეტები (*.preset)"
+
+#: src/declarative/settings/PresetsSettings.qml:565
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Starting Folder"
+msgstr "აირჩიეთ საწყისი საქაღალდე"
+
+#: src/declarative/settings/TerminalSettings.qml:20
+#, kde-format
+msgctxt "@title:window"
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#: src/declarative/settings/TerminalSettings.qml:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Application title"
+msgstr "აპლიკაციის სათაური"
+
+#: src/declarative/settings/TerminalSettings.qml:83
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Command"
+msgstr "ბრძანება"
+
+#: src/declarative/settings/TerminalSettings.qml:89
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory name"
+msgstr "საქაღალდის სახელი"
+
+#: src/declarative/settings/TerminalSettings.qml:95
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Directory path"
+msgstr "საქაღალდის ბილიკი"
+
+#: src/declarative/settings/TerminalSettings.qml:103
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "User name"
+msgstr "მომხმარებლის სახელი"
+
+#: src/declarative/settings/TerminalSettings.qml:109
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name"
+msgstr "ჰოსტის სახელი"
+
+#: src/declarative/settings/TerminalSettings.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Host name (short)"
+msgstr "ჰოსტის სახელი (მოკლე)"
+
+#: src/declarative/settings/TerminalSettings.qml:123
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Opening brace: {"
+msgstr "გამხსნელი ფრჩხილი: {"
+
+#: src/declarative/settings/TerminalSettings.qml:129
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Closing brace: }"
+msgstr "დამხურავი ფრჩხილი: }"
+
+#: src/declarative/settings/TerminalSettings.qml:136
+#, kde-format
+msgctxt "@title:group"
+msgid "Session Titles"
+msgstr "სესიის სათაურები"
+
+#: src/declarative/settings/TerminalSettings.qml:139
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Tab title format:"
+msgstr "ჩანართის სათაურის ფორმატი:"
+
+#: src/declarative/settings/TerminalSettings.qml:141
+#, kde-format
+msgctxt "@info"
+msgid "Renamed tabs keep their names."
+msgstr "სახელგადარქმეული ჩანართები თავის სახელს შეინარჩუნებენ."
+
+#: src/declarative/settings/TerminalSettings.qml:171
+#: src/declarative/settings/TerminalSettings.qml:241
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "ჩასმა"
+
+#: src/declarative/settings/TerminalSettings.qml:197
+#: src/declarative/settings/TerminalSettings.qml:267
+#, kde-format
+msgctxt "@label"
+msgid "Preview:"
+msgstr "მინიატურა:"
+
+#: src/declarative/settings/TerminalSettings.qml:210
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Remote tab title format:"
+msgstr "დაშორებული ჩანართის სათაურის ფორმატი:"
+
+#: src/declarative/settings/TerminalSettings.qml:282
+#, kde-format
+msgctxt "@option:check"
+msgid "Use application title for the window"
+msgstr "აპლიკაციის სათაურის გამოყენება ფანჯრისთვის"
+
+#: src/declarative/settings/TerminalSettings.qml:295
+#, kde-format
+msgctxt "@title:group"
+msgid "Scrollback"
+msgstr "ახვევის ზომა"
+
+#: src/declarative/settings/TerminalSettings.qml:298
+#, kde-format
+msgctxt "@label:listbox"
+msgid "History:"
+msgstr "ისტორია:"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "None"
+msgstr "არცერთი"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Limited"
+msgstr "შეზღუდული"
+
+#: src/declarative/settings/TerminalSettings.qml:309
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Unlimited"
+msgstr "შეუზღუდავი"
+
+#: src/declarative/settings/TerminalSettings.qml:325
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Retained lines"
+msgstr "შენარჩუნებული ხაზები"
+
+#: src/declarative/settings/TerminalSettings.qml:340
+#, kde-format
+msgctxt "@label unit after the retained-line count"
+msgid "line"
+msgid_plural "lines"
+msgstr[0] "ხაზი"
+msgstr[1] "ხაზი"
+
+#: src/declarative/settings/TerminalSettings.qml:348
+#, kde-format
+msgctxt "@title:group"
+msgid "Monitoring"
+msgstr "მონიტორინგი"
+
+#: src/declarative/settings/TerminalSettings.qml:351
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Silence timeout (seconds):"
+msgstr "დუმილის მოლოდინის ვადა (წმ):"
+
+#: src/declarative/settings/TerminalSettings.qml:370
+#, kde-format
+msgctxt "@title:group"
+msgid "Cursor"
+msgstr "კურსორი"
+
+#: src/declarative/settings/TerminalSettings.qml:373
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Shape:"
+msgstr "ფორმა:"
+
+#: src/declarative/settings/TerminalSettings.qml:382
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Block"
+msgstr "ბლოკი"
+
+#: src/declarative/settings/TerminalSettings.qml:386
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Beam"
+msgstr "ზურგი"
+
+#: src/declarative/settings/TerminalSettings.qml:390
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Underline"
+msgstr "ხაზგასმული"
+
+#: src/declarative/settings/TerminalSettings.qml:406
+#, kde-format
+msgctxt "@option:check"
+msgid "Blink cursor"
+msgstr "კურსორის გაციმციმება"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal: %1"
+msgstr "ტერმინალი: %1"
+
+#: src/declarative/TerminalPane.qml:17
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#: src/declarative/TerminalSearchBar.qml:70
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Find in terminal…"
+msgstr "ტერმინალში ძებნა…"
+
+#: src/declarative/TerminalSearchBar.qml:71
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Find in terminal"
+msgstr "ტერმინალში ძებნა"
+
+#: src/declarative/TerminalSearchBar.qml:135
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Searching terminal output"
+msgstr "ტერმინალში გამოტანში ძებნა"
+
+#: src/declarative/TerminalSearchBar.qml:152
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Match"
+msgstr "შემდეგი დამთხვევა"
+
+#: src/declarative/TerminalSearchBar.qml:166
+#, kde-format
+msgctxt "@action:button"
+msgid "Previous Match"
+msgstr "წინა დამთხვევა"
+
+#: src/declarative/TerminalSearchBar.qml:180
+#, kde-format
+msgctxt "@action:button"
+msgid "Close Find Bar"
+msgstr "ძებნის პანელის დახურვა"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity and silence"
+msgstr "სიჩუმისა და აქტივობის მონიტორინგი"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring activity"
+msgstr "აქტივობის მონიტორინგი"
+
+#: src/declarative/TerminalTabButton.qml:25
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Monitoring silence"
+msgstr "სიჩუმისა და აქტივობის მონიტორინგი"
+
+#: src/declarative/TerminalTabButton.qml:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Progress: %1%"
+msgstr "მიმდინარეობა: %1%"
+
+#: src/declarative/TerminalTabButton.qml:33
+#: src/declarative/TerminalTabButton.qml:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "In progress"
+msgstr "მიმდინარეობს"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error: %1%"
+msgstr "შეცდომა: %1%"
+
+#: src/declarative/TerminalTabButton.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Error"
+msgstr "შეცდომა"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused: %1%"
+msgstr "შეჩერებულია: %1%"
+
+#: src/declarative/TerminalTabButton.qml:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Paused"
+msgstr "შეჩერებულია"
+
+#: src/declarative/TerminalTabButton.qml:67
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, needs attention"
+msgstr "%1, სჭირდება ყურადრება"
+
+#: src/declarative/TerminalTabButton.qml:67 src/kpart/Part.cpp:440
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "%1, new output"
+msgstr "%1, ახალი გამონატანი"
+
+#: src/declarative/TerminalTabButton.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Close %1"
+msgstr "%1-ის დახურვა"
+
+#: src/declarative/TerminalTabs.qml:157
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Left"
+msgstr "ჩანართების გადახვევა მარცხნივ"
+
+#: src/declarative/TerminalTabs.qml:428
+#, kde-format
+msgctxt "@action:button"
+msgid "Scroll Tabs Right"
+msgstr "ჩანართების გადახვევა მარჯვნივ"
+
+#: src/DesktopIntegration.cpp:77
+#, kde-format
+msgid "Terminal Notification"
+msgstr "ტერმინალის გაფრთხილება"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "Terminal Activity"
+msgstr "ტერმინალის აქტივობა"
+
+#: src/DesktopIntegration.cpp:81
+#, kde-format
+msgid "New output in %1"
+msgstr "ახალი გამონატანი %1-ში"
+
+#: src/DesktopIntegration.cpp:87
+#, kde-format
+msgid "Terminal Silence"
+msgstr "ტერმინალის დუმილი"
+
+#: src/DesktopIntegration.cpp:88
+#, kde-format
+msgid "No output in %2 for %1 second"
+msgid_plural "No output in %2 for %1 seconds"
+msgstr[0] "გამოტანის გარეშე %2-ში %1 წამის განმავლობაში"
+msgstr[1] "გამოტანის გარეშე %2-ში %1 წამის განმავლობაში"
+
+#: src/DesktopIntegration.cpp:174 src/DesktopIntegration.cpp:200
+#, kde-format
+msgid "This terminal is no longer available."
+msgstr "ეს ტერმინალი ხელმისაწვდომი აღარაა."
+
+#: src/DesktopIntegration.cpp:180
+#, kde-format
+msgid "Choose a local file to save terminal output."
+msgstr "აირჩიეთ ლოკალური ფაილი ტერმინალზე გამოტანილის შესანახად."
+
+#: src/DesktopIntegration.cpp:190
+#, kde-format
+msgid "Could not save terminal output: %1"
+msgstr "ტერმინალზე გამონატანის შენახვა შეუძლებელია: %1"
+
+#: src/DesktopIntegration.cpp:208
+#, kde-format
+msgid "The terminal's current folder is no longer available."
+msgstr "ტერმინალის მიმდინარე საქაღალდე ხელმისაწვდომი აღარაა."
+
+#: src/DesktopIntegration.cpp:239
+#, kde-format
+msgid "Could not launch the desktop application: %1"
+msgstr "სამუშაო მაგიდის აპლიკაციის გაშვება შეუძლებელია: %1"
+
+#: src/DesktopIntegration.cpp:274
+#, kde-format
+msgid "Could not open the link: %1"
+msgstr "ბმულის გახსნა შეუძლებელია: %1"
+
+#: src/DesktopIntegration.cpp:283
+#, kde-format
+msgid "Terminal Bell"
+msgstr "ტერმინალის ზარი"
+
+#: src/DesktopIntegration.cpp:315
+#, kde-format
+msgid "Show Terminal"
+msgstr "ტერმინალის ჩვენება"
+
+#: src/kpart/Part.cpp:125 src/kpart/Part.cpp:142
+#, kde-format
+msgid "Kwi Terminal"
+msgstr "ტერმინალი Kwi"
+
+#: src/kpart/Part.cpp:329
+#, kde-format
+msgid "Paste Multiple Lines?"
+msgstr "გნებავთ ერთზე მეტი ხაზის ჩასმა?"
+
+#: src/kpart/Part.cpp:330
+#, kde-format
+msgid "Pasting this text may run commands."
+msgstr "ამ ტექსტის ჩასმას ბრძანებების გაშვება შეუძლია."
+
+#: src/kpart/Part.cpp:339
+#, kde-format
+msgid "Paste"
+msgstr "ჩასმა"
+
+#: src/kpart/Part.cpp:664
+#, kde-format
+msgid "The supplied terminal descriptor is invalid."
+msgstr "მოწოდებული ტერმინალის დესკრიპტორი არასწორია."
+
+#: src/kpart/Part.cpp:769
+#, kde-format
+msgid "Paste Selection"
+msgstr "მონიშნულის ჩასმა"
+
+#: src/kpart/Part.cpp:834
+#, kde-format
+msgid "Clear Scrollback"
+msgstr "საუბრის გაწმენდა"
+
+#: src/kpart/Part.cpp:858
+#, kde-format
+msgid "Reset Zoom"
+msgstr "გადიდების ჩამოყრა"
+
+#: src/kpart/Part.cpp:875
+#, kde-format
+msgid "Monitor for Activity"
+msgstr "აქტივობის მონიტორინგი"
+
+#: src/kpart/Part.cpp:880
+#, kde-format
+msgid "Monitor for Silence"
+msgstr "სიჩუმის მონიტორინგი"
+
+#: src/kpart/Part.cpp:886
+#, kde-format
+msgid "New Tab"
+msgstr "ახალი ჩანართი"
+
+#: src/kpart/Part.cpp:890
+#, kde-format
+msgid "Rename Tab…"
+msgstr "ჩანართის სახელის გადარქმევა…"
+
+#: src/kpart/Part.cpp:894
+#, kde-format
+msgid "Next Tab"
+msgstr "შემდეგი ჩანართი"
+
+#: src/kpart/Part.cpp:902
+#, kde-format
+msgid "Previous Tab"
+msgstr "წინა ჩანართი"
+
+#: src/kpart/Part.cpp:910
+#, kde-format
+msgid "Close Tab"
+msgstr "ჩანართის დახურვა"
+
+#: src/kpart/Part.cpp:914
+#, kde-format
+msgid "Configure Kwi…"
+msgstr "Kwi-ის მორგება…"
+
+#: src/kpart/Part.cpp:919
+#, kde-format
+msgid "Manage Presets…"
+msgstr "პრესეტების მართვა…"
+
+#: src/kpart/Part.cpp:923
+#, kde-format
+msgid "Edit Current Preset…"
+msgstr "მიმდინარე პრესეტის მორგება…"
+
+#: src/kpart/Part.cpp:990
+#, kde-format
+msgid "Rename Tab"
+msgstr "ჩანართის სახელის გადარქმევა"
+
+#: src/kpart/Part.cpp:991
+#, kde-format
+msgid "Tab name (leave empty to use the automatic title):"
+msgstr "ჩანართის სახელი (დატოვეთ ცარიელი ავტომატური სათაურის გამოსაყენებლად):"
+
+#: src/kpart/Part.cpp:1097
+#, kde-format
+msgid "Save Terminal Output"
+msgstr "ტერმინალის გამოტანის შენახვა"
+
+#: src/kpart/Part.cpp:1102
+#, kde-format
+msgid "Text Files (*.txt)"
+msgstr "ტექსტური ფაილები (*.txt)"
+
+#: src/kpart/Part.cpp:1117
+#, kde-format
+msgid "Close Running Command?"
+msgstr "გნებავთ გაშვებული ბრძანების დახურვა?"
+
+#: src/kpart/Part.cpp:1124
+#, kde-format
+msgid "Closing “%1” will stop its running command."
+msgstr "\"%1\"-ის დახურვა მასში გაშვებულ ბრძანებას გააჩერებს."
+
+#: src/kpart/Part.cpp:1125
+#, kde-format
+msgid "Close Terminal"
+msgstr "ტერმინალის დახურვა"
+
+#: src/main.cpp:33
+#, kde-format
+msgid "-e requires a program."
+msgstr "-e-ს პროგრამა სჭირდება."
+
+#: src/main.cpp:37
+#, kde-format
+msgid "--preset requires a preset name."
+msgstr "--preset-ს პრესეტის სახელი სჭირდება."
+
+#: src/main.cpp:83
+#, kde-format
+msgid "Kwi"
+msgstr "Kwi"
+
+#: src/main.cpp:85
+#, kde-format
+msgid "A modern and fast terminal"
+msgstr "თანამედროვე და სწრაფი ტერმინალი"
+
+#: src/main.cpp:87
+#, kde-format
+msgid "© 2026 Kwi contributors"
+msgstr "© 2026 Kwi-ის მოხალისეეები"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Ghostty"
+msgstr "Ghostty"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Temuri Doghonadze"
+
+#: src/main.cpp:91
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "temuri.doghonadze@gmail.com"
+
+#: src/main.cpp:100
+#, kde-format
+msgid "Start in this directory."
+msgstr "გაშვება ამ საქაღალდეში."
+
+#: src/main.cpp:100
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "directory"
+msgstr "საქაღალდე"
+
+#: src/main.cpp:101
+#, kde-format
+msgid "Start with this terminal preset."
+msgstr "გაშვება ამ ტერმინალის პრესეტით."
+
+#: src/main.cpp:101
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "name"
+msgstr "სახელი"
+
+#: src/main.cpp:102
+#, kde-format
+msgid "Keep the terminal open after its command exits."
+msgstr "ტერმინალის ღიად დატოვება მისი ბრძანების დასრულების შემდეგ."
+
+#: src/main.cpp:103
+#, kde-format
+msgid "Open a tab in the most recently active window."
+msgstr "ჩანართის გახსნა ყველაზე ახალ აქტიურ ფანჯარაში."
+
+#: src/main.cpp:104
+#, kde-format
+msgid "Open the window in full screen."
+msgstr "ფანჯრის სრულ ეკრანზე გახსნა."
+
+#: src/main.cpp:106
+#, kde-format
+msgid "Set the initial tab title."
+msgstr "საწყისი ჩანართის სათაურის დაყენება."
+
+#: src/main.cpp:106
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "title"
+msgstr "სათაური"
+
+#: src/main.cpp:107
+#, kde-format
+msgid "Run the specified program."
+msgstr "მითითებული პროგრამის გაშვება."
+
+#: src/main.cpp:108
+#, kde-format
+msgctxt "@info:shell command-line argument"
+msgid "program"
+msgstr "პროგრამა"
+
+#: src/main.cpp:109
+#, kde-format
+msgid "Optional program and its arguments."
+msgstr "არასავალდებულო პროგრამა და მისი არგუმენტები."
+
+#: src/main.cpp:110
+#, kde-format
+msgctxt "@info:shell command-line syntax"
+msgid "[program [arguments…]]"
+msgstr "[პროგრამა [არგუმენტები…]]"
+
+#: src/settings/LaunchSettings.cpp:53
+#, kde-format
+msgid "Too many environment variables."
+msgstr "მეტისმეტად ბევრი გარემოს ცვლადი."
+
+#: src/settings/LaunchSettings.cpp:63
+#, kde-format
+msgid ""
+"Enter one NAME=value assignment per line. Names may contain letters, digits "
+"and underscores, and must not start with a digit."
+msgstr ""
+"შეიყვანეთ ერთი სახელი=მნიშვნელობის მინიჭება ერთ ხაზზე. სახელები, შეიძლება, "
+"შეიცადეს ასოებს, ციფრებს და ქვედა ტირეებს და არ უნდა იწყებოდეს ციფრით."
+
+#: src/settings/LaunchSettings.cpp:77
+#, kde-format
+msgid ""
+"Enter a program followed by its arguments, or leave the command empty to use "
+"the system shell."
+msgstr ""
+"შეიყვანეთ პროგრამა თავისი არგუმენტებით, ან დატოვეთ ცარიელი სისტემური გარსის "
+"გამოსაყენებლად."
+
+#: src/settings/LaunchSettings.cpp:86
+#, kde-format
+msgid "The command is too long or contains a null character."
+msgstr "ბრძანება ძალიან გრძელია ან ნულოვან სიმბოლოს შეიცავს."
+
+#: src/settings/LaunchSettings.cpp:94
+#, kde-format
+msgid "Only a custom working directory can contain a path."
+msgstr "ბილიკს, მხოლოდ, მორგებული სამუშაო საქაღალდე შეიძლება, შეიცავდეს."
+
+#: src/settings/LaunchSettings.cpp:100
+#, kde-format
+msgid "Choose an absolute path for the working directory."
+msgstr "აირჩიეთ აბსოლუტური ბილიკი სამუშაო საქაღალდისთვის."
+
+#: src/settings/LaunchSettings.cpp:105
+#, kde-format
+msgid "Choose how the working directory is determined."
+msgstr "აირჩიეთ, როგორ ხდება სამუშაო საქაღალდის დადგენა."
+
+#: src/settings/PresetEditor.cpp:146
+#, kde-format
+msgid ""
+"Use letters, numbers and underscores. The name must not start with a number."
+msgstr ""
+"გამოიყენეთ ასოები, ციფრები და ქვედა ტირეები. სახელი ციფრით არ უნდა იწყებოდეს."
+
+#: src/settings/PresetEditor.cpp:150
+#, kde-format
+msgid "Enter the value on a single line."
+msgstr "შეიყვანეთ მნიშვნელობა ერთ ხაზზე."
+
+#: src/settings/PresetEditor.cpp:156
+#, kde-format
+msgid "This variable is no longer available."
+msgstr "ეს ცვლადი ხელმისაწვდომი აღარაა."
+
+#: src/settings/PresetEditor.cpp:163
+#, kde-format
+msgid "A variable with this name already exists."
+msgstr "ცვლადი ამ სახელით უკვე არებობს."
+
+#: src/settings/PresetEditor.cpp:243
+#, kde-format
+msgid "Save or discard the current preset changes first."
+msgstr "ჯერ შეინახეთ ან მოაცილეთ მიმდინარე პრესეტის ცვლილებები."
+
+#: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
+#, kde-format
+msgid "The terminal preset is not available."
+msgstr "ტერმინალის პრესეტი ხელმისაწვდომი არაა."
+
+#: src/settings/PresetEditor.cpp:273 src/settings/PresetEditor.cpp:282
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "System Shell"
+msgstr "სისტემის გარსი"
+
+#: src/settings/PresetEditor.cpp:274
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "%1 (Modified)"
+msgstr "%1 (შეიცვალა)"
+
+#: src/settings/PresetEditor.cpp:283
+#, kde-format
+msgctxt "@item terminal preset"
+msgid "Copy of %1"
+msgstr "%1-ის კოპირება"
+
+#: src/settings/PresetEditor.cpp:300
+#, kde-format
+msgid ""
+"Enter a program and its arguments. Quote spaces; shell operators and "
+"expansions are not supported."
+msgstr ""
+"შეიყვანეთ პროგრამა და მისი არგუმენტები. ჰარეები ჩასვით ბრჭყალებში. გარსის "
+"ოპერატორები და გაფართოებები მხარდაჭერილი არაა."
+
+#: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
+#, kde-format
+msgid "A terminal preset named %1 already exists."
+msgstr "ტერმინალის პრესეტი სახელით %1 უკვე არსებობს."
+
+#: src/settings/PresetEditor.cpp:338
+#, kde-format
+msgid "The preset was saved, but could not be made the default: %1"
+msgstr "პრესეტი შენახულია, მაგრამ მისი ნაგულისხმევად დაყენება შეუძლებელია: %1"
+
+#: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
+#, kde-format
+msgid "Only user-owned terminal presets can be removed."
+msgstr "შესაძლებელია, მხოლოდ, მომხმარებლის ტერმინალის პრესეტების წაშლა."
+
+#: src/settings/TerminalPaletteModel.cpp:108
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "System"
+msgstr "სისტემა"
+
+#: src/settings/TerminalPaletteModel.cpp:168
+#, kde-format
+msgctxt "@info"
+msgid "Choose a local Konsole color scheme file."
+msgstr "ლოკალური Konsole-ის ფერთა სქემის ფაილის არჩევა."
+
+#: src/settings/TerminalPaletteModel.cpp:176
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be read or is too large."
+msgstr "ფერთა სქემის წაკითხვა შეუძლებელია ან ის ძალიან დიდია."
+
+#: src/settings/TerminalPaletteModel.cpp:184
+#, kde-format
+msgctxt "@info"
+msgid "This file does not contain a valid terminal color scheme."
+msgstr "ეს ფაილი სწორი ტერმინალის ფერთა სქემას არ შეიცავს."
+
+#: src/settings/TerminalPaletteModel.cpp:196
+#: src/settings/TerminalPaletteModel.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme directory could not be created."
+msgstr "ფერთა სქემის საქაღალდის შექმნა შეუძლებელია."
+
+#: src/settings/TerminalPaletteModel.cpp:206
+#, kde-format
+msgctxt "@info"
+msgid "The imported color scheme could not be saved."
+msgstr "შემოტანილი ფერთა სქემის შენახვა შეუძლებელია."
+
+#: src/settings/TerminalPaletteModel.cpp:224
+#, kde-format
+msgctxt "@info"
+msgid "Only color schemes imported or created in Kwi can be removed."
+msgstr ""
+"შესაძლებელია, მხოლოდ, Kwi-ში შექმნილი, ან შემოტანილი ფერთა სქემების წაშლა."
+
+#: src/settings/TerminalPaletteModel.cpp:279
+#, kde-format
+msgctxt "@item color scheme"
+msgid "Copy of %1"
+msgstr "%1-ის კოპირება"
+
+#: src/settings/TerminalPaletteModel.cpp:279
+#, kde-format
+msgctxt "@item color scheme"
+msgid "%1 (Modified)"
+msgstr "%1 (შეიცვალა)"
+
+#: src/settings/TerminalPaletteModel.cpp:322
+#, kde-format
+msgctxt "@info"
+msgid "Choose an opaque foreground, background, and all 16 terminal colors."
+msgstr "აირჩიეთ გაუმჭვირვალე წინა პლანი, ფონი და ყველა 16 ტერმინალის ფერი."
+
+#: src/settings/TerminalPaletteModel.cpp:339
+#, kde-format
+msgctxt "@info"
+msgid "This color scheme cannot be overwritten. Create a new copy instead."
+msgstr ""
+"ამ ფერის სქემის თავზე გადაწერა შეუძლებელია. ამის ნაცვლად შექმენით მისი ასლი."
+
+#: src/settings/TerminalPaletteModel.cpp:368
+#, kde-format
+msgctxt "@info"
+msgid "The color scheme could not be saved."
+msgstr "ფერთა სქემის შენახვა შეუძლებელია."
+
+#: src/settings/TerminalPaletteModel.cpp:386
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Enter a color scheme name of 1 to 80 characters without control characters."
+msgstr ""
+"შეიყვანეთ ფერთა სქემის სახელი. უნდა შედგებოდეს 1-80 სიმბოლოსგან საკონტროლო "
+"სიმბოლოების გარეშე."
+
+#: src/settings/TerminalPaletteModel.cpp:397
+#, kde-format
+msgctxt "@info"
+msgid "A color scheme with this name already exists. Choose another name."
+msgstr "ფერთა სქემა ამ სახელით უკვე არ არსებობს. აირჩიეთ სხვა სახელი."
+
+#: src/settings/TerminalPresets.cpp:147
+#, kde-format
+msgid "The default terminal preset is managed by the system."
+msgstr "ნაგულისხმევი ტერმინალის პრესეტი სისტემის მიერ იმართება."
+
+#: src/settings/TerminalPresets.cpp:153
+#, kde-format
+msgid "The default terminal preset could not be saved."
+msgstr "ნაგულისხმევი ტერმინალის პრესეტის შენახვა შეუძლებელია."
+
+#: src/settings/TerminalPresets.cpp:182
+#, kde-format
+msgctxt "@item:inlistbox terminal preset"
+msgid "System Shell"
+msgstr "სისტემის გარსი"
+
+#. i18n: System Shell is the reserved storage identifier and must remain untranslated.
+#: src/settings/TerminalPresets.cpp:260
+#, kde-format
+msgid "Choose a preset name of 1–80 characters other than System Shell."
+msgstr ""
+"აირჩიეთ პრესეტის სახელი. უნდა შედგებოდეს 1-80 სიმბოლოსგან და განსხვავდებოდეს "
+"სისტემური გარსის სახელისგან."
+
+#: src/settings/TerminalPresets.cpp:266
+#, kde-format
+msgid "Make a copy to customize an installed terminal preset."
+msgstr "დაყენებული ტერმინალის პრესეტის მოსარგებად შექმნით მისი ასლი."
+
+#: src/settings/TerminalPresets.cpp:276
+#, kde-format
+msgid "The terminal preset directory could not be created."
+msgstr "ტერმინალის პრესეტის საქაღალდის შექმნა შეუძლებელია."
+
+#: src/settings/TerminalPresets.cpp:283 src/settings/TerminalPresets.cpp:307
+#, kde-format
+msgid "The terminal preset could not be saved."
+msgstr "ტერმინალის პრესეტის შენახვა შეუძლებელია."
+
+#: src/settings/TerminalPresets.cpp:297
+#, kde-format
+msgid "Choose a unique name for a user-owned terminal preset."
+msgstr "აირჩიეთ უნიკალური სახელი მომხმარებლის ტერმინალის პრესეტისთვის."
+
+#: src/settings/TerminalPresets.cpp:342
+#, kde-format
+msgid "Choose a local Kwi terminal preset."
+msgstr "ლოკალური Kwi-ის ტერმინალის პრესეტის არჩევა."
+
+#: src/settings/TerminalPresets.cpp:348
+#, kde-format
+msgid "This file is not a valid Kwi launch preset."
+msgstr "ეს ფაილი სწორი Kwi-ის გაშვების პრესეტი არაა."
+
+#: src/settings/TerminalSettings.cpp:163
+#, kde-format
+msgctxt "@info title format preview"
+msgid "Shell"
+msgstr "გარსი"
+
+#: src/ui/SettingsDialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Kwi Terminal"
+msgstr "ტერმინალის Kwi მორგება"
+
+#: src/ui/SettingsDialog.cpp:152
+#, kde-format
+msgid "Save changes before closing?"
+msgstr "ცვლილებების შენახვა დახურვამდე?"
+
+#: src/ui/SettingsDialog.cpp:153
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr "შეუნახავი ცვლილებები"
+
+#: src/ui/TerminalWidget.cpp:69
+#, kde-format
+msgid "The terminal view is missing from the interface."
+msgstr "ინტერფეისს ტერმინალის ხედი აკლია."
+
+#: src/ui/TerminalWidget.cpp:99
+#, kde-format
+msgid "The terminal interface could not be loaded."
+msgstr "ტერმინალის ინტერფეისის ჩატვირთვა შეუძლებელია."
+
+#: src/ui/WebShortcutModel.cpp:94
+#, kde-format
+msgctxt "@title:menu"
+msgid "Search for '%1' with"
+msgstr "'%1'-ის მოძებნა მოხდება"
+
+#: src/WindowManager.cpp:331
+#, kde-format
+msgid "Could not initialize terminal graphics: %1"
+msgstr "ტერმინალის გრაფიკის ინიციალიზაცია შეუძლებელია: %1"
+
+#: src/WindowManager.cpp:554
+#, kde-format
+msgid "The terminal preset %1 is not available."
+msgstr "ტერმინალის პრესეტი %1 ხელმისაწვდომი არაა."

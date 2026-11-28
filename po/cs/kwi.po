@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-19 03:37+0100\n"
+"PO-Revision-Date: 2026-11-26 22:55+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -445,7 +445,7 @@ msgstr "Přednastavení"
 #, kde-format
 msgctxt "@title"
 msgid "Keyboard"
-msgstr "Klávesnice"
+msgstr "Klávesové zkratky"
 
 #: src/declarative/Main.qml:1050
 #, kde-format
@@ -1351,7 +1351,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Remove preset “%1”?"
-msgstr "Odstranit přednastavení \"%1\"?"
+msgstr "Odstranit přednastavení \"%1\""
 
 #: src/declarative/settings/PresetsSettings.qml:556
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:09+0000\n"
-"PO-Revision-Date: 2026-11-26 09:47+0200\n"
+"PO-Revision-Date: 2026-11-27 13:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -695,7 +695,7 @@ msgstr "גודל (נק׳):"
 #, kde-format
 msgctxt "@info font preview. Include letters, digits and shell punctuation."
 msgid "Aa Bb 0123456789 — ~/Documents $"
-msgstr ""
+msgstr "Aa Bb א ב 0123456789 — ~/מסמכים $"
 
 #: src/declarative/settings/AppearanceSettings.qml:123
 #, kde-format
@@ -1077,7 +1077,7 @@ msgstr "תצוגת ערכת צבע מקדימה"
 #, kde-format
 msgctxt "@info color scheme preview. Keep the shell command syntax intact."
 msgid "user@host:~/Documents $ echo \"Hello, world\""
-msgstr ""
+msgstr "user@host:~/מסמכים $ echo \"שלום, עולם\""
 
 #: src/declarative/settings/ColorSchemeEditor.qml:235
 #, kde-format
@@ -1791,7 +1791,7 @@ msgstr "הדבקה"
 #: src/kpart/Part.cpp:664
 #, kde-format
 msgid "The supplied terminal descriptor is invalid."
-msgstr ""
+msgstr "מתאר המסוף שסופק שגוי."
 
 #: src/kpart/Part.cpp:769
 #, kde-format
@@ -2003,7 +2003,7 @@ msgstr "תוכנית והארגומנטים שלה כרשות."
 #, kde-format
 msgctxt "@info:shell command-line syntax"
 msgid "[program [arguments…]]"
-msgstr ""
+msgstr "[תוכנית [ארגומנטים…]]"
 
 #: src/settings/LaunchSettings.cpp:53
 #, kde-format
@@ -2016,6 +2016,8 @@ msgid ""
 "Enter one NAME=value assignment per line. Names may contain letters, digits "
 "and underscores, and must not start with a digit."
 msgstr ""
+"נא למלא הקצאת NAME=value אחת בכל שורה. שמות יכולים להכיל אותיות, ספרות "
+"וקווים תחתיים ואסור שיתחילו במספר."
 
 #: src/settings/LaunchSettings.cpp:77
 #, kde-format
@@ -2023,6 +2025,8 @@ msgid ""
 "Enter a program followed by its arguments, or leave the command empty to use "
 "the system shell."
 msgstr ""
+"נא למלא תוכנית ואת הארגומנטים שלה אחריה, או להשאיר את הפקודה ריקה כדי להשתמש "
+"במעטפת המערכת."
 
 #: src/settings/LaunchSettings.cpp:86
 #, kde-format
@@ -2042,7 +2046,7 @@ msgstr "יש לבחור נתיב מוחלט כתיקיית עבודה."
 #: src/settings/LaunchSettings.cpp:105
 #, kde-format
 msgid "Choose how the working directory is determined."
-msgstr ""
+msgstr "נא לבחור איך נקבעת תיקיית העבודה."
 
 #: src/settings/PresetEditor.cpp:146
 #, kde-format
@@ -2068,7 +2072,7 @@ msgstr "כבר קיים משתנה בשם הזה."
 #: src/settings/PresetEditor.cpp:243
 #, kde-format
 msgid "Save or discard the current preset changes first."
-msgstr ""
+msgstr "יש לשמור את לסלק את השינויים הנוכחיים בערכה."
 
 #: src/settings/PresetEditor.cpp:247 src/settings/TerminalPresets.cpp:143
 #, kde-format
@@ -2099,6 +2103,8 @@ msgid ""
 "Enter a program and its arguments. Quote spaces; shell operators and "
 "expansions are not supported."
 msgstr ""
+"נא למלא תוכנית ואת הארגומנטים שלה. רווחים תחומים בסוגריים, פעולות מסוף "
+"והרחבות לא נתמכים."
 
 #: src/settings/PresetEditor.cpp:321 src/settings/TerminalPresets.cpp:352
 #, kde-format
@@ -2108,12 +2114,12 @@ msgstr "כבר קיימת ערכת מסוף בשם %1."
 #: src/settings/PresetEditor.cpp:338
 #, kde-format
 msgid "The preset was saved, but could not be made the default: %1"
-msgstr ""
+msgstr "הערכה נשמרה, אבל לא ניתן להפוך אותה לברירת המחדל: %1"
 
 #: src/settings/PresetEditor.cpp:349 src/settings/TerminalPresets.cpp:321
 #, kde-format
 msgid "Only user-owned terminal presets can be removed."
-msgstr ""
+msgstr "אפשר להסיר רק ערכות מסוף בבעלות המשתמש."
 
 #: src/settings/TerminalPaletteModel.cpp:108
 #, kde-format
@@ -2125,7 +2131,7 @@ msgstr "מערכת"
 #, kde-format
 msgctxt "@info"
 msgid "Choose a local Konsole color scheme file."
-msgstr ""
+msgstr "נא לבחור קובץ מקומי של ערכת צבעים של Konsole."
 
 #: src/settings/TerminalPaletteModel.cpp:176
 #, kde-format
@@ -2193,7 +2199,7 @@ msgstr "לא ניתן לשמור את ערכת הצבעים."
 msgctxt "@info"
 msgid ""
 "Enter a color scheme name of 1 to 80 characters without control characters."
-msgstr ""
+msgstr "נא למלא שם לערכת הצבעים באורך שבין 1 ל־80 תווים ללא תווי בקרה."
 
 #: src/settings/TerminalPaletteModel.cpp:397
 #, kde-format
@@ -2204,12 +2210,12 @@ msgstr "כבר קיימת ערכת צבעים בשם הזה. נא לבחור ש�
 #: src/settings/TerminalPresets.cpp:147
 #, kde-format
 msgid "The default terminal preset is managed by the system."
-msgstr ""
+msgstr "ערכת המסוף כברירת המחדל מנוהלת על ידי המערכת."
 
 #: src/settings/TerminalPresets.cpp:153
 #, kde-format
 msgid "The default terminal preset could not be saved."
-msgstr ""
+msgstr "לא ניתן לשמור את ערכת ברירת המחדל של המסוף."
 
 #: src/settings/TerminalPresets.cpp:182
 #, kde-format
@@ -2221,7 +2227,7 @@ msgstr "מעטפת מערכת"
 #: src/settings/TerminalPresets.cpp:260
 #, kde-format
 msgid "Choose a preset name of 1–80 characters other than System Shell."
-msgstr ""
+msgstr "נא לבחור שם ערכה באורך של 1-80 תווים למעט מעטפת מערכת."
 
 #: src/settings/TerminalPresets.cpp:266
 #, kde-format
